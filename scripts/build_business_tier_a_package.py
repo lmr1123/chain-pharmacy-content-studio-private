@@ -24,10 +24,12 @@ PKG_NAME = "药店培训内容工厂-业务包"
 PKG = OUT_ROOT / PKG_NAME
 
 
-ONE_PAGE = """# 一页怎么用（业务）
+ONE_PAGE = """# 一页怎么用（业务 + WorkBuddy）
 
-> 给一线业务：选模板 → 填 Word → 交给 WorkBuddy → 审初稿 → 拿成片。  
-> **不需要**装 Node、起端口、懂图层编辑器。
+> 固定协作：**你（业务）+ WorkBuddy**。  
+> 你：选模板 → 填 Word → 审初稿 → 收成片。  
+> WorkBuddy：按金样模板出初稿并在你确认后出 PPTX/视频。  
+> **不需要**装 Node、起端口、懂图层编辑器；正常单**不必**再找制作。
 
 ## 四步
 
