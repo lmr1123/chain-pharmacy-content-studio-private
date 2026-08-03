@@ -21,24 +21,25 @@ import {applyEditablePatches} from './editor/apply-editable-patches';
 import {ReferenceMedicalTechMaster} from './components/reference-medical-tech-master';
 import {presenterLayout} from './wind-heat-production-contract';
 import {unifiedAudio} from './wind-heat-audio-v2';
+import data from '../health-training-mechanism.json';
+import {
+  audioFile,
+  cuesOf,
+  playbackDuration,
+  screenOf,
+} from './health-training-content';
 
 type Cue = {start: number; end: number; text: string};
 
-const DURATION = 15.84;
+const SCREEN = screenOf(data as any);
+const DURATION = playbackDuration(data as any, 15.84);
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
 const presenterAsset = (name: string) => `/wind-heat-presenter-v2/${name}`;
+const CHAPTER = SCREEN.chapter_mechanism || '病因机理';
 
-const legacyCues: Cue[] = [
-  {start: 0.00, end: 3.22, text: '风热证就是风加热一起入侵身体'},
-  {start: 3.22, end: 5.22, text: '风热证并不复杂'},
-  {start: 5.22, end: 7.70, text: '就是风邪和热邪凑一块'},
-  {start: 7.70, end: 9.78, text: '一起钻进咱们身体里了'},
-  {start: 9.78, end: 11.74, text: '导致体表不舒服'},
-  {start: 11.74, end: 12.86, text: '肺气不顺畅'},
-  {start: 12.86, end: 15.84, text: '所以才会出现各种难受的症状'},
-];
 const mechanismAudio = unifiedAudio('mechanism');
-const cues: Cue[] = mechanismAudio.cues;
+const cues: Cue[] = cuesOf(data as any, mechanismAudio.cues);
+const MECHANISM_AUDIO = audioFile(data as any, mechanismAudio.audio);
 
 function mouthLayer(
   refs: Reference<Img>[],
@@ -89,7 +90,7 @@ function* runSubtitles(ref: Reference<Txt>) {
 export const referenceMechanismGapScene = makeScene2D('reference-mechanism-gap', function* (view) {
   view.add(
     <Audio
-      src={mechanismAudio.audio}
+      src={MECHANISM_AUDIO}
       play
       volume={1}
     />,
@@ -134,7 +135,7 @@ export const referenceMechanismGapScene = makeScene2D('reference-mechanism-gap',
   view.add(
     <>
       <ReferenceMedicalTechMaster
-        activeChapter={'病因机理'}
+        activeChapter={CHAPTER}
         layerPrefix={'mechanism'}
       />
       <ElectricCurrentOverlay refs={electric} />

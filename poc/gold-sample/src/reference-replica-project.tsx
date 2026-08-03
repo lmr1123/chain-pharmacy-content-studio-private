@@ -23,6 +23,14 @@ import {
   presenterMouthLayout,
 } from './wind-heat-production-contract';
 import {unifiedAudio} from './wind-heat-audio-v2';
+import data from '../health-training-character.json';
+import {
+  audioFile,
+  cuesOf,
+  diseaseName,
+  playbackDuration,
+  screenOf,
+} from './health-training-content';
 
 type Cue = {
   start: number;
@@ -30,7 +38,9 @@ type Cue = {
   text: string;
 };
 
-const DURATION = 28.1;
+const DISEASE = diseaseName(data as any);
+const SCREEN = screenOf(data as any);
+const DURATION = playbackDuration(data as any, 28.1);
 const CANONICAL_START = 136 / 30;
 const CANONICAL_END = 840 / 30;
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
@@ -38,26 +48,18 @@ const CYAN = '#56b9c2';
 const TEXT = '#f6f7f5';
 const PANEL = 'rgba(4, 14, 26, 0.94)';
 
-const legacyCues: Cue[] = [
-  {
-    start: 0,
-    end: 4.62,
-    text: '今天，生灵儿带大家学习中医基础知识——风热证',
-  },
-  {start: 4.62, end: 7.14, text: '你是不是也有过这种情况？'},
-  {start: 7.64, end: 10.92, text: '喉咙又肿又痛，咳嗽停不下来'},
-  {start: 10.92, end: 13.14, text: '咳出来的痰还黄黄的'},
-  {start: 13.14, end: 15.98, text: '鼻涕又黄又稠，身上发烫'},
-  {start: 15.98, end: 19.82, text: '越喝水越觉得渴，心里还烦躁得不行'},
-  {start: 20.46, end: 23.5, text: '其实啊，这就是风热证找上门啦'},
-  {
-    start: 23.5,
-    end: 28.1,
-    text: '简单来说，风热证就是风加热一起入侵身体',
-  },
-];
 const characterAudio = unifiedAudio('character');
-const cues: Cue[] = characterAudio.cues;
+const cues: Cue[] = cuesOf(data as any, characterAudio.cues);
+const CHARACTER_AUDIO = audioFile(data as any, characterAudio.audio);
+const CHAPTER = SCREEN.chapter_character || '基础认知';
+const CHARACTER_CARDS =
+  SCREEN.character_cards ||
+  ['喉咙肿痛', '身体发烫', '咳嗽痰黄', '口渴嘴干', '鼻涕黄稠', '心里烦躁'];
+const MECHANISM_TITLE =
+  SCREEN.mechanism_title || `${DISEASE}怎么找上门？`;
+const EQUATION_LEFT = SCREEN.equation_left || '💨  风邪';
+const EQUATION_RIGHT = SCREEN.equation_right || '🔥  热邪';
+const EQUATION_RESULT = SCREEN.equation_result || '入侵身体';
 
 const presenterAsset = (name: string) => `/wind-heat-presenter-v2/${name}`;
 
@@ -113,7 +115,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
   const trimmed = startAt > 0;
   view.add(
     <Audio
-      src={characterAudio.audio}
+      src={CHARACTER_AUDIO}
       time={startAt}
       play
       volume={1}
@@ -139,14 +141,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
   const armsLayout = presenterLayout('openArms', 'heroCenter');
   const palmMouthLayout = presenterMouthLayout('palm', palmLayout.size);
   const armsMouthLayout = presenterMouthLayout('openArms', armsLayout.size);
-  const symptomCards = [
-    '喉咙肿痛',
-    '身体发烫',
-    '咳嗽痰黄',
-    '口渴嘴干',
-    '鼻涕黄稠',
-    '心里烦躁',
-  ].map(() => createRef<Rect>());
+  const symptomCards = CHARACTER_CARDS.map(() => createRef<Rect>());
   const nodeTitle = createRef<Txt>();
   const equation = createRef<Rect>();
   const arrow = createRef<Line>();
@@ -166,12 +161,12 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
           scale={1.015}
         >
           <ReferenceMedicalTechMaster
-            activeChapter={'基础认知'}
+            activeChapter={CHAPTER}
             layerPrefix={'character-title'}
           />
           <Txt
             key={'editable:character:title:text'}
-            text={'风热证'}
+            text={DISEASE}
             fontFamily={FONT}
             fontSize={112}
             fontWeight={700}
@@ -195,7 +190,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
 
       <Rect ref={main} size={[1920, 1080]} opacity={trimmed ? 1 : 0}>
         <ReferenceMedicalTechMaster
-          activeChapter={'基础认知'}
+          activeChapter={CHAPTER}
           layerPrefix={'character'}
         />
         <Rect
@@ -297,14 +292,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
 
         </Rect>
 
-        {[
-          '喉咙肿痛',
-          '身体发烫',
-          '咳嗽痰黄',
-          '口渴嘴干',
-          '鼻涕黄稠',
-          '心里烦躁',
-        ].map((label, index) => {
+        {CHARACTER_CARDS.map((label, index) => {
           const col = index % 2;
           const row = Math.floor(index / 2);
           return (
@@ -355,7 +343,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
           key={'editable:character:text:mechanism-title'}
           ref={nodeTitle}
           position={[0, -430]}
-          text={'风热证怎么找上门？'}
+          text={MECHANISM_TITLE}
           fontFamily={FONT}
           fontSize={58}
           fontWeight={650}
@@ -380,7 +368,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
           >
             <Txt
               key={'editable:character:equation:wind'}
-              text={'💨  风邪'}
+              text={EQUATION_LEFT}
               fontFamily={FONT}
               fontSize={42}
               fill={'#8dcff2'}
@@ -404,7 +392,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
           >
             <Txt
               key={'editable:character:equation:heat'}
-              text={'🔥  热邪'}
+              text={EQUATION_RIGHT}
               fontFamily={FONT}
               fontSize={42}
               fill={'#ff9c72'}
@@ -426,7 +414,7 @@ function* referenceCharacterAction(view: View2D, startAt = 0, endAt = DURATION) 
           <Txt
             key={'editable:character:equation:result'}
             position={[520, 0]}
-            text={'入侵身体'}
+            text={EQUATION_RESULT}
             fontFamily={FONT}
             fontSize={44}
             fontWeight={620}

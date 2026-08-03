@@ -12,6 +12,14 @@ import {applyEditablePatches} from './editor/apply-editable-patches';
 import {ReferenceMedicalTechMaster} from './components/reference-medical-tech-master';
 import {presenterLayout} from './wind-heat-production-contract';
 import {unifiedAudio} from './wind-heat-audio-v2';
+import data from '../health-training-symptoms.json';
+import {
+  audioFile,
+  cuesOf,
+  diseaseName,
+  playbackDuration,
+  screenOf,
+} from './health-training-content';
 
 type Cue = {
   start: number;
@@ -31,7 +39,9 @@ type SymptomGroup = {
   items: SymptomItem[];
 };
 
-const DURATION = 27.5;
+const DISEASE = diseaseName(data as any);
+const SCREEN = screenOf(data as any);
+const DURATION = playbackDuration(data as any, 27.5);
 const CANONICAL_DURATION = 790 / 30;
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
 const WHITE = '#f6f7f5';
@@ -71,27 +81,19 @@ const MOUTH_RIG = {
   megaphone: {anchor: [0.526, 0.421] as [number, number]},
 };
 
-const legacyCues: Cue[] = [
-  {start: 0, end: 1.708, text: '它有三个典型信号'},
-  {start: 1.778, end: 2.895, text: '记好这几点'},
-  {start: 2.965, end: 4.536, text: '一看就懂'},
-  {start: 4.606, end: 6.959, text: '一、发热、口渴、嘴巴干'},
-  {start: 7.029, end: 7.883, text: '心里烦躁'},
-  {start: 7.953, end: 11.518, text: '二、喉咙肿痛、咳嗽、痰黄'},
-  {start: 11.588, end: 13.196, text: '流黄稠鼻涕'},
-  {start: 13.266, end: 15.214, text: '三、舌头偏红'},
-  {start: 15.284, end: 16.74, text: '舌苔微微发黄'},
-  {start: 16.81, end: 18.18, text: '大便干结'},
-  {start: 18.25, end: 19.856, text: '只要你出现这些情况'},
-  {start: 19.926, end: 22.724, text: '基本就是风热证没跑了'},
-  {start: 22.794, end: 24.465, text: '对付风热证'},
-  {start: 24.535, end: 25.755, text: '记住一个核心'},
-  {start: 25.825, end: 27.15, text: '疏风清热'},
-];
 const symptomsAudio = unifiedAudio('symptoms');
-const cues: Cue[] = symptomsAudio.cues;
+const cues: Cue[] = cuesOf(data as any, symptomsAudio.cues);
+const SYMPTOMS_AUDIO = audioFile(data as any, symptomsAudio.audio);
+const CHAPTER = SCREEN.chapter_symptoms || '典型症状';
+const SYMPTOMS_TITLE =
+  SCREEN.symptoms_title || `${DISEASE}的典型症状`;
+const CORE_HEADING = SCREEN.core_heading || '调理核心';
+const CORE_TREATMENT = SCREEN.core_treatment || '疏风清热';
+const CORE_BODY_1 = SCREEN.core_body_1 || '围绕风邪与热邪进行调理';
+const CORE_BODY_2 = SCREEN.core_body_2 || '缓解发热、口渴、咽痛、';
+const CORE_BODY_3 = SCREEN.core_body_3 || '痰黄等表现';
 
-const groups: SymptomGroup[] = [
+const defaultGroups: SymptomGroup[] = [
   {
     number: '①',
     title: '全身症状',
@@ -125,6 +127,11 @@ const groups: SymptomGroup[] = [
     ],
   },
 ];
+const groups: SymptomGroup[] = (
+  SCREEN.symptom_groups && SCREEN.symptom_groups.length
+    ? SCREEN.symptom_groups
+    : defaultGroups
+) as SymptomGroup[];
 
 const presenterAsset = (name: string) => `/wind-heat-presenter-v2/${name}`;
 const symptom = (name: string) => `/production-symptoms/${name}`;
@@ -210,7 +217,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
 
   view.add(
     <Audio
-      src={symptomsAudio.audio}
+      src={SYMPTOMS_AUDIO}
       play
       volume={1}
     />,
@@ -235,7 +242,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
   view.add(
     <>
       <ReferenceMedicalTechMaster
-        activeChapter={'典型症状'}
+        activeChapter={CHAPTER}
         layerPrefix={'symptoms'}
       />
 
@@ -285,7 +292,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
           />
           <Txt
             key={'editable:symptoms:title'}
-            text={'风热证的典型症状'}
+            text={SYMPTOMS_TITLE}
             fontFamily={FONT}
             fontSize={TYPOGRAPHY.pageTitle}
             fontWeight={620}
@@ -465,7 +472,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
           />
           <Txt
             key={'editable:symptoms:treatment:title'}
-            text={'调理核心'}
+            text={CORE_HEADING}
             fontFamily={FONT}
             fontSize={TYPOGRAPHY.treatmentTitle}
             fontWeight={620}
@@ -526,7 +533,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
           >
             <Txt
               key={'editable:symptoms:treatment:core'}
-              text={'疏风清热'}
+              text={CORE_TREATMENT}
               fontFamily={FONT}
               fontSize={TYPOGRAPHY.treatmentCore}
               fontWeight={620}
@@ -544,7 +551,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
             key={'editable:symptoms:treatment:body:0'}
             position={[-5, 30]}
             width={800}
-            text={'围绕风邪与热邪进行调理'}
+            text={CORE_BODY_1}
             textAlign={'left'}
             fontFamily={FONT}
             fontSize={TYPOGRAPHY.treatmentBody}
@@ -561,7 +568,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
             key={'editable:symptoms:treatment:body:1'}
             position={[-5, 112]}
             width={800}
-            text={'缓解发热、口渴、咽痛、'}
+            text={CORE_BODY_2}
             textAlign={'left'}
             fontFamily={FONT}
             fontSize={TYPOGRAPHY.treatmentBody}
@@ -571,7 +578,7 @@ function* referenceSymptoms(view: View2D, duration = DURATION) {
             key={'editable:symptoms:treatment:body:2'}
             position={[-5, 180]}
             width={800}
-            text={'痰黄等表现'}
+            text={CORE_BODY_3}
             textAlign={'left'}
             fontFamily={FONT}
             fontSize={TYPOGRAPHY.treatmentBody}

@@ -1,5 +1,25 @@
 # Lessons
 
+## 2026-08-03 晚（Koboyo 图标：按需源头、不囤库不进 Git）
+
+### 用户决定
+
+- 可用 Koboyo 作排版/小符号源头；制作时再匹配获取。
+- 不要本地预下载包进仓库，避免 Git 体积膨胀。
+
+### 落地
+
+- 在线源头 + 流程：`assets/_intake/open_source/koboyo/SOURCE.md` + `license.txt`
+- `svg/` 已 gitignore；manifest 默认 `total: 0`
+- 金样/业务文档与 WorkBuddy 提示词已同步：业务不找图标；代理按需拉；成片用 master
+- 不替代多色场景插画；序号优先文本
+
+### 下一刀
+
+- 真做某一课槽位时再按需 curl + 晋升少量 PNG master。
+
+---
+
 ## 2026-08-03 晚（视频必须换内容/文字/画面）
 
 ### 用户纠正
@@ -16,7 +36,34 @@
 
 ### 下一刀
 
-- 健康科普 full；更多插画按板块替换。
+- ~~健康科普 full~~ → 已接（见下）
+
+---
+
+## 2026-08-03 夜（疾病科普 = 风热金样工程数据驱动 full）
+
+### 做法（对齐 Q10）
+
+- 7 段 JSON：`health-training-{intro,character,mechanism,symptoms,treatment,medication,summary}.json`
+- 金样 `reference-*-project.tsx` 读 `disease_name` / `screen` / `cues` / `audio` / `playback_duration`
+- `business_video_health_full.py` + `render-health-segment.mjs`
+- CLI：`generate_business_video.py --template health --mode full --with-tts --with-mp4`
+
+### 验证
+
+- intro 重渲帧主标题「风寒证」（非风热）
+- 全片 7 段+TTS 业务机再跑 `wb-health-first-check`
+
+### 边界
+
+- 机理动画/草药插画路径仍复用风热资产；屏显文案与旁白已可换主题
+- 勿默认 audio-shell 当正式交付
+
+### 2026-08-04 纠正（WorkBuddy 仍只换声）
+
+- **根因：** health full 实现停留在本地未推送；GitHub 上仍是「仍在接入」+ full 失败回退 audio-shell，WorkBuddy pull 后按旧提示只换声。
+- **修复：** 打通并推送 `business_video_health_full`；删除 health→audio-shell 自动回退；系统提示明确禁止说「仍在接入」。
+- **代理约束：** 疾病科普与商品 full 同级；成片自检病名不是「风热证」残片。
 
 ---
 

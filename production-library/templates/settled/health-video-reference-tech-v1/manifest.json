@@ -97,8 +97,10 @@
   "voice_pack_id": "voice.reference-pharmacist-qwen-v1",
   "business_greenline": {
     "script": "scripts/generate_business_video.py",
-    "package_only": "python3 scripts/generate_business_video.py --template health --sections-json <path>",
+    "package_only": "python3 scripts/generate_business_video.py --template health --mode plan --sections-json <path>",
     "with_audio_mp4": ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template health --sections-json <path> --with-tts --with-mp4",
-    "notes": "金样画面壳 + 新旁白克隆；完整换包装重渲另线"
+    "full_rerender": "scripts/business_video_health_full.py via --mode full",
+    "segment_projects": "poc/gold-sample/src/reference-*-project.tsx + health-training-*.json",
+    "notes": "full=换病名/屏显/旁白+7段重渲拼接（对齐商品 full）；audio-shell 仅兼容旧路径"
   }
 }

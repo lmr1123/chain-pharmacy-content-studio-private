@@ -13,6 +13,11 @@
     --with-tts --with-mp4 \\
     --product-image path/to/pack.png
 
+  # 疾病科普视频全量（风热金样工程数据驱动 · 7 段重渲）
+  .venv-qwen-tts/bin/python scripts/generate_business_video.py \\
+    --template health --sections-json path/to/sections.json \\
+    --with-tts --with-mp4
+
   # 旧：仅叠旁白到金样壳（不推荐，仅兼容）
   ... --mode audio-shell --with-tts --with-mp4
 
@@ -572,7 +577,12 @@ def write_delivery_md(
         lines.append("| `audio/full-narration.wav` | 克隆药师旁白母带 |")
         lines.append("| `audio/sections/*.wav` | 分板块旁白 |")
     if mp4 and mp4.get("ok"):
-        lines.append(f"| `{Path(mp4['path']).name}` | 培训视频（金样画面壳 + 新旁白） |")
+        method = (mp4 or {}).get("method") or ""
+        if "segment" in method or "full" in method or "health" in method:
+            desc = "培训视频（分段重渲：文案/屏显/旁白）"
+        else:
+            desc = "培训视频（兼容：金样画面壳 + 新旁白）"
+        lines.append(f"| `{Path(mp4['path']).name}` | {desc} |")
     lines.extend(
         [
             "",
@@ -586,7 +596,7 @@ def write_delivery_md(
             "",
             "1. 打开 `storyboard.html` 核对旁白与板块。",
             "2. 有 MP4 则可直接内训试看；需改文案后重新运行本命令。",
-            "3. 画面若需换真包装/插画，把授权图补入缺口后升级为分段重渲（制作侧）。",
+            "3. 商品/疾病科普 full 模式会按主题分段重渲；audio-shell 仅为兼容旧路径。",
             "",
         ]
     )
@@ -609,13 +619,13 @@ def main() -> int:
     ap.add_argument(
         "--with-mp4",
         action="store_true",
-        help="导出 MP4：product 默认分段重渲；audio-shell 模式为叠金样壳",
+        help="导出 MP4：product/health 默认分段重渲；audio-shell 模式为叠金样壳",
     )
     ap.add_argument(
         "--mode",
         choices=["full", "plan", "audio-shell"],
         default="full",
-        help="full=换文案/画面槽位/包装+重渲(商品)；plan=仅规划；audio-shell=旧叠声壳",
+        help="full=换文案/画面槽位+重渲(商品/疾病科普)；plan=仅规划；audio-shell=旧叠声壳",
     )
     ap.add_argument(
         "--product-image",
@@ -702,13 +712,18 @@ def main() -> int:
     mp4_status: dict[str, Any] = {"ok": False}
     full_status: dict[str, Any] | None = None
 
-    # --- product full content+visual+audio re-render ---
-    use_full = (
+    # --- product / health full content+visual+audio re-render ---
+    use_product_full = (
         args.mode == "full"
         and slug_key == "product-video-faithful-v1"
         and (args.with_tts or args.with_mp4)
     )
-    if use_full:
+    use_health_full = (
+        args.mode == "full"
+        and slug_key == "health-video-reference-tech-v1"
+        and (args.with_tts or args.with_mp4)
+    )
+    if use_product_full:
         sys.path.insert(0, str(ROOT / "scripts"))
         from business_video_product_full import run_product_full  # type: ignore
 
@@ -740,28 +755,38 @@ def main() -> int:
             tts_status = {"ok": False, "error": str(e)}
             mp4_status = {"ok": False, "error": str(e)}
             full_status = {"ok": False, "error": str(e)}
-    elif args.mode == "full" and slug_key == "health-video-reference-tech-v1" and (
-        args.with_tts or args.with_mp4
-    ):
-        # Health full re-render not yet segmented the same way; fall back with clear note
-        tts_status = {
-            "ok": False,
-            "error": (
-                "健康科普 full 分段重渲仍在接入；"
-                "请暂用 --mode audio-shell，或仅 --mode plan 出分镜包"
-            ),
-        }
-        if args.mode == "full":
-            # still allow audio-shell if user wants mp4
-            pass
+    elif use_health_full:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from business_video_health_full import run_health_full  # type: ignore
 
-    # --- legacy audio-shell path (or health fallback) ---
-    if args.mode == "audio-shell" or (
-        slug_key == "health-video-reference-tech-v1"
-        and args.with_tts
-        and not tts_status.get("ok")
-        and args.mode != "plan"
-    ):
+        try:
+            full_status = run_health_full(
+                content=content,
+                out_dir=out_dir,
+                voice_pack_dir=meta["voice_pack"],
+                with_tts=bool(args.with_tts),
+                with_render=bool(args.with_mp4),
+            )
+            tts_status = {
+                "ok": bool(full_status.get("ok")) and bool(args.with_tts),
+                "mode": "full-segment-clone-health",
+                "segments": (full_status or {}).get("segments"),
+                "error": full_status.get("error") if full_status else None,
+            }
+            mp4 = (full_status or {}).get("mp4") or {}
+            mp4_status = {
+                "ok": bool(mp4.get("ok")),
+                "path": mp4.get("path"),
+                "method": "health-segment-rerender-content-visual-audio",
+                "error": mp4.get("error") or full_status.get("error"),
+            }
+        except Exception as e:
+            tts_status = {"ok": False, "error": str(e)}
+            mp4_status = {"ok": False, "error": str(e)}
+            full_status = {"ok": False, "error": str(e)}
+
+    # --- legacy audio-shell path (explicit only) ---
+    if args.mode == "audio-shell":
         if args.with_tts:
             py = detect_tts_python()
             if not py:

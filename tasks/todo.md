@@ -37,6 +37,7 @@
 | **PPT · 业务机 WorkBuddy 真人绿线** | ✅ pull + 重贴系统提示 + 三步真出 PPT |
 | **视频金样包 · 风热 + Q10** | ✅ 2026-08-03 补齐为可用金样（见下） |
 | **视频 · 业务换主题绿线** | ✅ 商品视频 **full 分段重渲**（文案+屏显+包装槽+旁白）；「示例舒心片」全片约 170s 冒烟通过 |
+| **视频 · 疾病科普 full** | ✅ 风热金样工程数据驱动 7 段（`business_video_health_full.py`）；intro 冒烟「风寒证」屏显通过 |
 
 ### 视频金样包（2026-08-03 完成）
 
@@ -53,18 +54,38 @@
 |------|------|------------------|--------|------------|
 | 商品培训课件3（速福达壳） | MP4+PPTX | ✅ | ✅ | `replicate_courseware_theme.py` 有雏形 |
 | 商品培训课件4（番茄红素壳） | MP4+PPTX | ✅ | ✅ | validation export |
-| 商品培训视频（Q10） | MP4 | ✅ | ✅ 已补齐 | 分段工程，待统一 CLI |
-| 疾病科普视频（风热） | MP4 | ✅ | ✅ 已补齐（含 v2） | 待统一 CLI |
+| 商品培训视频（Q10） | MP4 | ✅ | ✅ 已补齐 | `generate_business_video --template product --mode full` |
+| 疾病科普视频（风热） | MP4 | ✅ | ✅ 已补齐（含 v2） | `generate_business_video --template health --mode full`（7 段重渲） |
 | 绿色单品 / 穿心莲 / 参课蓝 | PPTX | ✅ | ✅ | generator 已有 |
 
 ### 本迭代目标（视频可交付业务使用）
 
 > ① 先完成为可用金样包（**已完成**风热+Q10）  
 > ② 再做 WorkBuddy 三步换主题真出片（对话→克隆声→MP4）
+### 素材：Koboyo 小图标（2026-08-03 锁定）
+
+| 项 | 状态 |
+|----|------|
+| 源头 | https://koboyo.com/icons · 按需匹配，不预囤 |
+| Git 入库 | 仅 `assets/_intake/open_source/koboyo/{SOURCE.md,license.txt,manifest.json}` |
+| 本机 `svg/` | **gitignore**；制作时再 curl；勿提交 |
+| 业务 | 不找图标；只交文案 + 授权包装 |
+| 边界 | 不替代症状/注意事项/药师多色场景插画 |
+
+文档入口：`SOURCE.md` · `assembly-protocol` §8.1 · `workbuddy-system-prompt` · `tasks/lessons.md`。
+
 ### 勿混线
 
 - 未跟踪：`product-courseware-kekang-lingzhi-green-v1/`、`yuyou*`、可可康 production-v2 正式金样全片  
-- 风热 `health-video` 仅对照，不宣称业务可量产  
+- 风热 `health-video` 已接 full 分段重渲；机理段插画骨架仍复用风热视觉（文案/病名/旁白/症状卡等可换主题）  
+
+### Review · 疾病科普 full（2026-08-03）
+
+- 新增 `scripts/business_video_health_full.py` + `poc/gold-sample/health-training-*.json` + `render-health-segment.mjs`
+- 7 个 `reference-*-project.tsx` 读 JSON（disease_name / screen / cues / audio / playback_duration）
+- `generate_business_video.py --template health --mode full` 走分段重渲（不再拒绝）
+- 冒烟：intro 重渲帧标题为「风寒证」（非风热）
+- 后续可选：全 7 段+TTS 业务机 ⑤ 冒烟；机理/草药插画按病种细换
 
 ### 关键命令
 
@@ -125,7 +146,7 @@ PPT 绿线已证明：业务只聊内容 → 代理锁模板 → generator 出�
 - [x] 冒烟：`示例舒心片` 全片 MP4（method=`segment-rerender-content-visual-audio`）  
 - [x] 工程：`product-training-content.ts` + 各 segment 读 `data.product_name` / `data.screen`  
 - [x] WorkBuddy 系统提示改为 full 口径（不是只换声音）  
-- [ ] 健康科普 full 分段重渲（暂 plan / audio-shell）  
+- [x] 健康科普 full 分段重渲（`business_video_health_full.py`，禁止默认 audio-shell）  
 - [ ] 课件3 theme-replicate 业务胶水  
 
 #### V2 · 语音与环境

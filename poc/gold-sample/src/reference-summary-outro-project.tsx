@@ -26,56 +26,65 @@ import {
 import {applyEditablePatches} from './editor/apply-editable-patches';
 import {ReferenceMedicalTechMaster} from './components/reference-medical-tech-master';
 import {unifiedAudio} from './wind-heat-audio-v2';
+import data from '../health-training-summary.json';
+import {
+  audioFile,
+  cuesOf,
+  diseaseName,
+  playbackDuration,
+  screenOf,
+} from './health-training-content';
 
 type Cue = {start: number; end: number; text: string};
 
-const DURATION = 27.99;
-const OUTRO_START = 25.0;
+const DISEASE = diseaseName(data as any);
+const SCREEN = screenOf(data as any);
+const DURATION = playbackDuration(data as any, 27.99);
+const OUTRO_RATIO =
+  typeof (data as any).outro_start_ratio === 'number'
+    ? (data as any).outro_start_ratio
+    : 25.0 / 28.0;
+const OUTRO_START = Math.max(2, DURATION * OUTRO_RATIO);
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
 const adviceAsset = (name: string) => `/advice-assets/${name}`;
+const CHAPTER = SCREEN.chapter_summary || '重点总结';
+const ADVICE_TITLE = SCREEN.advice_title || '生活禁忌与建议';
+const SUMMARY_TITLE = SCREEN.summary_title || `${DISEASE}总结`;
 
-const legacyCues: Cue[] = [
-  {start: 0.00, end: 0.94, text: '最后'},
-  {start: 0.94, end: 2.64, text: '给大家划个重点'},
-  {start: 2.64, end: 4.96, text: '记不住的可以多看两遍'},
-  {start: 4.96, end: 5.80, text: '病因'},
-  {start: 5.80, end: 7.60, text: '风加热一起入侵'},
-  {start: 7.60, end: 8.66, text: '肺气不顺'},
-  {start: 8.66, end: 9.48, text: '症状'},
-  {start: 9.48, end: 10.20, text: '发热'},
-  {start: 10.20, end: 11.00, text: '口渴'},
-  {start: 11.00, end: 11.88, text: '喉咙痛'},
-  {start: 11.88, end: 12.74, text: '咳黄痰'},
-  {start: 12.74, end: 13.62, text: '流黄涕'},
-  {start: 13.62, end: 14.36, text: '心烦'},
-  {start: 14.36, end: 15.12, text: '调理'},
-  {start: 15.12, end: 16.32, text: '疏风清热'},
-  {start: 16.32, end: 17.24, text: '用桑叶'},
-  {start: 17.24, end: 17.98, text: '菊花'},
-  {start: 17.98, end: 18.68, text: '薄荷'},
-  {start: 18.68, end: 19.70, text: '清淡饮食'},
-  {start: 19.70, end: 20.52, text: '多喝水'},
-  {start: 20.52, end: 21.26, text: '禁忌'},
-  {start: 21.26, end: 22.40, text: '辛辣刺激'},
-  {start: 22.40, end: 23.16, text: '烟酒'},
-  {start: 23.16, end: 24.54, text: '温补燥热食物'},
-];
 const summaryAudio = unifiedAudio('summary');
-const cues: Cue[] = summaryAudio.cues;
+const cues: Cue[] = cuesOf(data as any, summaryAudio.cues);
+const SUMMARY_AUDIO = audioFile(data as any, summaryAudio.audio);
 
-const summaryItems = [
+const defaultSummaryItems = [
   {title: '病因', body: '风 + 热一起入侵，肺气不顺'},
   {title: '症状', body: '发热口渴、喉咙痛、咳黄痰、流黄涕、心烦'},
   {title: '调理', body: '疏风清热，用桑叶、菊花、薄荷，清淡饮食多喝水'},
   {title: '禁忌', body: '辛辣刺激、烟酒、温补燥热食物'},
 ];
+const summaryItems =
+  SCREEN.summary_items && SCREEN.summary_items.length
+    ? SCREEN.summary_items
+    : defaultSummaryItems;
 
-const adviceItems = [
+const defaultAdviceTuples = [
   ['1. 保持通风', '房间多开窗通风，保持空气流通', 'ventilation-v1.png', true],
   ['2. 多喝温水', '少量多次补水，帮助缓解口渴和大便干', 'warm-water-v1.png', true],
   ['3. 饮食清淡', '避免辛辣、油炸和容易上火的燥热食物', 'light-diet-badge-v2.png', false],
   ['4. 戒烟戒酒', '暂时戒掉烟酒，不碰温补燥热类食物', 'no-smoking-alcohol-badge-v2.png', false],
 ] as const;
+const adviceItems = (
+  SCREEN.advice_items && SCREEN.advice_items.length
+    ? SCREEN.advice_items.map(
+        (item) =>
+          [
+            item.title,
+            item.body,
+            item.image,
+            Boolean(item.transparent),
+          ] as [string, string, string, boolean],
+      )
+    : defaultAdviceTuples
+) as ReadonlyArray<readonly [string, string, string, boolean]>;
 
 function addTitle(parent: Rect, text: string) {
   parent.add(
@@ -138,7 +147,7 @@ function* runSubtitles(ref: Reference<Txt>) {
 export const referenceSummaryOutroScene = makeScene2D('reference-summary-outro', function* (view) {
   view.add(
     <Audio
-      src={summaryAudio.audio}
+      src={SUMMARY_AUDIO}
       play
       volume={1}
     />,
@@ -146,7 +155,7 @@ export const referenceSummaryOutroScene = makeScene2D('reference-summary-outro',
   view.add(
     <>
       <ReferenceMedicalTechMaster
-        activeChapter={'重点总结'}
+        activeChapter={CHAPTER}
         layerPrefix={'summary'}
       />
     </>,
@@ -244,8 +253,8 @@ export const referenceSummaryOutroScene = makeScene2D('reference-summary-outro',
     </>,
   );
 
-  addTitle(advice(), '生活禁忌与建议');
-  addTitle(summary(), '风热证总结');
+  addTitle(advice(), ADVICE_TITLE);
+  addTitle(summary(), SUMMARY_TITLE);
 
   function* visuals() {
     yield* dimmer().opacity(1, 0.22);

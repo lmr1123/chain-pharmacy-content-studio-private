@@ -13,8 +13,21 @@ import {
 } from './components/premium-medical-effects';
 import {ReferenceMedicalTechMaster} from './components/reference-medical-tech-master';
 import {applyEditablePatches} from './editor/apply-editable-patches';
+import data from '../health-training-intro.json';
+import {
+  audioFile,
+  diseaseName,
+  playbackDuration,
+  screenOf,
+} from './health-training-content';
 
-const DURATION = 136 / 30;
+const DISEASE = diseaseName(data as any);
+const SCREEN = screenOf(data as any);
+const DURATION = playbackDuration(data as any, 136 / 30);
+const AUDIO = audioFile(data as any, '/wind-heat-audio-v2/intro-silence.wav');
+const EYEBROW = SCREEN.eyebrow || '中医基础知识';
+const TAGLINE = SCREEN.tagline || '营运培训 · 专业赋能';
+const CHAPTER = SCREEN.chapter_intro || '基础认知';
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
 
 function* referenceNativeIntro(view: Parameters<Parameters<typeof makeScene2D>[1]>[0], canonical = false) {
@@ -28,9 +41,9 @@ function* referenceNativeIntro(view: Parameters<Parameters<typeof makeScene2D>[1
 
   view.add(
     <>
-      <Audio src={'/wind-heat-audio-v2/intro-silence.wav'} play />
+      <Audio src={AUDIO} play />
       <ReferenceMedicalTechMaster
-        activeChapter={'基础认知'}
+        activeChapter={CHAPTER}
         layerPrefix={'intro'}
       />
       <ElectricCurrentOverlay refs={electric} />
@@ -44,7 +57,7 @@ function* referenceNativeIntro(view: Parameters<Parameters<typeof makeScene2D>[1
         <Txt
           key={'editable:intro:title:eyebrow'}
           position={[0, -92]}
-          text={'中医基础知识'}
+          text={EYEBROW}
           fontFamily={FONT}
           fontSize={44}
           fontWeight={500}
@@ -55,7 +68,7 @@ function* referenceNativeIntro(view: Parameters<Parameters<typeof makeScene2D>[1
           key={'editable:intro:title:ghost-cyan'}
           ref={ghostCyan}
           position={[-7, 20]}
-          text={'风热证'}
+          text={DISEASE}
           fontFamily={FONT}
           fontSize={126}
           fontWeight={720}
@@ -67,7 +80,7 @@ function* referenceNativeIntro(view: Parameters<Parameters<typeof makeScene2D>[1
           key={'editable:intro:title:ghost-magenta'}
           ref={ghostMagenta}
           position={[7, 20]}
-          text={'风热证'}
+          text={DISEASE}
           fontFamily={FONT}
           fontSize={126}
           fontWeight={720}
@@ -79,7 +92,7 @@ function* referenceNativeIntro(view: Parameters<Parameters<typeof makeScene2D>[1
           key={'editable:intro:title:main'}
           ref={titleText}
           position={[0, 20]}
-          text={'风热证'}
+          text={DISEASE}
           fontFamily={FONT}
           fontSize={126}
           fontWeight={720}
@@ -108,7 +121,7 @@ function* referenceNativeIntro(view: Parameters<Parameters<typeof makeScene2D>[1
         />
         <Txt
           position={[0, 166]}
-          text={'营运培训 · 专业赋能'}
+          text={TAGLINE}
           fontFamily={FONT}
           fontSize={32}
           letterSpacing={8}

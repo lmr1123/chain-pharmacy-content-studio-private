@@ -1,0 +1,276 @@
+{
+  "id": "health-training-symptoms",
+  "title": "典型症状",
+  "playback_duration": 26.333333333333332,
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/wind-heat-audio-v2/symptoms.wav"
+  },
+  "cues": [
+    {
+      "start": 0,
+      "end": 1.599,
+      "text": "它有三个典型信号"
+    },
+    {
+      "start": 1.815,
+      "end": 2.858,
+      "text": "记好这几点"
+    },
+    {
+      "start": 3.074,
+      "end": 4.543,
+      "text": "一看就懂"
+    },
+    {
+      "start": 4.759,
+      "end": 6.956,
+      "text": "一、发热、口渴、嘴巴干"
+    },
+    {
+      "start": 7.172,
+      "end": 7.974,
+      "text": "心里烦躁"
+    },
+    {
+      "start": 8.19,
+      "end": 11.52,
+      "text": "二、喉咙肿痛、咳嗽、痰黄"
+    },
+    {
+      "start": 11.737,
+      "end": 13.238,
+      "text": "流黄稠鼻涕"
+    },
+    {
+      "start": 13.454,
+      "end": 15.273,
+      "text": "三、舌头偏红"
+    },
+    {
+      "start": 15.49,
+      "end": 16.855,
+      "text": "舌苔微微发黄"
+    },
+    {
+      "start": 17.071,
+      "end": 18.35,
+      "text": "大便干结"
+    },
+    {
+      "start": 18.566,
+      "end": 20.067,
+      "text": "只要你出现这些情况"
+    },
+    {
+      "start": 20.283,
+      "end": 22.895,
+      "text": "基本就是风热证没跑了"
+    },
+    {
+      "start": 23.112,
+      "end": 24.676,
+      "text": "对付风热证"
+    },
+    {
+      "start": 24.893,
+      "end": 26.034,
+      "text": "记住一个核心"
+    },
+    {
+      "start": 26.25,
+      "end": 27.5,
+      "text": "疏风清热"
+    }
+  ],
+  "screen": {
+    "disease_name": "风热证",
+    "eyebrow": "中医基础知识",
+    "tagline": "营运培训 · 专业赋能",
+    "chapter_intro": "基础认知",
+    "chapter_character": "基础认知",
+    "chapter_mechanism": "病因机理",
+    "chapter_symptoms": "典型症状",
+    "chapter_treatment": "调理建议",
+    "chapter_medication": "调理建议",
+    "chapter_summary": "重点总结",
+    "character_cards": [
+      "喉咙肿痛",
+      "身体发烫",
+      "咳嗽痰黄",
+      "口渴嘴干",
+      "鼻涕黄稠",
+      "心里烦躁"
+    ],
+    "mechanism_title": "风热证怎么找上门？",
+    "equation_left": "💨  风邪",
+    "equation_right": "🔥  热邪",
+    "equation_result": "入侵身体",
+    "symptoms_title": "风热证的典型症状",
+    "core_heading": "调理核心",
+    "core_treatment": "疏风清热",
+    "core_body_1": "围绕风邪与热邪进行调理",
+    "core_body_2": "缓解发热、口渴、咽痛、",
+    "core_body_3": "痰黄等表现",
+    "treatment_principle": "疏风清热",
+    "treatment_line_1": "把身体里的风散出去，把热清掉",
+    "treatment_line_2": "让发热、咽痛、咳嗽等不适逐渐缓解",
+    "recipe_text": "桑叶 · 菊花 · 薄荷  各3—5克",
+    "recipe_effect": "喝1—2天",
+    "herbs": [
+      {
+        "name": "桑叶",
+        "image": "mulberry-leaf-v1.png",
+        "lines": [
+          "散风热、润肺",
+          "缓解咳嗽"
+        ]
+      },
+      {
+        "name": "菊花",
+        "image": "chrysanthemum-v1.png",
+        "lines": [
+          "散风热、清热解毒",
+          "泡饮清润舒适"
+        ]
+      },
+      {
+        "name": "薄荷",
+        "image": "mint-v1.png",
+        "lines": [
+          "疏散风热、清头目",
+          "缓解咽喉不适"
+        ]
+      }
+    ],
+    "symptom_groups": [
+      {
+        "number": "①",
+        "title": "全身症状",
+        "summaryLines": [
+          "发热、口渴、嘴巴干",
+          "心里烦躁"
+        ],
+        "items": [
+          {
+            "image": "fever.png",
+            "label": "发热"
+          },
+          {
+            "image": "thirst.png",
+            "label": "口渴"
+          },
+          {
+            "image": "dry-mouth.png",
+            "label": "嘴巴干"
+          },
+          {
+            "image": "irritable.png",
+            "label": "心里烦躁"
+          }
+        ]
+      },
+      {
+        "number": "②",
+        "title": "呼吸道症状",
+        "summaryLines": [
+          "喉咙肿痛、咳嗽",
+          "痰黄、黄稠鼻涕"
+        ],
+        "items": [
+          {
+            "image": "sore-throat.png",
+            "label": "喉咙肿痛"
+          },
+          {
+            "image": "cough.png",
+            "label": "咳嗽"
+          },
+          {
+            "image": "yellow-phlegm.png",
+            "label": "痰黄"
+          },
+          {
+            "image": "yellow-nasal.png",
+            "label": "鼻涕黄稠"
+          }
+        ]
+      },
+      {
+        "number": "③",
+        "title": "其他症状",
+        "summaryLines": [
+          "舌头偏红、舌苔发黄",
+          "大便干结"
+        ],
+        "items": [
+          {
+            "image": "red-tongue.png",
+            "label": "舌头红"
+          },
+          {
+            "image": "yellow-coat.png",
+            "label": "舌苔黄"
+          },
+          {
+            "image": "dry-stool.png",
+            "label": "大便干结"
+          }
+        ]
+      }
+    ],
+    "medication_names": [
+      "银翘解毒颗粒",
+      "连花清瘟胶囊"
+    ],
+    "advice_items": [
+      {
+        "title": "1. 保持通风",
+        "body": "房间多开窗通风，保持空气流通",
+        "image": "ventilation-v1.png",
+        "transparent": true
+      },
+      {
+        "title": "2. 多喝温水",
+        "body": "少量多次补水，帮助缓解口渴和大便干",
+        "image": "warm-water-v1.png",
+        "transparent": true
+      },
+      {
+        "title": "3. 饮食清淡",
+        "body": "避免辛辣、油炸和容易上火的燥热食物",
+        "image": "light-diet-badge-v2.png",
+        "transparent": false
+      },
+      {
+        "title": "4. 戒烟戒酒",
+        "body": "暂时戒掉烟酒，不碰温补燥热类食物",
+        "image": "no-smoking-alcohol-badge-v2.png",
+        "transparent": false
+      }
+    ],
+    "summary_items": [
+      {
+        "title": "病因",
+        "body": "风 + 热一起入侵，肺气不顺"
+      },
+      {
+        "title": "症状",
+        "body": "发热口渴、喉咙痛、咳黄痰、流黄涕、心烦"
+      },
+      {
+        "title": "调理",
+        "body": "疏风清热，用桑叶、菊花、薄荷，清淡饮食多喝水"
+      },
+      {
+        "title": "禁忌",
+        "body": "辛辣刺激、烟酒、温补燥热食物"
+      }
+    ],
+    "advice_title": "生活禁忌与建议",
+    "summary_title": "风热证总结",
+    "slogan": "内部培训 · 风热证健康知识"
+  },
+  "disease_name": "风热证",
+  "theme": "风热证"
+}

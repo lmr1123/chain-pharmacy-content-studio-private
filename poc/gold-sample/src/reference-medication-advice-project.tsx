@@ -21,6 +21,13 @@ import {applyEditablePatches} from './editor/apply-editable-patches';
 import {ReferenceMedicalTechMaster} from './components/reference-medical-tech-master';
 import {presenterLayout} from './wind-heat-production-contract';
 import {unifiedAudio} from './wind-heat-audio-v2';
+import data from '../health-training-medication.json';
+import {
+  audioFile,
+  cuesOf,
+  playbackDuration,
+  screenOf,
+} from './health-training-content';
 
 type Cue = {start: number; end: number; text: string};
 type Advice = {
@@ -30,10 +37,16 @@ type Advice = {
   transparent: boolean;
 };
 
-const DURATION = 41.1;
+const SCREEN = screenOf(data as any);
+const DURATION = playbackDuration(data as any, 41.1);
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
 const WHITE = '#f7faf8';
 const CYAN = '#35e5e8';
+const CHAPTER = SCREEN.chapter_medication || '调理建议';
+const MEDICATION_NAMES = SCREEN.medication_names || [
+  '银翘解毒颗粒',
+  '连花清瘟胶囊',
+];
 
 const TYPE = {
   pageTitle: 76,
@@ -53,36 +66,11 @@ const LAYOUT = {
   adviceList: {x: 0, y: 45, width: 1400, rowHeight: 148, rowGap: 18},
 };
 
-const legacyCues: Cue[] = [
-  {start: 0, end: 2.626, text: '也可以搭配银翘解毒颗粒'},
-  {start: 2.626, end: 4.754, text: '连花清瘟胶囊来调理'},
-  {start: 4.754, end: 6.173, text: '效果更好哦'},
-  {start: 6.173, end: 7.91, text: '另外，风热期间'},
-  {start: 7.91, end: 9.664, text: '还有几个小细节要注意'},
-  {start: 9.664, end: 11.437, text: '做好了恢复得更快'},
-  {start: 11.437, end: 13.781, text: '一、房间多开窗通风'},
-  {start: 13.781, end: 15.27, text: '保持空气流通'},
-  {start: 15.27, end: 16.222, text: '别闷着'},
-  {start: 16.222, end: 18.498, text: '闷着热邪更散不出去'},
-  {start: 18.498, end: 19.157, text: '二'},
-  {start: 19.157, end: 20.48, text: '多喝温水'},
-  {start: 20.48, end: 22.086, text: '少量多次喝'},
-  {start: 22.086, end: 23.778, text: '及时给身体补水'},
-  {start: 23.778, end: 25.99, text: '缓解口渴和大便干'},
-  {start: 25.99, end: 26.565, text: '三'},
-  {start: 26.565, end: 28.288, text: '饮食一定要清淡'},
-  {start: 28.288, end: 30.978, text: '别吃辛辣、油炸的东西'},
-  {start: 30.978, end: 33.606, text: '还有那些容易上火的燥热食物'},
-  {start: 33.606, end: 34.951, text: '越吃越严重'},
-  {start: 34.951, end: 35.517, text: '四'},
-  {start: 35.517, end: 37.145, text: '暂时把烟酒戒掉'},
-  {start: 37.145, end: 39.123, text: '温补类的食物也别碰'},
-  {start: 39.123, end: 41.1, text: '不然会加重体内的热'},
-];
 const medicationAudio = unifiedAudio('medication');
-const cues: Cue[] = medicationAudio.cues;
+const cues: Cue[] = cuesOf(data as any, medicationAudio.cues);
+const MEDICATION_AUDIO = audioFile(data as any, medicationAudio.audio);
 
-const adviceItems: Advice[] = [
+const defaultAdvice: Advice[] = [
   {
     title: '1. 保持通风',
     body: '房间多开窗通风，保持空气流通',
@@ -108,6 +96,16 @@ const adviceItems: Advice[] = [
     transparent: false,
   },
 ];
+const adviceItems: Advice[] = (
+  SCREEN.advice_items && SCREEN.advice_items.length
+    ? SCREEN.advice_items.map((item) => ({
+        title: item.title,
+        body: item.body,
+        image: item.image,
+        transparent: Boolean(item.transparent),
+      }))
+    : defaultAdvice
+) as Advice[];
 
 const presenterAsset = (name: string) => `/wind-heat-presenter-v2/${name}`;
 const asset = (name: string) => `/advice-assets/${name}`;
@@ -224,7 +222,7 @@ function mouthLayer(
 export const referenceMedicationAdviceScene = makeScene2D('reference-medication-advice', function* (view) {
   view.add(
     <Audio
-      src={medicationAudio.audio}
+      src={MEDICATION_AUDIO}
       play
       volume={1}
     />,
@@ -232,7 +230,7 @@ export const referenceMedicationAdviceScene = makeScene2D('reference-medication-
   view.add(
     <>
       <ReferenceMedicalTechMaster
-        activeChapter={'调理建议'}
+        activeChapter={CHAPTER}
         layerPrefix={'medication'}
       />
     </>,
@@ -290,7 +288,7 @@ export const referenceMedicationAdviceScene = makeScene2D('reference-medication-
           <MedicationCard
             ref={cardOne}
             scanRef={cardScans[0]}
-            name={'银翘解毒颗粒'}
+            name={MEDICATION_NAMES[0] || '银翘解毒颗粒'}
             imageSrc={asset('granule-package-v1.png')}
             packageSize={[800, 450]}
             fontFamily={FONT}
@@ -311,7 +309,7 @@ export const referenceMedicationAdviceScene = makeScene2D('reference-medication-
           <MedicationCard
             ref={createRef<Rect>()}
             scanRef={cardScans[1]}
-            name={'连花清瘟胶囊'}
+            name={MEDICATION_NAMES[1] || '连花清瘟胶囊'}
             imageSrc={asset('capsule-carton-v1.png')}
             packageSize={[520, 292]}
             fontFamily={FONT}

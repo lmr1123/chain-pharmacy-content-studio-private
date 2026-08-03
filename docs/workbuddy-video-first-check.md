@@ -22,7 +22,12 @@ git pull --ff-only
 ### ① 代码与引导页
 
 ```bash
-cd $REPO && git rev-parse --short HEAD && test -f scripts/generate_business_video.py && test -f scripts/business_video_product_full.py && test -f docs/workbuddy-system-prompt.md && echo "OK code"
+cd $REPO && git rev-parse --short HEAD && \
+  test -f scripts/generate_business_video.py && \
+  test -f scripts/business_video_product_full.py && \
+  test -f scripts/business_video_health_full.py && \
+  test -f poc/gold-sample/scripts/render-health-segment.mjs && \
+  test -f docs/workbuddy-system-prompt.md && echo "OK code"
 ```
 
 期望：打印短 commit + `OK code`。
@@ -58,6 +63,8 @@ cd $REPO/poc/gold-sample && test -d node_modules && test -f scripts/render-produ
 
 ### ⑤ 最小出片冒烟（约 2～4 分钟，会真出 MP4）
 
+**商品培训视频：**
+
 ```bash
 cd $REPO
 cat > /tmp/wb-video-smoke.json <<'EOF'
@@ -89,10 +96,35 @@ EOF
 outputs/business-video-runs/wb-first-check/*_商品培训视频_v1.mp4
 ```
 
-或：
+**疾病科普视频（可选 · 7 段，约 4～8 分钟）：**
 
 ```bash
-ls -lh outputs/business-video-runs/wb-first-check/*商品培训视频*.mp4
+cat > /tmp/wb-health-smoke.json <<'EOF'
+{
+  "theme": "自检演示证",
+  "sections": [
+    {"title": "开场", "narration": "中医基础知识自检演示证。"},
+    {"title": "基础认知", "narration": "本片仅作业务机环境自检，画面与旁白应出现自检演示证。"},
+    {"title": "病因机理", "narration": "自检演示：外邪入侵导致不适。"},
+    {"title": "典型症状", "narration": "一、表现甲。二、表现乙。三、表现丙。"},
+    {"title": "调理建议", "narration": "核心是辨证调理。可用常用食材配合。"},
+    {"title": "用药建议", "narration": "注意休息、多喝温水、饮食清淡、及时就医。"},
+    {"title": "总结", "narration": "自检完成，请改用真实审核病种内容再出正式片。"}
+  ]
+}
+EOF
+
+.venv-qwen-tts/bin/python scripts/generate_business_video.py \
+  --template health \
+  --sections-json /tmp/wb-health-smoke.json \
+  --with-tts --with-mp4 \
+  --slug wb-health-first-check
+```
+
+期望：
+
+```text
+outputs/business-video-runs/wb-health-first-check/*_疾病科普视频_v1.mp4
 ```
 
 ---
@@ -102,6 +134,7 @@ ls -lh outputs/business-video-runs/wb-first-check/*商品培训视频*.mp4
 | 结果 | 含义 |
 |------|------|
 | ①～⑤ 全过 | **可以**让业务在 WorkBuddy 上生成商品培训视频 |
+| ①～⑤ + 疾病科普冒烟 | **可以**生成疾病科普视频（风热金样 full 重渲） |
 | ①②④ 过、③ 挂 | 可 plan / 出 PPT；视频正式旁白需先装 TTS venv |
 | ⑤ 挂 | 把终端报错留给制作侧；勿对业务假装已出片 |
 
@@ -128,4 +161,5 @@ PPT 仍走既有绿色单品 / 参课蓝 generator，不走本清单 ⑤。
 
 - 系统提示：`docs/workbuddy-system-prompt.md`  
 - 安装与三步话术：`docs/workbuddy-install-and-guide.md`  
-- 商品 full 实现：`scripts/generate_business_video.py` + `scripts/business_video_product_full.py`  
+- 商品 full：`scripts/generate_business_video.py` + `scripts/business_video_product_full.py`  
+- 疾病科普 full：`scripts/business_video_health_full.py` + `poc/gold-sample/scripts/render-health-segment.mjs`  

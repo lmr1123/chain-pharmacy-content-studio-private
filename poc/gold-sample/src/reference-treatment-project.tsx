@@ -12,15 +12,32 @@ import {applyEditablePatches} from './editor/apply-editable-patches';
 import {ReferenceMedicalTechMaster} from './components/reference-medical-tech-master';
 import {presenterLayout} from './wind-heat-production-contract';
 import {unifiedAudio} from './wind-heat-audio-v2';
+import data from '../health-training-treatment.json';
+import {
+  audioFile,
+  cuesOf,
+  playbackDuration,
+  screenOf,
+} from './health-training-content';
 
 type Cue = {start: number; end: number; text: string};
 type Herb = {name: string; image: string; lines: [string, string]};
 
-const DURATION = 41.94;
+const SCREEN = screenOf(data as any);
+const DURATION = playbackDuration(data as any, 41.94);
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
 const WHITE = '#f7faf8';
 const CYAN = '#35e5e8';
 const PANEL = 'rgba(24, 42, 55, 0.96)';
+const CHAPTER = SCREEN.chapter_treatment || '调理建议';
+const TREATMENT_PRINCIPLE = SCREEN.treatment_principle || '疏风清热';
+const TREATMENT_LINE_1 =
+  SCREEN.treatment_line_1 || '把身体里的风散出去，把热清掉';
+const TREATMENT_LINE_2 =
+  SCREEN.treatment_line_2 || '让发热、咽痛、咳嗽等不适逐渐缓解';
+const RECIPE_TEXT =
+  SCREEN.recipe_text || '桑叶 · 菊花 · 薄荷  各3—5克';
+const RECIPE_EFFECT = SCREEN.recipe_effect || '喝1—2天';
 
 const TYPE = {
   pageTitle: 76,
@@ -43,36 +60,11 @@ const LAYOUT = {
   recipeTea: {x: 470, y: 340, width: 570, height: 380},
 };
 
-const legacyCues: Cue[] = [
-  {start: 0, end: 2.274, text: '就是把身体里的风散出去'},
-  {start: 2.35, end: 3.825, text: '把热清掉'},
-  {start: 3.901, end: 6.049, text: '不舒服的感觉自然就缓解了'},
-  {start: 6.126, end: 7.866, text: '日常生活中有这几样'},
-  {start: 7.942, end: 9.768, text: '用来调理特别方便'},
-  {start: 9.844, end: 10.544, text: '记好了'},
-  {start: 10.621, end: 12.59, text: '一、桑叶'},
-  {start: 12.666, end: 13.522, text: '能散风热'},
-  {start: 13.598, end: 14.879, text: '还能滋润肺部'},
-  {start: 14.955, end: 16.124, text: '缓解咳嗽'},
-  {start: 16.2, end: 17.803, text: '二、菊花'},
-  {start: 17.879, end: 19.448, text: '不仅能散风热'},
-  {start: 19.524, end: 20.998, text: '还能清热解毒'},
-  {start: 21.075, end: 22.764, text: '平时泡着喝也舒服'},
-  {start: 22.84, end: 24.304, text: '三、薄荷'},
-  {start: 24.381, end: 26.064, text: '散风热的效果特别快'},
-  {start: 26.14, end: 27.593, text: '还能清头目'},
-  {start: 27.669, end: 28.979, text: '缓解喉咙痛'},
-  {start: 29.056, end: 30.704, text: '平常在家时'},
-  {start: 30.78, end: 34.579, text: '用桑叶、菊花、薄荷各3—5克'},
-  {start: 34.655, end: 36.385, text: '泡一杯水喝'},
-  {start: 36.462, end: 38.881, text: '就是简单又管用的桑菊薄荷饮'},
-  {start: 38.957, end: 40.2, text: '喝1—2天'},
-  {start: 40.276, end: 41.94, text: '就能感觉到舒服不少'},
-];
 const treatmentAudio = unifiedAudio('treatment');
-const cues: Cue[] = treatmentAudio.cues;
+const cues: Cue[] = cuesOf(data as any, treatmentAudio.cues);
+const TREATMENT_AUDIO = audioFile(data as any, treatmentAudio.audio);
 
-const herbs: Herb[] = [
+const defaultHerbs: Herb[] = [
   {
     name: '桑叶',
     image: 'mulberry-leaf-v1.png',
@@ -89,6 +81,9 @@ const herbs: Herb[] = [
     lines: ['疏散风热、清头目', '缓解咽喉不适'],
   },
 ];
+const herbs: Herb[] = (
+  SCREEN.herbs && SCREEN.herbs.length ? SCREEN.herbs : defaultHerbs
+) as Herb[];
 
 const presenterAsset = (name: string) => `/wind-heat-presenter-v2/${name}`;
 const treatment = (name: string) => `/treatment-assets/${name}`;
@@ -286,7 +281,7 @@ function HerbCards({
 export const referenceTreatmentScene = makeScene2D('reference-treatment', function* (view) {
   view.add(
     <Audio
-      src={treatmentAudio.audio}
+      src={TREATMENT_AUDIO}
       play
       volume={1}
     />,
@@ -294,7 +289,7 @@ export const referenceTreatmentScene = makeScene2D('reference-treatment', functi
   view.add(
     <>
       <ReferenceMedicalTechMaster
-        activeChapter={'调理建议'}
+        activeChapter={CHAPTER}
         layerPrefix={'treatment'}
       />
     </>,
@@ -347,7 +342,7 @@ export const referenceTreatmentScene = makeScene2D('reference-treatment', functi
           >
             <Txt
               key={'editable:treatment:core:title'}
-              text={'疏风清热'}
+              text={TREATMENT_PRINCIPLE}
               fontFamily={FONT}
               fontSize={TYPE.coreHeading}
               fontWeight={650}
@@ -365,7 +360,7 @@ export const referenceTreatmentScene = makeScene2D('reference-treatment', functi
             key={'editable:treatment:core:body:0'}
             position={[-5, 15]}
             width={820}
-            text={'把身体里的风散出去，把热清掉'}
+            text={TREATMENT_LINE_1}
             textAlign={'left'}
             fontFamily={FONT}
             fontSize={TYPE.coreBody}
@@ -383,7 +378,7 @@ export const referenceTreatmentScene = makeScene2D('reference-treatment', functi
             key={'editable:treatment:core:body:1'}
             position={[-5, 125]}
             width={820}
-            text={'让发热、咽痛、咳嗽等不适逐渐缓解'}
+            text={TREATMENT_LINE_2}
             textAlign={'left'}
             fontFamily={FONT}
             fontSize={TYPE.coreBody}
@@ -482,7 +477,7 @@ export const referenceTreatmentScene = makeScene2D('reference-treatment', functi
         >
           <Txt
             key={'editable:treatment:recipe:dosage'}
-            text={'桑叶 · 菊花 · 薄荷  各3—5克'}
+            text={RECIPE_TEXT}
             fontFamily={FONT}
             fontSize={TYPE.dosage}
             fontWeight={700}
@@ -538,7 +533,7 @@ export const referenceTreatmentScene = makeScene2D('reference-treatment', functi
           scale={0.7}
         >
           <Txt
-            text={'喝1—2天'}
+            text={RECIPE_EFFECT}
             fontFamily={FONT}
             fontSize={56}
             fontWeight={800}
