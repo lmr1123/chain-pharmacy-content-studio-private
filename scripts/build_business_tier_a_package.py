@@ -28,55 +28,43 @@ sys.path.insert(0, str(REPO / "scripts"))
 from business_guided_portal import build_guided_portal_html, write_upload_folder_readme  # noqa: E402
 
 
-ONE_PAGE = """# 一页怎么用（业务 + WorkBuddy）
+ONE_PAGE = """# 一页怎么用（内部培训课件 / 视频）
 
-> 固定协作：**你（业务）+ WorkBuddy**。  
-> **默认入口（推荐）：** 打开 WorkBuddy，输入下面一句——**不需要自己解压 zip**。
+## 使用方法
+
+### 1. 安装
+
+在 WorkBuddy 聊天框输入：
 
 ```text
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-> WorkBuddy 会安装仓库、打开引导页，并逐步陪你：预览选模板 → 填 Word → 上传 → 审初稿 → 收成片。  
-> **不需要**装 Node、起端口、懂图层编辑器；正常单**不必**再找制作。
+不需要自己解压 zip。安装后会打开网页引导。
 
-## 四步（与引导页一致 · 由 WorkBuddy 指引）
+### 2. 选模板
 
-1. **预览选模板** — 看封面/关键页，点「选用此模板」（或告诉 WorkBuddy 中文课型名）  
-2. **填 Word** — 空白模板 +「本课型怎么填」；可删节、有几条写几条  
-3. **上传提交** — 聊天附件最简单；或引导页拖入；或 `07_业务填报上传/待处理/`  
-4. **审初稿 → 收成片** — 先确认，再出 PPTX / 视频  
+在打开的网页上：
+- **一行 4 个**小卡片预览课型  
+- 点开看**关键页面截图**（大图）  
+- 点「选用此模板 · 复制口令」
 
-本目录 `index.html` 是安装后的可视化引导；也可由 WorkBuddy 直接发空白 Word 给你填。
+### 3. 说内容 → 确认初稿 → 出片
 
-## 你不需要做的事
+回到 WorkBuddy，直接说商品/疾病要点。例如：
 
-- **自己解压业务包**（默认由 WorkBuddy 安装 GitHub 仓库）  
-- 指定字号、坐标、页数、动画参数  
-- 打开任何「编辑器端口」  
-- 用系统朗读当正式旁白（视频旁白由工厂用**模板绑定的药师克隆声**生成）  
-- 编造功效、价格、竞品结论
+```text
+整理可可康灵芝胶囊商品，主要是围绕宁心安神助睡眠、提升免疫力、保肝护肝抗衰老3个方面来完善，你先整理符合内容再生成ppt
+```
 
-## 填写参考怎么用
+WorkBuddy 会先整理**内容初稿**给你确认，确认后再生成可编辑 PPT（或视频）。
 
-`03_填写参考/` 里的文档**只示范格式与模块结构**，  
-医学表述、包装、品牌以**贵司审核稿与授权素材**为准，不要直接当新项目终稿。
+## 网页只保留两块
 
-## 成片放哪里
+1. **模板预览与选择**  
+2. **填报真实示例**（可下载对照）
 
-确认后的 PPTX / MP4 请放在 `05_交付物放这里/`，或按项目单独建文件夹归档。
-
-## 你先会收到什么（不是直接成片）
-
-见 `06_你将收到的初稿长什么样/`：  
-内容初稿示例、缺口清单示例、视频分镜预览示例。  
-**只有你确认后**，WorkBuddy 才出可编辑 PPTX / 培训视频。
-
-## 推荐起步（第一次用）
-
-1. 在 WorkBuddy 粘贴安装句，按提示打开引导页  
-2. 货架选 **「绿色单品 PPT」**、**「疾病健康知识培训 PPT（参课蓝）」** 或 **「商品培训视频」**（已签样 · 可换主题/病种量产）  
-3. 填空白 Word → 附件发给 WorkBuddy  
+不必填坐标、页数、动画；不必装 Node。有几条写几条，不要空行凑满。
 """
 
 ACCEPTANCE = """# 业务验收清单（你点头后再成片）
@@ -107,50 +95,39 @@ ACCEPTANCE = """# 业务验收清单（你点头后再成片）
 - 「包装下周才有，先槽位出初稿，成片等我补图」  
 """
 
-COMMAND_CARD = """# WorkBuddy 口令卡（业务复制）
+COMMAND_CARD = """# WorkBuddy 口令（复制即用）
 
-## 第一次用（安装 · 推荐）
+## ① 第一次 · 安装
 
 ```
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-不需要自己解压 zip。WorkBuddy 装好后会带你预览选模板、填 Word、提交。
-
-## 通用（每次必带 · 已会用时）
+## ② 选模板后 · 说内容出片（推荐）
 
 ```
-我要用 【课型中文名】，主题是 【病名或商品名】。
-Word 和授权图在附件。
-请先出 初稿/分镜预览 + 待确认项 + 缺图清单；
-我确认后再出 可编辑 PPTX / 培训视频。
-示例 Word 只作格式参考，医学与包装以我司审核稿为准。
+我选 【绿色单品 PPT（如金银花露）】。
+整理可可康灵芝胶囊商品，主要是围绕宁心安神助睡眠、提升免疫力、保肝护肝抗衰老3个方面来完善。
+你先整理成符合模板的内容初稿给我确认，我确认后再生成ppt。
 ```
 
-课型中文名请与货架卡片标题一致，例如：
+把课型名、商品/病名、要点换成你的即可。
 
-- 疾病科普视频（如风热证）
-- 商品培训视频（如辅酶 Q10）
+## 课型中文名（与网页一致）
+
 - 绿色单品 PPT（如金银花露）
-- 疾病+商品场景 PPT（如穿心莲）
 - 疾病健康知识培训 PPT（参课蓝）
+- 商品培训视频（如辅酶 Q10）
+- 疾病科普视频（如风热证）
+- 疾病+商品场景 PPT（如穿心莲）
 - 商品培训课件3（视频+PPT，速福达壳）
 - 商品培训课件4（视频+PPT，番茄红素壳）
 
-## PPT / 课件补充
+## 可选 · 有已填 Word 时
 
 ```
-联合用药我只写了 N 组，请按 N 行排版，不要空行凑满。
-没有的章节整节可删。
-若需要「总结总表」等扩展页，请按同风格总结页补页并标明扩展。
-```
-
-## 视频补充
-
-```
-旁白以 Word 审核稿为准，请用该模板的药师克隆声朗读。
-禁止使用系统机器人朗读音色。
-包装用附件图；没有的章节先占位并列入缺口清单。
+我选 【课型中文名】，主题 【商品/病名】。Word 在附件。
+请先出内容初稿，我确认后再生成 PPT/视频。
 ```
 """
 
@@ -240,242 +217,13 @@ QUALITY_NOTICE = """# 交付质量说明（内部培训 · 上市公司标准）
 
 
 def shelf_html(templates: list[dict]) -> str:
-    cards = []
-    for t in templates:
-        slug = t["slug"]
-        ready = t.get("production_ready", False)
-        badge_class = "ok" if ready else "warn"
-        keys = t.get("key_frame_labels_zh") or []
-        key_imgs = []
-        for i, lab in enumerate(keys, 1):
-            key_imgs.append(
-                f'<figure><img src="media/{slug}/key-{i:02d}.png" alt="{lab}" loading="lazy" />'
-                f"<figcaption>{lab}</figcaption></figure>"
-            )
-        outputs = " · ".join(t.get("outputs") or [])
-        cards.append(
-            f"""
-      <article class="card" id="{slug}">
-        <a class="cover" href="#detail-{slug}">
-          <img src="media/{slug}/cover.png" alt="{t['name_zh']}" />
-        </a>
-        <div class="body">
-          <div class="meta-row">
-            <span class="cat">{t.get('category', '')}</span>
-            <span class="badge {badge_class}">{t.get('status_label', '')}</span>
-          </div>
-          <h2>{t['name_zh']}</h2>
-          <p class="one">{t.get('one_liner', '')}</p>
-          <p class="out">产物：{outputs}</p>
-          <div class="actions">
-            <a class="btn primary" href="#detail-{slug}">查看关键页</a>
-            <a class="btn" href="../02_空白Word/{slug}/业务提交_空白模板.docx">下载空白 Word</a>
-            <a class="btn ghost" href="../03_填写参考/{slug}/业务提交_填写参考.docx">格式参考</a>
-          </div>
-        </div>
-      </article>
-      <section class="detail" id="detail-{slug}">
-        <div class="detail-head">
-          <h3>{t['name_zh']}</h3>
-          <a class="back" href="#top">↑ 返回货架</a>
-        </div>
-        <p class="note">{t.get('status_note', '')}</p>
-        <p class="path">空白 Word：<code>02_空白Word/{slug}/业务提交_空白模板.docx</code></p>
-        <div class="keys">{"".join(key_imgs)}</div>
-        <div class="actions sticky">
-          <a class="btn primary" href="../02_空白Word/{slug}/业务提交_空白模板.docx">就用这个模板 · 下载空白 Word</a>
-          <a class="btn" href="../04_WorkBuddy口令卡.md">复制口令卡</a>
-        </div>
-      </section>
-"""
-        )
-
-    return f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>药店培训内容工厂 · 模板货架</title>
-<style>
-  :root {{
-    --bg: #0f1419;
-    --panel: #171d25;
-    --line: rgba(255,255,255,.10);
-    --text: #eef2f6;
-    --dim: #9aa7b5;
-    --accent: #2f6fed;
-    --accent2: #1f9d6a;
-    --warn: #c9851a;
-    --radius: 16px;
-    --font: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
-  }}
-  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-  body {{
-    font-family: var(--font);
-    background: radial-gradient(1200px 600px at 10% -10%, #1a2740 0%, transparent 55%),
-                radial-gradient(900px 500px at 100% 0%, #152a22 0%, transparent 50%),
-                var(--bg);
-    color: var(--text);
-    line-height: 1.55;
-    min-height: 100vh;
-  }}
-  .shell {{ max-width: 1120px; margin: 0 auto; padding: 32px 20px 80px; }}
-  header.hero {{
-    padding: 28px 28px 24px;
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    background: linear-gradient(145deg, rgba(47,111,237,.14), rgba(255,255,255,.03));
-    margin-bottom: 28px;
-  }}
-  .badge-top {{
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .08em;
-    color: #9ec0ff;
-    margin-bottom: 10px;
-  }}
-  h1 {{ font-size: 28px; font-weight: 900; letter-spacing: -.02em; margin-bottom: 10px; }}
-  .sub {{ color: var(--dim); font-size: 14px; max-width: 62ch; }}
-  .chips {{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }}
-  .chip {{
-    font-size: 12px; font-weight: 700;
-    padding: 5px 10px; border-radius: 999px;
-    background: rgba(255,255,255,.06); border: 1px solid var(--line); color: var(--dim);
-  }}
-  .steps {{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 22px 0 28px;
-  }}
-  @media (max-width: 800px) {{ .steps {{ grid-template-columns: 1fr 1fr; }} }}
-  .step {{
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 14px;
-  }}
-  .step b {{ display: block; font-size: 13px; margin-bottom: 4px; }}
-  .step span {{ font-size: 12px; color: var(--dim); }}
-  .n {{
-    width: 22px; height: 22px; border-radius: 50%;
-    display: inline-flex; align-items: center; justify-content: center;
-    background: var(--accent); color: #fff; font-size: 12px; font-weight: 800;
-    margin-bottom: 8px;
-  }}
-  .grid {{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 18px;
-  }}
-  .card {{
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: border-color .15s, transform .15s;
-  }}
-  .card:hover {{ border-color: rgba(47,111,237,.55); transform: translateY(-2px); }}
-  .cover {{ display: block; aspect-ratio: 16/9; background: #0a0e13; overflow: hidden; }}
-  .cover img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
-  .body {{ padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }}
-  .meta-row {{ display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }}
-  .cat {{ font-size: 11px; font-weight: 800; color: #8eb6ff; letter-spacing: .04em; }}
-  .badge {{
-    font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 999px;
-  }}
-  .badge.ok {{ background: rgba(31,157,106,.18); color: #6ee7b0; }}
-  .badge.warn {{ background: rgba(201,133,26,.18); color: #f0c674; }}
-  h2 {{ font-size: 17px; font-weight: 900; line-height: 1.35; }}
-  .one {{ font-size: 13px; color: var(--dim); }}
-  .out {{ font-size: 12px; color: #b7c4d3; }}
-  .actions {{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }}
-  .btn {{
-    display: inline-flex; align-items: center; justify-content: center;
-    padding: 8px 12px; border-radius: 10px; font-size: 12px; font-weight: 700;
-    text-decoration: none; color: var(--text);
-    border: 1px solid var(--line); background: rgba(255,255,255,.04);
-  }}
-  .btn:hover {{ border-color: rgba(255,255,255,.28); }}
-  .btn.primary {{ background: var(--accent); border-color: transparent; color: #fff; }}
-  .btn.ghost {{ background: transparent; }}
-  .detail {{
-    grid-column: 1 / -1;
-    margin: 8px 0 24px;
-    padding: 20px;
-    border-radius: var(--radius);
-    border: 1px solid var(--line);
-    background: rgba(255,255,255,.03);
-    scroll-margin-top: 24px;
-  }}
-  .detail-head {{ display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }}
-  .detail h3 {{ font-size: 18px; font-weight: 900; }}
-  .back {{ color: #9ec0ff; font-size: 13px; text-decoration: none; }}
-  .note {{ color: var(--dim); font-size: 13px; margin-bottom: 8px; }}
-  .path {{ font-size: 12px; margin-bottom: 14px; color: #c5d0dc; }}
-  code {{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px;
-    background: rgba(0,0,0,.35); padding: 2px 6px; border-radius: 6px; }}
-  .keys {{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-  }}
-  .keys figure {{
-    margin: 0; border-radius: 12px; overflow: hidden;
-    border: 1px solid var(--line); background: #0a0e13;
-  }}
-  .keys img {{ width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }}
-  .keys figcaption {{
-    font-size: 11px; color: var(--dim); padding: 6px 8px; text-align: center;
-    background: rgba(0,0,0,.35);
-  }}
-  .sticky {{ margin-top: 16px; }}
-  footer {{
-    margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line);
-    color: var(--dim); font-size: 12px; line-height: 1.7;
-  }}
-</style>
-</head>
-<body>
-  <div class="shell" id="top">
-    <header class="hero">
-      <div class="badge-top">连锁药店 · 内部培训内容工厂</div>
-      <h1>模板货架</h1>
-      <p class="sub">
-        先看效果，再选课型。下列均为公司已签样/已登记课型；
-        下载空白 Word 填写审核内容后，交给 WorkBuddy 出初稿，确认后再出成片。
-      </p>
-      <div class="chips">
-        <span class="chip">共 {len(templates)} 个课型</span>
-        <span class="chip">可离线打开</span>
-        <span class="chip">内容驱动 · 禁止空行凑满</span>
-        <span class="chip">视频 · 克隆药师声</span>
-      </div>
-    </header>
-
-    <div class="steps">
-      <div class="step"><div class="n">1</div><b>看效果</b><span>封面 + 关键页截图</span></div>
-      <div class="step"><div class="n">2</div><b>选模板</b><span>记住中文课型名</span></div>
-      <div class="step"><div class="n">3</div><b>填框架</b><span>可删节 · 有几条写几条</span></div>
-      <div class="step"><div class="n">4</div><b>交 WorkBuddy</b><span>先初稿，确认后成片</span></div>
-    </div>
-
-    <div class="grid">
-      {"".join(cards)}
-    </div>
-
-    <footer>
-      <p>本货架仅供内部培训制作辨认课型。预览图来自已签样金样，请勿将包装/Logo 像素直接用于未授权新项目。</p>
-      <p>填写规则见上级目录 <code>框架填写说明.md</code>；口令见 <code>04_WorkBuddy口令卡.md</code>。</p>
-      <p>打包日期：{date.today().isoformat()}</p>
-    </footer>
-  </div>
-</body>
-</html>
-"""
+    """Shelf page reuses the same simplified portal with relative paths fixed."""
+    html = build_guided_portal_html(templates, pack_date=date.today().isoformat())
+    # JS builds paths as "01_模板货架/media/..." — rewrite for this subfolder.
+    html = html.replace("01_模板货架/media/", "media/")
+    html = html.replace("02_空白Word/", "../02_空白Word/")
+    html = html.replace("03_填写参考/", "../03_填写参考/")
+    return html
 
 
 def copy_file(src: Path, dest: Path) -> None:
@@ -596,32 +344,22 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    # README for whole package
+    # README for whole package — keep short; UI is index.html
     (PKG / "README.md").write_text(
-        "# 药店培训内容工厂 · 业务包（档 A）\n\n"
-        "**默认用法（推荐）：业务不必自己解压本包。** 在 WorkBuddy 输入：\n\n"
+        "# 内部培训 · 业务引导包\n\n"
+        "## 使用方法\n\n"
+        "1. WorkBuddy 输入：\n\n"
         "```text\n"
         "请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用\n"
         "```\n\n"
-        "WorkBuddy 会安装仓库、打开本引导页，并陪你完成下面四步。\n\n"
-        "## Getting Started（开源式四步）\n\n"
-        "1. **预览选模板**（`index.html` 第 2 步）  \n"
-        "2. **按 Word 填报**  \n"
-        "3. **上传提交**（聊天附件 / 本页拖入 / `07_业务填报上传/待处理/`）  \n"
-        "4. **审初稿 → 收成片**  \n\n"
-        "离线备用：若已拿到本目录/zip，也可双击 `index.html` 自助浏览；正式出片仍需 WorkBuddy。\n\n"
-        "| 目录/文件 | 用途 |\n"
-        "|-----------|------|\n"
-        "| **`index.html`** | **主入口 · 分步引导** |\n"
-        "| `00_一页怎么用.md` | 文字版（含安装句） |\n"
-        "| `01_模板货架/index.html` | 仅货架浏览 |\n"
-        "| `02_空白Word/` | 空白模板 + 本课型怎么填 |\n"
-        "| `03_填写参考/` | 仅示范格式 |\n"
-        "| `04_WorkBuddy口令卡.md` | 安装句 + 每次口令 |\n"
-        "| `05_交付物放这里/` | 成片归档 |\n"
-        "| `06_你将收到的初稿长什么样/` | 初稿样例 |\n"
-        "| `07_业务填报上传/` | Word/图提交箱 |\n"
-        "| `业务验收清单.md` | 确认前核对 |\n\n"
+        "2. 打开 `index.html`：**选模板**（一行四个小卡片 + 关键页大图）  \n"
+        "3. 回 WorkBuddy **说商品/疾病要点** → 先确认内容初稿 → 再出 PPT/视频  \n\n"
+        "示例口令见 `04_WorkBuddy口令卡.md`。\n\n"
+        "| 业务会点开的 | 说明 |\n"
+        "|--------------|------|\n"
+        "| **`index.html`** | 仅两块：模板预览选择 · 填报真实示例 |\n"
+        "| `03_填写参考/` | 示例 docx（页面可下载） |\n"
+        "| `02_空白Word/` | 可选空白模板 |\n\n"
         f"生成日期：{date.today().isoformat()}\n",
         encoding="utf-8",
     )

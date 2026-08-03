@@ -3,275 +3,283 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>培训内容工厂 · 业务引导</title>
+<title>内部培训 · 选模板</title>
 <style>
 :root {
-  --bg: #0b1020;
-  --panel: #121a2b;
-  --panel2: #182235;
-  --line: rgba(255,255,255,.10);
-  --text: #eef3fb;
-  --dim: #9aabbf;
-  --accent: #3b82f6;
-  --ok: #22c55e;
-  --warn: #f59e0b;
-  --radius: 16px;
+  --bg: #f4f6f9;
+  --card: #fff;
+  --text: #1a2332;
+  --dim: #5c6b7e;
+  --line: #e2e8f0;
+  --accent: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --ok: #047857;
+  --ok-soft: #ecfdf5;
+  --radius: 12px;
   --font: "PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: var(--font);
   color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
   min-height: 100vh;
-  background:
-    radial-gradient(900px 480px at 0% -10%, rgba(59,130,246,.22), transparent 55%),
-    radial-gradient(700px 400px at 100% 0%, rgba(34,197,94,.12), transparent 50%),
-    var(--bg);
-  line-height: 1.55;
 }
-.shell { max-width: 1100px; margin: 0 auto; padding: 28px 18px 72px; }
-.topbar {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: 12px; margin-bottom: 22px;
-}
-.brand { font-weight: 900; font-size: 18px; letter-spacing: -.02em; }
-.brand span { color: var(--dim); font-weight: 600; font-size: 13px; margin-left: 8px; }
-.progress {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px;
-}
-.progress button {
-  border: 1px solid var(--line); background: var(--panel);
-  color: var(--dim); border-radius: 999px; padding: 8px 14px;
-  font-size: 12px; font-weight: 700; cursor: pointer;
-}
-.progress button.active { background: var(--accent); border-color: transparent; color: #fff; }
-.progress button.done { border-color: rgba(34,197,94,.45); color: #86efac; }
-.card {
-  background: linear-gradient(180deg, var(--panel), var(--panel2));
-  border: 1px solid var(--line); border-radius: 20px; padding: 22px 22px 24px;
+.shell { max-width: 1080px; margin: 0 auto; padding: 20px 16px 56px; }
+header {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
   margin-bottom: 16px;
 }
-h1 { font-size: 26px; font-weight: 900; margin-bottom: 8px; letter-spacing: -.02em; }
-h2 { font-size: 18px; font-weight: 900; margin-bottom: 10px; }
-p, li { color: var(--dim); font-size: 14px; }
-.lead { color: #c9d6e8; font-size: 15px; max-width: 62ch; margin-bottom: 14px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+header h1 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+header .sub { font-size: 13px; color: var(--dim); max-width: 70ch; }
+.how {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+@media (max-width: 720px) { .how { grid-template-columns: 1fr; } }
+.how div {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--dim);
+}
+.how b { display: block; color: var(--text); font-size: 13px; margin-bottom: 2px; }
+.how code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #1e3a8a;
+  word-break: break-all;
+}
+section.block {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px 18px;
+  margin-bottom: 14px;
+}
+section.block h2 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+section.block h2 .n {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  font-size: 12px; display: inline-flex; align-items: center; justify-content: center;
+}
+section.block > .hint { font-size: 12px; color: var(--dim); margin-bottom: 12px; }
+
+/* 4 per row, compact */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .grid { grid-template-columns: 1fr 1fr; } }
 .tcard {
-  border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
-  background: rgba(0,0,0,.22); display: flex; flex-direction: column;
-  cursor: pointer; transition: border-color .15s, transform .15s;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fafbfc;
+  cursor: pointer;
+  transition: border-color .12s, box-shadow .12s;
 }
-.tcard:hover { border-color: rgba(59,130,246,.55); transform: translateY(-2px); }
-.tcard.selected { border-color: var(--ok); box-shadow: 0 0 0 1px rgba(34,197,94,.35); }
-.tcard img.cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #000; }
-.tcard .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-.badge { display: inline-flex; align-self: flex-start; font-size: 11px; font-weight: 800;
-  padding: 3px 8px; border-radius: 999px; }
-.badge.ok { background: rgba(34,197,94,.16); color: #86efac; }
-.badge.warn { background: rgba(245,158,11,.16); color: #fcd34d; }
-.tcard h3 { font-size: 15px; font-weight: 900; color: var(--text); }
-.tcard .one { font-size: 12px; color: var(--dim); }
-.keys { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin-top: 10px; }
-.keys figure { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #000; }
-.keys img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-.keys figcaption { font-size: 10px; text-align: center; padding: 4px; color: var(--dim); }
-.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.tcard:hover { border-color: #93c5fd; }
+.tcard.selected {
+  border-color: var(--ok);
+  box-shadow: 0 0 0 2px rgba(4,120,87,.2);
+  background: var(--ok-soft);
+}
+.tcard img.cover {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  background: #0f172a;
+}
+.tcard .body { padding: 8px 9px 10px; }
+.tcard h3 {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+.tcard .meta {
+  font-size: 10px;
+  color: var(--dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* large key frames when selected */
+.preview-pane {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.preview-pane.show { display: block; }
+.preview-pane .title-row {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 8px; margin-bottom: 10px;
+}
+.preview-pane .title-row strong { font-size: 14px; }
+.preview-pane .title-row span { font-size: 12px; color: var(--dim); }
+.keys {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.keys figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0f172a;
+}
+.keys img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.keys figcaption {
+  font-size: 11px;
+  text-align: center;
+  padding: 6px 8px;
+  color: var(--dim);
+  background: #fff;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  border: 1px solid var(--line); background: rgba(255,255,255,.04);
-  color: var(--text); text-decoration: none; border-radius: 12px;
-  padding: 10px 16px; font-size: 13px; font-weight: 800; cursor: pointer;
-}
-.btn.primary { background: var(--accent); border-color: transparent; color: #fff; }
-.btn.ok { background: var(--ok); border-color: transparent; color: #052e16; }
-.btn:disabled { opacity: .45; cursor: not-allowed; }
-.panel-selected {
-  margin-top: 14px; padding: 14px; border-radius: 14px;
-  border: 1px dashed rgba(34,197,94,.4); background: rgba(34,197,94,.06);
-}
-.panel-selected strong { color: #bbf7d0; }
-ol.steps-list { margin: 10px 0 0 18px; }
-ol.steps-list li { margin: 8px 0; }
-code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
-  background: rgba(0,0,0,.35); padding: 2px 6px; border-radius: 6px; color: #dbeafe; }
-.upload-zone {
-  margin-top: 12px; border: 2px dashed rgba(59,130,246,.45); border-radius: 16px;
-  padding: 28px 18px; text-align: center; background: rgba(59,130,246,.06);
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
 }
-.upload-zone.drag { border-color: var(--ok); background: rgba(34,197,94,.08); }
-.upload-zone h3 { color: var(--text); margin-bottom: 6px; }
-.file-list { margin-top: 12px; text-align: left; }
-.file-list li { color: #c7d2fe; font-size: 13px; margin: 4px 0 4px 18px; }
+.btn.primary { background: var(--accent); border-color: transparent; color: #fff; }
+.btn.ok { background: var(--ok); border-color: transparent; color: #fff; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+
 .cmdbox {
-  margin-top: 12px; padding: 14px; border-radius: 12px;
-  background: #0a0f1a; border: 1px solid var(--line);
-  white-space: pre-wrap; font-family: ui-monospace, Menlo, monospace;
-  font-size: 12px; color: #e2e8f0; line-height: 1.6;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  display: none;
 }
-.hidden { display: none !important; }
-.note { font-size: 12px; color: var(--dim); margin-top: 10px; }
-.checklist { list-style: none; margin-top: 10px; }
-.checklist li { margin: 6px 0; color: #cbd5e1; font-size: 13px; }
-.checklist li::before { content: "☐ "; color: var(--accent); font-weight: 800; }
-footer { margin-top: 28px; color: var(--dim); font-size: 12px; }
+.cmdbox.show { display: block; }
+.toast { font-size: 12px; color: var(--ok); margin-top: 6px; min-height: 1.2em; }
+
+/* examples */
+.ex-list { display: flex; flex-direction: column; gap: 8px; }
+.ex-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fafbfc;
+}
+.ex-row .name { font-size: 13px; font-weight: 700; flex: 1 1 180px; }
+.ex-row .tag {
+  font-size: 11px;
+  color: var(--dim);
+  flex: 1 1 160px;
+}
+.ex-row .btns { display: flex; flex-wrap: wrap; gap: 6px; }
+
+footer {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--dim);
+  text-align: center;
+}
 </style>
 </head>
 <body>
 <div class="shell">
-  <div class="topbar">
-    <div class="brand">培训内容工厂 <span>业务引导 · 开源式四步</span></div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <a class="btn" href="01_模板货架/index.html">仅打开货架</a>
-      <a class="btn" href="04_WorkBuddy口令卡.md">口令卡</a>
-      <a class="btn" href="业务验收清单.md">验收清单</a>
+  <header>
+    <h1>内部培训课件 · 选模板</h1>
+    <p class="sub">商品 / 疾病内部培训课件与视频。页面只做两件事：选模板、看真实示例。内容在 WorkBuddy 对话里说即可。</p>
+    <div class="how">
+      <div>
+        <b>① 安装</b>
+        在 WorkBuddy 输入：<br />
+        <code>请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用</code>
+      </div>
+      <div>
+        <b>② 选模板</b>
+        在本页点一个课型，看关键页截图，点「选用」
+      </div>
+      <div>
+        <b>③ 说内容 → 出片</b>
+        回 WorkBuddy 描述商品/疾病要点；它先出内容初稿，你确认后再生成 PPT / 视频
+      </div>
     </div>
-  </div>
+  </header>
 
-  <nav class="progress" id="progress">
-    <button type="button" data-step="1" class="active">1 了解</button>
-    <button type="button" data-step="2">2 预览选模板</button>
-    <button type="button" data-step="3">3 填 Word</button>
-    <button type="button" data-step="4">4 上传提交</button>
-  </nav>
-
-  <!-- STEP 1 -->
-  <section class="card" id="step-1">
-    <h1>开始使用</h1>
-    <p class="lead">
-      默认由 <strong style="color:#fff">WorkBuddy</strong> 安装 GitHub 仓库后打开本页（业务不必自己解压 zip）。
-      流程按开源项目「先看清 → 再选用 → 再填报 → 再提交」组织：你选模板并填 Word，WorkBuddy 出初稿与成片。
-    </p>
-    <ol class="steps-list">
-      <li><strong style="color:#fff">预览并选择模板</strong> — 看封面与关键页，确认观感</li>
-      <li><strong style="color:#fff">下载空白 Word 填报</strong> — 可删节，有几条写几条</li>
-      <li><strong style="color:#fff">上传提交</strong> — 附件发给 WorkBuddy，或拖入本页 / 放入提交箱</li>
-      <li><strong style="color:#fff">审初稿后收成片</strong> — 先确认，再出 PPTX / 视频</li>
-    </ol>
-    <div class="actions">
-      <button type="button" class="btn primary" id="go-step-2">下一步：预览选模板</button>
-    </div>
-    <p class="note">在 WorkBuddy 输入「请安装 …chain-pharmacy-content-studio.git，然后指引我使用」即可被引导到本页。无需装 Node / 起端口。</p>
-  </section>
-
-  <!-- STEP 2 -->
-  <section class="card hidden" id="step-2">
-    <h1>预览并选择模板</h1>
-    <p class="lead">点击卡片查看关键页，再点「选用此模板」。选用后进入 Word 填报步骤。</p>
+  <section class="block" id="sec-templates">
+    <h2><span class="n">1</span> 模板预览与选择</h2>
+    <p class="hint">一行 4 个；点卡片看<strong>关键页面截图</strong>（大图）。选好后复制口令回 WorkBuddy 即可。</p>
     <div class="grid" id="template-grid"></div>
-    <div class="panel-selected hidden" id="selected-panel">
-      <div>已选：<strong id="selected-name"></strong></div>
-      <div class="note" id="selected-note"></div>
-      <div class="keys" id="selected-keys"></div>
-      <div class="actions">
-        <button type="button" class="btn ok" id="go-step-3">下一步：按 Word 填报</button>
-        <a class="btn" id="open-blank-early" href="#">先下载空白 Word</a>
+
+    <div class="preview-pane" id="preview-pane">
+      <div class="title-row">
+        <strong id="sel-name">—</strong>
+        <span id="sel-meta"></span>
       </div>
-    </div>
-    <div class="actions">
-      <button type="button" class="btn" data-back="1">上一步</button>
-    </div>
-  </section>
-
-  <!-- STEP 3 -->
-  <section class="card hidden" id="step-3">
-    <h1>按 Word 填报</h1>
-    <p class="lead">用已选模板的空白 Word 填写<strong style="color:#fff">公司审核内容</strong>。不要填坐标、页数、动画参数。</p>
-    <div class="panel-selected">
-      <div>当前模板：<strong id="fill-name"></strong></div>
-      <ul class="checklist">
-        <li>下载空白 Word，另存为「主题名_日期.docx」</li>
-        <li>打开「本课型怎么填」，按推荐板块写（可删整节）</li>
-        <li>联合用药 / 列表：有几条写几条（2 组就 2 行）</li>
-        <li>包装 / Logo：有授权图就插入 Word 对应板块；没有就删图片行</li>
-        <li>可对照填写参考学格式，勿照搬示例医学结论</li>
-      </ul>
+      <div class="keys" id="sel-keys"></div>
       <div class="actions">
-        <a class="btn primary" id="dl-blank" href="#">下载空白 Word</a>
-        <a class="btn" id="dl-guide" href="#">本课型怎么填</a>
-        <a class="btn" id="dl-ref" href="#">格式参考（选看）</a>
+        <button type="button" class="btn ok" id="btn-use">选用此模板 · 复制口令</button>
+        <a class="btn" id="btn-blank" href="#" download>下载空白 Word（可选）</a>
       </div>
-    </div>
-    <div class="actions">
-      <button type="button" class="btn" data-back="2">上一步</button>
-      <button type="button" class="btn primary" id="go-step-4">下一步：上传提交</button>
+      <div class="cmdbox" id="cmdbox"></div>
+      <p class="toast" id="toast"></p>
     </div>
   </section>
 
-  <!-- STEP 4 -->
-  <section class="card hidden" id="step-4">
-    <h1>上传提交（给 WorkBuddy）</h1>
-    <p class="lead">
-      浏览器无法直接写入你的磁盘文件夹时，请用下面两种方式之一完成「上传」：
-      <strong style="color:#fff">① 点选文件生成提交清单并复制口令</strong>；
-      <strong style="color:#fff">② 把文件拷进包内 <span class="mono">07_业务填报上传/待处理/</span></strong>。
-    </p>
-
-    <div class="panel-selected">
-      <div>提交模板：<strong id="submit-name">（尚未选模板）</strong></div>
-      <div class="note">请填写主题名（病名或商品名），便于 WorkBuddy 建交付目录。</div>
-      <p style="margin-top:10px;">
-        <label style="color:#fff;font-size:13px;font-weight:700;">主题名称　</label>
-        <input id="theme-input" type="text" placeholder="例如：金银花露 / 风热证店员培训"
-          style="width:min(420px,100%);padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0a0f1a;color:#fff;font-size:14px;" />
-      </p>
-    </div>
-
-    <div class="upload-zone" id="upload-zone" tabindex="0">
-      <h3>点击或拖入已填 Word + 授权图片</h3>
-      <p>支持 .docx / .doc / .png / .jpg / .jpeg / .webp / .pdf</p>
-      <input type="file" id="file-input" class="hidden" multiple
-        accept=".docx,.doc,.png,.jpg,.jpeg,.webp,.pdf,image/*" />
-    </div>
-    <ul class="file-list" id="file-list"></ul>
-
-    <h2 style="margin-top:18px;">发给 WorkBuddy 的口令（复制）</h2>
-    <div class="cmdbox" id="cmdbox">请先在第 2 步选用模板，并填写主题名称。</div>
-    <div class="actions">
-      <button type="button" class="btn primary" id="copy-cmd">复制口令</button>
-      <button type="button" class="btn" id="dl-manifest">下载提交清单 .md</button>
-      <a class="btn" href="07_业务填报上传/README.md">打开上传目录说明</a>
-    </div>
-    <p class="note" id="copy-status"></p>
-
-    <div class="actions" style="margin-top:18px;">
-      <button type="button" class="btn" data-back="3">上一步</button>
-      <a class="btn" href="06_你将收到的初稿长什么样/说明.md">WorkBuddy 会先给什么</a>
-      <a class="btn ok" href="05_交付物放这里/">成片放这里</a>
-    </div>
+  <section class="block" id="sec-examples">
+    <h2><span class="n">2</span> 填报真实示例</h2>
+    <p class="hint">只示范结构和写法，可下载对照。医学与包装以贵司审核稿为准，不要直接当新项目终稿。</p>
+    <div class="ex-list" id="ex-list"></div>
   </section>
 
-  <footer>
-    业务 + WorkBuddy 协作交付 · 打包日期 2026-08-03 · 预览帧来自已签样金样，勿将包装像素用于未授权项目
-  </footer>
+  <footer>内部培训 · 2026-08-03 · 预览来自已签样金样</footer>
 </div>
 
 <script>
 const TEMPLATES = [{"slug": "health-video-reference-tech-v1", "name_zh": "疾病科普视频（如风热证）", "one_liner": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议", "gallery_title_zh": "疾病科普视频 · 风热证金样", "outputs": ["MP4 培训视频"], "category": "疾病科普", "production_ready": false, "status_label": "金样对照 · 新主题制作前请与制作确认", "status_note": "manifest 标记 visual-rework-required；业务可看效果与填框架，新病种量产前须制作确认。", "key_frame_labels_zh": ["开场", "典型症状", "病因机理", "治疗思路", "用药建议", "总结"], "voice_id": "voice.reference-pharmacist-qwen-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/health-video-reference-tech-v1"}, {"slug": "product-video-faithful-v1", "name_zh": "商品培训视频（如辅酶 Q10）", "one_liner": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结", "gallery_title_zh": "商品培训视频 · 辅酶 Q10 金样", "outputs": ["MP4 培训视频"], "category": "商品培训", "production_ready": true, "status_label": "已签样 · 可换主题量产", "status_note": "换商品须提供审核旁白与授权包装图；讲解声走模板克隆语音包。", "key_frame_labels_zh": ["开场", "品牌/品类", "核心功效", "产品特点", "适宜人群", "联合用药"], "voice_id": "voice.reference-pharmacist-qwen-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/product-video-faithful-v1"}, {"slug": "product-courseware-green-v1", "name_zh": "绿色单品 PPT（如金银花露）", "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意", "gallery_title_zh": "绿色商品培训 · 5 页", "outputs": ["可编辑 PPTX"], "category": "商品培训", "production_ready": true, "status_label": "已签样 · 可换主题量产", "status_note": "联合用药有几条排几行，禁止空白凑行。", "key_frame_labels_zh": ["封面/介绍", "卖点与人群", "联合用药", "品种对标", "注意事项"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/product-courseware-green-v1"}, {"slug": "disease-product-scenario-v1", "name_zh": "疾病+商品场景 PPT（如穿心莲）", "one_liner": "辨证知识 + 商品知识 + 销售场景的可编辑长课件", "gallery_title_zh": "疾病辨证与商品场景 · 穿心莲金样", "outputs": ["可编辑 PPTX"], "category": "商品培训", "production_ready": true, "status_label": "已签样 · 可换主题量产", "status_note": "章节可按内容增减；无资料的模块可整节省略。", "key_frame_labels_zh": ["封面", "辨证/知识", "商品知识", "销售场景", "收尾页"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/disease-product-scenario-v1"}, {"slug": "sufuda-mabaloshawei-product-courseware-3-v1", "name_zh": "商品培训课件3（视频+PPT，速福达壳）", "one_liner": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型", "gallery_title_zh": "商品培训课件3 · 速福达金样", "outputs": ["MP4", "可编辑 PPTX"], "category": "商品培训", "production_ready": true, "status_label": "已签样 · 可换主题量产", "status_note": "默认使用速福达课件药师克隆语音包；包装/Logo 须授权原图。", "key_frame_labels_zh": ["封面", "流感背景", "核心利益", "产品特点", "适宜人群", "联合用药"], "voice_id": "voice.sufuda-courseware-pharmacist-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1"}, {"slug": "fuler-fanqiehongsu-product-courseware-4-v1", "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）", "one_liner": "保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）", "gallery_title_zh": "商品培训课件4 · 福尔番茄红素金样", "outputs": ["MP4", "可编辑 PPTX"], "category": "商品培训", "production_ready": true, "status_label": "已签样 · 可换主题量产", "status_note": "关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。", "key_frame_labels_zh": ["封面", "商品介绍", "利益点", "适宜人群", "关联用药", "总结"], "voice_id": "voice.sufuda-courseware-pharmacist-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1"}, {"slug": "disease-health-shenke-blue-v1", "name_zh": "疾病健康知识培训 PPT（参课蓝）", "one_liner": "门店健康顾问疾病知识培训：概览、表现、检查、用药、关怀、一页通", "gallery_title_zh": "疾病健康知识培训 · 参课蓝金样", "outputs": ["可编辑 PPTX"], "category": "健康培训", "production_ready": true, "status_label": "已签样 · 可换病种量产", "status_note": "版式锁定参课蓝；换病改 content JSON 后重建。包装须授权原图；医学表述须业务复核。", "key_frame_labels_zh": ["疾病概览", "临床表现", "对症用药表", "专业关怀", "竖版一页通"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/disease-health-shenke-blue-v1"}];
-const state = {
-  step: 1,
-  selected: null,
-  files: [],
-};
-
-function $(id) { return document.getElementById(id); }
-
-function showStep(n) {
-  state.step = n;
-  for (let i = 1; i <= 4; i++) {
-    const el = $("step-" + i);
-    if (el) el.classList.toggle("hidden", i !== n);
-  }
-  document.querySelectorAll("#progress button").forEach(btn => {
-    const s = Number(btn.dataset.step);
-    btn.classList.toggle("active", s === n);
-    btn.classList.toggle("done", s < n);
-  });
-  if (n === 2) renderGrid();
-  if (n === 3) fillStep3();
-  if (n === 4) fillStep4();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+let selected = null;
 
 function mediaCover(slug) {
   return "01_模板货架/media/" + slug + "/cover.png";
@@ -282,210 +290,112 @@ function mediaKey(slug, i) {
 function blankHref(slug) {
   return "02_空白Word/" + slug + "/业务提交_空白模板.docx";
 }
-function guideHref(slug) {
-  return "02_空白Word/" + slug + "/本课型怎么填.md";
-}
 function refHref(slug) {
   return "03_填写参考/" + slug + "/业务提交_填写参考.docx";
 }
 
+function buildCmd(t) {
+  return (
+    "我选 【" + t.name_zh + "】。\n" +
+    "请按这个模板整理【商品名或病名】内部培训内容。\n" +
+    "要点：【用几句话写卖点/培训重点，例如：宁心安神助睡眠、提升免疫力、保肝护肝抗衰老】\n" +
+    "你先整理成符合模板结构的内容初稿给我确认；我确认后再生成可编辑 PPT（或视频）。\n" +
+    "有几条写几条，不要空行凑满；无授权包装用槽位，不要仿包装。"
+  );
+}
+
 function renderGrid() {
-  const grid = $("template-grid");
+  const grid = document.getElementById("template-grid");
   grid.innerHTML = "";
   TEMPLATES.forEach(t => {
     const card = document.createElement("article");
-    card.className = "tcard" + (state.selected && state.selected.slug === t.slug ? " selected" : "");
-    card.innerHTML = `
-      <img class="cover" src="${mediaCover(t.slug)}" alt="${t.name_zh}" />
-      <div class="body">
-        <span class="badge ${t.production_ready ? "ok" : "warn"}">${t.status_label || ""}</span>
-        <h3>${t.name_zh}</h3>
-        <p class="one">${t.one_liner || ""}</p>
-        <p class="one">产物：${(t.outputs || []).join(" · ")}</p>
-        <div class="actions">
-          <button type="button" class="btn primary pick">选用此模板</button>
-        </div>
-      </div>`;
-    card.querySelector(".pick").addEventListener("click", (e) => {
-      e.stopPropagation();
-      selectTemplate(t);
-    });
+    card.className = "tcard" + (selected && selected.slug === t.slug ? " selected" : "");
+    card.innerHTML =
+      '<img class="cover" src="' + mediaCover(t.slug) + '" alt="' + t.name_zh + '" loading="lazy" />' +
+      '<div class="body">' +
+      "<h3>" + t.name_zh + "</h3>" +
+      '<div class="meta">' + (t.outputs || []).join(" · ") + "</div>" +
+      "</div>";
     card.addEventListener("click", () => selectTemplate(t));
     grid.appendChild(card);
   });
 }
 
 function selectTemplate(t) {
-  state.selected = t;
-  try { localStorage.setItem("cpc_selected_template", JSON.stringify({ slug: t.slug, name_zh: t.name_zh })); } catch (e) {}
+  selected = t;
+  try {
+    localStorage.setItem("cpc_selected_template", JSON.stringify({ slug: t.slug, name_zh: t.name_zh }));
+  } catch (e) {}
   renderGrid();
-  const panel = $("selected-panel");
-  panel.classList.remove("hidden");
-  $("selected-name").textContent = t.name_zh;
-  $("selected-note").textContent = t.status_note || "";
-  const keys = $("selected-keys");
+
+  const pane = document.getElementById("preview-pane");
+  pane.classList.add("show");
+  document.getElementById("sel-name").textContent = t.name_zh;
+  document.getElementById("sel-meta").textContent =
+    (t.one_liner || "") + (t.production_ready === false ? " · 新主题请与制作确认" : "");
+
+  const keys = document.getElementById("sel-keys");
   keys.innerHTML = "";
   (t.key_frame_labels_zh || []).forEach((lab, idx) => {
     const i = idx + 1;
     const fig = document.createElement("figure");
-    fig.innerHTML = `<img src="${mediaKey(t.slug, i)}" alt="${lab}" /><figcaption>${lab}</figcaption>`;
+    fig.innerHTML =
+      '<img src="' + mediaKey(t.slug, i) + '" alt="' + lab + '" loading="lazy" />' +
+      "<figcaption>" + lab + "</figcaption>";
     keys.appendChild(fig);
   });
-  $("open-blank-early").href = blankHref(t.slug);
+
+  document.getElementById("btn-blank").href = blankHref(t.slug);
+  const box = document.getElementById("cmdbox");
+  box.textContent = buildCmd(t);
+  box.classList.add("show");
+  document.getElementById("toast").textContent = "";
+  pane.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
-function fillStep3() {
-  const t = state.selected;
-  if (!t) {
-    $("fill-name").textContent = "尚未选择 — 请回第 2 步";
-    return;
-  }
-  $("fill-name").textContent = t.name_zh;
-  $("dl-blank").href = blankHref(t.slug);
-  $("dl-guide").href = guideHref(t.slug);
-  $("dl-ref").href = refHref(t.slug);
-}
-
-function buildCommand() {
-  const t = state.selected;
-  const theme = ($("theme-input").value || "").trim() || "【病名或商品名】";
-  if (!t) {
-    return "请先在第 2 步选用模板，并填写主题名称。";
-  }
-  const names = (state.files || []).map(f => f.name);
-  const fileLine = names.length
-    ? ("附件文件：\n- " + names.join("\n- "))
-    : "附件：请见同消息上传的 Word / 图片（或 07_业务填报上传/待处理/）";
-  return (
-    "我要用 【" + t.name_zh + "】，主题是 【" + theme + "】。\n" +
-    "已按业务包引导完成：预览选模板 → Word 填报 → 上传提交。\n" +
-    fileLine + "\n" +
-    "请先出 初稿/分镜预览 + 待确认项 + 缺图清单；\n" +
-    "我确认后再出 可编辑 PPTX / 培训视频。\n" +
-    "示例 Word 只作格式参考，医学与包装以我司审核稿为准。\n" +
-    "联合用药/列表请按实际条数排版，禁止空行凑满。"
-  );
-}
-
-function fillStep4() {
-  const t = state.selected;
-  $("submit-name").textContent = t ? t.name_zh : "（尚未选模板）";
-  $("cmdbox").textContent = buildCommand();
-}
-
-function renderFiles() {
-  const ul = $("file-list");
-  ul.innerHTML = "";
-  state.files.forEach(f => {
-    const li = document.createElement("li");
-    li.textContent = f.name + "  (" + Math.max(1, Math.round(f.size / 1024)) + " KB)";
-    ul.appendChild(li);
+function renderExamples() {
+  const list = document.getElementById("ex-list");
+  list.innerHTML = "";
+  TEMPLATES.forEach(t => {
+    const row = document.createElement("div");
+    row.className = "ex-row";
+    row.innerHTML =
+      '<div class="name">' + t.name_zh + "</div>" +
+      '<div class="tag">' + (t.one_liner || "") + "</div>" +
+      '<div class="btns">' +
+      '<a class="btn primary" href="' + refHref(t.slug) + '" download>下载填写示例</a>' +
+      '<a class="btn" href="' + blankHref(t.slug) + '" download>空白模板</a>' +
+      "</div>";
+    list.appendChild(row);
   });
-  $("cmdbox").textContent = buildCommand();
 }
 
-function addFiles(fileList) {
-  const arr = Array.from(fileList || []);
-  const okExt = /\.(docx|doc|png|jpe?g|webp|pdf)$/i;
-  arr.forEach(f => {
-    if (!okExt.test(f.name)) return;
-    if (!state.files.some(x => x.name === f.name && x.size === f.size)) {
-      state.files.push(f);
-    }
-  });
-  renderFiles();
-}
-
-// events
-$("go-step-2").addEventListener("click", () => showStep(2));
-$("go-step-3").addEventListener("click", () => {
-  if (!state.selected) { alert("请先选用一个模板"); return; }
-  showStep(3);
-});
-$("go-step-4").addEventListener("click", () => {
-  if (!state.selected) { alert("请先选用一个模板"); return; }
-  showStep(4);
-});
-document.querySelectorAll("[data-back]").forEach(btn => {
-  btn.addEventListener("click", () => showStep(Number(btn.dataset.back)));
-});
-document.querySelectorAll("#progress button").forEach(btn => {
-  btn.addEventListener("click", () => showStep(Number(btn.dataset.step)));
-});
-
-$("theme-input").addEventListener("input", () => {
-  $("cmdbox").textContent = buildCommand();
-});
-
-const zone = $("upload-zone");
-const input = $("file-input");
-zone.addEventListener("click", () => input.click());
-zone.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") input.click(); });
-input.addEventListener("change", () => addFiles(input.files));
-["dragenter","dragover"].forEach(ev => zone.addEventListener(ev, e => {
-  e.preventDefault(); zone.classList.add("drag");
-}));
-["dragleave","drop"].forEach(ev => zone.addEventListener(ev, e => {
-  e.preventDefault(); zone.classList.remove("drag");
-}));
-zone.addEventListener("drop", e => addFiles(e.dataTransfer.files));
-
-$("copy-cmd").addEventListener("click", async () => {
-  const text = buildCommand();
+document.getElementById("btn-use").addEventListener("click", async () => {
+  if (!selected) return;
+  const text = buildCmd(selected);
+  document.getElementById("cmdbox").textContent = text;
+  document.getElementById("cmdbox").classList.add("show");
   try {
     await navigator.clipboard.writeText(text);
-    $("copy-status").textContent = "口令已复制。请打开 WorkBuddy，粘贴并附上 Word/图片。";
+    document.getElementById("toast").textContent =
+      "已复制。回到 WorkBuddy 粘贴，把【商品名或病名】和要点改成你的内容即可。";
   } catch (e) {
-    $("copy-status").textContent = "复制失败，请手动选中上方口令框复制。";
+    document.getElementById("toast").textContent = "请手动选中下方口令复制。";
   }
 });
 
-$("dl-manifest").addEventListener("click", () => {
-  const t = state.selected;
-  const theme = ($("theme-input").value || "").trim() || "未命名主题";
-  const names = state.files.map(f => f.name);
-  const md = [
-    "# 业务填报提交清单",
-    "",
-    "- 日期：2026-08-03",
-    "- 课型：" + (t ? t.name_zh : "未选"),
-    "- slug：" + (t ? t.slug : ""),
-    "- 主题：" + theme,
-    "- 文件：",
-    ...(names.length ? names.map(n => "  - " + n) : ["  - （请同时把文件放入 07_业务填报上传/待处理/）"]),
-    "",
-    "## WorkBuddy 口令",
-    "",
-    "```",
-    buildCommand(),
-    "```",
-    "",
-    "## 业务自检",
-    "",
-    "- [ ] 模板已预览选用",
-    "- [ ] Word 为审核内容，列表未空行凑满",
-    "- [ ] 授权图已附或已声明缺口",
-    "",
-  ].join("\n");
-  const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "提交清单_" + theme.replace(/[\\/:*?\"<>|]/g, "_") + ".md";
-  a.click();
-  URL.revokeObjectURL(a.href);
-});
-
-// restore selection
 try {
   const raw = localStorage.getItem("cpc_selected_template");
   if (raw) {
     const saved = JSON.parse(raw);
     const t = TEMPLATES.find(x => x.slug === saved.slug);
-    if (t) state.selected = t;
+    if (t) selected = t;
   }
 } catch (e) {}
 
-showStep(1);
+renderGrid();
+renderExamples();
+if (selected) selectTemplate(selected);
 </script>
 </body>
 </html>
