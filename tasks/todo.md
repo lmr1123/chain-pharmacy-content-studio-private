@@ -36,7 +36,7 @@
 | **PPT · 制作机绿线** | ✅ 绿色单品真 PPTX + 2 行联合用药 |
 | **PPT · 业务机 WorkBuddy 真人绿线** | ✅ pull + 重贴系统提示 + 三步真出 PPT |
 | **视频金样包 · 风热 + Q10** | ✅ 2026-08-03 补齐为可用金样（见下） |
-| **视频 · 业务换主题一键出片** | ⬜ 金样齐后下一步 |
+| **视频 · 业务换主题绿线** | ✅ `scripts/generate_business_video.py`（规划包必达；TTS+MP4 冒烟通过） |
 
 ### 视频金样包（2026-08-03 完成）
 
@@ -119,11 +119,14 @@ PPT 绿线已证明：业务只聊内容 → 代理锁模板 → generator 出�
 - [ ] 系统提示：视频课型必须读 `manifest.voice`；禁止系统 TTS；无授权包装写 gap  
 - [ ] 业务机缺 Qwen3/MLX 时：明确不假装已出 MP4  
 
-#### V1 · 换主题一键出片（金样齐后 · 下一优先）
-- [ ] 风热 / Q10：对话或 Word → 锁模板 → 克隆旁白 → 渲染/装配 MP4 → 交付目录  
-- [ ] 或课件3：`replicate_courseware_theme` 胶水（PPTX 必达 + 可选 MP4）  
-- [ ] WorkBuddy 系统提示补出片命令  
-- [ ] 制作机冒烟：非金样主题名真出片  
+#### V1 · 换主题出片绿线（已完成 MVP）
+- [x] CLI：`scripts/generate_business_video.py`（docx / sections-json）  
+- [x] 规划包必达：content + storyboard.html + gap-report + DELIVERY  
+- [x] `--with-tts --with-mp4`：克隆药师声叠金样画面壳 → 真 MP4  
+- [x] 冒烟：商品「示例舒心片」+ 健康「示例风燥证」均 ok  
+- [x] WorkBuddy 系统提示补视频绿线命令  
+- [ ] 后续增强：分段重渲换包装（非本 MVP）  
+- [ ] 课件3 theme-replicate 业务胶水（PPTX 线另开）  
 
 #### V2 · 语音与环境
 - [x] D2：风热/Q10 `voice/` 已齐；课件3 sufuda pack 已有  
@@ -168,7 +171,7 @@ PPT 绿线已证明：业务只聊内容 → 代理锁模板 → generator 出�
 - [ ] D3 强制 voice_id
 - [x] PPT 制作机绿线
 - [x] **V-gold 风热 + Q10 可用金样包**
-- [ ] **视频换主题出片绿线 V1** ← 当前优先
+- [x] **视频换主题出片绿线 V1**（generate_business_video.py）
 ### P2
 - [ ] A4 online 货架 · E2 NOTICE · E3 编辑器手册 · Gitee
 - [ ] V4 课件4 / 纯视频 generator / 健康视频 rework
@@ -178,7 +181,8 @@ PPT 绿线已证明：业务只聊内容 → 代理锁模板 → generator 出�
 - **2026-08-03 PPT 交付主线**：Public + 安装句 + 7 模板 + 业务机真人三步真出 PPT ✅  
 - **UX 定稿**：两块引导页；只念三步；内部内容驱动 / 禁假包装与系统 TTS  
 - **2026-08-03 视频金样包**：风热（v1+v2+voice）与 Q10（友好名+voice+场景清单）补齐为 `user-approved-gold`  
-- **下一刀**：换主题真出片（对话/Word → 克隆 → MP4），金样包本身已可业务查看与套用  
+- **2026-08-03 视频绿线 MVP**：`generate_business_video.py` 规划包 + 克隆旁白叠金样壳出 MP4；制作机冒烟通过  
+- **下一刀（可选）**：分段重渲换包装；课件3 一键 PPTX；业务机 TTS 环境确认  
 
 ---
 

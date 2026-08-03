@@ -30,6 +30,7 @@
     "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx"
   ],
   "generators": {
+    "business_video_greenline": "scripts/generate_business_video.py --template product",
     "voice_clone_all_segments": "scripts/generate_cloned_product_all_narration.py",
     "segment_projects": "poc/gold-sample/src/product-training-*-project.tsx",
     "editor": "poc/gold-sample/scripts/start-q10-editor.mjs"
@@ -137,5 +138,11 @@
     "pace_policy": "v5-smooth",
     "forbid_system_tts": true
   },
-  "voice_pack_id": "voice.reference-pharmacist-qwen-v1"
+  "voice_pack_id": "voice.reference-pharmacist-qwen-v1",
+  "business_greenline": {
+    "script": "scripts/generate_business_video.py",
+    "package_only": "python3 scripts/generate_business_video.py --template product --sections-json <path>",
+    "with_audio_mp4": ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4",
+    "notes": "金样画面壳 + 新旁白克隆；完整换包装重渲另线"
+  }
 }

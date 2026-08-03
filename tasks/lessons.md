@@ -1,5 +1,25 @@
 # Lessons
 
+## 2026-08-03 晚（视频换主题绿线 MVP）
+
+### 落地
+
+- CLI：`scripts/generate_business_video.py`
+- 路径：sections-json / docx → content + storyboard + gap → 可选 Qwen3 克隆 → ffmpeg 叠金样画面 → MP4
+- TTS 用 `.venv-qwen-tts`；系统 python 负责规划包（避免 docx 依赖绑死 TTS venv）
+- 冒烟：非金样主题名「示例舒心片」「示例风燥证」真出 MP4
+
+### 边界（必守）
+
+- **MVP = 金样画面时间轴壳 + 新旁白**，不是完整换包装像素重渲；对业务可交付试看/内训，换真包装仍要升级制作。
+- 无 TTS 时只交规划包，禁止系统 `say` 假配音。
+
+### 下一增强
+
+- 分段 Revideo 重渲；课件3 theme 一键。
+
+---
+
 ## 2026-08-03 晚（风热 + Q10 视频金样包补齐）
 
 ### 用户要求

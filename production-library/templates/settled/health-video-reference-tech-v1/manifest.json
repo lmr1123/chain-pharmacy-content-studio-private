@@ -30,9 +30,9 @@
   "gold_package_completed_at": "2026-08-03",
   "generator": "poc/gold-sample/scripts/assemble-wind-heat-full.mjs",
   "generators": {
+    "business_video_greenline": "scripts/generate_business_video.py --template health",
     "assemble_visual_v1": "poc/gold-sample/scripts/assemble-wind-heat-full.mjs",
     "editable_v2_render": "poc/gold-sample/src/render-wind-heat-editable.ts",
-    "unified_audio": "poc/gold-sample/scripts/build-wind-heat-unified-audio.mjs",
     "voice_clone": "scripts/generate_cloned_narration.py"
   },
   "assembly_contract": "production-library/examples/wind-heat-full-frame-assembly.json",
@@ -94,5 +94,11 @@
     "pace_policy": "v5-smooth",
     "forbid_system_tts": true
   },
-  "voice_pack_id": "voice.reference-pharmacist-qwen-v1"
+  "voice_pack_id": "voice.reference-pharmacist-qwen-v1",
+  "business_greenline": {
+    "script": "scripts/generate_business_video.py",
+    "package_only": "python3 scripts/generate_business_video.py --template health --sections-json <path>",
+    "with_audio_mp4": ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template health --sections-json <path> --with-tts --with-mp4",
+    "notes": "金样画面壳 + 新旁白克隆；完整换包装重渲另线"
+  }
 }

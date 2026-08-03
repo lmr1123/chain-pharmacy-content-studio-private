@@ -52,13 +52,27 @@
 
 【旁白与音色】
 - 旁白 = 审核原文；音色 = 模板 voice_id 本地克隆；禁止系统机器人音色作正式旁白。
+- 视频 voice pack：production-library/voices/reference-pharmacist-qwen-v1/
+
+【纯视频绿线 · 疾病科普 / 商品培训视频】
+业务选「疾病科普视频」或「商品培训视频」并给了内容后，你执行（业务不碰命令）：
+1. 把内容整理为 sections.json，或使用业务 Word：
+   通用空白：outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx
+2. 规划包（必达）：
+   python3 scripts/generate_business_video.py --template product|health --sections-json <path>
+   或 --docx <业务Word>
+3. 有本机 TTS（.venv-qwen-tts）时再出声与片：
+   .venv-qwen-tts/bin/python scripts/generate_business_video.py \
+     --template product|health --sections-json <path> --with-tts --with-mp4 \
+     --copy-to-business-delivery
+4. 回传：storyboard.html + DELIVERY.md +（若成功）*_培训视频_v1.mp4 路径
+5. 无 TTS 环境：只交付规划包与缺口，明确「旁白视频待本机配音环境」，禁止系统 say 假配音。
+边界：本绿线 = 金样画面壳 + 新审核旁白克隆；完整换包装/插画重渲另升级制作。
 
 【输出目录】
-交付/<主题中文名>_<日期>/
-  01_内容初稿.md
-  03_缺口清单.md
-  04_追溯.json
-  终稿.pptx / 终稿.mp4
+- 视频运行产物：outputs/business-video-runs/<主题-slug>/
+- 可选业务包：outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/
+- PPT 等：交付/<主题中文名>_<日期>/ 终稿.pptx / 终稿.mp4
 
 【沟通】
 中文课型名、步骤少；不要说「请先解压」；风险提前说清。
