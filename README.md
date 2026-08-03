@@ -2,17 +2,21 @@
 
 内部培训课件 / 视频的金样沉淀、内容驱动组装与业务 WorkBuddy 傻瓜交付。
 
-## 业务怎么用（默认）
+## 业务怎么用（默认 · 业务 + WorkBuddy）
 
-1. 下载或打开 `outputs/业务使用资料包/药店培训内容工厂-业务包.zip`
-2. 双击 `01_模板货架/index.html` 看课型效果
-3. 填对应空白 Word → 用口令卡交给 WorkBuddy → **先审初稿，再出成片**
+开源式四步（解压业务包后）：
 
-刷新业务包（制作侧）：
+1. **双击根目录 `index.html`**（主入口引导页）
+2. **预览并选择模板**（封面 + 关键页）
+3. **下载空白 Word 填报**（可删节、有几条写几条）
+4. **上传提交**（拖入 Word/图或放入 `07_业务填报上传/待处理/`）→ 复制口令给 WorkBuddy → **先审初稿，再收成片**
+
+业务包路径：`outputs/业务使用资料包/药店培训内容工厂-业务包.zip`
+
+刷新业务包（制作侧 · 推荐一键）：
 
 ```bash
-python3 scripts/sync_settled_template_previews.py
-python3 scripts/build_business_tier_a_package.py
+python3 scripts/refresh_business_delivery.py
 ```
 
 ## 关键文档

@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import shutil
+import sys
 from datetime import date
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
@@ -23,38 +24,26 @@ OUT_ROOT = REPO / "outputs/业务使用资料包"
 PKG_NAME = "药店培训内容工厂-业务包"
 PKG = OUT_ROOT / PKG_NAME
 
+sys.path.insert(0, str(REPO / "scripts"))
+from business_guided_portal import build_guided_portal_html, write_upload_folder_readme  # noqa: E402
+
 
 ONE_PAGE = """# 一页怎么用（业务 + WorkBuddy）
 
 > 固定协作：**你（业务）+ WorkBuddy**。  
-> 你：选模板 → 填 Word → 审初稿 → 收成片。  
+> **推荐入口：** 双击包根目录 `index.html`（开源式四步引导）。  
+> 你：预览选模板 → 填 Word → 上传提交 → 审初稿 → 收成片。  
 > WorkBuddy：按金样模板出初稿并在你确认后出 PPTX/视频。  
 > **不需要**装 Node、起端口、懂图层编辑器；正常单**不必**再找制作。
 
-## 四步
+## 四步（与 `index.html` 引导一致）
 
-1. **看效果**  
-   打开本包里的 `01_模板货架/index.html`（双击即可，可离线）。  
-   看每个模板的封面和关键页截图，确认观感。
+1. **了解** — 双击 `index.html`，读清业务 + WorkBuddy 分工  
+2. **预览选模板** — 看封面/关键页，点「选用此模板」  
+3. **填 Word** — 下载空白模板，按「本课型怎么填」写审核内容（可删节、有几条写几条）  
+4. **上传提交** — 拖入已填 Word + 授权图，复制口令发给 WorkBuddy；或把文件放进 `07_业务填报上传/待处理/`  
 
-2. **选模板**  
-   记住中文课型名（货架卡片上的大标题）。  
-   点「就用这个模板」可跳到对应空白 Word 说明。
-
-3. **填框架**  
-   复制 `02_空白Word/` 里对应课型的「空白模板.docx」。  
-   - 按章节填**公司已审核**的文案与数据  
-   - **没有的章节整段删掉**  
-   - 列表/联合用药：**有几条写几条**，不要为对齐示例硬凑空行  
-   - 授权包装图、Logo 随 Word 一起提交（无图会列入缺口，**不会**用假包装）
-
-4. **交给 WorkBuddy**  
-   发 Word + 授权图，复制口令（见 `04_WorkBuddy口令卡.md`）：
-
-   > 我要用 **【课型中文名】**，主题是 **【病名或商品名】**。  
-   > Word 和授权图在附件。  
-   > 请先出 **初稿/分镜预览 + 待确认项 + 缺图清单**；  
-   > 我确认后再出 **可编辑 PPTX / 培训视频**。
+口令也可直接复制 `04_WorkBuddy口令卡.md`。
 
 ## 你不需要做的事
 
@@ -500,6 +489,14 @@ def main() -> None:
     (PKG / "05_交付物放这里").mkdir()
     (PKG / "05_交付物放这里" / ".gitkeep").write_text("", encoding="utf-8")
 
+    # Upload inbox for business submissions
+    upload_root = PKG / "07_业务填报上传"
+    (upload_root / "待处理").mkdir(parents=True)
+    (upload_root / "已提交").mkdir(parents=True)
+    (upload_root / "待处理" / ".gitkeep").write_text("", encoding="utf-8")
+    (upload_root / "已提交" / ".gitkeep").write_text("", encoding="utf-8")
+    write_upload_folder_readme(upload_root / "README.md")
+
     # What business will receive before final film
     delivery_examples = REPO / "production-library/templates/business-delivery"
     examples_dest = PKG / "06_你将收到的初稿长什么样"
@@ -579,23 +576,33 @@ def main() -> None:
         json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
+    # Open-source style guided entry (primary)
+    (PKG / "index.html").write_text(
+        build_guided_portal_html(templates, pack_date=date.today().isoformat()),
+        encoding="utf-8",
+    )
+
     # README for whole package
     (PKG / "README.md").write_text(
         "# 药店培训内容工厂 · 业务包（档 A）\n\n"
         "本包可直接发给一线业务，**无需**安装开发环境。\n\n"
-        "**从这里开始：** 双击 `01_模板货架/index.html` → 读 `00_一页怎么用.md`。\n\n"
+        "## Getting Started（开源式）\n\n"
+        "1. 解压本包  \n"
+        "2. **双击根目录 `index.html`**（推荐主入口）  \n"
+        "3. 按四步：了解 → **预览选模板** → **填 Word** → **上传提交**  \n"
+        "4. 把口令 + 附件发给 WorkBuddy；先审初稿，再收成片  \n\n"
         "| 目录/文件 | 用途 |\n"
         "|-----------|------|\n"
-        "| `00_一页怎么用.md` | 4 步总览 |\n"
-        "| `01_模板货架/index.html` | **双击打开**看模板效果 |\n"
-        "| `02_空白Word/` | 空白模板 + **本课型怎么填** |\n"
-        "| `03_填写参考/` | 仅示范格式（勿当医学终稿） |\n"
-        "| `04_WorkBuddy口令卡.md` | 复制给 WorkBuddy |\n"
+        "| **`index.html`** | **主入口 · 分步引导** |\n"
+        "| `00_一页怎么用.md` | 文字版四步 |\n"
+        "| `01_模板货架/index.html` | 仅货架浏览 |\n"
+        "| `02_空白Word/` | 空白模板 + 本课型怎么填 |\n"
+        "| `03_填写参考/` | 仅示范格式 |\n"
+        "| `04_WorkBuddy口令卡.md` | 口令 |\n"
         "| `05_交付物放这里/` | 成片归档 |\n"
-        "| `06_你将收到的初稿长什么样/` | 初稿/缺口/分镜长什么样 |\n"
-        "| `业务验收清单.md` | 你点头前的核对表 |\n"
-        "| `框架填写说明.md` | 可删节 / 有几条写几条 |\n"
-        "| `交付质量说明.md` | 上市公司交付硬标准 |\n\n"
+        "| `06_你将收到的初稿长什么样/` | 初稿样例 |\n"
+        "| `07_业务填报上传/` | Word/图提交箱 |\n"
+        "| `业务验收清单.md` | 确认前核对 |\n\n"
         f"生成日期：{date.today().isoformat()}\n",
         encoding="utf-8",
     )
