@@ -52,9 +52,11 @@ python3 scripts/workbuddy_bootstrap_for_business.py --no-open   # 或允许打�
 
 | 现象 | 你对业务说 | 你对内做 |
 |------|------------|----------|
-| 私有仓 clone 失败 | 「仓库需要 GitHub 权限，请 IT 帮你登录 gh / 配 token，完成后回复『继续安装』」 | 不要求业务自己配 Node |
+| 网络/TLS 失败 | 「本机访问 GitHub 不稳，我换网络重试；仍失败请 IT 检查外网」 | 重试 `git clone` / bootstrap |
 | 无 git | 「本机缺 git，我帮你或请 IT 安装 Git for Windows / Xcode CLT」 | 安装后重试 |
 | 引导页缺失 | 「资料包未齐，请制作刷新业务包后推送」 | 有脚本则跑 `refresh_business_delivery.py` |
+
+> 仓库已 **Public**，业务机一般**不需要** GitHub 登录即可 clone。
 
 ### 1.2 加载行为
 

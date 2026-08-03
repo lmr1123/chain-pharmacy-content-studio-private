@@ -13,6 +13,8 @@
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
+仓库已 **Public**：业务机一般无需 GitHub 账号/权限即可安装。
+
 **WorkBuddy 侧：** `docs/workbuddy-install-and-guide.md` + `docs/workbuddy-system-prompt.md`  
 **刷新业务包（制作）：** `python3 scripts/refresh_business_delivery.py`
 

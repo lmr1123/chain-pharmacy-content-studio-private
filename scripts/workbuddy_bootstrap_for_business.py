@@ -79,10 +79,10 @@ def clone_or_update(repo_url: str, target: Path) -> Path:
     if result.returncode != 0:
         raise SystemExit(
             "git clone 失败。常见原因：\n"
-            "1) 私有仓库需先登录 GitHub（gh auth login / 配置 HTTPS token / SSH key）\n"
-            "2) 无 git 或网络不可用\n"
-            f"仓库: {repo_url}\n"
-            "请业务把报错截图给 IT/制作，或先完成 GitHub 访问后再说「继续安装」。"
+            "1) 本机无 git，或访问 github.com 网络/TLS 不稳\n"
+            "2) 公司防火墙拦截 git（可换网络或配置代理后重试）\n"
+            f"仓库（Public）: {repo_url}\n"
+            "一般不需要 GitHub 登录。请把报错原文发给 IT/制作，或稍后回复「继续安装」。"
         )
     return target.resolve()
 
