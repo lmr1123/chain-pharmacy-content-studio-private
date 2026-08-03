@@ -56,7 +56,11 @@ python3 scripts/workbuddy_bootstrap_for_business.py --no-open   # 或允许打�
 | 无 git | 「本机缺 git，我帮你或请 IT 安装 Git for Windows / Xcode CLT」 | 安装后重试 |
 | 引导页缺失 | 「资料包未齐，请制作刷新业务包后推送」 | 有脚本则跑 `refresh_business_delivery.py` |
 
-> 仓库已 **Public**，业务机一般**不需要** GitHub 登录即可 clone。
+> 仓库已 **Public**，业务机一般**不需要** GitHub 登录即可 clone。  
+>
+> **国内网络说明：** 权限没问题，但直连 `github.com` 在国内常慢/超时。  
+> `scripts/workbuddy_bootstrap_for_business.py` 会自动依次尝试官方地址 + ghproxy 等镜像。  
+> 仍失败时：换热点/公司代理，或制作侧发 `药店培训内容工厂-业务包.zip` 备用（仍建议有网后装仓库以便出片）。
 
 ### 1.2 加载行为
 

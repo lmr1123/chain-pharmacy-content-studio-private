@@ -31,11 +31,14 @@ WorkBuddy 会：
 # 已在仓库内
 python3 scripts/workbuddy_bootstrap_for_business.py
 
-# 首次（示例路径）
+# 首次（示例路径；国内直连失败时 bootstrap 会自动换镜像）
 git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git ~/Documents/chain-pharmacy-content-studio
+# 或：git clone https://ghproxy.com/https://github.com/lmr1123/chain-pharmacy-content-studio.git ~/Documents/chain-pharmacy-content-studio
 cd ~/Documents/chain-pharmacy-content-studio
 python3 scripts/workbuddy_bootstrap_for_business.py
 ```
+
+**国内网络：** 仓库 Public，无需登录；但 GitHub 在国内常不稳定。优先让 WorkBuddy 跑 bootstrap（内置镜像回退），不要让业务自己硬扛直连。
 
 ## 制作侧
 

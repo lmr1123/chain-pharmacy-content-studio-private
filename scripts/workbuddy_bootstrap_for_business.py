@@ -20,11 +20,34 @@ from pathlib import Path
 
 DEFAULT_REPO = "https://github.com/lmr1123/chain-pharmacy-content-studio.git"
 DEFAULT_DIR_NAME = "chain-pharmacy-content-studio"
+# Mainland CN: github.com often intermittent; try mirrors after official URL fails.
+# Format: ghproxy prefixes the full https://github.com/...git URL.
+CN_CLONE_MIRRORS = (
+    "https://ghproxy.com/https://github.com/lmr1123/chain-pharmacy-content-studio.git",
+    "https://mirror.ghproxy.com/https://github.com/lmr1123/chain-pharmacy-content-studio.git",
+    "https://gitclone.com/github.com/lmr1123/chain-pharmacy-content-studio",
+)
 PKG_REL = Path("outputs") / "业务使用资料包" / "药店培训内容工厂-业务包"
 PORTAL_NAME = "index.html"
 CATALOG_REL = (
     Path("production-library") / "templates" / "settled" / "business-catalog.json"
 )
+
+
+def clone_url_candidates(primary: str) -> list[str]:
+    urls = [primary]
+    if "github.com" in primary and "lmr1123/chain-pharmacy-content-studio" in primary:
+        for m in CN_CLONE_MIRRORS:
+            if m not in urls:
+                urls.append(m)
+    # env override: CHAIN_PHARMACY_CLONE_MIRRORS=url1,url2
+    extra = os.environ.get("CHAIN_PHARMACY_CLONE_MIRRORS", "").strip()
+    if extra:
+        for part in extra.split(","):
+            part = part.strip()
+            if part and part not in urls:
+                urls.append(part)
+    return urls
 
 
 def default_parent() -> Path:
@@ -66,6 +89,7 @@ def resolve_repo_root(explicit: Path | None) -> Path | None:
 def clone_or_update(repo_url: str, target: Path) -> Path:
     if target.exists() and is_repo(target):
         print(f"已安装，更新: {target}")
+        # Prefer pull; if remote is slow, still ok to proceed with existing tree
         run(["git", "pull", "--ff-only"], cwd=target, check=False)
         return target.resolve()
     if target.exists() and any(target.iterdir()):
@@ -75,16 +99,34 @@ def clone_or_update(repo_url: str, target: Path) -> Path:
         )
     target.parent.mkdir(parents=True, exist_ok=True)
     print(f"首次安装，克隆到: {target}")
-    result = run(["git", "clone", repo_url, str(target)], check=False)
-    if result.returncode != 0:
-        raise SystemExit(
-            "git clone 失败。常见原因：\n"
-            "1) 本机无 git，或访问 github.com 网络/TLS 不稳\n"
-            "2) 公司防火墙拦截 git（可换网络或配置代理后重试）\n"
-            f"仓库（Public）: {repo_url}\n"
-            "一般不需要 GitHub 登录。请把报错原文发给 IT/制作，或稍后回复「继续安装」。"
-        )
-    return target.resolve()
+    last_err = None
+    for url in clone_url_candidates(repo_url):
+        print(f"尝试: {url}")
+        # clean partial failed clone
+        if target.exists():
+            import shutil
+
+            shutil.rmtree(target, ignore_errors=True)
+        result = run(["git", "clone", "--depth", "1", url, str(target)], check=False)
+        if result.returncode == 0 and is_repo(target):
+            # normalize origin to official github for later pull when network allows
+            run(
+                ["git", "remote", "set-url", "origin", DEFAULT_REPO],
+                cwd=target,
+                check=False,
+            )
+            print(f"克隆成功（来源: {url}）")
+            return target.resolve()
+        last_err = result.returncode
+        print(f"失败 (exit={last_err})，换下一个源…")
+    raise SystemExit(
+        "git clone 全部源失败。说明：\n"
+        "· 仓库已 Public，一般不需要 GitHub 登录\n"
+        "· 国内直连 github.com 常不稳定（TLS/空响应），已自动试过 ghproxy 等镜像\n"
+        "· 仍失败：换网络/手机热点、公司代理，或由制作发业务包 zip 备用\n"
+        f"官方地址: {DEFAULT_REPO}\n"
+        "请把报错原文发给 IT/制作，或稍后回复「继续安装」。"
+    )
 
 
 def ensure_package(root: Path) -> Path:
