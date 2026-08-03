@@ -1,5 +1,51 @@
 # Lessons
 
+## 2026-08-03 晚（风热 + Q10 视频金样包补齐）
+
+### 用户要求
+
+- 疾病科普（风热）与商品培训视频（Q10）**也要可使用的金样**；先盘点缺口，先完成金样。
+
+### 曾缺失（对照课件3/4 金样包）
+
+- 友好中文命名 MP4、README、settled 内 `voice/`、generators 登记  
+- 风热：`visual-rework-required` 冻结，v2 可编辑成片只在 validation  
+- Q10：无 scene-inventory / 无共享 voice pack 目录  
+
+### 已落地
+
+- 共享 `production-library/voices/reference-pharmacist-qwen-v1/`  
+- 风热：v1 视觉金样 + **v2 可编辑金样** 进 settled；status → `user-approved-gold`  
+- Q10：友好命名 + voice + scene-inventory + generators  
+- catalog / gold-samples 文案同步  
+
+### 教训
+
+- **「可使用金样」≠「一键换主题出片」**：金样包先齐（成片+voice+Word+README+状态），出片胶水后做。  
+- 风热冻结针对「v1 烘焙不可元素编」；**v2 已过 provenance/editability QA** 即可作生产基线，不必卡死整课型。  
+- voice pack 必须落在 `voices/` + 各 settled `voice/`，仅写 manifest.voice_id 不够。
+
+### 下一刀
+
+- 换主题出片 CLI / WorkBuddy 绿线（见 todo V1）。
+
+---
+
+## 2026-08-03 晚（PPT 业务机绿线已过 · 视频交付策略）
+
+### 进展
+
+- 业务机 WorkBuddy：**pull + 重贴系统提示 + 三步真出 PPT** 已由用户验证通过。
+- 视频金样包（风热+Q10）已补齐；换主题出片仍待做。
+
+### 策略教训
+
+- 用户明确要求纯视频线也要金样时，**不得只做课件3 捷径**而搁置风热/Q10 金样包。  
+- **业务机未必有 Qwen3-TTS/MLX**：出片阶段仍拆「金样可看」与「本机能否克隆渲染」。  
+- 对业务仍只讲三步；theme 包 / TTS / generator 全在代理内部。
+
+---
+
 ## 2026-08-03（业务引导 UX · 三步 + 内嵌示例）
 
 ### 定稿
@@ -10,7 +56,7 @@
 
 ### 下一会话
 
-- 见 `tasks/todo.md` 交接快照：优先业务机 WorkBuddy 真人绿线。
+- ~~优先业务机 WorkBuddy 真人绿线~~ → 已完成；现转视频交付。
 
 ---
 

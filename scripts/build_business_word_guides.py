@@ -20,7 +20,7 @@ OUT_SAMPLES = ROOT / "outputs/courseware-natural-import"
 GUIDES: dict[str, dict] = {
     "health-video-reference-tech-v1": {
         "name_zh": "疾病科普视频（如风热证）",
-        "outputs": "MP4",
+        "outputs": "MP4 培训视频",
         "modules": [
             "课程主题 / 开场",
             "典型症状",
@@ -30,16 +30,22 @@ GUIDES: dict[str, dict] = {
             "总结",
         ],
         "tips": [
-            "每个标题 1 = 一章旁白审核原文；有几章写几章，不需要的章整段删。",
-            "旁白必须是药师/合规已审表述；正式成片用模板克隆药师声，不要系统朗读。",
-            "新病种量产前请与制作确认模板状态（货架上会标注）。",
+            "金样可用：`风热证_疾病科普视频_金样_v1.mp4`（对照）与 `…_可编辑金样_v2.mp4`（生产基线）。",
+            "每个自然板块 = 可直接讲解的审核正文；有几章写几章，不需要的整段删。",
+            "旁白必须是药师/合规已审表述；正式成片用模板 voice/ 克隆药师声，禁止系统朗读。",
+            "片尾 Logo 等授权图缺则记缺口，禁止假包装。",
         ],
+        "chat_example": (
+            "我要用【疾病科普视频】模板，主题是【病名】。\n"
+            "内容围绕：典型症状…、病因机理…、治疗与用药建议…。\n"
+            "请按金样整理后生成培训视频。"
+        ),
         "filled_source": "outputs/video-training-natural-import/风热证健康知识视频培训_真实已填样本.docx",
         "blank_source": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
     },
     "product-video-faithful-v1": {
         "name_zh": "商品培训视频（如辅酶 Q10）",
-        "outputs": "MP4",
+        "outputs": "MP4 培训视频",
         "modules": [
             "为什么要了解本商品",
             "商品基础信息",
@@ -50,10 +56,16 @@ GUIDES: dict[str, dict] = {
             "总结",
         ],
         "tips": [
-            "一份 Word 一个商品；章节可删可重排。",
-            "包装图粘贴授权原图；无图则删除图片行，系统记缺口。",
-            "正式旁白 = 审核原文 + 模板 voice 克隆。",
+            "金样可用：`辅酶Q10_商品培训视频_金样_v1.mp4`（约 156s）。",
+            "一份内容一个商品；板块可删可重排。",
+            "包装图用授权原图；无图则说明缺口，禁止仿包装。",
+            "正式旁白 = 审核原文 + 模板 voice/ 克隆。",
         ],
+        "chat_example": (
+            "我要用【商品培训视频】模板，商品是【商品名】。\n"
+            "内容围绕：核心功效…、产品特点…、适宜人群…、联合用药 2 组…。\n"
+            "请按金样整理后生成培训视频。"
+        ),
         "filled_source": "outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx",
         "blank_source": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
     },
@@ -233,16 +245,17 @@ def write_guide(slug: str, meta: dict) -> Path:
     lines.extend(["", "## 填写要点", ""])
     for t in meta["tips"]:
         lines.append(f"- {t}")
+    chat = meta.get("chat_example") or (
+        f"我要用【{meta['name_zh']}】，主题是【病名或商品名】。\n"
+        "请按金样整理后生成成片。"
+    )
     lines.extend(
         [
             "",
-            "## 提交口令（复制给 WorkBuddy）",
+            "## 对话示例（复制给 WorkBuddy）",
             "",
             "```",
-            f"我要用 【{meta['name_zh']}】，主题是 【病名或商品名】。",
-            "Word 和授权图在附件。",
-            "请先出 初稿/分镜预览 + 待确认项 + 缺图清单；",
-            "我确认后再出 可编辑 PPTX / 培训视频。",
+            chat,
             "```",
             "",
             "## 列表 / 模块硬规则",

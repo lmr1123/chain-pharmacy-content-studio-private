@@ -1,13 +1,18 @@
 {
   "registry_type": "voice",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "items": [
     {
       "id": "voice.reference-pharmacist-qwen-v1",
       "name_zh": "参考药师克隆音色 v1",
       "status": "user-approved",
       "usage": "仅用于公司内部已授权内容",
-      "tags": ["中文女声", "药师", "克隆音色", "本地生成"],
+      "tags": [
+        "中文女声",
+        "药师",
+        "克隆音色",
+        "本地生成"
+      ],
       "engine": "Qwen3-TTS 0.6B Base BF16",
       "rules": {
         "generate_by_semantic_block": true,
@@ -24,14 +29,26 @@
         "timing_manifest": "production-library/validation/revideo-editability/wind-heat-v2/audio/timing-manifest.json",
         "scene_count": 6,
         "technical_qa": "passed"
-      }
+      },
+      "voice_pack_dir": "production-library/voices/reference-pharmacist-qwen-v1",
+      "entrypoint": {
+        "health": "scripts/generate_cloned_narration.py",
+        "product": "scripts/generate_cloned_product_all_narration.py"
+      },
+      "prompt_source": "production-library/voices/reference-pharmacist-qwen-v1/prompt.wav"
     },
     {
       "id": "voice.sufuda-courseware-pharmacist-v1",
       "name_zh": "速福达课件药师讲解音色 v1",
       "status": "ready-for-theme-expansion",
       "usage": "商品培训课件批量主题；克隆新文案讲解（内部授权）",
-      "tags": ["中文女声", "药师讲解", "商品培训课件", "克隆音色", "本地生成"],
+      "tags": [
+        "中文女声",
+        "药师讲解",
+        "商品培训课件",
+        "克隆音色",
+        "本地生成"
+      ],
       "engine": "Qwen3-TTS 0.6B Base BF16",
       "voice_pack_dir": "production-library/voices/sufuda-courseware-pharmacist-v1",
       "prompt_source": "Downloads/商品培训课件3/商品培训课件3.mp3（2026-08-02 重录）截取 19.12–30.92s",
@@ -55,4 +72,3 @@
     }
   ]
 }
-

@@ -28,9 +28,9 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "疾病科普视频 · 风热证金样",
         "outputs": ["MP4 培训视频"],
         "category": "疾病科普",
-        "production_ready": False,
-        "status_label": "金样对照 · 新主题制作前请与制作确认",
-        "status_note": "manifest 标记 visual-rework-required；业务可看效果与填框架，新病种量产前须制作确认。",
+        "production_ready": True,
+        "status_label": "已签样金样 · 可参考换主题",
+        "status_note": "金样 v1 视觉对照 + v2 可编辑生产基线已齐；换病种须审核旁白与授权 Logo，讲解声走模板克隆语音包。",
         "cover_src": GS / "wind-heat-video-gold-v1/web/media/cover-product.jpg",
         "keys": [
             (GS / "wind-heat-video-gold-v1/web/media/thumbs/cover.jpg", "开场"),
@@ -58,8 +58,8 @@ CATALOG: list[dict] = [
         "outputs": ["MP4 培训视频"],
         "category": "商品培训",
         "production_ready": True,
-        "status_label": "已签样 · 可换主题量产",
-        "status_note": "换商品须提供审核旁白与授权包装图；讲解声走模板克隆语音包。",
+        "status_label": "已签样金样 · 可参考换主题",
+        "status_note": "金样包已齐（友好命名/voice/场景清单）；换商品须提供审核旁白与授权包装图，讲解声走模板克隆语音包。",
         "cover_src": GS / "product-q10-video-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "product-q10-video-gold-v1/web/media/thumbs/opening.jpg", "开场"),

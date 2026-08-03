@@ -4,8 +4,8 @@
   "items": [
     {
       "id": "template.health-reference-tech-v1",
-      "name_zh": "健康科普参考片复刻模板 v1",
-      "status": "visual-rework-required",
+      "name_zh": "疾病科普视频（如风热证）",
+      "status": "user-approved-gold",
       "style_pack_id": "style-pack.reference-medical-tech-v1",
       "tags": [
         "健康科普",
@@ -16,19 +16,22 @@
       "settled_template": true,
       "settled_template_dir": "production-library/templates/settled/health-video-reference-tech-v1",
       "canonical_artifact": {
-        "path": "production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4",
+        "path": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_金样_v1.mp4",
         "format": "mp4",
         "confirmed_by": "user",
-        "confirmed_at": "2026-07-30"
+        "confirmed_at": "2026-07-30",
+        "role": "视觉对照金样 v1"
       },
-      "validation_root": "production-library/validation/video",
+      "validation_root": "production-library/validation/revideo-editability/wind-heat-v2",
       "canonical_gold_sample": {
-        "path": "production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4",
-        "role": "2026-07-30 历史确认成片，2026-07-31 因参考像素残留与元素级编辑性不足冻结为重制对照基线；不得用于新主题生产",
+        "path": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_金样_v1.mp4",
+        "role": "用户确认视觉对照金样；可编辑生产基线见 video_editable_gold_v2",
         "confirmed_by": "user",
         "confirmed_at": "2026-07-30",
         "assembly_contract": "production-library/examples/wind-heat-full-frame-assembly.json",
-        "record": "docs/wind-heat-full-assembly.md"
+        "record": "docs/wind-heat-full-assembly.md",
+        "editable_v2": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_可编辑金样_v2.mp4",
+        "gold_package": "production-library/templates/settled/health-video-reference-tech-v1/README.md"
       },
       "non_canonical_artifacts": [
         {
@@ -98,16 +101,27 @@
       },
       "rework": {
         "started_at": "2026-07-31",
-        "reason": "S02-S07 仍读取旧栅格母版，七段剪映画面均为烘焙片段；现有编辑器仅覆盖少量组合层，数字人比例与分段音频参数未统一。",
-        "plan": "tasks/todo.md#p0--风热证-1812-秒视频课件完整拆解与统一重制待用户确认",
-        "target_validation_root": "production-library/validation/revideo-editability/wind-heat-v2"
+        "completed_package_at": "2026-08-03",
+        "reason": "v1 烘焙片段元素级编辑不足；已沉淀 v2 可编辑金样并通过 provenance/editability QA",
+        "target_validation_root": "production-library/validation/revideo-editability/wind-heat-v2",
+        "status": "gold-package-ready"
       },
-      "restriction": "2026-07-31 起冻结为重制对照基线，不得用于新主题或宣称完整可编辑。重制版须达到零参考截图像素、逐元素编辑、统一数字人和统一声音契约；公司授权透明 Logo 缺失时不得重新晋升 production-validated。"
+      "restriction": "金样包可用：v1 视觉对照 + v2 可编辑生产基线。新病种量产须审核旁白与授权 Logo；禁止系统 TTS 与假包装。历史 jianying 烘焙模板仍不得宣传为完整元素级可编。",
+      "voice": {
+        "voice_id": "voice.reference-pharmacist-qwen-v1",
+        "pack_dir": "production-library/templates/settled/health-video-reference-tech-v1/voice/",
+        "forbid_system_tts": true
+      },
+      "generators": {
+        "assemble_visual_v1": "poc/gold-sample/scripts/assemble-wind-heat-full.mjs",
+        "editable_v2": "poc/gold-sample/src/render-wind-heat-editable.ts",
+        "voice_clone": "scripts/generate_cloned_narration.py"
+      }
     },
     {
       "id": "template.product-training-faithful-v1",
-      "name_zh": "商品培训忠实复刻模板 v1",
-      "status": "user-approved",
+      "name_zh": "商品培训视频（如辅酶 Q10）",
+      "status": "user-approved-gold",
       "style_pack_id": "style-pack.reference-product-blue-v1",
       "tags": [
         "商品培训",
@@ -120,7 +134,7 @@
       "settled_template": true,
       "settled_template_dir": "production-library/templates/settled/product-video-faithful-v1",
       "canonical_artifact": {
-        "path": "production-library/templates/settled/product-video-faithful-v1/product-training-reference-full-script-system-v3-final-exact.mp4",
+        "path": "production-library/templates/settled/product-video-faithful-v1/辅酶Q10_商品培训视频_金样_v1.mp4",
         "format": "mp4",
         "confirmed_by": "user",
         "confirmed_at": "2026-07-30"
@@ -187,7 +201,25 @@
         "voice_clone": "qwen-cloned-v5-smooth",
         "notes": "2026-07-30 用户确认大参林扩展四件套可复用：chrome / v5-smooth 旁白 / MOUTH_RIG 口型 / 右上角品牌封面。新商品主题换审核稿与授权包装即可套壳。"
       },
-      "restriction": "用户已确认完整复刻金样与大参林扩展层可沉淀复用。模板确认不自动批准样例药学内容、包装或证据图。批量 production 仍须内部审核稿与授权素材。"
+      "restriction": "用户已确认完整复刻金样与大参林扩展层可沉淀复用。模板确认不自动批准样例药学内容、包装或证据图。批量 production 仍须内部审核稿与授权素材。",
+      "canonical_gold_sample": {
+        "path": "production-library/templates/settled/product-video-faithful-v1/辅酶Q10_商品培训视频_金样_v1.mp4",
+        "role": "用户确认完整复刻金样（大参林扩展层可复用）",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-07-30",
+        "gold_package": "production-library/templates/settled/product-video-faithful-v1/README.md",
+        "scene_inventory": "production-library/templates/settled/product-video-faithful-v1/scene-inventory.snapshot.json"
+      },
+      "voice": {
+        "voice_id": "voice.reference-pharmacist-qwen-v1",
+        "pack_dir": "production-library/templates/settled/product-video-faithful-v1/voice/",
+        "forbid_system_tts": true
+      },
+      "generators": {
+        "voice_clone_all_segments": "scripts/generate_cloned_product_all_narration.py",
+        "segment_projects": "poc/gold-sample/src/product-training-*-project.tsx",
+        "editor": "poc/gold-sample/scripts/start-q10-editor.mjs"
+      }
     },
     {
       "id": "template.product-courseware-dashenlin-green-v1",

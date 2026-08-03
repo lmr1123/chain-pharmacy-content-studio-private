@@ -1,11 +1,23 @@
 {
   "template_id": "template.product-training-faithful-v1",
   "template_type": "video-courseware",
-  "status": "user-approved",
+  "status": "user-approved-gold",
+  "name_zh": "商品培训视频（如辅酶 Q10）",
   "style_pack_id": "style-pack.reference-product-blue-v1",
-  "canonical_artifact": "product-training-reference-full-script-system-v3-final-exact.mp4",
+  "canonical_artifact": "辅酶Q10_商品培训视频_金样_v1.mp4",
+  "canonical_artifacts": {
+    "video": {
+      "path": "辅酶Q10_商品培训视频_金样_v1.mp4",
+      "alias": "product-training-reference-full-script-system-v3-final-exact.mp4",
+      "format": "mp4",
+      "resolution": "1920x1080",
+      "duration_s": 156.17,
+      "role": "用户 2026-07-30 确认的完整复刻金样（含大参林扩展层语法）"
+    }
+  },
   "canonical_confirmed_by": "user",
   "canonical_confirmed_at": "2026-07-30",
+  "gold_package_completed_at": "2026-08-03",
   "source_projects": [
     "poc/gold-sample/src/product-training-opening-project.tsx",
     "poc/gold-sample/src/product-training-faithful-project.tsx",
@@ -17,6 +29,12 @@
     "poc/gold-sample/src/product-training-summary-project.tsx",
     "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx"
   ],
+  "generators": {
+    "voice_clone_all_segments": "scripts/generate_cloned_product_all_narration.py",
+    "segment_projects": "poc/gold-sample/src/product-training-*-project.tsx",
+    "editor": "poc/gold-sample/scripts/start-q10-editor.mjs"
+  },
+  "scene_inventory_snapshot": "scene-inventory.snapshot.json",
   "business_input": {
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
@@ -72,7 +90,11 @@
       "reusable_for": "同 style-pack.reference-product-blue-v1 的新商品主题：换审核文案 + 授权包装/Logo，复用 chrome、voice v5-smooth、MOUTH_RIG、封面版式"
     }
   },
-  "notes": "canonical 仍为 156s 完整复刻终版。2026-07-30 用户确认大参林品牌扩展（角标/克隆声/口型/封面）可沉淀为同模板可复用扩展层；真包装与医学审核文案仍须业务提供后方可 production-validated 批量。",
+  "notes": [
+    "金样包已补齐：友好命名 MP4、voice/、README、场景清单快照、generators。",
+    "canonical 全片约 156s；分段 replica 在 validation 供审片。",
+    "真包装与医学审核文案须业务提供后方可 production-validated 批量。"
+  ],
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [
@@ -99,7 +121,7 @@
       "MP4 培训视频"
     ],
     "production_ready": true,
-    "status_label": "已签样 · 可换主题量产",
+    "status_label": "已签样金样 · 可参考换主题",
     "online_url": null
   },
   "business_catalog": {

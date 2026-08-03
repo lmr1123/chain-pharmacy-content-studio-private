@@ -1,0 +1,51 @@
+{
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "seed_theme_id": "theme.product.coenzyme-q10",
+  "canonical_duration_s": 156.17,
+  "chrome": "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx",
+  "scenes": [
+    {
+      "id": "opening",
+      "project": "poc/gold-sample/src/product-training-opening-project.tsx",
+      "render": "production-library/validation/video/product-training-opening-replica.mp4"
+    },
+    {
+      "id": "faithful_core",
+      "project": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "render": "production-library/validation/video/product-training-faithful-replica.mp4"
+    },
+    {
+      "id": "brand_overview",
+      "project": "poc/gold-sample/src/product-training-brand-overview-project.tsx",
+      "render": "production-library/validation/video/product-training-brand-overview-replica.mp4"
+    },
+    {
+      "id": "efficacy",
+      "project": "poc/gold-sample/src/product-training-efficacy-project.tsx",
+      "render": "production-library/validation/video/product-training-efficacy-replica.mp4"
+    },
+    {
+      "id": "features",
+      "project": "poc/gold-sample/src/product-training-features-project.tsx",
+      "render": "production-library/validation/video/product-training-features-replica.mp4"
+    },
+    {
+      "id": "audience",
+      "project": "poc/gold-sample/src/product-training-audience-project.tsx",
+      "render": "production-library/validation/video/product-training-audience-replica.mp4"
+    },
+    {
+      "id": "combination",
+      "project": "poc/gold-sample/src/product-training-combination-project.tsx",
+      "render": "production-library/validation/video/product-training-combination-replica.mp4"
+    },
+    {
+      "id": "summary",
+      "project": "poc/gold-sample/src/product-training-summary-project.tsx",
+      "render": "production-library/validation/video/product-training-summary-replica.mp4"
+    }
+  ],
+  "voice_entrypoint": "scripts/generate_cloned_product_all_narration.py",
+  "snapshotted_at": "2026-08-03"
+}

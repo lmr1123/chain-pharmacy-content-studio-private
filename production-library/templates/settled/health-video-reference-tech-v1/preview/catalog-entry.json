@@ -7,9 +7,9 @@
     "MP4 培训视频"
   ],
   "category": "疾病科普",
-  "production_ready": false,
-  "status_label": "金样对照 · 新主题制作前请与制作确认",
-  "status_note": "manifest 标记 visual-rework-required；业务可看效果与填框架，新病种量产前须制作确认。",
+  "production_ready": true,
+  "status_label": "已签样金样 · 可参考换主题",
+  "status_note": "金样 v1 视觉对照 + v2 可编辑生产基线已齐；换病种须审核旁白与授权 Logo，讲解声走模板克隆语音包。",
   "key_frame_labels_zh": [
     "开场",
     "典型症状",

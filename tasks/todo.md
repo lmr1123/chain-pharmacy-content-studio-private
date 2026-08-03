@@ -6,64 +6,65 @@
 
 ---
 
-## 交接快照（2026-08-03 · 压缩上下文从这里接）
+## 交接快照（2026-08-03 晚 · 视频业务交付迭代）
 
 ### 仓库
 
 | 项 | 状态 |
 |----|------|
 | GitHub | **Public** · https://github.com/lmr1123/chain-pharmacy-content-studio |
-| 分支 | `main` · HEAD 约 `4aea9ab`（三步指引去内部话术） |
+| 分支 | `main` · HEAD 约 `ba2571b`（交接快照提交；业务机已 pull 验证） |
 | 业务首句 | `请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用` |
-| bootstrap | `scripts/workbuddy_bootstrap_for_business.py`（clone/pull + 开引导页 + **三步开场白**） |
+| bootstrap | `scripts/workbuddy_bootstrap_for_business.py` |
 | 引导页 | `outputs/业务使用资料包/药店培训内容工厂-业务包/index.html` |
-| 刷新包 | `python3 scripts/refresh_business_delivery.py` |
-| settled | **7** 套（含参课蓝 `disease-health-shenke-blue-v1`） |
+| settled | **7** 套 |
 
-### 业务路径（对外只讲三步 · 已锁定）
+### 业务路径（对外只讲三步 · 已锁定 · PPT/视频共用壳）
 
 ```text
-① 看模板（引导页：一行 4 卡片 + 关键页大图预览 + 选用）
-② 输入培训内容（聊天示例：
-   整理可可康灵芝胶囊商品，主要是围绕宁心安神助睡眠、提升免疫力、
-   保肝护肝抗衰老3个方面来完善，你先整理符合内容再生成ppt）
-③ 下载与修改（可下载 PPT 修改，或指令批量修改：
-   「第二页卖点改成…」「批量把联合用药改成 2 条」）
+① 看模板（引导页预览 + 选用）
+② 输入培训内容（聊天说要点；代理内部整理再出片）
+③ 下载与修改（PPT / 视频成品路径；或指令批量改）
 ```
 
-**禁止对业务说**：解压 zip、先出初稿再确认、四步 Word/上传区。  
-（内部仍可先整理再出片，写进 system prompt 执行侧即可。）
+**禁止对业务说**：解压 zip、先出初稿再确认、四步 Word/上传区。
 
-### 引导页（业务可见 · 仅两块）
+### 进度（已验证）
 
-1. **模板预览与选择** — 4 列紧凑卡片；点开关键页大图；复制口令  
-2. **填报真实示例** — **页面内展示**对应课型 `业务提交_填写参考.docx` 正文（不下载）
+| 线 | 状态 |
+|----|------|
+| **PPT · 制作机绿线** | ✅ 绿色单品真 PPTX + 2 行联合用药 |
+| **PPT · 业务机 WorkBuddy 真人绿线** | ✅ pull + 重贴系统提示 + 三步真出 PPT |
+| **视频金样包 · 风热 + Q10** | ✅ 2026-08-03 补齐为可用金样（见下） |
+| **视频 · 业务换主题一键出片** | ⬜ 金样齐后下一步 |
 
-源码：`scripts/business_guided_portal.py` · 打包：`scripts/build_business_tier_a_package.py`
+### 视频金样包（2026-08-03 完成）
 
-### 本会话已完成（累计）
+| 模板 | 金样状态 | 关键交付物 |
+|------|----------|------------|
+| 疾病科普视频（风热） | `user-approved-gold` · production_ready | v1 视觉金样 + **v2 可编辑金样** + `voice/` + README + 元素审计快照 |
+| 商品培训视频（Q10） | `user-approved-gold` · production_ready | 友好命名全片 + `voice/` + README + 场景清单快照 + generators |
 
-- [x] 参课蓝 settled + 注册 + 货架第 7 套 + 生成器冒烟（18 页）  
-- [x] 制作机绿线：绿色单品真 PPTX + 2 行联合用药验收件  
-- [x] 引导页极简（2 块）+ 示例内嵌展示  
-- [x] 安装后指引改为 **三步**，并去掉内部话术  
-- [x] 文档/系统提示/bootstrap/业务包已同步并 push  
+共享语音包：`production-library/voices/reference-pharmacist-qwen-v1/`
 
-### 未完成 / 下一会话优先
+### 视频能力盘点（当前事实）
 
-1. **业务机 WorkBuddy 真人绿线**（pull → 安装句 → 三步 → 可可康类对话真出 PPT）  
-   - 注意：业务机系统提示若是旧粘贴版，须重贴 `docs/workbuddy-system-prompt.md`  
-2. **对话直出闭环增强**（可选）：聊天要点 → 自动填 content/green JSON → 调 generator → 回传 PPT 路径  
-3. **D2** 风热 / Q10 / 课件4 本地 `voice/` pack 资产收尾  
-4. **D3** 代理强制 `voice_id`  
-5. **B4** 扩展页（总结总表）页型检索 + 一例  
-6. **E2** NOTICE / 授权说明（Public 后）  
-7. **可选** 参课蓝换病第二主题；Gitee 镜像  
+| 模板 | 产物 | production_ready | 金样包 | 换主题出片 |
+|------|------|------------------|--------|------------|
+| 商品培训课件3（速福达壳） | MP4+PPTX | ✅ | ✅ | `replicate_courseware_theme.py` 有雏形 |
+| 商品培训课件4（番茄红素壳） | MP4+PPTX | ✅ | ✅ | validation export |
+| 商品培训视频（Q10） | MP4 | ✅ | ✅ 已补齐 | 分段工程，待统一 CLI |
+| 疾病科普视频（风热） | MP4 | ✅ | ✅ 已补齐（含 v2） | 待统一 CLI |
+| 绿色单品 / 穿心莲 / 参课蓝 | PPTX | ✅ | ✅ | generator 已有 |
 
+### 本迭代目标（视频可交付业务使用）
+
+> ① 先完成为可用金样包（**已完成**风热+Q10）  
+> ② 再做 WorkBuddy 三步换主题真出片（对话→克隆声→MP4）
 ### 勿混线
 
-- 未跟踪探索：`product-courseware-kekang-lingzhi-green-v1/`、`yuyou*`（非本线）  
-- `.workbuddy/` 已 gitignore  
+- 未跟踪：`product-courseware-kekang-lingzhi-green-v1/`、`yuyou*`、可可康 production-v2 正式金样全片  
+- 风热 `health-video` 仅对照，不宣称业务可量产  
 
 ### 关键命令
 
@@ -72,50 +73,112 @@ cd ~/Projects/chain-pharmacy-content-studio
 git pull --ff-only
 python3 scripts/workbuddy_bootstrap_for_business.py
 python3 scripts/refresh_business_delivery.py
-python3 scripts/test_content_driven_rules.py
+# 视频主绿线（课件3 换主题，见计划 V1）
+python3 scripts/replicate_courseware_theme.py --help
 ```
+
+---
+
+## 视频业务交付计划（2026-08-03 · 待确认后实施）
+
+### 策略（为什么先做课件3）
+
+PPT 绿线已证明：业务只聊内容 → 代理锁模板 → generator 出文件。  
+**视频最短可交付路径**不是从零拼 Q10 多工程，而是：
+
+1. **P0 主绿线：商品培训课件3（视频+PPT 同源）**  
+   - 已有金样、voice pack、`replicate_courseware_theme.py`、demo-product-b 证明  
+   - 业务价值：一门课同时拿 **可编辑 PPT + 讲解视频**  
+2. **P1：课件4 对齐同一胶水入口**（export 已存在）  
+3. **P2：纯商品视频 Q10 线** 抽单一 `generate` 入口（现缺）  
+4. **明确不交付**：风热健康视频量产（需 visual rework 另线）
+
+### 对外三步话术（视频 / 视频+PPT 课型）
+
+```text
+① 看模板：选「商品培训课件3」或「课件4」（货架已有关键帧）
+② 输入培训内容：例如
+   「按课件3模板，整理××商品培训：核心卖点…、适宜人群…、联合用药2组…，
+    生成可编辑课件和讲解视频」
+③ 下载与修改：给 PPTX 路径；视频就绪则给 MP4；或指令改文案后重导
+```
+
+内部（不对业务念）：聊天 → theme.json/content-model → 缺口清单 →  
+先 PPTX（快）→ 有克隆环境再 TTS+MP4（慢）→ 交付目录。
+
+### V 线任务拆解
+
+#### V-gold · 纯视频金样包（本轮已完成）
+- [x] 风热：友好命名 v1 + 归档可编辑 v2 + voice/ + README + element-audit + registry 解冻  
+- [x] Q10：友好命名 + voice/ + README + scene-inventory + generators + registry  
+- [x] 共享 `voice.reference-pharmacist-qwen-v1` pack 落盘  
+- [x] business-catalog / gold-samples 文案同步 production_ready  
+
+#### V0 · 交付边界写死（文档）
+- [x] 业务菜单：风热/Q10 标「已签样金样 · 可参考换主题」（非冻结对照）  
+- [ ] 系统提示：视频课型必须读 `manifest.voice`；禁止系统 TTS；无授权包装写 gap  
+- [ ] 业务机缺 Qwen3/MLX 时：明确不假装已出 MP4  
+
+#### V1 · 换主题一键出片（金样齐后 · 下一优先）
+- [ ] 风热 / Q10：对话或 Word → 锁模板 → 克隆旁白 → 渲染/装配 MP4 → 交付目录  
+- [ ] 或课件3：`replicate_courseware_theme` 胶水（PPTX 必达 + 可选 MP4）  
+- [ ] WorkBuddy 系统提示补出片命令  
+- [ ] 制作机冒烟：非金样主题名真出片  
+
+#### V2 · 语音与环境
+- [x] D2：风热/Q10 `voice/` 已齐；课件3 sufuda pack 已有  
+- [ ] D2 余：课件4 本地 voice 或继承 sufuda  
+- [ ] D3：代理强制 `voice_id` from manifest  
+- [ ] 环境探测：Qwen3-TTS / mlx  
+
+#### V3 · 体验对齐 PPT
+- [ ] 三步开场白示例增加「生成培训视频」句式  
+- [ ] 缺口清单统一 business-gap-list  
+
+#### V4 · 后续
+- [ ] 课件4 统一 CLI · B4 扩展页 · E2 NOTICE  
+
+### 成功标准（Definition of Done）
+
+1. 业务只说三步话术，**不碰** theme 路径 / npm 细节  
+2. 课件3 换主题至少交付 **可编辑 PPTX** + `gap-report`  
+3. 本机有 voice 环境时再交付 **MP4**；无环境时明确「PPT 已交付、视频待本机配音环境」  
+4. 无假包装、无系统 TTS、无把风热冻结模板当可量产  
+5. 制作机冒烟通过；文档/系统提示与 todo 同步  
 
 ---
 
 ## 计划（与文档 §11 同步勾选）
 
 ### P0
-- [x] A1 六个 settled 模板 `preview/cover` + ≥3 key frames（金样真实帧，非 demo）
-- [x] A2 业务模板货架页（本地可离线 HTML · 档 A）
-- [x] A3 manifest 增加 `preview` 字段 + `business-catalog.json`
-- [x] B1 框架模块「可删节 / 有几条写几条」：`框架填写说明.md` + 业务包
-- [x] B2 WorkBuddy 系统提示词：`docs/workbuddy-system-prompt.md`
-- [x] D1 文档声明：禁止默认系统 TTS；语音包契约
-- [x] E1 一键打包档 A：`scripts/build_business_tier_a_package.py` → `药店培训内容工厂-业务包.zip`
-- [x] **业务默认入口 = WorkBuddy 安装句**（`workbuddy-install-and-guide.md` + bootstrap）
-- [x] **仓库 Public** + 国内镜像回退
-- [x] **参课蓝 settled + 货架第 7 套**（`disease-health-shenke-blue-v1`）
-- [x] **引导页极简 + 三步对外指引**（无 zip/初稿确认话术）
+- [x] A1～A3 货架预览
+- [x] B1～B2 框架 + 系统提示
+- [x] D1 禁止系统 TTS 声明
+- [x] E1 档 A 业务包
+- [x] 业务默认入口 WorkBuddy + Public
+- [x] 参课蓝 settled
+- [x] 引导页极简 + 三步对外指引
+- [x] **PPT 业务机 WorkBuddy 真人绿线**（用户确认已验证）
 
 ### P1
-- [x] B3 联合用药 2 条 → 2 行自适应回归（content_driven_rules + 测试）
-- [ ] B4 扩展页（总结总表）页型检索规则 + 一例
-- [x] C1 视频分镜预览标准输出（MD 模板+示例；HTML 可视化可选）
-- [x] C2 缺口清单统一 schema（business-gap-list-v1）
-- [x] 业务包可上手 + 一键 refresh
-- [ ] D2 风热 / Q10 / 课件4 本地 voice pack 资产收尾（manifest.voice 已绑）
-- [ ] D3 代理强制读取 voice_id
-- [x] **端到端绿线（制作机）**：绿色单品 generator 真出 PPTX + 2 行联合用药  
-- [ ] **端到端绿线（业务机 WorkBuddy）**：三步真人路径完整走通  
-
+- [x] B3 联合用药 2 行自适应
+- [ ] B4 扩展页
+- [x] C1～C2 分镜预览 + 缺口 schema
+- [x] D2 风热/Q10 voice pack 落盘（课件4 仍可选）
+- [ ] D3 强制 voice_id
+- [x] PPT 制作机绿线
+- [x] **V-gold 风热 + Q10 可用金样包**
+- [ ] **视频换主题出片绿线 V1** ← 当前优先
 ### P2
-- [ ] A4 可选 online 货架
-- [ ] E2 开源/语音包授权说明（Public 后优先）
-- [ ] E3 制作侧编辑器手册（非业务默认）
-- [ ] 可选 Gitee 镜像同步
-- [ ] 可选：对话要点 → generator 自动填参出片流水线
+- [ ] A4 online 货架 · E2 NOTICE · E3 编辑器手册 · Gitee
+- [ ] V4 课件4 / 纯视频 generator / 健康视频 rework
 
 ## Review
 
-- **2026-08-03 交付主线已可发（制作侧）**：Public 仓 + 安装句 + 7 模板货架 + 参课蓝 + 绿线 PPT 冒烟  
-- **UX 定稿**：业务页两块；代理对业务只念三步；内部仍内容驱动 / 先整理再出片 / 禁假包装与系统 TTS  
-- **下一刀**：业务机真人绿线验证 +（可选）对话→PPT 自动化  
-- 提交链：`3955429` 参课蓝 → `dd2e544`/`f0b12eb` 引导页 → `bf2191e`/`4aea9ab` 三步指引
+- **2026-08-03 PPT 交付主线**：Public + 安装句 + 7 模板 + 业务机真人三步真出 PPT ✅  
+- **UX 定稿**：两块引导页；只念三步；内部内容驱动 / 禁假包装与系统 TTS  
+- **2026-08-03 视频金样包**：风热（v1+v2+voice）与 Q10（友好名+voice+场景清单）补齐为 `user-approved-gold`  
+- **下一刀**：换主题真出片（对话/Word → 克隆 → MP4），金样包本身已可业务查看与套用  
 
 ---
 

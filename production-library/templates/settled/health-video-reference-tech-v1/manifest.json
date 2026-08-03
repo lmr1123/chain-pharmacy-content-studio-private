@@ -1,13 +1,42 @@
 {
   "template_id": "template.health-reference-tech-v1",
   "template_type": "video-courseware",
-  "status": "visual-rework-required",
+  "status": "user-approved-gold",
+  "name_zh": "疾病科普视频（如风热证）",
   "style_pack_id": "style-pack.reference-medical-tech-v1",
-  "canonical_artifact": "wind-heat-reference-full-181s.mp4",
+  "canonical_artifact": "风热证_疾病科普视频_金样_v1.mp4",
+  "canonical_artifacts": {
+    "video_visual_gold_v1": {
+      "path": "风热证_疾病科普视频_金样_v1.mp4",
+      "alias": "wind-heat-reference-full-181s.mp4",
+      "format": "mp4",
+      "resolution": "1920x1080",
+      "duration_s": 181.2,
+      "role": "用户 2026-07-30 确认的完整视觉对照金样"
+    },
+    "video_editable_gold_v2": {
+      "path": "风热证_疾病科普视频_可编辑金样_v2.mp4",
+      "format": "mp4",
+      "resolution": "1920x1080",
+      "duration_s": 181.2,
+      "role": "可编辑生产金样：零参考像素、元素可编、统一数字人与声音",
+      "validation_root": "production-library/validation/revideo-editability/wind-heat-v2",
+      "qa_report": "production-library/validation/revideo-editability/wind-heat-v2/qa-report-v2.json",
+      "qa_status": "passed"
+    }
+  },
   "canonical_confirmed_by": "user",
   "canonical_confirmed_at": "2026-07-30",
+  "gold_package_completed_at": "2026-08-03",
   "generator": "poc/gold-sample/scripts/assemble-wind-heat-full.mjs",
+  "generators": {
+    "assemble_visual_v1": "poc/gold-sample/scripts/assemble-wind-heat-full.mjs",
+    "editable_v2_render": "poc/gold-sample/src/render-wind-heat-editable.ts",
+    "unified_audio": "poc/gold-sample/scripts/build-wind-heat-unified-audio.mjs",
+    "voice_clone": "scripts/generate_cloned_narration.py"
+  },
   "assembly_contract": "production-library/examples/wind-heat-full-frame-assembly.json",
+  "element_audit_snapshot": "element-audit.snapshot.json",
   "business_input": {
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
@@ -15,8 +44,14 @@
     "example_source": "outputs/video-training-natural-import/风热证健康知识视频培训_真实已填样本.docx",
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
-  "validation_root": "production-library/validation/video",
-  "notes": "2026-07-31 因参考像素残留、烘焙分段和元素级编辑性不足冻结为历史对照基线。重制完成并经用户确认前，不得作为新主题生产模板。",
+  "validation_root": "production-library/validation/revideo-editability/wind-heat-v2",
+  "legacy_validation_root": "production-library/validation/video",
+  "notes": [
+    "金样包已补齐：友好命名 MP4、voice/、README、元素审计快照、可编辑 v2 成片。",
+    "v1 为视觉对照；v2 为新病种生产技术基线（零参考截图像素）。",
+    "片尾授权透明 Logo 与医学终审仍是主题级门禁，不阻断金样作为可用样板。",
+    "历史 visual-rework-required 冻结针对「仅 v1 烘焙片段不可元素编辑」；v2 已通过 provenance/editability QA。"
+  ],
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [
@@ -42,8 +77,8 @@
     "outputs": [
       "MP4 培训视频"
     ],
-    "production_ready": false,
-    "status_label": "金样对照 · 新主题制作前请与制作确认",
+    "production_ready": true,
+    "status_label": "已签样金样 · 可参考换主题",
     "online_url": null
   },
   "business_catalog": {

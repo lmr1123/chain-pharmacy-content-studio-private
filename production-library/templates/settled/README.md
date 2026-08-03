@@ -13,7 +13,8 @@
 
 目标契约（持续补齐）：每模板 `preview/`（cover + 关键帧）、视频类 `voice/`（克隆 pack）、manifest 的 `preview` / `voice` 字段。
 
-**当前（2026-08-03）：** 六模板均已有 `preview/` + manifest.`preview`；视频类已写 manifest.`voice`（本地 pack 目录仍按 D2 收尾）。  
+**当前（2026-08-03）：** 七模板均有 `preview/` + manifest.`preview`。  
+**视频金样包（风热 / Q10）已补齐：** 友好命名 MP4、`voice/` 克隆包、README、generators、场景/元素快照；风热另含可编辑 v2 成片。  
 业务目录清单：`business-catalog.json`。  
 刷新预览：`python3 scripts/sync_settled_template_previews.py`  
 档 A 业务包：`python3 scripts/build_business_tier_a_package.py` → `outputs/业务使用资料包/药店培训内容工厂-业务包.zip`  
