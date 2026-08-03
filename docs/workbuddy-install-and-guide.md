@@ -32,6 +32,10 @@ python3 scripts/workbuddy_bootstrap_for_business.py
 打开引导页：`outputs/业务使用资料包/药店培训内容工厂-业务包/index.html`  
 系统提示：`docs/workbuddy-system-prompt.md`
 
+**首次出「商品培训视频」前**（业务机环境自检 5 条命令）：  
+`docs/workbuddy-video-first-check.md`  
+（PPT 不强制；视频 full 重渲必须过。）
+
 ---
 
 ## 2. 标准开场白（安装成功后 · 整段对业务说）
