@@ -1,0 +1,11 @@
+{
+  "name": "disease-health-shenke-blue-generator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build-editable.mjs"
+  },
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}

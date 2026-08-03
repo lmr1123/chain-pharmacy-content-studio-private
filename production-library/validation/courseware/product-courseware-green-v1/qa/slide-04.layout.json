@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/8j41n2",
-    "id": "8j41n2",
+    "aid": "sl/1bqoo0",
+    "id": "1bqoo0",
     "slide": 4,
-    "layoutId": "2c71a2e6-f6ed-4c39-984e-100b1669a2af",
+    "layoutId": "21f33919-5985-41bc-9ed9-2e88c0e3296d",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "1d76d599-d4f6-468e-b12b-74090131d316",
+    "masterLayoutId": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "2c71a2e6-f6ed-4c39-984e-100b1669a2af",
+      "id": "21f33919-5985-41bc-9ed9-2e88c0e3296d",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "1d76d599-d4f6-468e-b12b-74090131d316",
+      "parentLayoutId": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "1d76d599-d4f6-468e-b12b-74090131d316",
+      "id": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,7 +64,7 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/dsnq9k7e",
+      "aid": "sh/m90fmlo7",
       "id": "1",
       "name": "header-shadow-line",
       "bbox": [
@@ -81,7 +81,7 @@
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qpw7e58n",
+      "aid": "sh/9cryh0ny",
       "id": "2",
       "name": "header-green-line",
       "bbox": [
@@ -98,7 +98,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/rq587ap8",
+      "aid": "sh/8bixov6d",
       "id": "3",
       "name": "page-number-block",
       "bbox": [
@@ -115,7 +115,7 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/4nepcvqh",
+      "aid": "sh/z6pgbq5w",
       "id": "4",
       "name": "page-number",
       "bbox": [
@@ -176,7 +176,7 @@
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/5onq5072",
+      "aid": "sh/y5gfilob",
       "id": "5",
       "name": "page-title",
       "bbox": [
@@ -240,7 +240,7 @@
       "order": 6,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ilc7a58r",
+      "aid": "sh/l8rydgnm",
       "id": "6",
       "name": "brand-wordmark",
       "bbox": [
@@ -304,7 +304,7 @@
       "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/3m583apw",
+      "aid": "sh/07ixkb61",
       "id": "7",
       "name": "internal-notice",
       "bbox": [
@@ -365,7 +365,7 @@
       "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wjup8vql",
+      "aid": "sh/j2tgna50",
       "id": "8",
       "name": "benchmark-head-0-surface",
       "bbox": [
@@ -383,7 +383,7 @@
       "order": 9,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hk3q1076",
+      "aid": "sh/i1kfu5of",
       "id": "9",
       "name": "benchmark-head-0-text",
       "bbox": [
@@ -447,7 +447,7 @@
       "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ls7qp4by",
+      "aid": "sh/obe5kfeh",
       "id": "10",
       "name": "benchmark-head-1-surface",
       "bbox": [
@@ -465,7 +465,7 @@
       "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/k7y9gzud",
+      "aid": "sh/9cnmdkf2",
       "id": "11",
       "name": "benchmark-head-1-text",
       "bbox": [
@@ -529,7 +529,7 @@
       "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/z6p8nuts",
+      "aid": "sh/m9cnipgb",
       "id": "12",
       "name": "benchmark-head-2-surface",
       "bbox": [
@@ -547,7 +547,7 @@
       "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/y5grepcn",
+      "aid": "sh/na54baxw",
       "id": "13",
       "name": "benchmark-head-2-text",
       "bbox": [
@@ -611,7 +611,7 @@
       "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/x47qlkb2",
+      "aid": "sh/0nu5gfy5",
       "id": "14",
       "name": "benchmark-label-0-surface",
       "bbox": [
@@ -629,7 +629,7 @@
       "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/c3y9cfuh",
+      "aid": "sh/183m9kfq",
       "id": "15",
       "name": "benchmark-label-0-text",
       "bbox": [
@@ -693,7 +693,7 @@
       "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/b2p8jatw",
+      "aid": "sh/elcne5gf",
       "id": "16",
       "name": "benchmark-product-left-cell",
       "bbox": [
@@ -711,7 +711,7 @@
       "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/a1wra5cb",
+      "aid": "sh/zml47axk",
       "id": "17",
       "name": "benchmark-product-right-cell",
       "bbox": [
@@ -729,7 +729,7 @@
       "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/p0nqhkbq",
+      "aid": "sh/cju5cvy9",
       "id": "18",
       "name": "benchmark-primary-packshot-surface",
       "bbox": [
@@ -747,7 +747,7 @@
       "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ozep8fu5",
+      "aid": "sh/dk3m50fu",
       "id": "19",
       "name": "benchmark-primary-packshot-label",
       "bbox": [
@@ -836,7 +836,7 @@
       "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gji9of21",
+      "aid": "sh/t4buts36",
       "id": "20",
       "name": "benchmark-competitor-packshot-surface",
       "bbox": [
@@ -854,7 +854,7 @@
       "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1krqxkjm",
+      "aid": "sh/s32tk7ml",
       "id": "21",
       "name": "benchmark-competitor-packshot-label",
       "bbox": [
@@ -943,7 +943,7 @@
       "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/eh0rm5kb",
+      "aid": "sh/72tcr2lg",
       "id": "22",
       "name": "benchmark-label-1-surface",
       "bbox": [
@@ -961,7 +961,7 @@
       "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fi98va1g",
+      "aid": "sh/610bix4v",
       "id": "23",
       "name": "benchmark-label-1-text",
       "bbox": [
@@ -1025,7 +1025,7 @@
       "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/sfi9kv25",
+      "aid": "sh/50rups3a",
       "id": "24",
       "name": "benchmark-merged-1-surface",
       "bbox": [
@@ -1043,7 +1043,7 @@
       "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tgrqt0jq",
+      "aid": "sh/kzitgnmp",
       "id": "25",
       "name": "benchmark-merged-1-text",
       "bbox": [
@@ -1090,678 +1090,6 @@
             {
               "index": 1,
               "text": "清热解毒。用于小儿痱毒，暑热口渴",
-              "fontSize": 18,
-              "color": "#111111",
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 26,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/6dgri5kz",
-      "id": "26",
-      "name": "benchmark-label-2-surface",
-      "bbox": [
-        45,
-        429,
-        180,
-        72
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 27,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/rep8rq1k",
-      "id": "27",
-      "name": "benchmark-label-2-text",
-      "bbox": [
-        53,
-        437,
-        164,
-        56
-      ],
-      "geometry": "rect",
-      "text": "共有优势",
-      "textPreview": "共有优势",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "bold": true,
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "共有优势"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "共有优势",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#111111",
-            "bold": true,
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "共有优势",
-              "fontSize": 18,
-              "color": "#111111",
-              "bold": true,
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 28,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/cb29wz29",
-      "id": "28",
-      "name": "benchmark-merged-2-surface",
-      "bbox": [
-        225,
-        429,
-        1020,
-        72
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 29,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/dcba54ju",
-      "id": "29",
-      "name": "benchmark-merged-2-text",
-      "bbox": [
-        233,
-        437,
-        1004,
-        56
-      ],
-      "geometry": "rect",
-      "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
-      "textPreview": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "bold": true,
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#111111",
-            "bold": true,
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
-              "fontSize": 18,
-              "color": "#111111",
-              "bold": true,
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 30,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/n6xcvylw",
-      "id": "30",
-      "name": "benchmark-label-3-surface",
-      "bbox": [
-        45,
-        501,
-        180,
-        72
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 31,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/m54b2t4b",
-      "id": "31",
-      "name": "benchmark-label-3-text",
-      "bbox": [
-        53,
-        509,
-        164,
-        56
-      ],
-      "geometry": "rect",
-      "text": "零售价",
-      "textPreview": "零售价",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "bold": true,
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "零售价"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "零售价",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#111111",
-            "bold": true,
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "零售价",
-              "fontSize": 18,
-              "color": "#111111",
-              "bold": true,
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 32,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/98fux832",
-      "id": "32",
-      "name": "benchmark-left-3-surface",
-      "bbox": [
-        225,
-        501,
-        530,
-        72
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 33,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/876t43mh",
-      "id": "33",
-      "name": "benchmark-left-3-text",
-      "bbox": [
-        233,
-        509,
-        514,
-        56
-      ],
-      "geometry": "rect",
-      "text": "9.9元（265ml）",
-      "textPreview": "9.9元（265ml）",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "9.9元（265ml）"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "9.9元（265ml）",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#111111",
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "9.9元（265ml）",
-              "fontSize": 18,
-              "color": "#111111",
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 34,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/vaxczyl8",
-      "id": "34",
-      "name": "benchmark-right-3-surface",
-      "bbox": [
-        755,
-        501,
-        490,
-        72
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 35,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/a9ob6d4n",
-      "id": "35",
-      "name": "benchmark-right-3-text",
-      "bbox": [
-        763,
-        509,
-        474,
-        56
-      ],
-      "geometry": "rect",
-      "text": "13.3元（250ml）",
-      "textPreview": "13.3元（250ml）",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "13.3元（250ml）"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "13.3元（250ml）",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#111111",
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "13.3元（250ml）",
-              "fontSize": 18,
-              "color": "#111111",
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 36,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/xcfu183y",
-      "id": "36",
-      "name": "benchmark-label-4-surface",
-      "bbox": [
-        45,
-        573,
-        180,
-        90
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 37,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/wb6t83mt",
-      "id": "37",
-      "name": "benchmark-label-4-text",
-      "bbox": [
-        53,
-        581,
-        164,
-        74
-      ],
-      "geometry": "rect",
-      "text": "卖点差异",
-      "textPreview": "卖点差异",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "bold": true,
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "卖点差异"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "卖点差异",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#111111",
-            "bold": true,
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "卖点差异",
-              "fontSize": 18,
-              "color": "#111111",
-              "bold": true,
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 38,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/betcnelo",
-      "id": "38",
-      "name": "benchmark-left-4-surface",
-      "bbox": [
-        225,
-        573,
-        530,
-        90
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 39,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/qdkbu94j",
-      "id": "39",
-      "name": "benchmark-left-4-text",
-      "bbox": [
-        233,
-        581,
-        514,
-        74
-      ],
-      "geometry": "rect",
-      "text": "性价比高\n毛利率高",
-      "textPreview": "性价比高 | 毛利率高",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#E60012",
-        "bold": true,
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 2,
-        "lines": [
-          {
-            "index": 1,
-            "text": "性价比高"
-          },
-          {
-            "index": 2,
-            "text": "毛利率高"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "性价比高",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#E60012",
-            "bold": true,
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "性价比高",
-              "fontSize": 18,
-              "color": "#E60012",
-              "bold": true,
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        },
-        {
-          "index": 2,
-          "text": "毛利率高",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#E60012",
-            "bold": true,
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "毛利率高",
-              "fontSize": 18,
-              "color": "#E60012",
-              "bold": true,
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 40,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/2t83qdgb",
-      "id": "40",
-      "name": "benchmark-right-4-surface",
-      "bbox": [
-        755,
-        573,
-        490,
-        90
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#111111",
-      "lineWidth": 1
-    },
-    {
-      "order": 41,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/3uhkzixw",
-      "id": "41",
-      "name": "benchmark-right-4-text",
-      "bbox": [
-        763,
-        581,
-        474,
-        74
-      ],
-      "geometry": "rect",
-      "text": "/",
-      "textPreview": "/",
-      "resolvedFontSize": 18,
-      "resolvedTextStyle": {
-        "fontSize": 18,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "/"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "/",
-          "resolvedTextStyle": {
-            "fontSize": 18,
-            "color": "#111111",
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "/",
               "fontSize": 18,
               "color": "#111111",
               "alignment": "center"

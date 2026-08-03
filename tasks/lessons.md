@@ -1,5 +1,28 @@
 # Lessons
 
+## 2026-08-03 晚（参课蓝并入 + 制作机绿线）
+
+来源：交接快照「可选 shenke-blue 未跟踪」→ 用户要求含参课蓝金样继续业务 WorkBuddy 交付。
+
+### 进展
+
+- settled + 注册 + 货架第 7 套：`disease-health-shenke-blue-v1`（参课蓝健康培训 PPT）
+- 生成器自 `npm install`（勿用指向本机绝对路径的 node_modules 软链）
+- 绿线：绿色单品 2 行联合用药真 PPTX；content_driven 回归 + 成片 shape 名无第三行
+
+### 教训
+
+- **新 settled 必须进 CATALOG/GUIDES/系统提示/口令卡/档 A 包**，只放目录不等于业务可发现。
+- **generator 依赖**：`node_modules` gitignore；交付说明写清首次 `npm install`；软链用相对路径且勿指到被 ignore 的 validation deps。
+- **绿线验收要数 shape/行数**，不能只看「生成成功」；金样 3 行数据不能当 2 行内容驱动证明。
+- validation 媒体多被 gitignore → 货架帧优先落在 `settled/preview/` 并进业务包 media。
+
+### 下一会话
+
+- 业务机 WorkBuddy 真人路径；D2/D3 voice；可选参课蓝换病第二主题。
+
+---
+
 ## 2026-08-03（业务入口 · 安装句 + Public + 国内网）
 
 来源：用户要求「业务不需解压 → WorkBuddy 安装仓库并指引」→「开放项目」→「国内可获取」。

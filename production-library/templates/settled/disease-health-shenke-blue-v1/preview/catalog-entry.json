@@ -1,0 +1,23 @@
+{
+  "slug": "disease-health-shenke-blue-v1",
+  "name_zh": "疾病健康知识培训 PPT（参课蓝）",
+  "one_liner": "门店健康顾问疾病知识培训：概览、表现、检查、用药、关怀、一页通",
+  "gallery_title_zh": "疾病健康知识培训 · 参课蓝金样",
+  "outputs": [
+    "可编辑 PPTX"
+  ],
+  "category": "健康培训",
+  "production_ready": true,
+  "status_label": "已签样 · 可换病种量产",
+  "status_note": "版式锁定参课蓝；换病改 content JSON 后重建。包装须授权原图；医学表述须业务复核。",
+  "key_frame_labels_zh": [
+    "疾病概览",
+    "临床表现",
+    "对症用药表",
+    "专业关怀",
+    "竖版一页通"
+  ],
+  "voice_id": null,
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx"
+}

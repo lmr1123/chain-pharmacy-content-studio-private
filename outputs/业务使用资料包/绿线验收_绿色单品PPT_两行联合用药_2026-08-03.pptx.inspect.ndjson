@@ -1,0 +1,173 @@
+{"kind":"deck","id":"pr/3qvx6c","name":"Deck"}
+{"kind":"layout","layoutId":"63e000a7-5552-4650-ab00-9a2a7d553bcf","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"21f33919-5985-41bc-9ed9-2e88c0e3296d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ij8r55","slide":1,"title":"大参林 dashenlin","textShapes":5}
+{"kind":"shape","id":"sh/ri1o32xw","slide":1,"name":"cover-color-field","bbox":[0,0,1280,440]}
+{"kind":"shape","id":"sh/cja5w7yh","slide":1,"name":"cover-blue-field","bbox":[560,0,720,440]}
+{"kind":"shape","id":"sh/dkj65cf2","slide":1,"name":"cover-green-overlay","bbox":[0,0,460,440]}
+{"kind":"shape","id":"sh/2t8n6dgf","slide":1,"name":"cover-building-band-1","bbox":[690,55,26,330]}
+{"kind":"shape","id":"sh/3u1ozix0","slide":1,"name":"cover-building-band-2","bbox":[740,73,26,304]}
+{"kind":"shape","id":"sh/4va58nyl","slide":1,"name":"cover-building-band-3","bbox":[790,91,26,278]}
+{"kind":"shape","id":"sh/pwj61sf6","slide":1,"name":"cover-building-band-4","bbox":[840,55,26,252]}
+{"kind":"shape","id":"sh/up8n2dgj","slide":1,"name":"cover-building-band-5","bbox":[890,73,26,330]}
+{"kind":"shape","id":"sh/fqhovixo","slide":1,"name":"cover-building-band-6","bbox":[940,91,26,304]}
+{"kind":"shape","id":"sh/fqh8nytc","slide":1,"name":"cover-building-band-7","bbox":[990,55,26,278]}
+{"kind":"shape","id":"sh/up8redcr","slide":1,"name":"cover-building-band-8","bbox":[1040,73,26,252]}
+{"kind":"shape","id":"sh/hczqp8b2","slide":1,"name":"cover-building-band-9","bbox":[1090,91,26,330]}
+{"kind":"shape","id":"sh/gbq9g3ux","slide":1,"name":"cover-building-band-10","bbox":[1140,55,26,304]}
+{"kind":"shape","id":"sh/3ehsrit8","slide":1,"name":"cover-white-bottom","bbox":[0,500,1280,220]}
+{"kind":"shape","id":"sh/2d8ridcn","slide":1,"name":"cover-white-curve","bbox":[0,330,1280,340]}
+{"kind":"shape","id":"sh/pgjatsbe","slide":1,"name":"cover-frame-top","bbox":[200,120,880,4]}
+{"kind":"shape","id":"sh/4fa9knut","slide":1,"name":"cover-frame-left","bbox":[200,120,4,440]}
+{"kind":"shape","id":"sh/jix8fet4","slide":1,"name":"cover-frame-right","bbox":[1076,120,4,440]}
+{"kind":"shape","id":"sh/ihor6tcj","slide":1,"name":"cover-frame-bottom","bbox":[200,556,880,4]}
+{"kind":"textbox","id":"sh/mdcbuhw7","slide":1,"name":"cover-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[236,136,190,52]}
+{"kind":"textbox","id":"sh/ne5cnmds","slide":1,"name":"cover-organization","text":"大参林医药集团","textPreview":"大参林医药集团","textChars":7,"textLines":1,"bbox":[490,195,300,44]}
+{"kind":"shape","id":"sh/ofetwrux","slide":1,"name":"cover-rule-left","bbox":[305,215,175,2]}
+{"kind":"shape","id":"sh/9gnupwvi","slide":1,"name":"cover-rule-right","bbox":[800,215,175,2]}
+{"kind":"textbox","id":"sh/e9cbqhwv","slide":1,"name":"cover-title","text":"金银花露","textPreview":"金银花露","textChars":4,"textLines":1,"bbox":[400,250,480,105]}
+{"kind":"textbox","id":"sh/zalcjmdg","slide":1,"name":"cover-tagline","text":"【专业力】","textPreview":"【专业力】","textChars":5,"textLines":1,"bbox":[550,542,180,40]}
+{"kind":"textbox","id":"sh/0butsre1","slide":1,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"notes","id":"nt/ij8r55","slide":1,"text":"[Sources]\n- User-provided internal reference screenshot: 33CC7A3A-9CB3-4383-9587-7564FD74AFAF.png\n- Content status: manual transcription; pharmacist/compliance review required.\n[/Sources]"}
+{"kind":"slide","id":"sl/003ir8","slide":2,"title":"01","textShapes":27}
+{"kind":"shape","id":"sh/47ehgn6p","slide":2,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/3650nip4","slide":2,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/25wzedoj","slide":2,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/h4nil87y","slide":2,"name":"page-number","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/g3ehc36t","slide":2,"name":"page-title","text":"商品介绍、核心卖点、适宜人群","textPreview":"商品介绍、核心卖点、适宜人群","textChars":14,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/f250jip8","slide":2,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/u1wzadon","slide":2,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"shape","id":"sh/10rixc7i","slide":2,"name":"primary-packshot-surface","bbox":[145,82,205,270]}
+{"kind":"textbox","id":"sh/0zyho76x","slide":2,"name":"primary-packshot-label","text":"商品包装高清图\n待接入","textPreview":"商品包装高清图 | 待接入","textChars":11,"textLines":2,"bbox":[155,192,185,50]}
+{"kind":"textbox","id":"sh/etkzmxgj","slide":2,"name":"product-name","text":"金银花露（可可康）","textPreview":"金银花露（可可康）","textChars":9,"textLines":1,"bbox":[130,365,240,34]}
+{"kind":"shape","id":"sh/zetgf2x4","slide":2,"name":"product-table-head-0-surface","bbox":[38,420,120,48]}
+{"kind":"textbox","id":"sh/0f2honyp","slide":2,"name":"product-table-head-0-text","text":"编码","textPreview":"编码","textChars":2,"textLines":1,"bbox":[46,428,104,32]}
+{"kind":"shape","id":"sh/lgbyhsfa","slide":2,"name":"product-table-head-1-surface","bbox":[158,420,82,48]}
+{"kind":"textbox","id":"sh/qp0fidgn","slide":2,"name":"product-table-head-1-text","text":"主推","textPreview":"主推","textChars":2,"textLines":1,"bbox":[166,428,66,32]}
+{"kind":"shape","id":"sh/rqtgbix8","slide":2,"name":"product-table-head-2-surface","bbox":[240,420,153,48]}
+{"kind":"textbox","id":"sh/cr2hknyt","slide":2,"name":"product-table-head-2-text","text":"规格","textPreview":"规格","textChars":2,"textLines":1,"bbox":[248,428,137,32]}
+{"kind":"shape","id":"sh/dsbydsfy","slide":2,"name":"product-table-head-3-surface","bbox":[393,420,112,48]}
+{"kind":"textbox","id":"sh/al4zuhgr","slide":2,"name":"product-table-head-3-text","text":"零售价","textPreview":"零售价","textChars":3,"textLines":1,"bbox":[401,428,96,32]}
+{"kind":"shape","id":"sh/vmdgnmxc","slide":2,"name":"product-table-value-0-surface","bbox":[38,468,120,56]}
+{"kind":"textbox","id":"sh/7qpwfedo","slide":2,"name":"product-table-value-0-text","text":"2429715","textPreview":"2429715","textChars":7,"textLines":1,"bbox":[46,476,104,40]}
+{"kind":"shape","id":"sh/6pwvm9w3","slide":2,"name":"product-table-value-1-surface","bbox":[158,468,82,56]}
+{"kind":"textbox","id":"sh/ts7eh4vu","slide":2,"name":"product-table-value-1-text","text":"A","textPreview":"A","textChars":1,"textLines":1,"bbox":[166,476,66,40]}
+{"kind":"shape","id":"sh/srydoje9","slide":2,"name":"product-table-value-2-surface","bbox":[240,468,153,56]}
+{"kind":"textbox","id":"sh/fupwjed0","slide":2,"name":"product-table-value-2-text","text":"265ml","textPreview":"265ml","textChars":5,"textLines":1,"bbox":[248,476,137,40]}
+{"kind":"shape","id":"sh/utgvq9wf","slide":2,"name":"product-table-value-3-surface","bbox":[393,468,112,56]}
+{"kind":"textbox","id":"sh/hw7elovq","slide":2,"name":"product-table-value-3-text","text":"9.9元","textPreview":"9.9元","textChars":4,"textLines":1,"bbox":[401,476,96,40]}
+{"kind":"shape","id":"sh/gvydsjel","slide":2,"name":"selling-point-highlight","bbox":[38,544,467,120]}
+{"kind":"textbox","id":"sh/3y9wnydw","slide":2,"name":"selling-point","text":"一句话卖点：宝宝去火，温和安全，甘甜又好喝","textPreview":"一句话卖点：宝宝去火，温和安全，甘甜又好喝","textChars":21,"textLines":1,"bbox":[48,573,445,70]}
+{"kind":"textbox","id":"sh/2xgvutwb","slide":2,"name":"section-title-0","text":"一、商品介绍：","textPreview":"一、商品介绍：","textChars":7,"textLines":1,"bbox":[525,102,170,34]}
+{"kind":"textbox","id":"sh/0nid43ap","slide":2,"name":"section-0-item-0","text":"1、主要成分：金银花","textPreview":"1、主要成分：金银花","textChars":10,"textLines":1,"bbox":[525,141,710,36]}
+{"kind":"textbox","id":"sh/1orud8ba","slide":2,"name":"section-0-item-1","text":"2、功能主治：清热解毒。用于小儿痱毒，暑热口渴","textPreview":"2、功能主治：清热解毒。用于小儿痱毒，暑热口渴","textChars":23,"textLines":1,"bbox":[525,177,710,36]}
+{"kind":"textbox","id":"sh/e10v2tsj","slide":2,"name":"section-0-item-2","text":"3、用法用量：口服。一次60～120毫升，一日2～3次。","textPreview":"3、用法用量：口服。一次60～120毫升，一日2～3次。","textChars":28,"textLines":1,"bbox":[525,213,710,36]}
+{"kind":"textbox","id":"sh/zm9cbyt4","slide":2,"name":"section-title-1","text":"二、核心卖点：","textPreview":"二、核心卖点：","textChars":7,"textLines":1,"bbox":[525,238,170,34]}
+{"kind":"textbox","id":"sh/czid0jad","slide":2,"name":"section-1-item-0","text":"1、专为小儿体质设计，温和不伤胃：单方金银花制剂，药性平和，清热去火不损伤婴幼儿娇嫩肠胃。","textPreview":"1、专为小儿体质设计，温和不伤胃：单方金银花制剂，药性平和，清热去火不损伤婴幼儿娇嫩肠胃。","textChars":45,"textLines":1,"bbox":[525,277,710,61]}
+{"kind":"textbox","id":"sh/d0ru9oby","slide":2,"name":"section-1-item-1","text":"2、药食同源，安全无添加：无添加色素，药食同源。","textPreview":"2、药食同源，安全无添加：无添加色素，药食同源。","textChars":24,"textLines":1,"bbox":[525,338,710,61]}
+{"kind":"textbox","id":"sh/qxgvy9sn","slide":2,"name":"section-1-item-2","text":"3、靶向解决小儿夏季常见问题：精准应对痱毒、暑热口渴、小便黄、咽喉不适等夏季上火症状，一瓶多效。","textPreview":"3、靶向解决小儿夏季常见问题：精准应对痱毒、暑热口渴、小便黄、咽喉不适等夏季上火症状，一瓶多效。","textChars":48,"textLines":1,"bbox":[525,399,710,61]}
+{"kind":"textbox","id":"sh/ry9c7ets","slide":2,"name":"section-title-2","text":"三、适宜人群：","textPreview":"三、适宜人群：","textChars":7,"textLines":1,"bbox":[525,488,170,34]}
+{"kind":"textbox","id":"sh/4vytwjah","slide":2,"name":"section-2-item-0","text":"1、夏季易生痱子的幼儿；","textPreview":"1、夏季易生痱子的幼儿；","textChars":12,"textLines":1,"bbox":[525,527,710,36]}
+{"kind":"textbox","id":"sh/pw7u5ob2","slide":2,"name":"section-2-item-1","text":"2、上火症状明显的儿童；","textPreview":"2、上火症状明显的儿童；","textChars":12,"textLines":1,"bbox":[525,563,710,36]}
+{"kind":"textbox","id":"sh/t0nadkru","slide":2,"name":"section-2-item-2","text":"3、暑热烦渴、食欲不振的儿童。","textPreview":"3、暑热烦渴、食欲不振的儿童。","textChars":15,"textLines":1,"bbox":[525,599,710,36]}
+{"kind":"notes","id":"nt/003ir8","slide":2,"text":"[Sources]\n- User-provided internal reference screenshot: 171FA13F-202E-4B0D-A440-2614EF985EFF.png\n- Content status: manual transcription; pharmacist/compliance review required.\n[/Sources]"}
+{"kind":"slide","id":"sl/26v0ll","slide":3,"title":"02","textShapes":19}
+{"kind":"shape","id":"sh/crm5sjut","slide":3,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/bqtozed8","slide":3,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/qpknq9cn","slide":3,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/lgv65ova","slide":3,"name":"page-number","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/0fm5wjup","slide":3,"name":"page-title","text":"联合用药话术","textPreview":"联合用药话术","textChars":6,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/zedo3ed4","slide":3,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/yd4nu9cj","slide":3,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"shape","id":"sh/1kbmtkv6","slide":3,"name":"combination-head-0-surface","bbox":[28,96,150,58]}
+{"kind":"textbox","id":"sh/gji5kzul","slide":3,"name":"combination-head-0-text","text":"应用场景（适宜人群）","textPreview":"应用场景（适宜人群）","textChars":10,"textLines":1,"bbox":[36,104,134,42]}
+{"kind":"shape","id":"sh/epcfitkb","slide":3,"name":"combination-head-1-surface","bbox":[178,96,175,58]}
+{"kind":"textbox","id":"sh/zqlwby1g","slide":3,"name":"combination-head-1-text","text":"联合用药","textPreview":"联合用药","textChars":4,"textLines":1,"bbox":[186,104,159,42]}
+{"kind":"shape","id":"sh/0ruxk321","slide":3,"name":"combination-head-2-surface","bbox":[353,96,230,58]}
+{"kind":"textbox","id":"sh/1s3ed8jm","slide":3,"name":"combination-head-2-text","text":"联合商品图","textPreview":"联合商品图","textChars":5,"textLines":1,"bbox":[361,104,214,42]}
+{"kind":"shape","id":"sh/mtcfmdk7","slide":3,"name":"combination-head-3-surface","bbox":[583,96,200,58]}
+{"kind":"textbox","id":"sh/nulwfi1s","slide":3,"name":"combination-head-3-text","text":"本品图","textPreview":"本品图","textChars":3,"textLines":1,"bbox":[591,104,184,42]}
+{"kind":"shape","id":"sh/ovexo32d","slide":3,"name":"combination-head-4-surface","bbox":[783,96,465,58]}
+{"kind":"textbox","id":"sh/9wneh8jy","slide":3,"name":"combination-head-4-text","text":"销售话术","textPreview":"销售话术","textChars":4,"textLines":1,"bbox":[791,104,449,42]}
+{"kind":"shape","id":"sh/axwfqdk3","slide":3,"name":"combination-scenario-0-surface","bbox":[28,154,150,263]}
+{"kind":"textbox","id":"sh/by5wji1o","slide":3,"name":"combination-scenario-0-text","text":"风热感冒引起的咽喉肿痛","textPreview":"风热感冒引起的咽喉肿痛","textChars":11,"textLines":1,"bbox":[36,162,134,247]}
+{"kind":"shape","id":"sh/7mpw7ihw","slide":3,"name":"combination-name-0-surface","bbox":[178,154,175,263]}
+{"kind":"textbox","id":"sh/61wvyd0b","slide":3,"name":"combination-name-0-text","text":"金银花露 + 小儿咽扁颗粒","textPreview":"金银花露 + 小儿咽扁颗粒","textChars":13,"textLines":1,"bbox":[186,162,159,247]}
+{"kind":"shape","id":"sh/to7e9sz2","slide":3,"name":"combination-partner-surface-0","bbox":[353,154,230,263]}
+{"kind":"shape","id":"sh/8nyd0nih","slide":3,"name":"partner-slot-0-surface","bbox":[373,210.5,190,150]}
+{"kind":"textbox","id":"sh/jy5w3ih0","slide":3,"name":"partner-slot-0-label","text":"小儿咽扁颗粒（康乐仔）\n包装图待接入","textPreview":"小儿咽扁颗粒（康乐仔） | 包装图待接入","textChars":18,"textLines":2,"bbox":[383,260.5,170,50]}
+{"kind":"shape","id":"sh/yxwvud0f","slide":3,"name":"combination-talk-0-surface","bbox":[783,154,465,263]}
+{"kind":"textbox","id":"sh/l0ne5szq","slide":3,"name":"combination-talk-0-text","text":"小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。","textPreview":"小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。","textChars":56,"textLines":1,"bbox":[791,162,449,247]}
+{"kind":"shape","id":"sh/kzedwnil","slide":3,"name":"combination-scenario-1-surface","bbox":[28,417,150,263]}
+{"kind":"textbox","id":"sh/bulczyho","slide":3,"name":"combination-scenario-1-text","text":"风热感冒引起的发热、鼻塞流涕","textPreview":"风热感冒引起的发热、鼻塞流涕","textChars":14,"textLines":1,"bbox":[36,425,134,247]}
+{"kind":"shape","id":"sh/atcvqt03","slide":3,"name":"combination-name-1-surface","bbox":[178,417,175,263]}
+{"kind":"textbox","id":"sh/0zat0zy1","slide":3,"name":"combination-name-1-text","text":"金银花露 + 小儿氨酚黄那敏颗粒","textPreview":"金银花露 + 小儿氨酚黄那敏颗粒","textChars":16,"textLines":1,"bbox":[186,425,159,247]}
+{"kind":"shape","id":"sh/10ja94fm","slide":3,"name":"combination-partner-surface-1","bbox":[353,417,230,263]}
+{"kind":"shape","id":"sh/exsbypgv","slide":3,"name":"partner-slot-1-surface","bbox":[373,473.5,190,150]}
+{"kind":"textbox","id":"sh/zy1s7uxg","slide":3,"name":"partner-slot-1-label","text":"小儿氨酚黄那敏颗粒（康乐仔）\n包装图待接入","textPreview":"小儿氨酚黄那敏颗粒（康乐仔） | 包装图待接入","textChars":21,"textLines":2,"bbox":[383,523.5,170,50]}
+{"kind":"shape","id":"sh/o3ut4jyd","slide":3,"name":"combination-talk-1-surface","bbox":[783,417,465,263]}
+{"kind":"textbox","id":"sh/943adofi","slide":3,"name":"combination-talk-1-text","text":"小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症状，一个清解内热，快速缓解不适。","textPreview":"小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症状，一个清解内热，快速缓解不适。","textChars":72,"textLines":1,"bbox":[791,425,449,247]}
+{"kind":"shape","id":"sh/m1sb29g7","slide":3,"name":"combination-primary-merge-surface","bbox":[583,154,200,526]}
+{"kind":"shape","id":"sh/n21sbexs","slide":3,"name":"combination-primary-divider","bbox":[583,154,3,526]}
+{"kind":"textbox","id":"sh/47q9sfyt","slide":3,"name":"combination-plus","text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[591,389,40,56]}
+{"kind":"shape","id":"sh/p8za1kfe","slide":3,"name":"combination-primary-product-surface","bbox":[628,277,130,280]}
+{"kind":"textbox","id":"sh/xob21kfy","slide":3,"name":"combination-primary-product-label","text":"金银花露\n包装图待接入","textPreview":"金银花露 | 包装图待接入","textChars":11,"textLines":2,"bbox":[638,392,110,50]}
+{"kind":"notes","id":"nt/26v0ll","slide":3,"text":"[Sources]\n- User-provided internal reference screenshot: 1DBBECEC-9258-48D6-82A6-793D6B539DBE.png\n- Content status: manual transcription; pharmacist/compliance review required.\n[/Sources]"}
+{"kind":"slide","id":"sl/1bqoo0","slide":4,"title":"03","textShapes":12}
+{"kind":"shape","id":"sh/m90fmlo7","slide":4,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/9cryh0ny","slide":4,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/8bixov6d","slide":4,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/z6pgbq5w","slide":4,"name":"page-number","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/y5gfilob","slide":4,"name":"page-title","text":"品种对标","textPreview":"品种对标","textChars":4,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/l8rydgnm","slide":4,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/07ixkb61","slide":4,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"shape","id":"sh/j2tgna50","slide":4,"name":"benchmark-head-0-surface","bbox":[45,105,180,62]}
+{"kind":"textbox","id":"sh/i1kfu5of","slide":4,"name":"benchmark-head-0-text","text":"对比维度","textPreview":"对比维度","textChars":4,"textLines":1,"bbox":[53,113,164,46]}
+{"kind":"shape","id":"sh/obe5kfeh","slide":4,"name":"benchmark-head-1-surface","bbox":[225,105,530,62]}
+{"kind":"textbox","id":"sh/9cnmdkf2","slide":4,"name":"benchmark-head-1-text","text":"金银花露（可可康）","textPreview":"金银花露（可可康）","textChars":9,"textLines":1,"bbox":[233,113,514,46]}
+{"kind":"shape","id":"sh/m9cnipgb","slide":4,"name":"benchmark-head-2-surface","bbox":[755,105,490,62]}
+{"kind":"textbox","id":"sh/na54baxw","slide":4,"name":"benchmark-head-2-text","text":"金银花露（小葵花露-葵花药业）","textPreview":"金银花露（小葵花露-葵花药业）","textChars":15,"textLines":1,"bbox":[763,113,474,46]}
+{"kind":"shape","id":"sh/0nu5gfy5","slide":4,"name":"benchmark-label-0-surface","bbox":[45,167,180,190]}
+{"kind":"textbox","id":"sh/183m9kfq","slide":4,"name":"benchmark-label-0-text","text":"产品展示","textPreview":"产品展示","textChars":4,"textLines":1,"bbox":[53,175,164,174]}
+{"kind":"shape","id":"sh/elcne5gf","slide":4,"name":"benchmark-product-left-cell","bbox":[225,167,530,190]}
+{"kind":"shape","id":"sh/zml47axk","slide":4,"name":"benchmark-product-right-cell","bbox":[755,167,490,190]}
+{"kind":"shape","id":"sh/cju5cvy9","slide":4,"name":"benchmark-primary-packshot-surface","bbox":[420,185,140,154]}
+{"kind":"textbox","id":"sh/dk3m50fu","slide":4,"name":"benchmark-primary-packshot-label","text":"可可康包装图\n待接入","textPreview":"可可康包装图 | 待接入","textChars":10,"textLines":2,"bbox":[430,237,120,50]}
+{"kind":"shape","id":"sh/t4buts36","slide":4,"name":"benchmark-competitor-packshot-surface","bbox":[930,185,140,154]}
+{"kind":"textbox","id":"sh/s32tk7ml","slide":4,"name":"benchmark-competitor-packshot-label","text":"竞品包装图\n待接入","textPreview":"竞品包装图 | 待接入","textChars":9,"textLines":2,"bbox":[940,237,120,50]}
+{"kind":"shape","id":"sh/72tcr2lg","slide":4,"name":"benchmark-label-1-surface","bbox":[45,357,180,72]}
+{"kind":"textbox","id":"sh/610bix4v","slide":4,"name":"benchmark-label-1-text","text":"功效主治","textPreview":"功效主治","textChars":4,"textLines":1,"bbox":[53,365,164,56]}
+{"kind":"shape","id":"sh/50rups3a","slide":4,"name":"benchmark-merged-1-surface","bbox":[225,357,1020,72]}
+{"kind":"textbox","id":"sh/kzitgnmp","slide":4,"name":"benchmark-merged-1-text","text":"清热解毒。用于小儿痱毒，暑热口渴","textPreview":"清热解毒。用于小儿痱毒，暑热口渴","textChars":16,"textLines":1,"bbox":[233,365,1004,56]}
+{"kind":"notes","id":"nt/1bqoo0","slide":4,"text":"[Sources]\n- User-provided internal reference screenshot: C0D1AC4D-8CD3-497C-98A0-2B8D0DDB6B39.png\n- Content status: manual transcription; pharmacist/compliance review required.\n[/Sources]"}
+{"kind":"slide","id":"sl/b69vgb","slide":5,"title":"04","textShapes":18}
+{"kind":"shape","id":"sh/gr6xg7ah","slide":5,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/fqxw729w","slide":5,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/epofexsb","slide":5,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/pgzydwry","slide":5,"name":"page-number","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/of6xkrad","slide":5,"name":"page-title","text":"注意事项","textPreview":"注意事项","textChars":4,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/nexgbm98","slide":5,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/2dofihsn","slide":5,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"textbox","id":"sh/xkzyhwra","slide":5,"name":"precautions-label","text":"注意事项：","textPreview":"注意事项：","textChars":5,"textLines":1,"bbox":[58,126,130,38]}
+{"kind":"textbox","id":"sh/cjqxorap","slide":5,"name":"precaution-item-0","text":"1、服药时饮食宜清淡。","textPreview":"1、服药时饮食宜清淡。","textChars":11,"textLines":1,"bbox":[58,185,565,65]}
+{"kind":"textbox","id":"sh/y58n6983","slide":5,"name":"precaution-item-1","text":"2、服用本药时，不宜同时服滋补性中成药。","textPreview":"2、服用本药时，不宜同时服滋补性中成药。","textChars":20,"textLines":1,"bbox":[58,250,565,65]}
+{"kind":"textbox","id":"sh/j6hofepo","slide":5,"name":"precaution-item-2","text":"3、脾虚大便溏者慎服。","textPreview":"3、脾虚大便溏者慎服。","textChars":11,"textLines":1,"bbox":[58,315,565,65]}
+{"kind":"textbox","id":"sh/k7q58jq9","slide":5,"name":"precaution-item-3","text":"4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。","textPreview":"4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。","textChars":35,"textLines":1,"bbox":[58,380,565,105]}
+{"kind":"textbox","id":"sh/lsz6ho7u","slide":5,"name":"precaution-item-4","text":"5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。","textPreview":"5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。","textChars":33,"textLines":1,"bbox":[58,485,565,105]}
+{"kind":"shape","id":"sh/6t87at8z","slide":5,"name":"precaution-card-0","bbox":[670,105,267,264.5]}
+{"kind":"textbox","id":"sh/7uhojepk","slide":5,"name":"precaution-card-title-0","text":"！ 饮食宜清淡","textPreview":"！ 饮食宜清淡","textChars":7,"textLines":1,"bbox":[690,127,227,38]}
+{"kind":"shape","id":"sh/8vapcjq5","slide":5,"name":"precaution-asset-0-surface","bbox":[705,181,197,159.5]}
+{"kind":"textbox","id":"sh/twj6lo7q","slide":5,"name":"precaution-asset-0-label","text":"原创插图槽位\n饮食宜清淡","textPreview":"原创插图槽位 | 饮食宜清淡","textChars":12,"textLines":2,"bbox":[715,235.75,177,50]}
+{"kind":"shape","id":"sh/mxonyp8v","slide":5,"name":"precaution-card-1","bbox":[943,105,267,264.5]}
+{"kind":"textbox","id":"sh/nyxo7upg","slide":5,"name":"precaution-card-title-1","text":"！ 滋补性中成药","textPreview":"！ 滋补性中成药","textChars":8,"textLines":1,"bbox":[963,127,227,38]}
+{"kind":"shape","id":"sh/ritkfq58","slide":5,"name":"precaution-asset-1-surface","bbox":[978,181,197,159.5]}
+{"kind":"textbox","id":"sh/qhk36lon","slide":5,"name":"precaution-asset-1-label","text":"原创插图槽位\n滋补性中成药","textPreview":"原创插图槽位 | 滋补性中成药","textChars":13,"textLines":2,"bbox":[988,235.75,177,50]}
+{"kind":"shape","id":"sh/d4v2h0ne","slide":5,"name":"precaution-card-2","bbox":[670,375.5,267,264.5]}
+{"kind":"textbox","id":"sh/c32l8v6t","slide":5,"name":"precaution-card-title-2","text":"！ 及时就诊","textPreview":"！ 及时就诊","textChars":6,"textLines":1,"bbox":[690,397.5,227,38]}
+{"kind":"shape","id":"sh/3etkb65c","slide":5,"name":"precaution-asset-2-surface","bbox":[705,451.5,197,159.5]}
+{"kind":"textbox","id":"sh/2dk32lor","slide":5,"name":"precaution-asset-2-label","text":"原创插图槽位\n及时就诊","textPreview":"原创插图槽位 | 及时就诊","textChars":11,"textLines":2,"bbox":[715,506.25,177,50]}
+{"kind":"shape","id":"sh/pgb2dgn2","slide":5,"name":"precaution-card-3","bbox":[943,375.5,267,264.5]}
+{"kind":"textbox","id":"sh/4f2l4b6h","slide":5,"name":"precaution-card-title-3","text":"！ 过敏慎用","textPreview":"！ 过敏慎用","textChars":6,"textLines":1,"bbox":[963,397.5,227,38]}
+{"kind":"shape","id":"sh/nad4na5g","slide":5,"name":"precaution-asset-3-surface","bbox":[978,451.5,197,159.5]}
+{"kind":"textbox","id":"sh/m943e5ov","slide":5,"name":"precaution-asset-3-label","text":"原创插图槽位\n过敏慎用","textPreview":"原创插图槽位 | 过敏慎用","textChars":11,"textLines":2,"bbox":[988,506.25,177,50]}
+{"kind":"notes","id":"nt/b69vgb","slide":5,"text":"[Sources]\n- User-provided internal reference screenshot: CBD2D8CD-6DC6-442A-A16F-EEFFF500E9EC.png\n- Content status: manual transcription; pharmacist/compliance review required.\n[/Sources]"}

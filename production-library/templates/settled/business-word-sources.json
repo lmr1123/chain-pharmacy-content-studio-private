@@ -31,6 +31,11 @@
       "blank": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
       "filled": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
       "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）"
+    },
+    "disease-health-shenke-blue-v1": {
+      "blank": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+      "filled": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+      "name_zh": "疾病健康知识培训 PPT（参课蓝）"
     }
   }
 }

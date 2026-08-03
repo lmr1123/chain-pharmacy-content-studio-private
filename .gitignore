@@ -75,3 +75,9 @@ poc/**/out/
 !.env.example
 *.pem
 credentials.json
+
+# --- local agent / WorkBuddy session state ---
+.workbuddy/
+
+# re-exclude junk re-included by 业务包 un-ignore
+outputs/**/.DS_Store

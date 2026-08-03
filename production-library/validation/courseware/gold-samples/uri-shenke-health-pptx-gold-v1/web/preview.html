@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>急性上呼吸道感染 · 疾病健康知识培训 金样预览</title>
+<link rel="stylesheet" href="../../shared/preview.css" />
+<style>
+  :root {
+    --accent: #1e6bb8;
+    --orange2: #3a8fd4;
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumb">
+      <a href="../../index.html">金样案例汇总</a>
+      · 急性上呼吸道感染 · 健康培训 PPT
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="badge">PPT 金样 · settled · 健康培训 · 已签样</div>
+        <h1>急性上呼吸道感染 · 疾病健康知识培训</h1>
+        <p class="sub">
+          正式 settled PPTX 金样（template.disease-health-shenke-blue-v1）。
+          参课蓝 18 页：概览 → 表现 → 检查 → 用药与注意事项 → 关怀 → 竖版一页通。
+          可编辑、JSON 换病复用；包装为命名坑位。
+        </p>
+        <div class="meta">
+          <span class="chip">PPT · 18 页</span>
+          <span class="chip">健康培训</span>
+          <span class="chip">参课蓝</span>
+          <span class="chip">user-approved</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="media/deck.pptx" download>下载可编辑 PPTX</a>
+        <a class="btn secondary" href="../../../../../templates/settled/disease-health-shenke-blue-v1/manifest.json">manifest</a>
+        <a class="btn secondary" href="../../../../../templates/settled/disease-health-shenke-blue-v1/本课型怎么填.md">怎么填</a>
+      </div>
+    </header>
+
+    <section class="block" id="sec-pptx">
+      <div class="block-head">
+        <h2><span class="idx">1</span>PPT 完整截图</h2>
+        <span class="hint">18 页 · 点击放大</span>
+      </div>
+      <div class="ppt-grid" id="pptGrid"></div>
+    </section>
+
+    <footer class="notes">
+      权威产物：<code>templates/settled/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_可编辑金样_v2.pptx</code>
+      · 生成器：<code>…/generator/build-editable.mjs</code>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="close">关闭</button>
+    <img id="lightboxImg" alt="PPT 页" />
+  </div>
+
+  <script>
+  (function () {
+    const labels = [
+      "封面", "目录", "疾病概览", "临床表现", "检查方法",
+      "一般治疗", "全身用药", "局部用药", "对症选药", "注意事项①",
+      "注意事项②", "注意事项③", "注意事项④", "注意事项⑤", "专业关怀①",
+      "专业关怀②", "结束页", "竖版一页通"
+    ];
+    const slides = [];
+    for (let i = 1; i <= 18; i++) {
+      const n = String(i).padStart(2, "0");
+      slides.push({
+        title: `第 ${i} 页`,
+        note: labels[i - 1] || "",
+        src: `media/slides/slide-${n}.png`
+      });
+    }
+    const grid = document.getElementById("pptGrid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    slides.forEach((sl) => {
+      const a = document.createElement("a");
+      a.className = "tile";
+      a.href = sl.src;
+      a.innerHTML = `<img src="${sl.src}" alt="${sl.title}" loading="lazy" /><div class="cap"><strong>${sl.title}</strong>${sl.note || ""}</div>`;
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        lightboxImg.src = sl.src;
+        lightboxImg.alt = sl.title;
+        lightbox.classList.add("open");
+      });
+      grid.appendChild(a);
+    });
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.classList.contains("close")) {
+        lightbox.classList.remove("open");
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") lightbox.classList.remove("open");
+    });
+  })();
+  </script>
+</body>
+</html>

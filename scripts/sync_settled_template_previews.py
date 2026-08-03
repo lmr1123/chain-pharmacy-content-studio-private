@@ -269,6 +269,53 @@ CATALOG: list[dict] = [
         ],
         "voice_id": "voice.sufuda-courseware-pharmacist-v1",
     },
+    {
+        "slug": "disease-health-shenke-blue-v1",
+        "name_zh": "疾病健康知识培训 PPT（参课蓝）",
+        "one_liner": "门店健康顾问疾病知识培训：概览、表现、检查、用药、关怀、一页通",
+        "gallery_title_zh": "疾病健康知识培训 · 参课蓝金样",
+        "outputs": ["可编辑 PPTX"],
+        "category": "健康培训",
+        "production_ready": True,
+        "status_label": "已签样 · 可换病种量产",
+        "status_note": "版式锁定参课蓝；换病改 content JSON 后重建。包装须授权原图；医学表述须业务复核。",
+        "cover_src": GS / "uri-shenke-health-pptx-gold-v1/web/media/cover-product.png",
+        "keys": [
+            (GS / "uri-shenke-health-pptx-gold-v1/web/media/slides/slide-02.png", "疾病概览"),
+            (GS / "uri-shenke-health-pptx-gold-v1/web/media/slides/slide-03.png", "临床表现"),
+            (GS / "uri-shenke-health-pptx-gold-v1/web/media/slides/slide-09.png", "对症用药表"),
+            (GS / "uri-shenke-health-pptx-gold-v1/web/media/slides/slide-14.png", "专业关怀"),
+            (GS / "uri-shenke-health-pptx-gold-v1/web/media/slides/slide-18.png", "竖版一页通"),
+        ],
+        "fallback_keys": [
+            # validation 媒体可能被 gitignore；settled 内 preview 作回退源
+            (
+                SETTLED / "disease-health-shenke-blue-v1/preview/cover.png",
+                "封面",
+            ),
+            (
+                SETTLED / "disease-health-shenke-blue-v1/preview/key-01.png",
+                "疾病概览",
+            ),
+            (
+                SETTLED / "disease-health-shenke-blue-v1/preview/key-02.png",
+                "临床表现",
+            ),
+            (
+                SETTLED / "disease-health-shenke-blue-v1/preview/key-03.png",
+                "对症用药表",
+            ),
+            (
+                SETTLED / "disease-health-shenke-blue-v1/preview/key-04.png",
+                "专业关怀",
+            ),
+            (
+                SETTLED / "disease-health-shenke-blue-v1/preview/key-05.png",
+                "竖版一页通",
+            ),
+        ],
+        "voice_id": None,
+    },
 ]
 
 

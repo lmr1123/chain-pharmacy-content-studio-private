@@ -129,6 +129,33 @@ GUIDES: dict[str, dict] = {
         "filled_source": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
         "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
     },
+    "disease-health-shenke-blue-v1": {
+        "name_zh": "疾病健康知识培训 PPT（参课蓝）",
+        "outputs": "可编辑 PPTX",
+        "modules": [
+            "疾病概览（定义 + 病因）",
+            "临床表现",
+            "检查方法",
+            "治疗用药（一般 / 全身 / 局部 / 对症表）",
+            "用药注意事项（禁用须审核稿）",
+            "专业关怀",
+            "一页通（竖版，可选）",
+        ],
+        "tips": [
+            "业务只写自然板块正文与授权图，不写页码/坐标。",
+            "对症表可标重点药名；包装用授权原图，禁止伪造品牌包装。",
+            "注意事项：仅「禁用」类表述在成品中标红；医学结论须业务/医学复核。",
+            "先收「内容初稿 + 缺口清单」，确认后再出 PPTX。",
+        ],
+        "list_rules_note": "对症表/注意事项列表：有几条写几条；没有的板块整节删除。",
+        "agent_commands": [
+            "cd production-library/templates/settled/disease-health-shenke-blue-v1/generator",
+            "npm install   # 首次或新 clone 后",
+            "node build-editable.mjs content/<主题>.content.json",
+        ],
+        "filled_source": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+        "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+    },
 }
 
 
@@ -218,14 +245,25 @@ def write_guide(slug: str, meta: dict) -> Path:
             "我确认后再出 可编辑 PPTX / 培训视频。",
             "```",
             "",
-            "## 联合用药 / 列表硬规则",
-            "",
-            "- 有几条写几条；2 组 → 成品 2 行",
-            "- 禁止空行凑满金样示例数",
-            "- 没有的板块整节删除",
+            "## 列表 / 模块硬规则",
             "",
         ]
     )
+    if meta.get("list_rules_note"):
+        lines.append(f"- {meta['list_rules_note']}")
+    else:
+        lines.extend(
+            [
+                "- 有几条写几条；联合用药 2 组 → 成品 2 行",
+                "- 禁止空行凑满金样示例数",
+                "- 没有的板块整节删除",
+            ]
+        )
+    if meta.get("agent_commands"):
+        lines.extend(["", "## 代理出片命令（业务无需操作）", "", "```bash"])
+        lines.extend(meta["agent_commands"])
+        lines.append("```")
+    lines.append("")
     path = SETTLED / slug / "本课型怎么填.md"
     path.write_text("\n".join(lines), encoding="utf-8")
     return path

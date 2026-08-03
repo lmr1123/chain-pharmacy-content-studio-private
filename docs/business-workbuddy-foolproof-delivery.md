@@ -57,6 +57,7 @@
 | 商品培训视频（如辅酶 Q10） | MP4 | `settled/product-video-faithful-v1` |
 | 绿色单品 PPT（如金银花露） | 可编辑 PPTX | `settled/product-courseware-green-v1` |
 | 疾病+商品场景 PPT（如穿心莲） | 可编辑 PPTX | `settled/disease-product-scenario-v1` |
+| 疾病健康知识培训 PPT（参课蓝） | 可编辑 PPTX | `settled/disease-health-shenke-blue-v1` |
 | 商品培训课件3（视频+PPT，速福达壳） | MP4 + PPTX | `settled/sufuda-mabaloshawei-product-courseware-3-v1` |
 | 商品培训课件4（视频+PPT，番茄红素壳） | MP4 + PPTX | `settled/fuler-fanqiehongsu-product-courseware-4-v1` |
 
@@ -189,7 +190,7 @@ production-library/templates/settled/<slug>/
 
 ### 3.5 验收
 
-- [x] 六个 settled 模板均有 cover + ≥3 关键帧  
+- [x] 七个 settled 模板均有 cover + ≥3 关键帧（含参课蓝健康培训 PPT）  
 - [x] 业务不打开仓库也能在货架页辨认课型差异  
 - [x] 选模板后 1 步到达空白 Word  
 

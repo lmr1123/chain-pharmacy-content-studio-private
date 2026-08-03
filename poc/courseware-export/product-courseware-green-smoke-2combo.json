@@ -1,0 +1,172 @@
+{
+  "project_id": "green-smoke-two-combo-v1",
+  "template_id": "template.product-courseware-dashenlin-green-v1",
+  "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+  "style_pack_locked": true,
+  "content_lock": "smoke: 2 combination rows only — not gold sample",
+  "outputs": [
+    "pptx",
+    "pdf"
+  ],
+  "output_policy": {
+    "pptx": "native-editable-static",
+    "pdf": "deterministic-static",
+    "video": "future-scene-mapping",
+    "animation_parity": "not-guaranteed"
+  },
+  "asset_policy": {
+    "reference_screenshots": "measurement-only",
+    "crop_reference_assets": false,
+    "missing_assets": "editable-labeled-slots"
+  },
+  "brand": {
+    "display_name": "大参林 dashenlin",
+    "primary": "#009900",
+    "secondary": "#45A817",
+    "pale": "#C9E7BE",
+    "internal_notice": "仅供内部学习"
+  },
+  "pages": [
+    {
+      "id": "cover",
+      "scene_type": "courseware_cover",
+      "title": "金银花露",
+      "organization": "大参林医药集团",
+      "tagline": "【专业力】",
+      "reference": "33CC7A3A-9CB3-4383-9587-7564FD74AFAF.png"
+    },
+    {
+      "id": "product-overview",
+      "scene_type": "product_overview",
+      "page_number": "01",
+      "title": "商品介绍、核心卖点、适宜人群",
+      "product": {
+        "display_name": "金银花露（可可康）",
+        "image_slot": "asset://product-packshot-primary",
+        "code": "2429715",
+        "priority": "A",
+        "specification": "265ml",
+        "retail_price": "9.9元",
+        "one_line_selling_point": "宝宝去火，温和安全，甘甜又好喝"
+      },
+      "sections": [
+        {
+          "title": "一、商品介绍：",
+          "items": [
+            "主要成分：金银花",
+            "功能主治：清热解毒。用于小儿痱毒，暑热口渴",
+            "用法用量：口服。一次60～120毫升，一日2～3次。"
+          ]
+        },
+        {
+          "title": "二、核心卖点：",
+          "items": [
+            "专为小儿体质设计，温和不伤胃：单方金银花制剂，药性平和，清热去火不损伤婴幼儿娇嫩肠胃。",
+            "药食同源，安全无添加：无添加色素，药食同源。",
+            "靶向解决小儿夏季常见问题：精准应对痱毒、暑热口渴、小便黄、咽喉不适等夏季上火症状，一瓶多效。"
+          ]
+        },
+        {
+          "title": "三、适宜人群：",
+          "items": [
+            "夏季易生痱子的幼儿；",
+            "上火症状明显的儿童；",
+            "暑热烦渴、食欲不振的儿童。"
+          ]
+        }
+      ],
+      "reference": "171FA13F-202E-4B0D-A440-2614EF985EFF.png"
+    },
+    {
+      "id": "combination-guidance",
+      "scene_type": "combination_guidance",
+      "page_number": "02",
+      "title": "联合用药话术",
+      "columns": [
+        "应用场景（适宜人群）",
+        "联合用药",
+        "联合商品图",
+        "本品图",
+        "销售话术"
+      ],
+      "primary_column_title": "本品图",
+      "primary_pack_label": "金银花露\n包装图待接入",
+      "layout_note": "联合商品图按行独立；本品图纵向合并，保证每一行都与本品关联",
+      "rows": [
+        {
+          "scenario": "风热感冒引起的咽喉肿痛",
+          "combination": "金银花露 + 小儿咽扁颗粒",
+          "partner": "小儿咽扁颗粒（康乐仔）",
+          "partner_asset": "asset://partner-xiaoer-yanbian",
+          "talk_track": "小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。"
+        },
+        {
+          "scenario": "风热感冒引起的发热、鼻塞流涕",
+          "combination": "金银花露 + 小儿氨酚黄那敏颗粒",
+          "partner": "小儿氨酚黄那敏颗粒（康乐仔）",
+          "partner_asset": "asset://partner-xiaoer-anfen",
+          "talk_track": "小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症状，一个清解内热，快速缓解不适。"
+        }
+      ],
+      "reference": "1DBBECEC-9258-48D6-82A6-793D6B539DBE.png"
+    },
+    {
+      "id": "product-benchmark",
+      "scene_type": "product_benchmark",
+      "page_number": "03",
+      "title": "品种对标",
+      "columns": [
+        "对比维度",
+        "金银花露（可可康）",
+        "金银花露（小葵花露-葵花药业）"
+      ],
+      "rows": [
+        {
+          "label": "产品展示",
+          "values": [
+            "asset://product-packshot-primary",
+            "asset://product-packshot-competitor"
+          ]
+        },
+        {
+          "label": "功效主治",
+          "merge": true,
+          "value": "清热解毒。用于小儿痱毒，暑热口渴"
+        }
+      ],
+      "reference": "C0D1AC4D-8CD3-497C-98A0-2B8D0DDB6B39.png"
+    },
+    {
+      "id": "precautions",
+      "scene_type": "precautions",
+      "page_number": "04",
+      "title": "注意事项",
+      "items": [
+        "服药时饮食宜清淡。",
+        "服用本药时，不宜同时服滋补性中成药。",
+        "脾虚大便溏者慎服。",
+        "服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
+        "对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。"
+      ],
+      "illustration_slots": [
+        {
+          "title": "饮食宜清淡",
+          "asset": "asset://precaution-light-diet"
+        },
+        {
+          "title": "滋补性中成药",
+          "asset": "asset://precaution-tonic-medicine"
+        },
+        {
+          "title": "及时就诊",
+          "asset": "asset://precaution-see-doctor"
+        },
+        {
+          "title": "过敏慎用",
+          "asset": "asset://precaution-allergy"
+        }
+      ],
+      "reference": "CBD2D8CD-6DC6-442A-A16F-EEFFF500E9EC.png"
+    }
+  ]
+}

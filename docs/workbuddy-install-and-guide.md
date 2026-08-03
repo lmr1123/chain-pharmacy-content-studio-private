@@ -86,7 +86,7 @@ python3 scripts/workbuddy_bootstrap_for_business.py --no-open   # 或允许打�
 
 > 引导页已打开。请点「下一步：预览选模板」。  
 > 看每个模板的封面和关键页，选一个最接近你要的课型，点「选用此模板」。  
-> 也可以告诉我中文名，例如「绿色单品 PPT」「商品培训视频」「疾病科普视频」。
+> 也可以告诉我中文名，例如「绿色单品 PPT」「疾病健康知识培训 PPT（参课蓝）」「商品培训视频」「疾病科普视频」。
 
 你侧核对：`business-catalog.json` / 货架 `name_zh` → settled `slug`。
 
@@ -131,6 +131,7 @@ python3 scripts/workbuddy_bootstrap_for_business.py --no-open   # 或允许打�
 | 业务目标 | 推荐课型中文名 |
 |----------|----------------|
 | 单品店员 PPT 培训 | 绿色单品 PPT（如金银花露） |
+| 疾病健康知识门店 PPT | 疾病健康知识培训 PPT（参课蓝） |
 | 单品培训短视频 | 商品培训视频（如辅酶 Q10） |
 | 病种科普视频 | 疾病科普视频（如风热证） |
 | 病种+商品场景 PPT | 疾病+商品场景 PPT |

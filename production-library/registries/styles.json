@@ -100,6 +100,32 @@
       "restriction": "Logo、包装和插图替换为公司批准的高清原图并经用户视觉签样前，不得标记 production-validated"
     },
     {
+      "id": "style-pack.shenke-medical-blue-v1",
+      "name_zh": "参课蓝 · 疾病健康知识培训课件风 v1",
+      "kind": "style-pack",
+      "status": "user-approved",
+      "tags": ["健康培训", "疾病知识", "参课", "蓝母版", "可编辑PPTX", "16:9"],
+      "rules": {
+        "master_ui_style": "shenke-medical-blue-v1",
+        "font_family": ["Microsoft YaHei", "PingFang SC", "sans-serif"],
+        "primary_color": "#1E6BB8",
+        "secondary_color": "#1A4F8C",
+        "background_color": "#F4F7FC",
+        "text_color": "#1A2B4A",
+        "body_color": "#2C3E50",
+        "danger_color": "#C0392B",
+        "same_project_style_lock": true,
+        "reference_pixel_policy": "measurement-only",
+        "missing_asset_policy": "named-packshot-slot",
+        "forbidden_red_except": "禁用类注意事项"
+      },
+      "sources": [
+        "production-library/templates/settled/disease-health-shenke-blue-v1/generator/build-editable.mjs",
+        "production-library/validation/courseware/disease-uri-shenke-blue-v1/"
+      ],
+      "restriction": "版式锁定参课蓝 chrome；换病改 content JSON。包装与 Logo 须业务授权原图。医学表述须业务/医学复核。末页竖版一页通仅为构图，非整本改竖屏。"
+    },
+    {
       "id": "pharmacy-health-cartoon-v1",
       "name_zh": "药店健康科普卡通插图 v1",
       "kind": "asset-style",

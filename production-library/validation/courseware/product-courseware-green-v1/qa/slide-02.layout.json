@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/lzrtq2",
-    "id": "lzrtq2",
+    "aid": "sl/003ir8",
+    "id": "003ir8",
     "slide": 2,
-    "layoutId": "2c71a2e6-f6ed-4c39-984e-100b1669a2af",
+    "layoutId": "21f33919-5985-41bc-9ed9-2e88c0e3296d",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "1d76d599-d4f6-468e-b12b-74090131d316",
+    "masterLayoutId": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "2c71a2e6-f6ed-4c39-984e-100b1669a2af",
+      "id": "21f33919-5985-41bc-9ed9-2e88c0e3296d",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "1d76d599-d4f6-468e-b12b-74090131d316",
+      "parentLayoutId": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "1d76d599-d4f6-468e-b12b-74090131d316",
+      "id": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,7 +64,7 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/7it4fq1k",
+      "aid": "sh/47ehgn6p",
       "id": "1",
       "name": "header-shadow-line",
       "bbox": [
@@ -81,7 +81,7 @@
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/sjmlov25",
+      "aid": "sh/3650nip4",
       "id": "2",
       "name": "header-green-line",
       "bbox": [
@@ -98,7 +98,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tkvmh0ja",
+      "aid": "sh/25wzedoj",
       "id": "3",
       "name": "page-number-block",
       "bbox": [
@@ -115,7 +115,7 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ul43q5kv",
+      "aid": "sh/h4nil87y",
       "id": "4",
       "name": "page-number",
       "bbox": [
@@ -176,7 +176,7 @@
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fmd4ja1g",
+      "aid": "sh/g3ehc36t",
       "id": "5",
       "name": "page-title",
       "bbox": [
@@ -240,7 +240,7 @@
       "order": 6,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gnmlsf21",
+      "aid": "sh/f250jip8",
       "id": "6",
       "name": "brand-wordmark",
       "bbox": [
@@ -304,7 +304,7 @@
       "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hovmlkjm",
+      "aid": "sh/u1wzadon",
       "id": "7",
       "name": "internal-notice",
       "bbox": [
@@ -365,7 +365,7 @@
       "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ap03elkr",
+      "aid": "sh/10rixc7i",
       "id": "8",
       "name": "primary-packshot-surface",
       "bbox": [
@@ -383,7 +383,7 @@
       "order": 9,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/bq94761c",
+      "aid": "sh/0zyho76x",
       "id": "9",
       "name": "primary-packshot-label",
       "bbox": [
@@ -472,7 +472,7 @@
       "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nyt8bito",
+      "aid": "sh/etkzmxgj",
       "id": "10",
       "name": "product-name",
       "bbox": [
@@ -536,7 +536,7 @@
       "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/2xkridsj",
+      "aid": "sh/zetgf2x4",
       "id": "11",
       "name": "product-table-head-0-surface",
       "bbox": [
@@ -554,7 +554,7 @@
       "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/p0bqdsbu",
+      "aid": "sh/0f2honyp",
       "id": "12",
       "name": "product-table-head-0-text",
       "bbox": [
@@ -618,7 +618,7 @@
       "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/oz29kna9",
+      "aid": "sh/lgbyhsfa",
       "id": "13",
       "name": "product-table-head-1-surface",
       "bbox": [
@@ -636,7 +636,7 @@
       "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fu987its",
+      "aid": "sh/qp0fidgn",
       "id": "14",
       "name": "product-table-head-1-text",
       "bbox": [
@@ -700,7 +700,7 @@
       "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/et0reds7",
+      "aid": "sh/rqtgbix8",
       "id": "15",
       "name": "product-table-head-2-surface",
       "bbox": [
@@ -718,7 +718,7 @@
       "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1wbq98by",
+      "aid": "sh/cr2hknyt",
       "id": "16",
       "name": "product-table-head-2-text",
       "bbox": [
@@ -782,7 +782,7 @@
       "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0v29gnad",
+      "aid": "sh/dsbydsfy",
       "id": "17",
       "name": "product-table-head-3-surface",
       "bbox": [
@@ -800,7 +800,7 @@
       "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/rq983ytw",
+      "aid": "sh/al4zuhgr",
       "id": "18",
       "name": "product-table-head-3-text",
       "bbox": [
@@ -864,7 +864,7 @@
       "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qp07atsb",
+      "aid": "sh/vmdgnmxc",
       "id": "19",
       "name": "product-table-value-0-surface",
       "bbox": [
@@ -882,7 +882,7 @@
       "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/u1grmtw3",
+      "aid": "sh/7qpwfedo",
       "id": "20",
       "name": "product-table-value-0-text",
       "bbox": [
@@ -943,7 +943,7 @@
       "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/v2psvydo",
+      "aid": "sh/6pwvm9w3",
       "id": "21",
       "name": "product-table-value-1-surface",
       "bbox": [
@@ -961,7 +961,7 @@
       "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wny9o3e9",
+      "aid": "sh/ts7eh4vu",
       "id": "22",
       "name": "product-table-value-1-text",
       "bbox": [
@@ -1022,7 +1022,7 @@
       "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/horax8vu",
+      "aid": "sh/srydoje9",
       "id": "23",
       "name": "product-table-value-2-surface",
       "bbox": [
@@ -1040,7 +1040,7 @@
       "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ip0rqdwz",
+      "aid": "sh/fupwjed0",
       "id": "24",
       "name": "product-table-value-2-text",
       "bbox": [
@@ -1101,7 +1101,7 @@
       "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/3q9szidk",
+      "aid": "sh/utgvq9wf",
       "id": "25",
       "name": "product-table-value-3-surface",
       "bbox": [
@@ -1119,7 +1119,7 @@
       "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/4ri9s3e5",
+      "aid": "sh/hw7elovq",
       "id": "26",
       "name": "product-table-value-3-text",
       "bbox": [
@@ -1180,7 +1180,7 @@
       "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/5sra18vq",
+      "aid": "sh/gvydsjel",
       "id": "27",
       "name": "selling-point-highlight",
       "bbox": [
@@ -1197,7 +1197,7 @@
       "order": 28,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qt0rudcb",
+      "aid": "sh/3y9wnydw",
       "id": "28",
       "name": "selling-point",
       "bbox": [
@@ -1265,7 +1265,7 @@
       "order": 29,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ru9s3idw",
+      "aid": "sh/2xgvutwb",
       "id": "29",
       "name": "section-title-0",
       "bbox": [
@@ -1330,7 +1330,7 @@
       "order": 30,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1ovutcfy",
+      "aid": "sh/0nid43ap",
       "id": "30",
       "name": "section-0-item-0",
       "bbox": [
@@ -1391,7 +1391,7 @@
       "order": 31,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0nmdk7yd",
+      "aid": "sh/1orud8ba",
       "id": "31",
       "name": "section-0-item-1",
       "bbox": [
@@ -1452,7 +1452,7 @@
       "order": 32,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fmtcr2xs",
+      "aid": "sh/e10v2tsj",
       "id": "32",
       "name": "section-0-item-2",
       "bbox": [
@@ -1513,7 +1513,7 @@
       "order": 33,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/elkbihg7",
+      "aid": "sh/zm9cbyt4",
       "id": "33",
       "name": "section-title-1",
       "bbox": [
@@ -1578,7 +1578,7 @@
       "order": 34,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/psvuxwfu",
+      "aid": "sh/czid0jad",
       "id": "34",
       "name": "section-1-item-0",
       "bbox": [
@@ -1646,7 +1646,7 @@
       "order": 35,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ormdorep",
+      "aid": "sh/d0ru9oby",
       "id": "35",
       "name": "section-1-item-1",
       "bbox": [
@@ -1710,7 +1710,7 @@
       "order": 36,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nqdcvmx4",
+      "aid": "sh/qxgvy9sn",
       "id": "36",
       "name": "section-1-item-2",
       "bbox": [
@@ -1778,7 +1778,7 @@
       "order": 37,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/2p4vmhgj",
+      "aid": "sh/ry9c7ets",
       "id": "37",
       "name": "section-title-2",
       "bbox": [
@@ -1843,7 +1843,7 @@
       "order": 38,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xgfu1wf6",
+      "aid": "sh/4vytwjah",
       "id": "38",
       "name": "section-2-item-0",
       "bbox": [
@@ -1904,7 +1904,7 @@
       "order": 39,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cf6dsrel",
+      "aid": "sh/pw7u5ob2",
       "id": "39",
       "name": "section-2-item-1",
       "bbox": [
@@ -1965,7 +1965,7 @@
       "order": 40,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8bqxkvyt",
+      "aid": "sh/t0nadkru",
       "id": "40",
       "name": "section-2-item-2",
       "bbox": [
