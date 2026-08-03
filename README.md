@@ -2,44 +2,73 @@
 
 内部培训课件 / 视频的金样沉淀、内容驱动组装与业务 WorkBuddy 傻瓜交付。
 
-## 业务怎么用（默认 · 业务 + WorkBuddy）
+## 业务怎么用（默认 · 不需要解压）
 
-开源式四步（解压业务包后）：
+在 **WorkBuddy** 里直接输入：
 
-1. **双击根目录 `index.html`**（主入口引导页）
-2. **预览并选择模板**（封面 + 关键页）
-3. **下载空白 Word 填报**（可删节、有几条写几条）
-4. **上传提交**（拖入 Word/图或放入 `07_业务填报上传/待处理/`）→ 复制口令给 WorkBuddy → **先审初稿，再收成片**
+```text
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+```
 
-业务包路径：`outputs/业务使用资料包/药店培训内容工厂-业务包.zip`
+WorkBuddy 会：
 
-刷新业务包（制作侧 · 推荐一键）：
+1. **安装/更新**本仓库（`git clone` 或 `git pull`）  
+2. 打开业务引导页，按开源式四步陪你做：  
+   **预览选模板 → 按 Word 填报 → 上传/发附件 → 审初稿 → 收成片**
+
+业务**不需要**自己解压 zip、装 Node、起端口。
+
+详细协议：
+
+- 业务一页：`docs/business-ready-use-today.md`  
+- WorkBuddy 安装与引导：`docs/workbuddy-install-and-guide.md`  
+- 系统提示词（粘贴到代理）：`docs/workbuddy-system-prompt.md`  
+- 总案：`docs/business-workbuddy-foolproof-delivery.md`
+
+安装脚本（代理执行）：
+
+```bash
+# 已在仓库内
+python3 scripts/workbuddy_bootstrap_for_business.py
+
+# 首次（示例路径）
+git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git ~/Documents/chain-pharmacy-content-studio
+cd ~/Documents/chain-pharmacy-content-studio
+python3 scripts/workbuddy_bootstrap_for_business.py
+```
+
+## 制作侧
+
+刷新业务引导包（含货架 + 空白 Word + 引导页）：
 
 ```bash
 python3 scripts/refresh_business_delivery.py
+# → outputs/业务使用资料包/药店培训内容工厂-业务包/
+# → …/药店培训内容工厂-业务包.zip（仅备份/离线拷贝，非业务默认入口）
 ```
 
 ## 关键文档
 
 | 文档 | 说明 |
 |------|------|
+| [`docs/workbuddy-install-and-guide.md`](docs/workbuddy-install-and-guide.md) | **默认**：安装句 + 四步引导 |
+| [`docs/workbuddy-system-prompt.md`](docs/workbuddy-system-prompt.md) | 代理系统提示词 |
 | [`docs/business-workbuddy-foolproof-delivery.md`](docs/business-workbuddy-foolproof-delivery.md) | 业务 WorkBuddy 傻瓜交付总案 |
-| [`docs/workbuddy-system-prompt.md`](docs/workbuddy-system-prompt.md) | 代理系统提示词（粘贴用） |
 | [`production-library/templates/settled/`](production-library/templates/settled/) | 已签样正式模板 |
-| [`docs/project-brief.md`](docs/project-brief.md) | 项目简报（若存在） |
 
 ## 仓库边界
 
 - **纳入 Git**：settled 金样成片与预览、文档、脚本、登记表、业务包、源码与配置  
 - **默认不纳入**（体积 / 可本地再生）：`third_party/`、`node_modules`、`.venv*`、validation 下音视频与大量 QA 截图、`tmp/`  
 
-克隆后需按 `AGENTS.md` 与各工程 `package.json` 安装依赖；克隆语音包引擎见 `docs/local-open-source-reuse-audit.md`。
+克隆后业务路径只依赖业务包内预览与 Word；出片与克隆 TTS 由 WorkBuddy 在本机按 `AGENTS.md` 与各工程依赖执行。
 
 ## 硬原则（摘要）
 
 - 金样优先 · 内容驱动（有几条写几条）· 审核文案锁定  
 - 无授权不仿包装 · 视频默认模板克隆药师声 · 禁止系统机器人音色作正式旁白  
 - 先确认后成片；编辑器端口仅制作返修，非业务默认路径  
+- **业务默认入口 = WorkBuddy 安装句，不是解压 zip**
 
 ## License / 使用范围
 

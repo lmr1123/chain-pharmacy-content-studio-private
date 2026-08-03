@@ -19,23 +19,31 @@
 
 **一句话目标：**
 
-> **业务 + WorkBuddy** 协作交付：业务只做「看模板 → 选模板 → 填框架 → 审初稿 → 拿成片」；  
-> WorkBuddy 执行工厂（套 settled、内容驱动、克隆声、出 PPTX/MP4）；  
-> **正常路径不经制作手工**；制作仅异常返修。禁止系统机器人音色与假包装。
+> **业务 + WorkBuddy** 协作交付：业务在 WorkBuddy **一句话安装仓库**，再按开源式「预览选模板 → 填 Word → 提交 → 审初稿 → 拿成片」；  
+> WorkBuddy 负责安装/更新、引导、套 settled、内容驱动、克隆声、出 PPTX/MP4；  
+> **业务不需要自己解压 zip**；**正常路径不经制作手工**；制作仅异常返修。禁止系统机器人音色与假包装。
 
 ---
 
 ## 0. 一页给业务（可直接转发）
 
-### 你怎么用（4 步）
+### 你怎么用（默认 · 不需要解压）
 
-1. **看效果**：打开「模板货架」页面，点每个模板的关键页截图 / 金样视频，确认观感。  
-2. **选模板**：记住中文课型名（见下表）。  
-3. **填框架**：复制该模板的「空白 Word」，按章节填**已审核**文案；没有的章节整段删掉；条数有几条写几条。  
-4. **交给 WorkBuddy**：发 Word + 授权包装图，说：「先出初稿/分镜预览给我确认，确认后再出 PPTX/视频。」
+1. 打开 **WorkBuddy**，粘贴：
+
+```text
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+```
+
+2. WorkBuddy 装好后会**指引你**完成四步：  
+   **预览选模板 → 按 Word 填报 → 上传/发附件 → 审初稿后收成片**  
+3. 确认初稿后再让它出可编辑 PPTX / 培训视频。
+
+详细：`docs/business-ready-use-today.md` · `docs/workbuddy-install-and-guide.md`
 
 ### 你不需要
 
+- **自己解压任何业务包 zip**  
 - 装 Node、起端口、懂「可编辑图层」  
 - 指定字号、坐标、页数、动画参数  
 - 为对齐示例硬凑 3 条联合用药（2 条就 2 条）  
@@ -85,34 +93,41 @@
 
 | 角色 | 工具 | 职责 |
 |------|------|------|
-| **业务** | 浏览器看货架 + Word + WorkBuddy 对话 | 选模板、填审核内容、附授权图、审初稿/分镜 |
-| **WorkBuddy（代理）** | 本机项目 + 本方案系统提示 | 解析 Word、套模板、自适应排版、克隆旁白、列缺口、导出 |
+| **业务** | WorkBuddy 对话 + 引导页 + Word | 说安装句、选模板、填审核内容、附授权图、审初稿/分镜 |
+| **WorkBuddy（代理）** | 本机 `git clone` 本仓库 + 系统提示 | **安装/更新**、打开引导页、逐步指引、解析 Word、套模板、克隆旁白、导出 |
 | **制作** | 全库 + 业务编辑器 + 剪映 | 金样沉淀、新页型、语音包、返修疑难 |
 
-### 2.2 三档交付物（按对方能力发）
+### 2.2 交付物分层（默认 vs 备用）
 
-#### 档 A · 纯业务包（默认发给一线）
+#### 默认 · 业务 + WorkBuddy 安装仓库
+
+业务只发安装句；WorkBuddy 克隆：
+
+`https://github.com/lmr1123/chain-pharmacy-content-studio.git`
+
+脚本：`scripts/workbuddy_bootstrap_for_business.py`  
+协议：`docs/workbuddy-install-and-guide.md`  
+提示词：`docs/workbuddy-system-prompt.md`
+
+克隆后业务可见引导页在仓库内：
+
+`outputs/业务使用资料包/药店培训内容工厂-业务包/index.html`
+
+#### 档 A · 离线业务包（备用 · 非默认）
+
+无代理时由制作拷贝 zip，**仍建议业务装 WorkBuddy 走默认入口**。
 
 ```text
 药店培训内容工厂-业务包/
-  00_一页怎么用.md                 # 摘自本文 §0
-  01_模板货架/                     # 或 online_url
-    index.html
-  02_空白Word/                     # 按课型
-  03_填写参考/                     # 标明「仅示范格式」
-  04_WorkBuddy口令卡.md            # §9
-  05_交付物放这里/                 # 空目录
+  index.html                       # 开源式四步引导
+  00_一页怎么用.md
+  01_模板货架/
+  02_空白Word/
+  03_填写参考/
+  04_WorkBuddy口令卡.md
+  05_交付物放这里/
+  07_业务填报上传/
 ```
-
-**不含** `poc/`、`node_modules`、端口表、validation 工程。
-
-#### 档 B · 代理工作站（业务电脑已装 WorkBuddy）
-
-在档 A 基础上增加：
-
-- 本仓库（或精简 monorepo）  
-- WorkBuddy **系统提示词**（本文 §8）  
-- 只读访问 `templates/settled`、`voices`、生成脚本入口  
 
 #### 档 C · 制作完整环境
 
@@ -366,13 +381,15 @@ WorkBuddy：**voice_id 只从模板 manifest 读取**，禁止回退系统 TTS�
 ## 7. 端到端业务路径（PPT + 视频共用）
 
 ```text
-安装 / 打开
+业务在 WorkBuddy：请安装 <repo.git>，然后指引我使用
     ↓
-【A】模板货架（关键页 + 金样）
+WorkBuddy：git clone/pull + bootstrap → 打开 index.html
     ↓
-选中模板 → 框架 Word（模块可删、可空）
+【A】预览选模板（关键页 + 金样）
     ↓
-业务填写 + 授权附件
+【B】按空白 Word 填报（模块可删、可空）
+    ↓
+【C】上传/发附件（Word + 授权图）
     ↓
 WorkBuddy：
   PPT → 内容初稿 + 待确认 + 缺口
@@ -380,7 +397,7 @@ WorkBuddy：
     ↓
 业务确认
     ↓
-导出：可编辑 PPTX 和/或 MP4 → 05_交付物放这里/
+导出：可编辑 PPTX 和/或 MP4 → 交付目录 / 05_交付物放这里/
     ↓
 （可选）业务改 PPT 字图；制作侧编辑器 / 剪映返修
 ```
@@ -404,8 +421,12 @@ WorkBuddy：
 
 ```text
 你是连锁药店培训内容工厂的本地代理。只使用 production-library/templates/settled 中已登记模板。
+业务默认入口：识别「请安装 …chain-pharmacy-content-studio.git，然后指引我使用」→
+clone/pull + scripts/workbuddy_bootstrap_for_business.py → 打开引导页 → 四步陪做。
+禁止要求业务自己解压 zip。全文见 docs/workbuddy-system-prompt.md。
 
 【业务可见】
+- 安装/更新仓库并打开 index.html 引导页
 - 帮用户选课型、打开/说明模板货架预览
 - 指导填写空白 Word；强调：可删整节、有几条写几条
 - 收集授权包装/Logo；无图则记入缺口，不伪造
@@ -428,6 +449,7 @@ WorkBuddy：
 - AI 仿造品牌包装/Logo
 - 要求业务填写坐标、组件 ID、时码
 - 把 validation 探索稿当正式模板
+- 把「请先解压业务包」当默认话术
 
 【输出目录】
 交付/<主题中文名>_<日期>/
@@ -514,6 +536,7 @@ WorkBuddy：
 | 2026-08-03 | 初版：货架预览、内容驱动框架、视频/语音包、WorkBuddy 分层与 backlog |
 | 2026-08-03 | **P0 落地（上市公司交付标准）**：六模板 `preview/` 真实金样帧；档 A 业务包 zip（货架+Word+口令+质量说明）；`workbuddy-system-prompt.md`；manifest.preview + 视频类 manifest.voice；刷新命令见下 |
 | 2026-08-03 | **业务可上手**：每课型「本课型怎么填」；填写参考纠错（商品不再错挂风热样本）；初稿/缺口/分镜标准模板+示例；业务验收清单；内容驱动规则回归；一键 `scripts/refresh_business_delivery.py` |
+| 2026-08-03 | **默认入口改为 WorkBuddy 安装句**：业务不需解压；`workbuddy_bootstrap_for_business.py` + `workbuddy-install-and-guide.md`；开源式四步由代理陪做 |
 
 **刷新业务包（制作侧 · 推荐一键）：**
 
@@ -528,7 +551,7 @@ python3 scripts/refresh_business_delivery.py
 
 当且仅当：
 
-1. 业务同事**不打开工程源码**，仅凭档 A + WorkBuddy，能选对模板并提交 Word；  
+1. 业务同事**只需在 WorkBuddy 说安装句**，无需自己解压 zip，能在引导下选对模板并提交 Word；  
 2. 同一模板换商品/病种，产出风格一致、**无空白凑行**、无假包装；  
 3. 视频旁白为**模板克隆声 + 审核原文**，非系统机器人音色；  
 4. 每条交付有可追溯：`template_id`、`style_pack_id`、`voice_id`、初稿确认记录。

@@ -31,6 +31,19 @@ If a plan conflicts with the above, stop and realign.
    variants, comparisons, and QA only under `production-library/validation/`; never mix them
    in a shared `out` or `output` directory.
 
+## Business + WorkBuddy default entry (no unzip)
+
+Business opens WorkBuddy and says:
+
+```text
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+```
+
+Agent must: install/update repo (`scripts/workbuddy_bootstrap_for_business.py`), open the
+guided portal, then walk **preview → Word fill → submit → draft → final**.
+See `docs/workbuddy-install-and-guide.md` and `docs/workbuddy-system-prompt.md`.
+Do **not** tell business to unzip a zip as the default path.
+
 ## Product PPT courseware: guide business in four steps
 
 When extending a settled product courseware template (e.g. green 金银花露):

@@ -1,6 +1,14 @@
 # WorkBuddy 口令卡（业务复制）
 
-## 通用（每次必带）
+## 第一次用（安装 · 推荐）
+
+```
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+```
+
+不需要自己解压 zip。WorkBuddy 装好后会带你预览选模板、填 Word、提交。
+
+## 通用（每次必带 · 已会用时）
 
 ```
 我要用 【课型中文名】，主题是 【病名或商品名】。
