@@ -8,8 +8,8 @@
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-2. 打开 `index.html`：**选模板**（一行四个小卡片 + 关键页大图）  
-3. 回 WorkBuddy **说商品/疾病要点** → 先确认内容初稿 → 再出 PPT/视频  
+2. 打开 `index.html`：**看模板**（一行四个小卡片 + 关键页预览）  
+3. WorkBuddy **输入培训内容** → **下载 PPT 修改，或输入指令批量修改**  
 
 示例口令见 `04_WorkBuddy口令卡.md`。
 
