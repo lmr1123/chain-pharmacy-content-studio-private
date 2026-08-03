@@ -1,0 +1,57 @@
+{"kind":"deck","id":"pr/v23mzc","name":"Deck"}
+{"kind":"layout","layoutId":"51599c1f-643b-4091-8b41-d4e6e5283e51","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"ea92096b-9c88-4929-8207-b55ca9370bb7","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/4n5ngf","slide":1,"title":"Slide 1","textShapes":0}
+{"kind":"image","id":"im/bex8re9k","slide":1,"name":"","alt":"源 PDF 第 1 张课件画面：清热泻火，专攻风热诸证","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/4n5ngf","slide":1,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-000.png\n- Source slide: 1\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/fkicux","slide":2,"title":"Slide 2","textShapes":0}
+{"kind":"image","id":"im/10vy94nq","slide":2,"name":"","alt":"源 PDF 第 2 张课件画面：精准辨证是中医临床的基石","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/fkicux","slide":2,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-001.png\n- Source slide: 2\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/xafd7o","slide":3,"title":"Slide 3","textShapes":0}
+{"kind":"image","id":"im/2187654j","slide":3,"name":"","alt":"源 PDF 第 3 张课件画面：目录","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/xafd7o","slide":3,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-002.png\n- Source slide: 3\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/carf5c","slide":4,"title":"Slide 4","textShapes":0}
+{"kind":"image","id":"im/relc3y9o","slide":4,"name":"","alt":"源 PDF 第 4 张课件画面：风热证的定义","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/carf5c","slide":4,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-003.png\n- Source slide: 4\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/bpf5y0","slide":5,"title":"Slide 5","textShapes":0}
+{"kind":"image","id":"im/x0bq90jm","slide":5,"name":"","alt":"源 PDF 第 5 张课件画面：风热证的典型症状","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/bpf5y0","slide":5,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-004.png\n- Source slide: 5\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/h06vel","slide":6,"title":"Slide 6","textShapes":0}
+{"kind":"image","id":"im/cr2d87eh","slide":6,"name":"","alt":"源 PDF 第 6 张课件画面：风热证的鉴别","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/h06vel","slide":6,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-005.png\n- Source slide: 6\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/1y29nl","slide":7,"title":"Slide 7","textShapes":0}
+{"kind":"image","id":"im/0zyx0f29","slide":7,"name":"","alt":"源 PDF 第 7 张课件画面：风热证的治疗：辨证用药总原则","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/1y29nl","slide":7,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-006.png\n- Source slide: 7\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/17rgge","slide":8,"title":"Slide 8","textShapes":0}
+{"kind":"image","id":"im/2h4bi50v","slide":8,"name":"","alt":"源 PDF 第 8 张课件画面：风热证的证候细分（常见）","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/17rgge","slide":8,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-007.png\n- Source slide: 8\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/qkkfc5","slide":9,"title":"Slide 9","textShapes":0}
+{"kind":"image","id":"im/kret0fm9","slide":9,"name":"","alt":"源 PDF 第 9 张课件画面：穿心莲内酯滴丸的产品信息","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/qkkfc5","slide":9,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-008.png\n- Source slide: 9\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/enluyc","slide":10,"title":"Slide 10","textShapes":0}
+{"kind":"image","id":"im/7qp8fet8","slide":10,"name":"","alt":"源 PDF 第 10 张课件画面：穿心莲内酯滴丸的产品优势","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/enluyc","slide":10,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-009.png\n- Source slide: 10\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/2dsjxg","slide":11,"title":"Slide 11","textShapes":0}
+{"kind":"image","id":"im/hcrqpgbu","slide":11,"name":"","alt":"源 PDF 第 11 张课件画面：穿心莲内酯滴丸的核心优势总结","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/2dsjxg","slide":11,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-010.png\n- Source slide: 11\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/icm47u","slide":12,"title":"Slide 12","textShapes":0}
+{"kind":"image","id":"im/0n65kv6d","slide":12,"name":"","alt":"源 PDF 第 12 张课件画面：什么时候推荐穿心莲内酯滴丸","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/icm47u","slide":12,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-011.png\n- Source slide: 12\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/dfl0cy","slide":13,"title":"Slide 13","textShapes":0}
+{"kind":"image","id":"im/5wvulc7i","slide":13,"name":"","alt":"源 PDF 第 13 张课件画面：以“望闻问切”辨顾客，以专业方案做推荐","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/dfl0cy","slide":13,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-012.png\n- Source slide: 13\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/q10qwx","slide":14,"title":"Slide 14","textShapes":0}
+{"kind":"image","id":"im/x47qx07q","slide":14,"name":"","alt":"源 PDF 第 14 张课件画面：场景1：顾客主诉“喉咙痛”","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/q10qwx","slide":14,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-013.png\n- Source slide: 14\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/1wa3vg","slide":15,"title":"Slide 15","textShapes":0}
+{"kind":"image","id":"im/upsze98b","slide":15,"name":"","alt":"源 PDF 第 15 张课件画面：场景2：顾客主诉“感冒了，发烧，有黄痰”","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/1wa3vg","slide":15,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-014.png\n- Source slide: 15\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/8r0b2f","slide":16,"title":"Slide 16","textShapes":0}
+{"kind":"image","id":"im/fylsrah8","slide":16,"name":"","alt":"源 PDF 第 16 张课件画面：日常生活叮嘱","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/8r0b2f","slide":16,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-015.png\n- Source slide: 16\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/82pqpy","slide":17,"title":"Slide 17","textShapes":0}
+{"kind":"image","id":"im/1kvutwj2","slide":17,"name":"","alt":"源 PDF 第 17 张课件画面：广誉远安宫牛黄丸","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/82pqpy","slide":17,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-016.png\n- Source slide: 17\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}
+{"kind":"slide","id":"sl/jc9rr9","slide":18,"title":"Slide 18","textShapes":0}
+{"kind":"image","id":"im/87a5sjy1","slide":18,"name":"","alt":"源 PDF 第 18 张课件画面：白云山安宫＋宏济堂安宫","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/jc9rr9","slide":18,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Extracted flattened slide image: /Users/liminrong/Projects/chain-pharmacy-content-studio/poc/courseware-export/courseware2-work/source-slides/slide-017.png\n- Source slide: 18\n- Reuse mode: full-slide flattened image; visual reference baseline, not an editable production page.\n[/Sources]"}

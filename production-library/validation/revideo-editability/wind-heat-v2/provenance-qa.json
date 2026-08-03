@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "check_id": "qa.wind-heat-v2.provenance",
+  "checked_at": "2026-07-30T17:24:43.112Z",
+  "repository_root": "/Users/liminrong/Projects/chain-pharmacy-content-studio",
+  "status": "passed",
+  "policy": {
+    "reference_pixels_allowed_in_production": false,
+    "forbidden_rule_ids": [
+      "forbidden.title-reference",
+      "forbidden.master-clean",
+      "forbidden.master-frame",
+      "forbidden.reference-analysis-frame-path",
+      "forbidden.reference-frame-or-crop-file",
+      "forbidden.reference-replica-asset-path"
+    ]
+  },
+  "scanned_file_count": 16,
+  "scanned_files": [
+    "poc/gold-sample/src/components/reference-courseware-cards.tsx",
+    "poc/gold-sample/src/components/reference-mechanism-gap.tsx",
+    "poc/gold-sample/src/components/reference-medical-tech-master.tsx",
+    "poc/gold-sample/src/components/reference-summary-outro.tsx",
+    "poc/gold-sample/src/reference-mechanism-gap-project.tsx",
+    "poc/gold-sample/src/reference-medication-advice-project.tsx",
+    "poc/gold-sample/src/reference-native-intro-project.tsx",
+    "poc/gold-sample/src/reference-replica-project.tsx",
+    "poc/gold-sample/src/reference-summary-outro-project.tsx",
+    "poc/gold-sample/src/reference-symptoms-project.tsx",
+    "poc/gold-sample/src/reference-treatment-project.tsx",
+    "poc/gold-sample/src/wind-heat-editable-project.tsx",
+    "production-library/examples/wind-heat-full-frame-assembly.json",
+    "production-library/examples/wind-heat-mechanism-gap.json",
+    "production-library/examples/wind-heat-medication-advice.json",
+    "production-library/examples/wind-heat-summary-outro.json"
+  ],
+  "finding_count": 0,
+  "findings": []
+}

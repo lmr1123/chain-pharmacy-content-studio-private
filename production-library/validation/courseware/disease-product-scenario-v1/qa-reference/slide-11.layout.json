@@ -1,0 +1,83 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/2dsjxg",
+    "id": "2dsjxg",
+    "slide": 11,
+    "layoutId": "ea92096b-9c88-4929-8207-b55ca9370bb7",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "51599c1f-643b-4091-8b41-d4e6e5283e51",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    }
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ea92096b-9c88-4929-8207-b55ca9370bb7",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "51599c1f-643b-4091-8b41-d4e6e5283e51",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "51599c1f-643b-4091-8b41-d4e6e5283e51",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/hcrqpgbu",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "源 PDF 第 11 张课件画面：穿心莲内酯滴丸的核心优势总结",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "43a63501-3318-479a-951b-b3ac8c8fa1bc",
+        "contentType": "image/png",
+        "byteLength": 430841
+      }
+    }
+  ],
+  "composeRuns": []
+}

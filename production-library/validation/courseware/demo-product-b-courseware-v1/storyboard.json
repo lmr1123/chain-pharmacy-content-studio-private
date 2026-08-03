@@ -1,0 +1,201 @@
+{
+  "project_id": "courseware.sufuda-product-training-3.gold-v1",
+  "title": "示例宁®演示用占位成分 · 结构验证主题（非医学终稿）",
+  "template_id": "template.sufuda-product-courseware-3-v1",
+  "style_pack_id": "style-pack.sufuda-pearl-silk-orange-v1",
+  "source_authority": {
+    "video": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4",
+    "audio": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3",
+    "duration_source": 136.83,
+    "duration_deliverable": 93.228,
+    "trim_reason": "新录音有效口播约至 96s；97s 后为静音垫，不进入成片",
+    "reference_resolution": [
+      850,
+      480
+    ],
+    "output_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "pixel_policy": "measurement-only-never-import"
+  },
+  "audio": {
+    "file": "/assets/narration-0-103.wav",
+    "source": "voice.sufuda-courseware-pharmacist-v1",
+    "processing": "Qwen3-TTS semantic-block clone v5-smooth + loudnorm-16LUFS",
+    "loudness_target_lufs": -16,
+    "note": "v2.1：整课克隆轨替换重录原声，供评估克隆质量上限；原声备份 narration-rerecord-original-v2.wav",
+    "clone_report": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/sufuda-product-courseware-3-gold-v1/audio-work/clone-full-v1/clone-report.json"
+  },
+  "assets": {
+    "background": "/assets/bg-silk-v1.png",
+    "logo": "/assets/logo-sufuda-text-v1.png",
+    "packGroup": "/assets/pack-group-slot-v1.png",
+    "pack40": "/assets/pack-tablet-40-slot-v1.png",
+    "pack20": "/assets/pack-tablet-20-slot-v1.png",
+    "packSusp": "/assets/pack-suspension-slot-v1.png",
+    "icon365": "/assets/icon-365-v1.png",
+    "iconTree": "/assets/icon-season-tree-v1.png",
+    "iconVirus": "/assets/icon-virus-v1.png",
+    "iconLungs": "/assets/icon-lungs-v1.png",
+    "iconWarn": "/assets/icon-warn-v1.png",
+    "iconChina": "/assets/icon-china-cases-v1.png",
+    "iconBaby": "/assets/icon-baby-v1.png",
+    "iconShield": "/assets/icon-shield-check-v1.png",
+    "icon24h": "/assets/icon-24h-v1.png",
+    "iconThumb": "/assets/icon-thumb-v1.png",
+    "iconAward": "/assets/icon-award-v1.png",
+    "icon70": "/assets/icon-70plus-v1.png",
+    "iconFlag": "/assets/icon-flag-v1.png",
+    "iconHand": "/assets/icon-hand-pointer-v1.png",
+    "cell": "/assets/mechanism-cell-v1.png",
+    "family": "/assets/family-shield-v1.png",
+    "patient": "/assets/patient-masked-v1.png",
+    "charElder": "/assets/char-elder-v1.png",
+    "charChild": "/assets/char-child-v1.png",
+    "charChronic": "/assets/char-chronic-group-v1.png",
+    "bust": "/assets/bust-outline-v1.png",
+    "tablets": "/assets/tablets-closeup-v1.png",
+    "granule": "/assets/granule-kit-v1.png",
+    "boxFever": "/assets/box-antipyretic-v1.png",
+    "boxChronic": "/assets/box-chronic-v1.png"
+  },
+  "packshot_policy": "业务授权包装槽位；当前为自制无商标示意包装，替换路径即可。禁止从参考视频裁切像素。",
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 3.958,
+      "text": "本课为结构验证主题，不是真实药品宣传。"
+    },
+    {
+      "start": 4.038,
+      "end": 7.372,
+      "text": "内容模型驱动页面文字与图片槽位。"
+    },
+    {
+      "start": 7.452,
+      "end": 11.202,
+      "text": "业务可在编辑器中改字换图并导出课件。"
+    },
+    {
+      "start": 11.282,
+      "end": 15.657,
+      "text": "换主题时复制框架，替换审核文案与授权资产。"
+    },
+    {
+      "start": 15.737,
+      "end": 20.237,
+      "text": "医学结论只来自审核稿，演示内容不构成功效主张。"
+    }
+  ],
+  "pages": [
+    {
+      "id": "P01",
+      "range": [
+        0.0,
+        10.975
+      ],
+      "type": "flu-context"
+    },
+    {
+      "id": "P02",
+      "range": [
+        10.975,
+        13.956
+      ],
+      "type": "chapter",
+      "title": "一、三大核心功效"
+    },
+    {
+      "id": "P03",
+      "range": [
+        13.956,
+        29.634
+      ],
+      "type": "benefit-2"
+    },
+    {
+      "id": "P04",
+      "range": [
+        29.634,
+        37.004
+      ],
+      "type": "benefit-3"
+    },
+    {
+      "id": "P05",
+      "range": [
+        37.004,
+        42.65
+      ],
+      "type": "chapter",
+      "title": "二、产品特点"
+    },
+    {
+      "id": "P06",
+      "range": [
+        42.65,
+        51.43
+      ],
+      "type": "feature-2"
+    },
+    {
+      "id": "P07",
+      "range": [
+        51.43,
+        62.405
+      ],
+      "type": "feature-3"
+    },
+    {
+      "id": "P08",
+      "range": [
+        62.405,
+        68.365
+      ],
+      "type": "chapter",
+      "title": "三、适宜人群"
+    },
+    {
+      "id": "P09",
+      "range": [
+        68.365,
+        74.951
+      ],
+      "type": "audience-1"
+    },
+    {
+      "id": "P10",
+      "range": [
+        74.951,
+        82.948
+      ],
+      "type": "chapter",
+      "title": "三、联合用药"
+    },
+    {
+      "id": "P11",
+      "range": [
+        82.948,
+        89.848
+      ],
+      "type": "combo-2"
+    },
+    {
+      "id": "P12",
+      "range": [
+        89.848,
+        93.613
+      ],
+      "type": "chapter",
+      "title": "三、适宜人群"
+    }
+  ],
+  "duration": 93.228,
+  "theme_replication": {
+    "source_gold": "sufuda-product-courseware-3-gold-v1",
+    "theme_id": "theme.demo-product-b-structure-v1",
+    "created_at": "2026-08-02T12:04:31.018067+00:00"
+  }
+}

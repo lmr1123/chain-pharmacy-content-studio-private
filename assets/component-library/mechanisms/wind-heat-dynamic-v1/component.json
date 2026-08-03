@@ -1,0 +1,53 @@
+{
+  "id": "asset.mechanism.wind-heat-dynamic-v1",
+  "name_zh": "风热证平滑蓝青医学人体四镜头资产 v1",
+  "version": "1.0.0",
+  "status": "technical-qa-passed",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+  "role_ids": [
+    "whole_body_front",
+    "organ_torso",
+    "symptom_focus_front",
+    "anatomy_cross_section",
+    "pathogen_field",
+    "process_path"
+  ],
+  "asset_type": "scientific-educational-raster-set",
+  "source_type": "ai-generated-original",
+  "generator": "built-in image_gen",
+  "files": {
+    "full_body_source": "full-body-source.png",
+    "full_body_alpha": "full-body.png",
+    "lung_source": "lung-source.png",
+    "lung_alpha": "lung.png",
+    "throat_source": "throat-clean-source.png",
+    "throat_alpha": "throat-clean.png",
+    "larynx_source": "larynx-clean-source.png",
+    "larynx_alpha": "larynx-clean.png",
+    "volumetric_mist_phase_a": "volumetric-mist-a.png",
+    "volumetric_mist_phase_b": "volumetric-mist-b.png",
+    "thumbnail": "thumbnail.png",
+    "contact_sheet": "contact-sheet.png",
+    "prompts": "prompts.md"
+  },
+  "dimensions": {
+    "full_body_alpha": [976, 1611],
+    "lung_alpha": [1469, 1071],
+    "throat_alpha": [1343, 1171],
+    "larynx_alpha": [1412, 1114],
+    "volumetric_mist_phase_a": [1672, 941],
+    "volumetric_mist_phase_b": [1672, 941]
+  },
+  "reference_policy": "用户截图只用于人体细节等级、构图、症状区域和蓝青医学可视化风格；全部为重新生成的原创资产，不含截图像素、文字、界面或品牌元素。",
+  "qa": {
+    "alpha": true,
+    "transparent_corners": true,
+    "chroma_fringe": "not_detected",
+    "edge_review_200_percent": "passed",
+    "animation_binding": "passed",
+    "volumetric_mist_reference_comparison": "passed",
+    "technical_video_qa": "passed"
+  },
+  "restriction": "仅完成技术 QA；用户视觉签样和医学内容复核前不得标记 production-validated"
+}

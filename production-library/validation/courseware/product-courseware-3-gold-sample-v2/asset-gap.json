@@ -1,0 +1,26 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v2",
+  "status": "awaiting-business-assets",
+  "preferred_input": "original PPTX used to render the reference video",
+  "acceptable_alternative": [
+    "transparent high-resolution brand logo",
+    "authorized high-resolution product package images for all displayed dosage forms",
+    "original mechanism/evidence images if they are not editable slide objects",
+    "approved source copy or PDF for ambiguous small text"
+  ],
+  "may_recreate_in_house": [
+    "silk background",
+    "orange ribbon and numbered navigation",
+    "white cards and editable text",
+    "cell/virus mechanism illustration",
+    "audience character illustrations",
+    "shield and non-brand icons",
+    "summary table"
+  ],
+  "must_not_recreate_or_extract_from_reference_video": [
+    "brand logo",
+    "branded product packaging",
+    "brand evidence screenshots",
+    "low-resolution product pixels cropped from the reference video"
+  ]
+}

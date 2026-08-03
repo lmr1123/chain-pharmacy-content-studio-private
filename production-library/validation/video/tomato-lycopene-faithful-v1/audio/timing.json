@@ -1,0 +1,85 @@
+{
+  "total_duration": 152.297,
+  "segments": [
+    {
+      "scene_id": "s01-cover",
+      "start": 0.0,
+      "end": 9.1,
+      "duration": 9.1,
+      "file": "clean-01-s01-cover.wav",
+      "removed_reference_prefix_seconds": 2.82
+    },
+    {
+      "scene_id": "s02-context",
+      "start": 9.1,
+      "end": 26.437,
+      "duration": 17.337,
+      "file": "clean-02-s02-context.wav",
+      "removed_reference_prefix_seconds": 2.76
+    },
+    {
+      "scene_id": "s03-benefit-prostate",
+      "start": 26.437,
+      "end": 40.277,
+      "duration": 13.84,
+      "file": "clean-03-s03-benefit-prostate.wav",
+      "removed_reference_prefix_seconds": 2.9
+    },
+    {
+      "scene_id": "s04-benefit-antioxidant",
+      "start": 40.277,
+      "end": 53.777,
+      "duration": 13.5,
+      "file": "clean-04-s04-benefit-antioxidant.wav",
+      "removed_reference_prefix_seconds": 3.06
+    },
+    {
+      "scene_id": "s05-benefit-immunity",
+      "start": 53.777,
+      "end": 67.517,
+      "duration": 13.74,
+      "file": "clean-05-s05-benefit-immunity.wav",
+      "removed_reference_prefix_seconds": 2.26
+    },
+    {
+      "scene_id": "s06-feature-origin",
+      "start": 67.517,
+      "end": 82.157,
+      "duration": 14.64,
+      "file": "clean-06-s06-feature-origin.wav",
+      "removed_reference_prefix_seconds": 2.16
+    },
+    {
+      "scene_id": "s07-feature-material",
+      "start": 82.157,
+      "end": 99.235,
+      "duration": 17.078,
+      "file": "clean-07-s07-feature-material.wav",
+      "removed_reference_prefix_seconds": 2.22
+    },
+    {
+      "scene_id": "s08-audience",
+      "start": 99.235,
+      "end": 112.316,
+      "duration": 13.081,
+      "file": "clean-08-s08-audience.wav",
+      "removed_reference_prefix_seconds": 2.22
+    },
+    {
+      "scene_id": "s09-combination",
+      "start": 112.316,
+      "end": 136.736,
+      "duration": 24.42,
+      "file": "clean-09-s09-combination.wav",
+      "removed_reference_prefix_seconds": 2.3
+    },
+    {
+      "scene_id": "s10-summary",
+      "start": 136.736,
+      "end": 152.296,
+      "duration": 15.56,
+      "file": "clean-10-s10-summary.wav",
+      "removed_reference_prefix_seconds": 2.28
+    }
+  ]
+}

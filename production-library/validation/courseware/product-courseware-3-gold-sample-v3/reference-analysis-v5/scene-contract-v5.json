@@ -1,0 +1,61 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v5-next-segments",
+  "status": "production-in-progress",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "reference_video": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4",
+  "new_audio": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3",
+  "new_audio_range": [40.60, 80.72],
+  "duration_seconds": 40.12,
+  "scenes": [
+    {
+      "id": "R09",
+      "topic": "二、产品特点",
+      "reference_range": [40.68, 44.04],
+      "new_audio_range": [40.74, 41.68],
+      "observed": "旧内容清空后，橙色章节条由小到大在上方建立；底部保留章节名。",
+      "implementation": "沿用 v3 丝绸背景、品牌文字和橙色章节条，缩放回弹入场。"
+    },
+    {
+      "id": "R10",
+      "topic": "成人儿童安全性均良好",
+      "reference_range": [44.04, 49.24],
+      "new_audio_range": [42.10, 46.82],
+      "observed": "三段导航出现且第1项高亮；中央包装组位于橙色圆环内，儿童呕吐率低图标从左侧出现，右侧有安全盾牌。",
+      "implementation": "复用无品牌透明包装槽位；圆环和盾牌为简单可编辑形状，说明文字独立。"
+    },
+    {
+      "id": "R11",
+      "topic": "片剂、干混悬剂双剂型选择",
+      "reference_range": [49.24, 60.32],
+      "new_audio_range": [47.58, 56.90],
+      "observed": "导航第2项高亮；中央包装保持，左侧片剂与刻度尺、右侧干混悬剂瓶分步进入，并依次补充无味易吞、草莓口味和按体重给药。",
+      "implementation": "使用独立透明片剂和药瓶插画；包装继续为业务可替换槽位；文字、剂量和连接线原生可编辑。"
+    },
+    {
+      "id": "R12",
+      "topic": "原研品牌",
+      "reference_range": [60.32, 71.92],
+      "new_audio_range": [57.14, 68.52],
+      "observed": "导航第3项高亮；三条浅橙证据条自上而下累积：奥司他韦厂家／罗氏、70+国家获批、中国卫健委与WHO推荐、14项指南纳入。",
+      "implementation": "证据条、图标和文字均为原生可编辑层，按旁白逐条出现；不生成或伪造罗氏 Logo。"
+    },
+    {
+      "id": "R13",
+      "topic": "三、适宜人群",
+      "reference_range": [71.92, 82.96],
+      "new_audio_range": [68.80, 80.48],
+      "observed": "章节条切换；先出现人形轮廓和大橙色≥5岁圆标，随后老人、学龄儿童、慢病患者三类人物卡逐个建立。",
+      "implementation": "使用三组独立透明 2.5D 人物插画，人物下方标签原生可编辑；不使用 SVG 火柴人 Demo。"
+    }
+  ],
+  "asset_dependencies": {
+    "business": ["授权速福达片剂包装", "授权速福达干混悬剂包装", "授权品牌 Logo"],
+    "candidate_placeholders": ["无品牌包装组", "透明片剂插画", "透明干混悬剂瓶插画", "透明老人／儿童／慢病人群插画"]
+  },
+  "forbidden": [
+    "将参考视频截图或水印像素放入生产成片",
+    "伪造品牌包装或罗氏 Logo",
+    "用通用 SVG Demo 替代人物和药物主视觉",
+    "沿用旧录音绝对时码驱动新音频版本"
+  ]
+}

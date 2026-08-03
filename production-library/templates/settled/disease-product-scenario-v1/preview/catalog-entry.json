@@ -1,0 +1,23 @@
+{
+  "slug": "disease-product-scenario-v1",
+  "name_zh": "疾病+商品场景 PPT（如穿心莲）",
+  "one_liner": "辨证知识 + 商品知识 + 销售场景的可编辑长课件",
+  "gallery_title_zh": "疾病辨证与商品场景 · 穿心莲金样",
+  "outputs": [
+    "可编辑 PPTX"
+  ],
+  "category": "商品培训",
+  "production_ready": true,
+  "status_label": "已签样 · 可换主题量产",
+  "status_note": "章节可按内容增减；无资料的模块可整节省略。",
+  "key_frame_labels_zh": [
+    "封面",
+    "辨证/知识",
+    "商品知识",
+    "销售场景",
+    "收尾页"
+  ],
+  "voice_id": null,
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx"
+}

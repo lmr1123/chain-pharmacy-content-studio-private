@@ -1,0 +1,56 @@
+{
+  "health_training": {
+    "source_identity": "公司现行健康知识培训沉淀目标模板",
+    "template_id": "template.health-reference-tech-v1",
+    "style_pack_id": "style-pack.reference-medical-tech-v1",
+    "source_type": "settlement-target-template-reference-frame",
+    "frames": [
+      {
+        "path": "assets/business-input-guides/settled-template-frames/health-template-reference-005s.png",
+        "source_frame": "production-library/validation/video/qa-reference-5s.png",
+        "timecode": "00:05",
+        "label_zh": "模板角色与固定母版"
+      },
+      {
+        "path": "assets/business-input-guides/settled-template-frames/health-template-reference-018s.png",
+        "source_frame": "production-library/validation/video/qa-reference-18s.png",
+        "timecode": "00:18",
+        "label_zh": "典型症状图文页"
+      },
+      {
+        "path": "assets/business-input-guides/settled-template-frames/health-template-reference-026s.png",
+        "source_frame": "production-library/validation/video/qa-reference-26s.png",
+        "timecode": "00:26",
+        "label_zh": "病因机理讲解页"
+      }
+    ]
+  },
+  "product_training": {
+    "source_identity": "公司现行商品培训沉淀目标模板",
+    "template_id": "template.product-training-faithful-v1",
+    "style_pack_id": "style-pack.reference-product-blue-v1",
+    "source_type": "settlement-target-template-reference-frame",
+    "frames": [
+      {
+        "path": "assets/business-input-guides/settled-template-frames/product-template-reference-pair01.png",
+        "source_frame": "production-library/validation/video/product-training-faithful-qa/pair-1.jpg",
+        "source_region": "left 960x540 reference half",
+        "label_zh": "模板讲师角色页"
+      },
+      {
+        "path": "assets/business-input-guides/settled-template-frames/product-template-reference-pair04.png",
+        "source_frame": "production-library/validation/video/product-training-faithful-qa/pair-4.jpg",
+        "source_region": "left 960x540 reference half",
+        "label_zh": "症状图文讲解页"
+      },
+      {
+        "path": "assets/business-input-guides/settled-template-frames/product-template-reference-pair06.png",
+        "source_frame": "production-library/validation/video/product-training-faithful-qa/pair-6.jpg",
+        "source_region": "left 960x540 reference half",
+        "label_zh": "商品包装主视觉页"
+      }
+    ]
+  },
+  "usage": "business-word-settlement-target-template-appearance-only",
+  "restriction": "这些原模板截图只用于向业务说明课件真实外观，不得作为新项目的生产素材或直接复用其中的文字、图片、Logo、包装像素。"
+}

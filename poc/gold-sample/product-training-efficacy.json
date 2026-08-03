@@ -1,0 +1,118 @@
+{
+  "project_id": "product.q10.efficacy-faithful-v1",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "style_pack_locked": true,
+  "content_lock": "reference-transcript",
+  "referenceRange": {
+    "start": 62.48,
+    "end": 90.7,
+    "duration": 32.101
+  },
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-product-training-efficacy-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；自然语速铺轨，禁止超1.18×暴力加速",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "min_tempo": 0.95,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "1、促进能量生成，辅酶Q10是细胞线粒体内ATP合成的关键辅酶，是能量ATP生成的开关，可提高组织器官功能，改善因缺乏能量导致的胸闷、气短、心痛、运动耐力下降、亚健康等症状，2、抗氧化，减少组织细胞损伤，辅酶Q10可直接抗氧化，也可恢复维E等抗氧化物质活性，其抗氧化能力是维E的50倍，可保护组织器官，治疗不孕不育、心功能损伤、皮肤衰老等问题，产品特点。",
+          "raw_duration": 37.055,
+          "used_duration": 31.941,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 27.743,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "1、促进能量生成，辅酶Q10是细胞线粒体内ATP合成的关键辅酶，是能量ATP生成的开关，可提高组织器官功能，改善因缺乏能量导致的胸闷、气短、心痛、运动耐力下降、亚健康等症状，2、抗氧化，减少组织细胞损伤，辅酶Q10可直接抗氧化，也可恢复维E等抗氧化物质活性，其抗氧化能力是维E的50倍，可保护组织器官，治疗不孕不育、心功能损伤、皮肤衰老等问题，产品特点。"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "energy": [
+      "/product-training-efficacy/energy-idea-v1.png",
+      "/product-training-efficacy/energy-atp-v1.png",
+      "/product-training-efficacy/energy-tissues-v1.png"
+    ],
+    "antioxidant": [
+      "/product-training-efficacy/oxidative-stress-v1.png",
+      "/product-training-efficacy/antioxidant-molecules-v1.png",
+      "/product-training-efficacy/cell-protection-v1.png"
+    ],
+    "restriction": "六张功效图均为重新生成素材，不含参考视频像素；内容仅用于内部复刻签样"
+  },
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 1.609,
+      "text": "1、促进能量生成"
+    },
+    {
+      "start": 1.609,
+      "end": 5.867,
+      "text": "辅酶Q10是细胞线粒体内ATP合成的关键辅酶"
+    },
+    {
+      "start": 5.867,
+      "end": 7.997,
+      "text": "是能量ATP生成的开关"
+    },
+    {
+      "start": 7.997,
+      "end": 9.739,
+      "text": "可提高组织器官功能"
+    },
+    {
+      "start": 9.739,
+      "end": 15.933,
+      "text": "改善因缺乏能量导致的胸闷、气短、心痛、运动耐力下降、亚健康等症状"
+    },
+    {
+      "start": 15.933,
+      "end": 18.644,
+      "text": "2、抗氧化，减少组织细胞损伤"
+    },
+    {
+      "start": 18.644,
+      "end": 20.773,
+      "text": "辅酶Q10可直接抗氧化"
+    },
+    {
+      "start": 20.773,
+      "end": 23.483,
+      "text": "也可恢复维E等抗氧化物质活性"
+    },
+    {
+      "start": 23.483,
+      "end": 26.0,
+      "text": "其抗氧化能力是维E的50倍"
+    },
+    {
+      "start": 26.0,
+      "end": 27.355,
+      "text": "可保护组织器官"
+    },
+    {
+      "start": 27.355,
+      "end": 31.226,
+      "text": "治疗不孕不育、心功能损伤、皮肤衰老等问题"
+    },
+    {
+      "start": 31.226,
+      "end": 32.001,
+      "text": "产品特点"
+    }
+  ],
+  "playback_duration": 32.101
+}

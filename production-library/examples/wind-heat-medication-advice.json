@@ -1,0 +1,42 @@
+{
+  "project_id": "health.wind-heat.medication-advice.v1",
+  "template_id": "template.health-reference-tech-v1",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "content_lock": "approved-script",
+  "scenes": [
+    {
+      "scene_type": "medication_cards",
+      "component_ids": [
+        "component.presenter.bound-pharmacist",
+        "component.card.medication",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.presenter.stable-mouth-v1",
+        "effect.border.rounded-trace-v1",
+        "effect.card.reveal-back-v1",
+        "effect.background.four-way-current-v1"
+      ],
+      "asset_ids": ["granule-package-v1", "capsule-carton-v1"]
+    },
+    {
+      "scene_type": "advice_list",
+      "component_ids": [
+        "component.card.advice-row",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.border.rounded-trace-v1",
+        "effect.background.four-way-current-v1"
+      ],
+      "asset_ids": [
+        "ventilation-v1",
+        "warm-water-v1",
+        "light-diet-badge-v2",
+        "no-smoking-alcohol-badge-v2"
+      ]
+    }
+  ],
+  "validated_output": "production-library/validation/video/reference-medication-advice-replica.mp4"
+}

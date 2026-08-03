@@ -1,0 +1,1232 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/qwsidr",
+    "id": "qwsidr",
+    "slide": 2,
+    "layoutId": "af26c7e2-8627-4561-af4d-e327e074aace",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "f9f4f1d1-95b7-4f69-ba78-d402e4e109b8",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "af26c7e2-8627-4561-af4d-e327e074aace",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "f9f4f1d1-95b7-4f69-ba78-d402e4e109b8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "f9f4f1d1-95b7-4f69-ba78-d402e4e109b8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/1gn614ze",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "原创白色珍珠丝绸背景",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "b1978f2b-ae34-420f-8d72-c9c880740766",
+        "contentType": "image/png",
+        "byteLength": 1386415
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bqlc7qpk",
+      "id": "2",
+      "bbox": [
+        405,
+        54,
+        80,
+        55
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#D36D00",
+      "lineColor": "#D36D00",
+      "lineWidth": 1
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/apcbyl8z",
+      "id": "3",
+      "bbox": [
+        795,
+        54,
+        80,
+        55
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#D36D00",
+      "lineColor": "#D36D00",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lwnud07m",
+      "id": "4",
+      "name": "chapter-ribbon",
+      "bbox": [
+        438,
+        43,
+        404,
+        70
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F28A00",
+      "lineColor": "#D36D00",
+      "lineWidth": 2
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kvet4vq1",
+      "id": "5",
+      "name": "chapter-title",
+      "bbox": [
+        468,
+        48,
+        344,
+        58
+      ],
+      "geometry": "rect",
+      "text": "二、产品特点",
+      "textPreview": "二、产品特点",
+      "resolvedFontSize": 38,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 38,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "二、产品特点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "二、产品特点",
+          "resolvedTextStyle": {
+            "fontSize": 38,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "二、产品特点",
+              "fontSize": 38,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ju5cbqpw",
+      "id": "6",
+      "bbox": [
+        1090,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "速",
+      "textPreview": "速",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "速"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "速",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "速",
+              "fontSize": 34,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ytwb2l8b",
+      "id": "7",
+      "bbox": [
+        1132,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "福",
+      "textPreview": "福",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#F28A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "福"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "福",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#F28A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "福",
+              "fontSize": 34,
+              "color": "#F28A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tk7uhk7y",
+      "id": "8",
+      "bbox": [
+        1174,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "达",
+      "textPreview": "达",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "达"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "达",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "达",
+              "fontSize": 34,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8zyd8fqd",
+      "id": "9",
+      "bbox": [
+        1086,
+        62,
+        145,
+        23
+      ],
+      "geometry": "rect",
+      "text": "（玛巴洛沙韦）",
+      "textPreview": "（玛巴洛沙韦）",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "（玛巴洛沙韦）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "（玛巴洛沙韦）",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "（玛巴洛沙韦）",
+              "fontSize": 13,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxw76tkb",
+      "id": "10",
+      "name": "product-nav-1",
+      "bbox": [
+        55,
+        135,
+        346,
+        54
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F28A00",
+      "lineColor": "#D36D00",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/by5ofy1w",
+      "id": "11",
+      "bbox": [
+        61,
+        140,
+        44,
+        44
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D36D00",
+      "lineWidth": 2
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/czep8321",
+      "id": "12",
+      "bbox": [
+        65,
+        144,
+        36,
+        36
+      ],
+      "geometry": "rect",
+      "text": "1",
+      "textPreview": "1",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#F28A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#F28A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1",
+              "fontSize": 25,
+              "color": "#F28A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0n6h8jm",
+      "id": "13",
+      "bbox": [
+        105,
+        139,
+        290,
+        44
+      ],
+      "geometry": "rect",
+      "text": "成人儿童安全性均良好",
+      "textPreview": "成人儿童安全性均良好",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "成人儿童安全性均良好"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "成人儿童安全性均良好",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "成人儿童安全性均良好",
+              "fontSize": 24,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y1g7atk7",
+      "id": "14",
+      "name": "product-nav-2",
+      "bbox": [
+        416,
+        135,
+        494,
+        54
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#C9C9C9",
+      "lineColor": "#BEBEBE",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2pojy1s",
+      "id": "15",
+      "bbox": [
+        422,
+        140,
+        44,
+        44
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#BEBEBE",
+      "lineWidth": 2
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03ypc32d",
+      "id": "16",
+      "bbox": [
+        426,
+        144,
+        36,
+        36
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#969696",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#969696",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 25,
+              "color": "#969696",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l476l8jy",
+      "id": "17",
+      "bbox": [
+        466,
+        139,
+        438,
+        44
+      ],
+      "geometry": "rect",
+      "text": "片剂、干混悬剂双剂型选择",
+      "textPreview": "片剂、干混悬剂双剂型选择",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "片剂、干混悬剂双剂型选择"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "片剂、干混悬剂双剂型选择",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "片剂、干混悬剂双剂型选择",
+              "fontSize": 23,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e5cny9k3",
+      "id": "18",
+      "name": "product-nav-3",
+      "bbox": [
+        925,
+        135,
+        250,
+        54
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#C9C9C9",
+      "lineColor": "#BEBEBE",
+      "lineWidth": 1
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f6lo7e1o",
+      "id": "19",
+      "bbox": [
+        931,
+        140,
+        44,
+        44
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#BEBEBE",
+      "lineWidth": 2
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jah4fahg",
+      "id": "20",
+      "bbox": [
+        935,
+        144,
+        36,
+        36
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#969696",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#969696",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 25,
+              "color": "#969696",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i983650v",
+      "id": "21",
+      "bbox": [
+        975,
+        139,
+        194,
+        44
+      ],
+      "geometry": "rect",
+      "text": "原研品牌",
+      "textPreview": "原研品牌",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "原研品牌"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "原研品牌",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "原研品牌",
+              "fontSize": 25,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5cjmhkz6",
+      "id": "22",
+      "name": "safety-ring",
+      "bbox": [
+        365,
+        210,
+        550,
+        390
+      ],
+      "geometry": "ellipse",
+      "lineColor": "#F5A326",
+      "lineWidth": 3
+    },
+    {
+      "order": 23,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/7a147uls",
+      "id": "23",
+      "bbox": [
+        420,
+        270,
+        440,
+        248
+      ],
+      "alt": "无品牌包装组合透明插画",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "dd280fe8-41bc-4ba7-aeef-3dde644b4779",
+        "contentType": "image/png",
+        "byteLength": 521657
+      }
+    },
+    {
+      "order": 24,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/k7qlwzm1",
+      "id": "24",
+      "bbox": [
+        48,
+        260,
+        260,
+        260
+      ],
+      "alt": "儿童安全与低呕吐率精制透明图标",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "22a8296d-76d2-4ec3-83ea-34454a0736dc",
+        "contentType": "image/png",
+        "byteLength": 1049365
+      }
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ul832l0j",
+      "id": "25",
+      "name": "low-vomiting-label",
+      "bbox": [
+        52,
+        488,
+        252,
+        62
+      ],
+      "geometry": "rect",
+      "text": "呕吐率低",
+      "textPreview": "呕吐率低",
+      "resolvedFontSize": 39,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 39,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "呕吐率低"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "呕吐率低",
+          "resolvedTextStyle": {
+            "fontSize": 39,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "呕吐率低",
+              "fontSize": 39,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/y583up4v",
+      "id": "26",
+      "bbox": [
+        995,
+        295,
+        190,
+        190
+      ],
+      "alt": "精制安全盾牌透明图标",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "dd47e8c8-614f-42bf-8348-a6b9055ebe59",
+        "contentType": "image/png",
+        "byteLength": 652331
+      }
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wnql4vip",
+      "id": "27",
+      "name": "safety-label",
+      "bbox": [
+        955,
+        485,
+        270,
+        58
+      ],
+      "geometry": "rect",
+      "text": "安全性良好",
+      "textPreview": "安全性良好",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "安全性良好"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "安全性良好",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "安全性良好",
+              "fontSize": 34,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fil4nuho",
+      "id": "28",
+      "bbox": [
+        340,
+        650,
+        600,
+        42
+      ],
+      "geometry": "rect",
+      "text": "1：成人儿童安全性均良好",
+      "textPreview": "1：成人儿童安全性均良好",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#171717",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1：成人儿童安全性均良好"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1：成人儿童安全性均良好",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#171717",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1：成人儿童安全性均良好",
+              "fontSize": 28,
+              "color": "#171717",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

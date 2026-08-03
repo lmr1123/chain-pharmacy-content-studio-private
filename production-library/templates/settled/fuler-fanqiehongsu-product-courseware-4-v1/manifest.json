@@ -1,0 +1,133 @@
+{
+  "template_id": "template.fuler-fanqiehongsu-product-courseware-4-v1",
+  "template_type": "video+pptx-courseware",
+  "status": "user-approved-gold",
+  "revision": "2026-08-03-motion-editor",
+  "product": {
+    "brand_name": "福尔",
+    "generic_name": "番茄红素软胶囊",
+    "display_name": "福尔番茄红素软胶囊",
+    "courseware_series": "商品培训课件4"
+  },
+  "name_zh": "福尔番茄红素软胶囊 · 商品培训课件4 金样 v1",
+  "style_pack_id": "style-pack.courseware-4-silk-yellow-red-v1",
+  "canonical_artifacts": {
+    "video": {
+      "path": "福尔番茄红素_商品培训课件4_金样_v1.mp4",
+      "format": "mp4",
+      "resolution": "1920x1080",
+      "duration_s": 156.73,
+      "role": "金样成片（画面+工作旁白轨；S12–S13 克隆有声；PIL 多帧动效）"
+    },
+    "pptx": {
+      "path": "福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx",
+      "format": "pptx",
+      "slides": 15,
+      "role": "可编辑培训课件（与视频同 content-model；15 页）"
+    }
+  },
+  "canonical_confirmed_by": "user",
+  "canonical_confirmed_at": "2026-08-03",
+  "last_updated_at": "2026-08-03",
+  "last_update_note": "叙事顺序修正（适宜人群→关联用药→功效总表）；删 S14 总表；章节序号；动效语法纠偏；编辑器 Revideo 动效；参考箭头/手绘叉",
+  "validation_root": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1",
+  "source_project": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1",
+  "generators": {
+    "video": "scripts/export-full-film-video.py (npm run export:video)",
+    "pptx": "scripts/export-cw4-pptx.mjs (npm run export:pptx)",
+    "editor": "npm run start:editor → http://127.0.0.1:9012/",
+    "rebuild_all": "scripts/build_deliverables.py"
+  },
+  "content_model_snapshot": "content-model.snapshot.json",
+  "layer_manifest_snapshot": "layer-manifest.snapshot.json",
+  "src_snapshot": "src-snapshot/project.tsx",
+  "scene_order": [
+    "S00_cover",
+    "S01_time_list",
+    "S02_broll",
+    "S03_product_intro",
+    "S04_benefit_1",
+    "S05_benefit_2",
+    "S06_benefit_3",
+    "S07_origin",
+    "S08_material",
+    "S09_content",
+    "S10_audience",
+    "S12_related_1",
+    "S13_related_2",
+    "S11_summary",
+    "S15_end"
+  ],
+  "business_input": {
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+    "example_source": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+    "sync_script": "scripts/sync_settled_template_business_words.py"
+  },
+  "experience": {
+    "doc": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/docs/video-pptx-grammar-and-experience-v1.md",
+    "editable_video_doc": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/docs/editable-video-v1.md",
+    "scene_recipes": [
+      "scene-recipe.related-meds.courseware-training-v1",
+      "scene-recipe.summary-row-headers.courseware-training-v1"
+    ],
+    "lessons": [
+      "lesson.editor-bg-must-omit-editable-layers-gold-template",
+      "lesson.qwen3-clone-prompt-audio-must-match-ref-text",
+      "lesson.cloned-tts-requires-post-generation-asr-gate"
+    ]
+  },
+  "preview": {
+    "cover": "preview/cover.png",
+    "key_frames": [
+      "preview/key-01.png",
+      "preview/key-02.png",
+      "preview/key-03.png",
+      "preview/key-04.png",
+      "preview/key-05.png",
+      "preview/key-06.png"
+    ],
+    "key_frame_labels_zh": [
+      "封面",
+      "商品介绍",
+      "利益点",
+      "适宜人群",
+      "关联用药",
+      "总结"
+    ],
+    "gallery_title_zh": "商品培训课件4 · 福尔番茄红素金样",
+    "one_liner": "保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）",
+    "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）",
+    "category_zh": "商品培训",
+    "outputs": [
+      "MP4",
+      "可编辑 PPTX"
+    ],
+    "production_ready": true,
+    "status_label": "已签样 · 可换主题量产",
+    "online_url": null
+  },
+  "notes": [
+    "本目录为用户确认的福尔番茄红素软胶囊 · 商品培训课件4 金样归档（视频 + 可编辑 PPTX）。",
+    "2026-08-03 更新：用户确认将当前迭代写入金样（后续再继续调优）。",
+    "叙事：…适宜人群 → 关联用药(S12/S13) → 三大核心功效表(S11) → 结尾；无 S14 四列表总表。",
+    "成片动效：PIL 多帧（入场/箭头向右跳/手绘叉）；编辑器：Revideo playSceneMotion（对齐 Q10/礼风热证）。",
+    "包装/Logo 为业务授权槽位示意；量产前须替换授权原图。",
+    "验证工程目录仍为 validation/.../product-courseware-4-faithful-replica-v1（含完整源码、编辑器与导出脚本）。"
+  ],
+  "business_catalog": {
+    "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）",
+    "one_liner": "保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）",
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "framework_guide": "../../框架填写说明.md"
+  },
+  "voice": {
+    "voice_id": "voice.sufuda-courseware-pharmacist-v1",
+    "engine": "Qwen3-TTS-local-clone",
+    "pace_policy": "v5-smooth",
+    "forbid_system_tts": true
+  },
+  "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1"
+}

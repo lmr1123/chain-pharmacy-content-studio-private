@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pfizer 培训案例逐镜头拆解</title>
+  <style>
+    :root { color-scheme: light; --ink:#14251f; --muted:#66766f; --line:#dce6e1; --green:#176d52; --paper:#f4f7f5; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--paper); }
+    main { width:min(1120px,calc(100% - 32px)); margin:40px auto 72px; }
+    header { padding:32px; border:1px solid var(--line); border-radius:20px; background:#fff; }
+    h1 { margin:0 0 8px; font-size:clamp(28px,4vw,48px); line-height:1.12; }
+    h2 { margin:40px 0 16px; font-size:24px; }
+    p { margin:8px 0; }
+    .eyebrow { color:var(--green); font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    figure { margin:0; padding:10px; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    img { display:block; width:100%; height:auto; border-radius:10px; }
+    figcaption { padding:8px 4px 2px; color:var(--muted); font-size:14px; }
+    .callout { margin-top:20px; padding:20px 24px; border-left:5px solid var(--green); border-radius:10px; background:#e9f3ef; }
+    .links { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+    a { color:var(--green); }
+    .button { display:inline-block; padding:10px 16px; border-radius:999px; background:var(--green); color:#fff; text-decoration:none; }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } header { padding:24px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Reference analysis · Validation only</div>
+    <h1>Pfizer 培训案例逐镜头拆解</h1>
+    <p>277.5 秒被拆为 34 个教学场景节点。核心发现：要复刻的是“共同模型—机制增量—方案比较—患者结果”，不是照拍真人白板手绘。</p>
+    <p class="muted">参考像素、原始角色、Logo 与音频不进入生产资产。</p>
+    <div class="links">
+      <a class="button" href="https://player.vimeo.com/video/87684088">打开原始案例</a>
+      <a href="shot-breakdown-v1.md">查看完整拆解 Markdown</a>
+    </div>
+    <div class="callout"><strong>适配判断：</strong>可作为机制比较型叙事候选金样；需转译为 10 个结构化场景配方，再补齐可可康真正需要的商品规格、用法、注意事项等审核模块。</div>
+  </header>
+  <h2>全片 5 秒采样</h2>
+  <div class="grid">
+    <figure><img src="contact-sheets/contact-01.jpg" alt="0至75秒接触表"><figcaption>00:00–01:15 · 生理基础、症状形成、三方案登场</figcaption></figure>
+    <figure><img src="contact-sheets/contact-02.jpg" alt="80至155秒接触表"><figcaption>01:20–02:35 · 抗酸剂与 H2 机制</figcaption></figure>
+    <figure><img src="contact-sheets/contact-03.jpg" alt="160至235秒接触表"><figcaption>02:40–03:55 · H2 结论、PPI 机制、结果回扣</figcaption></figure>
+    <figure><img src="contact-sheets/contact-04.jpg" alt="240秒至片尾接触表"><figcaption>04:00–04:37.5 · 患者结果、品牌与制作署名</figcaption></figure>
+  </div>
+  <h2>32 个代表节点</h2>
+  <div class="grid">
+    <figure><img src="contact-sheets/keyframes-01.jpg" alt="代表节点一至十六"><figcaption>S01–S16 · 从空场到 H2 机制切换</figcaption></figure>
+    <figure><img src="contact-sheets/keyframes-02.jpg" alt="代表节点十七至三十二"><figcaption>S17–S32 · 从 H2 阻断到片尾空场</figcaption></figure>
+  </div>
+</main>
+</body>
+</html>

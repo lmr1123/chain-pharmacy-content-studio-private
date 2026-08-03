@@ -1,0 +1,51 @@
+{
+  "id": "voice.sufuda-courseware-pharmacist-v1",
+  "name_zh": "速福达课件药师讲解音色 v1",
+  "status": "ready-for-theme-expansion",
+  "usage": "仅用于公司内部已授权培训课件；克隆生成新主题旁白",
+  "tags": ["中文女声", "药师讲解", "商品培训课件", "Qwen3-TTS", "克隆音色"],
+  "engine": {
+    "id": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-bf16",
+    "runtime": "mlx_audio.tts",
+    "lang_code": "Chinese"
+  },
+  "prompt": {
+    "audio": "prompt.wav",
+    "sample_rate": 24000,
+    "duration_seconds": 11.8,
+    "ref_text": "速福达全程只需口服一次，且早期阻断病毒复制，遏制新病毒生成，一天快速退热。传统药物奥司他韦不阻止病毒复制，而是阻止已复制的病毒释放，减少在体内扩散。",
+    "source_clip": {
+      "file": "商品培训课件3.mp3（2026-08-02 重录）",
+      "range_seconds": [19.12, 30.92],
+      "note": "从新录音连续口播截取，非旧杂音轨"
+    }
+  },
+  "pace": {
+    "policy_id": "decision.semantic-block-voice-speed-gate",
+    "version": "v5-smooth",
+    "default_tempo": 1.16,
+    "max_tempo": 1.18,
+    "min_tempo": 0.95,
+    "forbid_per_cue_hard_splice": true,
+    "forbid_micro_cue_atempo": true,
+    "generate_by_semantic_block": true,
+    "lead_in_seconds": 0.06,
+    "lead_out_seconds": 0.1,
+    "crossfade_seconds": 0.035,
+    "max_chars_per_sec": 5.5,
+    "target_lufs": -16,
+    "true_peak_ceiling_dbfs": -1.5
+  },
+  "full_reference_track": {
+    "audio": "full-clean-mono-24k.wav",
+    "role": "语速/时长对照与验收，不直接当主题旁白轨",
+    "duration_seconds": 97.0
+  },
+  "generate_entrypoint": "scripts/generate_courseware_cloned_narration.py",
+  "lessons": [
+    "整段语义块一次 TTS 连读，禁止 40 条 cue 逐句硬拼（卡顿/杂音）",
+    "DEFAULT_TEMPO≈1.16，MAX_TEMPO≤1.18；贴不上窗则延时间轴，禁止 1.5×+ 暴力 atempo",
+    "字幕按字数比例回切，不贴死旧参考窗",
+    "新主题验收：必须用新文案生成至少一段，证明不是复用原轨"
+  ]
+}

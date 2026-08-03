@@ -1,0 +1,479 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/dveynx",
+    "id": "dveynx",
+    "slide": 1,
+    "layoutId": "592708aa-24ee-4ec7-8e71-60e10c609c4d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "334fa3fe-1482-42f6-afa4-c017b7ba5340",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "592708aa-24ee-4ec7-8e71-60e10c609c4d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "334fa3fe-1482-42f6-afa4-c017b7ba5340",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "334fa3fe-1482-42f6-afa4-c017b7ba5340",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/1kr6d4vu",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "白色丝绸课件背景",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "e2c2a73f-2f40-486c-b194-c79e8e609ffe",
+        "contentType": "image/png",
+        "byteLength": 1527552
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vux4ji10",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "rgba(255, 255, 255, 0.08)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/atonad0v",
+      "id": "3",
+      "bbox": [
+        410,
+        67,
+        64,
+        53
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#C96E00",
+      "lineColor": "#C96E00",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5kzmpszi",
+      "id": "4",
+      "bbox": [
+        806,
+        67,
+        64,
+        53
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#C96E00",
+      "lineColor": "#C96E00",
+      "lineWidth": 1
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzq5gnix",
+      "id": "5",
+      "name": "chapter-ribbon",
+      "bbox": [
+        440,
+        54,
+        400,
+        73
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#ED8A00",
+      "lineColor": "#C96E00",
+      "lineWidth": 3
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jyh4n21c",
+      "id": "6",
+      "name": "chapter-title",
+      "bbox": [
+        468,
+        63,
+        344,
+        52
+      ],
+      "geometry": "rect",
+      "text": "一、三大核心功效",
+      "textPreview": "一、三大核心功效",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一、三大核心功效"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一、三大核心功效",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一、三大核心功效",
+              "fontSize": 34,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixonex0r",
+      "id": "7",
+      "bbox": [
+        1094,
+        22,
+        50,
+        45
+      ],
+      "geometry": "rect",
+      "text": "速",
+      "textPreview": "速",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#142E76",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "速"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "速",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#142E76",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "速",
+              "fontSize": 33,
+              "color": "#142E76",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tozmtcze",
+      "id": "8",
+      "bbox": [
+        1138,
+        22,
+        50,
+        45
+      ],
+      "geometry": "rect",
+      "text": "福",
+      "textPreview": "福",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#ED8A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "福"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "福",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "福",
+              "fontSize": 33,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/snq5k7it",
+      "id": "9",
+      "bbox": [
+        1182,
+        22,
+        50,
+        45
+      ],
+      "geometry": "rect",
+      "text": "达",
+      "textPreview": "达",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#142E76",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "达"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "达",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#142E76",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "达",
+              "fontSize": 33,
+              "color": "#142E76",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1cza1gv",
+      "id": "10",
+      "bbox": [
+        1094,
+        65,
+        138,
+        20
+      ],
+      "geometry": "rect",
+      "text": "（玛巴洛沙韦）",
+      "textPreview": "（玛巴洛沙韦）",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 11,
+        "typeface": "+mn-lt",
+        "color": "#142E76",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "（玛巴洛沙韦）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "（玛巴洛沙韦）",
+          "resolvedTextStyle": {
+            "fontSize": 11,
+            "color": "#142E76",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "（玛巴洛沙韦）",
+              "fontSize": 11,
+              "color": "#142E76",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

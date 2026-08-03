@@ -1,0 +1,64 @@
+{
+  "id": "qa.product-courseware-3.r06-proof-v3",
+  "status": "awaiting-user-r06-proof-signoff",
+  "scope": "R06 功效一单镜头；未扩制 R07、R08 或完整金样",
+  "reference": {
+    "video": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4",
+    "time_range": "00:16.83–00:18.90",
+    "final_reference_frame": "../reference-analysis/microframes/r05-r06-040.png"
+  },
+  "deliverables": {
+    "pptx": "商品培训课件3_R06精细复刻_PPTX证明_v3.pptx",
+    "video": "商品培训课件3_R06精细复刻_动画证明_v3.mp4",
+    "pptx_render": "pptx-render/r06-proof-final.png",
+    "motion_contact_sheet": "video-qa/contact-sheet-r06-v3.png",
+    "reference_comparison": "video-qa/reference-vs-v3-final.png"
+  },
+  "visual_fidelity": {
+    "font_family": "Gen Jyuu Gothic",
+    "font_change": "替换 v2 的 PingFang SC；标题、导航、甲乙标记和气泡结论统一为圆润粗体",
+    "navigation": {
+      "slide_width_px": 1280,
+      "items": [
+        {"left": 128, "width": 282, "right": 410},
+        {"left": 434, "width": 322, "right": 756},
+        {"left": 780, "width": 378, "right": 1158}
+      ],
+      "visible_gaps_px": [24, 24],
+      "status": "pass"
+    },
+    "layer_route": "transparent-raster-illustration-plus-editable-text",
+    "editable_text_layers": ["甲", "乙", "专治甲流乙流", "标题", "三项导航", "底部字幕"],
+    "unbranded_packaging": "原创无品牌透明插画；等待业务提供授权真包装后原位替换"
+  },
+  "alpha_validation": {
+    "files": [
+      "r06-burst-navy-alpha.png",
+      "r06-burst-orange-alpha.png",
+      "r06-capsule-icon-alpha.png",
+      "r06-package-cluster-alpha.png",
+      "r06-speech-bubble-alpha.png"
+    ],
+    "mode": "RGBA",
+    "alpha_range": [0, 255],
+    "corner_alpha": [0, 0, 0, 0],
+    "status": "pass"
+  },
+  "motion": {
+    "duration_seconds": 2.833333,
+    "sequence": ["导航显现", "包装上移放大", "甲爆裂弹出", "乙爆裂弹出", "胶囊徽章弹出", "聊天气泡从右侧带倾角进入并回弹归正"],
+    "bubble_entry_rotation_degrees": 13,
+    "bubble_overshoot_rotation_degrees": -4,
+    "bubble_settle_rotation_degrees": 0,
+    "text_and_bubble_share_transform": true,
+    "audio": "用户参考音频 00:16.83–00:18.90，前置 0.45 秒",
+    "status": "pass"
+  },
+  "technical_qa": {
+    "pptx_overflow": "pass: slides_test.py",
+    "video": "1920x1080, 30fps, H.264/AAC, 48kHz stereo",
+    "alpha_edges": "pass",
+    "reference_side_by_side_inspected": true
+  },
+  "release_gate": "仅当用户确认 R06 字体、导航、素材层次和气泡运动后，才开始 R07 机制插画证明。"
+}

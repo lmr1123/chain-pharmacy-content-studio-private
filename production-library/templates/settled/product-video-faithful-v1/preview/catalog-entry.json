@@ -1,0 +1,24 @@
+{
+  "slug": "product-video-faithful-v1",
+  "name_zh": "商品培训视频（如辅酶 Q10）",
+  "one_liner": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结",
+  "gallery_title_zh": "商品培训视频 · 辅酶 Q10 金样",
+  "outputs": [
+    "MP4 培训视频"
+  ],
+  "category": "商品培训",
+  "production_ready": true,
+  "status_label": "已签样 · 可换主题量产",
+  "status_note": "换商品须提供审核旁白与授权包装图；讲解声走模板克隆语音包。",
+  "key_frame_labels_zh": [
+    "开场",
+    "品牌/品类",
+    "核心功效",
+    "产品特点",
+    "适宜人群",
+    "联合用药"
+  ],
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx"
+}

@@ -1,0 +1,1083 @@
+{
+  "schema_version": "courseware-content-model-v1",
+  "project_id": "courseware.sufuda-product-training-3.gold-v1",
+  "template_id": "template.sufuda-product-courseware-3-v1",
+  "style_pack_id": "style-pack.sufuda-pearl-silk-orange-v1",
+  "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1",
+  "title": "示例宁®演示用占位成分 · 结构验证主题（非医学终稿）",
+  "product": {
+    "brand_name": "示例宁®",
+    "generic_name": "演示用占位成分",
+    "display_name": "示例宁® 演示用占位成分",
+    "logo_asset": "logo",
+    "pack_group_asset": "packGroup"
+  },
+  "tokens": {
+    "orange": "#e98200",
+    "orange2": "#f4a437",
+    "navy": "#123c78",
+    "navy2": "#22579b",
+    "white": "#ffffff",
+    "gray": "#b8c0cb",
+    "muted": "#5a6a7d",
+    "ink": "#182a43",
+    "row_bg": "#fff3e0",
+    "row_bg2": "#ffe8c8",
+    "font_family": "HarmonyOS Sans SC, Source Han Sans SC, Source Han Sans CN, PingFang SC, Microsoft YaHei, sans-serif"
+  },
+  "assets": {
+    "background": "/assets/bg-silk-v1.png",
+    "logo": "/assets/logo-sufuda-text-v1.png",
+    "packGroup": "/assets/pack-group-slot-v1.png",
+    "pack40": "/assets/pack-tablet-40-slot-v1.png",
+    "pack20": "/assets/pack-tablet-20-slot-v1.png",
+    "packSusp": "/assets/pack-suspension-slot-v1.png",
+    "icon365": "/assets/icon-365-v1.png",
+    "iconTree": "/assets/icon-season-tree-v1.png",
+    "iconVirus": "/assets/icon-virus-v1.png",
+    "iconLungs": "/assets/icon-lungs-v1.png",
+    "iconWarn": "/assets/icon-warn-v1.png",
+    "iconChina": "/assets/icon-china-cases-v1.png",
+    "iconBaby": "/assets/icon-baby-v1.png",
+    "iconShield": "/assets/icon-shield-check-v1.png",
+    "icon24h": "/assets/icon-24h-v1.png",
+    "iconThumb": "/assets/icon-thumb-v1.png",
+    "iconAward": "/assets/icon-award-v1.png",
+    "icon70": "/assets/icon-70plus-v1.png",
+    "iconFlag": "/assets/icon-flag-v1.png",
+    "iconHand": "/assets/icon-hand-pointer-v1.png",
+    "iconStrawberry": "/assets/icon-strawberry-v1.png",
+    "cell": "/assets/mechanism-cell-v1.png",
+    "family": "/assets/family-shield-v1.png",
+    "patient": "/assets/patient-masked-v1.png",
+    "charElder": "/assets/char-elder-v1.png",
+    "charChild": "/assets/char-child-v1.png",
+    "charChronic": "/assets/char-chronic-group-v1.png",
+    "personOutline": "/assets/person-outline-orange-v1.png",
+    "bust": "/assets/bust-outline-v1.png",
+    "tablets": "/assets/tablets-closeup-v1.png",
+    "granule": "/assets/granule-kit-v1.png",
+    "boxFever": "/assets/box-antipyretic-v1.png",
+    "boxChronic": "/assets/box-chronic-v1.png",
+    "ribbonChapter": "/assets/ribbon-chapter-shell-v1.png",
+    "badgeJia": "/assets/badge-virus-jia-ai-v1.png",
+    "badgeYi": "/assets/badge-virus-yi-ai-v1.png",
+    "bubbleSpeech": "/assets/bubble-speech-ai-v1.png"
+  },
+  "pages": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "pptx_slide": true,
+      "title": "封面",
+      "elements": {
+        "title": {
+          "id": "editable:sufuda:cover:title",
+          "kind": "text",
+          "text": "示例宁® 演示用占位成分",
+          "replace": "theme_copy"
+        },
+        "tagline": {
+          "id": "editable:sufuda:cover:tagline",
+          "kind": "text",
+          "text": "结构验证主题 · 非真实药品宣传",
+          "replace": "theme_copy"
+        },
+        "check1": {
+          "id": "editable:sufuda:cover:check.1",
+          "kind": "text",
+          "text": "框架可复用",
+          "replace": "theme_copy"
+        },
+        "check2": {
+          "id": "editable:sufuda:cover:check.2",
+          "kind": "text",
+          "text": "文案可替换",
+          "replace": "theme_copy"
+        },
+        "check3": {
+          "id": "editable:sufuda:cover:check.3",
+          "kind": "text",
+          "text": "包装待授权",
+          "replace": "theme_copy"
+        },
+        "pack": {
+          "id": "editable:sufuda:cover:pack",
+          "kind": "image",
+          "asset": "packGroup",
+          "slot": "slot.pack.group",
+          "replace": "business_authorized"
+        },
+        "logo": {
+          "id": "editable:sufuda:cover:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        },
+        "pack_note": {
+          "id": "editable:sufuda:cover:pack_note",
+          "kind": "text",
+          "text": "模板示例 · 包装待业务授权替换",
+          "replace": "system"
+        }
+      }
+    },
+    {
+      "id": "flu",
+      "type": "flu-context",
+      "pptx_slide": true,
+      "title": "流感背景",
+      "storyboard_page": "P01",
+      "elements": {
+        "logo": {
+          "id": "editable:sufuda:flu:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        },
+        "card1_icon_a": {
+          "id": "editable:sufuda:flu:card1.icon_a",
+          "kind": "image",
+          "asset": "icon365",
+          "slot": "slot.icon.365",
+          "replace": "theme_illustration"
+        },
+        "card1_title": {
+          "id": "editable:sufuda:flu:card1.title",
+          "kind": "text",
+          "text": "培训结构可复用",
+          "replace": "theme_copy"
+        },
+        "card1_icon_b": {
+          "id": "editable:sufuda:flu:card1.icon_b",
+          "kind": "image",
+          "asset": "iconTree",
+          "slot": "slot.illu.season-tree",
+          "replace": "theme_illustration"
+        },
+        "card1_body": {
+          "id": "editable:sufuda:flu:card1.body",
+          "kind": "text",
+          "text": "同风格换主题\n只改审核内容",
+          "replace": "theme_copy"
+        },
+        "card2_icon_a": {
+          "id": "editable:sufuda:flu:card2.icon_a",
+          "kind": "image",
+          "asset": "iconVirus",
+          "slot": "slot.icon.virus",
+          "replace": "theme_illustration"
+        },
+        "card2_t1": {
+          "id": "editable:sufuda:flu:card2.t1",
+          "kind": "text",
+          "text": "内容模型驱动",
+          "replace": "theme_copy"
+        },
+        "card2_icon_b": {
+          "id": "editable:sufuda:flu:card2.icon_b",
+          "kind": "image",
+          "asset": "iconLungs",
+          "slot": "slot.icon.lungs",
+          "replace": "theme_illustration"
+        },
+        "card2_t2": {
+          "id": "editable:sufuda:flu:card2.t2",
+          "kind": "text",
+          "text": "元素可编辑",
+          "replace": "theme_copy"
+        },
+        "card2_icon_c": {
+          "id": "editable:sufuda:flu:card2.icon_c",
+          "kind": "image",
+          "asset": "iconWarn",
+          "slot": "slot.icon.warn",
+          "replace": "theme_illustration"
+        },
+        "card2_t3": {
+          "id": "editable:sufuda:flu:card2.t3",
+          "kind": "text",
+          "text": "多端同源",
+          "replace": "theme_copy"
+        },
+        "card3_icon": {
+          "id": "editable:sufuda:flu:card3.icon",
+          "kind": "image",
+          "asset": "iconChina",
+          "slot": "slot.icon.china",
+          "replace": "theme_illustration"
+        },
+        "card3_num": {
+          "id": "editable:sufuda:flu:card3.num",
+          "kind": "text",
+          "text": "12页",
+          "replace": "theme_copy"
+        },
+        "card3_body": {
+          "id": "editable:sufuda:flu:card3.body",
+          "kind": "text",
+          "text": "PPTX 与视频\n共用 content-model",
+          "replace": "theme_copy"
+        },
+        "footer": {
+          "id": "editable:sufuda:flu:footer",
+          "kind": "text",
+          "text": "演示主题：不构成医学或销售主张",
+          "replace": "theme_copy"
+        }
+      }
+    },
+    {
+      "id": "benefit_1",
+      "type": "benefit-1",
+      "pptx_slide": true,
+      "title": "三大核心功效 · 专治甲流乙流",
+      "chapter": "一、三大结构能力",
+      "nav": [
+        "内容模型",
+        "可编辑导出",
+        "主题复刻"
+      ],
+      "active_nav": 0,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:benefit_1:chapter",
+          "kind": "text",
+          "text": "一、三大结构能力",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:benefit_1:nav.1",
+          "kind": "text",
+          "text": "内容模型",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:benefit_1:nav.2",
+          "kind": "text",
+          "text": "可编辑导出",
+          "replace": "theme_copy"
+        },
+        "nav3": {
+          "id": "editable:sufuda:benefit_1:nav.3",
+          "kind": "text",
+          "text": "主题复刻",
+          "replace": "theme_copy"
+        },
+        "pack": {
+          "id": "editable:sufuda:benefit_1:pack",
+          "kind": "image",
+          "asset": "packGroup",
+          "slot": "slot.pack.group",
+          "replace": "business_authorized"
+        },
+        "badge_jia": {
+          "id": "editable:sufuda:benefit_1:badge_jia",
+          "kind": "image",
+          "asset": "badgeJia",
+          "slot": "slot.illu.badge-jia",
+          "replace": "theme_illustration"
+        },
+        "badge_jia_label": {
+          "id": "editable:sufuda:benefit_1:badge_jia_label",
+          "kind": "text",
+          "text": "文",
+          "replace": "theme_copy"
+        },
+        "badge_yi": {
+          "id": "editable:sufuda:benefit_1:badge_yi",
+          "kind": "image",
+          "asset": "badgeYi",
+          "slot": "slot.illu.badge-yi",
+          "replace": "theme_illustration"
+        },
+        "badge_yi_label": {
+          "id": "editable:sufuda:benefit_1:badge_yi_label",
+          "kind": "text",
+          "text": "图",
+          "replace": "theme_copy"
+        },
+        "bubble": {
+          "id": "editable:sufuda:benefit_1:bubble",
+          "kind": "image",
+          "asset": "bubbleSpeech",
+          "slot": "slot.illu.bubble",
+          "replace": "theme_illustration"
+        },
+        "bubble_text": {
+          "id": "editable:sufuda:benefit_1:bubble_text",
+          "kind": "text",
+          "text": "稳定ID\n可替换",
+          "replace": "theme_copy"
+        },
+        "logo": {
+          "id": "editable:sufuda:benefit_1:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "benefit_2",
+      "type": "benefit-2",
+      "pptx_slide": true,
+      "title": "三大核心功效 · 机制对比",
+      "chapter": "一、三大核心功效",
+      "nav": [
+        "专治甲流乙流",
+        "全程1次，1天退热",
+        "治疗自己，保护身边人"
+      ],
+      "active_nav": 1,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:benefit_2:chapter",
+          "kind": "text",
+          "text": "一、三大结构能力",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:benefit_2:nav.1",
+          "kind": "text",
+          "text": "内容模型",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:benefit_2:nav.2",
+          "kind": "text",
+          "text": "可编辑导出",
+          "replace": "theme_copy"
+        },
+        "nav3": {
+          "id": "editable:sufuda:benefit_2:nav.3",
+          "kind": "text",
+          "text": "主题复刻",
+          "replace": "theme_copy"
+        },
+        "dose1": {
+          "id": "editable:sufuda:benefit_2:dose1",
+          "kind": "text",
+          "text": "① 一次建模",
+          "replace": "theme_copy"
+        },
+        "drug_a": {
+          "id": "editable:sufuda:benefit_2:drug_a",
+          "kind": "text",
+          "text": "content-model",
+          "replace": "theme_copy"
+        },
+        "dose24": {
+          "id": "editable:sufuda:benefit_2:dose24",
+          "kind": "text",
+          "text": "MP4 + PPTX 同源",
+          "replace": "theme_copy"
+        },
+        "cell": {
+          "id": "editable:sufuda:benefit_2:cell",
+          "kind": "image",
+          "asset": "cell",
+          "slot": "slot.illu.mechanism-cell",
+          "replace": "theme_illustration"
+        },
+        "mech_left": {
+          "id": "editable:sufuda:benefit_2:mech_left",
+          "kind": "text",
+          "text": "业务改字换图，\n不改底层框架",
+          "replace": "theme_copy"
+        },
+        "drug_b": {
+          "id": "editable:sufuda:benefit_2:drug_b",
+          "kind": "text",
+          "text": "硬编码文案",
+          "replace": "theme_copy"
+        },
+        "mech_right": {
+          "id": "editable:sufuda:benefit_2:mech_right",
+          "kind": "text",
+          "text": "主题绑定代码\n无法批量复用",
+          "replace": "theme_copy"
+        },
+        "logo": {
+          "id": "editable:sufuda:benefit_2:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "benefit_3",
+      "type": "benefit-3",
+      "pptx_slide": true,
+      "title": "三大核心功效 · 保护身边人",
+      "chapter": "一、三大核心功效",
+      "nav": [
+        "专治甲流乙流",
+        "全程1次，1天退热",
+        "治疗自己，保护身边人"
+      ],
+      "active_nav": 2,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:benefit_3:chapter",
+          "kind": "text",
+          "text": "一、三大结构能力",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:benefit_3:nav.1",
+          "kind": "text",
+          "text": "专治甲流乙流",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:benefit_3:nav.2",
+          "kind": "text",
+          "text": "全程1次，1天退热",
+          "replace": "theme_copy"
+        },
+        "nav3": {
+          "id": "editable:sufuda:benefit_3:nav.3",
+          "kind": "text",
+          "text": "治疗自己，保护身边人",
+          "replace": "theme_copy"
+        },
+        "patient": {
+          "id": "editable:sufuda:benefit_3:patient",
+          "kind": "image",
+          "asset": "patient",
+          "slot": "slot.illu.patient",
+          "replace": "theme_illustration"
+        },
+        "family": {
+          "id": "editable:sufuda:benefit_3:family",
+          "kind": "image",
+          "asset": "family",
+          "slot": "slot.illu.family-shield",
+          "replace": "theme_illustration"
+        },
+        "patient_label": {
+          "id": "editable:sufuda:benefit_3:patient_label",
+          "kind": "text",
+          "text": "业务侧维护审核稿",
+          "replace": "theme_copy"
+        },
+        "family_label": {
+          "id": "editable:sufuda:benefit_3:family_label",
+          "kind": "text",
+          "text": "制作侧复用风格壳",
+          "replace": "theme_copy"
+        },
+        "logo": {
+          "id": "editable:sufuda:benefit_3:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "feature_1",
+      "type": "feature-1",
+      "pptx_slide": true,
+      "title": "产品特点 · 安全性",
+      "chapter": "二、交付形态",
+      "nav": [
+        "可编辑 PPTX",
+        "视频金样",
+        "编辑器微调"
+      ],
+      "active_nav": 0,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:feature_1:chapter",
+          "kind": "text",
+          "text": "二、交付形态",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:feature_1:nav.1",
+          "kind": "text",
+          "text": "可编辑 PPTX",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:feature_1:nav.2",
+          "kind": "text",
+          "text": "视频金样",
+          "replace": "theme_copy"
+        },
+        "nav3": {
+          "id": "editable:sufuda:feature_1:nav.3",
+          "kind": "text",
+          "text": "编辑器微调",
+          "replace": "theme_copy"
+        },
+        "icon_baby": {
+          "id": "editable:sufuda:feature_1:icon_baby",
+          "kind": "image",
+          "asset": "iconBaby",
+          "slot": "slot.icon.baby",
+          "replace": "theme_illustration"
+        },
+        "label_left": {
+          "id": "editable:sufuda:feature_1:label_left",
+          "kind": "text",
+          "text": "原生对象",
+          "replace": "theme_copy"
+        },
+        "pack": {
+          "id": "editable:sufuda:feature_1:pack",
+          "kind": "image",
+          "asset": "packGroup",
+          "slot": "slot.pack.group",
+          "replace": "business_authorized"
+        },
+        "icon_shield": {
+          "id": "editable:sufuda:feature_1:icon_shield",
+          "kind": "image",
+          "asset": "iconShield",
+          "slot": "slot.icon.shield",
+          "replace": "theme_illustration"
+        },
+        "label_right": {
+          "id": "editable:sufuda:feature_1:label_right",
+          "kind": "text",
+          "text": "非整页位图",
+          "replace": "theme_copy"
+        },
+        "logo": {
+          "id": "editable:sufuda:feature_1:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "feature_2",
+      "type": "feature-2",
+      "pptx_slide": true,
+      "title": "产品特点 · 双剂型",
+      "chapter": "二、产品特点",
+      "nav": [
+        "成人儿童安全性均良好",
+        "片剂、干混悬剂双剂型选择",
+        "原研品牌"
+      ],
+      "active_nav": 1,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:feature_2:chapter",
+          "kind": "text",
+          "text": "二、产品特点",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:feature_2:nav.1",
+          "kind": "text",
+          "text": "成人儿童安全性均良好",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:feature_2:nav.2",
+          "kind": "text",
+          "text": "片剂、干混悬剂双剂型选择",
+          "replace": "theme_copy"
+        },
+        "nav3": {
+          "id": "editable:sufuda:feature_2:nav.3",
+          "kind": "text",
+          "text": "原研品牌",
+          "replace": "theme_copy"
+        },
+        "tablets": {
+          "id": "editable:sufuda:feature_2:tablets",
+          "kind": "image",
+          "asset": "tablets",
+          "slot": "slot.pack.tablet",
+          "replace": "business_authorized"
+        },
+        "dose_20": {
+          "id": "editable:sufuda:feature_2:dose_20",
+          "kind": "text",
+          "text": "文案槽\n审核导入",
+          "replace": "theme_copy"
+        },
+        "dose_40": {
+          "id": "editable:sufuda:feature_2:dose_40",
+          "kind": "text",
+          "text": "图片槽\n业务授权",
+          "replace": "theme_copy"
+        },
+        "tab_bubble": {
+          "id": "editable:sufuda:feature_2:tab_bubble",
+          "kind": "text",
+          "text": "文字可改\n图可换",
+          "replace": "theme_copy"
+        },
+        "pack": {
+          "id": "editable:sufuda:feature_2:pack",
+          "kind": "image",
+          "asset": "packGroup",
+          "slot": "slot.pack.group",
+          "replace": "business_authorized"
+        },
+        "granule": {
+          "id": "editable:sufuda:feature_2:granule",
+          "kind": "image",
+          "asset": "granule",
+          "slot": "slot.pack.suspension",
+          "replace": "business_authorized"
+        },
+        "granule_label": {
+          "id": "editable:sufuda:feature_2:granule_label",
+          "kind": "text",
+          "text": "槽位替换 · 授权图进包",
+          "replace": "theme_copy"
+        },
+        "strawberry": {
+          "id": "editable:sufuda:feature_2:strawberry",
+          "kind": "text",
+          "text": "克隆音色",
+          "replace": "theme_copy"
+        },
+        "logo": {
+          "id": "editable:sufuda:feature_2:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "feature_3",
+      "type": "feature-3",
+      "pptx_slide": true,
+      "title": "产品特点 · 原研品牌",
+      "chapter": "二、产品特点",
+      "nav": [
+        "成人儿童安全性均良好",
+        "片剂、干混悬剂双剂型选择",
+        "原研品牌"
+      ],
+      "active_nav": 2,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:feature_3:chapter",
+          "kind": "text",
+          "text": "二、产品特点",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:feature_3:nav.1",
+          "kind": "text",
+          "text": "成人儿童安全性均良好",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:feature_3:nav.2",
+          "kind": "text",
+          "text": "片剂、干混悬剂双剂型选择",
+          "replace": "theme_copy"
+        },
+        "nav3": {
+          "id": "editable:sufuda:feature_3:nav.3",
+          "kind": "text",
+          "text": "原研品牌",
+          "replace": "theme_copy"
+        },
+        "row1": {
+          "id": "editable:sufuda:feature_3:row1",
+          "kind": "text",
+          "text": "风格包锁定：珍珠白丝绸 + 橙藏青层级",
+          "replace": "theme_copy"
+        },
+        "row2": {
+          "id": "editable:sufuda:feature_3:row2",
+          "kind": "text",
+          "text": "136+ 稳定元素 ID",
+          "replace": "theme_copy"
+        },
+        "row3": {
+          "id": "editable:sufuda:feature_3:row3",
+          "kind": "text",
+          "text": "主题包 schema 驱动装配",
+          "replace": "theme_copy"
+        },
+        "row4": {
+          "id": "editable:sufuda:feature_3:row4",
+          "kind": "text",
+          "text": "gap-report 列出待授权资产",
+          "replace": "theme_copy"
+        },
+        "icon_flag": {
+          "id": "editable:sufuda:feature_3:icon_flag",
+          "kind": "image",
+          "asset": "iconFlag",
+          "slot": "slot.icon.flag",
+          "replace": "theme_illustration"
+        },
+        "icon_70": {
+          "id": "editable:sufuda:feature_3:icon_70",
+          "kind": "image",
+          "asset": "icon70",
+          "slot": "slot.icon.70plus",
+          "replace": "theme_illustration"
+        },
+        "icon_thumb": {
+          "id": "editable:sufuda:feature_3:icon_thumb",
+          "kind": "image",
+          "asset": "iconThumb",
+          "slot": "slot.icon.thumb",
+          "replace": "theme_illustration"
+        },
+        "icon_award": {
+          "id": "editable:sufuda:feature_3:icon_award",
+          "kind": "image",
+          "asset": "iconAward",
+          "slot": "slot.icon.award",
+          "replace": "theme_illustration"
+        },
+        "logo": {
+          "id": "editable:sufuda:feature_3:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "audience",
+      "type": "audience",
+      "pptx_slide": true,
+      "title": "适宜人群",
+      "chapter": "三、适用场景",
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:audience:chapter",
+          "kind": "text",
+          "text": "三、适用场景",
+          "replace": "theme_copy"
+        },
+        "person": {
+          "id": "editable:sufuda:audience:person",
+          "kind": "image",
+          "asset": "personOutline",
+          "slot": "slot.illu.person-outline",
+          "replace": "theme_illustration"
+        },
+        "age": {
+          "id": "editable:sufuda:audience:age",
+          "kind": "text",
+          "text": "结构",
+          "replace": "theme_copy"
+        },
+        "age_body": {
+          "id": "editable:sufuda:audience:age_body",
+          "kind": "text",
+          "text": "同页型商品培训\n可套壳复用",
+          "replace": "theme_copy"
+        },
+        "headline": {
+          "id": "editable:sufuda:audience:headline",
+          "kind": "text",
+          "text": "适用于结构相近的商品知识内训课件批量生产验证",
+          "replace": "theme_copy"
+        },
+        "elder_img": {
+          "id": "editable:sufuda:audience:elder_img",
+          "kind": "image",
+          "asset": "charElder",
+          "slot": "slot.illu.char.elder",
+          "replace": "theme_illustration"
+        },
+        "elder_label": {
+          "id": "editable:sufuda:audience:elder_label",
+          "kind": "text",
+          "text": "门店培训",
+          "replace": "theme_copy"
+        },
+        "child_img": {
+          "id": "editable:sufuda:audience:child_img",
+          "kind": "image",
+          "asset": "charChild",
+          "slot": "slot.illu.char.child",
+          "replace": "theme_illustration"
+        },
+        "child_label": {
+          "id": "editable:sufuda:audience:child_label",
+          "kind": "text",
+          "text": "新品导入",
+          "replace": "theme_copy"
+        },
+        "chronic_img": {
+          "id": "editable:sufuda:audience:chronic_img",
+          "kind": "image",
+          "asset": "charChronic",
+          "slot": "slot.illu.char.chronic",
+          "replace": "theme_illustration"
+        },
+        "chronic_label": {
+          "id": "editable:sufuda:audience:chronic_label",
+          "kind": "text",
+          "text": "联合用药说明",
+          "replace": "theme_copy"
+        },
+        "logo": {
+          "id": "editable:sufuda:audience:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "combo_1",
+      "type": "combo-1",
+      "pptx_slide": true,
+      "title": "联合用药 · 退烧药",
+      "chapter": "三、协作方式",
+      "nav": [
+        "业务提供审核稿+授权图",
+        "制作侧套壳导出"
+      ],
+      "active_nav": 0,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:combo_1:chapter",
+          "kind": "text",
+          "text": "三、协作方式",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:combo_1:nav.1",
+          "kind": "text",
+          "text": "业务提供审核稿+授权图",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:combo_1:nav.2",
+          "kind": "text",
+          "text": "制作侧套壳导出",
+          "replace": "theme_copy"
+        },
+        "note": {
+          "id": "editable:sufuda:combo_1:note",
+          "kind": "text",
+          "text": "业务不填坐标；系统映射到已验收页型",
+          "replace": "theme_copy"
+        },
+        "pack": {
+          "id": "editable:sufuda:combo_1:pack",
+          "kind": "image",
+          "asset": "packGroup",
+          "slot": "slot.pack.group",
+          "replace": "business_authorized"
+        },
+        "plus": {
+          "id": "editable:sufuda:combo_1:plus",
+          "kind": "text",
+          "text": "+",
+          "replace": "system"
+        },
+        "other": {
+          "id": "editable:sufuda:combo_1:other",
+          "kind": "image",
+          "asset": "boxFever",
+          "slot": "slot.pack.combo-fever",
+          "replace": "business_authorized"
+        },
+        "logo": {
+          "id": "editable:sufuda:combo_1:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "combo_2",
+      "type": "combo-2",
+      "pptx_slide": true,
+      "title": "联合用药 · 慢病药",
+      "chapter": "三、联合用药",
+      "nav": [
+        "玛巴洛沙韦+退烧药（如布洛芬）",
+        "玛巴洛沙韦+慢病药物（如降压药和降糖药）"
+      ],
+      "active_nav": 1,
+      "elements": {
+        "chapter": {
+          "id": "editable:sufuda:combo_2:chapter",
+          "kind": "text",
+          "text": "三、联合用药",
+          "replace": "theme_copy"
+        },
+        "nav1": {
+          "id": "editable:sufuda:combo_2:nav.1",
+          "kind": "text",
+          "text": "玛巴洛沙韦+退烧药（如布洛芬）",
+          "replace": "theme_copy"
+        },
+        "nav2": {
+          "id": "editable:sufuda:combo_2:nav.2",
+          "kind": "text",
+          "text": "玛巴洛沙韦+慢病药物（如降压药和降糖药）",
+          "replace": "theme_copy"
+        },
+        "note": {
+          "id": "editable:sufuda:combo_2:note",
+          "kind": "text",
+          "text": "医学结论只来自审核稿；本 demo 无真实功效主张",
+          "replace": "theme_copy"
+        },
+        "pack": {
+          "id": "editable:sufuda:combo_2:pack",
+          "kind": "image",
+          "asset": "packGroup",
+          "slot": "slot.pack.group",
+          "replace": "business_authorized"
+        },
+        "plus": {
+          "id": "editable:sufuda:combo_2:plus",
+          "kind": "text",
+          "text": "+",
+          "replace": "system"
+        },
+        "other": {
+          "id": "editable:sufuda:combo_2:other",
+          "kind": "image",
+          "asset": "boxChronic",
+          "slot": "slot.pack.combo-chronic",
+          "replace": "business_authorized"
+        },
+        "logo": {
+          "id": "editable:sufuda:combo_2:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "pptx_slide": true,
+      "title": "总结",
+      "chapter": "总结",
+      "elements": {
+        "eyebrow": {
+          "id": "editable:sufuda:summary:eyebrow",
+          "kind": "text",
+          "text": "敲重点",
+          "replace": "theme_copy"
+        },
+        "chapter": {
+          "id": "editable:sufuda:summary:chapter",
+          "kind": "text",
+          "text": "总结",
+          "replace": "theme_copy"
+        },
+        "col_h1": {
+          "id": "editable:sufuda:summary:col_h1",
+          "kind": "text",
+          "text": "内容模型",
+          "replace": "theme_copy"
+        },
+        "col_h2": {
+          "id": "editable:sufuda:summary:col_h2",
+          "kind": "text",
+          "text": "可编辑",
+          "replace": "theme_copy"
+        },
+        "col_h3": {
+          "id": "editable:sufuda:summary:col_h3",
+          "kind": "text",
+          "text": "主题复刻",
+          "replace": "theme_copy"
+        },
+        "col_h4": {
+          "id": "editable:sufuda:summary:col_h4",
+          "kind": "text",
+          "text": "合规边界",
+          "replace": "theme_copy"
+        },
+        "e1": {
+          "id": "editable:sufuda:summary:e1",
+          "kind": "text",
+          "text": "单一 JSON 源",
+          "replace": "theme_copy"
+        },
+        "e2": {
+          "id": "editable:sufuda:summary:e2",
+          "kind": "text",
+          "text": "稳定 layer_id",
+          "replace": "theme_copy"
+        },
+        "e3": {
+          "id": "editable:sufuda:summary:e3",
+          "kind": "text",
+          "text": "MP4/PPTX 同源",
+          "replace": "theme_copy"
+        },
+        "f1": {
+          "id": "editable:sufuda:summary:f1",
+          "kind": "text",
+          "text": "编辑器改字换图\n导出当前作品",
+          "replace": "theme_copy"
+        },
+        "f2": {
+          "id": "editable:sufuda:summary:f2",
+          "kind": "text",
+          "text": "PPTX 原生对象\n非整页截图",
+          "replace": "theme_copy"
+        },
+        "f3": {
+          "id": "editable:sufuda:summary:f3",
+          "kind": "text",
+          "text": "克隆音色可选\n语速门禁保留",
+          "replace": "theme_copy"
+        },
+        "a1": {
+          "id": "editable:sufuda:summary:a1",
+          "kind": "text",
+          "text": "theme.json 驱动\n复制框架\n合并文案与槽位\n输出 gap-report",
+          "replace": "theme_copy"
+        },
+        "c1": {
+          "id": "editable:sufuda:summary:c1",
+          "kind": "text",
+          "text": "◇ 真包装/Logo 业务授权\n◇ 医学文案须审核\n◇ 演示主题不晋升 settled",
+          "replace": "theme_copy"
+        },
+        "icon_hand": {
+          "id": "editable:sufuda:summary:icon_hand",
+          "kind": "image",
+          "asset": "iconHand",
+          "slot": "slot.icon.hand",
+          "replace": "theme_illustration"
+        },
+        "logo": {
+          "id": "editable:sufuda:summary:logo",
+          "kind": "image",
+          "asset": "logo",
+          "slot": "slot.logo",
+          "replace": "business_authorized"
+        }
+      }
+    }
+  ]
+}

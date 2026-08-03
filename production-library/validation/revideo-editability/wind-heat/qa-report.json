@@ -1,0 +1,253 @@
+{
+  "project_id": "health.wind-heat.full-editable-validation-v1",
+  "template_id": "template.health-reference-tech-v1",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "status": "technical-ui-regression-passed-user-recheck-required",
+  "checked_at": "2026-07-31",
+  "timeline": {
+    "scenes": 7,
+    "frames": 5436,
+    "fps": 30,
+    "duration_seconds": 181.2,
+    "resolution": "1920x1080"
+  },
+  "layer_coverage": {
+    "manifest": "../wind-heat-layer-manifest.json",
+    "all_seven_scenes_have_stable_editable_layer_ids": true,
+    "direct_canvas_selection": "passed",
+    "drag_move": "passed",
+    "drag_scale_handle": "passed",
+    "shift_multi_select": "passed",
+    "batch_image_replace": "passed",
+    "undo_redo": "passed",
+    "save_candidate": "passed",
+    "refresh_restore": "passed",
+    "cross_scene_state_is_shared": "implemented-and-typechecked"
+  },
+  "candidate": {
+    "version": "20260730T140408Z",
+    "file": "current-candidate.json",
+    "status": "candidate",
+    "patch_count": 2,
+    "test_change": "The first two symptom illustrations were batch-replaced with the same saved tongue image.",
+    "headless_render_includes_saved_patches": true,
+    "proof_video": "candidate-20260730T140408Z-symptoms-proof.mp4",
+    "proof_frame": "candidate-20260730T140408Z-symptoms-proof-frame.png",
+    "proof_video_frames": 31,
+    "proof_video_duration_seconds": 1.033333,
+    "proof_video_sha256": "5ee01f4c81bd9619306b1f24baa502cd309bd9af3306de5c5777ea9267841f4f",
+    "proof_frame_sha256": "f350b0c82221132152931f4ab3ab3fe31bc47cbe415809ff1de9cb59ea2d0976",
+    "full_decode": "passed"
+  },
+  "baseline": {
+    "file": "wind-heat-full-editable-baseline.mp4",
+    "sha256": "e4a15cd53af8502c44866a36cdae3a2a887ca757251c2322496d3f3570039cf8",
+    "video": "H.264, 1920x1080, 30fps, 5436 frames, 181.2 seconds",
+    "audio": "AAC, 48kHz, stereo, 181.2 seconds",
+    "full_decode": "passed",
+    "sustained_black_frames_0_5s": 0,
+    "canonical_ssim_all": 0.99562
+  },
+  "promotion": {
+    "settled_template_updated": false,
+    "reason": "The saved replacement is an intentional editability test. Promote only after the user visually accepts the editor and a real business adjustment set."
+  },
+  "ui_entry_visibility_regression_2026_07_31": {
+    "user_result_before_fix": "failed: the complete operation entry was not visible",
+    "root_causes": [
+      "The horizontal toolbar was clipped in a 319px viewport.",
+      "Scale and replace actions were conditionally hidden until selection.",
+      "Depth-first hit testing could select a full-screen master layer before a smaller business layer.",
+      "A click without movement was committed as a drag."
+    ],
+    "fixes": [
+      "A page-level always-visible editing panel now lists every operation and disabled condition.",
+      "The 319x782 viewport shows the complete panel and a truthful minimum-900px Revideo canvas warning.",
+      "Smaller overlapping business layers win hit testing.",
+      "Only pointer movement above the threshold creates a drag history entry.",
+      "Batch replacement uses a native visible file label."
+    ],
+    "browser_regression": {
+      "narrow_panel_fully_visible_319x782": true,
+      "direct_select_and_drag": "passed",
+      "drag_scale": "passed",
+      "shift_multi_select_two_images": "passed",
+      "native_file_chooser_batch_replace": "passed",
+      "undo_redo": "passed",
+      "test_changes_saved": false
+    },
+    "user_recheck_required": true
+  },
+  "docked_property_panel_regression_2026_07_31": {
+    "user_result_before_fix": "failed: the emergency floating panel obscured the canvas and did not resemble a business editor",
+    "layout": {
+      "pattern": "scene/canvas/right-property-panel",
+      "normal_viewport": "1280x720",
+      "editor_main_bounds": "x=0..960",
+      "property_panel_bounds": "x=960..1280",
+      "overlap_pixels": 0,
+      "panel_width": 320,
+      "collapse_restores_main_width": "960px -> 1280px"
+    },
+    "narrow_viewport": {
+      "viewport": "800x720",
+      "default_state": "collapsed",
+      "reopen_control_visible": true,
+      "expanded_warning_visible": true
+    },
+    "browser_regression": {
+      "direct_canvas_selection": "passed",
+      "direct_canvas_drag": "passed-and-undone",
+      "drag_scale_from_property_panel": "passed-and-undone",
+      "multi_select_mode_toggle": "passed",
+      "undo_redo": "passed",
+      "duration_frames": 5436,
+      "test_changes_saved": false
+    },
+    "user_recheck_required": true
+  },
+  "ppt_canvas_basics_regression_2026_07_31": {
+    "scope": "fixed-template canvas operations; no arbitrary node creation or timeline keyframe editing",
+    "selection": {
+      "single_click": "passed",
+      "shift_and_mode_multi_select": "passed",
+      "empty_canvas_marquee": "passed",
+      "marquee_result": [
+        "editable:intro:title:eyebrow",
+        "editable:intro:title:main"
+      ],
+      "master_subtitle_safe_area_locked": true,
+      "parent_child_duplicate_selection_removed": true
+    },
+    "geometry": {
+      "group_drag_move": "passed-and-undone",
+      "four_corner_uniform_scale": "passed-and-undone",
+      "rotation_handle": "passed-and-undone",
+      "arrow_key_nudge": "passed-and-undone",
+      "shift_arrow_10px": "implemented-and-typechecked",
+      "horizontal_vertical_align": "implemented-and-typechecked"
+    },
+    "content": {
+      "text_content": "passed-and-undone",
+      "font_size_slider": "implemented-and-typechecked",
+      "text_color": "implemented-and-typechecked",
+      "opacity_slider": "passed-and-undone",
+      "hide_restore": "passed-and-undone",
+      "single_and_batch_image_replace": "retained-from-passed-C5-regression"
+    },
+    "commands": {
+      "undo_redo": "passed",
+      "reset_selected": "implemented-and-typechecked",
+      "copy_paste_adjustments": "passed",
+      "delete_as_non_destructive_hide": "implemented-and-typechecked",
+      "save_candidate": "retained; not invoked by regression"
+    },
+    "timeline_frames": 5436,
+    "test_changes_saved": false,
+    "user_recheck_required": true
+  },
+  "real_image_direct_manipulation_regression_2026_07_31": {
+    "user_result_before_fix": "failed: image scaling changed selection lines but did not redraw the real image in the paused frame",
+    "supersedes": "ppt_canvas_basics_regression_2026_07_31.geometry.four_corner_uniform_scale as image-specific proof",
+    "root_causes": [
+      "Decorative Rect/container nodes were eligible to win image hit testing.",
+      "The patch could update the overlay while the paused Motion Canvas frame retained its previous raster until frame navigation."
+    ],
+    "fixes": [
+      "Business selection is limited to real Img/Txt nodes and declared top-level business groups; image nodes have highest hit-test priority.",
+      "Patches apply before scene rendering and request same-frame seek/recalculation when a patch changes.",
+      "Property-panel multi-select, scale-mode and rotate-mode buttons were removed; canvas handles are the only transform controls."
+    ],
+    "browser_regression": {
+      "frame": 1624,
+      "selected_key": "editable:symptoms:asset:①-0",
+      "selected_runtime_type": "Img2",
+      "scale_handle_before": {"x": 608.15625, "y": 237.28125},
+      "scale_handle_after": {"x": 688.578125, "y": 318.6875},
+      "frame_unchanged_during_scale": true,
+      "real_image_pixels_changed_immediately": true,
+      "direct_image_move_handle_after": {"x": 638.15625, "y": 258.28125},
+      "move_and_scale_undone": true,
+      "shift_multi_select_keys": [
+        "editable:symptoms:asset:①-0",
+        "editable:symptoms:asset:①-1"
+      ],
+      "shift_multi_select_runtime_types": ["Img2", "Img2"],
+      "batch_replace_input_enabled": true,
+      "property_panel_transform_mode_buttons_absent": true,
+      "direct_canvas_help_visible": true,
+      "test_changes_saved": false
+    },
+    "user_recheck_required": true
+  },
+  "personalized_export_regression_2026_07_31": {
+    "separation": {
+      "current_project_snapshot": "one independent directory per export id",
+      "settled_template_updated": false,
+      "candidate_before_after_sha256": "56e560af4a7ccc8e27d2e2d329875df99205142914b4241207b88728bccf0a84",
+      "candidate_version": "20260730T140408Z",
+      "candidate_patch_count": 2
+    },
+    "business_ui": {
+      "visible_actions": [
+        "导出视频",
+        "导出可编辑课件",
+        "另存为新模板版本"
+      ],
+      "technical_candidate_wording_visible": false,
+      "pptx_button_end_to_end": "passed: completed and browser download started",
+      "save_template_invoked": false
+    },
+    "pptx": {
+      "export_id": "20260731T015533Z-pptx-ae0581",
+      "output": "exports/20260731T015533Z-pptx-ae0581/风热证_当前作品_可编辑课件.pptx",
+      "slides": 7,
+      "native_editable_objects": {
+        "textboxes": 98,
+        "shapes": 52,
+        "images": 14
+      },
+      "current_saved_image_patches_applied": true,
+      "rendered_all_slides": true,
+      "visual_review_all_slides": "passed",
+      "overflow_test": "passed"
+    },
+    "video": {
+      "full_range_export_configured": "0..5435/30 seconds",
+      "short_render_evidence": "exports/20260731T015533Z-pptx-ae0581/风热证_当前作品.mp4",
+      "test_range_frames": [1490, 1520],
+      "video": "H.264, 1920x1080, 30fps, 1.033333 seconds",
+      "audio": "AAC, stereo, 1.033 seconds",
+      "current_saved_image_patches_applied": true,
+      "decode_and_frame_review": "passed"
+    },
+    "user_recheck_required": true
+  },
+  "template_save_as_version_regression_2026_07_31": {
+    "business_ui": {
+      "initial_action": "另存为新模板版本",
+      "first_click_action": "确认另存新版本",
+      "first_click_writes_files": false,
+      "confirmation_window_seconds": 10,
+      "minimum_second_click_delay_ms": 600,
+      "timeout_auto_cancel": "passed",
+      "timeout_status": "确认已取消，未保存新模板版本",
+      "native_blocking_dialog_used": false
+    },
+    "version_safety": {
+      "format": "YYYYMMDDTHHMMSSmmmZ-4hex",
+      "historical_candidate_write_mode": "exclusive create (wx)",
+      "settled_template_write_path_present": false,
+      "current_candidate_role": "mutable pointer to the selected candidate, not the settled template"
+    },
+    "no_write_regression": {
+      "candidate_before_after_sha256": "56e560af4a7ccc8e27d2e2d329875df99205142914b4241207b88728bccf0a84",
+      "candidate_version": "20260730T140408Z",
+      "candidate_files_after_cancel": [
+        "candidate-20260730T140408Z.json"
+      ],
+      "settled_template_updated": false
+    },
+    "user_recheck_required": true
+  }
+}

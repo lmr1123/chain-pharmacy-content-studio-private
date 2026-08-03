@@ -1,0 +1,882 @@
+{
+  "project_id": "product-courseware-4-faithful-replica-v1",
+  "status": "gate-approved-full-film-in-progress",
+  "reference": {
+    "video": "/Users/liminrong/Downloads/商品培训课件4/商品培训课件4.mp4",
+    "audio": "/Users/liminrong/Downloads/商品培训课件4/商品培训课件4.mp3",
+    "duration_s": 127.833,
+    "width": 854,
+    "height": 480,
+    "fps": 30,
+    "note": "屏显原文以视频帧为准；ASR 仅作时码辅助，域词已按屏显校正。"
+  },
+  "canvas_target": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "scale_from_ref": 2.25
+  },
+  "class_legend": {
+    "observed_reference": "参考帧可直接看见",
+    "measured": "从参考帧量测的坐标/尺寸",
+    "implementation_inference": "实现推断（非直接观测）",
+    "authorization_dependency": "缺业务授权素材，必须占坑",
+    "business_extension": "业务新增、参考中不存在（本复刻线默认不纳入门禁）"
+  },
+  "global_style_observed": {
+    "background": "暖灰白丝绸/布纹底，无纯色平涂",
+    "chapter_title": "居中黄字 + 红描边/阴影（如「三大核心功效」「产品特点」「适宜人群」）",
+    "section_label": "左上暗红/棕红序号小标，前缀绿色双箭头 »",
+    "subtitle": "底部居中黑字，常带浅色描边，单行",
+    "typography": {
+      "observed": "粗重展示黑体（非文档体 PingFang Regular）；标题特重、列表粗、字幕粗+白描边",
+      "gate_choice": "HarmonyOS Sans SC Black/Bold via gate/fonts.css @font-face",
+      "rejected_for_cjk": "Gen Jyuu Gothic / Gen Shin Gothic — 日文优先字库，简体「对」「贡」等缺字",
+      "alternates_on_machine": [
+        "Source Han Sans SC VF",
+        "Heiti SC Medium",
+        "PingFang SC Semibold"
+      ],
+      "forbidden_as_primary": "仅用 PingFang SC Regular 当主标题/列表"
+    },
+    "motion_grammar_observed": "淡入、位移、缩放、打字/逐字出现、列表逐项出现；二维 PPT/素材合成，无角色骨骼",
+    "watermarks_in_ref": "参考片含平台水印与人名水印；复刻成片不复制水印"
+  },
+  "asset_policy": {
+    "packshot_logo": "authorization_dependency — 同位置同尺寸灰底坑位 + 标签，禁止截取参考像素，禁止语义替换为 AI 插画",
+    "real_photos_in_ref": "开场番茄实拍、厨房实拍、枝头番茄实拍等 — 重建为同构图位图槽，不直接裁参考成片像素入库",
+    "diagrams": "前列腺解剖图、卡通番茄、O2、NK-cell、肌肉臂、地图等 — 按参考语义与位置重建高清无字底图 + 可编辑文字层"
+  },
+  "export_plan_after_full_signoff": {
+    "single_content_model": "Scene JSON（稳定 text_id / image_slot_id）",
+    "outputs": [
+      "mp4",
+      "pptx-editable-layers",
+      "html-editor"
+    ],
+    "theme_extension": "仅在全片保真签样后抽取 template / slots / motion grammar；换商品只换槽位内容",
+    "forbidden_until_signoff": [
+      "settled template 写入",
+      "全片批量生成",
+      "主题扩展母版发布"
+    ]
+  },
+  "screens": [
+    {
+      "id": "S00_cover",
+      "time_range_s": [
+        0.0,
+        2.0
+      ],
+      "class": "observed_reference",
+      "title": "封面·商品主视觉",
+      "on_screen_text": [
+        "福尔番茄红素软胶囊",
+        "好物推荐",
+        "保护前列腺，提高精子活力",
+        "抗氧化，延缓衰老",
+        "增强免疫力"
+      ],
+      "subtitle_samples": [],
+      "objects": [
+        {
+          "id": "title_pill",
+          "type": "text_in_shape",
+          "text": "福尔番茄红素软胶囊",
+          "position_hint": "顶部居中圆角灰胶囊条",
+          "layer": 20
+        },
+        {
+          "id": "badge_recommend",
+          "type": "badge",
+          "text": "好物推荐",
+          "position_hint": "右上角黄橙爆炸贴",
+          "layer": 25
+        },
+        {
+          "id": "benefit_list",
+          "type": "text_list",
+          "items": [
+            "保护前列腺，提高精子活力",
+            "抗氧化，延缓衰老",
+            "增强免疫力"
+          ],
+          "position_hint": "左中，红勾圆标 + 黑字",
+          "layer": 15
+        },
+        {
+          "id": "packshot_box_a",
+          "type": "image_slot",
+          "label": "包装盒正面 A",
+          "class": "authorization_dependency",
+          "position_hint": "中右成组左侧盒",
+          "layer": 10,
+          "placeholder_required": true
+        },
+        {
+          "id": "packshot_box_b",
+          "type": "image_slot",
+          "label": "包装盒正面 B",
+          "class": "authorization_dependency",
+          "position_hint": "中右成组中间盒",
+          "layer": 10,
+          "placeholder_required": true
+        },
+        {
+          "id": "packshot_bottle",
+          "type": "image_slot",
+          "label": "瓶装",
+          "class": "authorization_dependency",
+          "position_hint": "中右成组右侧瓶",
+          "layer": 10,
+          "placeholder_required": true
+        },
+        {
+          "id": "tomato_cut",
+          "type": "photo_slot",
+          "label": "切开番茄实拍",
+          "position_hint": "包装组左下前",
+          "layer": 12
+        },
+        {
+          "id": "mountain_silhouette",
+          "type": "decoration",
+          "position_hint": "底部远山浅灰剪影",
+          "layer": 1
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 0.0,
+          "desc": "封面整屏呈现",
+          "class": "observed_reference"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S01_time_list",
+      "time_range_s": [
+        2.0,
+        9.5
+      ],
+      "class": "observed_reference",
+      "title": "TIME 杂志 + 10 种健康食品榜单",
+      "gate": {
+        "static_page": true,
+        "micro_shot": true,
+        "static_anchor_s": 5.0,
+        "micro_range_s": [
+          2.0,
+          9.0
+        ]
+      },
+      "on_screen_text": [
+        "TIME（杂志示意封面字标）",
+        "Big Title",
+        "Medium Black Title",
+        "对人类健康贡献最大的10种健康食品",
+        "1.番茄",
+        "2.***",
+        "3.***"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 3.0,
+          "text": "美国《时代杂志评选》的"
+        },
+        {
+          "t": 5.0,
+          "text": "“对人类健康贡献最大的10种健康食品”"
+        },
+        {
+          "t": 9.0,
+          "text": "其中番茄位列第一"
+        }
+      ],
+      "objects": [
+        {
+          "id": "bg_silk",
+          "type": "background",
+          "layer": 0,
+          "measured_ref_px": {
+            "note": "全画布 854×480"
+          }
+        },
+        {
+          "id": "time_magazine_mock",
+          "type": "composite_graphic",
+          "layer": 10,
+          "measured_ref_px": {
+            "x": 94,
+            "y": 116,
+            "w": 173,
+            "h": 248
+          },
+          "measured_1080": {
+            "x": 211.3,
+            "y": 261.0,
+            "w": 388.9,
+            "h": 558.0
+          },
+          "notes": "红框白底示意封面；非真实当期杂志页。含 TIME 字标、Big Title、Medium Black Title、条码示意。"
+        },
+        {
+          "id": "dark_info_card",
+          "type": "shape",
+          "layer": 11,
+          "fill": "#4f4f4f 近似深灰",
+          "corner_radius_hint": "大圆角矩形",
+          "measured_ref_px": {
+            "x": 342,
+            "y": 123,
+            "w": 435,
+            "h": 231
+          },
+          "measured_1080": {
+            "x": 768.9,
+            "y": 276.8,
+            "w": 978.0,
+            "h": 519.8
+          }
+        },
+        {
+          "id": "chevron_double",
+          "type": "icon",
+          "layer": 12,
+          "color": "亮黄绿 #c8e000 近似",
+          "position_hint": "卡片内左上，标题前；矢量双箭头图标（非文字 »），约 72×72@1080",
+          "notes": "比标题字号视觉更大、更厚，是高级感来源之一"
+        },
+        {
+          "id": "card_title",
+          "type": "text",
+          "layer": 13,
+          "text": "对人类健康贡献最大的10种健康食品",
+          "color": "亮黄 #e8f000 近似",
+          "font_weight": "regular/medium — 不加粗",
+          "action": "打字机/逐字显现（约 2.5–5.0s）",
+          "measured_ref_px": {
+            "x": 380,
+            "y": 153,
+            "w": 371,
+            "h": 42
+          }
+        },
+        {
+          "id": "list_typography",
+          "type": "style_note",
+          "font_size_hint": "明显大于标题行",
+          "letter_spacing": "较开（约 0.12–0.16em）",
+          "line_height": "较松",
+          "font_weight": "medium，靠字号与字距撑气场，非 Black"
+        },
+        {
+          "id": "card_title_underline",
+          "type": "shape",
+          "layer": 12,
+          "notes": "标题下细黄线"
+        },
+        {
+          "id": "list_item_1",
+          "type": "text",
+          "layer": 13,
+          "text": "1.番茄",
+          "color": "白",
+          "action": "标题完成后淡入/出现"
+        },
+        {
+          "id": "list_item_2",
+          "type": "text",
+          "layer": 13,
+          "text": "2.***",
+          "color": "白"
+        },
+        {
+          "id": "list_item_3",
+          "type": "text",
+          "layer": 13,
+          "text": "3.***",
+          "color": "白"
+        },
+        {
+          "id": "subtitle",
+          "type": "text",
+          "layer": 30,
+          "position_hint": "底部居中"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 2.0,
+          "desc": "自封面切到本屏；TIME 与空/近空深灰卡已在",
+          "class": "observed_reference"
+        },
+        {
+          "at_s": 3.0,
+          "desc": "标题逐字出现（可见「对人」）",
+          "class": "observed_reference"
+        },
+        {
+          "at_s": 5.0,
+          "desc": "标题完整 + 列表 1/2/3 完整（静态门禁锚点）",
+          "class": "observed_reference"
+        },
+        {
+          "at_s": 7.0,
+          "desc": "构图保持；字幕引用完整标题",
+          "class": "observed_reference"
+        },
+        {
+          "at_s": 9.0,
+          "desc": "字幕：其中番茄位列第一",
+          "class": "observed_reference"
+        }
+      ]
+    },
+    {
+      "id": "S02_live_tomato_broll",
+      "time_range_s": [
+        9.5,
+        16.5
+      ],
+      "class": "observed_reference",
+      "title": "番茄实拍 B-roll",
+      "on_screen_text": [],
+      "subtitle_samples": [
+        {
+          "t": 11.0,
+          "text": "通过深入了解"
+        },
+        {
+          "t": 13.0,
+          "text": "你们会发现为什么五星级酒店"
+        },
+        {
+          "t": 15.0,
+          "text": "及欧美国家一日三餐都有番茄供应"
+        }
+      ],
+      "objects": [
+        {
+          "id": "wash_tomato_clip",
+          "type": "video_photo_slot",
+          "desc": "水槽洗手洗番茄 + 盘中番茄"
+        },
+        {
+          "id": "kitchen_veg_clip",
+          "type": "video_photo_slot",
+          "desc": "案板黄瓜番茄青菜"
+        },
+        {
+          "id": "hand_pick_tomato",
+          "type": "video_photo_slot",
+          "desc": "手取番茄特写"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 10.0,
+          "desc": "实拍镜头切换，无 PPT 卡片"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S03_product_intro",
+      "time_range_s": [
+        16.5,
+        21.5
+      ],
+      "class": "observed_reference",
+      "title": "商品组图引入",
+      "on_screen_text": [],
+      "subtitle_samples": [
+        {
+          "t": 18.0,
+          "text": "我们今天就来学习福尔番茄红素软胶囊"
+        }
+      ],
+      "objects": [
+        {
+          "id": "vine_tomatoes",
+          "type": "photo_slot",
+          "position_hint": "左侧枝头番茄"
+        },
+        {
+          "id": "packshot_group",
+          "type": "image_slot_group",
+          "class": "authorization_dependency",
+          "items": [
+            "box_a",
+            "box_b",
+            "bottle"
+          ],
+          "placeholder_required": true,
+          "notes": "与封面同组包装；缺图时三坑原位保留"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 18.0,
+          "desc": "包装+番茄静帧，字幕点名商品"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S04_benefit_1_prostate",
+      "time_range_s": [
+        21.5,
+        34.5
+      ],
+      "class": "observed_reference",
+      "title": "三大核心功效·1 前列腺",
+      "on_screen_text": [
+        "三大核心功效",
+        "1、保护前列腺、提高精子活力"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 28.0,
+          "text": "能活化前列腺细胞"
+        }
+      ],
+      "objects": [
+        {
+          "id": "chapter_title",
+          "type": "text",
+          "text": "三大核心功效",
+          "position_hint": "顶中黄字",
+          "measured_ref_px": {
+            "x": 320,
+            "y": 30,
+            "w": 215,
+            "h": 28
+          }
+        },
+        {
+          "id": "section_label",
+          "type": "text",
+          "text": "1、保护前列腺、提高精子活力",
+          "position_hint": "左上 » 棕红"
+        },
+        {
+          "id": "icon_tomato",
+          "type": "illustration",
+          "position_hint": "左中卡通番茄"
+        },
+        {
+          "id": "arrow_1",
+          "type": "shape",
+          "position_hint": "番茄右侧红箭头"
+        },
+        {
+          "id": "diagram_prostate",
+          "type": "medical_diagram",
+          "position_hint": "右中解剖示意图"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 22.0,
+          "desc": "章节标题与小节标出现"
+        },
+        {
+          "at_s": 24.0,
+          "desc": "番茄 → 箭头 → 前列腺图依次建立"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S05_benefit_2_antioxidant",
+      "time_range_s": [
+        34.5,
+        49.0
+      ],
+      "class": "observed_reference",
+      "title": "三大核心功效·2 抗氧化",
+      "on_screen_text": [
+        "三大核心功效",
+        "2、抗氧化，延缓衰老"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 38.0,
+          "text": "番茄红素可通过物理和化学方式"
+        }
+      ],
+      "objects": [
+        {
+          "id": "icon_tomato",
+          "type": "illustration"
+        },
+        {
+          "id": "arrow_1",
+          "type": "shape"
+        },
+        {
+          "id": "icon_o2",
+          "type": "illustration",
+          "desc": "立体 O₂ 环"
+        },
+        {
+          "id": "arrow_2",
+          "type": "shape"
+        },
+        {
+          "id": "icon_skincare_woman",
+          "type": "illustration",
+          "desc": "毛巾+护肤女性卡通"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 36.0,
+          "desc": "链路从番茄推到 O₂"
+        },
+        {
+          "at_s": 42.0,
+          "desc": "右侧护肤人物出现完成链路"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S06_benefit_3_immunity",
+      "time_range_s": [
+        49.0,
+        60.5
+      ],
+      "class": "observed_reference",
+      "title": "三大核心功效·3 免疫力",
+      "on_screen_text": [
+        "三大核心功效",
+        "3、增强免疫力"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 58.0,
+          "text": "从而增强免疫力"
+        }
+      ],
+      "objects": [
+        {
+          "id": "icon_tomato",
+          "type": "illustration"
+        },
+        {
+          "id": "icon_nk_cell",
+          "type": "illustration",
+          "text_on_art": "NK-cell"
+        },
+        {
+          "id": "icon_flex_arm",
+          "type": "illustration"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 50.0,
+          "desc": "番茄→NK-cell→肌肉臂链路"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S07_feature_origin",
+      "time_range_s": [
+        60.5,
+        78.0
+      ],
+      "class": "observed_reference",
+      "title": "产品特点·1 产地好",
+      "on_screen_text": [
+        "产品特点",
+        "1、产地好",
+        "中国分省地图—新疆维吾尔自治区"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 68.0,
+          "text": "因此新疆被誉为“世界上最好的番茄产区”"
+        }
+      ],
+      "objects": [
+        {
+          "id": "chapter_title",
+          "type": "text",
+          "text": "产品特点"
+        },
+        {
+          "id": "section_label",
+          "type": "text",
+          "text": "1、产地好"
+        },
+        {
+          "id": "map_xinjiang",
+          "type": "map_graphic",
+          "desc": "新疆自治区地图填色 + 地名词"
+        },
+        {
+          "id": "map_caption",
+          "type": "text",
+          "text": "中国分省地图—新疆维吾尔自治区"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 61.0,
+          "desc": "先章节标题空场再出地图（约 78s 附近有仅标题过渡）"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S08_feature_material",
+      "time_range_s": [
+        78.0,
+        91.0
+      ],
+      "class": "observed_reference",
+      "title": "产品特点·2 原料优",
+      "on_screen_text": [
+        "产品特点",
+        "2、原料优"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 88.0,
+          "text": "福尔选择最优的番茄肉提炼而成"
+        }
+      ],
+      "objects": [
+        {
+          "id": "photo_tomato_vine",
+          "type": "photo_slot",
+          "desc": "带水珠枝头番茄实拍，居中圆角/方框图"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 80.0,
+          "desc": "原料图入画"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S09_feature_content",
+      "time_range_s": [
+        91.0,
+        103.0
+      ],
+      "class": "observed_reference",
+      "title": "产品特点·3 含量高",
+      "on_screen_text": [
+        "产品特点",
+        "3、含量高"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 98.0,
+          "text": "吃1粒番茄红素相当于5个新鲜大番茄"
+        }
+      ],
+      "objects": [
+        {
+          "id": "softgel_capsule",
+          "type": "illustration",
+          "position_hint": "左：单粒红色软胶囊"
+        },
+        {
+          "id": "equals_sign",
+          "type": "text",
+          "text": "=",
+          "position_hint": "中"
+        },
+        {
+          "id": "five_tomatoes",
+          "type": "illustration",
+          "position_hint": "右：5 个大番茄组"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 93.0,
+          "desc": "胶囊 → 等号 → 五番茄建立等量关系"
+        }
+      ],
+      "gate_role": "full_film_later",
+      "notes": "参考明确「1 粒 = 5 个番茄」；禁止改成器官/盾牌语义图"
+    },
+    {
+      "id": "S10_audience",
+      "time_range_s": [
+        103.0,
+        112.0
+      ],
+      "class": "observed_reference",
+      "title": "适宜人群",
+      "on_screen_text": [
+        "适宜人群",
+        "前列腺患病",
+        "备孕男士和女士",
+        "爱美人士",
+        "身体虚弱人群"
+      ],
+      "subtitle_samples": [
+        {
+          "t": 106.0,
+          "text": "前列腺患病人群"
+        },
+        {
+          "t": 108.0,
+          "text": "备孕男士和女士"
+        },
+        {
+          "t": 110.0,
+          "text": "爱美人士"
+        },
+        {
+          "t": 111.0,
+          "text": "身体虚弱人群"
+        }
+      ],
+      "objects": [
+        {
+          "id": "icon_prostate",
+          "type": "diagram",
+          "label_text": "前列腺患病"
+        },
+        {
+          "id": "couple_icon",
+          "type": "illustration",
+          "label_text": "备孕男士和女士"
+        },
+        {
+          "id": "beauty_icon",
+          "type": "illustration",
+          "label_text": "爱美人士"
+        },
+        {
+          "id": "weak_icon",
+          "type": "illustration",
+          "label_text": "身体虚弱人群"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 104.0,
+          "desc": "标题适宜人群"
+        },
+        {
+          "at_s": 105.5,
+          "desc": "第1项前列腺患病出现"
+        },
+        {
+          "at_s": 107.5,
+          "desc": "第2项备孕男士和女士"
+        },
+        {
+          "at_s": 109.0,
+          "desc": "第3项爱美人士"
+        },
+        {
+          "at_s": 110.5,
+          "desc": "第4项身体虚弱人群；四项并排"
+        }
+      ],
+      "gate_role": "full_film_later"
+    },
+    {
+      "id": "S11_summary_table",
+      "time_range_s": [
+        112.0,
+        124.0
+      ],
+      "class": "observed_reference",
+      "title": "三大核心功效总结表",
+      "on_screen_text": [
+        "福尔番茄红素三大核心功效",
+        "保护前列腺、提高精子活力",
+        "抗氧化，延缓衰老",
+        "增强免疫力",
+        "（表内完整功效说明原文见帧）",
+        "不适宜人群：少年儿童、孕妇、乳母",
+        "每日1次，每次1粒，建议固定随餐服用，避免漏服"
+      ],
+      "subtitle_samples": [],
+      "objects": [
+        {
+          "id": "table_3x2",
+          "type": "table",
+          "rows": 3,
+          "cols": 2
+        },
+        {
+          "id": "side_note_left",
+          "type": "vertical_text",
+          "position_hint": "表左"
+        },
+        {
+          "id": "side_note_right",
+          "type": "vertical_text",
+          "position_hint": "表右"
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 114.0,
+          "desc": "整表呈现，旁白回顾三条"
+        }
+      ],
+      "gate_role": "full_film_later",
+      "notes": "参考是原表格样式，禁止改成三张插画卡"
+    },
+    {
+      "id": "S12_end_cover",
+      "time_range_s": [
+        124.0,
+        127.833
+      ],
+      "class": "observed_reference",
+      "title": "封底·回封面构图",
+      "on_screen_text": [
+        "福尔番茄红素软胶囊",
+        "好物推荐",
+        "保护前列腺，提高精子活力",
+        "抗氧化，延缓衰老",
+        "增强免疫力"
+      ],
+      "objects": [
+        {
+          "id": "packshot_group",
+          "class": "authorization_dependency",
+          "placeholder_required": true
+        }
+      ],
+      "actions": [
+        {
+          "at_s": 126.0,
+          "desc": "回到与 S00 同构的商品页"
+        }
+      ],
+      "gate_role": "full_film_later"
+    }
+  ],
+  "not_in_reference": {
+    "class": "business_extension",
+    "items": [
+      "联合用药专章（若业务稿有，不得标为 observed_reference）",
+      "四项总结改写版（参考为三功效表 + 封面回扣）"
+    ],
+    "rule": "业务扩展仅在保真全片签样后，另开 extension 镜头，并标记 business_extension"
+  },
+  "rejected_sibling": {
+    "path": "production-library/validation/video/tomato-lycopene-faithful-v1",
+    "status": "rejected-not-reference-faithful",
+    "why": "缺 TIME 开场、实拍番茄、1粒=5番茄、原表格等；用器官/盾牌语义替换；不能当母版"
+  }
+}

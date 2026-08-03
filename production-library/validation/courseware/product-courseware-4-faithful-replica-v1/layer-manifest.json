@@ -1,0 +1,1282 @@
+{
+  "project_id": "product-courseware-4-faithful-replica-v1",
+  "template_id": "template.product-courseware-4-faithful-replica-v1",
+  "status": "editable-delivery",
+  "content_model": "content-model.json",
+  "channels": [
+    "video_still",
+    "pptx"
+  ],
+  "interaction_contract": {
+    "edit_text": "改 content-model 对应字段或 patches JSON，再 build_deliverables",
+    "replace_image": "替换 assets/generated 槽位文件或 patches 中的 asset 路径",
+    "export_pptx": "python3 scripts/export_editable_pptx.py",
+    "export_video": "python3 scripts/export-full-film-video.py",
+    "export_all": "python3 scripts/build_deliverables.py",
+    "theme_replication": "复制 content-model + assets 槽位，改 theme_copy / business_authorized 字段"
+  },
+  "layer_count": 110,
+  "pages": [
+    {
+      "id": "S00_cover",
+      "type": "cover",
+      "layer": "observed_reference",
+      "start": 0.0,
+      "end": 2.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S01_time_list",
+      "type": "time_list",
+      "layer": "observed_reference",
+      "start": 2.0,
+      "end": 9.5,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S02_broll",
+      "type": "broll",
+      "layer": "observed_reference",
+      "start": 9.5,
+      "end": 16.5,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S03_product_intro",
+      "type": "product_intro",
+      "layer": "observed_reference",
+      "start": 16.5,
+      "end": 21.5,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S04_benefit_1",
+      "type": "benefit_chain",
+      "layer": "observed_reference",
+      "start": 21.5,
+      "end": 34.5,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S05_benefit_2",
+      "type": "benefit_chain",
+      "layer": "observed_reference",
+      "start": 34.5,
+      "end": 49.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S06_benefit_3",
+      "type": "benefit_chain",
+      "layer": "observed_reference",
+      "start": 49.0,
+      "end": 60.5,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S07_origin",
+      "type": "feature_origin",
+      "layer": "observed_reference",
+      "start": 60.5,
+      "end": 78.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S08_material",
+      "type": "feature_material",
+      "layer": "observed_reference",
+      "start": 78.0,
+      "end": 91.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S09_content",
+      "type": "feature_content",
+      "layer": "observed_reference",
+      "start": 91.0,
+      "end": 103.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S10_audience",
+      "type": "audience",
+      "layer": "observed_reference",
+      "start": 103.0,
+      "end": 112.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S12_related_1",
+      "type": "related_meds",
+      "layer": "business_extension",
+      "start": 124.0,
+      "end": 132.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S13_related_2",
+      "type": "related_meds",
+      "layer": "business_extension",
+      "start": 132.0,
+      "end": 140.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S11_summary",
+      "type": "efficacy_recap_table",
+      "layer": "observed_reference",
+      "start": 112.0,
+      "end": 124.0,
+      "pptx_slide": true,
+      "video_scene": true
+    },
+    {
+      "id": "S15_end",
+      "type": "cover",
+      "layer": "observed_reference",
+      "start": 152.0,
+      "end": 156.0,
+      "pptx_slide": true,
+      "video_scene": true
+    }
+  ],
+  "layers": [
+    {
+      "element_id": "editable:cw4:S00_cover:title_pill",
+      "page_id": "S00_cover",
+      "role": "title_pill",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "福尔番茄红素软胶囊",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:badge",
+      "page_id": "S00_cover",
+      "role": "badge",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "好物推荐",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:benefit.1",
+      "page_id": "S00_cover",
+      "role": "benefit.1",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "保护前列腺，提高精子活力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:benefit.2",
+      "page_id": "S00_cover",
+      "role": "benefit.2",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "抗氧化，延缓衰老",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:benefit.3",
+      "page_id": "S00_cover",
+      "role": "benefit.3",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "增强免疫力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:icon_check",
+      "page_id": "S00_cover",
+      "role": "icon_check",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.icon.check",
+      "asset_key": "icon-check-red.png"
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:badge_img",
+      "page_id": "S00_cover",
+      "role": "badge_img",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.badge.hot",
+      "asset_key": "badge-hot-recommend.png"
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:pack_a",
+      "page_id": "S00_cover",
+      "role": "pack_a",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.box_a",
+      "asset_key": "slot-pack-box-a.png"
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:pack_b",
+      "page_id": "S00_cover",
+      "role": "pack_b",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.box_b",
+      "asset_key": "slot-pack-box-b.png"
+    },
+    {
+      "element_id": "editable:cw4:S00_cover:pack_bottle",
+      "page_id": "S00_cover",
+      "role": "pack_bottle",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.bottle",
+      "asset_key": "slot-pack-bottle.png"
+    },
+    {
+      "element_id": "editable:cw4:S01_time_list:magazine",
+      "page_id": "S01_time_list",
+      "role": "magazine",
+      "kind": "image",
+      "replace_rule": "authorization_dependency",
+      "default_text": null,
+      "slot": "slot.time.magazine",
+      "asset_key": "slot-time-magazine.png"
+    },
+    {
+      "element_id": "editable:cw4:S01_time_list:card_title",
+      "page_id": "S01_time_list",
+      "role": "card_title",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "对人类健康贡献最大的10种健康食品",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S01_time_list:list.1",
+      "page_id": "S01_time_list",
+      "role": "list.1",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "1.番茄",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S01_time_list:list.2",
+      "page_id": "S01_time_list",
+      "role": "list.2",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "2.***",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S01_time_list:list.3",
+      "page_id": "S01_time_list",
+      "role": "list.3",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "3.***",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S01_time_list:subtitle_sample",
+      "page_id": "S01_time_list",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "其中番茄位列第一",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S02_broll:photo",
+      "page_id": "S02_broll",
+      "role": "photo",
+      "kind": "image",
+      "replace_rule": "authorization_dependency",
+      "default_text": null,
+      "slot": "slot.photo.tomato",
+      "asset_key": "slot-photo-tomato.png"
+    },
+    {
+      "element_id": "editable:cw4:S02_broll:subtitle_sample",
+      "page_id": "S02_broll",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "及欧美国家一日三餐都有番茄供应",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S03_product_intro:vine",
+      "page_id": "S03_product_intro",
+      "role": "vine",
+      "kind": "image",
+      "replace_rule": "authorization_dependency",
+      "default_text": null,
+      "slot": "slot.photo.vine",
+      "asset_key": "slot-photo-vine.png"
+    },
+    {
+      "element_id": "editable:cw4:S03_product_intro:pack_a",
+      "page_id": "S03_product_intro",
+      "role": "pack_a",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.box_a",
+      "asset_key": "slot-pack-box-a.png"
+    },
+    {
+      "element_id": "editable:cw4:S03_product_intro:pack_b",
+      "page_id": "S03_product_intro",
+      "role": "pack_b",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.box_b",
+      "asset_key": "slot-pack-box-b.png"
+    },
+    {
+      "element_id": "editable:cw4:S03_product_intro:pack_bottle",
+      "page_id": "S03_product_intro",
+      "role": "pack_bottle",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.bottle",
+      "asset_key": "slot-pack-bottle.png"
+    },
+    {
+      "element_id": "editable:cw4:S03_product_intro:subtitle_sample",
+      "page_id": "S03_product_intro",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "我们今天就来学习福尔番茄红素软胶囊",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S04_benefit_1:chapter",
+      "page_id": "S04_benefit_1",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "一、三大核心功效",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S04_benefit_1:section",
+      "page_id": "S04_benefit_1",
+      "role": "section",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "1、保护前列腺、提高精子活力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S04_benefit_1:chevron",
+      "page_id": "S04_benefit_1",
+      "role": "chevron",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.icon.chevron",
+      "asset_key": "icon-chevron-lime.png"
+    },
+    {
+      "element_id": "editable:cw4:S04_benefit_1:tomato",
+      "page_id": "S04_benefit_1",
+      "role": "tomato",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.tomato",
+      "asset_key": "tomato.png"
+    },
+    {
+      "element_id": "editable:cw4:S04_benefit_1:arrow",
+      "page_id": "S04_benefit_1",
+      "role": "arrow",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.arrow",
+      "asset_key": "arrow-red.png"
+    },
+    {
+      "element_id": "editable:cw4:S04_benefit_1:prostate",
+      "page_id": "S04_benefit_1",
+      "role": "prostate",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.prostate",
+      "asset_key": "prostate-diagram.png"
+    },
+    {
+      "element_id": "editable:cw4:S04_benefit_1:subtitle_sample",
+      "page_id": "S04_benefit_1",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "能活化前列腺细胞，保护前列腺，提高精子活力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:chapter",
+      "page_id": "S05_benefit_2",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "一、三大核心功效",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:section",
+      "page_id": "S05_benefit_2",
+      "role": "section",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "2、抗氧化，延缓衰老",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:chevron",
+      "page_id": "S05_benefit_2",
+      "role": "chevron",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.icon.chevron",
+      "asset_key": "icon-chevron-lime.png"
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:tomato",
+      "page_id": "S05_benefit_2",
+      "role": "tomato",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.tomato",
+      "asset_key": "tomato.png"
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:arrow1",
+      "page_id": "S05_benefit_2",
+      "role": "arrow1",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.arrow1",
+      "asset_key": "arrow-red.png"
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:o2",
+      "page_id": "S05_benefit_2",
+      "role": "o2",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.o2",
+      "asset_key": "o2.png"
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:arrow2",
+      "page_id": "S05_benefit_2",
+      "role": "arrow2",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.arrow2",
+      "asset_key": "arrow-red.png"
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:woman",
+      "page_id": "S05_benefit_2",
+      "role": "woman",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.woman",
+      "asset_key": "skincare-woman.png"
+    },
+    {
+      "element_id": "editable:cw4:S05_benefit_2:subtitle_sample",
+      "page_id": "S05_benefit_2",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "抗氧化能力是维E的100倍，从而达到延缓衰老的作用",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:chapter",
+      "page_id": "S06_benefit_3",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "一、三大核心功效",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:section",
+      "page_id": "S06_benefit_3",
+      "role": "section",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "3、增强免疫力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:chevron",
+      "page_id": "S06_benefit_3",
+      "role": "chevron",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.icon.chevron",
+      "asset_key": "icon-chevron-lime.png"
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:tomato",
+      "page_id": "S06_benefit_3",
+      "role": "tomato",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.tomato",
+      "asset_key": "tomato.png"
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:arrow1",
+      "page_id": "S06_benefit_3",
+      "role": "arrow1",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.arrow1",
+      "asset_key": "arrow-red.png"
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:nk",
+      "page_id": "S06_benefit_3",
+      "role": "nk",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.nk",
+      "asset_key": "nk-cell.png"
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:arrow2",
+      "page_id": "S06_benefit_3",
+      "role": "arrow2",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.arrow2",
+      "asset_key": "arrow-red.png"
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:arm",
+      "page_id": "S06_benefit_3",
+      "role": "arm",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.arm",
+      "asset_key": "flex-arm.png"
+    },
+    {
+      "element_id": "editable:cw4:S06_benefit_3:subtitle_sample",
+      "page_id": "S06_benefit_3",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "从而增强免疫力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S07_origin:chapter",
+      "page_id": "S07_origin",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "二、产品特点",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S07_origin:section",
+      "page_id": "S07_origin",
+      "role": "section",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "1、产地好",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S07_origin:map_caption",
+      "page_id": "S07_origin",
+      "role": "map_caption",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "中国分省地图—新疆维吾尔自治区",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S07_origin:map",
+      "page_id": "S07_origin",
+      "role": "map",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.map_xinjiang",
+      "asset_key": "map-xinjiang.png"
+    },
+    {
+      "element_id": "editable:cw4:S07_origin:subtitle_sample",
+      "page_id": "S07_origin",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "新疆番茄的番茄红素含量高达62毫克/100克",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S08_material:chapter",
+      "page_id": "S08_material",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "二、产品特点",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S08_material:section",
+      "page_id": "S08_material",
+      "role": "section",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "2、原料优",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S08_material:vine",
+      "page_id": "S08_material",
+      "role": "vine",
+      "kind": "image",
+      "replace_rule": "authorization_dependency",
+      "default_text": null,
+      "slot": "slot.photo.vine",
+      "asset_key": "slot-photo-vine.png"
+    },
+    {
+      "element_id": "editable:cw4:S08_material:subtitle_sample",
+      "page_id": "S08_material",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "福尔选择最优的番茄肉提炼而成",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S09_content:chapter",
+      "page_id": "S09_content",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "二、产品特点",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S09_content:section",
+      "page_id": "S09_content",
+      "role": "section",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "3、含量高",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S09_content:eq",
+      "page_id": "S09_content",
+      "role": "eq",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "=",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S09_content:softgel",
+      "page_id": "S09_content",
+      "role": "softgel",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.softgel",
+      "asset_key": "softgel.png"
+    },
+    {
+      "element_id": "editable:cw4:S09_content:five_tomatoes",
+      "page_id": "S09_content",
+      "role": "five_tomatoes",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.five_tomatoes",
+      "asset_key": "five-tomatoes.png"
+    },
+    {
+      "element_id": "editable:cw4:S09_content:subtitle_sample",
+      "page_id": "S09_content",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "一天只需吃1到2粒",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:chapter",
+      "page_id": "S10_audience",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "三、适宜人群",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:label.1",
+      "page_id": "S10_audience",
+      "role": "label.1",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "前列腺患病",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:icon.1",
+      "page_id": "S10_audience",
+      "role": "icon.1",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.audience.1",
+      "asset_key": "prostate-diagram.png"
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:label.2",
+      "page_id": "S10_audience",
+      "role": "label.2",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "备孕男士和女士",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:icon.2",
+      "page_id": "S10_audience",
+      "role": "icon.2",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.audience.2",
+      "asset_key": "couple.png"
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:label.3",
+      "page_id": "S10_audience",
+      "role": "label.3",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "爱美人士",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:icon.3",
+      "page_id": "S10_audience",
+      "role": "icon.3",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.audience.3",
+      "asset_key": "audience-beauty.png"
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:label.4",
+      "page_id": "S10_audience",
+      "role": "label.4",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "身体虚弱人群",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:icon.4",
+      "page_id": "S10_audience",
+      "role": "icon.4",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.illu.audience.4",
+      "asset_key": "audience-weak.png"
+    },
+    {
+      "element_id": "editable:cw4:S10_audience:subtitle_sample",
+      "page_id": "S10_audience",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "身体虚弱人群",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:chapter",
+      "page_id": "S11_summary",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "五、福尔番茄红素三大核心功效",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:side_left",
+      "page_id": "S11_summary",
+      "role": "side_left",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "不适宜人群：少年儿童、孕妇、乳母",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:side_right",
+      "page_id": "S11_summary",
+      "role": "side_right",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "每日1次，每次1粒，建议固定随餐服用，避免漏服",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:row.1.label",
+      "page_id": "S11_summary",
+      "role": "row.1.label",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "保护前列腺、提高精子活力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:row.1.body",
+      "page_id": "S11_summary",
+      "role": "row.1.body",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素具有抗氧化与调节细胞生长代谢的功能，能活化前列腺细胞，抑制致癌物的产生，保护前列腺，提高精子活力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:row.2.label",
+      "page_id": "S11_summary",
+      "role": "row.2.label",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "抗氧化，延缓衰老",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:row.2.body",
+      "page_id": "S11_summary",
+      "role": "row.2.body",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素可通过物理和化学方式猝灭单线态氧或捕捉过氧化自由基，抗氧化能力是维E的100倍，从而达到延缓衰老的作用",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:row.3.label",
+      "page_id": "S11_summary",
+      "role": "row.3.label",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "增强免疫力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S11_summary:row.3.body",
+      "page_id": "S11_summary",
+      "role": "row.3.body",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素可活化免疫细胞，保护吞噬细胞免受自身的氧化损伤，促进淋巴细胞增殖，从而增强免疫力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:chapter",
+      "page_id": "S12_related_1",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "四、关联用药",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:nav.1",
+      "page_id": "S12_related_1",
+      "role": "nav.1",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素+锌/硒（备孕与男性健康）",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:nav.2",
+      "page_id": "S12_related_1",
+      "role": "nav.2",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素+维生素E（抗氧化协同）",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:note",
+      "page_id": "S12_related_1",
+      "role": "note",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "协同支持男性生殖健康与精子活力，适合备孕与前列腺养护场景联合推荐",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:left_label",
+      "page_id": "S12_related_1",
+      "role": "left_label",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "福尔番茄红素软胶囊",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:right_label",
+      "page_id": "S12_related_1",
+      "role": "right_label",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "锌/硒营养补充",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:pack_left",
+      "page_id": "S12_related_1",
+      "role": "pack_left",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.primary",
+      "asset_key": "slot-pack-lycopene.png"
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:pack_right",
+      "page_id": "S12_related_1",
+      "role": "pack_right",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.related",
+      "asset_key": "slot-pack-zinc.png"
+    },
+    {
+      "element_id": "editable:cw4:S12_related_1:subtitle_sample",
+      "page_id": "S12_related_1",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "番茄红素+锌/硒，协同备孕与男性健康",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:chapter",
+      "page_id": "S13_related_2",
+      "role": "chapter",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "四、关联用药",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:nav.1",
+      "page_id": "S13_related_2",
+      "role": "nav.1",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素+锌/硒（备孕与男性健康）",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:nav.2",
+      "page_id": "S13_related_2",
+      "role": "nav.2",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素+维生素E（抗氧化协同）",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:note",
+      "page_id": "S13_related_2",
+      "role": "note",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "番茄红素与维生素E协同抗氧化、延缓衰老，适合爱美与身体虚弱人群联合推荐",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:left_label",
+      "page_id": "S13_related_2",
+      "role": "left_label",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "福尔番茄红素软胶囊",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:right_label",
+      "page_id": "S13_related_2",
+      "role": "right_label",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "维生素E软胶囊",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:pack_left",
+      "page_id": "S13_related_2",
+      "role": "pack_left",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.primary",
+      "asset_key": "slot-pack-lycopene.png"
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:pack_right",
+      "page_id": "S13_related_2",
+      "role": "pack_right",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.related",
+      "asset_key": "slot-pack-vite.png"
+    },
+    {
+      "element_id": "editable:cw4:S13_related_2:subtitle_sample",
+      "page_id": "S13_related_2",
+      "role": "subtitle_sample",
+      "kind": "text",
+      "replace_rule": "system",
+      "default_text": "番茄红素+维生素E，协同抗氧化",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S15_end:title_pill",
+      "page_id": "S15_end",
+      "role": "title_pill",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "福尔番茄红素软胶囊",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S15_end:badge",
+      "page_id": "S15_end",
+      "role": "badge",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "好物推荐",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S15_end:benefit.1",
+      "page_id": "S15_end",
+      "role": "benefit.1",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "保护前列腺，提高精子活力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S15_end:benefit.2",
+      "page_id": "S15_end",
+      "role": "benefit.2",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "抗氧化，延缓衰老",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S15_end:benefit.3",
+      "page_id": "S15_end",
+      "role": "benefit.3",
+      "kind": "text",
+      "replace_rule": "theme_copy",
+      "default_text": "增强免疫力",
+      "slot": null,
+      "asset_key": null
+    },
+    {
+      "element_id": "editable:cw4:S15_end:icon_check",
+      "page_id": "S15_end",
+      "role": "icon_check",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.icon.check",
+      "asset_key": "icon-check-red.png"
+    },
+    {
+      "element_id": "editable:cw4:S15_end:badge_img",
+      "page_id": "S15_end",
+      "role": "badge_img",
+      "kind": "image",
+      "replace_rule": "theme_illustration",
+      "default_text": null,
+      "slot": "slot.badge.hot",
+      "asset_key": "badge-hot-recommend.png"
+    },
+    {
+      "element_id": "editable:cw4:S15_end:pack_a",
+      "page_id": "S15_end",
+      "role": "pack_a",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.box_a",
+      "asset_key": "slot-pack-box-a.png"
+    },
+    {
+      "element_id": "editable:cw4:S15_end:pack_b",
+      "page_id": "S15_end",
+      "role": "pack_b",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.box_b",
+      "asset_key": "slot-pack-box-b.png"
+    },
+    {
+      "element_id": "editable:cw4:S15_end:pack_bottle",
+      "page_id": "S15_end",
+      "role": "pack_bottle",
+      "kind": "image",
+      "replace_rule": "business_authorized",
+      "default_text": null,
+      "slot": "slot.pack.bottle",
+      "asset_key": "slot-pack-bottle.png"
+    }
+  ],
+  "experience": {
+    "doc": "docs/video-pptx-grammar-and-experience-v1.md",
+    "date": "2026-08-02",
+    "scene_recipes": [
+      "scene-recipe.related-meds.courseware-training-v1",
+      "scene-recipe.summary-row-headers.courseware-training-v1"
+    ],
+    "components": [
+      "component.scene.related-meds-note-above-v1",
+      "component.scene.summary-row-headers-v1"
+    ],
+    "lessons": [
+      "lesson.related-meds-note-above-packs-no-duplicate-bottom-title",
+      "lesson.training-summary-must-be-full-sentences-with-row-headers",
+      "lesson.courseware-type-icons-audio-extension-for-video-pptx",
+      "lesson.editor-bg-must-omit-editable-layers-gold-template"
+    ],
+    "channels": [
+      "video_still",
+      "pptx"
+    ],
+    "note": "经验已入库供视频/PPT 共用；整包 template settled 仍待全片视觉签样",
+    "reorder_note": "2026-08-03: drop S14; order S10→related→S11→S15"
+  }
+}

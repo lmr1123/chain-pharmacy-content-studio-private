@@ -1,0 +1,655 @@
+{
+  "project_id": "product-courseware-4-faithful-replica-v1",
+  "status": "user-approved-gold-settled",
+  "settled": {
+    "template_id": "template.fuler-fanqiehongsu-product-courseware-4-v1",
+    "dir": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1",
+    "confirmed_by": "user",
+    "confirmed_at": "2026-08-03",
+    "revision": "2026-08-03-motion-editor",
+    "updated_at": "2026-08-03",
+    "update_note": "用户确认将当前迭代写入金样 settled（叙事顺序、动效、编辑器 Revideo 动效、15 页 PPT）",
+    "artifacts": [
+      "video",
+      "pptx"
+    ]
+  },
+  "editable_video": {
+    "authority": "docs/revideo-business-editor-usage.md",
+    "pattern": "sufuda-product-courseware-3-gold-v1 (Revideo + editable: layer plugin)",
+    "layer_manifest": "layer-manifest.json",
+    "id_prefix": "editable:cw4",
+    "stills_mp4_export": "scripts/export-full-film-video.py",
+    "revideo_editor": "npm run start:editor → http://127.0.0.1:9012/",
+    "editor_state": "production-library/validation/revideo-editability/courseware-4/",
+    "doc": "docs/editable-video-v1.md",
+    "pptx": {
+      "export": "scripts/export-cw4-pptx.mjs",
+      "npm": "npm run export:pptx",
+      "output": "out/福尔番茄红素_商品培训课件4_可编辑课件_v1.pptx",
+      "settled_output": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx",
+      "pattern": "sufuda export-sufuda-pptx.mjs (Artifact Tool native editable)",
+      "element_id_prefix": "editable:cw4",
+      "slide_size": "1280x720",
+      "channels": [
+        "native_text",
+        "native_shape",
+        "native_image"
+      ]
+    }
+  },
+  "experience_settled": {
+    "doc": "docs/video-pptx-grammar-and-experience-v1.md",
+    "date": "2026-08-02",
+    "scene_recipes": [
+      "scene-recipe.related-meds.courseware-training-v1",
+      "scene-recipe.summary-row-headers.courseware-training-v1"
+    ],
+    "components": [
+      "component.scene.related-meds-note-above-v1",
+      "component.scene.summary-row-headers-v1"
+    ],
+    "lessons": [
+      "lesson.related-meds-note-above-packs-no-duplicate-bottom-title",
+      "lesson.training-summary-must-be-full-sentences-with-row-headers",
+      "lesson.courseware-type-icons-audio-extension-for-video-pptx",
+      "lesson.editor-bg-must-omit-editable-layers-gold-template"
+    ],
+    "channels": [
+      "video_still",
+      "pptx"
+    ],
+    "note": "经验已入库；整包 template 已于 2026-08-03 用户确认 settled | 2026-08-03：删 S14 总表；关联用药改到适宜人群之后、功效总表之前"
+  },
+  "gate_signoff": {
+    "scene": "S01_time_list",
+    "user_said": "可以了，然后我们继续拓展其他的页面、视频",
+    "date": "2026-08-02",
+    "notes": "静态页+微镜头字体/箭头/字号已按用户反馈调整后通过"
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "audio": {
+    "src": "web/reference-narration.mp3",
+    "duration_s": 127.833,
+    "authority": "reference",
+    "extension": {
+      "note": "S12–S13 关联用药为业务扩展（插在适宜人群与三大核心功效表之间）；参考原轨无对应讲解。S14 四列表总表已删除。扩展段用 Qwen3 克隆补录。",
+      "pad_silence_after_reference": true,
+      "order_note": "成片顺序：…S10 适宜人群 → S12/S13 关联用药 → S11 三大核心功效表 → S15 结尾"
+    }
+  },
+  "fonts": {
+    "display": "HarmonyOS Sans SC",
+    "weights": {
+      "title_chapter": 900,
+      "card_title": 400,
+      "list": 500,
+      "subtitle": 500
+    }
+  },
+  "assets": {
+    "tomato": "assets/generated/tomato.png",
+    "arrow": "assets/generated/arrow-red.png",
+    "o2": "assets/generated/o2.png",
+    "nk_cell": "assets/generated/nk-cell.png",
+    "flex_arm": "assets/generated/flex-arm.png",
+    "softgel": "assets/generated/softgel.png",
+    "five_tomatoes": "assets/generated/five-tomatoes.png",
+    "skincare_woman": "assets/generated/skincare-woman.png",
+    "prostate": "assets/generated/prostate-diagram.png",
+    "map_xinjiang": "assets/generated/map-xinjiang.png",
+    "couple": "assets/generated/couple.png",
+    "pack_box_a": {
+      "src": "assets/generated/slot-pack-box-a.png",
+      "slot": true,
+      "slot_id": "asset.pack.box_a"
+    },
+    "pack_box_b": {
+      "src": "assets/generated/slot-pack-box-b.png",
+      "slot": true,
+      "slot_id": "asset.pack.box_b"
+    },
+    "pack_bottle": {
+      "src": "assets/generated/slot-pack-bottle.png",
+      "slot": true,
+      "slot_id": "asset.pack.bottle"
+    },
+    "photo_broll": {
+      "src": "assets/generated/slot-photo-tomato.png",
+      "slot": true
+    },
+    "photo_vine": {
+      "src": "assets/generated/slot-photo-vine.png",
+      "slot": true
+    },
+    "time_magazine": {
+      "src": "assets/generated/slot-time-magazine.png",
+      "slot": true,
+      "slot_id": "slot.time.magazine",
+      "note": "S01 时代杂志封面位图；禁止用可编红字/线框冒充"
+    },
+    "audience_beauty": "assets/generated/audience-beauty.png",
+    "audience_weak": "assets/generated/audience-weak.png",
+    "icon_check_red": "assets/generated/icon-check-red.png",
+    "icon_chevron_lime": "assets/generated/icon-chevron-lime.png",
+    "badge_hot": "assets/generated/badge-hot-recommend.png"
+  },
+  "scenes": [
+    {
+      "id": "S00_cover",
+      "start": 0.0,
+      "end": 2.18,
+      "type": "cover",
+      "title_pill": "福尔番茄红素软胶囊",
+      "badge": "好物推荐",
+      "benefits": [
+        "保护前列腺，提高精子活力",
+        "抗氧化，延缓衰老",
+        "增强免疫力"
+      ],
+      "subtitle": "",
+      "enabled": true,
+      "duration": 2.18,
+      "narration": "福尔番茄红素软胶囊",
+      "subtitles": [
+        {
+          "t": 0.0,
+          "text": "福尔番茄红素软胶囊"
+        }
+      ]
+    },
+    {
+      "id": "S01_time_list",
+      "start": 2.18,
+      "end": 9.86,
+      "type": "time_list",
+      "card_title": "对人类健康贡献最大的10种健康食品",
+      "list": [
+        "1.番茄",
+        "2.***",
+        "3.***"
+      ],
+      "subtitles": [
+        {
+          "t": 2.18,
+          "text": "美国《时代杂志评选》的，"
+        },
+        {
+          "t": 4.484,
+          "text": "“对人类健康贡献最大的10种健康食品”，"
+        },
+        {
+          "t": 8.324,
+          "text": "其中番茄位列第一"
+        }
+      ],
+      "enabled": true,
+      "duration": 7.68,
+      "narration": "美国《时代杂志评选》的，“对人类健康贡献最大的10种健康食品”，其中番茄位列第一"
+    },
+    {
+      "id": "S02_broll",
+      "start": 9.86,
+      "end": 17.04,
+      "type": "broll",
+      "subtitles": [
+        {
+          "t": 9.86,
+          "text": "通过深入了解，"
+        },
+        {
+          "t": 11.256,
+          "text": "你们会发现为什么五星级酒店，"
+        },
+        {
+          "t": 14.048,
+          "text": "及欧美国家一日三餐都有番茄供应"
+        }
+      ],
+      "enabled": true,
+      "duration": 7.18,
+      "narration": "通过深入了解，你们会发现为什么五星级酒店，及欧美国家一日三餐都有番茄供应"
+    },
+    {
+      "id": "S03_product_intro",
+      "start": 17.04,
+      "end": 22.22,
+      "type": "product_intro",
+      "subtitles": [
+        {
+          "t": 17.04,
+          "text": "我们今天就来学习福尔番茄红素软胶囊"
+        }
+      ],
+      "enabled": true,
+      "duration": 5.18,
+      "narration": "我们今天就来学习福尔番茄红素软胶囊"
+    },
+    {
+      "id": "S04_benefit_1",
+      "start": 22.22,
+      "end": 35.4,
+      "type": "benefit_chain",
+      "chapter": "一、三大核心功效",
+      "section": "1、保护前列腺、提高精子活力",
+      "chain": [
+        "tomato",
+        "arrow",
+        "prostate"
+      ],
+      "subtitles": [
+        {
+          "t": 22.22,
+          "text": "1、"
+        },
+        {
+          "t": 22.674,
+          "text": "保护前列腺、"
+        },
+        {
+          "t": 24.038,
+          "text": "提高精子活力，"
+        },
+        {
+          "t": 25.629,
+          "text": "番茄红素具有抗氧化与调节细胞生长代谢的功能，"
+        },
+        {
+          "t": 30.628,
+          "text": "能活化前列腺细胞，"
+        },
+        {
+          "t": 32.673,
+          "text": "保护前列腺，"
+        },
+        {
+          "t": 34.037,
+          "text": "提高精子活力"
+        }
+      ],
+      "enabled": true,
+      "duration": 13.18,
+      "narration": "1、保护前列腺、提高精子活力，番茄红素具有抗氧化与调节细胞生长代谢的功能，能活化前列腺细胞，保护前列腺，提高精子活力"
+    },
+    {
+      "id": "S05_benefit_2",
+      "type": "benefit_chain",
+      "start": 35.4,
+      "end": 50.08,
+      "enabled": true,
+      "narration": "2、抗氧化，延缓衰老，番茄红素可通过物理和化学方式，抗氧化能力是维E的100倍，从而达到延缓衰老的作用",
+      "duration": 14.68,
+      "subtitles": [
+        {
+          "t": 35.4,
+          "text": "2、"
+        },
+        {
+          "t": 35.976,
+          "text": "抗氧化，"
+        },
+        {
+          "t": 37.127,
+          "text": "延缓衰老，"
+        },
+        {
+          "t": 38.566,
+          "text": "番茄红素可通过物理和化学方式，"
+        },
+        {
+          "t": 42.884,
+          "text": "抗氧化能力是维E的100倍，"
+        },
+        {
+          "t": 46.914,
+          "text": "从而达到延缓衰老的作用"
+        }
+      ],
+      "chapter": "一、三大核心功效"
+    },
+    {
+      "id": "S06_benefit_3",
+      "start": 50.08,
+      "end": 61.76,
+      "type": "benefit_chain",
+      "chapter": "一、三大核心功效",
+      "section": "3、增强免疫力",
+      "chain": [
+        "tomato",
+        "arrow",
+        "nk_cell",
+        "arrow",
+        "flex_arm"
+      ],
+      "subtitles": [
+        {
+          "t": 50.08,
+          "text": "3、"
+        },
+        {
+          "t": 50.945,
+          "text": "增强免疫力，"
+        },
+        {
+          "t": 53.541,
+          "text": "番茄红素可活化免疫细胞，"
+        },
+        {
+          "t": 58.732,
+          "text": "从而增强免疫力"
+        }
+      ],
+      "enabled": true,
+      "duration": 11.68,
+      "narration": "3、增强免疫力，番茄红素可活化免疫细胞，从而增强免疫力"
+    },
+    {
+      "id": "S07_origin",
+      "start": 61.76,
+      "end": 79.44,
+      "type": "feature_origin",
+      "chapter": "二、产品特点",
+      "section": "1、产地好",
+      "map_caption": "中国分省地图—新疆维吾尔自治区",
+      "subtitles": [
+        {
+          "t": 61.76,
+          "text": "产品特点，"
+        },
+        {
+          "t": 63.099,
+          "text": "1、"
+        },
+        {
+          "t": 63.635,
+          "text": "产地好，"
+        },
+        {
+          "t": 64.707,
+          "text": "由于新疆日照长昼夜温差大，"
+        },
+        {
+          "t": 68.189,
+          "text": "因此新疆被誉为“世界上最好的番茄产区”，"
+        },
+        {
+          "t": 73.547,
+          "text": "新疆番茄的番茄红素含量高达62毫克/100克"
+        }
+      ],
+      "enabled": true,
+      "duration": 17.68,
+      "narration": "产品特点，1、产地好，由于新疆日照长昼夜温差大，因此新疆被誉为“世界上最好的番茄产区”，新疆番茄的番茄红素含量高达62毫克/100克"
+    },
+    {
+      "id": "S08_material",
+      "start": 79.44,
+      "end": 92.62,
+      "type": "feature_material",
+      "chapter": "二、产品特点",
+      "section": "2、原料优",
+      "subtitles": [
+        {
+          "t": 79.44,
+          "text": "2、"
+        },
+        {
+          "t": 80.152,
+          "text": "原料优，"
+        },
+        {
+          "t": 81.577,
+          "text": "本品严格要求用最好的番茄提炼而成，"
+        },
+        {
+          "t": 87.633,
+          "text": "福尔选择最优的番茄肉提炼而成"
+        }
+      ],
+      "enabled": true,
+      "duration": 13.18,
+      "narration": "2、原料优，本品严格要求用最好的番茄提炼而成，福尔选择最优的番茄肉提炼而成"
+    },
+    {
+      "id": "S09_content",
+      "start": 92.62,
+      "end": 104.8,
+      "type": "feature_content",
+      "chapter": "二、产品特点",
+      "section": "3、含量高",
+      "subtitles": [
+        {
+          "t": 92.62,
+          "text": "3、"
+        },
+        {
+          "t": 93.04,
+          "text": "含量高，"
+        },
+        {
+          "t": 93.88,
+          "text": "软胶囊浓缩番茄精华，"
+        },
+        {
+          "t": 95.98,
+          "text": "每100克含番茄红素1.5克，"
+        },
+        {
+          "t": 99.13,
+          "text": "吃1粒番茄红素相当于5个新鲜大番茄，"
+        },
+        {
+          "t": 102.91,
+          "text": "一天只需吃1到2粒"
+        }
+      ],
+      "enabled": true,
+      "duration": 12.18,
+      "narration": "3、含量高，软胶囊浓缩番茄精华，每100克含番茄红素1.5克，吃1粒番茄红素相当于5个新鲜大番茄，一天只需吃1到2粒"
+    },
+    {
+      "id": "S10_audience",
+      "start": 104.8,
+      "end": 113.98,
+      "type": "audience",
+      "chapter": "三、适宜人群",
+      "items": [
+        {
+          "label": "前列腺患病",
+          "icon": "prostate"
+        },
+        {
+          "label": "备孕男士和女士",
+          "icon": "couple"
+        },
+        {
+          "label": "爱美人士",
+          "icon": "audience_beauty"
+        },
+        {
+          "label": "身体虚弱人群",
+          "icon": "audience_weak"
+        }
+      ],
+      "subtitles": [
+        {
+          "t": 104.8,
+          "text": "适宜人群，"
+        },
+        {
+          "t": 106.234,
+          "text": "前列腺患病人群，"
+        },
+        {
+          "t": 108.529,
+          "text": "备孕男士和女士，"
+        },
+        {
+          "t": 110.824,
+          "text": "爱美人士，"
+        },
+        {
+          "t": 112.259,
+          "text": "身体虚弱人群"
+        }
+      ],
+      "enabled": true,
+      "duration": 9.18,
+      "narration": "适宜人群，前列腺患病人群，备孕男士和女士，爱美人士，身体虚弱人群"
+    },
+    {
+      "id": "S12_related_1",
+      "start": 113.98,
+      "end": 129.84,
+      "type": "related_meds",
+      "layer": "business_extension",
+      "chapter": "四、关联用药",
+      "pattern_from": "sufuda-gold-v1:combo_1",
+      "nav": [
+        "番茄红素+锌/硒（备孕与男性健康）",
+        "番茄红素+维生素E（抗氧化协同）"
+      ],
+      "active_nav": 0,
+      "layout_order": [
+        "chapter",
+        "nav",
+        "note_above",
+        "packs"
+      ],
+      "narration_logic": "先讲组合价值与场景，再出包装；屏显 note 在商品上方。底部重复标题已去掉（与导航重叠）",
+      "headline": null,
+      "note": "协同支持男性生殖健康与精子活力，适合备孕与前列腺养护场景联合推荐",
+      "left_label": "福尔番茄红素软胶囊",
+      "right_label": "锌/硒营养补充",
+      "left_pack": "slot-pack-lycopene.png",
+      "right_pack": "slot-pack-zinc.png",
+      "subtitles": [
+        {
+          "t": 113.98,
+          "text": "四、关联用药。"
+        },
+        {
+          "t": 115.441,
+          "text": "第一组：番茄红素加锌或硒。"
+        },
+        {
+          "t": 118.154,
+          "text": "锌、硒支持生殖健康与精子质量，和番茄红素联用，协同支持男性生殖健康与精子活力，"
+        },
+        {
+          "t": 126.292,
+          "text": "适合备孕和前列腺养护场景联合推荐。"
+        }
+      ],
+      "enabled": true,
+      "duration": 15.86,
+      "narration": "四、关联用药。第一组：番茄红素加锌或硒。锌、硒支持生殖健康与精子质量，和番茄红素联用，协同支持男性生殖健康与精子活力，适合备孕和前列腺养护场景联合推荐。"
+    },
+    {
+      "id": "S13_related_2",
+      "start": 129.84,
+      "end": 140.26,
+      "type": "related_meds",
+      "layer": "business_extension",
+      "chapter": "四、关联用药",
+      "pattern_from": "sufuda-gold-v1:combo_2",
+      "nav": [
+        "番茄红素+锌/硒（备孕与男性健康）",
+        "番茄红素+维生素E（抗氧化协同）"
+      ],
+      "active_nav": 1,
+      "layout_order": [
+        "chapter",
+        "nav",
+        "note_above",
+        "packs"
+      ],
+      "narration_logic": "先讲组合价值与场景，再出包装；屏显 note 在商品上方。底部重复标题已去掉（与导航重叠）",
+      "headline": null,
+      "note": "番茄红素与维生素E协同抗氧化、延缓衰老，适合爱美与身体虚弱人群联合推荐",
+      "left_label": "福尔番茄红素软胶囊",
+      "right_label": "维生素E软胶囊",
+      "left_pack": "slot-pack-lycopene.png",
+      "right_pack": "slot-pack-vite.png",
+      "subtitles": [
+        {
+          "t": 129.84,
+          "text": "第二组：番茄红素加维生素E。"
+        },
+        {
+          "t": 133.082,
+          "text": "两者协同抗氧化、延缓衰老，适合爱美人士和身体虚弱人群联合推荐。"
+        }
+      ],
+      "enabled": true,
+      "duration": 10.42,
+      "narration": "第二组：番茄红素加维生素E。两者协同抗氧化、延缓衰老，适合爱美人士和身体虚弱人群联合推荐。"
+    },
+    {
+      "id": "S11_summary",
+      "start": 140.26,
+      "end": 152.44,
+      "type": "efficacy_recap_table",
+      "layer": "observed_reference",
+      "chapter": "五、福尔番茄红素三大核心功效",
+      "note": "对标参考片末段功效表（非金样四列表总结）",
+      "rows": [
+        {
+          "label": "保护前列腺、提高精子活力",
+          "body": "番茄红素具有抗氧化与调节细胞生长代谢的功能，能活化前列腺细胞，抑制致癌物的产生，保护前列腺，提高精子活力"
+        },
+        {
+          "label": "抗氧化，延缓衰老",
+          "body": "番茄红素可通过物理和化学方式猝灭单线态氧或捕捉过氧化自由基，抗氧化能力是维E的100倍，从而达到延缓衰老的作用"
+        },
+        {
+          "label": "增强免疫力",
+          "body": "番茄红素可活化免疫细胞，保护吞噬细胞免受自身的氧化损伤，促进淋巴细胞增殖，从而增强免疫力"
+        }
+      ],
+      "side_left": "不适宜人群：少年儿童、孕妇、乳母",
+      "side_right": "每日1次，每次1粒，建议固定随餐服用，避免漏服",
+      "subtitles": [
+        {
+          "t": 140.26,
+          "text": "福尔番茄红素三大核心功效"
+        }
+      ],
+      "enabled": true,
+      "duration": 12.18,
+      "narration": "福尔番茄红素三大核心功效"
+    },
+    {
+      "id": "S15_end",
+      "start": 152.44,
+      "end": 156.62,
+      "type": "cover",
+      "layer": "observed_reference",
+      "title_pill": "福尔番茄红素软胶囊",
+      "badge": "好物推荐",
+      "benefits": [
+        "保护前列腺，提高精子活力",
+        "抗氧化，延缓衰老",
+        "增强免疫力"
+      ],
+      "subtitle": "",
+      "enabled": true,
+      "duration": 4.18,
+      "narration": "福尔番茄红素软胶囊",
+      "subtitles": [
+        {
+          "t": 152.44,
+          "text": "福尔番茄红素软胶囊"
+        }
+      ]
+    }
+  ],
+  "segment_studio": {
+    "disabled_ids": [],
+    "total_duration_s": 156.62
+  }
+}

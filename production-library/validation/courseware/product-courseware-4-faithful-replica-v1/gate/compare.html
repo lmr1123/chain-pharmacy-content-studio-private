@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>门禁对照 · 参考 | 复刻 · 商品培训课件4</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
+      background: #111;
+      color: #e8e8e8;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .sub { font-size: 13px; color: #aaa; margin-bottom: 18px; max-width: 1100px; }
+    .sub code { background: #2a2a2a; padding: 1px 6px; border-radius: 4px; color: #cde; }
+    .warn {
+      background: #3a2210;
+      border: 1px solid #a65;
+      color: #f0d0b0;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      max-width: 1100px;
+    }
+    .warn strong { color: #ffb070; }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .tabs button {
+      background: #2a2a2a;
+      color: #ddd;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .tabs button.active {
+      background: #1e4a9a;
+      border-color: #3a7aef;
+      color: #fff;
+    }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 1400px;
+    }
+    @media (max-width: 900px) {
+      .pair { grid-template-columns: 1fr; }
+    }
+    .col {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+    .col header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      font-size: 13px;
+      background: #222;
+      border-bottom: 1px solid #333;
+    }
+    .col header .tag {
+      font-family: ui-monospace, monospace;
+      font-size: 11px;
+      color: #8cf;
+    }
+    .frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .frame img, .frame video, .frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
+    .frame iframe {
+      /* HTML stage is self-scaling; fill height */
+      transform-origin: 0 0;
+    }
+    .note {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #999;
+      border-top: 1px solid #2a2a2a;
+    }
+    .checklist {
+      max-width: 1100px;
+      margin-top: 22px;
+      padding: 14px 16px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      border: 1px solid #333;
+      font-size: 13px;
+    }
+    .checklist h2 { font-size: 15px; margin-bottom: 8px; }
+    .checklist li { margin: 4px 0 4px 1.2em; }
+    .signoff {
+      max-width: 1100px;
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: #142418;
+      border: 1px solid #2a6;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    .signoff code { background: #0a1a0c; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>商品培训课件4 · 保真门禁对照</h1>
+  <p class="sub">
+    版本 <code>product-courseware-4-faithful-replica-v1</code>
+    · 参考 <code>商品培训课件4.mp4</code>
+    · <strong>左 = 参考同一时刻</strong> · <strong>右 = 本次重建</strong><br />
+    与已否决的 <code>tomato-lycopene-faithful-v1</code>（重设计稿）无关，请勿对照那条线。
+  </p>
+
+  <div class="warn">
+    <strong>验收规则：</strong>
+    构图、对象种类、屏显原文、占位关系是否与参考一致。
+    缺包装/Logo 时右侧必须是<strong>原位占坑</strong>（本门禁镜头不依赖包装）。
+    技术可导出、可编辑<strong>不能</strong>代替「同一版本」确认。
+    未口头/文字确认「确实是同一个版本」前，不扩全片。
+  </div>
+
+  <div class="tabs">
+    <button type="button" class="active" data-tab="static">① 静态页 · t≈5.0s</button>
+    <button type="button" data-tab="micro">② 微镜头 · t=2.0–9.0s</button>
+  </div>
+
+  <section class="panel active" id="panel-static">
+    <div class="pair">
+      <div class="col">
+        <header>
+          <span>参考 · 定格</span>
+          <span class="tag">t = 5.0s · 1920×1080 upscale</span>
+        </header>
+        <div class="frame">
+          <img src="reference-clips/static-ref-t5.0-1080.jpg" alt="参考 t=5.0s" />
+        </div>
+        <div class="note">
+          对象：丝绸底 · TIME 示意封面 · 深灰圆角卡 · 黄绿 » · 黄标题 · 白列表 1.番茄 / 2.*** / 3.*** · 底字幕
+        </div>
+      </div>
+      <div class="col">
+        <header>
+          <span>复刻 · 静态页</span>
+          <span class="tag">static-time-list.html · 量测坐标</span>
+        </header>
+        <div class="frame">
+          <iframe src="static-time-list.html?embed=1" title="静态复刻" loading="lazy"></iframe>
+        </div>
+        <div class="note">
+          同屏对象与层级；坐标来自 reference 量测 ×2.25。打开
+          <a href="static-time-list.html" style="color:#8cf">独立页</a> 可全宽查看。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-micro">
+    <div class="pair">
+      <div class="col">
+        <header>
+          <span>参考 · 微片段</span>
+          <span class="tag">t = 2.0–9.0s · loop</span>
+        </header>
+        <div class="frame">
+          <video
+            src="reference-clips/micro-ref-t2-9.mp4"
+            controls
+            loop
+            muted
+            playsinline
+            autoplay
+          ></video>
+        </div>
+        <div class="note">
+          观察：入场 → 标题逐字 → 列表出现 → 字幕「位列第一」。可取消静音听旁白。
+        </div>
+      </div>
+      <div class="col">
+        <header>
+          <span>复刻 · 微镜头</span>
+          <span class="tag">micro-time-reveal.html · 0–7s → ref 2–9</span>
+        </header>
+        <div class="frame">
+          <iframe src="micro-time-reveal.html?embed=1" title="微镜头复刻" loading="lazy"></iframe>
+        </div>
+        <div class="note">
+          同区间动作语法。独立页
+          <a href="micro-time-reveal.html" style="color:#8cf">micro-time-reveal.html</a>
+          可点「重播」。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="checklist">
+    <h2>门禁核对清单（请逐项看）</h2>
+    <ul>
+      <li>是否为 <strong>TIME 杂志 + 右侧深灰榜单卡</strong>（不是商品大图封面，也不是器官/盾牌插画）？</li>
+      <li>榜单原文是否为「对人类健康贡献最大的10种健康食品」+「1.番茄 / 2.*** / 3.***」？</li>
+      <li>TIME 是否在左、卡片是否在右、相对尺寸是否接近参考（允许 ±5% 量测误差）？</li>
+      <li>微镜头是否有<strong>标题逐字 + 列表先后入场</strong>，而非整卡一次性硬切？</li>
+      <li>背景是否为暖灰丝绸感，而非纯白 PPT 底？</li>
+      <li>是否<strong>没有</strong>混入 tomato-lycopene-faithful-v1 的自创主视觉？</li>
+    </ul>
+  </div>
+
+  <div class="signoff">
+    <strong>请确认其一：</strong><br />
+    A. <code>确实是同一个版本，可以扩全片</code><br />
+    B. <code>不是同一版本</code> + 具体差异点（时码 / 对象 / 字号 / 位置 / 动作）
+  </div>
+
+  <script>
+    document.querySelectorAll(".tabs button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tabs button").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-" + btn.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>

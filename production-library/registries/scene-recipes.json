@@ -1,0 +1,784 @@
+{
+  "registry_type": "scene-recipe",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "scene-recipe.presenter-intro.reference-medical-tech-v1",
+      "name_zh": "主题开场与讲师引入",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "presenter_intro",
+      "intent_aliases": [
+        "开场",
+        "导入",
+        "课程介绍",
+        "学习目标",
+        "主题介绍"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.presenter.bound-pharmacist",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.background.four-way-current-v1"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "presenter_positions": [
+          "left",
+          "center"
+        ],
+        "max_words_per_scene": 95
+      }
+    },
+    {
+      "id": "scene-recipe.mechanism.reference-medical-tech-v1",
+      "name_zh": "病因与机理分层讲解",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "mechanism_explanation",
+      "intent_aliases": [
+        "病因",
+        "病机",
+        "发病机制",
+        "作用机制",
+        "机理",
+        "原理"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.background.four-way-current-v1"
+      ],
+      "asset_roles": [
+        "full_body_front",
+        "organ_torso",
+        "symptom_focus",
+        "anatomical_cutaway",
+        "pathogen_environment",
+        "process_path"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "asset_series_required": true,
+        "max_words_per_scene": 120
+      }
+    },
+    {
+      "id": "scene-recipe.symptom-overview.reference-medical-tech-v1",
+      "name_zh": "症状分组与逐项强调",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "symptom_overview",
+      "intent_aliases": [
+        "症状",
+        "表现",
+        "典型表现",
+        "临床表现",
+        "识别要点"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.card.symptom-board",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.background.four-way-current-v1"
+      ],
+      "asset_roles": [
+        "symptom_illustration"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "optional_slots": [
+        "approved_images"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          3,
+          6
+        ],
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "id": "scene-recipe.treatment-principle.reference-medical-tech-v1",
+      "name_zh": "调理或治疗原则讲解",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "treatment_principle",
+      "intent_aliases": [
+        "治疗原则",
+        "调理原则",
+        "处理原则",
+        "核心治法",
+        "调理核心"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.presenter.bound-pharmacist",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.background.four-way-current-v1",
+        "effect.border.rounded-trace-v1"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "max_words_per_scene": 120
+      }
+    },
+    {
+      "id": "scene-recipe.ingredient-grid.reference-medical-tech-v1",
+      "name_zh": "草本或成分网格",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "ingredient_grid",
+      "intent_aliases": [
+        "常用食材",
+        "草本",
+        "成分",
+        "药材",
+        "核心成分"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.card.herb-grid",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.background.four-way-current-v1",
+        "effect.border.rounded-trace-v1"
+      ],
+      "asset_roles": [
+        "botanical_ingredient"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "optional_slots": [
+        "authorized_assets"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          2,
+          4
+        ],
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "id": "scene-recipe.medication-advice.reference-medical-tech-v1",
+      "name_zh": "用药或商品建议卡",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "medication_advice",
+      "intent_aliases": [
+        "用药",
+        "药物建议",
+        "商品建议",
+        "推荐方案",
+        "联合用药"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.card.medication",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.background.four-way-current-v1",
+        "effect.border.rounded-trace-v1"
+      ],
+      "asset_roles": [
+        "authorized_product_packshot"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "optional_slots": [
+        "authorized_packshots",
+        "approved_evidence"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "authorized_packshot_required_for_real_product": true
+      }
+    },
+    {
+      "id": "scene-recipe.advice-list.reference-medical-tech-v1",
+      "name_zh": "生活建议与禁忌列表",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "advice_list",
+      "intent_aliases": [
+        "生活建议",
+        "注意事项",
+        "禁忌",
+        "日常护理",
+        "温馨提示"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.card.advice-row",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.background.four-way-current-v1",
+        "effect.border.rounded-trace-v1"
+      ],
+      "asset_roles": [
+        "advice_illustration"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "optional_slots": [
+        "approved_icons"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          2,
+          5
+        ],
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "id": "scene-recipe.summary.reference-medical-tech-v1",
+      "name_zh": "主题重点总结",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "summary",
+      "intent_aliases": [
+        "总结",
+        "重点回顾",
+        "划重点",
+        "课程小结",
+        "关键要点"
+      ],
+      "components": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.summary.matrix-v1",
+        "component.subtitle.reference-bottom"
+      ],
+      "effects": [
+        "effect.summary.panel-reveal-v1",
+        "effect.summary.top-current-arrow-v1"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          2,
+          6
+        ],
+        "layout_by_item_count": true
+      }
+    },
+    {
+      "id": "scene-recipe.training-outro.reference-medical-tech-v1",
+      "name_zh": "培训品牌片尾",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "intent": "training_brand_outro",
+      "intent_aliases": [
+        "片尾",
+        "结束页",
+        "出品信息"
+      ],
+      "components": [
+        "component.outro.training-brand-v1"
+      ],
+      "effects": [
+        "effect.outro.handwritten-light-v1"
+      ],
+      "required_slots": [
+        "approved_brand_asset",
+        "credit"
+      ],
+      "constraints": {
+        "authorized_logo_required": true,
+        "max_primary_motion": 1
+      }
+    },
+    {
+      "id": "scene-recipe.need-education.reference-product-blue-v1",
+      "name_zh": "商品需求教育与问题引入",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "need_education",
+      "intent_aliases": [
+        "需求教育",
+        "问题引入",
+        "为什么需要",
+        "背景问题",
+        "用户痛点"
+      ],
+      "components": [
+        "component.scene.product-opening-education-v1"
+      ],
+      "effects": [
+        "effect.education.heart-age-meter-v1"
+      ],
+      "asset_roles": [
+        "problem_character",
+        "mechanism_subject"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "asset_series_required": true,
+        "max_words_per_scene": 110,
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "id": "scene-recipe.symptom-board.reference-product-blue-v1",
+      "name_zh": "商品培训症状或问题图板",
+      "status": "candidate",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "symptom_overview",
+      "intent_aliases": [
+        "症状表现",
+        "典型症状",
+        "常见问题",
+        "可能表现",
+        "后果表现"
+      ],
+      "components": [
+        "component.card.product-symptom-board-v1",
+        "component.presenter.product-trainer-v1"
+      ],
+      "effects": [
+        "effect.card.circle-subject-rise-v1",
+        "effect.card.symptom-performance-loop-v1",
+        "effect.card.staggered-up-exit-v1"
+      ],
+      "asset_roles": [
+        "symptom_illustration"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          1,
+          3
+        ],
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "id": "scene-recipe.mechanism-relation.reference-product-blue-v1",
+      "name_zh": "商品培训机制关系图",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "mechanism_relation",
+      "intent_aliases": [
+        "作用机制",
+        "机理关系",
+        "成分机制",
+        "原理",
+        "机制"
+      ],
+      "components": [
+        "component.scene.product-relation-graph-v1",
+        "component.presenter.product-trainer-v1"
+      ],
+      "effects": [
+        "effect.graph.directional-node-entry-v1"
+      ],
+      "asset_roles": [
+        "mechanism_subject",
+        "mechanism_nodes"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "node_count_per_scene": [
+          3,
+          5
+        ],
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "id": "scene-recipe.product-hero.reference-product-blue-v1",
+      "name_zh": "商品主视觉与承接",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "product_hero",
+      "intent_aliases": [
+        "商品承接",
+        "商品亮相",
+        "商品主视觉",
+        "产品亮相",
+        "核心商品"
+      ],
+      "components": [
+        "component.scene.product-hero-v1"
+      ],
+      "effects": [
+        "effect.product.rotating-rays-v1"
+      ],
+      "asset_roles": [
+        "authorized_product_packshot"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text",
+        "authorized_product_packshot"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "authorized_packshot_required": true,
+        "max_words_per_scene": 70
+      }
+    },
+    {
+      "id": "scene-recipe.product-overview.reference-product-blue-v1",
+      "name_zh": "品牌与商品总览",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "product_overview",
+      "intent_aliases": [
+        "商品总览",
+        "产品总览",
+        "商品介绍",
+        "品牌介绍",
+        "基本信息"
+      ],
+      "components": [
+        "component.scene.product-brand-overview-v1"
+      ],
+      "effects": [
+        "effect.product.overview-label-pop-v1"
+      ],
+      "asset_roles": [
+        "authorized_product_packshot",
+        "authorized_brand_logo"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "label_count_per_scene": [
+          1,
+          4
+        ],
+        "authorized_assets_required": true
+      }
+    },
+    {
+      "id": "scene-recipe.efficacy-evidence.reference-product-blue-v1",
+      "name_zh": "核心功效与证据累积",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "efficacy_evidence",
+      "intent_aliases": [
+        "核心功效",
+        "主要功效",
+        "功效证据",
+        "核心价值",
+        "产品功效"
+      ],
+      "components": [
+        "component.scene.product-efficacy-evidence-v1"
+      ],
+      "effects": [
+        "effect.evidence.flash-scale-accumulate-v1"
+      ],
+      "asset_roles": [
+        "approved_efficacy_evidence"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "evidence_count_per_scene": [
+          1,
+          3
+        ],
+        "overflow": "continue_same_recipe",
+        "evidence_source_required": true
+      }
+    },
+    {
+      "id": "scene-recipe.feature-evidence.reference-product-blue-v1",
+      "name_zh": "产品特点与证明资料",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "feature_evidence",
+      "intent_aliases": [
+        "产品特点",
+        "商品特点",
+        "核心卖点",
+        "工艺优势",
+        "原料优势",
+        "产品优势"
+      ],
+      "components": [
+        "component.scene.product-feature-evidence-v1"
+      ],
+      "effects": [
+        "effect.evidence.magnifier-focus-v1"
+      ],
+      "asset_roles": [
+        "approved_feature_evidence"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "evidence_count_per_scene": [
+          1,
+          3
+        ],
+        "overflow": "continue_same_recipe",
+        "evidence_source_required": true
+      }
+    },
+    {
+      "id": "scene-recipe.audience-sequence.reference-product-blue-v1",
+      "name_zh": "适宜人群序列",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "audience_sequence",
+      "intent_aliases": [
+        "适宜人群",
+        "适用人群",
+        "目标人群",
+        "推荐人群",
+        "人群场景"
+      ],
+      "components": [
+        "component.scene.product-audience-sequence-v1"
+      ],
+      "effects": [
+        "effect.audience.flash-pair-switch-v1"
+      ],
+      "asset_roles": [
+        "audience_illustration"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "group_count_per_scene": [
+          1,
+          3
+        ],
+        "overflow": "continue_same_recipe",
+        "asset_series_required": true
+      }
+    },
+    {
+      "id": "scene-recipe.combination-guidance.reference-product-blue-v1",
+      "name_zh": "联合方案与培训话术",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "combination_guidance",
+      "intent_aliases": [
+        "联合用药",
+        "联合方案",
+        "搭配方案",
+        "组合推荐",
+        "培训话术"
+      ],
+      "components": [
+        "component.scene.product-combination-guidance-v1"
+      ],
+      "effects": [
+        "effect.combination.partner-flash-switch-v1"
+      ],
+      "asset_roles": [
+        "authorized_product_packshot",
+        "authorized_partner_packshot"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "combination_count_per_scene": [
+          1,
+          2
+        ],
+        "overflow": "continue_same_recipe",
+        "approved_talk_track_required": true
+      }
+    },
+    {
+      "id": "scene-recipe.summary-table.reference-product-blue-v1",
+      "name_zh": "商品培训重点总结",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "intent": "summary",
+      "intent_aliases": [
+        "总结",
+        "重点回顾",
+        "课程小结",
+        "划重点",
+        "关键要点"
+      ],
+      "components": [
+        "component.scene.product-summary-table-v1"
+      ],
+      "effects": [
+        "effect.summary.table-pop-v1"
+      ],
+      "required_slots": [
+        "section_title",
+        "approved_text"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          2,
+          8
+        ],
+        "layout_by_item_count": true
+      },
+      "note_2026_08_02": "培训默认优先 scene-recipe.summary-row-headers.courseware-training-v1（行标题完整句）；本四列 recipe 仅当业务显式要求 column_headers 时使用。"
+    },
+    {
+      "id": "scene-recipe.related-meds.courseware-training-v1",
+      "name_zh": "培训关联用药（讲解在上·包装在下）",
+      "status": "experience-settled",
+      "style_pack_id": "style-pack.courseware-training-shared-v1",
+      "intent": "related_meds",
+      "intent_aliases": [
+        "关联用药",
+        "联合用药",
+        "搭配推荐",
+        "组合推荐"
+      ],
+      "source_experience": "product-courseware-4-faithful-replica-v1",
+      "pattern_from": "sufuda-product-courseware-3-gold-v1:combo",
+      "layout_order": [
+        "chapter",
+        "nav_pills",
+        "note_above",
+        "pack_stage"
+      ],
+      "components": [
+        "component.scene.related-meds-note-above-v1"
+      ],
+      "required_slots": [
+        "section_title",
+        "nav_items",
+        "note_sentence",
+        "pack_primary",
+        "pack_related"
+      ],
+      "forbidden_slots_when_nav_present": [
+        "headline_bottom_duplicate"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "note_position": "above_packs",
+        "duplicate_bottom_title": false,
+        "combination_count_per_scene": [
+          1,
+          1
+        ],
+        "overflow": "continue_same_recipe",
+        "layer_if_not_in_reference": "business_extension"
+      },
+      "lessons": [
+        "lesson.related-meds-note-above-packs-no-duplicate-bottom-title",
+        "lesson.joint-medication-scenes-must-be-product-image-led",
+        "lesson.joint-medication-voiceover-must-use-complete-spoken-sentences"
+      ]
+    },
+    {
+      "id": "scene-recipe.summary-row-headers.courseware-training-v1",
+      "name_zh": "培训总结行标题完整复习页",
+      "status": "experience-settled",
+      "style_pack_id": "style-pack.courseware-training-shared-v1",
+      "intent": "summary",
+      "intent_aliases": [
+        "总结",
+        "敲重点",
+        "重点回顾",
+        "一页复习",
+        "课程小结"
+      ],
+      "source_experience": "product-courseware-4-faithful-replica-v1",
+      "layout": "row_headers",
+      "components": [
+        "component.scene.summary-row-headers-v1"
+      ],
+      "required_slots": [
+        "section_title",
+        "rows"
+      ],
+      "row_schema": {
+        "label": "行标题",
+        "body": "完整说明句（可多段）"
+      },
+      "recommended_rows": [
+        "核心功效",
+        "产品特点",
+        "适宜人群与用法",
+        "关联用药"
+      ],
+      "constraints": {
+        "max_primary_motion": 1,
+        "min_body_style": "full_sentences",
+        "forbid_keyword_only_cells": true,
+        "default_layout": "row_headers",
+        "alternate_layout": "column_headers_only_if_business_explicit"
+      },
+      "lessons": [
+        "lesson.training-summary-must-be-full-sentences-with-row-headers"
+      ],
+      "distinct_from": {
+        "efficacy_recap_table": "参考片功效详表（左标签右长文机理），非敲重点收口"
+      }
+    }
+  ]
+}

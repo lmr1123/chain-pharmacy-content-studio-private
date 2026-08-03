@@ -1,0 +1,1153 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/eet5yo",
+    "id": "eet5yo",
+    "slide": 9,
+    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8rexkzq",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        28,
+        0,
+        76,
+        84
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/650fm50z",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        25,
+        17,
+        82,
+        47
+      ],
+      "geometry": "rect",
+      "text": "2.1",
+      "textPreview": "2.1",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2.1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2.1",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#FFFFFF",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2.1",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/769wvahk",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "商品篇——穿心莲内酯滴丸的产品信息",
+      "textPreview": "商品篇——穿心莲内酯滴丸的产品信息",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "商品篇——穿心莲内酯滴丸的产品信息"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "商品篇——穿心莲内酯滴丸的产品信息",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "商品篇——穿心莲内酯滴丸的产品信息",
+              "fontSize": 28,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gv2xszi1",
+      "id": "4",
+      "name": "chrome-green-rule",
+      "bbox": [
+        104,
+        70,
+        1140,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwbe14zm",
+      "id": "5",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        150,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 15,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9kfqp0v",
+      "id": "6",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1075,
+        685,
+        170,
+        24
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111111",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 14,
+              "color": "#111111",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ixobmpw7",
+      "id": "7",
+      "bbox": [
+        50,
+        220,
+        250,
+        250
+      ],
+      "alt": "穿心莲内酯滴丸包装，裁自源 PDF",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "6c7abd96-7c9c-4c76-b23b-eb62681a1c02",
+        "contentType": "image/png",
+        "byteLength": 130348
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/czydwvix",
+      "id": "8",
+      "name": "product-info-outline",
+      "bbox": [
+        360,
+        135,
+        835,
+        440
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#009900",
+      "lineWidth": 4
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x07ep0ji",
+      "id": "9",
+      "name": "product-info-label-1",
+      "bbox": [
+        400,
+        170,
+        170,
+        38
+      ],
+      "geometry": "rect",
+      "text": "【成  份】",
+      "textPreview": "【成  份】",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "【成  份】"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "【成  份】",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "【成  份】",
+              "fontSize": 22,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t4vm5wve",
+      "id": "10",
+      "name": "product-info-value-1",
+      "bbox": [
+        565,
+        170,
+        590,
+        48
+      ],
+      "geometry": "rect",
+      "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。",
+      "textPreview": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜"
+          },
+          {
+            "index": 2,
+            "text": "包衣预混剂。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。",
+              "fontSize": 21,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s3m5cbe9",
+      "id": "11",
+      "name": "product-info-label-2",
+      "bbox": [
+        400,
+        232,
+        170,
+        38
+      ],
+      "geometry": "rect",
+      "text": "【性  状】",
+      "textPreview": "【性  状】",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "【性  状】"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "【性  状】",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "【性  状】",
+              "fontSize": 22,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72d436xo",
+      "id": "12",
+      "name": "product-info-value-2",
+      "bbox": [
+        565,
+        232,
+        590,
+        48
+      ],
+      "geometry": "rect",
+      "text": "本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。",
+      "textPreview": "本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。",
+              "fontSize": 21,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/614na1w3",
+      "id": "13",
+      "name": "product-info-label-3",
+      "bbox": [
+        400,
+        294,
+        170,
+        38
+      ],
+      "geometry": "rect",
+      "text": "【功能主治】",
+      "textPreview": "【功能主治】",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "【功能主治】"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "【功能主治】",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "【功能主治】",
+              "fontSize": 22,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hsfm9gvq",
+      "id": "14",
+      "name": "product-info-value-3",
+      "bbox": [
+        565,
+        294,
+        590,
+        48
+      ],
+      "geometry": "rect",
+      "text": "清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛。",
+      "textPreview": "清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛"
+          },
+          {
+            "index": 2,
+            "text": "。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛。",
+              "fontSize": 21,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/grm5gbe5",
+      "id": "15",
+      "name": "product-info-label-4",
+      "bbox": [
+        400,
+        356,
+        170,
+        38
+      ],
+      "geometry": "rect",
+      "text": "【规  格】",
+      "textPreview": "【规  格】",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "【规  格】"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "【规  格】",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "【规  格】",
+              "fontSize": 22,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f6d476dk",
+      "id": "16",
+      "name": "product-info-value-4",
+      "bbox": [
+        565,
+        356,
+        590,
+        48
+      ],
+      "geometry": "rect",
+      "text": "每袋含穿心莲内酯0.15g。",
+      "textPreview": "每袋含穿心莲内酯0.15g。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "每袋含穿心莲内酯0.15g。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "每袋含穿心莲内酯0.15g。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "每袋含穿心莲内酯0.15g。",
+              "fontSize": 21,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u54ne1wz",
+      "id": "17",
+      "name": "product-info-label-5",
+      "bbox": [
+        400,
+        418,
+        170,
+        38
+      ],
+      "geometry": "rect",
+      "text": "【用量用法】",
+      "textPreview": "【用量用法】",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "【用量用法】"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "【用量用法】",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "【用量用法】",
+              "fontSize": 22,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pwfmdgvm",
+      "id": "18",
+      "name": "product-info-value-5",
+      "bbox": [
+        565,
+        418,
+        590,
+        48
+      ],
+      "geometry": "rect",
+      "text": "口服，一次1袋，一日3次。（建议首次服用两袋）",
+      "textPreview": "口服，一次1袋，一日3次。（建议首次服用两袋）",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "口服，一次1袋，一日3次。（建议首次服用两袋）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "口服，一次1袋，一日3次。（建议首次服用两袋）",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "口服，一次1袋，一日3次。（建议首次服用两袋）",
+              "fontSize": 21,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4v65kve1",
+      "id": "19",
+      "name": "product-info-label-6",
+      "bbox": [
+        400,
+        480,
+        170,
+        38
+      ],
+      "geometry": "rect",
+      "text": "【禁  忌】",
+      "textPreview": "【禁  忌】",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "【禁  忌】"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "【禁  忌】",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "【禁  忌】",
+              "fontSize": 22,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ozepgzmd",
+      "id": "20",
+      "name": "product-info-value-6",
+      "bbox": [
+        565,
+        480,
+        590,
+        48
+      ],
+      "geometry": "rect",
+      "text": "对本品过敏者禁用。",
+      "textPreview": "对本品过敏者禁用。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "对本品过敏者禁用。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "对本品过敏者禁用。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "对本品过敏者禁用。",
+              "fontSize": 21,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

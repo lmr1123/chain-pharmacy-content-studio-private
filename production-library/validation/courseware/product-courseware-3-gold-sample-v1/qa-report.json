@@ -1,0 +1,45 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v1",
+  "status": "rejected-goal-drift",
+  "rejected_at": "2026-08-02",
+  "rejection_reason": "用户要求完整忠实复刻参考；该版本套用公共模板并进行了风格化重设计，技术 QA 通过但目标不合格。",
+  "checked_at": "2026-08-01",
+  "reference_range_seconds": [14.84, 44.04],
+  "pptx": {
+    "path": "商品培训课件3_金样复刻_PPTX小样_v1.pptx",
+    "slide_count": 4,
+    "editable_objects": ["titles", "navigation", "numbers", "mechanism nodes", "connectors", "packshot slot"],
+    "artifact_tool_render": "passed",
+    "libreoffice_compatibility_render": "passed",
+    "overflow_test": "passed",
+    "montage": "商品培训课件3_金样复刻_PPTX小样_v1_montage.png"
+  },
+  "video": {
+    "path": "商品培训课件3_金样复刻_动画视频小样_v1.mp4",
+    "duration_seconds": 29.233333,
+    "frame_count": 877,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "sample_rate": 48000,
+    "channels": 2,
+    "integrated_loudness_lufs": -16.5,
+    "loudness_range_lu": 1.5,
+    "true_peak_dbfs": -1.4,
+    "full_decode": "passed",
+    "sustained_black_frames": "none detected",
+    "subtitle_safe_area": "passed",
+    "dynamic_evidence_frames": [1.0, 4.3, 6.6, 10.7, 15.5, 18.5, 21.5, 24.5, 28.0],
+    "contact_sheet": "video-qa/contact-sheet.png"
+  },
+  "asset_policy": {
+    "reference_pixels_in_production": false,
+    "brand_logo": "not fabricated",
+    "authorized_packshot": "awaiting-business-asset",
+    "validation_packshot": "series.medication.generic-packshot-v1",
+    "validation_label": "包装示意",
+    "medical_claims": "reference-derived; business and medical review required"
+  }
+}

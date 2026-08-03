@@ -1,0 +1,48 @@
+{
+  "id": "presenter.product-trainer",
+  "category": "presenters",
+  "style_id": "q10-reference-faithful-v1",
+  "version": "2.1.0",
+  "status": "technical-qa-passed",
+  "subject": "商品培训女性二维讲师，两种稳定姿势",
+  "files": {
+    "master_chroma": "master/product-trainer-two-pose-v2-chroma.png",
+    "neutral": "transparent/product-trainer-neutral-v2.png",
+    "palm": "transparent/product-trainer-palm-v2.png",
+    "prompt": "prompts/product-trainer-v2.md"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "reference_role": "角色造型、服装、比例和姿势参考",
+    "reference_video_pixels_used": false
+  },
+  "rig": {
+    "body_locked": true,
+    "mouth_layers": 4,
+    "blink_layer": true,
+    "mouth_effect_id": "effect.presenter.stable-mouth-v1",
+    "mouth_frames": {
+      "closed": "/product-training-faithful/presenter-mouth-closed-v2.png",
+      "small": "/product-training-faithful/presenter-mouth-small-v2.png",
+      "o": "/product-training-faithful/presenter-mouth-o-v2.png",
+      "wide": "/product-training-faithful/presenter-mouth-wide-v2.png"
+    },
+    "poses": {
+      "neutral": {
+        "normalized_mouth_anchor": [0.5, 0.27],
+        "closed_width_ratio": 0.095,
+        "open_width_ratio": 0.078
+      },
+      "palm": {
+        "normalized_mouth_anchor": [0.632, 0.278],
+        "closed_width_ratio": 0.09,
+        "open_width_ratio": 0.082
+      }
+    }
+  },
+  "review": {
+    "visual": "pending-user-signoff-raster-mouth-v2",
+    "alpha": "passed",
+    "usage": "internal-training-signoff-only"
+  }
+}

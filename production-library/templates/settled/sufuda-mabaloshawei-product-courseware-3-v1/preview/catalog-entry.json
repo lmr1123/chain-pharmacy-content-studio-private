@@ -1,0 +1,25 @@
+{
+  "slug": "sufuda-mabaloshawei-product-courseware-3-v1",
+  "name_zh": "商品培训课件3（视频+PPT，速福达壳）",
+  "one_liner": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型",
+  "gallery_title_zh": "商品培训课件3 · 速福达金样",
+  "outputs": [
+    "MP4",
+    "可编辑 PPTX"
+  ],
+  "category": "商品培训",
+  "production_ready": true,
+  "status_label": "已签样 · 可换主题量产",
+  "status_note": "默认使用速福达课件药师克隆语音包；包装/Logo 须授权原图。",
+  "key_frame_labels_zh": [
+    "封面",
+    "流感背景",
+    "核心利益",
+    "产品特点",
+    "适宜人群",
+    "联合用药"
+  ],
+  "voice_id": "voice.sufuda-courseware-pharmacist-v1",
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx"
+}

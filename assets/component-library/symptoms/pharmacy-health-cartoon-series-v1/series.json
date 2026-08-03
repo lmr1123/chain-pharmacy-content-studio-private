@@ -1,0 +1,73 @@
+{
+  "id": "series.symptom.pharmacy-health-cartoon-v1",
+  "name_zh": "药店健康科普卡通症状系列 v1",
+  "version": "1.0.0",
+  "status": "selected",
+  "style_pack_ids": [
+    "style-pack.reference-medical-tech-v1",
+    "style-pack.reference-product-blue-v1"
+  ],
+  "series_style_id": "pharmacy-health-cartoon-v1",
+  "purpose": "跨疾病主题复用的友好扁平症状人物、局部特写与符号插图，保证同片/跨课画风一致。",
+  "visual_tokens": {
+    "outline": "medium dark-brown",
+    "shading": "restrained soft cel",
+    "palette_anchor": "pharmacy-health-cartoon-v1"
+  },
+  "material_contract": {
+    "patient": "同一患者身份系统：圆润简化解剖、扁平赛璐璐上色、友好非恐怖。",
+    "anatomy_closeup": "局部特写可读，避免过度写实血腥。",
+    "symptom_symbol": "符号化表达，主体居中，方图安全边距约 10%。"
+  },
+  "role_contracts": [
+    {
+      "role_id": "patient_symptom",
+      "name_zh": "全身或半身症状人物",
+      "maps_from_types": ["patient"]
+    },
+    {
+      "role_id": "anatomy_closeup",
+      "name_zh": "解剖/局部特写",
+      "maps_from_types": ["anatomy-closeup"]
+    },
+    {
+      "role_id": "symptom_symbol",
+      "name_zh": "症状符号",
+      "maps_from_types": ["symptom-symbol"]
+    }
+  ],
+  "composition_contract": {
+    "canvas_preferred": "1:1 square",
+    "safe_margin_percent": 10,
+    "thumbnail_min_px": 150
+  },
+  "animation_contract": {
+    "default_effects": ["soft_enter", "optional_pain_pulse"],
+    "max_primary_motion": 1
+  },
+  "generation_recipe": "assets/component-library/symptoms/symptoms-v1-generation-recipes.md",
+  "members": [
+    "symptom.fever",
+    "symptom.thirst",
+    "symptom.dry-mouth",
+    "symptom.irritable",
+    "symptom.sore-throat",
+    "symptom.cough",
+    "symptom.yellow-phlegm",
+    "symptom.yellow-nasal",
+    "symptom.red-tongue",
+    "symptom.yellow-coat",
+    "symptom.dry-stool",
+    "symptom.stomach-discomfort"
+  ],
+  "extension_gate": [
+    "先查询本 series 成员是否已能表达新主题症状。",
+    "新成员必须使用同一患者系统与 generation recipe 变量表。",
+    "参考像素禁止进入 master；外补走通道 C 再生或 B 适配后入 candidates。"
+  ],
+  "external_fill": {
+    "preferred_channel": "C",
+    "fallback_channel": "B",
+    "packshot_policy": "not_applicable"
+  }
+}

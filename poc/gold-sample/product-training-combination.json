@@ -1,0 +1,94 @@
+{
+  "project_id": "product.q10.combination-faithful-v1",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "style_pack_locked": true,
+  "content_lock": "reference-transcript",
+  "referenceRange": {
+    "start": 126.74,
+    "end": 152.48,
+    "duration": 28.795
+  },
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-product-training-combination-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；自然语速铺轨，禁止超1.18×暴力加速",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "min_tempo": 0.95,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "联合用药：1、复方丹参滴丸＋辅酶Q10，话术：服用丹参滴丸之后，仍存在顽固心慌、胸闷、气短问题，这是心肌缺能量，辅酶Q10可营养心肌，提高心功能，给心脏充能，解决顽固心慌、胸闷、气短症状，2、他汀＋辅酶Q10，话术：长期服用他汀会引起肌肉疲劳、疼痛，这是他汀抑制了肌肉内的辅酶Q10合成导致的，辅酶Q10可缓解长期服用他汀引发的疲劳、肌痛问题。",
+          "raw_duration": 33.216,
+          "used_duration": 28.635,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 26.959,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "联合用药：1、复方丹参滴丸＋辅酶Q10，话术：服用丹参滴丸之后，仍存在顽固心慌、胸闷、气短问题，这是心肌缺能量，辅酶Q10可营养心肌，提高心功能，给心脏充能，解决顽固心慌、胸闷、气短症状，2、他汀＋辅酶Q10，话术：长期服用他汀会引起肌肉疲劳、疼痛，这是他汀抑制了肌肉内的辅酶Q10合成导致的，辅酶Q10可缓解长期服用他汀引发的疲劳、肌痛问题。"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "product": "/product-training-faithful/q10-reference-approx-v1.png",
+    "partnerRestriction": "联合用药搭配品种为代码重制的无品牌包装示意，未使用参考片真实包装像素"
+  },
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 3.398,
+      "text": "联合用药：1、复方丹参滴丸＋辅酶Q10"
+    },
+    {
+      "start": 3.398,
+      "end": 8.141,
+      "text": "话术：服用丹参滴丸之后，仍存在顽固心慌、胸闷、气短问题"
+    },
+    {
+      "start": 8.141,
+      "end": 11.303,
+      "text": "这是心肌缺能量，辅酶Q10可营养心肌"
+    },
+    {
+      "start": 11.303,
+      "end": 13.236,
+      "text": "提高心功能，给心脏充能"
+    },
+    {
+      "start": 13.236,
+      "end": 15.695,
+      "text": "解决顽固心慌、胸闷、气短症状"
+    },
+    {
+      "start": 15.695,
+      "end": 17.452,
+      "text": "2、他汀＋辅酶Q10"
+    },
+    {
+      "start": 17.452,
+      "end": 20.79,
+      "text": "话术：长期服用他汀会引起肌肉疲劳、疼痛"
+    },
+    {
+      "start": 20.79,
+      "end": 24.479,
+      "text": "这是他汀抑制了肌肉内的辅酶Q10合成导致的"
+    },
+    {
+      "start": 24.479,
+      "end": 28.695,
+      "text": "辅酶Q10可缓解长期服用他汀引发的疲劳、肌痛问题"
+    }
+  ],
+  "playback_duration": 28.795
+}

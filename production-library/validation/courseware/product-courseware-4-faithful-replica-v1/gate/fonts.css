@@ -1,0 +1,51 @@
+/*
+  课件4 门禁字体栈（@font-face 经 gate/fonts 软链加载本机字体）
+
+  参考观感：粗重展示黑体（培训片），不是 PingFang Regular 文档体。
+
+  选型结论（实测）：
+  - Gen Jyuu / Gen Shin 日文字库 → 简体「对」「贡」等缺字（方框），不可作中文主字体
+  - HarmonyOS Sans SC Black/Bold → 简体全覆盖 + 足够粗，作门禁主字体
+  - Source Han Sans SC / Heiti SC / PingFang 作回退
+
+  角色：
+  - display：卡片黄标题、章节字  → SC Black (900)
+  - body：列表白字               → SC Bold (700)
+  - subtitle：底字幕             → SC Bold + 白描边
+  - latin-masthead：TIME 示意    → Times New Roman
+*/
+@font-face {
+  font-family: "CW4 SC";
+  src: url("fonts/HarmonyOS-Sans-SC-Black.ttf") format("truetype");
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CW4 SC";
+  src: url("fonts/HarmonyOS-Sans-SC-Bold.ttf") format("truetype");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CW4 SC";
+  src: url("fonts/HarmonyOS-Sans-SC-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CW4 SC";
+  src: url("fonts/HarmonyOS-Sans-SC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-display: "CW4 SC", "HarmonyOS Sans SC", "Source Han Sans SC", "Heiti SC", "PingFang SC", sans-serif;
+  --font-body: "CW4 SC", "HarmonyOS Sans SC", "Source Han Sans SC", "Heiti SC", "PingFang SC", sans-serif;
+  --font-black: "CW4 SC", "HarmonyOS Sans SC", "Heiti SC", sans-serif;
+  --font-latin-serif: "Times New Roman", "Times", "Songti SC", serif;
+}

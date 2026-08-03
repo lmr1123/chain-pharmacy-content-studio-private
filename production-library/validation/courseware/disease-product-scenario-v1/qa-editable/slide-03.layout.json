@@ -1,0 +1,549 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/bhbiag",
+    "id": "bhbiag",
+    "slide": 3,
+    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/excnmp8f",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        580,
+        720
+      ],
+      "alt": "源 PDF 目录页中的大参林建筑图",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "9726b664-ab80-43a6-8e42-22fb35b87344",
+        "contentType": "image/png",
+        "byteLength": 894999
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4belgrad",
+      "id": "2",
+      "name": "agenda-title",
+      "bbox": [
+        625,
+        80,
+        400,
+        80
+      ],
+      "geometry": "rect",
+      "text": "目 录",
+      "textPreview": "目 录",
+      "resolvedFontSize": 58,
+      "resolvedTextStyle": {
+        "fontSize": 58,
+        "typeface": "+mn-lt",
+        "color": "#009900",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "目 录"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "目 录",
+          "resolvedTextStyle": {
+            "fontSize": 58,
+            "color": "#009900",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "目 录",
+              "fontSize": 58,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcn29wbi",
+      "id": "3",
+      "name": "agenda-rule",
+      "bbox": [
+        625,
+        175,
+        520,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#43A817",
+      "lineColor": "#43A817",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u5cjahsv",
+      "id": "4",
+      "name": "agenda-item-1",
+      "bbox": [
+        625,
+        220,
+        600,
+        48
+      ],
+      "geometry": "rect",
+      "text": "一  疾病篇—风热证",
+      "textPreview": "一  疾病篇—风热证",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#6E7378",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一  疾病篇—风热证"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一  疾病篇—风热证",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#6E7378",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一  疾病篇—风热证",
+              "fontSize": 24,
+              "color": "#6E7378",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f6lk3mtg",
+      "id": "5",
+      "name": "agenda-item-2",
+      "bbox": [
+        625,
+        290,
+        600,
+        48
+      ],
+      "geometry": "rect",
+      "text": "二  商品篇—穿心莲内酯滴丸的核心优势",
+      "textPreview": "二  商品篇—穿心莲内酯滴丸的核心优势",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#6E7378",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "二  商品篇—穿心莲内酯滴丸的核心优势"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "二  商品篇—穿心莲内酯滴丸的核心优势",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#6E7378",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "二  商品篇—穿心莲内酯滴丸的核心优势",
+              "fontSize": 24,
+              "color": "#6E7378",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7elc7a1",
+      "id": "6",
+      "name": "agenda-item-3",
+      "bbox": [
+        625,
+        360,
+        600,
+        48
+      ],
+      "geometry": "rect",
+      "text": "三  场景篇—什么时候推荐穿心莲内酯滴丸",
+      "textPreview": "三  场景篇—什么时候推荐穿心莲内酯滴丸",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#6E7378",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "三  场景篇—什么时候推荐穿心莲内酯滴丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "三  场景篇—什么时候推荐穿心莲内酯滴丸",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#6E7378",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "三  场景篇—什么时候推荐穿心莲内酯滴丸",
+              "fontSize": 24,
+              "color": "#6E7378",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h8n25cbm",
+      "id": "7",
+      "name": "agenda-item-4",
+      "bbox": [
+        625,
+        430,
+        600,
+        48
+      ],
+      "geometry": "rect",
+      "text": "四  关怀篇—日常生活叮嘱",
+      "textPreview": "四  关怀篇—日常生活叮嘱",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#6E7378",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "四  关怀篇—日常生活叮嘱"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "四  关怀篇—日常生活叮嘱",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#6E7378",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "四  关怀篇—日常生活叮嘱",
+              "fontSize": 24,
+              "color": "#6E7378",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e1g3m1sf",
+      "id": "8",
+      "name": "agenda-item-5",
+      "bbox": [
+        625,
+        500,
+        600,
+        48
+      ],
+      "geometry": "rect",
+      "text": "五  权重篇—活动权重",
+      "textPreview": "五  权重篇—活动权重",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#6E7378",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "五  权重篇—活动权重"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "五  权重篇—活动权重",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#6E7378",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "五  权重篇—活动权重",
+              "fontSize": 24,
+              "color": "#6E7378",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2pkf6t0",
+      "id": "9",
+      "name": "agenda-internal-notice",
+      "bbox": [
+        1050,
+        675,
+        170,
+        24
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111111",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 14,
+              "color": "#111111",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

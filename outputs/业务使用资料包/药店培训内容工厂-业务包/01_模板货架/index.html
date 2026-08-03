@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>药店培训内容工厂 · 模板货架</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #171d25;
+    --line: rgba(255,255,255,.10);
+    --text: #eef2f6;
+    --dim: #9aa7b5;
+    --accent: #2f6fed;
+    --accent2: #1f9d6a;
+    --warn: #c9851a;
+    --radius: 16px;
+    --font: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    background: radial-gradient(1200px 600px at 10% -10%, #1a2740 0%, transparent 55%),
+                radial-gradient(900px 500px at 100% 0%, #152a22 0%, transparent 50%),
+                var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+  .shell { max-width: 1120px; margin: 0 auto; padding: 32px 20px 80px; }
+  header.hero {
+    padding: 28px 28px 24px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(47,111,237,.14), rgba(255,255,255,.03));
+    margin-bottom: 28px;
+  }
+  .badge-top {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    color: #9ec0ff;
+    margin-bottom: 10px;
+  }
+  h1 { font-size: 28px; font-weight: 900; letter-spacing: -.02em; margin-bottom: 10px; }
+  .sub { color: var(--dim); font-size: 14px; max-width: 62ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .chip {
+    font-size: 12px; font-weight: 700;
+    padding: 5px 10px; border-radius: 999px;
+    background: rgba(255,255,255,.06); border: 1px solid var(--line); color: var(--dim);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 22px 0 28px;
+  }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr 1fr; } }
+  .step {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .step b { display: block; font-size: 13px; margin-bottom: 4px; }
+  .step span { font-size: 12px; color: var(--dim); }
+  .n {
+    width: 22px; height: 22px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: rgba(47,111,237,.55); transform: translateY(-2px); }
+  .cover { display: block; aspect-ratio: 16/9; background: #0a0e13; overflow: hidden; }
+  .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .cat { font-size: 11px; font-weight: 800; color: #8eb6ff; letter-spacing: .04em; }
+  .badge {
+    font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 999px;
+  }
+  .badge.ok { background: rgba(31,157,106,.18); color: #6ee7b0; }
+  .badge.warn { background: rgba(201,133,26,.18); color: #f0c674; }
+  h2 { font-size: 17px; font-weight: 900; line-height: 1.35; }
+  .one { font-size: 13px; color: var(--dim); }
+  .out { font-size: 12px; color: #b7c4d3; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 6px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 8px 12px; border-radius: 10px; font-size: 12px; font-weight: 700;
+    text-decoration: none; color: var(--text);
+    border: 1px solid var(--line); background: rgba(255,255,255,.04);
+  }
+  .btn:hover { border-color: rgba(255,255,255,.28); }
+  .btn.primary { background: var(--accent); border-color: transparent; color: #fff; }
+  .btn.ghost { background: transparent; }
+  .detail {
+    grid-column: 1 / -1;
+    margin: 8px 0 24px;
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.03);
+    scroll-margin-top: 24px;
+  }
+  .detail-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .detail h3 { font-size: 18px; font-weight: 900; }
+  .back { color: #9ec0ff; font-size: 13px; text-decoration: none; }
+  .note { color: var(--dim); font-size: 13px; margin-bottom: 8px; }
+  .path { font-size: 12px; margin-bottom: 14px; color: #c5d0dc; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px;
+    background: rgba(0,0,0,.35); padding: 2px 6px; border-radius: 6px; }
+  .keys {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .keys figure {
+    margin: 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--line); background: #0a0e13;
+  }
+  .keys img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+  .keys figcaption {
+    font-size: 11px; color: var(--dim); padding: 6px 8px; text-align: center;
+    background: rgba(0,0,0,.35);
+  }
+  .sticky { margin-top: 16px; }
+  footer {
+    margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line);
+    color: var(--dim); font-size: 12px; line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+  <div class="shell" id="top">
+    <header class="hero">
+      <div class="badge-top">连锁药店 · 内部培训内容工厂</div>
+      <h1>模板货架</h1>
+      <p class="sub">
+        先看效果，再选课型。下列均为公司已签样/已登记课型；
+        下载空白 Word 填写审核内容后，交给 WorkBuddy 出初稿，确认后再出成片。
+      </p>
+      <div class="chips">
+        <span class="chip">共 6 个课型</span>
+        <span class="chip">可离线打开</span>
+        <span class="chip">内容驱动 · 禁止空行凑满</span>
+        <span class="chip">视频 · 克隆药师声</span>
+      </div>
+    </header>
+
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>看效果</b><span>封面 + 关键页截图</span></div>
+      <div class="step"><div class="n">2</div><b>选模板</b><span>记住中文课型名</span></div>
+      <div class="step"><div class="n">3</div><b>填框架</b><span>可删节 · 有几条写几条</span></div>
+      <div class="step"><div class="n">4</div><b>交 WorkBuddy</b><span>先初稿，确认后成片</span></div>
+    </div>
+
+    <div class="grid">
+      
+      <article class="card" id="health-video-reference-tech-v1">
+        <a class="cover" href="#detail-health-video-reference-tech-v1">
+          <img src="media/health-video-reference-tech-v1/cover.png" alt="疾病科普视频（如风热证）" />
+        </a>
+        <div class="body">
+          <div class="meta-row">
+            <span class="cat">疾病科普</span>
+            <span class="badge warn">金样对照 · 新主题制作前请与制作确认</span>
+          </div>
+          <h2>疾病科普视频（如风热证）</h2>
+          <p class="one">健康知识讲解视频：症状 · 机理 · 治疗与用药建议</p>
+          <p class="out">产物：MP4 培训视频</p>
+          <div class="actions">
+            <a class="btn primary" href="#detail-health-video-reference-tech-v1">查看关键页</a>
+            <a class="btn" href="../02_空白Word/health-video-reference-tech-v1/业务提交_空白模板.docx">下载空白 Word</a>
+            <a class="btn ghost" href="../03_填写参考/health-video-reference-tech-v1/业务提交_填写参考.docx">格式参考</a>
+          </div>
+        </div>
+      </article>
+      <section class="detail" id="detail-health-video-reference-tech-v1">
+        <div class="detail-head">
+          <h3>疾病科普视频（如风热证）</h3>
+          <a class="back" href="#top">↑ 返回货架</a>
+        </div>
+        <p class="note">manifest 标记 visual-rework-required；业务可看效果与填框架，新病种量产前须制作确认。</p>
+        <p class="path">空白 Word：<code>02_空白Word/health-video-reference-tech-v1/业务提交_空白模板.docx</code></p>
+        <div class="keys"><figure><img src="media/health-video-reference-tech-v1/key-01.png" alt="开场" loading="lazy" /><figcaption>开场</figcaption></figure><figure><img src="media/health-video-reference-tech-v1/key-02.png" alt="典型症状" loading="lazy" /><figcaption>典型症状</figcaption></figure><figure><img src="media/health-video-reference-tech-v1/key-03.png" alt="病因机理" loading="lazy" /><figcaption>病因机理</figcaption></figure><figure><img src="media/health-video-reference-tech-v1/key-04.png" alt="治疗思路" loading="lazy" /><figcaption>治疗思路</figcaption></figure><figure><img src="media/health-video-reference-tech-v1/key-05.png" alt="用药建议" loading="lazy" /><figcaption>用药建议</figcaption></figure><figure><img src="media/health-video-reference-tech-v1/key-06.png" alt="总结" loading="lazy" /><figcaption>总结</figcaption></figure></div>
+        <div class="actions sticky">
+          <a class="btn primary" href="../02_空白Word/health-video-reference-tech-v1/业务提交_空白模板.docx">就用这个模板 · 下载空白 Word</a>
+          <a class="btn" href="../04_WorkBuddy口令卡.md">复制口令卡</a>
+        </div>
+      </section>
+
+      <article class="card" id="product-video-faithful-v1">
+        <a class="cover" href="#detail-product-video-faithful-v1">
+          <img src="media/product-video-faithful-v1/cover.png" alt="商品培训视频（如辅酶 Q10）" />
+        </a>
+        <div class="body">
+          <div class="meta-row">
+            <span class="cat">商品培训</span>
+            <span class="badge ok">已签样 · 可换主题量产</span>
+          </div>
+          <h2>商品培训视频（如辅酶 Q10）</h2>
+          <p class="one">单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结</p>
+          <p class="out">产物：MP4 培训视频</p>
+          <div class="actions">
+            <a class="btn primary" href="#detail-product-video-faithful-v1">查看关键页</a>
+            <a class="btn" href="../02_空白Word/product-video-faithful-v1/业务提交_空白模板.docx">下载空白 Word</a>
+            <a class="btn ghost" href="../03_填写参考/product-video-faithful-v1/业务提交_填写参考.docx">格式参考</a>
+          </div>
+        </div>
+      </article>
+      <section class="detail" id="detail-product-video-faithful-v1">
+        <div class="detail-head">
+          <h3>商品培训视频（如辅酶 Q10）</h3>
+          <a class="back" href="#top">↑ 返回货架</a>
+        </div>
+        <p class="note">换商品须提供审核旁白与授权包装图；讲解声走模板克隆语音包。</p>
+        <p class="path">空白 Word：<code>02_空白Word/product-video-faithful-v1/业务提交_空白模板.docx</code></p>
+        <div class="keys"><figure><img src="media/product-video-faithful-v1/key-01.png" alt="开场" loading="lazy" /><figcaption>开场</figcaption></figure><figure><img src="media/product-video-faithful-v1/key-02.png" alt="品牌/品类" loading="lazy" /><figcaption>品牌/品类</figcaption></figure><figure><img src="media/product-video-faithful-v1/key-03.png" alt="核心功效" loading="lazy" /><figcaption>核心功效</figcaption></figure><figure><img src="media/product-video-faithful-v1/key-04.png" alt="产品特点" loading="lazy" /><figcaption>产品特点</figcaption></figure><figure><img src="media/product-video-faithful-v1/key-05.png" alt="适宜人群" loading="lazy" /><figcaption>适宜人群</figcaption></figure><figure><img src="media/product-video-faithful-v1/key-06.png" alt="联合用药" loading="lazy" /><figcaption>联合用药</figcaption></figure></div>
+        <div class="actions sticky">
+          <a class="btn primary" href="../02_空白Word/product-video-faithful-v1/业务提交_空白模板.docx">就用这个模板 · 下载空白 Word</a>
+          <a class="btn" href="../04_WorkBuddy口令卡.md">复制口令卡</a>
+        </div>
+      </section>
+
+      <article class="card" id="product-courseware-green-v1">
+        <a class="cover" href="#detail-product-courseware-green-v1">
+          <img src="media/product-courseware-green-v1/cover.png" alt="绿色单品 PPT（如金银花露）" />
+        </a>
+        <div class="body">
+          <div class="meta-row">
+            <span class="cat">商品培训</span>
+            <span class="badge ok">已签样 · 可换主题量产</span>
+          </div>
+          <h2>绿色单品 PPT（如金银花露）</h2>
+          <p class="one">五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意</p>
+          <p class="out">产物：可编辑 PPTX</p>
+          <div class="actions">
+            <a class="btn primary" href="#detail-product-courseware-green-v1">查看关键页</a>
+            <a class="btn" href="../02_空白Word/product-courseware-green-v1/业务提交_空白模板.docx">下载空白 Word</a>
+            <a class="btn ghost" href="../03_填写参考/product-courseware-green-v1/业务提交_填写参考.docx">格式参考</a>
+          </div>
+        </div>
+      </article>
+      <section class="detail" id="detail-product-courseware-green-v1">
+        <div class="detail-head">
+          <h3>绿色单品 PPT（如金银花露）</h3>
+          <a class="back" href="#top">↑ 返回货架</a>
+        </div>
+        <p class="note">联合用药有几条排几行，禁止空白凑行。</p>
+        <p class="path">空白 Word：<code>02_空白Word/product-courseware-green-v1/业务提交_空白模板.docx</code></p>
+        <div class="keys"><figure><img src="media/product-courseware-green-v1/key-01.png" alt="封面/介绍" loading="lazy" /><figcaption>封面/介绍</figcaption></figure><figure><img src="media/product-courseware-green-v1/key-02.png" alt="卖点与人群" loading="lazy" /><figcaption>卖点与人群</figcaption></figure><figure><img src="media/product-courseware-green-v1/key-03.png" alt="联合用药" loading="lazy" /><figcaption>联合用药</figcaption></figure><figure><img src="media/product-courseware-green-v1/key-04.png" alt="品种对标" loading="lazy" /><figcaption>品种对标</figcaption></figure><figure><img src="media/product-courseware-green-v1/key-05.png" alt="注意事项" loading="lazy" /><figcaption>注意事项</figcaption></figure></div>
+        <div class="actions sticky">
+          <a class="btn primary" href="../02_空白Word/product-courseware-green-v1/业务提交_空白模板.docx">就用这个模板 · 下载空白 Word</a>
+          <a class="btn" href="../04_WorkBuddy口令卡.md">复制口令卡</a>
+        </div>
+      </section>
+
+      <article class="card" id="disease-product-scenario-v1">
+        <a class="cover" href="#detail-disease-product-scenario-v1">
+          <img src="media/disease-product-scenario-v1/cover.png" alt="疾病+商品场景 PPT（如穿心莲）" />
+        </a>
+        <div class="body">
+          <div class="meta-row">
+            <span class="cat">商品培训</span>
+            <span class="badge ok">已签样 · 可换主题量产</span>
+          </div>
+          <h2>疾病+商品场景 PPT（如穿心莲）</h2>
+          <p class="one">辨证知识 + 商品知识 + 销售场景的可编辑长课件</p>
+          <p class="out">产物：可编辑 PPTX</p>
+          <div class="actions">
+            <a class="btn primary" href="#detail-disease-product-scenario-v1">查看关键页</a>
+            <a class="btn" href="../02_空白Word/disease-product-scenario-v1/业务提交_空白模板.docx">下载空白 Word</a>
+            <a class="btn ghost" href="../03_填写参考/disease-product-scenario-v1/业务提交_填写参考.docx">格式参考</a>
+          </div>
+        </div>
+      </article>
+      <section class="detail" id="detail-disease-product-scenario-v1">
+        <div class="detail-head">
+          <h3>疾病+商品场景 PPT（如穿心莲）</h3>
+          <a class="back" href="#top">↑ 返回货架</a>
+        </div>
+        <p class="note">章节可按内容增减；无资料的模块可整节省略。</p>
+        <p class="path">空白 Word：<code>02_空白Word/disease-product-scenario-v1/业务提交_空白模板.docx</code></p>
+        <div class="keys"><figure><img src="media/disease-product-scenario-v1/key-01.png" alt="封面" loading="lazy" /><figcaption>封面</figcaption></figure><figure><img src="media/disease-product-scenario-v1/key-02.png" alt="辨证/知识" loading="lazy" /><figcaption>辨证/知识</figcaption></figure><figure><img src="media/disease-product-scenario-v1/key-03.png" alt="商品知识" loading="lazy" /><figcaption>商品知识</figcaption></figure><figure><img src="media/disease-product-scenario-v1/key-04.png" alt="销售场景" loading="lazy" /><figcaption>销售场景</figcaption></figure><figure><img src="media/disease-product-scenario-v1/key-05.png" alt="收尾页" loading="lazy" /><figcaption>收尾页</figcaption></figure></div>
+        <div class="actions sticky">
+          <a class="btn primary" href="../02_空白Word/disease-product-scenario-v1/业务提交_空白模板.docx">就用这个模板 · 下载空白 Word</a>
+          <a class="btn" href="../04_WorkBuddy口令卡.md">复制口令卡</a>
+        </div>
+      </section>
+
+      <article class="card" id="sufuda-mabaloshawei-product-courseware-3-v1">
+        <a class="cover" href="#detail-sufuda-mabaloshawei-product-courseware-3-v1">
+          <img src="media/sufuda-mabaloshawei-product-courseware-3-v1/cover.png" alt="商品培训课件3（视频+PPT，速福达壳）" />
+        </a>
+        <div class="body">
+          <div class="meta-row">
+            <span class="cat">商品培训</span>
+            <span class="badge ok">已签样 · 可换主题量产</span>
+          </div>
+          <h2>商品培训课件3（视频+PPT，速福达壳）</h2>
+          <p class="one">抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型</p>
+          <p class="out">产物：MP4 · 可编辑 PPTX</p>
+          <div class="actions">
+            <a class="btn primary" href="#detail-sufuda-mabaloshawei-product-courseware-3-v1">查看关键页</a>
+            <a class="btn" href="../02_空白Word/sufuda-mabaloshawei-product-courseware-3-v1/业务提交_空白模板.docx">下载空白 Word</a>
+            <a class="btn ghost" href="../03_填写参考/sufuda-mabaloshawei-product-courseware-3-v1/业务提交_填写参考.docx">格式参考</a>
+          </div>
+        </div>
+      </article>
+      <section class="detail" id="detail-sufuda-mabaloshawei-product-courseware-3-v1">
+        <div class="detail-head">
+          <h3>商品培训课件3（视频+PPT，速福达壳）</h3>
+          <a class="back" href="#top">↑ 返回货架</a>
+        </div>
+        <p class="note">默认使用速福达课件药师克隆语音包；包装/Logo 须授权原图。</p>
+        <p class="path">空白 Word：<code>02_空白Word/sufuda-mabaloshawei-product-courseware-3-v1/业务提交_空白模板.docx</code></p>
+        <div class="keys"><figure><img src="media/sufuda-mabaloshawei-product-courseware-3-v1/key-01.png" alt="封面" loading="lazy" /><figcaption>封面</figcaption></figure><figure><img src="media/sufuda-mabaloshawei-product-courseware-3-v1/key-02.png" alt="流感背景" loading="lazy" /><figcaption>流感背景</figcaption></figure><figure><img src="media/sufuda-mabaloshawei-product-courseware-3-v1/key-03.png" alt="核心利益" loading="lazy" /><figcaption>核心利益</figcaption></figure><figure><img src="media/sufuda-mabaloshawei-product-courseware-3-v1/key-04.png" alt="产品特点" loading="lazy" /><figcaption>产品特点</figcaption></figure><figure><img src="media/sufuda-mabaloshawei-product-courseware-3-v1/key-05.png" alt="适宜人群" loading="lazy" /><figcaption>适宜人群</figcaption></figure><figure><img src="media/sufuda-mabaloshawei-product-courseware-3-v1/key-06.png" alt="联合用药" loading="lazy" /><figcaption>联合用药</figcaption></figure></div>
+        <div class="actions sticky">
+          <a class="btn primary" href="../02_空白Word/sufuda-mabaloshawei-product-courseware-3-v1/业务提交_空白模板.docx">就用这个模板 · 下载空白 Word</a>
+          <a class="btn" href="../04_WorkBuddy口令卡.md">复制口令卡</a>
+        </div>
+      </section>
+
+      <article class="card" id="fuler-fanqiehongsu-product-courseware-4-v1">
+        <a class="cover" href="#detail-fuler-fanqiehongsu-product-courseware-4-v1">
+          <img src="media/fuler-fanqiehongsu-product-courseware-4-v1/cover.png" alt="商品培训课件4（视频+PPT，番茄红素壳）" />
+        </a>
+        <div class="body">
+          <div class="meta-row">
+            <span class="cat">商品培训</span>
+            <span class="badge ok">已签样 · 可换主题量产</span>
+          </div>
+          <h2>商品培训课件4（视频+PPT，番茄红素壳）</h2>
+          <p class="one">保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）</p>
+          <p class="out">产物：MP4 · 可编辑 PPTX</p>
+          <div class="actions">
+            <a class="btn primary" href="#detail-fuler-fanqiehongsu-product-courseware-4-v1">查看关键页</a>
+            <a class="btn" href="../02_空白Word/fuler-fanqiehongsu-product-courseware-4-v1/业务提交_空白模板.docx">下载空白 Word</a>
+            <a class="btn ghost" href="../03_填写参考/fuler-fanqiehongsu-product-courseware-4-v1/业务提交_填写参考.docx">格式参考</a>
+          </div>
+        </div>
+      </article>
+      <section class="detail" id="detail-fuler-fanqiehongsu-product-courseware-4-v1">
+        <div class="detail-head">
+          <h3>商品培训课件4（视频+PPT，番茄红素壳）</h3>
+          <a class="back" href="#top">↑ 返回货架</a>
+        </div>
+        <p class="note">关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。</p>
+        <p class="path">空白 Word：<code>02_空白Word/fuler-fanqiehongsu-product-courseware-4-v1/业务提交_空白模板.docx</code></p>
+        <div class="keys"><figure><img src="media/fuler-fanqiehongsu-product-courseware-4-v1/key-01.png" alt="封面" loading="lazy" /><figcaption>封面</figcaption></figure><figure><img src="media/fuler-fanqiehongsu-product-courseware-4-v1/key-02.png" alt="商品介绍" loading="lazy" /><figcaption>商品介绍</figcaption></figure><figure><img src="media/fuler-fanqiehongsu-product-courseware-4-v1/key-03.png" alt="利益点" loading="lazy" /><figcaption>利益点</figcaption></figure><figure><img src="media/fuler-fanqiehongsu-product-courseware-4-v1/key-04.png" alt="适宜人群" loading="lazy" /><figcaption>适宜人群</figcaption></figure><figure><img src="media/fuler-fanqiehongsu-product-courseware-4-v1/key-05.png" alt="关联用药" loading="lazy" /><figcaption>关联用药</figcaption></figure><figure><img src="media/fuler-fanqiehongsu-product-courseware-4-v1/key-06.png" alt="总结" loading="lazy" /><figcaption>总结</figcaption></figure></div>
+        <div class="actions sticky">
+          <a class="btn primary" href="../02_空白Word/fuler-fanqiehongsu-product-courseware-4-v1/业务提交_空白模板.docx">就用这个模板 · 下载空白 Word</a>
+          <a class="btn" href="../04_WorkBuddy口令卡.md">复制口令卡</a>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      <p>本货架仅供内部培训制作辨认课型。预览图来自已签样金样，请勿将包装/Logo 像素直接用于未授权新项目。</p>
+      <p>填写规则见上级目录 <code>框架填写说明.md</code>；口令见 <code>04_WorkBuddy口令卡.md</code>。</p>
+      <p>打包日期：2026-08-03</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "_comment": "复制为 editable-patches.json 后改字段，再 python3 scripts/export-full-film-video.py",
+  "scenes": {
+    "S00_cover": {
+      "title_pill": "福尔番茄红素软胶囊",
+      "benefits": [
+        "保护前列腺，提高精子活力",
+        "抗氧化，延缓衰老",
+        "增强免疫力"
+      ]
+    },
+    "S12_related_1": {
+      "note": "协同支持男性生殖健康与精子活力，适合备孕与前列腺养护场景联合推荐"
+    },
+    "S14_summary_key": {
+      "footer": "复习口诀：三大功效讲机理 · 三点特点讲依据 · 四类人群讲场景 · 两组关联讲怎么推"
+    }
+  },
+  "assets": {
+    "slot-pack-box-a.png": "assets/generated/slot-pack-box-a.png"
+  }
+}

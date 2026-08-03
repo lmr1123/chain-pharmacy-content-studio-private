@@ -1,0 +1,4 @@
+gap_id,theme_id,style_pack_id,series_id,role_id,asset_kind,semantic,preferred_channel,fallback_channel,status,business_provides,search_queries,owner,due_date,notes
+gap.example.teaching.stomach-organ,theme.disease.gastric-discomfort,style-pack.reference-medical-tech-v1,asset-series.mechanism.reference-medical-tech-v1,organ_torso,teaching_illustration,胃部教学示意非血腥,C,B,open,false,"medical stomach organ cyan volumetric; 胃 器官 教学 扁平",制作,,通道C再生试点
+gap.example.icon.light-diet,,,series.icon.advice-safety-v1,advice_icon,icon,清淡饮食建议图标,B,C,open,false,"light diet icon commercial flat medical",制作,,通道B商用适配
+gap.example.packshot.sku-awaiting,theme.product.honeysuckle-dew,style-pack.dashenlin-courseware-green-v1,series.medication.company-authorized-v1,packshot_primary,packshot,金银花露正品包装主图,A,,awaiting-business-asset,true,,业务,,真包装由业务提供制作不外购

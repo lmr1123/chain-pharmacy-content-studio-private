@@ -1,0 +1,184 @@
+{
+  "projectId": "health.wind-heat.editable-v2",
+  "templateId": "template.health-reference-tech-v1",
+  "stylePackId": "style-pack.reference-medical-tech-v1",
+  "checkedAt": "2026-07-30T17:24:50.683Z",
+  "status": "passed",
+  "checks": [
+    {
+      "id": "typecheck",
+      "status": "passed"
+    },
+    {
+      "id": "reference-pixel-provenance",
+      "status": "passed"
+    },
+    {
+      "id": "element-audit-schema",
+      "status": "passed",
+      "sceneCount": 7,
+      "elementCount": 62,
+      "uniqueLayerIdCount": 62
+    },
+    {
+      "id": "editability-contract",
+      "status": "passed",
+      "editableTokenCount": 112,
+      "requiredCapabilities": [
+        "text",
+        "src",
+        "fontSize",
+        "fill",
+        "rotation",
+        "opacity"
+      ],
+      "missingCapabilities": []
+    },
+    {
+      "id": "presenter-mouth-palette",
+      "status": "passed",
+      "paletteVersion": "soft-pink-v3",
+      "states": [
+        "mouth-closed-vector.svg",
+        "mouth-small-vector.svg",
+        "mouth-o-vector.svg",
+        "mouth-wide-vector.svg"
+      ],
+      "maxStrokeWidth": 1.35,
+      "legacyDarkHits": [],
+      "closedMouthPresent": true,
+      "contactSheet": "mouth-soft-palette-contact-sheet.png"
+    },
+    {
+      "id": "unified-audio",
+      "status": "passed",
+      "scenes": [
+        {
+          "sceneId": "character",
+          "passed": true,
+          "duration": 28.1,
+          "targetDuration": 28.1,
+          "sampleRate": 24000,
+          "channels": 1,
+          "integratedLufs": -15.9,
+          "truePeakDbfs": -2.16,
+          "tempo": 1.16
+        },
+        {
+          "sceneId": "mechanism",
+          "passed": true,
+          "duration": 15.84,
+          "targetDuration": 15.84,
+          "sampleRate": 24000,
+          "channels": 1,
+          "integratedLufs": -16.2,
+          "truePeakDbfs": -1.5,
+          "tempo": 1.16
+        },
+        {
+          "sceneId": "symptoms",
+          "passed": true,
+          "duration": 26.333333,
+          "targetDuration": 26.333333333333332,
+          "sampleRate": 24000,
+          "channels": 1,
+          "integratedLufs": -15.96,
+          "truePeakDbfs": -1.59,
+          "tempo": 1.16
+        },
+        {
+          "sceneId": "treatment",
+          "passed": true,
+          "duration": 41.933333,
+          "targetDuration": 41.93333333333333,
+          "sampleRate": 24000,
+          "channels": 1,
+          "integratedLufs": -15.97,
+          "truePeakDbfs": -1.5,
+          "tempo": 1.16
+        },
+        {
+          "sceneId": "medication",
+          "passed": true,
+          "duration": 41.1,
+          "targetDuration": 41.1,
+          "sampleRate": 24000,
+          "channels": 1,
+          "integratedLufs": -16.34,
+          "truePeakDbfs": -1.78,
+          "tempo": 1.16
+        },
+        {
+          "sceneId": "summary",
+          "passed": true,
+          "duration": 28,
+          "targetDuration": 28,
+          "sampleRate": 24000,
+          "channels": 1,
+          "integratedLufs": -15.97,
+          "truePeakDbfs": -1.5,
+          "tempo": 1.16
+        }
+      ]
+    },
+    {
+      "id": "full-render",
+      "status": "passed",
+      "file": "wind-heat-full-editable-v2.mp4",
+      "sha256": "3d4edc470d408497883b45bd8b50c62c590cd5d987e3fc0014d1786001d14de8",
+      "duration": 181.2,
+      "resolution": "1920x1080",
+      "fps": "30/1",
+      "frames": 5436,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "fullDecode": true,
+      "sustainedBlackSegments": 0
+    },
+    {
+      "id": "seven-scene-editability-proof",
+      "status": "passed",
+      "cases": [
+        {
+          "scene": "intro",
+          "time": 2.5,
+          "key": "editable:intro:title:main"
+        },
+        {
+          "scene": "character",
+          "time": 10,
+          "key": "editable:character:symptom-card:0:text"
+        },
+        {
+          "scene": "mechanism",
+          "time": 33,
+          "key": "editable:mechanism:assembly:body-asset"
+        },
+        {
+          "scene": "symptoms",
+          "time": 50,
+          "key": "editable:symptoms:asset:①-0"
+        },
+        {
+          "scene": "treatment",
+          "time": 104,
+          "key": "editable:treatment:recipe:dosage"
+        },
+        {
+          "scene": "medication",
+          "time": 114,
+          "key": "editable:medication:card:银翘解毒颗粒:title"
+        },
+        {
+          "scene": "summary",
+          "time": 165,
+          "key": "editable:summary:matrix:item:0:body"
+        }
+      ],
+      "frames": 210,
+      "duration": 7.018,
+      "contactSheet": "editability-proof-contact-sheet.jpg"
+    }
+  ],
+  "failures": []
+}

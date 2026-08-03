@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>番茄红素商品培训·可编辑课件</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div>
+      <strong>番茄红素商品培训</strong>
+      <span id="saveStatus">未保存调整</span>
+    </div>
+    <div class="toolbar-actions">
+      <button id="undoBtn">撤销</button><button id="redoBtn">重做</button>
+      <button id="replaceBtn">替换当前图片</button>
+      <button id="downloadJsonBtn">导出项目 JSON</button>
+      <button id="exportPptxBtn" class="primary">导出 PPTX</button>
+      <button id="exportMp4Btn" class="primary">导出 MP4</button>
+      <input id="imagePicker" type="file" accept="image/*" hidden />
+    </div>
+  </header>
+  <main class="workspace">
+    <aside class="scene-list"><h2>场景</h2><div id="sceneList"></div></aside>
+    <section class="canvas-column">
+      <div id="stageViewport"><div id="stage" class="stage"></div></div>
+      <p class="hint">直接点击文字修改；拖动图层左上角手柄移动，拖动右下角手柄缩放；选中图片后可替换。
+      </p>
+    </section>
+    <aside class="inspector">
+      <h2>当前项目</h2>
+      <label>标题<input id="projectTitle" /></label>
+      <label>参考类型<input id="sourceClass" disabled /></label>
+      <label>时长（秒）<input id="durationInput" type="number" min="2" step="0.1" /></label>
+      <label>旁白<textarea id="narrationInput" rows="12"></textarea></label>
+      <div class="inspector-note">包装和 Logo 始终是业务授权槽位；替换素材不会改变其他场景。</div>
+    </aside>
+  </main>
+  <script src="project-data.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

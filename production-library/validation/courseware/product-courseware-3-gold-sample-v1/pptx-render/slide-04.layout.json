@@ -1,0 +1,1120 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/66a32a",
+    "id": "66a32a",
+    "slide": 4,
+    "layoutId": "4f0cc211-d201-49c4-b2e8-367e9d3cf322",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "baa3343f-9dbf-4d3d-9fca-4b082dc74f6a",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4f0cc211-d201-49c4-b2e8-367e9d3cf322",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "baa3343f-9dbf-4d3d-9fca-4b082dc74f6a",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "baa3343f-9dbf-4d3d-9fca-4b082dc74f6a",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/03qd8r25",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "原创白色丝绸医疗课件背景",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "eaa88dc6-a082-45a4-998c-6873bd30fb35",
+        "contentType": "image/png",
+        "byteLength": 1527552
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mpsb2x0v",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "rgba(255, 255, 255, 0.12)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nq1sv21g",
+      "id": "3",
+      "name": "chapter-ribbon",
+      "bbox": [
+        420,
+        28,
+        440,
+        58
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E98200",
+      "lineColor": "#F4A437",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03qt0nip",
+      "id": "4",
+      "name": "chapter-title",
+      "bbox": [
+        455,
+        36,
+        370,
+        42
+      ],
+      "geometry": "rect",
+      "text": "一、三大核心功效",
+      "textPreview": "一、三大核心功效",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一、三大核心功效"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一、三大核心功效",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一、三大核心功效",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1ojatsja",
+      "id": "5",
+      "name": "nav-1",
+      "bbox": [
+        176,
+        99,
+        285,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D4D7DB",
+      "lineColor": "#C6CBD1",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e18byd0z",
+      "id": "6",
+      "name": "nav-number-1",
+      "bbox": [
+        185,
+        105,
+        30,
+        30
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B0B5BC",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2hsri1k",
+      "id": "7",
+      "bbox": [
+        189,
+        107,
+        22,
+        26
+      ],
+      "geometry": "rect",
+      "text": "1",
+      "textPreview": "1",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#777E88",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#777E88",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1",
+              "fontSize": 17,
+              "color": "#777E88",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzutcri9",
+      "id": "8",
+      "name": "nav-label-1",
+      "bbox": [
+        220,
+        104,
+        233,
+        30
+      ],
+      "geometry": "rect",
+      "text": "专治甲流、乙流",
+      "textPreview": "专治甲流、乙流",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "专治甲流、乙流"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "专治甲流、乙流",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "专治甲流、乙流",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lk3u5cju",
+      "id": "9",
+      "name": "nav-2",
+      "bbox": [
+        473,
+        99,
+        300,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D4D7DB",
+      "lineColor": "#C6CBD1",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dkvm5sje",
+      "id": "10",
+      "name": "nav-number-2",
+      "bbox": [
+        482,
+        105,
+        30,
+        30
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B0B5BC",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cjmlwn29",
+      "id": "11",
+      "bbox": [
+        486,
+        107,
+        22,
+        26
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#777E88",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#777E88",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 17,
+              "color": "#777E88",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rid4321o",
+      "id": "12",
+      "name": "nav-label-2",
+      "bbox": [
+        517,
+        104,
+        248,
+        30
+      ],
+      "geometry": "rect",
+      "text": "全程1次，1天退热",
+      "textPreview": "全程1次，1天退热",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "全程1次，1天退热"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "全程1次，1天退热",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "全程1次，1天退热",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qh43uxk3",
+      "id": "13",
+      "name": "nav-3",
+      "bbox": [
+        785,
+        99,
+        330,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E98200",
+      "lineColor": "#F4A437",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pgvm1sji",
+      "id": "14",
+      "name": "nav-number-3",
+      "bbox": [
+        794,
+        105,
+        30,
+        30
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#E98200",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fmlsn2x",
+      "id": "15",
+      "bbox": [
+        798,
+        107,
+        22,
+        26
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#E98200",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#E98200",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 17,
+              "color": "#E98200",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ud4zi1c",
+      "id": "16",
+      "name": "nav-label-3",
+      "bbox": [
+        829,
+        104,
+        278,
+        30
+      ],
+      "geometry": "rect",
+      "text": "治疗自己，保护身边人",
+      "textPreview": "治疗自己，保护身边人",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "治疗自己，保护身边人"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "治疗自己，保护身边人",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "治疗自己，保护身边人",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2tk3qdkr",
+      "id": "17",
+      "name": "sample-label",
+      "bbox": [
+        1138,
+        28,
+        92,
+        28
+      ],
+      "geometry": "rect",
+      "text": "模板示例",
+      "textPreview": "模板示例",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#7E8DA1",
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "模板示例"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "模板示例",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#7E8DA1",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "模板示例",
+              "fontSize": 14,
+              "color": "#7E8DA1",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9cfmxcjm",
+      "id": "18",
+      "name": "review-footer",
+      "bbox": [
+        74,
+        675,
+        520,
+        24
+      ],
+      "geometry": "rect",
+      "text": "仅用于金样复刻验证 · 包装与医学内容待业务审核",
+      "textPreview": "仅用于金样复刻验证 · 包装与医学内容待业务审核",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#8A95A3",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅用于金样复刻验证 · 包装与医学内容待业务审核"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅用于金样复刻验证 · 包装与医学内容待业务审核",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#8A95A3",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅用于金样复刻验证 · 包装与医学内容待业务审核",
+              "fontSize": 13,
+              "color": "#8A95A3",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ob65472h",
+      "id": "19",
+      "name": "slide4-headline",
+      "bbox": [
+        84,
+        188,
+        560,
+        64
+      ],
+      "geometry": "rect",
+      "text": "治疗自己，保护身边人",
+      "textPreview": "治疗自己，保护身边人",
+      "resolvedFontSize": 41,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 41,
+        "typeface": "+mn-lt",
+        "color": "#123C78",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "治疗自己，保护身边人"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "治疗自己，保护身边人",
+          "resolvedTextStyle": {
+            "fontSize": 41,
+            "color": "#123C78",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "治疗自己，保护身边人",
+              "fontSize": 41,
+              "color": "#123C78",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87yxgfup",
+      "id": "20",
+      "name": "slide4-body",
+      "bbox": [
+        88,
+        258,
+        555,
+        66
+      ],
+      "geometry": "rect",
+      "text": "早期阻断流感传播，降低传染给家人的风险。",
+      "textPreview": "早期阻断流感传播，降低传染给家人的风险。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#465C75",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "早期阻断流感传播，降低传染给家人的风险。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "早期阻断流感传播，降低传染给家人的风险。",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#465C75",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "早期阻断流感传播，降低传染给家人的风险。",
+              "fontSize": 24,
+              "color": "#465C75",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t87ypkva",
+      "id": "21",
+      "name": "impact-callout",
+      "bbox": [
+        88,
+        364,
+        430,
+        130
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF5E9",
+      "lineColor": "#F6C27A",
+      "lineWidth": 2
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65gfe5cj",
+      "id": "22",
+      "bbox": [
+        116,
+        386,
+        220,
+        34
+      ],
+      "geometry": "rect",
+      "text": "本人尽早治疗",
+      "textPreview": "本人尽早治疗",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#E98200",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "本人尽早治疗"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本人尽早治疗",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#E98200",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本人尽早治疗",
+              "fontSize": 25,
+              "color": "#E98200",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/76pgnad4",
+      "id": "23",
+      "bbox": [
+        116,
+        427,
+        320,
+        38
+      ],
+      "geometry": "rect",
+      "text": "→ 传播链更早被截断",
+      "textPreview": "→ 传播链更早被截断",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#123C78",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→ 传播链更早被截断"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→ 传播链更早被截断",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#123C78",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "→ 传播链更早被截断",
+              "fontSize": 22,
+              "color": "#123C78",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zelw321k",
+      "id": "24",
+      "bbox": [
+        630,
+        170,
+        540,
+        470
+      ],
+      "geometry": "roundRect",
+      "alt": "康复成人与受到盾牌保护的多代家庭原创插画",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "imageMask": {
+        "geometry": "roundRect",
+        "adjustmentList": [
+          {
+            "name": "adj",
+            "formula": "val 3404"
+          }
+        ]
+      },
+      "asset": {
+        "assetId": "4b90042f-d6a5-4168-9c7f-3c366707943f",
+        "contentType": "image/png",
+        "byteLength": 1454561
+      }
+    }
+  ],
+  "composeRuns": []
+}

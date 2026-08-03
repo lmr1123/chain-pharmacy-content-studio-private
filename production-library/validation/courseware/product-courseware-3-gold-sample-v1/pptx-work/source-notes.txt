@@ -1,0 +1,16 @@
+User-provided reference source:
+- /Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4
+- Reference range: 00:14.84-00:44.04
+
+Project production-library sources:
+- template.product-training-faithful-v1
+- style-pack.reference-product-blue-v1
+- series.medication.generic-packshot-v1 (PoC only; must display 包装示意)
+
+Generated assets (built-in image generation, 2026-08-01):
+- assets/white-silk-medical-bg-v1.png
+  Prompt: elegant white silk medical courseware background, pearl gray folds, pale blue highlights, restrained orange edge accents, no text/logo/packaging.
+- assets/family-shield-v1.png
+  Prompt: East Asian multigenerational family inside navy shield, recovering adult at left, orange virus particles stopped outside, no text/logo/packaging.
+
+No external medical sources were introduced. Visible claims are faithful adaptations of the user-provided reference and require business/medical review before production use.

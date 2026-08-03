@@ -1,0 +1,785 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/z8a7pr",
+    "id": "z8a7pr",
+    "slide": 1,
+    "layoutId": "f905292c-a11d-46a4-b787-3937d8b2c3a5",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "6517ee06-6588-4cfa-900d-8fb33cf4074b",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#005B37",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "f905292c-a11d-46a4-b787-3937d8b2c3a5",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "6517ee06-6588-4cfa-900d-8fb33cf4074b",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "6517ee06-6588-4cfa-900d-8fb33cf4074b",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1kbi1c3",
+      "id": "1",
+      "name": "cover-orbit-large",
+      "bbox": [
+        720,
+        0,
+        560,
+        560
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#08754C",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xovudgbe",
+      "id": "2",
+      "name": "cover-orbit-small",
+      "bbox": [
+        870,
+        0,
+        410,
+        410
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#009944",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w3mtkbut",
+      "id": "3",
+      "name": "cover-mint-band",
+      "bbox": [
+        0,
+        620,
+        1280,
+        100
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F5EC",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nyts7mtc",
+      "id": "4",
+      "name": "cover-gold-mark",
+      "bbox": [
+        76,
+        90,
+        64,
+        6
+      ],
+      "geometry": "rect",
+      "fillColor": "#D5A72A",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mxkbehcr",
+      "id": "5",
+      "name": "cover-brand",
+      "bbox": [
+        76,
+        112,
+        330,
+        42
+      ],
+      "geometry": "rect",
+      "text": "大参林医药集团",
+      "textPreview": "大参林医药集团",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林医药集团"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林医药集团",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林医药集团",
+              "fontSize": 22,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/90ba9wbi",
+      "id": "6",
+      "name": "cover-eyebrow",
+      "bbox": [
+        76,
+        210,
+        370,
+        36
+      ],
+      "geometry": "rect",
+      "text": "商品知识 · 内部培训课件",
+      "textPreview": "商品知识 · 内部培训课件",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#CFE8D8",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "商品知识 · 内部培训课件"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "商品知识 · 内部培训课件",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#CFE8D8",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "商品知识 · 内部培训课件",
+              "fontSize": 18,
+              "color": "#CFE8D8",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8z2tgrux",
+      "id": "7",
+      "name": "cover-title",
+      "bbox": [
+        76,
+        258,
+        560,
+        100
+      ],
+      "geometry": "rect",
+      "text": "金银花露",
+      "textPreview": "金银花露",
+      "resolvedFontSize": 64,
+      "resolvedTextStyle": {
+        "fontSize": 64,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "金银花露"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "金银花露",
+          "resolvedTextStyle": {
+            "fontSize": 64,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "金银花露",
+              "fontSize": 64,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zu9s3mtg",
+      "id": "8",
+      "name": "cover-subtitle",
+      "bbox": [
+        80,
+        380,
+        600,
+        72
+      ],
+      "geometry": "rect",
+      "text": "从商品信息到销售应用，形成统一、清晰、可复用的培训表达",
+      "textPreview": "从商品信息到销售应用，形成统一、清晰、可复用的培训表达",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#E1F0E7",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "从商品信息到销售应用，形成统一、清晰、可复用的"
+          },
+          {
+            "index": 2,
+            "text": "培训表达"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "从商品信息到销售应用，形成统一、清晰、可复用的培训表达",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#E1F0E7",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "从商品信息到销售应用，形成统一、清晰、可复用的培训表达",
+              "fontSize": 24,
+              "color": "#E1F0E7",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yt0bahcv",
+      "id": "9",
+      "name": "cover-tagline",
+      "bbox": [
+        82,
+        520,
+        150,
+        48
+      ],
+      "geometry": "rect",
+      "text": "专业力",
+      "textPreview": "专业力",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#005B37",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "专业力"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "专业力",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#005B37",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "专业力",
+              "fontSize": 28,
+              "color": "#005B37",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#F7F2E8",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wzu5ob6l",
+      "id": "10",
+      "name": "cover-product-slot-shadow",
+      "bbox": [
+        858,
+        176,
+        278,
+        365
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D8E8DD",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x03mxgnq",
+      "id": "11",
+      "name": "cover-product-slot-surface",
+      "bbox": [
+        850,
+        166,
+        278,
+        365
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#C7DCCF",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/axcnm1of",
+      "id": "12",
+      "name": "cover-product-slot-halo",
+      "bbox": [
+        900.04,
+        235.35,
+        177.92,
+        177.92
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E9F5EC",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/byl4v650",
+      "id": "13",
+      "name": "cover-product-slot-label",
+      "bbox": [
+        875,
+        313.5,
+        228,
+        70
+      ],
+      "geometry": "rect",
+      "text": "商品包装高清图\n接入后自动替换",
+      "textPreview": "商品包装高清图 | 接入后自动替换",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#005B37",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "商品包装高清图"
+          },
+          {
+            "index": 2,
+            "text": "接入后自动替换"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "商品包装高清图",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#005B37",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "商品包装高清图",
+              "fontSize": 18,
+              "color": "#005B37",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "接入后自动替换",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#005B37",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "接入后自动替换",
+              "fontSize": 18,
+              "color": "#005B37",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ovu5kr69",
+      "id": "14",
+      "name": "cover-version",
+      "bbox": [
+        875,
+        552,
+        230,
+        34
+      ],
+      "geometry": "rect",
+      "text": "品牌化高级版签样",
+      "textPreview": "品牌化高级版签样",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#D6E9DE",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "品牌化高级版签样"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "品牌化高级版签样",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#D6E9DE",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "品牌化高级版签样",
+              "fontSize": 15,
+              "color": "#D6E9DE",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pw3mtwnu",
+      "id": "15",
+      "name": "brand-wordmark",
+      "bbox": [
+        1010,
+        27,
+        205,
+        34
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2tc3iho3",
+      "id": "16",
+      "name": "internal-notice",
+      "bbox": [
+        1060,
+        683,
+        170,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅供内部学习",
+      "textPreview": "仅供内部学习",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#5C7169",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅供内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅供内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#5C7169",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅供内部学习",
+              "fontSize": 13,
+              "color": "#5C7169",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

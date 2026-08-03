@@ -1,0 +1,21 @@
+{
+  "policy": "Main visuals must be AI bitmap or authorized photos; no SVG/PIL demo for characters, organs, food, cells, maps. Geometric shapes (arrows, cards, table borders) OK as CSS/simple shapes.",
+  "updated": "2026-08-02",
+  "assets": {
+    "tomato.png": "image_gen bitmap, white-key RGBA",
+    "prostate-diagram.png": "image_gen medical illustration, white-key RGBA",
+    "o2.png": "image_gen 3D-style icon, white-key RGBA",
+    "skincare-woman.png": "image_gen character illustration, white-key RGBA",
+    "nk-cell.png": "image_gen science illustration, white-key RGBA",
+    "flex-arm.png": "image_gen character prop illustration, white-key RGBA",
+    "softgel.png": "image_gen product illustration, white-key RGBA",
+    "five-tomatoes.png": "image_gen food illustration, white-key RGBA",
+    "map-xinjiang.png": "image_gen map graphic, white-key RGBA",
+    "couple.png": "image_gen character illustration, white-key RGBA",
+    "slot-photo-vine.png": "image_gen photoreal still (material slot)",
+    "slot-photo-tomato.png": "image_gen photoreal still (broll slot)",
+    "arrow-red.png": "shape bitmap allowed (geometry only)",
+    "slot-pack-*": "authorization placeholders, not brand packaging"
+  },
+  "rejected": "assets/generated/_demo_svg_pil_rejected/"
+}

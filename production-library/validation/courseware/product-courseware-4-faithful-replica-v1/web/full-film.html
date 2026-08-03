@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>福尔番茄红素 · 商品培训课件4 金样预览</title>
+<link rel="stylesheet" href="../../gold-samples/shared/preview.css" />
+<style>
+  :root {
+    --accent: #c9a227;
+    --orange2: #ffe33c;
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumb">
+      <a href="../../gold-samples/index.html">金样案例汇总</a>
+      · 福尔番茄红素软胶囊 · 商品培训课件4
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="badge">金样 · settled · 已签样</div>
+        <h1>福尔番茄红素软胶囊 · 商品培训课件4</h1>
+        <p class="sub">
+          通用四段式：章节跳转 → 整片视频 → 关键画面 → PPT 页截图。
+          视频 + 16 页可编辑 PPTX 已归档至
+          <code>templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/</code>。
+          包装 / Logo 为业务授权槽位（当前示意）。
+        </p>
+        <div class="meta">
+          <span class="chip">视频 · 约 156s · 1920×1080</span>
+          <span class="chip">PPT · 16 页</span>
+          <span class="chip">丝绸黄红</span>
+          <span class="chip">签样 2026-08-03</span>
+        </div>
+      </div>
+      <div class="actions" id="editorActions">
+        <a class="btn editor" id="btnOpenEditor" href="http://127.0.0.1:9012/" target="_blank" rel="noopener noreferrer">打开视频编辑器</a>
+        <a class="btn" href="media/courseware-settled.pptx" download>下载可编辑 PPT</a>
+        <a class="btn secondary" href="media/film.mp4" download>下载金样视频</a>
+      </div>
+    </header>
+
+    <section class="block" id="sec-chapters">
+      <div class="block-head">
+        <h2><span class="idx">1</span>章节跳转</h2>
+        <span class="hint">点选跳到对应时点并播放</span>
+      </div>
+      <div class="scene-tabs" id="tabs"></div>
+    </section>
+
+    <section class="block" id="sec-video" style="padding:0;overflow:hidden;">
+      <div class="block-head" style="padding:14px 14px 0;">
+        <h2><span class="idx">2</span>视频播放</h2>
+        <span class="hint">金样成片 · 可拖动进度</span>
+      </div>
+      <div class="player-card" style="border:0;border-radius:0;box-shadow:none;">
+        <div class="stage">
+          <video id="video" playsinline preload="metadata" poster="media/cover-product.png" src="media/film.mp4"></video>
+          <div class="caption-bar" id="caption"></div>
+        </div>
+        <div class="controls">
+          <button type="button" class="primary" id="btnPlay">播放</button>
+          <button type="button" id="btnRestart">从头</button>
+          <input class="seek" id="seek" type="range" min="0" max="156" step="0.05" value="0" />
+          <div class="clock" id="clock">0.00 / 156.00s</div>
+          <div class="scene-label" id="sceneLabel">当前章节：—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-thumbs">
+      <div class="block-head">
+        <h2><span class="idx">3</span>关键画面一览</h2>
+        <span class="hint">场景静帧 · 点击跳转</span>
+      </div>
+      <div class="thumb-grid" id="strip"></div>
+    </section>
+
+    <section class="block" id="sec-pptx">
+      <div class="block-head">
+        <h2><span class="idx">4</span>PPT 完整页截图</h2>
+        <span class="hint">可编辑课件 16 页 · 点击放大</span>
+      </div>
+      <div class="ppt-grid" id="pptGrid"></div>
+    </section>
+
+    <footer class="notes">
+      通用壳：<code>gold-samples/shared/preview.{css,js}</code>。
+      归档：<code>templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/</code>。
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="close">关闭</button>
+    <img id="lightboxImg" alt="PPT 页" />
+  </div>
+
+  <script>
+  window.GOLD_CASE = {
+    id: "fuler-fanqiehongsu-courseware4",
+    title: "福尔番茄红素软胶囊 · 商品培训课件4",
+    duration: 156.0,
+    editorUrl: "http://127.0.0.1:9012/",
+    editorLabel: "打开视频编辑器",
+    editorHint: "业务图层编辑 · 改字/换图/导出（需本机已启动 npm run start:editor）",
+    videoFallback: "media/film-settled.mp4",
+    scenes: [
+      { id: "S00_cover", start: 0.0, end: 2.0, label: "封面" },
+      { id: "S01_time_list", start: 2.0, end: 9.5, label: "TIME 榜单" },
+      { id: "S02_broll", start: 9.5, end: 16.5, label: "实拍供应" },
+      { id: "S03_product_intro", start: 16.5, end: 21.5, label: "商品引入" },
+      { id: "S04_benefit_1", start: 21.5, end: 34.5, label: "功效 · 前列腺" },
+      { id: "S05_benefit_2", start: 34.5, end: 49.0, label: "功效 · 抗衰老" },
+      { id: "S06_benefit_3", start: 49.0, end: 60.5, label: "功效 · 免疫" },
+      { id: "S07_origin", start: 60.5, end: 78.0, label: "特点 · 产地好" },
+      { id: "S08_material", start: 78.0, end: 91.0, label: "特点 · 原料优" },
+      { id: "S09_content", start: 91.0, end: 103.0, label: "特点 · 含量高" },
+      { id: "S10_audience", start: 103.0, end: 112.0, label: "适宜人群" },
+      { id: "S11_summary", start: 112.0, end: 124.0, label: "功效详表" },
+      { id: "S12_related_1", start: 124.0, end: 132.0, label: "关联用药 · 锌/硒" },
+      { id: "S13_related_2", start: 132.0, end: 140.0, label: "关联用药 · 维E" },
+      { id: "S14_summary_key", start: 140.0, end: 152.0, label: "总结 · 敲重点" },
+      { id: "S15_end", start: 152.0, end: 156.0, label: "封底" }
+    ],
+    thumbs: [
+      { t: 1.0, src: "media/stills/S00_cover.png", title: "封面", note: "商品主视觉" },
+      { t: 5.0, src: "media/stills/S01_time_list.png", title: "TIME 榜单", note: "健康食品" },
+      { t: 26.0, src: "media/stills/S04_benefit_1.png", title: "功效1", note: "前列腺" },
+      { t: 42.0, src: "media/stills/S05_benefit_2.png", title: "功效2", note: "抗衰老" },
+      { t: 68.0, src: "media/stills/S07_origin.png", title: "产地", note: "新疆番茄" },
+      { t: 96.0, src: "media/stills/S09_content.png", title: "含量高", note: "1 粒 = 5 番茄" },
+      { t: 106.0, src: "media/stills/S10_audience.png", title: "适宜人群", note: "四类人" },
+      { t: 128.0, src: "media/stills/S12_related_1.png", title: "关联用药", note: "锌/硒" },
+      { t: 145.0, src: "media/stills/S14_summary_key.png", title: "总结", note: "行标题" }
+    ],
+    slides: [
+      { src: "media/pptx-slides/slide-01.png", title: "封面", note: "PPT 第 1 页" },
+      { src: "media/pptx-slides/slide-02.png", title: "TIME 榜单", note: "PPT 第 2 页" },
+      { src: "media/pptx-slides/slide-03.png", title: "实拍供应", note: "PPT 第 3 页" },
+      { src: "media/pptx-slides/slide-04.png", title: "商品引入", note: "PPT 第 4 页" },
+      { src: "media/pptx-slides/slide-05.png", title: "功效 · 前列腺", note: "PPT 第 5 页" },
+      { src: "media/pptx-slides/slide-06.png", title: "功效 · 抗衰老", note: "PPT 第 6 页" },
+      { src: "media/pptx-slides/slide-07.png", title: "功效 · 免疫", note: "PPT 第 7 页" },
+      { src: "media/pptx-slides/slide-08.png", title: "特点 · 产地好", note: "PPT 第 8 页" },
+      { src: "media/pptx-slides/slide-09.png", title: "特点 · 原料优", note: "PPT 第 9 页" },
+      { src: "media/pptx-slides/slide-10.png", title: "特点 · 含量高", note: "PPT 第 10 页" },
+      { src: "media/pptx-slides/slide-11.png", title: "适宜人群", note: "PPT 第 11 页" },
+      { src: "media/pptx-slides/slide-12.png", title: "功效详表", note: "PPT 第 12 页" },
+      { src: "media/pptx-slides/slide-13.png", title: "关联用药 · 锌/硒", note: "PPT 第 13 页" },
+      { src: "media/pptx-slides/slide-14.png", title: "关联用药 · 维E", note: "PPT 第 14 页" },
+      { src: "media/pptx-slides/slide-15.png", title: "总结 · 敲重点", note: "PPT 第 15 页" },
+      { src: "media/pptx-slides/slide-16.png", title: "封底", note: "PPT 第 16 页" }
+    ],
+    captions: [
+      { start: 2.4, end: 5.0, text: "美国《时代杂志评选》的" },
+      { start: 5.0, end: 8.2, text: "“对人类健康贡献最大的10种健康食品”" },
+      { start: 8.2, end: 9.5, text: "其中番茄位列第一" },
+      { start: 9.8, end: 16.5, text: "通过深入了解，你们会发现为什么五星级酒店及欧美国家一日三餐都有番茄供应" },
+      { start: 16.5, end: 21.5, text: "我们今天就来学习福尔番茄红素软胶囊" },
+      { start: 21.8, end: 24.5, text: "1、保护前列腺、提高精子活力" },
+      { start: 34.8, end: 38.0, text: "2、抗氧化，延缓衰老" },
+      { start: 49.2, end: 51.0, text: "3、增强免疫力" },
+      { start: 60.6, end: 66.0, text: "产品特点 · 产地好" },
+      { start: 79.0, end: 80.5, text: "2、原料优" },
+      { start: 91.5, end: 93.0, text: "3、含量高" },
+      { start: 104.0, end: 112.0, text: "适宜人群" },
+      { start: 112.5, end: 124.0, text: "福尔番茄红素三大核心功效" },
+      { start: 125.0, end: 132.0, text: "关联用药 · 番茄红素+锌/硒" },
+      { start: 133.0, end: 140.0, text: "关联用药 · 番茄红素+维生素E" },
+      { start: 141.0, end: 152.0, text: "总结：核心功效 · 产品特点 · 适宜人群 · 关联用药" }
+    ]
+  };
+  </script>
+  <script src="../../gold-samples/shared/preview.js"></script>
+</body>
+</html>

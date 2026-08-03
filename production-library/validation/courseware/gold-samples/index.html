@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>培训课件 · 金样案例汇总</title>
+<link rel="stylesheet" href="shared/preview.css" />
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .section-title {
+    margin: 28px 0 12px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--dim);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,.1);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .card:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    transform: translateY(-2px);
+  }
+  .thumb {
+    display: block;
+    aspect-ratio: 16/9;
+    background: #f4f1ec;
+    overflow: hidden;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .body { padding: 14px 16px 16px; }
+  .tag { font-size: 11px; font-weight: 800; color: var(--orange2); margin-bottom: 6px; }
+  .body h2 { font-size: 16px; font-weight: 900; line-height: 1.35; margin-bottom: 6px; }
+  .body h2 a { color: inherit; text-decoration: none; }
+  .body p { font-size: 12px; color: var(--dim); line-height: 1.55; }
+  .howto {
+    margin-top: 28px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px dashed rgba(255,255,255,.14);
+    color: var(--dim);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .btn-row {
+    margin-top: 10px;
+    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .btn-row .btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+  .count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero" style="grid-template-columns:1fr;">
+      <div>
+        <div class="badge">GOLD SAMPLES</div>
+        <h1>培训课件 · 金样案例汇总</h1>
+        <p class="sub">
+          共 <strong style="color:#fff">6</strong> 个金样：
+          <strong style="color:#fff">商品培训课件 5</strong>（速福达、福尔番茄、辅酶 Q10、金银花露、穿心莲）+
+          <strong style="color:#fff">疾病科普课件 1</strong>（风热证）。
+          其中含可编辑视频入口：速福达 · 福尔番茄 · 辅酶 Q10 · 风热证。
+        </p>
+        <div class="meta" style="margin-top:10px;">
+          <span class="chip">商品培训 ×5</span>
+          <span class="chip">疾病科普 ×1</span>
+          <span class="chip">视频编辑器 ×4</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ① 商品培训课件 -->
+    <div class="section-title">商品培训课件 <span class="count">5</span></div>
+    <div class="grid">
+      <div class="card">
+        <a class="thumb" href="../sufuda-product-courseware-3-gold-v1/web/full-film.html">
+          <img src="../sufuda-product-courseware-3-gold-v1/web/media/cover-product.png" alt="速福达®玛巴洛沙韦 封面" />
+        </a>
+        <div class="body">
+          <div class="tag">商品培训 · 视频 + PPT · settled · 已签样</div>
+          <h2><a href="../sufuda-product-courseware-3-gold-v1/web/full-film.html">速福达® 玛巴洛沙韦</a></h2>
+          <p>抗流感培训整片 + 13 页可编辑 PPT。归档
+            <code>templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/</code>。
+          </p>
+          <div class="meta">
+            <span class="chip">视频 ~94s</span>
+            <span class="chip">PPT 13 页</span>
+            <span class="chip">编辑器 :9010</span>
+          </div>
+          <div class="meta btn-row">
+            <a class="btn editor" href="http://127.0.0.1:9010/" target="_blank" rel="noopener noreferrer" title="需本机已启动 npm run start:editor">打开视频编辑器</a>
+            <a class="btn secondary" href="../sufuda-product-courseware-3-gold-v1/web/full-film.html">整片预览</a>
+            <a class="btn secondary" href="../sufuda-product-courseware-3-gold-v1/web/media/courseware-settled.pptx" download>下载 PPTX</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <a class="thumb" href="../product-courseware-4-faithful-replica-v1/web/full-film.html">
+          <img src="../product-courseware-4-faithful-replica-v1/web/media/cover-product.png" alt="福尔番茄红素软胶囊 封面" />
+        </a>
+        <div class="body">
+          <div class="tag">商品培训 · 视频 + PPT · settled · 已签样</div>
+          <h2><a href="../product-courseware-4-faithful-replica-v1/web/full-film.html">福尔番茄红素软胶囊</a></h2>
+          <p>保真复刻全片 + 15 页原生可编辑 PPTX（适宜人群→关联用药→功效总表；编辑器可播动效）。归档
+            <code>templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/</code>。
+          </p>
+          <div class="meta">
+            <span class="chip">视频 ~156.7s</span>
+            <span class="chip">PPT 15 页</span>
+            <span class="chip">编辑器 :9012</span>
+          </div>
+          <div class="meta btn-row">
+            <a class="btn editor" href="http://127.0.0.1:9012/" target="_blank" rel="noopener noreferrer" title="需本机已启动 npm run start:editor">打开视频编辑器</a>
+            <a class="btn secondary" href="../product-courseware-4-faithful-replica-v1/web/full-film.html">整片预览</a>
+            <a class="btn secondary" href="../product-courseware-4-faithful-replica-v1/web/media/courseware-settled.pptx" download>下载 PPTX</a>
+            <a class="btn secondary" href="../product-courseware-4-faithful-replica-v1/web/media/film.mp4" download>下载 MP4</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <a class="thumb" href="product-q10-video-gold-v1/web/full-film.html">
+          <img src="product-q10-video-gold-v1/web/media/cover-product.png" alt="辅酶Q10 商品培训视频" />
+        </a>
+        <div class="body">
+          <div class="tag">商品培训 · 视频 · settled · 已签样 · 可复用模板</div>
+          <h2><a href="product-q10-video-gold-v1/web/full-film.html">辅酶 Q10 · 商品培训视频</a></h2>
+          <p>正式视频金样。156s 完整复刻终版（template.product-training-faithful-v1）；大参林品牌壳扩展已确认可复用。</p>
+          <div class="meta">
+            <span class="chip">视频 ~156s</span>
+            <span class="chip">可复用模板</span>
+            <span class="chip">业务编辑器 :9001</span>
+          </div>
+          <div class="meta btn-row">
+            <a class="btn editor" href="http://127.0.0.1:9001/" target="_blank" rel="noopener noreferrer" title="需本机已启动：cd poc/gold-sample && npm run start:q10-editable">打开视频编辑器</a>
+            <a class="btn secondary" href="product-q10-video-gold-v1/web/full-film.html">整片预览</a>
+            <a class="btn secondary" href="../../video/review-q10-dashenlin.html">大参林扩展审片</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <a class="thumb" href="jinyinhualu-pptx-gold-v1/web/preview.html">
+          <img src="jinyinhualu-pptx-gold-v1/web/media/cover-product.png" alt="金银花露 绿色商品培训课件" />
+        </a>
+        <div class="body">
+          <div class="tag">商品培训 · PPT · settled · 已签样</div>
+          <h2><a href="jinyinhualu-pptx-gold-v1/web/preview.html">金银花露 · 商品培训课件</a></h2>
+          <p>五页绿色原版式可编辑 PPTX（template.product-courseware-dashenlin-green-v1）。</p>
+          <div class="meta">
+            <span class="chip">PPT 5 页</span>
+            <span class="chip">可编辑</span>
+            <span class="chip">approved</span>
+          </div>
+          <div class="meta btn-row">
+            <a class="btn secondary" href="jinyinhualu-pptx-gold-v1/web/preview.html">页面预览</a>
+            <a class="btn secondary" href="jinyinhualu-pptx-gold-v1/web/media/deck.pptx" download>下载 PPTX</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <a class="thumb" href="chuanxinlian-pptx-gold-v1/web/preview.html">
+          <img src="chuanxinlian-pptx-gold-v1/web/media/cover-product.png" alt="穿心莲内酯滴丸 疾病场景课件" />
+        </a>
+        <div class="body">
+          <div class="tag">商品培训 · PPT · settled · 已签样</div>
+          <h2><a href="chuanxinlian-pptx-gold-v1/web/preview.html">穿心莲内酯滴丸 · 疾病辨证与商品场景</a></h2>
+          <p>十八页疾病辨证 / 商品知识 / 销售场景可编辑 PPTX（template.dashenlin-disease-product-scenario-v1）。</p>
+          <div class="meta">
+            <span class="chip">PPT 18 页</span>
+            <span class="chip">可编辑</span>
+            <span class="chip">approved</span>
+          </div>
+          <div class="meta btn-row">
+            <a class="btn secondary" href="chuanxinlian-pptx-gold-v1/web/preview.html">页面预览</a>
+            <a class="btn secondary" href="chuanxinlian-pptx-gold-v1/web/media/deck.pptx" download>下载 PPTX</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 疾病科普课件 -->
+    <div class="section-title">疾病科普课件 <span class="count">1</span></div>
+    <div class="grid">
+      <div class="card">
+        <a class="thumb" href="wind-heat-video-gold-v1/web/full-film.html">
+          <img src="wind-heat-video-gold-v1/web/media/cover-product.jpg" alt="风热证 健康知识视频" />
+        </a>
+        <div class="body">
+          <div class="tag">疾病科普 · 视频 · settled · 可编辑可复用</div>
+          <h2><a href="wind-heat-video-gold-v1/web/full-film.html">风热证 · 健康知识视频培训</a></h2>
+          <p>正式视频金样。181s 全片对照基线（template.health-reference-tech-v1）；业务图层可编辑、可另存模板版本。</p>
+          <div class="meta">
+            <span class="chip">视频 181s</span>
+            <span class="chip">可复用模板</span>
+            <span class="chip">业务编辑器 :9000</span>
+          </div>
+          <div class="meta btn-row">
+            <a class="btn editor" href="http://127.0.0.1:9000/" target="_blank" rel="noopener noreferrer" title="需本机已启动：cd poc/gold-sample && npm run start:wind-heat-editable">打开视频编辑器</a>
+            <a class="btn secondary" href="wind-heat-video-gold-v1/web/full-film.html">整片预览</a>
+            <a class="btn secondary" href="wind-heat-video-gold-v1/web/media/film.mp4" download>下载 MP4</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="howto">
+      <strong style="color:#fff">清单说明</strong><br />
+      · <strong>分类</strong>：商品培训课件 5 套（速福达、福尔番茄、辅酶 Q10、金银花露、穿心莲）+ 疾病科普课件 1 套（风热证）。<br />
+      · <strong>视频编辑器</strong>（需本机先启动对应服务，再点「打开视频编辑器」）：<br />
+      &nbsp;&nbsp;风热证 · <code>cd poc/gold-sample && npm run start:wind-heat-editable</code> → <code>http://127.0.0.1:9000/</code><br />
+      &nbsp;&nbsp;辅酶 Q10 · <code>cd poc/gold-sample && npm run start:q10-editable</code> → <code>http://127.0.0.1:9001/</code>（业务插件 · 画面属性面板 · <code>editable:q10:*</code>）<br />
+      &nbsp;&nbsp;速福达 · <code>cd …/sufuda-product-courseware-3-gold-v1 && npm run start:editor</code> → <code>:9010</code><br />
+      &nbsp;&nbsp;福尔番茄 · <code>cd …/product-courseware-4-faithful-replica-v1 && npm run start:editor</code> → <code>:9012</code><br />
+      · 视频预览：章节跳转 · 播放 · 关键画面；PPT 金样以逐页截图 + 下载 PPTX 为主。<br />
+      · 共享样式：<code>gold-samples/shared/preview.css</code> + <code>preview.js</code>。<br />
+      · 权威产物：<code>production-library/templates/settled/</code>；注册表：<code>registries/templates.json</code>。
+    </div>
+
+    <footer class="notes">
+      汇总：<code>production-library/validation/courseware/gold-samples/index.html</code>
+      · 权威产物目录：<code>production-library/templates/settled/</code>
+    </footer>
+  </div>
+</body>
+</html>

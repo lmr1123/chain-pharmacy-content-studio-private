@@ -1,0 +1,50 @@
+{
+  "project_id": "validation.kekang-pfizer-framework-v1",
+  "theme_id": "theme.product.kekang-lingzhi-capsule",
+  "reference_framework": "pfizer-antacid-h2-ppi-v1:F01-F10",
+  "status": "content-review-required",
+  "production_binding": null,
+  "binding_note": "Current registered binding is blue video; green PPTX style cannot be mixed into the video template. Bind a single green video style pack only after a full user-approved gold sample.",
+  "content_sources": [
+    "production-library/themes/kekang-lingzhi-capsule/refs/01-认识灵芝-多糖三萜.png",
+    "production-library/themes/kekang-lingzhi-capsule/refs/02-认识灵芝-作用.png",
+    "production-library/themes/kekang-lingzhi-capsule/refs/03-功效及适应人群.png",
+    "production-library/themes/kekang-lingzhi-capsule/refs/04-产品卖点.png",
+    "production-library/themes/kekang-lingzhi-capsule/refs/05-联合用药-失眠护肝.png",
+    "production-library/themes/kekang-lingzhi-capsule/refs/06-联合用药-免疫.png",
+    "production-library/themes/kekang-lingzhi-capsule/refs/09-总结.png"
+  ],
+  "global_blocks": [
+    "pharmacist_compliance_review",
+    "authorized_kekang_packshot",
+    "authorized_combination_packshots",
+    "product_label_or_leaflet",
+    "claim_evidence",
+    "approved_green_video_gold_sample"
+  ],
+  "scenes": [
+    {"id":"K01","title":"产品与课程开场","recipes":["F10"],"source_refs":["04"],"status":"asset-blocked","slots":["product_name","training_label","course_goal","authorized_packshot"]},
+    {"id":"K02","title":"三类状态总览","recipes":["F01","F03"],"source_refs":["03","09"],"status":"medical-blocked","slots":["sleep_state","liver_state","immune_state"]},
+    {"id":"K03","title":"失眠状态","recipes":["F02"],"source_refs":["03","05"],"status":"medical-blocked","slots":["state_sequence","approved_terms","result_label"]},
+    {"id":"K04","title":"饮酒与肝脏负担","recipes":["F02"],"source_refs":["03","05"],"status":"medical-blocked","slots":["life_context","approved_internal_change","result_label"]},
+    {"id":"K05","title":"免疫力低下状态","recipes":["F02"],"source_refs":["03","06"],"status":"medical-blocked","slots":["state_sequence","approved_terms","result_label"]},
+    {"id":"K06","title":"三大产品方向","recipes":["F03","F08"],"source_refs":["03","09"],"status":"medical-blocked","slots":["sleep_direction","liver_direction","immune_direction"]},
+    {"id":"K07","title":"产品身份与功能主治","recipes":["F10"],"source_refs":["04"],"status":"asset-and-medical-blocked","slots":["authorized_packshot","otc_mark","specification","approved_indications"]},
+    {"id":"K08","title":"两类核心成分","recipes":["F03"],"source_refs":["01","09"],"status":"source-aligned-review-required","slots":["polysaccharide_label","triterpene_label","neutral_icons"]},
+    {"id":"K09","title":"灵芝多糖","recipes":["F04"],"source_refs":["01"],"status":"high-risk-medical-blocked","slots":["approved_polysaccharide_claims","approved_path","short_label"]},
+    {"id":"K10","title":"灵芝三萜","recipes":["F04"],"source_refs":["01"],"status":"high-risk-medical-blocked","slots":["approved_triterpene_claims","approved_path","short_label"]},
+    {"id":"K11","title":"成分与三大方向对应","recipes":["F06","F08"],"source_refs":["03"],"status":"medical-blocked","slots":["approved_relations","result_labels"]},
+    {"id":"K12","title":"产地与含量","recipes":["F08"],"source_refs":["04"],"status":"evidence-and-asset-blocked","slots":["origin","polysaccharide_value","triterpene_statement","authorized_origin_asset","evidence"]},
+    {"id":"K13","title":"双重提取工艺","recipes":["F04","F08"],"source_refs":["04"],"status":"evidence-blocked","slots":["approved_process_steps","patent_evidence","dosage_form"]},
+    {"id":"K14","title":"生产与质量","recipes":["F08"],"source_refs":["04"],"status":"evidence-and-asset-blocked","slots":["manufacturer","gmp_evidence","authorized_factory_assets"]},
+    {"id":"K15","title":"联合应用总览","recipes":["F03"],"source_refs":["05","06"],"status":"high-risk-medical-and-asset-blocked","slots":["sleep_combo","liver_combo","immune_combo","authorized_packshots"]},
+    {"id":"K16","title":"三套联合方案解释","recipes":["F04","F08"],"source_refs":["05","06"],"status":"high-risk-medical-and-asset-blocked","slots":["approved_combo_logic","approved_cautions","authorized_packshots"]},
+    {"id":"K17","title":"建议服用周期","recipes":["F07"],"source_refs":["09"],"status":"medical-blocked","slots":["approved_cycle","approved_duration","approved_cautions"]},
+    {"id":"K18","title":"六维总结与品牌封底","recipes":["F09","F10"],"source_refs":["09"],"status":"content-and-asset-blocked","slots":["ingredients","directions","audiences","features","combinations","cycle","authorized_packshot","authorized_logo"]}
+  ],
+  "excluded_recipe": {
+    "id": "F05",
+    "reason": "No approved receptor or molecular target relationship exists in current source material; do not invent one."
+  }
+}
+

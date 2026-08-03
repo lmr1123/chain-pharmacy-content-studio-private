@@ -1,0 +1,69 @@
+{
+  "component_id": "symptom.fever",
+  "name_zh": "发热",
+  "category": "symptom",
+  "style_id": "pharmacy-health-cartoon-v1",
+  "status": "selected",
+  "version": "1.0.0",
+  "canvas": {
+    "aspect_ratio": "1:1",
+    "minimum_width": 1024,
+    "minimum_height": 1024,
+    "safe_margin_percent": 10
+  },
+  "semantic_requirements": [
+    "单人正面或近正面上半身",
+    "额头和面颊潮红",
+    "疲惫或不适表情",
+    "少量汗滴",
+    "热浪符号"
+  ],
+  "forbidden_elements": [
+    "文字",
+    "Logo",
+    "水印",
+    "医疗诊断结论",
+    "参考视频像素",
+    "恐怖或夸张痛苦表达"
+  ],
+  "candidates": [
+    {
+      "id": "A",
+      "file": "candidates/fever-a-faithful-polished.png",
+      "width": 1254,
+      "height": 1254,
+      "direction": "忠实参考、较精细的二维赛璐璐"
+    },
+    {
+      "id": "B",
+      "file": "candidates/fever-b-flat-friendly.png",
+      "width": 1254,
+      "height": 1254,
+      "direction": "扁平亲和、最接近批量科普动画组件"
+    },
+    {
+      "id": "C",
+      "file": "candidates/fever-c-rounded-premium.png",
+      "width": 1254,
+      "height": 1254,
+      "direction": "圆润高级、适合扩展统一角色比例"
+    }
+  ],
+  "generation": {
+    "mode": "built-in image generation",
+    "reference_role": "style and symptom-expression reference only",
+    "reference_pixels_allowed_in_master": false,
+    "prompt_file": "prompts/fever-signoff.md"
+  },
+  "selected_master": {
+    "candidate_id": "B",
+    "master": "master/fever-v1.png",
+    "transparent": "transparent/fever-v1.png",
+    "thumbnail": "thumbnails/fever-v1.png"
+  },
+  "reviews": {
+    "visual": "selected-by-user",
+    "medical": "pending",
+    "legal_source": "generated-new-artwork"
+  }
+}

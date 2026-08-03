@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "theme_id": "theme.demo-product-b-structure-v1",
+  "slug": "demo-product-b-courseware-v1",
+  "output": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/demo-product-b-courseware-v1",
+  "pptx": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/demo-product-b-courseware-v1/out/demo-product-b-courseware-v1_可编辑课件.pptx",
+  "gaps": [
+    {
+      "type": "asset_missing",
+      "asset_key": "logo",
+      "detail": "主题包未提供授权资产，保留金样示意或槽位"
+    },
+    {
+      "type": "asset_missing",
+      "asset_key": "packGroup",
+      "detail": "主题包未提供授权资产，保留金样示意或槽位"
+    },
+    {
+      "type": "business_asset_pending",
+      "asset_key": "packGroup",
+      "detail": "需业务提供授权包装/Logo 后替换"
+    }
+  ],
+  "gap_count": 3,
+  "next_steps": [
+    "用业务授权包装/Logo 替换 public/assets 槽位图",
+    "核对 content-model 文案是否与审核稿一致",
+    "去掉 --skip-tts 生成克隆旁白后 npm run render",
+    "业务确认前不要晋升到 templates/settled/"
+  ]
+}

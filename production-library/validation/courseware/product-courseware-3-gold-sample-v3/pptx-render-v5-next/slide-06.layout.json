@@ -1,0 +1,927 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/uur3a7",
+    "id": "uur3a7",
+    "slide": 6,
+    "layoutId": "56fd58d1-90da-4dc4-92a6-1b6ce1287d5e",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "78a79693-4cdc-4f88-9870-c03a99f54c59",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "56fd58d1-90da-4dc4-92a6-1b6ce1287d5e",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "78a79693-4cdc-4f88-9870-c03a99f54c59",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "78a79693-4cdc-4f88-9870-c03a99f54c59",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/4zyp87ax",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "原创白色珍珠丝绸背景",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "3b26c0ca-1af3-4455-be36-98199707f234",
+        "contentType": "image/png",
+        "byteLength": 1386415
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mlwve54n",
+      "id": "2",
+      "bbox": [
+        405,
+        54,
+        80,
+        55
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#D36D00",
+      "lineColor": "#D36D00",
+      "lineWidth": 1
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nm5w7al8",
+      "id": "3",
+      "bbox": [
+        795,
+        54,
+        80,
+        55
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#D36D00",
+      "lineColor": "#D36D00",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0zudcvmh",
+      "id": "4",
+      "name": "chapter-ribbon",
+      "bbox": [
+        438,
+        43,
+        404,
+        70
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F28A00",
+      "lineColor": "#D36D00",
+      "lineWidth": 2
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/103e5032",
+      "id": "5",
+      "name": "chapter-title",
+      "bbox": [
+        468,
+        48,
+        344,
+        58
+      ],
+      "geometry": "rect",
+      "text": "三、适宜人群",
+      "textPreview": "三、适宜人群",
+      "resolvedFontSize": 38,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 38,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "三、适宜人群"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "三、适宜人群",
+          "resolvedTextStyle": {
+            "fontSize": 38,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "三、适宜人群",
+              "fontSize": 38,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/excva54r",
+      "id": "6",
+      "bbox": [
+        1090,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "速",
+      "textPreview": "速",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "速"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "速",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "速",
+              "fontSize": 34,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zylc3qlc",
+      "id": "7",
+      "bbox": [
+        1132,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "福",
+      "textPreview": "福",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#F28A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "福"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "福",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#F28A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "福",
+              "fontSize": 34,
+              "color": "#F28A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvud8vml",
+      "id": "8",
+      "bbox": [
+        1174,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "达",
+      "textPreview": "达",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "达"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "达",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "达",
+              "fontSize": 34,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dw3u1036",
+      "id": "9",
+      "bbox": [
+        1086,
+        62,
+        145,
+        23
+      ],
+      "geometry": "rect",
+      "text": "（玛巴洛沙韦）",
+      "textPreview": "（玛巴洛沙韦）",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "（玛巴洛沙韦）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "（玛巴洛沙韦）",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "（玛巴洛沙韦）",
+              "fontSize": 13,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/50f21wbi",
+      "id": "10",
+      "bbox": [
+        125,
+        138,
+        1030,
+        54
+      ],
+      "geometry": "rect",
+      "text": "5岁及以上的既往健康或存在流感并发症高风险的单纯性甲型或乙型流感患者",
+      "textPreview": "5岁及以上的既往健康或存在流感并发症高风险的单纯性甲型或乙型流感患者",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5岁及以上的既往健康或存在流感并发症高风险的单纯性甲型或乙型流感患者"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5岁及以上的既往健康或存在流感并发症高风险的单纯性甲型或乙型流感患者",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5岁及以上的既往健康或存在流感并发症高风险的单纯性甲型或乙型流感患者",
+              "fontSize": 27,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kz618rax",
+      "id": "11",
+      "name": "audience-elder-card",
+      "bbox": [
+        55,
+        215,
+        330,
+        405
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(255, 255, 255, 0.88)",
+      "lineColor": "#E5E7EB",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/w76dk7mt",
+      "id": "12",
+      "bbox": [
+        116,
+        235,
+        205,
+        310
+      ],
+      "alt": "老年人（≥65岁）",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "0c471643-91cc-4e9a-a2f6-3a564ac38c25",
+        "contentType": "image/png",
+        "byteLength": 848432
+      }
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixoj6hsr",
+      "id": "13",
+      "bbox": [
+        70,
+        548,
+        300,
+        58
+      ],
+      "geometry": "rect",
+      "text": "老年人（≥65岁）",
+      "textPreview": "老年人（≥65岁）",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "老年人（≥65岁）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "老年人（≥65岁）",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "老年人（≥65岁）",
+              "fontSize": 24,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xwf2xcb6",
+      "id": "14",
+      "name": "audience-child-card",
+      "bbox": [
+        430,
+        215,
+        330,
+        405
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(255, 255, 255, 0.88)",
+      "lineColor": "#E5E7EB",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/juxwv2l4",
+      "id": "15",
+      "bbox": [
+        490,
+        235,
+        210,
+        310
+      ],
+      "alt": "学龄期儿童\n（5岁及以上）",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "a256d719-f34a-4ab6-9dbc-0ade355621db",
+        "contentType": "image/png",
+        "byteLength": 665671
+      }
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vaxkv2t0",
+      "id": "16",
+      "bbox": [
+        445,
+        548,
+        300,
+        58
+      ],
+      "geometry": "rect",
+      "text": "学龄期儿童\n（5岁及以上）",
+      "textPreview": "学龄期儿童 | （5岁及以上）",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "学龄期儿童"
+          },
+          {
+            "index": 2,
+            "text": "（5岁及以上）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "学龄期儿童",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "学龄期儿童",
+              "fontSize": 24,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "（5岁及以上）",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "（5岁及以上）",
+              "fontSize": 24,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a94j2xsv",
+      "id": "17",
+      "name": "audience-chronic-card",
+      "bbox": [
+        805,
+        215,
+        420,
+        405
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(255, 255, 255, 0.88)",
+      "lineColor": "#E5E7EB",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/exkvad4f",
+      "id": "18",
+      "bbox": [
+        825,
+        260,
+        380,
+        270
+      ],
+      "alt": "自身有基础性疾病的慢病患者",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "bce71e33-12a9-4b46-acb0-0f79e7d526e8",
+        "contentType": "image/png",
+        "byteLength": 1230162
+      }
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87m107up",
+      "id": "19",
+      "bbox": [
+        820,
+        548,
+        390,
+        58
+      ],
+      "geometry": "rect",
+      "text": "自身有基础性疾病的慢病患者",
+      "textPreview": "自身有基础性疾病的慢病患者",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "自身有基础性疾病的慢病患者"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "自身有基础性疾病的慢病患者",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "自身有基础性疾病的慢病患者",
+              "fontSize": 22,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0bqlg72l",
+      "id": "20",
+      "bbox": [
+        285,
+        650,
+        710,
+        42
+      ],
+      "geometry": "rect",
+      "text": "特别关注：老年人、学龄期儿童及慢病患者",
+      "textPreview": "特别关注：老年人、学龄期儿童及慢病患者",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#171717",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "特别关注：老年人、学龄期儿童及慢病患者"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "特别关注：老年人、学龄期儿童及慢病患者",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#171717",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "特别关注：老年人、学龄期儿童及慢病患者",
+              "fontSize": 28,
+              "color": "#171717",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

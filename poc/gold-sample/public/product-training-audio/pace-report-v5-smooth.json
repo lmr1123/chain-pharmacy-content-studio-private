@@ -1,0 +1,159 @@
+[
+  {
+    "stem": "product-training-opening",
+    "duration": 19.014333333333333,
+    "reports": [
+      {
+        "text": "在快节奏的现代生活中，心脏长期面临压力与消耗，其核心动力源于心肌细胞的能量代谢，辅酶Q10是存在于每个细胞，尤其是心脏中的关键物质，它直接参与细胞能量的合成，随着年龄增长、身体透支等原因，人体自身合成的辅酶Q10会减少。",
+        "raw_duration": 21.862,
+        "used_duration": 18.854,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 17.241,
+        "policy": "default-brisk-1.16",
+        "gate": "ok",
+        "index": 0,
+        "mode": "full-segment-continuous",
+        "joined_text": "在快节奏的现代生活中，心脏长期面临压力与消耗，其核心动力源于心肌细胞的能量代谢，辅酶Q10是存在于每个细胞，尤其是心脏中的关键物质，它直接参与细胞能量的合成，随着年龄增长、身体透支等原因，人体自身合成的辅酶Q10会减少。"
+      }
+    ]
+  },
+  {
+    "stem": "product-training-faithful",
+    "duration": 23.14720833333333,
+    "reports": [
+      {
+        "text": "一旦缺乏，心肌细胞能量生产下降，可导致收缩力减弱，引发一系列症状，如易疲劳、乏力、活动后心慌气短、胸闷、心悸等不适，因此，它常用于慢性心力衰竭、心肌炎、心绞痛的辅助治疗，以改善心肌代谢，辅酶Q10作为常用辅酶制剂，直接补充这一关键物质，从细胞层面优化心肌能量代谢，为心脏健康提供支持。",
+        "raw_duration": 26.659,
+        "used_duration": 22.987,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 22.257,
+        "policy": "default-brisk-1.16",
+        "gate": "ok",
+        "index": 0,
+        "mode": "full-segment-continuous",
+        "joined_text": "一旦缺乏，心肌细胞能量生产下降，可导致收缩力减弱，引发一系列症状，如易疲劳、乏力、活动后心慌气短、胸闷、心悸等不适，因此，它常用于慢性心力衰竭、心肌炎、心绞痛的辅助治疗，以改善心肌代谢，辅酶Q10作为常用辅酶制剂，直接补充这一关键物质，从细胞层面优化心肌能量代谢，为心脏健康提供支持。"
+      }
+    ]
+  },
+  {
+    "stem": "product-training-brand-overview",
+    "duration": 13.296875,
+    "reports": [
+      {
+        "text": "今天给大家介绍的，连锁药店在售的辅酶Q10相关商品，它源自诺贝尔奖相关成果，是维持生命活力的关键物质，精准覆盖心脏保护，辅助生殖活力提升等核心场景，两大核心功效。",
+        "raw_duration": 15.228,
+        "used_duration": 13.137,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 12.696,
+        "policy": "default-brisk-1.16",
+        "gate": "ok",
+        "index": 0,
+        "mode": "full-segment-continuous",
+        "joined_text": "今天给大家介绍的，连锁药店在售的辅酶Q10相关商品，它源自诺贝尔奖相关成果，是维持生命活力的关键物质，精准覆盖心脏保护，辅助生殖活力提升等核心场景，两大核心功效。"
+      }
+    ]
+  },
+  {
+    "stem": "product-training-efficacy",
+    "duration": 32.100541666666665,
+    "reports": [
+      {
+        "text": "1、促进能量生成，辅酶Q10是细胞线粒体内ATP合成的关键辅酶，是能量ATP生成的开关，可提高组织器官功能，改善因缺乏能量导致的胸闷、气短、心痛、运动耐力下降、亚健康等症状，2、抗氧化，减少组织细胞损伤，辅酶Q10可直接抗氧化，也可恢复维E等抗氧化物质活性，其抗氧化能力是维E的50倍，可保护组织器官，治疗不孕不育、心功能损伤、皮肤衰老等问题，产品特点。",
+        "raw_duration": 37.055,
+        "used_duration": 31.941,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 27.743,
+        "policy": "default-brisk-1.16",
+        "gate": "ok",
+        "index": 0,
+        "mode": "full-segment-continuous",
+        "joined_text": "1、促进能量生成，辅酶Q10是细胞线粒体内ATP合成的关键辅酶，是能量ATP生成的开关，可提高组织器官功能，改善因缺乏能量导致的胸闷、气短、心痛、运动耐力下降、亚健康等症状，2、抗氧化，减少组织细胞损伤，辅酶Q10可直接抗氧化，也可恢复维E等抗氧化物质活性，其抗氧化能力是维E的50倍，可保护组织器官，治疗不孕不育、心功能损伤、皮肤衰老等问题，产品特点。"
+      }
+    ]
+  },
+  {
+    "stem": "product-training-features",
+    "duration": 29.834583333333335,
+    "reports": [
+      {
+        "text": "产品特点：1、原研工艺，锁住活性，辅酶Q10遇光易失活，通过避光工艺与稳定制剂技术，杜绝分解，牢牢锁活，保障核心治疗效果，2、海外原料，提升品质，甄选进口大品牌原料，产品纯度高、杂质少，兼顾更优治疗效果与安全性，3、医疗背书，50年临床验证，院端市占率90%，是千万医生的安心之选，医生都在吃的辅酶Q10，适宜人群。",
+        "raw_duration": 34.416,
+        "used_duration": 29.675,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 24.765,
+        "policy": "default-brisk-1.16",
+        "gate": "ok",
+        "index": 0,
+        "mode": "full-segment-continuous",
+        "joined_text": "产品特点：1、原研工艺，锁住活性，辅酶Q10遇光易失活，通过避光工艺与稳定制剂技术，杜绝分解，牢牢锁活，保障核心治疗效果，2、海外原料，提升品质，甄选进口大品牌原料，产品纯度高、杂质少，兼顾更优治疗效果与安全性，3、医疗背书，50年临床验证，院端市占率90%，是千万医生的安心之选，医生都在吃的辅酶Q10，适宜人群。"
+      }
+    ]
+  },
+  {
+    "stem": "product-training-audience",
+    "duration": 10.421916666666666,
+    "reports": [
+      {
+        "text": "适宜人群，1、顽固心慌、胸闷、气短的心血管人群，2、常服他汀出现肌肉疲劳、疼痛的人群，3、备孕男女，联合用药。",
+        "raw_duration": 11.92,
+        "used_duration": 10.262,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 8.621,
+        "policy": "default-brisk-1.16",
+        "gate": "ok",
+        "index": 0,
+        "mode": "full-segment-continuous",
+        "joined_text": "适宜人群，1、顽固心慌、胸闷、气短的心血管人群，2、常服他汀出现肌肉疲劳、疼痛的人群，3、备孕男女，联合用药。"
+      }
+    ]
+  },
+  {
+    "stem": "product-training-combination",
+    "duration": 28.795166666666667,
+    "reports": [
+      {
+        "text": "联合用药：1、复方丹参滴丸＋辅酶Q10，话术：服用丹参滴丸之后，仍存在顽固心慌、胸闷、气短问题，这是心肌缺能量，辅酶Q10可营养心肌，提高心功能，给心脏充能，解决顽固心慌、胸闷、气短症状，2、他汀＋辅酶Q10，话术：长期服用他汀会引起肌肉疲劳、疼痛，这是他汀抑制了肌肉内的辅酶Q10合成导致的，辅酶Q10可缓解长期服用他汀引发的疲劳、肌痛问题。",
+        "raw_duration": 33.216,
+        "used_duration": 28.635,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 26.959,
+        "policy": "default-brisk-1.16",
+        "gate": "ok",
+        "index": 0,
+        "mode": "full-segment-continuous",
+        "joined_text": "联合用药：1、复方丹参滴丸＋辅酶Q10，话术：服用丹参滴丸之后，仍存在顽固心慌、胸闷、气短问题，这是心肌缺能量，辅酶Q10可营养心肌，提高心功能，给心脏充能，解决顽固心慌、胸闷、气短症状，2、他汀＋辅酶Q10，话术：长期服用他汀会引起肌肉疲劳、疼痛，这是他汀抑制了肌肉内的辅酶Q10合成导致的，辅酶Q10可缓解长期服用他汀引发的疲劳、肌痛问题。"
+      }
+    ]
+  },
+  {
+    "stem": "product-training-summary",
+    "duration": 4.486083333333333,
+    "reports": [
+      {
+        "text": "大参林内部培训 · 辅酶Q10 商品知识",
+        "raw_duration": 4.8,
+        "used_duration": 4.136,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 2.665,
+        "policy": "default-brisk-1.16",
+        "gate": "ok"
+      }
+    ]
+  }
+]

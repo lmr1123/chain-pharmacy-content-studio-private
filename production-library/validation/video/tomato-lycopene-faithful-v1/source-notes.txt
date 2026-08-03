@@ -1,0 +1,7 @@
+[Sources]
+- Business-provided reference video: /Users/liminrong/Downloads/商品培训课件4/商品培训课件4.mp4
+- Business-provided reference audio: /Users/liminrong/Downloads/商品培训课件4/商品培训课件4.mp3
+- Business-provided script in Codex task, 2026-08-02.
+- NCI PDQ, Prostate Cancer, Nutrition, and Dietary Supplements: https://www.ncbi.nlm.nih.gov/books/NBK83261/
+- Cochrane review, Lycopene for the prevention of prostate cancer: https://pmc.ncbi.nlm.nih.gov/articles/PMC8939370/
+- Original generated illustration prompts and asset provenance are recorded in qa/asset-provenance.json.

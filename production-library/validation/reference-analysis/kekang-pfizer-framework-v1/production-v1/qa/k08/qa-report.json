@@ -1,0 +1,83 @@
+{
+  "project_id": "validation.kekang-green-gold-sample-v1",
+  "scene_id": "K08",
+  "artifact": "renders/k08-audiovisual-v2.mp4",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "style_pack_status": "validation-candidate-not-registered",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "status": "technical-qa-passed-awaiting-user-motion-and-sound-review",
+  "canvas": {"width": 1920, "height": 1080, "fps": 30},
+  "technical_qa": {
+    "duration_seconds": 7.933333,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2,
+    "full_decode": "passed",
+    "black_frame_detection": "passed",
+    "layout_overflow": "not-detected",
+    "sha256": "cde30a52fe8b37d144dcc2636fc0cab58a1106dd372f439d642cefd7ad117f9c"
+  },
+  "audio_qa": {
+    "narration": "full-segment continuous TTS · tempo 1.16× · gate ok",
+    "sfx_events": [
+      "soft whoosh on hero enter",
+      "air ring on orbit",
+      "line sweep + point-hi on path/label 01",
+      "line sweep + point-lo on path/label 02",
+      "focus pulses on 01/02 emphasis",
+      "ambient bed fade in/out"
+    ],
+    "mix_target_lufs": -16.0,
+    "measured_integrated_lufs": -16.1,
+    "true_peak_dbfs": -5.3,
+    "true_peak_gate": "passed (<= -1 dBTP)",
+    "music": "none · narration + sfx only",
+    "separates": {
+      "narration": "audio/narration/k08-narration-v5-smooth.wav",
+      "sfx_bus": "audio/sfx/k08-sfx-bus.wav",
+      "mix": "audio/k08-mix-final.wav"
+    }
+  },
+  "subtitle_qa": {
+    "source": "final narration cues",
+    "style": "white text on deep-green translucent bar · 44px",
+    "files": [
+      "audio/k08-subtitles.srt",
+      "audio/k08-subtitles.vtt"
+    ],
+    "cues": [
+      {"start": 0.06, "end": 1.253, "text": "从灵芝主体"},
+      {"start": 1.253, "end": 3.161, "text": "可以认识两类成分"},
+      {"start": 3.161, "end": 4.115, "text": "灵芝多糖"},
+      {"start": 4.115, "end": 5.308, "text": "和灵芝三萜"}
+    ]
+  },
+  "asr": {
+    "engine": "mlx-community/whisper-large-v3-turbo",
+    "domain_prompt": true,
+    "transcript": "从灵芝主体，可以认识两类成分Ｂ灵芝多糖和灵芝三贴。",
+    "contains_lingzhi_duotang": true,
+    "contains_lingzhi_santie_exact": false,
+    "note": "「三萜」被识别为同音「三贴」，与 v7 签样片专业词同音误识一致；权威文本与画面字幕仍为「灵芝三萜」。「灵芝多糖」识别正确。"
+  },
+  "visual_frames_reviewed_seconds": [0.5, 1.2, 2.8, 3.5, 4.3, 5.6, 6.5, 7.5],
+  "motion_proof": [
+    {"t": 0.5, "beat": "title/hero enter + subtitle 从灵芝主体"},
+    {"t": 1.2, "beat": "hero stable with caption"},
+    {"t": 3.5, "beat": "left path drawing + subtitle 灵芝多糖"},
+    {"t": 4.3, "beat": "01 card landed + subtitle 和灵芝三萜"},
+    {"t": 5.6, "beat": "both cards present · focus window"},
+    {"t": 7.5, "beat": "completion hold"}
+  ],
+  "content_boundary": {
+    "included": ["灵芝多糖", "灵芝三萜", "主体→双路径→标签"],
+    "excluded": ["功效", "机制", "治疗结果", "核心有效成分称谓", "包装", "数字人"]
+  },
+  "source_files": {
+    "tsx": "poc/gold-sample/src/kekang-pfizer-k08-audiovisual-project.tsx",
+    "render": "poc/gold-sample/src/render-kekang-pfizer-k08-audiovisual.ts",
+    "timing_json": "poc/gold-sample/kekang-pfizer-k08-audiovisual.json",
+    "audio_script": "scripts/generate_kekang_k08_audiovisual_audio.py"
+  }
+}

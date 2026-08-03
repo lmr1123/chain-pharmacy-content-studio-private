@@ -1,0 +1,86 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v1",
+  "status": "candidate",
+  "reference_source": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4",
+  "reference_range_seconds": [14.84, 44.04],
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "style_pack_locked": true,
+  "theme_parameters": {
+    "background": "white-silk-pearl-blue",
+    "primary": "#123C78",
+    "accent": "#E98200",
+    "mechanism": "coral-pink",
+    "font_family": ["PingFang SC", "Microsoft YaHei", "sans-serif"],
+    "reference_pixel_policy": "measurement-only"
+  },
+  "content_status": "reference-transcribed-medical-review-required",
+  "asset_dependencies": {
+    "authorized_logo": "awaiting-business-asset",
+    "authorized_packshot": "awaiting-business-asset",
+    "validation_packshot": "series.medication.generic-packshot-v1",
+    "validation_label": "包装示意"
+  },
+  "observed": {
+    "master": ["white silk-like background", "navy title text", "orange chapter ribbon", "three-step progress navigation"],
+    "motion": ["chapter reveal", "active navigation highlight", "product-scale reveal", "mechanism assembly", "comparison reveal", "family protection reveal"],
+    "audio": "single narrator with continuous background music",
+    "transition": "direct semantic cuts with brief fades"
+  },
+  "measured": {
+    "source_video": {"width": 850, "height": 480, "fps": 30, "duration_seconds": 147.0},
+    "sample_duration_seconds": 29.2,
+    "target_video": {"width": 1920, "height": 1080, "fps": 30}
+  },
+  "implementation_inference": {
+    "shared_source": "this contract drives both PPTX pages and video scenes",
+    "pptx": "editable text, navigation, diagram nodes, connectors and packshot slot",
+    "video": "element-level motion and subtitle/audio timing; not a PPTX screen recording"
+  },
+  "slides": [
+    {
+      "id": "B01",
+      "reference_seconds": [14.84, 18.76],
+      "title": "三大核心功效",
+      "active_nav": 1,
+      "headline": "专治甲流、乙流",
+      "visual": "generic packshot slot with virus-type markers",
+      "video_motion": "chapter ribbon settles, navigation highlights, packshot rises"
+    },
+    {
+      "id": "B02",
+      "reference_seconds": [18.76, 24.72],
+      "title": "三大核心功效",
+      "active_nav": 2,
+      "headline": "全程一次，一天退热",
+      "body": "全程仅需口服 1 次，早期阻断病毒复制。",
+      "visual": "one-dose clock and treatment-path emphasis",
+      "video_motion": "dose marker pulses once, orange focus travels toward mechanism"
+    },
+    {
+      "id": "B03",
+      "reference_seconds": [24.72, 35.36],
+      "title": "三大核心功效",
+      "active_nav": 2,
+      "headline": "从源头遏制新病毒生成",
+      "body": "与只阻止已复制病毒释放的传统路径形成对比。",
+      "visual": "editable cell, virus particles, block path and comparison labels",
+      "video_motion": "viruses replicate, orange block appears, comparison particles exit"
+    },
+    {
+      "id": "B04",
+      "reference_seconds": [35.36, 44.04],
+      "title": "三大核心功效",
+      "active_nav": 3,
+      "headline": "治疗自己，保护身边人",
+      "body": "早期阻断流感传播，降低传染给家人的风险。",
+      "visual": "recovering adult and multigenerational family shield illustration",
+      "video_motion": "patient enters, shield draws on, external virus particles stop"
+    }
+  ],
+  "restrictions": [
+    "Do not reuse any pixels from the reference video in production visuals.",
+    "Do not fabricate the brand logo or product packaging.",
+    "Reference claims remain subject to business and medical review before production use."
+  ]
+}

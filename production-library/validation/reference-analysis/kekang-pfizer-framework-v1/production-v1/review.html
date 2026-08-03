@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>可可康绿色金样 · 生产审片</title>
+  <style>
+    :root{--ink:#17241f;--muted:#66746e;--green:#087c45;--pale:#edf6f0;--line:#d8e5dc;--warn:#a43d19;--warnbg:#fff1ea;--paper:#f5f7f5;--ok:#087c45}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(1120px,calc(100% - 32px));margin:36px auto 72px}
+    header,.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:18px}
+    h1{margin:4px 0 10px;font-size:clamp(28px,4vw,44px);line-height:1.15}
+    h2{margin:0 0 12px;font-size:24px}
+    .eyebrow{color:var(--green);font-weight:750;letter-spacing:.08em;font-size:13px}
+    .lead{font-size:17px;max-width:900px;color:var(--muted)}
+    .warn{margin-top:14px;padding:14px 16px;border-left:5px solid var(--warn);border-radius:10px;background:var(--warnbg);color:#6c2b14}
+    .okbox{margin-top:14px;padding:14px 16px;border-left:5px solid var(--ok);border-radius:10px;background:var(--pale);color:#0d3d24}
+    .ok{color:var(--green);font-weight:700}.block{color:var(--warn);font-weight:700}
+    video{display:block;width:100%;border-radius:16px;background:#0e231a;box-shadow:0 18px 50px rgba(17,50,38,.14);margin-top:16px}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+    .metric{padding:14px;border-radius:14px;background:var(--pale)}
+    .metric strong{display:block;font-size:22px;color:var(--green)}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
+    th{background:var(--pale)}
+    .actions a{display:inline-block;margin:10px 10px 0 0;padding:10px 16px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none}
+    .actions a.secondary{background:#fff;color:var(--green);border:1px solid var(--line)}
+    .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:14px}
+    .grid img{width:100%;border-radius:10px;border:1px solid var(--line)}
+    @media(max-width:900px){.metrics,.grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">PRODUCTION-V1 · KEKANG GREEN GOLD SAMPLE</div>
+    <h1>可可康绿色金样 · 当前进度</h1>
+    <p class="lead">M1 有声语法已确认 · M2 完整结构 animatic 已出 · 正式旁白与完整有声金样仍被内容／授权门禁阻塞。</p>
+    <div class="okbox"><strong>已确认：</strong>K08 有声视听片段（用户回复「继续」）。运动与声音语法可作为后续正式片的基线。</div>
+    <div class="warn"><strong>已停止正式填充：</strong>逐镜审核表未签字、真包装／说明书／联合方案资产未授权。当前只交付结构 animatic 与精确缺口清单，不宣称完整金样完成。</div>
+    <div class="metrics">
+      <div class="metric"><strong>M1 ✓</strong>K08 有声语法</div>
+      <div class="metric"><strong>M2 ✓</strong>结构 animatic</div>
+      <div class="metric"><strong>M0 ✗</strong>内容锁定</div>
+      <div class="metric"><strong>M3–M5</strong>未启动</div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>1. K08 有声视听 v2（已确认）</h2>
+    <p class="lead">7.93s · 药师旁白 + 字幕 + 动作音效 · -16.1 LUFS</p>
+    <video controls playsinline
+      poster="qa/k08/frames/frame-7.5s.png"
+      src="renders/k08-audiovisual-v2.mp4"></video>
+    <div class="actions">
+      <a href="renders/k08-audiovisual-v2.mp4" target="_blank">打开 K08 MP4</a>
+      <a class="secondary" href="qa/k08/qa-report.json" target="_blank">K08 QA</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>2. 已迁移到 production-v2 微镜头 Animatic（旧一章一页稿已删除）</h2>
+    <p class="lead">约 186 秒静音结构片。每镜展示教学任务、唯一运动焦点、空槽节点与 <span class="block">BLOCKED</span> 原因；不填充未审核医学结论与未授权包装。</p>
+    <video controls playsinline
+      poster="../production-v2/qa/frames/K08-S02/performance.png"
+      src="../production-v2/renders/kekang-green-microshot-animatic-v2.mp4"></video>
+    <div class="actions">
+      <a href="../production-v2/renders/kekang-green-microshot-animatic-v2.mp4" target="_blank">打开 Animatic</a>
+      <a class="secondary" href="qa/full/qa-report.json" target="_blank">全片 QA</a>
+      <a class="secondary" href="gate-checklist.md" target="_blank">门禁清单</a>
+      <a class="secondary" href="../可可康绿色视频金样_逐镜内容审核确认表_v1.docx" target="_blank">下载审核表</a>
+    </div>
+    <div class="grid">
+      <div><img src="../production-v2/qa/frames/K08-S02/frame-0.8s.png" alt="K01"><div style="font-size:12px;color:var(--muted);margin-top:4px">K01 开场</div></div>
+      <div><img src="../production-v2/qa/frames/K08-S02/performance.png" alt="K09"><div style="font-size:12px;color:var(--muted);margin-top:4px">K09 多糖空槽</div></div>
+      <div><img src="../production-v2/qa/frames/K08-S02/frame-140.0s.png" alt="K15"><div style="font-size:12px;color:var(--muted);margin-top:4px">K15 联合总览</div></div>
+      <div><img src="../production-v2/qa/frames/K08-S02/frame-170.0s.png" alt="late"><div style="font-size:12px;color:var(--muted);margin-top:4px">后期镜头</div></div>
+      <div><img src="../production-v2/qa/frames/K08-S02/frame-184.2s.png" alt="end"><div style="font-size:12px;color:var(--muted);margin-top:4px">结束门禁</div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>3. 精确缺口（业务侧）</h2>
+    <table>
+      <thead><tr><th>缺口</th><th>状态</th><th>阻塞内容</th></tr></thead>
+      <tbody>
+        <tr><td>逐镜审核确认表</td><td class="block">BLOCKED</td><td>K01–K18 正式旁白与屏显</td></tr>
+        <tr><td>说明书／批准信息</td><td class="block">BLOCKED</td><td>K07 功能主治、K17 周期</td></tr>
+        <tr><td>可可康真包装授权</td><td class="block">BLOCKED</td><td>K01／K07／K18 商品镜头</td></tr>
+        <tr><td>联合方案包装授权</td><td class="block">BLOCKED</td><td>K15／K16</td></tr>
+        <tr><td>Logo／工厂／GMP</td><td class="block">BLOCKED</td><td>K01／K12／K14／K18</td></tr>
+        <tr><td>卖点证据</td><td class="block">BLOCKED</td><td>K12 含量、K13 工艺</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:14px">业务回传已签字审核表与授权资产后，再进入 M3 完整音画粗剪。在此之前不得登记正式 style_pack。</p>
+  </section>
+</main>
+</body>
+</html>

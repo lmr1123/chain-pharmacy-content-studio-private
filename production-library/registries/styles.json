@@ -1,0 +1,156 @@
+{
+  "registry_type": "style",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "style-pack.reference-medical-tech-v1",
+      "name_zh": "参考片深色医疗科技风 v1",
+      "kind": "style-pack",
+      "status": "production-validated",
+      "tags": ["医疗", "深色科技", "健康科普", "商品培训", "16:9"],
+      "rules": {
+        "master_ui_style": "medical-tech-courseware-dark-v1",
+        "allowed_asset_styles": [
+          "pharmacy-health-cartoon-v1",
+          "health-courseware-realistic-botanical-v1",
+          "generic-medication-packshot-v1"
+        ],
+        "font_family": ["PingFang SC", "Microsoft YaHei", "sans-serif"],
+        "primary_color": "#35e5e8",
+        "text_color": "#f7faf8",
+        "background_color": "#020a15",
+        "type_scale_px": {
+          "page_title": 72,
+          "card_title": 46,
+          "card_body": 35,
+          "subtitle": 52,
+          "minimum_effective": 30
+        },
+        "subtitle_geometry": {
+          "position": [0, 435],
+          "width": 1580,
+          "max_lines": 2
+        },
+        "presenter_rig": "poc/gold-sample/src/wind-heat-production-contract.ts#PRESENTER_RIG",
+        "presenter_presets": ["heroCenter", "sideLeft", "sideRight", "supportLeft", "supportRight"],
+        "voice_profile": "poc/gold-sample/src/wind-heat-production-contract.ts#VOICE_PROFILE",
+        "motion_grammar": {
+          "max_primary_motion_per_shot": 1,
+          "entry_seconds": [0.18, 0.42],
+          "highlight_seconds": [0.22, 0.68],
+          "cue_fade_seconds": 0.04
+        },
+        "reference_pixel_policy": "measurement-only",
+        "same_project_style_lock": true
+      },
+      "sources": [
+        "docs/reference-style-component-system.md",
+        "docs/courseware-visual-spec-1080p.md"
+      ]
+    },
+    {
+      "id": "style-pack.reference-product-blue-v1",
+      "name_zh": "参考片浅蓝商品培训风 v1",
+      "kind": "style-pack",
+      "status": "selected",
+      "tags": ["商品培训", "浅蓝方格", "二维讲师", "黄色字幕", "16:9"],
+      "rules": {
+        "master_ui_style": "reference-product-courseware-blue-v1",
+        "allowed_asset_styles": [
+          "pharmacy-health-cartoon-v1",
+          "generic-medication-packshot-v1",
+          "q10-reference-faithful-v1"
+        ],
+        "font_family": ["PingFang SC", "Microsoft YaHei", "sans-serif"],
+        "primary_color": "#43a9e4",
+        "accent_colors": ["#f57a52", "#f47f8a", "#ffe733"],
+        "text_color": "#ffffff",
+        "subtitle_color": "#ffe733",
+        "background_color": "#43a9e4",
+        "presenter_mouth_effect_id": "effect.presenter.stable-mouth-v1",
+        "same_project_style_lock": true
+      },
+      "sources": [
+        "docs/product-training-faithful-rework.md",
+        "poc/gold-sample/src/product-training-faithful-project.tsx"
+      ]
+    },
+    {
+      "id": "style-pack.dashenlin-courseware-green-v1",
+      "name_zh": "大参林绿色商品课件风 v1",
+      "kind": "style-pack",
+      "status": "technical-qa-passed",
+      "tags": ["商品培训", "绿色母版", "可编辑PPTX", "PDF", "16:9"],
+      "rules": {
+        "master_ui_style": "dashenlin-product-courseware-green-v1",
+        "font_family": ["PingFang SC", "Microsoft YaHei", "sans-serif"],
+        "primary_color": "#009900",
+        "secondary_color": "#45A817",
+        "pale_color": "#C9E7BE",
+        "text_color": "#111111",
+        "background_color": "#FFFFFF",
+        "same_project_style_lock": true,
+        "reference_pixel_policy": "measurement-only",
+        "missing_asset_policy": "editable-labeled-slot"
+      },
+      "sources": [
+        "poc/courseware-export/product-courseware-green.json",
+        "poc/courseware-export/work/build-product-courseware.mjs"
+      ],
+      "restriction": "Logo、包装和插图替换为公司批准的高清原图并经用户视觉签样前，不得标记 production-validated"
+    },
+    {
+      "id": "pharmacy-health-cartoon-v1",
+      "name_zh": "药店健康科普卡通插图 v1",
+      "kind": "asset-style",
+      "status": "production-validated",
+      "compatible_style_packs": [
+        "style-pack.reference-medical-tech-v1",
+        "style-pack.reference-product-blue-v1"
+      ],
+      "tags": ["症状插图", "二维卡通", "统一患者角色", "方形素材"],
+      "source": "assets/component-library/styles/pharmacy-health-cartoon-v1.md"
+    },
+    {
+      "id": "q10-reference-faithful-v1",
+      "name_zh": "辅酶 Q10 参考商品复刻素材风 v1",
+      "kind": "asset-style",
+      "status": "technical-qa-passed",
+      "compatible_style_packs": ["style-pack.reference-product-blue-v1"],
+      "tags": ["商品培训", "二维讲师", "症状插图", "红白包装示意"],
+      "source": "assets/component-library/presenters/product-trainer/component.json"
+    },
+    {
+      "id": "health-courseware-realistic-botanical-v1",
+      "name_zh": "健康课件写实植物素材 v1",
+      "kind": "asset-style",
+      "status": "technical-qa-passed",
+      "compatible_style_packs": ["style-pack.reference-medical-tech-v1"],
+      "tags": ["草本", "植物", "写实", "无文字"],
+      "source": "assets/component-library/herbs/herbs-v1-generation-recipes.md"
+    },
+    {
+      "id": "generic-medication-packshot-v1",
+      "name_zh": "无品牌药品包装示意 v1",
+      "kind": "asset-style",
+      "status": "technical-qa-passed",
+      "compatible_style_packs": [
+        "style-pack.reference-medical-tech-v1",
+        "style-pack.reference-product-blue-v1"
+      ],
+      "tags": ["药品", "包装示意", "无品牌", "可替换商品图"],
+      "source": "assets/component-library/medications/medication-advice-v1-generation-recipes.md"
+    },
+    {
+      "id": "asset-style.dashenlin-medical-flat-illustration-v1",
+      "name_zh": "大参林商品课件医药扁平插画 v1",
+      "kind": "asset-style",
+      "status": "candidate",
+      "compatible_style_packs": ["style-pack.dashenlin-courseware-green-v1"],
+      "tags": ["商品培训", "注意事项", "二维扁平插画", "无文字", "方形素材", "提示词"],
+      "source": "assets/component-library/styles/dashenlin-medical-flat-illustration-v1.md",
+      "prompt_builder": "poc/courseware-export/text-word-import/image_prompt_protocol.py",
+      "restriction": "仅用于辅助插画；真实包装、说明书、检测报告、处方和品牌证据必须使用授权原图。用户签样前不得批量生成或提升状态。"
+    }
+  ]
+}

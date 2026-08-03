@@ -1,0 +1,51 @@
+{
+  "artifact": "商品培训课件3_精细复刻_动画视频门槛片段_新录音_v4",
+  "status": "technical-qa-passed-awaiting-user-signoff",
+  "audio_source": {
+    "path": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3",
+    "sha256": "62cc4c386bbe2b406c139e69aeb27288ff30847186a90228790a17e8c3696cca",
+    "duration_seconds": 136.829375,
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_rate": 192002,
+    "transcription": "new-audio-analysis/new-recording.json",
+    "observed_effective_narration": "约 00:01–01:35.86",
+    "tail_observation": "约 01:35.86 后至文件结束以近静音底噪和间歇尖峰为主，未用于本门槛片段。"
+  },
+  "gate_audio": {
+    "source_range": "00:13.10–00:40.70",
+    "duration_seconds": 27.6,
+    "processing": ["highpass 70Hz", "lowpass 14.5kHz", "loudness normalization", "short boundary fades"],
+    "speed_change": false,
+    "integrated_loudness_lufs": -16.72,
+    "true_peak_dbfs": -1.42
+  },
+  "retimed_scene_nodes": {
+    "title": 0.0,
+    "efficacy_1": 2.36,
+    "efficacy_2": 4.16,
+    "traditional_drug_path": 11.96,
+    "efficacy_3": 20.36,
+    "end": 27.6
+  },
+  "output": {
+    "path": "商品培训课件3_精细复刻_动画视频门槛片段_新录音_v4.mp4",
+    "sha256": "0ffdd1e4b00e4286bd856ef0f6a1386bef47e9c7fd8b72857ecadc2d57e134ef",
+    "duration_seconds": 27.633333,
+    "resolution": "1920x1080",
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "channels": 2
+  },
+  "qa": {
+    "typecheck": "passed",
+    "full_decode": "passed",
+    "sustained_black_frames": "none-detected",
+    "offline_asr": "passed-full-gate-script",
+    "old_audio_residue": "none",
+    "contact_sheet": "video-qa-v4-new-audio/contact-sheet-v4-new-audio.png"
+  },
+  "pptx": "继续使用 商品培训课件3_精细复刻_PPTX门槛片段_v3.pptx；换录音不改变当前五页版式。"
+}

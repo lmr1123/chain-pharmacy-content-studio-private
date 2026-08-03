@@ -1,0 +1,70 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v2",
+  "status": "draft-reference-authority-contract",
+  "reference": {
+    "video": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4",
+    "audio": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3",
+    "duration_seconds": 147.0,
+    "resolution": [850, 480],
+    "fps": 30,
+    "reference_pixel_policy": "measurement-and-validation-only"
+  },
+  "replication_rule": {
+    "reference_is_visual_authority": true,
+    "reference_is_timeline_authority": true,
+    "allow_visual_upgrade_before_fidelity_pass": false,
+    "allow_copy_rewrite": false,
+    "allow_public_template_to_change_reference": false,
+    "small_fragment_role": "fidelity-gate-only-not-gold-sample"
+  },
+  "observed_global_system": {
+    "background": "white pearl-silk texture with faint diagonal watermark and thin orange orbit lines",
+    "brand_mark": "fixed top-right brand logo",
+    "chapter_title": "orange ribbon centered at top",
+    "chapter_navigation": "three gray/orange numbered tabs below ribbon",
+    "content_surface": "white rounded rectangle or open canvas depending on page type",
+    "body_palette": ["navy", "orange", "light gray", "white", "coral mechanism pink"],
+    "caption": "small black bottom caption without separate dark subtitle bar",
+    "motion_grammar": ["direct semantic cut", "staggered reveal", "active-tab recolor", "scale-in", "diagram assembly", "brief blank chapter transition"]
+  },
+  "timeline": [
+    {"id": "R01", "range": [0.00, 2.47], "page": "cover-summary", "observed": "product title, orange subtitle strip, three orange-check benefits, large authorized packshot"},
+    {"id": "R02", "range": [2.47, 5.73], "page": "influenza-context", "observed": "first white vertical card: 365 days / winter-spring high incidence / summer may also be high"},
+    {"id": "R03", "range": [5.73, 8.73], "page": "influenza-context", "observed": "second white vertical card joins: transmission / high harm / possible death"},
+    {"id": "R04", "range": [8.73, 14.83], "page": "influenza-context", "observed": "third white vertical card joins: China case count 1.4亿 / golden 48-hour treatment window"},
+    {"id": "R05", "range": [14.83, 16.83], "page": "chapter-transition", "observed": "orange ribbon: 一、三大核心功效; otherwise open background"},
+    {"id": "R06", "range": [16.83, 18.90], "page": "benefit-1", "observed": "nav item 1 active; authorized packshot center; 甲流/乙流 markers appear around packshot"},
+    {"id": "R07", "range": [18.90, 35.07], "page": "benefit-2-mechanism", "observed": "nav item 2 active; white rounded mechanism board; cell and viruses assemble; product path blocks new-virus generation; traditional path blocks release; dosage comparison 1次 vs 2次/天×5天"},
+    {"id": "R08", "range": [35.07, 42.27], "page": "benefit-3-protection", "observed": "nav item 3 active; infected patient at left; multigenerational family inside blue shield at right; orange particles stop; risk-reduction caption"},
+    {"id": "R09", "range": [42.27, 44.03], "page": "chapter-transition", "observed": "orange ribbon: 二、产品特点; otherwise open background"},
+    {"id": "R10", "range": [44.03, 49.03], "page": "feature-1-safety", "observed": "nav item 1 active; circular packshot; child-face safety icon and low-vomiting-rate claim"},
+    {"id": "R11", "range": [49.03, 58.73], "page": "feature-2-dosage-forms", "observed": "nav item 2 active; central packshot; tablet close-up left with 20mg/40mg ruler; granule/bottle image right; strawberry-flavor and precise-weight dosing callouts"},
+    {"id": "R12", "range": [58.73, 70.27], "page": "feature-3-brand-evidence", "observed": "nav item 3 active; sequential evidence rows: origin from first-generation influenza-drug manufacturer / Roche; 70+ countries; China NHC and WHO recommendation / multiple authority endorsements"},
+    {"id": "R13", "range": [70.27, 72.03], "page": "chapter-transition", "observed": "orange ribbon: 三、适宜人群; otherwise open background"},
+    {"id": "R14", "range": [72.03, 76.87], "page": "audience-criterion", "observed": "outline bust at left and large orange ≥5岁 circle at right; approved audience criterion appears inside circle"},
+    {"id": "R15", "range": [76.87, 82.67], "page": "audience-groups", "observed": "three white character cards reveal sequentially: elderly people, school-age children, chronic-disease patients"},
+    {"id": "R16", "range": [82.67, 83.87], "page": "chapter-transition", "observed": "orange ribbon: 三、联合用药; otherwise open background"},
+    {"id": "R17", "range": [83.87, 91.12], "page": "combination-1", "observed": "nav item 1 active; authorized product packshot + antipyretic example; plus sign; benefit statement below"},
+    {"id": "R18", "range": [91.12, 97.63], "page": "combination-2", "observed": "nav item 2 active; authorized product packshot + chronic-disease medicines; dose-adjustment statement below"},
+    {"id": "R19", "range": [97.63, 99.03], "page": "chapter-transition", "observed": "orange ribbon: 总结; otherwise open background"},
+    {"id": "R20", "range": [99.03, 103.00], "page": "summary-table", "observed": "four-column editable table: core benefits / product features / suitable audience / combination use"},
+    {"id": "R21", "range": [103.00, 147.00], "page": "end-card-hold", "observed": "cover-summary frame holds; audio contains residual on-site conversation after the training narration"}
+  ],
+  "mandatory_fidelity_checks": [
+    "same chapter and page order",
+    "same visible copy; no producer commentary in program",
+    "same layout ratios and type hierarchy measured against 850x480 reference",
+    "same active-nav state at the same semantic moment",
+    "same asset role and subject count",
+    "same entry, accumulation, replacement and exit behavior",
+    "same audio-relative cue timing",
+    "side-by-side frame comparison at every timeline node"
+  ],
+  "unresolved": [
+    "whether R21 frozen 44-second tail and residual conversation must be preserved or trimmed at 103 seconds",
+    "authorized high-resolution logo",
+    "authorized product packshots for tablet and granule dosage forms",
+    "authorized brand/evidence images or original PPTX",
+    "authoritative medical copy for low-resolution or OCR-ambiguous labels"
+  ]
+}

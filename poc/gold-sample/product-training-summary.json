@@ -1,0 +1,31 @@
+{
+  "id": "product-training-summary",
+  "title": "总结",
+  "range": {
+    "start": 152.48,
+    "end": 156.15,
+    "duration": 4.486
+  },
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-product-training-summary-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；自然语速（最大加速1.18×）",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "version": "v5-smooth",
+      "report": {
+        "text": "大参林内部培训 · 辅酶Q10 商品知识",
+        "raw_duration": 4.8,
+        "used_duration": 4.136,
+        "tempo": 1.16,
+        "default_tempo": 1.16,
+        "preferred_slot": null,
+        "min_audible": 2.665,
+        "policy": "default-brisk-1.16",
+        "gate": "ok"
+      }
+    }
+  },
+  "tagline": "大参林内部培训 · 辅酶Q10 商品知识"
+}

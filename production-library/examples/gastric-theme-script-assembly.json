@@ -1,0 +1,196 @@
+{
+  "contract_version": "1.0.0",
+  "project_title": "胃部不适培训主题（装配机制示例）",
+  "source_script": "production-library/examples/gastric-theme-approved-script.md",
+  "content_lock": "approved-script",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "style_pack_locked": true,
+  "scene_order_policy": "source-script-order",
+  "scenes": [
+    {
+      "order": 0,
+      "status": "planned",
+      "intent": "presenter_intro",
+      "scene_recipe_id": "scene-recipe.presenter-intro.reference-medical-tech-v1",
+      "component_ids": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.presenter.bound-pharmacist",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.background.four-way-current-v1"
+      ],
+      "asset_roles": [],
+      "matched_aliases": [
+        "课程介绍"
+      ],
+      "slots": {
+        "section_title": "课程介绍",
+        "approved_text": "此处粘贴公司已审核的课程导入原文。"
+      },
+      "constraints": {
+        "max_primary_motion": 1,
+        "presenter_positions": [
+          "left",
+          "center"
+        ],
+        "max_words_per_scene": 95
+      }
+    },
+    {
+      "order": 1,
+      "status": "planned",
+      "intent": "symptom_overview",
+      "scene_recipe_id": "scene-recipe.symptom-overview.reference-medical-tech-v1",
+      "component_ids": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.card.symptom-board",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.background.four-way-current-v1"
+      ],
+      "asset_roles": [],
+      "matched_aliases": [
+        "典型表现",
+        "表现"
+      ],
+      "slots": {
+        "section_title": "典型表现",
+        "approved_text": "此处粘贴公司已审核的症状表现原文，并按原审核顺序保留。"
+      },
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          3,
+          6
+        ],
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "order": 2,
+      "status": "planned",
+      "intent": "mechanism_explanation",
+      "scene_recipe_id": "scene-recipe.mechanism.reference-medical-tech-v1",
+      "component_ids": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.background.four-way-current-v1"
+      ],
+      "asset_roles": [
+        "full_body_front",
+        "organ_torso",
+        "symptom_focus",
+        "anatomical_cutaway",
+        "pathogen_environment",
+        "process_path"
+      ],
+      "matched_aliases": [
+        "发病机制",
+        "病机"
+      ],
+      "slots": {
+        "section_title": "发病机制",
+        "approved_text": "此处粘贴公司已审核的机理原文；系统只匹配机理场景与系列素材，不补写医学结论。"
+      },
+      "constraints": {
+        "max_primary_motion": 1,
+        "asset_series_required": true,
+        "max_words_per_scene": 120
+      }
+    },
+    {
+      "order": 3,
+      "status": "planned",
+      "intent": "treatment_principle",
+      "scene_recipe_id": "scene-recipe.treatment-principle.reference-medical-tech-v1",
+      "component_ids": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.presenter.bound-pharmacist",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.background.four-way-current-v1",
+        "effect.border.rounded-trace-v1"
+      ],
+      "asset_roles": [],
+      "matched_aliases": [
+        "调理原则"
+      ],
+      "slots": {
+        "section_title": "调理原则",
+        "approved_text": "此处粘贴公司已审核的处理或调理原则原文。"
+      },
+      "constraints": {
+        "max_primary_motion": 1,
+        "max_words_per_scene": 120
+      }
+    },
+    {
+      "order": 4,
+      "status": "planned",
+      "intent": "advice_list",
+      "scene_recipe_id": "scene-recipe.advice-list.reference-medical-tech-v1",
+      "component_ids": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.card.advice-row",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.background.four-way-current-v1",
+        "effect.border.rounded-trace-v1"
+      ],
+      "asset_roles": [],
+      "matched_aliases": [
+        "日常护理"
+      ],
+      "slots": {
+        "section_title": "日常护理",
+        "approved_text": "此处粘贴公司已审核的生活建议及注意事项原文。"
+      },
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          2,
+          5
+        ],
+        "overflow": "continue_same_recipe"
+      }
+    },
+    {
+      "order": 5,
+      "status": "planned",
+      "intent": "summary",
+      "scene_recipe_id": "scene-recipe.summary.reference-medical-tech-v1",
+      "component_ids": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.summary.matrix-v1",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.summary.panel-reveal-v1",
+        "effect.summary.top-current-arrow-v1"
+      ],
+      "asset_roles": [],
+      "matched_aliases": [
+        "重点回顾"
+      ],
+      "slots": {
+        "section_title": "重点回顾",
+        "approved_text": "此处粘贴公司已审核的总结原文。"
+      },
+      "constraints": {
+        "max_primary_motion": 1,
+        "item_count_per_scene": [
+          2,
+          6
+        ],
+        "layout_by_item_count": true
+      }
+    }
+  ],
+  "unresolved_sections": []
+}

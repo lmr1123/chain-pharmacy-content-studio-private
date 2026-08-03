@@ -1,0 +1,1237 @@
+{
+  "registry_type": "lesson",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "lesson.hundred-percent-replication-forbids-semantic-redesign",
+      "name_zh": "100%复刻禁止同风格重设计且缺素材必须原位占坑",
+      "status": "active",
+      "tags": [
+        "100%复刻",
+        "参考权威",
+        "包装坑位",
+        "逐屏对照",
+        "保真门槛",
+        "禁止重设计"
+      ],
+      "rule": "100%复刻必须逐屏对应参考时码、屏显原文、对象清单、布局坐标、层级和动作；只有具备参考证据的场景才能标记 observed_reference。缺少包装、Logo、人物或证据图时，应按参考尺寸和位置保留明确占位槽并标注待业务替换，禁止用 AI 插画或语义相近素材替换参考主视觉。完整制作前必须先交付一个静态页和一个微镜头的同一时刻左右对照并获得用户确认；技术 QA、可编辑性、高清重绘和导出成功均不能代替内容与视觉保真验收。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.gold-sample-supporting-icons-bubbles-and-transition-silhouettes-are-fidelity-critical",
+      "name_zh": "金样辅助图标气泡与过渡轮廓同样必须保真",
+      "status": "active",
+      "tags": [
+        "金样",
+        "辅助图标",
+        "气泡",
+        "人物轮廓",
+        "素材去重",
+        "文字居中",
+        "逐帧动效"
+      ],
+      "rule": "每镜图层合同必须同时覆盖主图、辅助图标、气泡壳、气泡文字、过渡轮廓和最终人物。带插画质感的辅助图标不得降级为 SVG 或基础图形；气泡应使用透明位图壳与独立可编辑文字，并按旁白节点单独入场；过渡轮廓不得与最终具体人物复用。文字 QA 必须检查视觉中心线、同级等距、断行和字重，每个辅助动效也必须抽取起中末三帧，缺层或缺动作不得扩制。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.cloned-tts-requires-post-generation-asr-gate",
+      "name_zh": "克隆语音必须通过生成后反向转录与参考文本泄漏检查",
+      "status": "active",
+      "tags": [
+        "克隆语音",
+        "离线ASR",
+        "参考文本泄漏",
+        "重复前缀",
+        "字幕烧录",
+        "FFmpeg"
+      ],
+      "rule": "克隆语音分段生成后必须对整轨和每段执行离线 ASR，检查参考提示尾句泄漏、重复前缀、漏读、异常尾音和药名误读；按词级时间戳清理后重新拼轨、生成字幕、归一化响度并再次 ASR，未通过不得进入 MP4。字幕编码前须探测 subtitles/drawtext 能力；系统缺少 libass 时，使用网页渲染透明字幕层并先合成单一透明字幕视频轨，禁止一次性加载大量 overlay 导致编码器退出。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.replication-must-separate-reference-and-business-extension",
+      "name_zh": "复刻必须区分参考已有与业务新增并共用单一内容模型",
+      "status": "active",
+      "tags": [
+        "完整复刻",
+        "业务新增",
+        "Scene JSON",
+        "MP4",
+        "网页编辑",
+        "PPTX",
+        "包装槽位"
+      ],
+      "rule": "业务同时提供参考成片与新文本时，先在逐镜合同中区分 observed_reference、measured、implementation_inference、business_extension 和 authorization_dependency，不得把新增镜头误报为参考像素级复刻。低清视频像素不能直接放大；插图应重建为高清无字素材，包装和 Logo 只用业务授权槽位。MP4、网页和原生可编辑 PPTX 必须共用同一 Scene JSON、稳定文字 ID 和 asset_slot_id，避免三套工程独立改稿造成重复返工。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.replacement-reference-audio-requires-full-retiming",
+      "name_zh": "参考录音替换后必须重新转写并重建语义时码",
+      "status": "active",
+      "tags": [
+        "参考录音",
+        "音频替换",
+        "离线ASR",
+        "语义时码",
+        "音画同步",
+        "异常尾段"
+      ],
+      "rule": "参考录音被替换后不得只换音轨或沿用旧绝对时码。必须先对新文件做离线 ASR、有效旁白范围、静音／异常尾段、响度和边界检测，再按新词级时码重排页面切换、主视觉动作、字幕和结束帧。文件总时长含长尾静音或噪声时，应显式记录有效内容终点，禁止把异常尾段纳入课程。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.gold-sample-primary-visuals-must-match-reference-screen-coverage",
+      "name_zh": "金样主视觉必须匹配参考占屏比例和视觉重量",
+      "status": "active",
+      "tags": [
+        "金样",
+        "占屏比例",
+        "视觉重量",
+        "商品大图",
+        "图标放大",
+        "包围盒门禁"
+      ],
+      "rule": "金样中的商品、人物和关键图标不能只检查是否完整出现，还必须测量其可见包围盒与画布面积占比，并与参考同镜头的主次关系对照。50% 预览时主视觉仍应成为第一焦点；放大后必须重新检查安全区、遮挡、字幕基线和同类对象相对比例，未达到参考视觉重量不得继续扩制。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.gold-sample-fidelity-must-match-type-layout-raster-style-and-motion",
+      "name_zh": "金样保真必须同时匹配字体排版、插画材质与逐帧动效",
+      "status": "active",
+      "tags": [
+        "金样",
+        "字体匹配",
+        "导航间距",
+        "透明PNG",
+        "插画动画",
+        "逐帧对照",
+        "禁止SVG Demo"
+      ],
+      "rule": "金样门禁不能只验章节顺序和绝对时码；必须并排验收字体候选、字重、字号、字宽，关键对象坐标、间距、角度、旋转中心和缩放，以及每个入场／停留／退场的起中末帧。参考为位图插画或带材质的动画时，应使用透明 PNG 底层加独立可编辑文字层，禁止以程序化椭圆、箭头、火柴图标等通用 SVG Demo 降级。透明素材必须检查 alpha 边缘并叠到真实背景验收。PPTX 与视频可共用视觉资产，但视频运动曲线需独立按参考测量。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.joint-medication-voiceover-must-use-complete-spoken-sentences",
+      "name_zh": "联合用药口播必须使用自然完整句而非制作式双句模板",
+      "status": "active",
+      "tags": [
+        "联合用药",
+        "口播",
+        "自然表达",
+        "完整语义段",
+        "字幕同步",
+        "金样"
+      ],
+      "rule": "联合用药口播不得逐组复读‘情境＋接下来展示对应组合’和‘组成这一方向的联合方案’等制作式表达。每组应写成一个自然完整句：前半句交代人群或情境，后半句直接带出商品 A 与商品 B 的联合搭配。画面可保留两个动作 cue，但语法必须连续；整段 TTS、音色和响度不能代替文案口语化编辑。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.gold-sample-replication-reference-is-authority",
+      "name_zh": "金样复刻必须以完整参考为唯一视觉与时间轴权威",
+      "status": "active",
+      "tags": [
+        "金样",
+        "完整复刻",
+        "参考视频",
+        "参考课件",
+        "保真门禁",
+        "禁止风格化改写"
+      ],
+      "rule": "金样复刻必须先对完整参考逐镜记录构图比例、字体层级、素材角色、屏显原文、入场停留退场、章节承接与声音时码，再按同一时刻对照重建。不得先套公共模板后只保留配色和大致信息结构，也不得自行改写文案、机制图或插画。公共组件只有在不改变参考表现时可复用。局部片段仅是全片生产前的保真门禁，不能命名为完整金样或代替整条复刻。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.joint-medication-scenes-must-be-product-image-led",
+      "name_zh": "联合用药镜头必须以商品大图和明确组合名为主视觉",
+      "status": "active",
+      "tags": [
+        "联合用药",
+        "商品大图",
+        "组合名称",
+        "包装槽位",
+        "插画辅助",
+        "金样"
+      ],
+      "rule": "联合用药镜头应直接显示当前‘商品 A＋商品 B’组合名，并以两侧可替换的清晰包装大图和中间汇合动作为主视觉；不得用方案 01／02／03 等无业务含义编号作主导航，也不得让症状插画抢占商品展示。插画只作小型情境提示。缺少授权包装时保留业务商品图槽位，禁止裁切带水印参考截图或仿造品牌包装。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.gold-sample-relation-scenes-must-be-illustration-led",
+      "name_zh": "金样关系镜头必须由插画场景承载语义",
+      "status": "deprecated",
+      "tags": [
+        "金样",
+        "关系镜头",
+        "插画叙事",
+        "症状场景",
+        "功效边界"
+      ],
+      "rule": "原规则把插画设为关系镜头主视觉，已由 lesson.joint-medication-scenes-must-be-product-image-led 修正。仍保留的有效部分是：不得用月、肝、盾等抽象字标代替可观察的场景提示；功效或机制未获审核时不得暗示治愈、修复或增强结果。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.gold-sample-production-notes-stay-out-of-program",
+      "name_zh": "正式金样不得展示制作解释与审核门禁",
+      "status": "active",
+      "tags": [
+        "金样",
+        "成片文案",
+        "旁白",
+        "制作备注",
+        "模板示例"
+      ],
+      "rule": "制作解释、整改说明、证据门禁和‘以资料为准’等风险控制信息应保留在合同、manifest 与 QA，不得进入正式成片屏显或旁白。需要标识非最终业务内容时，只在右上角弱化标注‘模板示例’，课程主体仍必须按正式成品表达。人物症状结果必须由同一角色的连续状态真实演出，不能只用抽象总结文字代替。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.settled-template-folder-must-include-business-input-word",
+      "name_zh": "正式模板目录必须包含业务提交 Word",
+      "status": "active",
+      "tags": [
+        "模板沉淀",
+        "Word",
+        "业务提交",
+        "目录治理"
+      ],
+      "rule": "每套用户确认的 settled 模板必须作为完整业务交付包管理：唯一 canonical 视频/PPTX、业务提交_空白模板.docx、业务提交_填写参考.docx、manifest.json。注册表指向目录内副本，manifest 记录权威源，统一脚本同步；不得纳入已废弃的固定章节/固定字段 Word。",
+      "source": "tasks/lessons.md",
+      "related_script": "scripts/sync_settled_template_business_words.py"
+    },
+    {
+      "id": "lesson.gold-sample-not-asset-stockpile",
+      "name_zh": "金样成片优先于元件囤积",
+      "status": "active",
+      "tags": [
+        "金样",
+        "框架",
+        "风格",
+        "防偏离",
+        "主线"
+      ],
+      "rule": "预囤通用元件容易语义对不上主题、业务仍不会用。正确主线：完整金样 → 框架+风格 → 同风格延伸；新结构须第二份完整金样。资产/外补从属金样槽位。见 decision.gold-sample-first。",
+      "source": "tasks/lessons.md",
+      "related_decision_id": "decision.gold-sample-first"
+    },
+    {
+      "id": "lesson.controlled-replica-does-not-prove-model-independence",
+      "name_zh": "受控复刻成功不能证明模型独立创作能力",
+      "status": "active",
+      "tags": [
+        "模型评估",
+        "盲测",
+        "金样",
+        "独立创作",
+        "可移植性"
+      ],
+      "rule": "提供目标成片、派生素材、正式语音、精确时码和逐镜状态后，只能测试规格实现能力。模型独立能力须在全新任务和隔离工作区中，仅凭业务原始输入与原始参考完成，并通过多次独立运行和未见主题泛化测试。生产扩展不能只给金样视频，应沉淀可执行组件、结构化槽位、确定性渲染和人审门禁。",
+      "source": "tasks/lessons.md",
+      "reference": "production-library/validation/reference-analysis/kekang-pfizer-framework-v1/production-v2/qa/remake-comparison-v1/OTHER_MODEL_ZERO_START_BENCHMARK.md"
+    },
+    {
+      "id": "lesson.product-training-dashenlin-extension-stack",
+      "name_zh": "商品培训大参林扩展四件套可复用",
+      "status": "active",
+      "tags": [
+        "商品培训",
+        "大参林",
+        "品牌壳",
+        "旁白",
+        "口型",
+        "封面",
+        "模板扩展"
+      ],
+      "rule": "template.product-training-faithful-v1 在辅酶Q10上完成大参林扩展且用户确认。新商品主题复用：1) product-training-dashenlin-chrome 2) v5-smooth 整段连读旁白 3) MOUTH_RIG 归一化口型 4) 右上角品牌封面安全区。换审核文案+授权包装，勿重造壳/声/口型。预览 review-q10-dashenlin.html；manifest 见 templates/settled/product-video-faithful-v1/manifest.json。",
+      "source": "tasks/lessons.md",
+      "related_template_id": "template.product-training-faithful-v1",
+      "related_theme_id": "theme.product.coenzyme-q10"
+    },
+    {
+      "id": "lesson.presenter-local-rig",
+      "name_zh": "讲话只驱动局部口型",
+      "status": "active",
+      "tags": [
+        "数字人",
+        "抖动",
+        "口型"
+      ],
+      "rule": "不得高速切换多张整身角色图；身体和锚点固定，只替换嘴、眼和眉等局部层。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.closed-mouth-always",
+      "name_zh": "停顿必须保留闭口嘴型",
+      "status": "active",
+      "tags": [
+        "数字人",
+        "末帧",
+        "嘴巴"
+      ],
+      "rule": "闭口是独立状态，句间、停顿和片尾不得隐藏全部嘴层；无嘴母版须放大检查残留嘴角。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.reference-motion-is-contract",
+      "name_zh": "参考动作即行为契约",
+      "status": "active",
+      "tags": [
+        "复刻",
+        "动作",
+        "直接换位"
+      ],
+      "rule": "参考片采用直接换位时不得擅自增加走路动画；所谓更自然不能覆盖忠实复刻。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.effective-font-size",
+      "name_zh": "检查缩放后的有效字号",
+      "status": "active",
+      "tags": [
+        "排版",
+        "字号",
+        "可读性"
+      ],
+      "rule": "必须以最终画面缩放后的有效字号和50%预览检查，不得只看组件源字号。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.semantic-block-tts",
+      "name_zh": "旁白按完整语义段生成",
+      "status": "active",
+      "tags": [
+        "音频",
+        "语速",
+        "杂音"
+      ],
+      "rule": "禁止逐微句强制 atempo；按完整镜头或语义段生成，统一轻微拟合，并做交叉衔接、去点击和响度统一。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.voice-continuous-segment-smooth",
+      "name_zh": "克隆旁白整段连读与轻微整体加速",
+      "status": "active",
+      "tags": [
+        "旁白",
+        "连读",
+        "停顿",
+        "语速",
+        "v5-smooth",
+        "克隆"
+      ],
+      "rule": "要顺、稍快、少硬停顿时：整段 cue 逗号拼成一次 TTS；DEFAULT_TEMPO≈1.16、MAX≤1.18；LEAD_IN/OUT 仅 0.06/0.10s；字幕按字数比例重切。禁止逐 cue TTS+固定静音槽。脚本 scripts/generate_cloned_product_all_narration.py v5-smooth。见 decision.semantic-block-voice-speed-gate。",
+      "source": "tasks/lessons.md",
+      "related_decision_id": "decision.semantic-block-voice-speed-gate"
+    },
+    {
+      "id": "lesson.mouth-anchor-from-diff-not-guess",
+      "name_zh": "嘴锚点由差分测量不得手猜像素",
+      "status": "active",
+      "tags": [
+        "数字人",
+        "口型",
+        "归一化锚点",
+        "眼睛错位",
+        "大参林药师",
+        "商品培训"
+      ],
+      "rule": "嘴贴眼睛/额头根因是手填源图像素 my 偏小或身体未等比显示。正确流程：1) mouthless+栅格口型，身体等比；2) mouthless 与有嘴原图差分得嘴洞中心，写入归一化 MOUTH_RIG；3) position=(anchor-0.5)*displaySize（对齐 reference-treatment/medication-advice mouthLayer）；4) 盖层与口型同锚点；5) 场景禁止手填 mx/my。大参林药师锁定：palm[0.548,0.391]、point[0.528,0.418]；实现 product-training-faithful-project.tsx。验收：闭口/张口 400% 脸部放大，嘴在鼻下颏上。",
+      "source": "tasks/lessons.md",
+      "related_lesson_id": "lesson.presenter-mouth-anchor-from-metadata",
+      "reference_impl": [
+        "poc/gold-sample/src/product-training-faithful-project.tsx",
+        "poc/gold-sample/src/reference-treatment-project.tsx",
+        "poc/gold-sample/src/reference-medication-advice-project.tsx"
+      ],
+      "verified_anchors": {
+        "dashenlin_pharmacist": {
+          "palm": [
+            0.548,
+            0.391
+          ],
+          "point": [
+            0.528,
+            0.418
+          ],
+          "source_size": {
+            "palm": [
+              334,
+              941
+            ],
+            "point": [
+              405,
+              941
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "lesson.highlight-needs-motion-detail",
+      "name_zh": "高级高亮必须有运动细节",
+      "status": "active",
+      "tags": [
+        "特效",
+        "发光",
+        "扫描线"
+      ],
+      "rule": "高亮不能只更换整框颜色；应包含圆角层次、局部辉光、沿边移动高光和适量背景电流脉冲。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.sign-one-asset-before-batch",
+      "name_zh": "批量生图前先签一张",
+      "status": "active",
+      "tags": [
+        "图片",
+        "批量",
+        "风格一致"
+      ],
+      "rule": "先制作并签样一张代表图，再用冻结的风格配方扩展整组，避免把漂移复制到全库。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.presenter-mouth-anchor-from-metadata",
+      "name_zh": "嘴型与锚点必须来自角色组件",
+      "status": "active",
+      "tags": [
+        "数字人",
+        "口型",
+        "颜色",
+        "归一化锚点"
+      ],
+      "rule": "同一角色复用已验证浅色口型；每姿势归一化嘴锚点写入角色元数据/MOUTH_RIG，场景只读不猜。布局唯一公式 position=(anchor-0.5)*displaySize。换姿势或换底图必须重新差分测锚点，不得沿用旧像素。大参林药师：palm[0.548,0.391] point[0.528,0.418]。配套 lesson.mouth-anchor-from-diff-not-guess。",
+      "source": "tasks/lessons.md",
+      "related_lesson_id": "lesson.mouth-anchor-from-diff-not-guess"
+    },
+    {
+      "id": "lesson.circle-mask-is-not-key-removal",
+      "name_zh": "圆形遮罩不能代替绿幕去除",
+      "status": "active",
+      "tags": [
+        "症状插图",
+        "绿幕",
+        "透明通道",
+        "圆形卡片"
+      ],
+      "rule": "带键色原图不得直接进入圆形遮罩；模板只能使用透明主体或已完成圆形 alpha 的生产资产，并检查角点 alpha 与圆周边缘。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.local-detail-qa-required",
+      "name_zh": "视觉验收必须包含局部放大证据",
+      "status": "active",
+      "tags": [
+        "视觉QA",
+        "嘴型",
+        "插图边缘",
+        "商品背景"
+      ],
+      "rule": "整帧接触表之外，嘴型需400%对比、圆形插图需200%边缘检查，商品效果需覆盖出现前、展开中和稳定态。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.revideo-nested-signal-needs-late-frame-qa",
+      "name_zh": "嵌套动画信号必须检查稳定帧",
+      "status": "active",
+      "tags": [
+        "Revideo",
+        "分层揭示",
+        "逐帧QA",
+        "嵌套组件"
+      ],
+      "rule": "嵌套组件引用可能在入场帧看似成功但后续信号未保持；分级揭示必须同时检查入场中、完成帧和稳定帧，必要时用直接图层遮罩表达揭示。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.audit-illustration-internal-motion",
+      "name_zh": "插画入场必须拆分容器与主体运动",
+      "status": "active",
+      "tags": [
+        "插画",
+        "圆形卡片",
+        "缩放",
+        "遮罩揭示",
+        "逐帧QA"
+      ],
+      "rule": "至少用10fps局部序列分别检查背景圆、插画主体和标签；不能用整卡淡入替代“圆形缩放后主体自底部揭示”等内部动画。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson.classify-product-rays-from-motion",
+      "name_zh": "商品放射背景必须由连续帧判定",
+      "status": "active",
+      "tags": [
+        "商品主视觉",
+        "放射光束",
+        "旋转",
+        "逐帧QA"
+      ],
+      "rule": "先用连续帧判定射线是展开、旋转、缩放或闪切；参考要求商品静止且光束持续旋转时，不得用静态射线、商品呼吸或一次性展开替代。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-audit-illustration-performance-after-entry",
+      "name_zh": "插画入场后仍要审计内部表演",
+      "status": "active",
+      "tags": [
+        "插画动画",
+        "摇摆",
+        "吐气",
+        "疼痛符号",
+        "高帧率QA"
+      ],
+      "rule": "主体完整出现后继续做高帧率局部差分，分别识别人物运动和符号层周期；静态PNG整体平移只能证明入场，不能替代插画内部表演。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-scene-exit-is-motion-contract",
+      "name_zh": "场景退场属于动作契约",
+      "status": "active",
+      "tags": [
+        "退场",
+        "飞出",
+        "缩小",
+        "转场桥"
+      ],
+      "rule": "不得在旁白结束时直接隐藏整个场景；逐项核对元素的飞出方向、缩放、透明度、顺序及其与下一镜头的衔接。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-relation-graph-needs-node-order-and-connectors",
+      "name_zh": "关系图需复刻节点顺序与连接线",
+      "status": "active",
+      "tags": [
+        "关系图",
+        "节点入场",
+        "虚线",
+        "忠实复刻"
+      ],
+      "rule": "关系图不仅核对节点数量，还要核对文字、位置、进入顺序和连接线类型；参考没有的脉冲圈或强调动画不得添加。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-design-upgrade-preserves-brand",
+      "name_zh": "视觉升级不得替换品牌身份",
+      "status": "active",
+      "tags": [
+        "PPTX",
+        "视觉升级",
+        "品牌",
+        "大参林"
+      ],
+      "rule": "升级课件时可重做信息层级、留白、字体、表格和素材呈现，但必须锁定品牌绿、品牌名称、内部声明和稳重专业感；不得改成与品牌无关的通用风格。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-courseware-layout-is-contract",
+      "name_zh": "公司课件布局属于结构契约",
+      "status": "active",
+      "tags": [
+        "PPTX",
+        "封面",
+        "商品介绍",
+        "商品展示",
+        "批量生成"
+      ],
+      "rule": "封面未经授权不得改版；01 页保留商品介绍，02 页保留产品图片展示。默认只允许小幅样式优化，条目超量时复制原版式续页，不得删除栏目或改换布局。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-batch-content-before-redesign",
+      "name_zh": "先解决可变内容批量生成",
+      "status": "active",
+      "tags": [
+        "文本",
+        "Word",
+        "批量",
+        "商品课件",
+        "可变模块"
+      ],
+      "rule": "用户直接粘贴文本或上传 Word；系统自动识别商品介绍、核心卖点、适宜人群、联合用药等模块，结构化字段仅在内部使用。未提供或未可靠识别的字段保持空白并保留 PPTX 可编辑槽位，不得要求用户手工拆 Excel，也不得凭空补写。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-medical-anatomy-needs-production-raster",
+      "name_zh": "医学人体不能用几何线框冒充成片资产",
+      "status": "active",
+      "tags": [
+        "医学机理",
+        "真实人体",
+        "栅格资产",
+        "透明抠图",
+        "局部QA"
+      ],
+      "rule": "人体、器官和解剖主体必须使用重新生成或授权的高质量医学栅格资产；代码几何轮廓和 SVG 线框仅可验证动画结构，不得作为生产级成片资产。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-medical-body-must-match-detail-level-and-internal-motion",
+      "name_zh": "医学人体需匹配参考细节层级并拆分内部运动",
+      "status": "active",
+      "tags": [
+        "医学人体",
+        "半透明",
+        "症状红光",
+        "动态分层",
+        "忠实复刻"
+      ],
+      "rule": "不得以更高解剖细节替代参考片的平滑半透明人体；动态必须拆成风热聚拢、扫描、肺部呼吸、邪气循环与局部红光脉动，静态 PNG 整体缩放不算完成。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-volumetric-medical-mist-cannot-use-line-glyphs",
+      "name_zh": "医学体积邪气不能用字符线条替代",
+      "status": "active",
+      "tags": [
+        "医学机制图",
+        "邪气",
+        "烟雾",
+        "体积介质",
+        "分层动画"
+      ],
+      "rule": "烟雾、邪气和火焰必须匹配参考的透明层次、高光、轮廓与流向；不得使用 Unicode 波浪字符、细描边或重复线条冒充。动画需包含独立漂移、上涌、尺度与明暗变化，并保持器官可读。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-theme-assets-must-join-a-series",
+      "name_zh": "主题素材必须进入稳定系列",
+      "status": "active",
+      "tags": [
+        "素材系列",
+        "可复用",
+        "可组合",
+        "风格统一",
+        "增量扩展"
+      ],
+      "rule": "人体、器官、症状聚焦、剖面、病邪介质和过程路径必须绑定稳定 asset_series_id，共享色板、材质、构图槽位、提示词变量和动画契约。新增主题优先补系列成员，不得沉淀为一次性孤立资产；每个成员仍需独立审核。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-human-characters-require-generated-raster",
+      "name_zh": "正式人物必须使用高质量栅格资产",
+      "status": "active",
+      "tags": [
+        "人物角色",
+        "数字人",
+        "PNG",
+        "WebP",
+        "禁止SVG",
+        "口型"
+      ],
+      "rule": "办公人物、患者、讲师和年龄阶段人物不得由圆形、矩形、线条、SVG 轮廓或代码图元拼成；正式成片必须使用重新生成或授权的高质量 PNG/WebP。数字人口型也须使用同一身份和归一化锚点的透明栅格帧，并完成 400% 局部稳定性 QA。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-faithful-character-quality-preserves-abstraction",
+      "name_zh": "人物提质必须保留参考抽象层级",
+      "status": "active",
+      "tags": [
+        "忠实复刻",
+        "人物角色",
+        "扁平动画",
+        "年龄变化",
+        "禁止现代化"
+      ],
+      "rule": "高质量人物不等于现代、年轻、动漫或写实。先锁定参考片的抽象层级、年代感、年龄、服装和阶段变化；质量提升仅用于清晰栅格、自然手部与五官、透明边缘和身份一致性。本次年龄序列固定为青年、白发老人、蓄须老人、戴眼镜老人。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-courseware-image-guidance-needs-one-page",
+      "name_zh": "业务图片生成说明应集中成独立操作页",
+      "status": "active",
+      "tags": [
+        "Word导入",
+        "图片主题",
+        "提示词",
+        "业务操作",
+        "医药严谨"
+      ],
+      "rule": "图片生成说明集中到 Word 独立页；业务只填写图片主题，可由项目自动生图或复制统一提示词到其他系统，确认后的最终图再粘贴 PPTX。AI 图无文字且不承载药学证据，真实包装和证据只用授权原图。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-image-prompt-guide-needs-embedded-example",
+      "name_zh": "图片提示词指引应嵌入案例成图",
+      "status": "active",
+      "tags": [
+        "Word导入",
+        "图片示例",
+        "提示词",
+        "业务理解",
+        "非医学证据"
+      ],
+      "rule": "独立图片操作页除主题和提示词外，还应嵌入一张标明候选状态与非证据用途的案例成图，使业务直观看懂输入与输出的对应关系；示意图不得被误标为已审核正式素材。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-company-cover-and-back-cover-are-locked",
+      "name_zh": "公司课件封面和封底均为锁定模板",
+      "status": "active",
+      "tags": [
+        "PPTX",
+        "公司模板",
+        "封面",
+        "封底",
+        "锁定"
+      ],
+      "rule": "封面和封底未经授权均不得改版。参考文件缺少独立封底时，不得自行设计通用结束页，必须记录缺失依赖并等待原始 PPTX 或公司封底图。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-pdf-asset-reuse-needs-page-level-ledger",
+      "name_zh": "PDF 素材复用需逐图标明来源与复刻程度",
+      "status": "active",
+      "tags": [
+        "PDF复刻",
+        "素材来源",
+        "复刻程度",
+        "包装图",
+        "医学图片"
+      ],
+      "rule": "使用参考 PDF 内部素材时，逐项记录 PDF 页码、源幻灯片、PPTX 用途、复用或裁切方式、清晰度和待替换状态；必须区分整页图片复用、局部裁切和原生可编辑重建。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-editable-rebuild-must-match-type-hierarchy",
+      "name_zh": "可编辑重建必须忠实匹配字体层级",
+      "status": "active",
+      "tags": [
+        "PPTX",
+        "字体",
+        "字号",
+        "字重",
+        "重点色",
+        "高保真复刻"
+      ],
+      "rule": "可编辑课件不仅复刻布局，还必须逐页匹配字体家族、可见字高、字号、粗细、行距、段距、内边距和重点颜色；不得用统一的偏小灰色正文替代源课件中的黑体引导词、红色关键项、绿色结论和黄色警示。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-page-type-contract-beats-global-bold",
+      "name_zh": "逐页字体契约优先于全局加粗和默认字号",
+      "status": "active",
+      "tags": [
+        "PPTX",
+        "字体契约",
+        "常规字重",
+        "强调区间",
+        "视觉越界",
+        "逐页复刻"
+      ],
+      "rule": "逐页校准不得用统一放大或统一加粗代替。每个文本框需记录常规字重、强调区间、颜色、字号和视觉边界；正文默认保持源稿常规字重，仅源稿明确重点加粗或着色。自动画布溢出检查不能替代卡片、分栏和安全区的肉眼越界检查；页面独立字号体系不得被全局组件覆盖。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-reuse-is-three-layer-composition-not-fixed-template",
+      "name_zh": "业务复用必须是三层组合而非固定模板换字",
+      "status": "active",
+      "tags": [
+        "业务使用",
+        "自由组合",
+        "场景配方",
+        "素材系列",
+        "统一风格"
+      ],
+      "rule": "不得把可复用理解为固定模板换主题。业务只提供审核脚本，系统按语义顺序组合风格层、场景配方层和主题素材层；页面顺序和数量可变，但每项目单一风格包、兼容素材白名单、信息密度和运动焦点约束必须保持一致。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-short-phrases-cannot-be-forced-into-reference-windows",
+      "name_zh": "短语和序号不得暴力压进旧时码",
+      "status": "active",
+      "tags": [
+        "旁白",
+        "短语",
+        "序号",
+        "atempo",
+        "最小时长"
+      ],
+      "rule": "一看就懂、大便干结、记好了、一加名词等短语必须保留最小可听时长；不得逐句使用高倍率 atempo 追参考字幕窗。应按语义段统一拟合并同步字幕，默认加速不高于 1.18×。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-background-effects-must-not-disappear-by-scene",
+      "name_zh": "背景环境动效不得按场景忽隐忽现",
+      "status": "active",
+      "tags": [
+        "背景",
+        "电流",
+        "粒子",
+        "风格包",
+        "连续性"
+      ],
+      "rule": "背景光电属于风格包的全片轨道，不能由各场景各自决定是否启用。场景可降低强度，但开头、中段、后段和切点必须保持同一运动语法连续。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-scene-decoration-must-exit-with-scene",
+      "name_zh": "场景专属装饰必须随场景退场",
+      "status": "active",
+      "tags": [
+        "背景",
+        "图层生命周期",
+        "场景退场",
+        "首镜头残留",
+        "逐帧QA"
+      ],
+      "rule": "全片环境轨道与场景专属装饰必须分层管理。办公室时钟、空调、书架、墙面图案等只属于办公镜头，人物退场时须同步隐藏；每次切镜后抽查稳定帧，禁止上一个场景的装饰泄漏到后续母版。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-business-word-contains-only-owned-input",
+      "name_zh": "业务 Word 只收集业务实际拥有的输入",
+      "status": "active",
+      "tags": [
+        "Word",
+        "业务输入",
+        "审核正文",
+        "授权素材",
+        "自动分镜"
+      ],
+      "rule": "业务 Word 只收集课程名称、审核正文、可直接上屏的审核要点和授权素材引用；不得要求业务填写画面意图、动效、禁止项、组件 ID、审核状态或技术约束。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-storyboard-preview-is-output-not-input",
+      "name_zh": "画面分镜预览属于系统输出",
+      "status": "active",
+      "tags": [
+        "分镜预览",
+        "截图框架",
+        "素材映射",
+        "业务确认",
+        "自由组合"
+      ],
+      "rule": "截图框架用于展示系统自动拆分后的原文、屏幕文案、素材角色、推荐场景和缺口，供业务确认或更换配方；不得让业务在输入阶段逐框设计画面，否则会退化为人工定制。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-courseware-word-needs-real-content-and-batch-example",
+      "name_zh": "商品课件 Word 必须同时展示真实内容与批量方式",
+      "status": "active",
+      "tags": [
+        "商品培训",
+        "Word",
+        "真实样本",
+        "批量生成",
+        "一商品一文件"
+      ],
+      "rule": "仅有“示例商品A”和空字段不足以让业务快速上手。商品课件 Word 应提供一份来自内部课件的完整已填样本，并在首页直接说明一商品一 Word、复制改内容、多份文件放同一文件夹；缺失栏目留空，超量内容由系统复制同版式续页。真实内容样本仍须标注来源和正式审核边界。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-unified-word-schema-also-needs-one-visual-master",
+      "name_zh": "统一业务 Word 必须同时统一视觉母版",
+      "status": "active",
+      "tags": [
+        "Word",
+        "统一规范",
+        "视觉母版",
+        "分镜截图",
+        "业务填写"
+      ],
+      "rule": "统一字段 schema 和解析协议不足以称为统一规范。两类业务 Word 必须共用纸张、页边距、字体、字号阶梯、色板、页眉页脚、字段区块、表格几何、截图位置、可复制章节块和分页规则；类型差异只保留在标签、真实示例内容和必要专属字段。交付前应并排渲染抽查。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-business-word-needs-real-rendered-video-frames",
+      "name_zh": "业务 Word 应展示沉淀模板原帧而非系统分镜卡",
+      "status": "deprecated",
+      "tags": [
+        "Word",
+        "真实成片",
+        "业务理解",
+        "样片时码",
+        "分镜预览"
+      ],
+      "rule": "模板原帧可用于独立的效果说明资料，但不得继续嵌入多主题业务输入 Word；业务输入已由 lesson-video-word-must-be-content-driven-not-fixed-chapters 取代。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-business-editor-must-use-direct-manipulation",
+      "name_zh": "业务在线精修必须以画布直接操作为主",
+      "status": "deprecated",
+      "tags": [
+        "在线精修",
+        "业务使用",
+        "拖拽",
+        "缩放",
+        "间距",
+        "直接操作"
+      ],
+      "rule": "业务通过画布选中、拖动、拉伸或等比缩放、间距手柄、吸附对齐、裁切框和直接替换完成精修；不得要求业务填写 X/Y、scale、gap 或 JSON，也不设置重复的滑杆微调入口。内部继续保存受约束的结构化参数补丁。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-editor-adjustments-need-versioned-template-promotion",
+      "name_zh": "在线精修结果应分级提升为模板新版本",
+      "status": "deprecated",
+      "tags": [
+        "在线精修",
+        "模板沉淀",
+        "场景配方",
+        "版本化",
+        "回滚",
+        "影响范围"
+      ],
+      "rule": "画布调整默认保存为当前项目覆盖；业务可显式提升为场景默认或模板候选版本。提升时区分单实例、同类场景配方、组件默认值和风格包全局规则，预览影响范围并完成验证与批准；不得静默覆盖已发布模板，旧版本必须可继续使用和回滚。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-direct-manipulation-needs-no-duplicate-fine-tuning",
+      "name_zh": "画布直接操作不再叠加精确微调模块",
+      "status": "deprecated",
+      "tags": [
+        "在线精修",
+        "业务使用",
+        "拖拉拽",
+        "直接操作",
+        "避免重复入口"
+      ],
+      "rule": "画布已经支持位置拖动、缩放手柄和间距手柄时，不再叠加数字输入或滑杆式精确微调模块；吸附、对齐和撤销提供必要的可控性，结构化数值只在系统内部保存。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-editor-value-centers-on-batch-template-asset-replacement",
+      "name_zh": "在线编辑优先验证模板素材批量替换价值",
+      "status": "deprecated",
+      "tags": [
+        "在线编辑",
+        "素材替换",
+        "多选",
+        "模板槽位",
+        "开源优先",
+        "业务价值验证"
+      ],
+      "rule": "固定模板场景下，优先验证业务多选插图并批量替换、同时保持位置、裁切、审核文字和动画绑定的价值，不把调整大小和距离当作编辑器主价值。底层优先复用成熟开源画布能力，自研只集中在 asset_slot_id、跨场景影响范围、审核锁定和模板版本化。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-editor-technical-spike-is-not-business-ready-ui",
+      "name_zh": "编辑器技术实验不能冒充业务可用界面",
+      "status": "deprecated",
+      "tags": [
+        "在线编辑",
+        "业务可用性",
+        "成熟编辑器",
+        "OpenVideo",
+        "避免重搭排版"
+      ],
+      "rule": "多选、替换等技术能力通过不代表编辑器可交付。若画布排版、图层呈现和整体完成度仍需业务帮助调整，应停止自建界面；在个人内部非商业验证许可允许时，直接复用成熟编辑器完整界面，只接入模板槽位和业务限制。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-editor-actions-must-be-visible-and-template-saves-versioned",
+      "name_zh": "编辑器关键操作必须可见且模板保存必须版本化",
+      "status": "active",
+      "tags": [
+        "在线编辑",
+        "撤销",
+        "重做",
+        "模板沉淀",
+        "版本化",
+        "可发现性",
+        "窄视口",
+        "原生文件选择",
+        "直接操作",
+        "侧边属性面板",
+        "不遮挡画布",
+        "PPT式框选",
+        "母版锁定",
+        "父子去重",
+        "真实Img",
+        "同帧重绘"
+      ],
+      "rule": "底层支持不等于业务可用。必须在用户实际窄视口和正常编辑宽度验证固定侧边属性面板、禁用态说明、点选与拖动命中、空白起框的 PPT 式多选、选区整体移动、四角缩放、旋转、方向键微移、文字与图片修改、原生文件选择器批量替换、撤销／重做和候选保存。救急悬浮层不得作为最终业务布局，面板不能遮挡画布，窄视口必须可收起；属性栏不得重复提供多选、缩放、旋转模式按钮，变换直接由画布选择框、四角手柄和顶部旋转点完成。母版、字幕、安全区、装饰线和卡片边框必须锁定；图片验收必须记录真实 Img 运行时类型、选择 key、当前帧及拖动前后像素变化，不能只看选框变化，且暂停帧应同帧重绘。框选命中父子层时只保留最深业务图层，避免叠加变换。点选不得误提交空拖动。画布调整只能显式生成候选新版本，禁止静默覆盖正式模板。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-personalized-export-must-not-require-template-promotion",
+      "name_zh": "个性化项目导出不得依赖模板沉淀",
+      "status": "active",
+      "tags": [
+        "在线编辑",
+        "个性化项目",
+        "MP4导出",
+        "PPTX导出",
+        "模板候选",
+        "副作用隔离"
+      ],
+      "rule": "业务按自身审核内容和素材完成调整后，可直接导出当前项目的 MP4 或可编辑 PPTX；导出只消费一次性项目快照，不得先写入模板候选、覆盖 current-candidate 或修改 settled 模板。模板沉淀必须是独立显式动作。视频与 PPTX 共用内容和素材映射但使用独立渲染器；PPTX 应输出原生可编辑对象，不得用视频帧截图合集冒充可编辑课件，也不承诺与视频时间轴动画无损等价。",
+      "source": "tasks/lessons.md",
+      "related_decision_id": "decision.shared-content-separate-renderers"
+    },
+    {
+      "id": "lesson-courseware-word-must-route-by-template-profile",
+      "name_zh": "多套 PPTX 业务 Word 必须先按课型路由",
+      "status": "active",
+      "tags": [
+        "PPTX",
+        "Word",
+        "批量生成",
+        "课件类型",
+        "模板路由",
+        "统一规范"
+      ],
+      "rule": "多套 PPTX 共用业务入口时，Word 必须保留业务可理解且不可随意修改的课件类型；解析器先选择 profile 与 template_id，再解释专属栏目。统一视觉母版、提交方式和公共审核字段，不得让导入器固定绑定某一模板，也不得把 5 页商品课件与 18 页疾病—商品—场景课件混成同一字段表。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-business-placeholders-must-name-owner-and-not-enter-output",
+      "name_zh": "业务占位提示必须标明填写责任且不得进入课件",
+      "status": "active",
+      "tags": [
+        "Word",
+        "业务填写",
+        "占位提示",
+        "审核终稿",
+        "PPTX导入"
+      ],
+      "rule": "不得在业务 Word 中使用“按审核资料填写”这类无主语占位语。需替换的内容统一写成“【业务填写】粘贴公司已审核终稿；无内容可留空”，并使用弱化样式；解析器必须把未替换的【业务填写】提示视为空值，禁止带入 PPTX。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-courseware-word-must-show-ppt-output-location",
+      "name_zh": "课件业务 Word 每个内容区块必须标明 PPT 展示位置",
+      "status": "deprecated",
+      "tags": [
+        "Word",
+        "PPTX",
+        "业务填写",
+        "字段映射",
+        "展示位置"
+      ],
+      "rule": "仅用文字标注页码和区域仍会要求业务理解抽象映射，已由 lesson-courseware-word-use-real-slide-example-in-place 取代。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-courseware-word-use-real-slide-example-in-place",
+      "name_zh": "课件业务 Word 应在填写处直接展示原 PPT 截图与真实内容",
+      "status": "deprecated",
+      "tags": [
+        "Word",
+        "PPTX",
+        "业务填写",
+        "真实示例",
+        "原页截图",
+        "批量生成"
+      ],
+      "rule": "该做法仅适合同框架复刻，不作为多主题批量创建主输入；已由 lesson-multi-theme-courseware-input-must-be-content-driven 取代。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-multi-theme-courseware-input-must-be-content-driven",
+      "name_zh": "多主题课件批量创建必须由内容驱动自适应页型",
+      "status": "active",
+      "tags": [
+        "Word",
+        "PPTX",
+        "批量创建",
+        "多主题",
+        "内容驱动",
+        "自适应布局",
+        "页型库"
+      ],
+      "rule": "多主题课件的业务 Word 只提交主题、培训目标、自然板块、审核内容、必须上屏事实和授权图片，不得按某份 PPT 的固定页码、章节或卡片数量要求业务逐栏填满。AI 应根据内容意图、条目数量与图片数量，从绑定风格包的已验收页型库中选择页面结构，自适应分栏、卡片数和分页；沉淀 PPTX 作为风格与页型参考，不作为固定输入表。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-video-word-must-be-content-driven-not-fixed-chapters",
+      "name_zh": "视频课件业务 Word 必须内容驱动而非按样片章节填空",
+      "status": "active",
+      "tags": [
+        "Word",
+        "视频培训",
+        "健康知识",
+        "商品培训",
+        "内容驱动",
+        "自然板块",
+        "自适应镜头"
+      ],
+      "rule": "即使允许章节增删，只要业务 Word 仍逐章展示某个健康或商品样片的完整章节，就会被理解为固定模板填空。两类视频应共用记事本式空白输入，只收主题、自然板块、可直接讲解的审核正文和相关授权图片；模板、style_pack_id、章节拆分、镜头数量与时长由提交入口和系统规划决定，真实样本只示范写法。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-rejected-editor-pocs-must-be-removed-after-route-lock",
+      "name_zh": "编辑路线锁定后删除已否决 PoC",
+      "status": "active",
+      "tags": [
+        "PoC清理",
+        "编辑器",
+        "剪映",
+        "个人内部",
+        "依赖体积"
+      ],
+      "rule": "个人内部生成后精修优先复用成熟桌面编辑器。编辑路线验证一旦否决，应删除实现、依赖和运行产物，只保留简短的结论、原因、边界和可恢复来源，避免本地项目持续积累不再使用的过程代码。",
+      "source": "tasks/lessons.md",
+      "related_decision_id": "decision.jianying-draft-as-personal-editing-surface-v1"
+    },
+    {
+      "id": "lesson-canonical-gold-sample-must-be-explicitly-registered",
+      "name_zh": "正式金样必须由模板注册表唯一定位",
+      "status": "active",
+      "tags": [
+        "金样",
+        "模板沉淀",
+        "canonical",
+        "文件定位",
+        "防混淆",
+        "风热证"
+      ],
+      "rule": "正式金样必须登记在对应 template 条目的 canonical_gold_sample 中。查找时先查询生产库，禁止按文件修改时间、大小、master 后缀或聊天记忆猜测。canonical 定位角色与技术／授权 QA 状态分开记录；探索稿、分段稿、制作母版和剪映草稿必须显式列为非 canonical 或独立角色。健康科普模板当前唯一正式完整复刻金样为 production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4；wind-heat-gold-sample-master.mp4 是早期内部探索稿。",
+      "source": "tasks/lessons.md",
+      "related_template_id": "template.health-reference-tech-v1"
+    },
+    {
+      "id": "lesson-settled-templates-and-validation-artifacts-need-separate-directories",
+      "name_zh": "正式模板与验证产物必须物理分目录",
+      "status": "active",
+      "tags": [
+        "模板沉淀",
+        "目录治理",
+        "validation",
+        "canonical",
+        "视频",
+        "PPTX"
+      ],
+      "rule": "用户确认沉淀的模板必须一套一目录，目录内保存唯一 canonical 产物、manifest、生成入口和 style_pack_id；探索稿、阶段签样、分段稿、对比稿、QA、接触表及被否决版本统一进入 validation 目录。正式模板和过程产物不得继续混放在同一 out/output 文件夹。注册表状态、canonical 路径和物理目录必须一致；当前正式范围为 2 套视频课件与 2 套 PPTX 课件。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "lesson-editable-video-requires-full-film-evidence-chain",
+      "name_zh": "完整可编辑视频必须用全片证据闭环",
+      "status": "active",
+      "tags": [
+        "视频课件",
+        "完整拆解",
+        "逐元素编辑",
+        "来源扫描",
+        "全片QA",
+        "风热证"
+      ],
+      "rule": "分段 MP4、参考帧、整张背景图或少量代表帧不能证明模板已完整拆解。生产候选必须同时具备零参考视频像素来源扫描、逐业务元素稳定 layer_id、统一 style／presenter／voice 契约、逐场景编辑重渲染、完整成片解码和人工视觉复核。技术 QA、业务签样与品牌授权必须分开记录；任一未完成时不得覆盖 settled canonical 或标记 production validated。",
+      "source": "tasks/lessons.md",
+      "related_template_id": "template.health-reference-tech-v1"
+    },
+    {
+      "id": "lesson-presenter-mouth-palette-must-match-character",
+      "name_zh": "数字人口型必须使用浅色融合色板",
+      "status": "active",
+      "tags": [
+        "数字人",
+        "口型",
+        "唇色",
+        "描边",
+        "视觉融合",
+        "近景QA"
+      ],
+      "rule": "口型锚点和切换稳定不等于视觉融合通过。柔和卡通人物应从角色原有唇色和腮红取色，统一使用低对比浅粉口腔、再浅一阶舌色以及细且半透明的粉灰轮廓；禁止偏棕偏黑的大面积口腔贴片或高对比粗描边。闭口、微张、O 型和大张口必须共用同一色阶，签样覆盖多姿势切换帧，并在最终尺寸和 400% 近景检查最大张口状态的明度与脸部融合。",
+      "source": "tasks/lessons.md",
+      "related_component_id": "component.presenter.bound-pharmacist"
+    },
+    {
+      "id": "lesson-template-promotion-must-save-as-new-version",
+      "name_zh": "模板沉淀必须另存新版本并防止误触",
+      "status": "active",
+      "tags": [
+        "模板沉淀",
+        "版本管理",
+        "防误覆盖",
+        "二次确认",
+        "业务编辑器"
+      ],
+      "rule": "模板沉淀不得单击即写入。第一次点击只进入确认状态，第二次明确确认后才保存；每次保存新增带毫秒时间和唯一短码的候选文件并使用排他创建，禁止覆盖 settled 正式模板和历史候选。current-candidate.json 仅作为当前候选指针，页面必须明确说明原模板和历史版本不会被修改。",
+      "source": "tasks/lessons.md",
+      "related_template_id": "template.health-reference-tech-v1"
+    },
+    {
+      "id": "lesson.related-meds-note-above-packs-no-duplicate-bottom-title",
+      "name_zh": "关联用药必须讲解句在上且禁止与导航重复的底部标题",
+      "status": "active",
+      "tags": [
+        "关联用药",
+        "联合用药",
+        "旁白顺序",
+        "版式",
+        "导航pill",
+        "培训课件",
+        "视频",
+        "PPTX"
+      ],
+      "rule": "关联/联合用药页的旁白与版式顺序为：章节→导航pill→讲解句（居中且在包装上方）→包装A+B。先讲清组合价值与使用场景，再出示商品大图。导航已标明「本品+关联品」时，不得再在底部重复「一、xxx」同义标题（既非必要字幕也会与导航重叠）。缺包装用授权槽位占坑；业务扩展页须标 business_extension，参考无此段时不得伪称像素级复刻。",
+      "source": "tasks/lessons.md",
+      "evidence": "product-courseware-4-faithful-replica-v1/docs/video-pptx-grammar-and-experience-v1.md"
+    },
+    {
+      "id": "lesson.training-summary-must-be-full-sentences-with-row-headers",
+      "name_zh": "培训总结页必须完整句复习且默认行标题布局",
+      "status": "active",
+      "tags": [
+        "总结页",
+        "复习",
+        "完整句",
+        "行标题",
+        "关键词",
+        "培训课件",
+        "视频",
+        "PPTX"
+      ],
+      "rule": "商品培训总结页目标是复习一页即可完整理解，不得只放关键词标签。每行/每条须含完整说明（功效机理、特点依据、适宜/不适宜/用法、关联组合与话术）。默认版式为左侧行标题+右侧完整正文（上→下按主题阅读）；非业务显式要求时不要做成顶栏四列表头的关键词矩阵。参考片「功效详表」与「敲重点总结」应分场景类型，勿混名。",
+      "source": "tasks/lessons.md",
+      "evidence": "product-courseware-4-faithful-replica-v1/docs/video-pptx-grammar-and-experience-v1.md"
+    },
+    {
+      "id": "lesson.courseware-type-icons-audio-extension-for-video-pptx",
+      "name_zh": "培训课件字号偏大图标位图化且扩展段音画分层",
+      "status": "active",
+      "tags": [
+        "字号",
+        "位图图标",
+        "参考旁白",
+        "业务扩展",
+        "静音占位",
+        "克隆声线",
+        "content-model"
+      ],
+      "rule": "培训图文课件字号整体偏大；序列勾选/箭头等小图标做成可复用PNG而非空心圆点；主视觉用位图，几何表格可用矢量。保真段直接复用参考旁白原轨；business_extension 段画面可先交付、音轨静音占位，日后按content-model分段克隆并过ASR闸门。视频静帧、网页与PPTX共用同一content-model与槽位语义。扩展段从静音占位升级为克隆补录时：口播稿必须完整句；prompt的ref_audio/ref_text严格对齐；补录后须离线ASR查泄漏前缀；不覆盖reference-narration原轨。",
+      "source": "tasks/lessons.md",
+      "evidence": "product-courseware-4-faithful-replica-v1/docs/video-pptx-grammar-and-experience-v1.md"
+    },
+    {
+      "id": "lesson.editor-bg-must-omit-editable-layers-gold-template",
+      "name_zh": "金样编辑器底板不得烧录可编辑图文层",
+      "status": "active",
+      "tags": [
+        "金样",
+        "可编辑视频",
+        "Revideo",
+        "editor-bg",
+        "omit_text",
+        "双轨静帧",
+        "editable图层",
+        "layer-manifest",
+        "多场景点选"
+      ],
+      "rule": "打造金样/可编辑视频模版时必须双轨静帧：成片 scene-stills 可烧录签样字图；编辑器 scene-stills-editor-bg（omit_text）只保留不可编 chrome（底、卡片壳、表格线、+锚点等），禁止把 layer-manifest 中带 editable: 的 text/image 角色再 paste/draw 进底板。每个可编角色必须是真实 Txt/Img 节点且 key=editable:{prefix}:{page}:{role}，长文 width+textWrap；一页一 makeScene2D，禁止 opacity=0 叠页导致插件点不到；同场景禁止重复 node key。成片权威=完整静帧；编辑态权威=editor-bg+全量 editable 层。后续主题金样一律按此门禁，不得只给首页可编、其余烧进 PNG。",
+      "source": "tasks/lessons.md",
+      "evidence": "product-courseware-4-faithful-replica-v1/docs/editable-video-v1.md"
+    },
+    {
+      "id": "lesson.qwen3-clone-prompt-audio-must-match-ref-text",
+      "name_zh": "Qwen3克隆参考音频切片必须与ref_text完整对齐",
+      "status": "active",
+      "tags": [
+        "Qwen3-TTS",
+        "克隆语音",
+        "ref_audio",
+        "ref_text",
+        "参考文本泄漏",
+        "最大的十种",
+        "segment-studio",
+        "business_extension"
+      ],
+      "rule": "使用Qwen3/mlx-audio做声线克隆时，reference-prompt 的音频窗口必须按词级时码切完整句，且 ref_text 与切片内容一字级对齐；禁止音频截断在半句而 ref_text 写完整句——否则每段TTS开头会补念漏掉的半句（如「最大的十种健康食品…」循环）。切片参数变更须失效缓存（meta记录ss/t/ref_text）。扩展段补录后对每段做离线ASR，重点查开头3s泄漏与药名漏读；有波形不等于内容正确。",
+      "source": "tasks/lessons.md",
+      "evidence": "product-courseware-4-faithful-replica-v1/docs/segment-studio-v1.md"
+    }
+  ]
+}

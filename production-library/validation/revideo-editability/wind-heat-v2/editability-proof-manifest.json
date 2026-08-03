@@ -1,0 +1,75 @@
+{
+  "projectId": "health.wind-heat.editable-v2",
+  "status": "rendered",
+  "cases": [
+    {
+      "scene": "intro",
+      "time": 2.5,
+      "key": "editable:intro:title:main"
+    },
+    {
+      "scene": "character",
+      "time": 10,
+      "key": "editable:character:symptom-card:0:text"
+    },
+    {
+      "scene": "mechanism",
+      "time": 33,
+      "key": "editable:mechanism:assembly:body-asset"
+    },
+    {
+      "scene": "symptoms",
+      "time": 50,
+      "key": "editable:symptoms:asset:①-0"
+    },
+    {
+      "scene": "treatment",
+      "time": 104,
+      "key": "editable:treatment:recipe:dosage"
+    },
+    {
+      "scene": "medication",
+      "time": 114,
+      "key": "editable:medication:card:银翘解毒颗粒:title"
+    },
+    {
+      "scene": "summary",
+      "time": 165,
+      "key": "editable:summary:matrix:item:0:body"
+    }
+  ],
+  "patches": {
+    "editable:intro:title:main": {
+      "text": "风热证（可编辑）",
+      "fill": "#fff2a6"
+    },
+    "editable:character:symptom-card:0:text": {
+      "text": "喉咙肿痛 ✓",
+      "fill": "#fff2a6"
+    },
+    "editable:mechanism:assembly:body-asset": {
+      "transform": {
+        "x": 42,
+        "scale": 0.9,
+        "rotation": 3
+      }
+    },
+    "editable:symptoms:asset:①-0": {
+      "src": "/production-symptoms/cough.png"
+    },
+    "editable:treatment:recipe:dosage": {
+      "text": "各 3—5 克（可改）",
+      "fill": "#fff2a6"
+    },
+    "editable:medication:card:银翘解毒颗粒:title": {
+      "text": "药品名称可替换",
+      "fontSize": 34
+    },
+    "editable:summary:matrix:item:0:body": {
+      "text": "风 + 热｜内容可编辑",
+      "fill": "#fff2a6"
+    }
+  },
+  "output": "editability-proof-7-scenes.mp4",
+  "note": "Validation-only changes; the settled template is not modified."
+}

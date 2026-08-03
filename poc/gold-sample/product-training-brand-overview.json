@@ -1,0 +1,84 @@
+{
+  "project_id": "product.q10.brand-overview-faithful-v1",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "style_pack_locked": true,
+  "content_lock": "reference-transcript",
+  "referenceRange": {
+    "start": 49.44,
+    "end": 62.48,
+    "duration": 13.297
+  },
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-product-training-brand-overview-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；自然语速铺轨，禁止超1.18×暴力加速",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "min_tempo": 0.95,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "今天给大家介绍的，连锁药店在售的辅酶Q10相关商品，它源自诺贝尔奖相关成果，是维持生命活力的关键物质，精准覆盖心脏保护，辅助生殖活力提升等核心场景，两大核心功效。",
+          "raw_duration": 15.228,
+          "used_duration": 13.137,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 12.696,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "今天给大家介绍的，连锁药店在售的辅酶Q10相关商品，它源自诺贝尔奖相关成果，是维持生命活力的关键物质，精准覆盖心脏保护，辅助生殖活力提升等核心场景，两大核心功效。"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "product": "/product-training-faithful/q10-reference-approx-v1.png",
+    "restriction": "无品牌重制包装示意；未使用参考视频包装或Logo像素"
+  },
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 1.48,
+      "text": "今天给大家介绍的"
+    },
+    {
+      "start": 1.48,
+      "end": 4.321,
+      "text": "连锁药店在售的辅酶Q10相关商品"
+    },
+    {
+      "start": 4.321,
+      "end": 6.273,
+      "text": "它源自诺贝尔奖相关成果"
+    },
+    {
+      "start": 6.273,
+      "end": 8.404,
+      "text": "是维持生命活力的关键物质"
+    },
+    {
+      "start": 8.404,
+      "end": 9.824,
+      "text": "精准覆盖心脏保护"
+    },
+    {
+      "start": 9.824,
+      "end": 12.132,
+      "text": "辅助生殖活力提升等核心场景"
+    },
+    {
+      "start": 12.132,
+      "end": 13.197,
+      "text": "两大核心功效"
+    }
+  ],
+  "playback_duration": 13.297
+}

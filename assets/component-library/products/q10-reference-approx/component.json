@@ -1,0 +1,28 @@
+{
+  "id": "product.q10-reference-approx",
+  "category": "products",
+  "style_id": "q10-reference-faithful-v1",
+  "version": "1.0.0",
+  "status": "signoff-placeholder",
+  "subject": "接近参考构图的红白辅酶 Q10 盒瓶组合示意",
+  "files": {
+    "master_chroma": "master/q10-reference-approx-v1-chroma.png",
+    "transparent": "transparent/q10-reference-approx-v1.png",
+    "thumbnail": "thumbnails/q10-reference-approx-v1.png",
+    "prompt": "prompts/q10-reference-approx-v1.md"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "reference_video_pixels_used": false,
+    "real_brand_packaging": false
+  },
+  "usage": {
+    "allowed": ["内部复刻签样中的明确标注包装示意"],
+    "prohibited": ["冒充能气朗真实包装", "对外广告", "替代内部批准商品原图"]
+  },
+  "review": {
+    "visual": "pending-user-signoff",
+    "alpha": "passed",
+    "replacement_required": "获得真实包装、Logo 和说明书原图后替换"
+  }
+}

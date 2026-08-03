@@ -1,0 +1,50 @@
+{
+  "artifact": "商品培训课件3_精细复刻_继续片段_v5",
+  "status": "superseded-rejected-by-user-fidelity-correction",
+  "scope": {
+    "new_audio_range": "00:40.60–01:20.72",
+    "reference_video_semantic_range": "约 00:40.68–01:22.96",
+    "topics": ["二、产品特点", "成人儿童安全性均良好", "片剂、干混悬剂双剂型选择", "原研品牌", "三、适宜人群"]
+  },
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "pptx": {
+    "path": "商品培训课件3_精细复刻_PPTX继续片段_v5.pptx",
+    "sha256": "f28e651a42e299cc5bb37e371ba10f6352a6144180f9fc276b6df5b56f0c87d2",
+    "slides": 6,
+    "editable_layers": ["章节标题", "三段导航", "安全性说明", "剂型标签", "品牌证据条", "人群标签"],
+    "slides_test": "passed-no-overflow",
+    "montage": "pptx-render-v5-next/pptx-6-page-montage-v5-clean.png"
+  },
+  "video": {
+    "path": "商品培训课件3_精细复刻_动画视频继续片段_v5.mp4",
+    "sha256": "bd3e0c0fba86b3a88277a146c6890cd1b0c05325b0c566e23c6ca30ce7e9ff17",
+    "duration_seconds": 40.166667,
+    "resolution": "1920x1080",
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "channels": 2,
+    "integrated_loudness_lufs": -16.52,
+    "true_peak_dbfs": -1.38,
+    "full_decode": "passed",
+    "sustained_black_frames": "none-detected",
+    "offline_asr": "content-coverage-passed-with-domain-term-recognition-errors",
+    "contact_sheet": "video-qa-v5-next/contact-sheet-v5-next-clean.png"
+  },
+  "image_assets": {
+    "generation_mode": "built-in imagegen plus local chroma-key removal",
+    "alpha_files": [
+      "assets/v5-alpha/tablets-alpha.png",
+      "assets/v5-alpha/suspension-bottles-alpha.png",
+      "assets/v5-alpha/elder-alpha.png",
+      "assets/v5-alpha/child-alpha.png",
+      "assets/v5-alpha/chronic-group-alpha.png"
+    ],
+    "alpha_gate": "all RGBA; all corner alpha values are 0"
+  },
+  "timing_contract": "reference-analysis-v5/scene-contract-v5.json",
+  "business_asset_gap": "授权片剂／干混悬剂包装与品牌 Logo 尚未提供；当前仅使用无品牌可替换槽位，不仿造包装或 Logo。",
+  "next_gate": "已由 v6 返工版本取代；v5 仅保留为被纠正对照，不得作为后续扩制基线。",
+  "superseded_by": "qa-report-next-segments-v6.json"
+}

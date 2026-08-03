@@ -1,0 +1,23 @@
+{
+  "slug": "product-courseware-green-v1",
+  "name_zh": "绿色单品 PPT（如金银花露）",
+  "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意",
+  "gallery_title_zh": "绿色商品培训 · 5 页",
+  "outputs": [
+    "可编辑 PPTX"
+  ],
+  "category": "商品培训",
+  "production_ready": true,
+  "status_label": "已签样 · 可换主题量产",
+  "status_note": "联合用药有几条排几行，禁止空白凑行。",
+  "key_frame_labels_zh": [
+    "封面/介绍",
+    "卖点与人群",
+    "联合用药",
+    "品种对标",
+    "注意事项"
+  ],
+  "voice_id": null,
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx"
+}

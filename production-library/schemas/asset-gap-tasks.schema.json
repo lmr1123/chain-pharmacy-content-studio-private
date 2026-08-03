@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chain-pharmacy-content-studio.local/schemas/asset-gap-tasks.schema.json",
+  "title": "AssetGapTasks",
+  "description": "结构化素材缺口任务。真包装/Logo/证据默认 awaiting-business-asset，由业务提供。",
+  "type": "object",
+  "required": ["schema_version", "tasks"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "generated_from": {
+      "type": "string",
+      "description": "plan 清单或 project 路径"
+    },
+    "style_pack_id": { "type": "string" },
+    "theme_id": { "type": ["string", "null"] },
+    "tasks": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/asset_gap_task" }
+    }
+  },
+  "$defs": {
+    "asset_gap_task": {
+      "type": "object",
+      "required": [
+        "gap_id",
+        "role_id",
+        "asset_kind",
+        "preferred_channel",
+        "status"
+      ],
+      "properties": {
+        "gap_id": {
+          "type": "string",
+          "description": "gap.<theme_or_project>.<role>.<slug>"
+        },
+        "theme_id": { "type": ["string", "null"] },
+        "style_pack_id": { "type": ["string", "null"] },
+        "series_id": {
+          "type": ["string", "null"],
+          "description": "目标视觉系列；教学插画必填意向"
+        },
+        "role_id": { "type": "string" },
+        "asset_kind": {
+          "type": "string",
+          "enum": [
+            "packshot",
+            "logo",
+            "evidence",
+            "teaching_illustration",
+            "icon",
+            "presenter",
+            "other"
+          ]
+        },
+        "semantic": {
+          "type": "string",
+          "description": "给人看的语义说明，用于检索与生成"
+        },
+        "preferred_channel": {
+          "type": "string",
+          "enum": ["A", "B", "C", "reuse"],
+          "description": "A=业务授权 B=商用/开源采购 C=参考再生 reuse=应已有成员"
+        },
+        "fallback_channel": {
+          "type": ["string", "null"],
+          "enum": ["A", "B", "C", "reuse", null]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "open",
+            "awaiting-business-asset",
+            "intake-received",
+            "adapting",
+            "candidate",
+            "in-review",
+            "resolved",
+            "blocked",
+            "needs-authorized-or-series-member"
+          ]
+        },
+        "business_provides": {
+          "type": "boolean",
+          "description": "true 表示制作不外购，等业务投喂"
+        },
+        "search_queries": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "must_match": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "license_requirement": {
+          "type": "string",
+          "default": "internal_training_commercial"
+        },
+        "scene_orders": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

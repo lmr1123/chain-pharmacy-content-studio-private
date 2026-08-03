@@ -1,0 +1,77 @@
+# --- environments & deps ---
+.venv/
+.venv-*/
+**/.venv*/
+**/node_modules/
+third_party/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# --- build / runtime ---
+dist/
+**/dist/
+out/
+**/out/
+tmp/
+*.log
+*.pid
+.DS_Store
+Thumbs.db
+*.metallib
+
+# --- editor / local caches ---
+.cache/
+*.tsbuildinfo
+editor-logs/
+
+# --- outputs: only keep 业务使用资料包 ---
+outputs/*
+!outputs/业务使用资料包/
+!outputs/业务使用资料包/**
+
+# --- validation: source+docs only (media is local regenerable / too large) ---
+production-library/validation/**/*.mp4
+production-library/validation/**/*.mov
+production-library/validation/**/*.webm
+production-library/validation/**/*.wav
+production-library/validation/**/*.mp3
+production-library/validation/**/*.png
+production-library/validation/**/*.jpg
+production-library/validation/**/*.jpeg
+production-library/validation/**/*.gif
+production-library/validation/**/*.webp
+production-library/validation/**/*.pptx
+production-library/validation/**/*.pdf
+production-library/validation/**/*.ttf
+production-library/validation/**/*.otf
+production-library/validation/**/exports/
+production-library/validation/**/renders/
+production-library/validation/**/audio-work/
+production-library/validation/**/qa-frames/
+production-library/validation/**/contact-sheet*/
+production-library/validation/**/stills/
+production-library/validation/**/thumbs/
+production-library/validation/**/pptx-slides/
+
+# --- poc: keep source; drop binary media (settled has canonicals) ---
+poc/**/*.mp4
+poc/**/*.mov
+poc/**/*.webm
+poc/**/*.wav
+poc/**/*.mp3
+poc/**/public/**/*.png
+poc/**/public/**/*.jpg
+poc/**/output/
+poc/**/out/
+
+# --- optional local secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+credentials.json

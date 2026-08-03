@@ -1,0 +1,282 @@
+{
+  "project_id": "product.tomato-lycopene.faithful-v1",
+  "status": "rejected-not-reference-faithful",
+  "rejection_reason": "用户确认本版本是参考启发下的重设计，不是参考视频的100%复刻；禁止作为扩展母版。",
+  "title": "福尔麦金利牌番茄红素软胶囊",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "content_lock": "business-script-with-quality-control-edits",
+  "reference": {
+    "video": "/Users/liminrong/Downloads/商品培训课件4/商品培训课件4.mp4",
+    "audio": "/Users/liminrong/Downloads/商品培训课件4/商品培训课件4.mp3",
+    "duration_seconds": 127.833,
+    "dimensions": "854x480",
+    "reference_coverage": [
+      "opening",
+      "tomato_intro",
+      "core_benefits",
+      "product_features",
+      "audience",
+      "three_benefit_summary"
+    ]
+  },
+  "outputs": [
+    "mp4",
+    "html-editor",
+    "pptx"
+  ],
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "theme": {
+    "font_family": "HarmonyOS Sans SC",
+    "display_font_family": "Gen Jyuu Gothic",
+    "background": "#f3f1ec",
+    "title": "#ffe33c",
+    "accent": "#ba3034",
+    "ink": "#442f35",
+    "muted": "#725e64"
+  },
+  "assets": {
+    "product_packshot": {
+      "asset_slot_id": "asset.product.packshot",
+      "src": "",
+      "status": "awaiting-business-authorized-image"
+    },
+    "brand_logo": {
+      "asset_slot_id": "asset.brand.logo",
+      "src": "",
+      "status": "awaiting-business-authorized-image"
+    },
+    "tomato_prostate": {
+      "asset_slot_id": "asset.illustration.tomato-prostate",
+      "src": "assets/generated/tomato-prostate.png",
+      "status": "generated-original"
+    },
+    "antioxidant": {
+      "asset_slot_id": "asset.illustration.antioxidant",
+      "src": "assets/generated/antioxidant.png",
+      "status": "generated-original"
+    },
+    "immunity": {
+      "asset_slot_id": "asset.illustration.immunity",
+      "src": "assets/generated/immunity.png",
+      "status": "generated-original"
+    },
+    "xinjiang_field": {
+      "asset_slot_id": "asset.illustration.xinjiang-field",
+      "src": "assets/generated/xinjiang-tomato-field.png",
+      "status": "generated-original"
+    },
+    "extraction": {
+      "asset_slot_id": "asset.illustration.extraction-softgel",
+      "src": "assets/generated/extraction-softgel.png",
+      "status": "generated-original"
+    },
+    "audience": {
+      "asset_slot_id": "asset.illustration.audience",
+      "src": "assets/generated/audience.png",
+      "status": "generated-original"
+    }
+  },
+  "scenes": [
+    {
+      "id": "s01-cover",
+      "type": "product_hero",
+      "source_class": "observed_reference",
+      "duration": 9.42,
+      "title": "福尔麦金利牌番茄红素软胶囊",
+      "headline": "番茄红素·商品知识培训",
+      "bullets": [
+        "包装标示功能以实物标签为准",
+        "成分科普与产品功能分开表述",
+        "联合使用前请咨询药师"
+      ],
+      "image": "tomato_prostate",
+      "narration": "你是否知道，番茄是日常餐桌上常见的健康食材，它所含的番茄红素，也是今天商品知识培训的核心成分。"
+    },
+    {
+      "id": "s02-context",
+      "type": "opening_education",
+      "source_class": "observed_reference",
+      "duration": 17.657,
+      "title": "关注男性前列腺健康",
+      "headline": "尿频、尿急、会阴不适、排尿灼痛",
+      "bullets": [
+        "这些症状可能持续影响生活质量",
+        "出现明显不适应及时就医",
+        "营养补充不替代诊断和治疗"
+      ],
+      "image": "tomato_prostate",
+      "narration": "在快节奏生活中，不少男性会遇到尿频、尿急、会阴不适或排尿灼痛等问题。这些表现可能影响日常生活，出现明显或持续不适时，应及时就医。下面了解福尔麦金利番茄红素软胶囊。"
+    },
+    {
+      "id": "s03-benefit-prostate",
+      "type": "benefit_overview",
+      "source_class": "observed_reference",
+      "duration": 14.16,
+      "title": "三大核心功效",
+      "headline": "1·包装标示：保护前列腺、提高精子活力",
+      "bullets": [
+        "成分科普：番茄红素具有抗氧化活性",
+        "不将营养补充品表述为治疗药物"
+      ],
+      "image": "tomato_prostate",
+      "narration": "第一，按业务提供的包装功能信息，产品核心关注前列腺保护与精子活力。从成分科普角度，番茄红素具有抗氧化活性，产品具体功能以实物标签和说明书为准。"
+    },
+    {
+      "id": "s04-benefit-antioxidant",
+      "type": "benefit_overview",
+      "source_class": "observed_reference",
+      "duration": 13.82,
+      "title": "三大核心功效",
+      "headline": "2·抗氧化，延缓衰老",
+      "bullets": [
+        "成分可参与单线态氧和自由基相关反应",
+        "不采用“是维E的100倍”等未核验定量语"
+      ],
+      "image": "antioxidant",
+      "narration": "第二，抗氧化。番茄红素是一种类胡萝卜素，可以参与单线态氧和自由基相关反应。本课只做成分知识介绍，不使用未经核验的倍数比较或疗效承诺。"
+    },
+    {
+      "id": "s05-benefit-immunity",
+      "type": "benefit_overview",
+      "source_class": "observed_reference",
+      "duration": 14.06,
+      "title": "三大核心功效",
+      "headline": "3·包装标示：增强免疫力",
+      "bullets": [
+        "成分科普：抗氧化与免疫细胞保护相关",
+        "不替代均衡饮食、运动和医疗建议"
+      ],
+      "image": "immunity",
+      "narration": "第三，按业务提供的包装功能信息，产品关注增强免疫力。成分科普可介绍番茄红素的抗氧化活性，但营养补充不替代均衡饮食、运动和医疗建议。"
+    },
+    {
+      "id": "s06-feature-origin",
+      "type": "evidence_cards",
+      "source_class": "observed_reference",
+      "duration": 14.96,
+      "title": "产品特点",
+      "headline": "1·产地条件",
+      "bullets": [
+        "新疆日照时间长，昼夜温差明显",
+        "宣传时避免“世界最好”等绝对化表述",
+        "产地变更时以企业最新资料为准"
+      ],
+      "image": "xinjiang_field",
+      "narration": "产品特点第一项，原料产地条件。新疆日照时间长，昼夜温差明显，适合番茄生长。门店介绍时应避免“最好”等绝对化用语，产地信息也要以企业最新批次资料为准。"
+    },
+    {
+      "id": "s07-feature-material",
+      "type": "evidence_cards",
+      "source_class": "observed_reference",
+      "duration": 17.398,
+      "title": "产品特点",
+      "headline": "2·原料与浓缩形态",
+      "bullets": [
+        "业务资料：优选番茄果肉提取",
+        "每100克含番茄红素1.5克",
+        "每日1至2粒，以产品标签为准"
+      ],
+      "image": "extraction",
+      "narration": "第二，业务资料介绍本品采用番茄果肉提取。第三，软胶囊便于定量补充。业务稿载明，每一百克含番茄红素一点五克，每日一至两粒。实际介绍与使用必须以最新产品标签和说明书为准。"
+    },
+    {
+      "id": "s08-audience",
+      "type": "audience",
+      "source_class": "observed_reference",
+      "duration": 13.401,
+      "title": "适宜人群",
+      "headline": "以产品说明书标注为准",
+      "bullets": [
+        "关注前列腺健康的人群",
+        "备孕阶段人群",
+        "关注抗氧化营养的人群",
+        "需要日常营养补充的人群"
+      ],
+      "image": "audience",
+      "narration": "适宜人群必须以产品说明书为准。按本次业务资料，可重点了解关注前列腺健康、备孕阶段、关注抗氧化营养，以及需要日常营养补充的人群。"
+    },
+    {
+      "id": "s09-combination",
+      "type": "combination_guidance",
+      "source_class": "business_extension",
+      "duration": 24.74,
+      "title": "联合使用建议",
+      "headline": "不替代药品治疗·使用前咨询药师",
+      "groups": [
+        {
+          "name": "坦索罗辛／非那雄胺＋番茄红素",
+          "copy": "药品用于医师评估后的对症治疗；如需同时补充番茄红素，请先确认适用性与相互作用。"
+        },
+        {
+          "name": "前列康／普乐安＋番茄红素",
+          "copy": "中成药与营养补充品作用不同，不宣传“见效快”或“预防反复”，请按说明书和药师指导使用。"
+        },
+        {
+          "name": "胶原蛋白／护肤营养＋番茄红素",
+          "copy": "番茄红素可作为抗氧化营养成分了解，不承诺美白、抗皱或替代防晒。"
+        }
+      ],
+      "narration": "联合使用时，要把药品治疗和营养补充分开说明。顾客使用坦索罗辛或非那雄胺时，如需同时补充番茄红素，应先确认适用性和相互作用。使用前列康或普乐安时，不宣传见效快或预防反复。搭配护肤营养品时，也不承诺美白抗皱或替代防晒。所有联合使用均建议先咨询药师。"
+    },
+    {
+      "id": "s10-summary",
+      "type": "summary_table",
+      "source_class": "business_extension",
+      "duration": 15.88,
+      "title": "重点回顾",
+      "headline": "四个板块·一次记清",
+      "summary": [
+        {
+          "label": "核心功效",
+          "value": "以包装功能为准；成分科普单独表述"
+        },
+        {
+          "label": "产品特点",
+          "value": "产地条件、果肉提取、软胶囊浓缩"
+        },
+        {
+          "label": "适宜人群",
+          "value": "以最新产品说明书为准"
+        },
+        {
+          "label": "联合使用",
+          "value": "不替代药品治疗；使用前咨询药师"
+        }
+      ],
+      "image": "extraction",
+      "narration": "最后回顾四个板块：核心功效以包装标签为准，成分科普单独表述；产品特点关注产地条件、果肉提取和软胶囊形态；适宜人群查看说明书；联合使用前咨询药师。"
+    }
+  ],
+  "content_changes": [
+    {
+      "original": "世界上最好的番茄产区",
+      "replacement": "日照时间长、昼夜温差明显，适合番茄生长",
+      "reason": "避免绝对化表述"
+    },
+    {
+      "original": "抗氧化能力是维E的100倍",
+      "replacement": "参与单线态氧和自由基相关反应",
+      "reason": "未找到足够稳健的权威临床证据支持定量宣传"
+    },
+    {
+      "original": "见效快，预防尿频尿急反复",
+      "replacement": "不替代药品治疗，使用前咨询药师",
+      "reason": "避免营养补充品疗效承诺"
+    },
+    {
+      "original": "内服美白抗皱更有效",
+      "replacement": "不承诺美白、抗皱或替代防晒",
+      "reason": "避免无依据美容功效承诺"
+    },
+    {
+      "original": "32.9%与25至34岁40%",
+      "replacement": "不在正式成片中使用",
+      "reason": "未获得可核验的《中国男性前列腺健康白皮书》原文页码"
+    }
+  ]
+}

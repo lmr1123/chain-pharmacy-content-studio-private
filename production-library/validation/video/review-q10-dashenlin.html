@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>辅酶Q10 · 大参林品牌适配 — 快速确认</title>
+  <style>
+    :root {
+      --green: #009900;
+      --green-2: #45A817;
+      --pale: #e8f6e8;
+      --ink: #142018;
+      --muted: #5a6b5e;
+      --card: #ffffff;
+      --line: #d5e5d5;
+      --warn: #b45309;
+      --ok: #047857;
+      --bg: #f4faf4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(90deg, var(--green), var(--green-2));
+      color: #fff;
+      padding: 16px 24px;
+      box-shadow: 0 2px 12px rgba(0,80,0,.18);
+    }
+    header h1 { margin: 0 0 4px; font-size: 22px; font-weight: 800; }
+    header p { margin: 0; opacity: .92; font-size: 13px; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 20px 16px 48px; }
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      background: #fff; border: 1px solid var(--line);
+    }
+    .tag.ok { color: var(--ok); border-color: #a7f3d0; background: #ecfdf5; }
+    .tag.warn { color: var(--warn); border-color: #fcd34d; background: #fffbeb; }
+    .tag.muted { color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(20,40,20,.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .card header.card-h {
+      position: static;
+      background: var(--pale);
+      color: var(--ink);
+      padding: 12px 14px;
+      box-shadow: none;
+    }
+    .card h2 { margin: 0; font-size: 16px; font-weight: 800; }
+    .card .meta { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
+    .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0b1a0b;
+      display: block;
+    }
+    .actions {
+      display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--line);
+    }
+    .actions a, .actions button {
+      font: inherit; font-size: 12px; font-weight: 700;
+      border-radius: 8px; padding: 7px 10px; cursor: pointer;
+      text-decoration: none; border: 1px solid var(--line); background: #fff; color: var(--ink);
+    }
+    .actions a.primary, .actions button.primary {
+      background: var(--green); color: #fff; border-color: var(--green);
+    }
+    .note {
+      margin-top: 22px; padding: 14px 16px; background: #fff; border: 1px solid var(--line);
+      border-radius: 12px; font-size: 13px; color: var(--muted);
+    }
+    .note strong { color: var(--ink); }
+    .focus {
+      margin-bottom: 16px; padding: 14px 16px;
+      background: #fff; border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0; border: 1px solid var(--line); border-left-width: 4px;
+    }
+    .focus h3 { margin: 0 0 6px; font-size: 15px; }
+    .focus ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>辅酶 Q10 · 大参林品牌适配 — 快速确认</h1>
+    <p>本地预览页 · 路径相对 <code>production-library/validation/video/</code> ·
+      <a href="../review-hub.html" style="color:#fff;font-weight:800;text-decoration:underline;">← 返回项目确认门户（全量 Tab）</a>
+    </p>
+  </header>
+  <div class="wrap">
+    <div class="focus" style="background:#ecfdf5;">
+      <h3>推荐入口</h3>
+      <ul>
+        <li>项目所有待确认内容（脚本 / 封面 / 视频 / 缺口 / 进展）已集中到：
+          <a href="../review-hub.html"><strong>../review-hub.html</strong></a>（确认门户）</li>
+      </ul>
+    </div>
+    <div class="focus">
+      <h3>本轮确认重点</h3>
+      <ul>
+        <li><strong>品牌壳</strong>：Logo、内部培训声明、栏目签、封底</li>
+        <li><strong>数字人</strong>：大参林药师 + 口型位置</li>
+        <li><strong>声音</strong>：整段连读 + 约 1.16× 略快；避免一小句一停</li>
+        <li>语速报告：<code>public/product-training-audio/pace-report-v5-smooth.json</code></li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-bottom:18px; flex-direction:row; flex-wrap:wrap; align-items:stretch;">
+      <div style="flex:1 1 280px; min-width:240px;">
+        <img src="cover-q10-dashenlin.jpg" alt="辅酶Q10 培训封面"
+             style="width:100%; display:block; aspect-ratio:16/9; object-fit:cover; background:#0b1a0b;" />
+      </div>
+      <div style="flex:1 1 260px; padding:14px 16px;">
+        <h2 style="margin:0 0 6px; font-size:16px;">系列封面（分享用）</h2>
+        <p class="meta" style="margin:0 0 10px;">与视频同色板 / 同数字人 / 同角标；发出视频时用此图作封面，一眼可知是辅酶 Q10 内部培训。</p>
+        <p style="margin:0; font-size:13px; color:var(--muted);">
+          文件：<code>cover-q10-dashenlin.png</code>（1920×1080）·
+          <code>cover-q10-dashenlin.jpg</code> ·
+          <code>cover-q10-dashenlin-1280.jpg</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span class="tag ok">已换品牌壳</span>
+      <span class="tag ok" id="tag-avatar">数字人：见各段说明</span>
+      <span class="tag warn" id="tag-voice">声音：见各段说明</span>
+      <span class="tag muted">内容槽位暂保持</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="note">
+      <strong>怎么用：</strong>在 Finder 中双击本 HTML，或在终端执行
+      <code>open production-library/validation/video/review-q10-dashenlin.html</code>。
+      视频与本页同目录；若某段显示无法播放，先运行对应
+      <code>npm run render:product-training:…</code>。
+      <br /><br />
+      <strong>确认方式：</strong>每段看完后心里记「过 / 改」；优先反馈「数字人口型是否贴脸」「声音是否像内部药师」「角标是否够大参林」。
+    </div>
+  </div>
+  <script>
+    const segments = [
+      {
+        id: "opening",
+        title: "01 开场 / 需求教育",
+        file: "product-training-opening-replica.mp4",
+        brand: "ok",
+        avatar: "partial",
+        voice: "dashenlin",
+        note: "全局克隆药师声；无主数字人（场景人物）",
+      },
+      {
+        id: "brand",
+        title: "02 品牌总览 / 商品亮相",
+        file: "product-training-brand-overview-replica.mp4",
+        brand: "ok",
+        avatar: "n/a",
+        voice: "dashenlin",
+        note: "大参林页头 + 全局克隆声",
+      },
+      {
+        id: "faithful",
+        title: "03 症状 + 产品主段（数字人重点）",
+        file: "product-training-faithful-replica.mp4",
+        brand: "ok",
+        avatar: "dashenlin",
+        voice: "dashenlin",
+        note: "大参林药师 + 口型校正 + 克隆声（优先确认）",
+      },
+      {
+        id: "efficacy",
+        title: "04 核心功效",
+        file: "product-training-efficacy-replica.mp4",
+        brand: "ok",
+        avatar: "n/a",
+        voice: "dashenlin",
+        note: "品牌壳 + 全局克隆声",
+      },
+      {
+        id: "features",
+        title: "05 产品特点",
+        file: "product-training-features-replica.mp4",
+        brand: "ok",
+        avatar: "n/a",
+        voice: "dashenlin",
+        note: "品牌壳 + 全局克隆声",
+      },
+      {
+        id: "audience",
+        title: "06 适宜人群",
+        file: "product-training-audience-replica.mp4",
+        brand: "ok",
+        avatar: "n/a",
+        voice: "dashenlin",
+        note: "品牌壳 + 全局克隆声",
+      },
+      {
+        id: "combination",
+        title: "07 联合用药",
+        file: "product-training-combination-replica.mp4",
+        brand: "ok",
+        avatar: "n/a",
+        voice: "dashenlin",
+        note: "品牌壳 + 全局克隆声",
+      },
+      {
+        id: "summary",
+        title: "08 总结 + 封底",
+        file: "product-training-summary-replica.mp4",
+        brand: "ok",
+        avatar: "n/a",
+        voice: "dashenlin",
+        note: "封底 + 全局克隆声",
+      },
+    ];
+
+    function badge(kind, value) {
+      if (kind === "brand" && value === "ok") return '<span class="tag ok">品牌壳</span>';
+      if (kind === "avatar" && value === "dashenlin") return '<span class="tag ok">大参林数字人</span>';
+      if (kind === "avatar" && value === "partial") return '<span class="tag warn">场景人物</span>';
+      if (kind === "avatar" && value === "n/a") return '<span class="tag muted">无主数字人</span>';
+      if (kind === "voice" && value === "dashenlin") return '<span class="tag ok">克隆药师声</span>';
+      if (kind === "voice" && value === "old") return '<span class="tag warn">原声/旧音</span>';
+      return '';
+    }
+
+    const grid = document.getElementById("grid");
+    segments.forEach((s, i) => {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="card-h">
+          <h2>${s.title}</h2>
+          <p class="meta">${s.file}</p>
+          <div class="badges">
+            ${badge("brand", s.brand)}
+            ${badge("avatar", s.avatar)}
+            ${badge("voice", s.voice)}
+          </div>
+          <p class="meta" style="margin-top:8px">${s.note}</p>
+        </div>
+        <video controls preload="metadata" playsinline poster="./cover-q10-dashenlin.jpg" src="./${s.file}"></video>
+        <div class="actions">
+          <button class="primary" type="button" data-play="${i}">播放</button>
+          <a href="./${s.file}" download>下载</a>
+          <a href="./${s.file}" target="_blank" rel="noopener">新窗口</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    document.querySelectorAll("[data-play]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".card");
+        const video = card.querySelector("video");
+        document.querySelectorAll("video").forEach((v) => {
+          if (v !== video) { v.pause(); }
+        });
+        video.play();
+      });
+    });
+  </script>
+</body>
+</html>

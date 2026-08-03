@@ -1,0 +1,35 @@
+{
+  "project_id": "health.wind-heat.full-reference-v1",
+  "status": "visual-rework-required",
+  "canonical_template_artifact": true,
+  "canonical_role": "template.health-reference-tech-v1 的历史冻结对照基线",
+  "canonical_confirmed_by": "user",
+  "canonical_confirmed_at": "2026-07-30",
+  "template_id": "template.health-reference-tech-v1",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "fps": 30,
+  "frame_count": 5436,
+  "duration_seconds": 181.2,
+  "reference_container_duration_seconds": 181.185,
+  "segments": [
+    {"start_frame": 0, "end_frame": 135, "source": "reference-native-intro.mp4", "source_start_frame": 0},
+    {"start_frame": 136, "end_frame": 839, "source": "reference-character-action-replica.mp4", "source_start_frame": 136},
+    {"start_frame": 840, "end_frame": 1314, "source": "reference-mechanism-gap-replica.mp4", "source_start_frame": 0},
+    {"start_frame": 1315, "end_frame": 2104, "source": "reference-typical-symptoms-replica.mp4", "source_start_frame": 0},
+    {"start_frame": 2105, "end_frame": 3362, "source": "reference-treatment-replica.mp4", "source_start_frame": 0},
+    {"start_frame": 3363, "end_frame": 4595, "source": "reference-medication-advice-replica.mp4", "source_start_frame": 0},
+    {"start_frame": 4596, "end_frame": 5435, "source": "reference-summary-outro-replica.mp4", "source_start_frame": 0}
+  ],
+  "audio_contract": {
+    "intro_silence_frames": 92,
+    "character_audio_frames": 748,
+    "sample_rate": 48000,
+    "samples_per_frame": 1600
+  },
+  "output": "production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4",
+  "supersedes_as_template_locator": [
+    "production-library/validation/video/wind-heat-gold-sample-master.mp4"
+  ],
+  "restriction": "2026-07-31 已确认该装配不满足完整拆解：历史分段仍烘焙旧母版，仅可用于重制前后对照，不得用于新主题或宣称完整可编辑。片尾授权透明 Logo 未补齐前不能升级为 production-validated。"
+}

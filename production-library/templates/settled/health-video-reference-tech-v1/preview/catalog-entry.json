@@ -1,0 +1,24 @@
+{
+  "slug": "health-video-reference-tech-v1",
+  "name_zh": "疾病科普视频（如风热证）",
+  "one_liner": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议",
+  "gallery_title_zh": "疾病科普视频 · 风热证金样",
+  "outputs": [
+    "MP4 培训视频"
+  ],
+  "category": "疾病科普",
+  "production_ready": false,
+  "status_label": "金样对照 · 新主题制作前请与制作确认",
+  "status_note": "manifest 标记 visual-rework-required；业务可看效果与填框架，新病种量产前须制作确认。",
+  "key_frame_labels_zh": [
+    "开场",
+    "典型症状",
+    "病因机理",
+    "治疗思路",
+    "用药建议",
+    "总结"
+  ],
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx"
+}

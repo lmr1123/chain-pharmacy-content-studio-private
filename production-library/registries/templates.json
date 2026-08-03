@@ -1,0 +1,380 @@
+{
+  "registry_type": "template",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "template.health-reference-tech-v1",
+      "name_zh": "健康科普参考片复刻模板 v1",
+      "status": "visual-rework-required",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["健康科普", "疾病知识", "数字人", "视频"],
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/health-video-reference-tech-v1",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4",
+        "format": "mp4",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-07-30"
+      },
+      "validation_root": "production-library/validation/video",
+      "canonical_gold_sample": {
+        "path": "production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4",
+        "role": "2026-07-30 历史确认成片，2026-07-31 因参考像素残留与元素级编辑性不足冻结为重制对照基线；不得用于新主题生产",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-07-30",
+        "assembly_contract": "production-library/examples/wind-heat-full-frame-assembly.json",
+        "record": "docs/wind-heat-full-assembly.md"
+      },
+      "non_canonical_artifacts": [
+        {
+          "path": "production-library/validation/video/wind-heat-gold-sample-master.mp4",
+          "role": "74.63 秒早期内部探索稿",
+          "restriction": "不得作为当前正式模板、完整金样或后续金样定位入口"
+        }
+      ],
+      "jianying_template_delivery": {
+        "version_id": "template.health-reference-tech-v1@1.0.0-jianying",
+        "status": "technical-qa-passed-business-editability-rejected",
+        "path": "outputs/jianying-template-versions/template.health-reference-tech-v1/1.0.0",
+        "builder": "scripts/build_wind_heat_full_jianying_template.py",
+        "validator": "scripts/validate_wind_heat_full_jianying_template.py",
+        "workflow": "docs/jianying-draft-template-workflow.md",
+        "restriction": "仅支持场景片段、旁白、字幕和剪映后加效果的单条精修；数字人、插图、场景文案和内部组件已烘焙，不满足业务元素级拖拽／批量替换，不得宣传为完整可编辑模板。"
+      },
+      "supported_scene_types": [
+        "presenter_intro",
+        "mechanism_explanation",
+        "symptom_overview",
+        "principle_explanation",
+        "ingredient_grid",
+        "medication_cards",
+        "advice_list",
+        "summary",
+        "training_brand_outro"
+      ],
+      "source_projects": [
+        "poc/gold-sample/src/reference-native-intro-project.tsx",
+        "poc/gold-sample/src/reference-replica-project.tsx",
+        "poc/gold-sample/src/reference-symptoms-project.tsx",
+        "poc/gold-sample/src/reference-treatment-project.tsx",
+        "poc/gold-sample/src/reference-medication-advice-project.tsx",
+        "poc/gold-sample/src/reference-mechanism-gap-project.tsx",
+        "poc/gold-sample/src/reference-summary-outro-project.tsx"
+      ],
+      "supported_inputs": ["docx", "markdown", "json"],
+      "business_input_component_id": "component.input.universal-video-notebook-v1",
+      "default_component_ids": [
+        "component.master.reference-medical-tech-native-v1",
+        "component.presenter.bound-pharmacist",
+        "component.subtitle.reference-bottom"
+      ],
+      "global_effect_ids": [
+        "effect.background.global-current-track-v1",
+        "effect.intro.glitch-title-reveal-v1"
+      ],
+      "production_rules": [
+        "decision.semantic-block-voice-speed-gate",
+        "decision-style-background-is-global-track",
+        "decision.script-intent-scene-recipe-composition",
+        "decision.asset-series-first"
+      ],
+      "assembly_protocol": "production-library/script-assembly-protocol.md",
+      "scene_recipe_registry": "production-library/registries/scene-recipes.json",
+      "business_template": "production-library/templates/settled/health-video-reference-tech-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/health-video-reference-tech-v1/业务提交_填写参考.docx",
+      "business_input_sources": {
+        "blank_word": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
+        "filled_example": "outputs/video-training-natural-import/风热证健康知识视频培训_真实已填样本.docx",
+        "sync_script": "scripts/sync_settled_template_business_words.py"
+      },
+      "rework": {
+        "started_at": "2026-07-31",
+        "reason": "S02-S07 仍读取旧栅格母版，七段剪映画面均为烘焙片段；现有编辑器仅覆盖少量组合层，数字人比例与分段音频参数未统一。",
+        "plan": "tasks/todo.md#p0--风热证-1812-秒视频课件完整拆解与统一重制待用户确认",
+        "target_validation_root": "production-library/validation/revideo-editability/wind-heat-v2"
+      },
+      "restriction": "2026-07-31 起冻结为重制对照基线，不得用于新主题或宣称完整可编辑。重制版须达到零参考截图像素、逐元素编辑、统一数字人和统一声音契约；公司授权透明 Logo 缺失时不得重新晋升 production-validated。"
+    },
+    {
+      "id": "template.product-training-faithful-v1",
+      "name_zh": "商品培训忠实复刻模板 v1",
+      "status": "user-approved",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["商品培训", "包装主视觉", "核心功效", "证据页", "大参林扩展", "金样沉淀"],
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/product-video-faithful-v1",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/product-video-faithful-v1/product-training-reference-full-script-system-v3-final-exact.mp4",
+        "format": "mp4",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-07-30"
+      },
+      "dashenlin_extension": {
+        "status": "user-approved",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-07-30",
+        "preview": "production-library/validation/video/review-q10-dashenlin.html",
+        "cover": "production-library/validation/video/cover-q10-dashenlin.jpg",
+        "stack": [
+          "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx",
+          "scripts/generate_cloned_product_all_narration.py#v5-smooth",
+          "MOUTH_RIG palm[0.548,0.391] point[0.528,0.418]"
+        ],
+        "lesson_id": "lesson.product-training-dashenlin-extension-stack"
+      },
+      "validation_root": "production-library/validation/video",
+      "supported_scene_types": [
+        "product_hero",
+        "symptom_animated_board",
+        "relation_graph",
+        "brand_product_overview",
+        "benefit_overview",
+        "evidence_cards",
+        "audience",
+        "combination_guidance",
+        "summary_table",
+        "opening_education"
+      ],
+      "source_projects": [
+        "poc/gold-sample/src/product-training-faithful-project.tsx",
+        "poc/gold-sample/src/product-training-brand-overview-project.tsx",
+        "poc/gold-sample/src/product-training-efficacy-project.tsx",
+        "poc/gold-sample/src/product-training-features-project.tsx",
+        "poc/gold-sample/src/product-training-audience-project.tsx",
+        "poc/gold-sample/src/product-training-combination-project.tsx",
+        "poc/gold-sample/src/product-training-summary-project.tsx",
+        "poc/gold-sample/src/product-training-opening-project.tsx"
+      ],
+      "supported_inputs": ["docx", "markdown", "txt"],
+      "business_input_component_id": "component.input.universal-video-notebook-v1",
+      "assembly_protocol": "production-library/script-assembly-protocol.md",
+      "scene_recipe_registry": "production-library/registries/scene-recipes.json",
+      "business_template": "production-library/templates/settled/product-video-faithful-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/product-video-faithful-v1/业务提交_填写参考.docx",
+      "business_input_sources": {
+        "blank_word": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
+        "filled_example": "outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx",
+        "sync_script": "scripts/sync_settled_template_business_words.py"
+      },
+      "storyboard_preview": "outputs/storyboard-previews/商品培训视频课件_系统分镜预览.html",
+      "brand_adaptation": {
+        "from": "external-vendor-q10-case",
+        "to": "dashenlin",
+        "status": "user-approved",
+        "confirmed_at": "2026-07-30",
+        "chrome_component": "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx",
+        "logo": "poc/gold-sample/public/product-training-brand/dashenlin-logo.png",
+        "voice_clone": "qwen-cloned-v5-smooth",
+        "notes": "2026-07-30 用户确认大参林扩展四件套可复用：chrome / v5-smooth 旁白 / MOUTH_RIG 口型 / 右上角品牌封面。新商品主题换审核稿与授权包装即可套壳。"
+      },
+      "restriction": "用户已确认完整复刻金样与大参林扩展层可沉淀复用。模板确认不自动批准样例药学内容、包装或证据图。批量 production 仍须内部审核稿与授权素材。"
+    },
+    {
+      "id": "template.product-courseware-dashenlin-green-v1",
+      "name_zh": "大参林绿色商品培训课件模板 v1",
+      "status": "user-approved",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": ["商品培训", "PPTX", "PDF", "可编辑", "绿色母版"],
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/product-courseware-green-v1",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+        "format": "pptx",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-07-30"
+      },
+      "validation_root": "production-library/validation/courseware/product-courseware-green-v1",
+      "supported_scene_types": [
+        "courseware_cover",
+        "product_overview",
+        "combination_guidance",
+        "product_benchmark",
+        "precautions"
+      ],
+      "supported_outputs": ["pptx", "pdf"],
+      "source_projects": [
+        "poc/courseware-export/product-courseware-green.json",
+        "poc/courseware-export/work/build-product-courseware.mjs"
+      ],
+      "seed_theme_id": "theme.product.honeysuckle-dew",
+      "business_input": "universal-content-word",
+      "business_template": "production-library/templates/settled/product-courseware-green-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/product-courseware-green-v1/业务提交_填写参考.docx",
+      "business_input_sources": {
+        "blank_word": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+        "filled_example": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+        "sync_script": "scripts/sync_settled_template_business_words.py"
+      },
+      "business_sample_builder": "poc/courseware-export/text-word-import/build_universal_courseware_business_word.py",
+      "business_input_profile": "universal-notebook-v1",
+      "approved_reference": {
+        "replica_pptx": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+        "replica_pdf": "production-library/validation/courseware/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pdf",
+        "brand_upgrade_pptx": "production-library/validation/courseware/product-courseware-green-v1/金银花露_商品培训课件_品牌升级签样.pptx",
+        "brand_upgrade_pdf": "production-library/validation/courseware/product-courseware-green-v1/金银花露_商品培训课件_品牌升级签样.pdf",
+        "batch_manifest": "outputs/batch-courseware/manifests/P001.json"
+      },
+      "restriction": "用户已确认五页复刻版沉淀为正式 PPTX 模板；三页品牌升级签样曾被否决为批量模板基线，只保留在 validation。五页结构是已验收页型来源，不反向要求业务按固定栏目填满；内容、品牌与商品资产仍需内部复核和授权原图。"
+    },
+    {
+      "id": "template.dashenlin-disease-product-scenario-v1",
+      "name_zh": "大参林疾病辨证与商品场景课件模板 v1",
+      "status": "user-approved",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": ["疾病辨证", "商品培训", "销售场景", "权重品种", "PPTX", "PDF", "Word导入"],
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/disease-product-scenario-v1",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+        "format": "pptx",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-07-30"
+      },
+      "validation_root": "production-library/validation/courseware/disease-product-scenario-v1",
+      "supported_scene_types": [
+        "locked_company_cover",
+        "opening_thesis",
+        "courseware_agenda",
+        "definition_and_pathogenesis",
+        "symptom_gallery",
+        "syndrome_comparison",
+        "treatment_principles",
+        "syndrome_subtypes",
+        "product_information",
+        "product_advantage_map",
+        "product_advantage_summary",
+        "audience_scenarios",
+        "consultation_framework",
+        "scenario_solution",
+        "daily_care_guidance",
+        "weighted_product_detail",
+        "weighted_product_comparison",
+        "locked_company_back_cover"
+      ],
+      "supported_outputs": ["pptx", "pdf"],
+      "business_input": "universal-content-word",
+      "business_template": "production-library/templates/settled/disease-product-scenario-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/disease-product-scenario-v1/业务提交_填写参考.docx",
+      "business_input_sources": {
+        "blank_word": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+        "filled_example": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+        "sync_script": "scripts/sync_settled_template_business_words.py"
+      },
+      "business_sample_builder": "poc/courseware-export/text-word-import/build_universal_courseware_business_word.py",
+      "business_input_profile": "universal-notebook-v1",
+      "approved_reference": {
+        "pptx": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+        "pdf": "production-library/validation/courseware/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pdf",
+        "approved_at": "2026-07-30",
+        "approval_source": "user"
+      },
+      "source_projects": [
+        "poc/courseware-export/courseware2-work/courseware2-template.json",
+        "poc/courseware-export/courseware2-work/build-courseware2-reference.mjs",
+        "poc/courseware-export/courseware2-work/build-courseware2-editable.mjs"
+      ],
+      "restriction": "用户已确认第二套可编辑课件可作为已验收页型来源；18 页章节顺序和条目数量不得反向约束业务输入。AI 应根据通用 Word 的实际板块选择、合并、拆分或重复页型。公司封面、封底必须锁定；真实包装和证据资料只使用授权原图或有明确来源记录的内部 PDF 素材。"
+    },
+    {
+      "id": "template.sufuda-mabaloshawei-product-courseware-3-v1",
+      "name_zh": "速福达玛巴洛沙韦 · 商品培训课件3 金样 v1",
+      "status": "user-approved-gold",
+      "style_pack_id": "style-pack.sufuda-pearl-silk-orange-v1",
+      "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1",
+      "tags": ["商品培训", "速福达", "玛巴洛沙韦", "抗流感", "视频", "PPTX", "金样", "珍珠丝绸橙"],
+      "product": {
+        "brand_name": "速福达®",
+        "generic_name": "玛巴洛沙韦",
+        "display_name": "速福达® 玛巴洛沙韦"
+      },
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
+        "format": "mp4",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-08-02"
+      },
+      "canonical_artifacts": {
+        "video": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
+        "pptx": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v1.pptx"
+      },
+      "canonical_gold_sample": {
+        "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
+        "pptx": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v1.pptx",
+        "role": "2026-08-02 用户确认归档的速福达·玛巴洛沙韦商品培训课件3 金样（视频+可编辑PPT）",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-08-02"
+      },
+      "validation_root": "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1",
+      "source_projects": [
+        "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1/src/project.tsx",
+        "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1/scripts/export-sufuda-pptx.mjs"
+      ],
+      "supported_outputs": ["mp4", "pptx"],
+      "business_template": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/业务提交_填写参考.docx",
+      "business_input_sources": {
+        "blank_word": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+        "filled_example": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+        "sync_script": "scripts/sync_settled_template_business_words.py",
+        "theme_json": "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1/theme-packages/_blank/theme.json"
+      },
+      "restriction": "金样已归档。包装与 Logo 为业务授权槽位（当前示意）；对外培训前须替换授权资产。demo-product-b 仅为结构验证主题，不得晋升 settled。"
+    },
+    {
+      "id": "template.fuler-fanqiehongsu-product-courseware-4-v1",
+      "name_zh": "福尔番茄红素软胶囊 · 商品培训课件4 金样 v1",
+      "status": "user-approved-gold",
+      "style_pack_id": "style-pack.courseware-4-silk-yellow-red-v1",
+      "tags": ["商品培训", "福尔", "番茄红素", "软胶囊", "视频", "PPTX", "金样", "课件4"],
+      "product": {
+        "brand_name": "福尔",
+        "generic_name": "番茄红素软胶囊",
+        "display_name": "福尔番茄红素软胶囊"
+      },
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v1.mp4",
+        "format": "mp4",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-08-03"
+      },
+      "canonical_artifacts": {
+        "video": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v1.mp4",
+        "pptx": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx"
+      },
+      "canonical_gold_sample": {
+        "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v1.mp4",
+        "pptx": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx",
+        "role": "2026-08-03 用户确认归档并更新的福尔番茄红素 · 课件4 金样（视频+PPT+编辑器动效）",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-08-03",
+        "revision": "2026-08-03-motion-editor",
+        "duration_s": 156.73,
+        "pptx_slides": 15
+      },
+      "validation_root": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1",
+      "source_projects": [
+        "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/src/project.tsx",
+        "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/scripts/export-cw4-pptx.mjs",
+        "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/scripts/export-full-film-video.py"
+      ],
+      "supported_outputs": ["mp4", "pptx"],
+      "business_template": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/业务提交_填写参考.docx",
+      "business_input_sources": {
+        "blank_word": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+        "filled_example": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+        "sync_script": "scripts/sync_settled_template_business_words.py"
+      },
+      "preview": {
+        "full_film": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/web/full-film.html",
+        "editor": "http://127.0.0.1:9012/",
+        "gold_samples_index": "production-library/validation/courseware/gold-samples/index.html"
+      },
+      "restriction": "金样已归档（2026-08-03 更新）。包装与 Logo 为业务授权槽位（当前示意）；对外培训前须替换授权资产。关联用药为业务扩展（S12/S13）；收口用参考片功效总表 S11，无四列表总表。"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>可可康 production-v2 · 58 微镜头结构 Animatic</title>
+  <style>
+    :root{--ink:#17241f;--muted:#66746e;--green:#087c45;--pale:#edf6f0;--line:#d8e5dc;--warn:#a43d19;--warnbg:#fff1ea;--paper:#f5f7f5}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(1180px,calc(100% - 28px));margin:28px auto 64px}
+    header,.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:16px}
+    h1{margin:4px 0 8px;font-size:clamp(26px,3.6vw,40px);line-height:1.15}
+    h2{margin:0 0 10px;font-size:22px}
+    .eyebrow{color:var(--green);font-weight:750;letter-spacing:.08em;font-size:12px}
+    .lead{color:var(--muted);max-width:920px}
+    .warn{margin-top:12px;padding:12px 14px;border-left:5px solid var(--warn);border-radius:10px;background:var(--warnbg);color:#6c2b14}
+    .ok{margin-top:12px;padding:12px 14px;border-left:5px solid var(--green);border-radius:10px;background:var(--pale)}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+    .metric{padding:12px;border-radius:12px;background:var(--pale)}.metric strong{display:block;font-size:20px;color:var(--green)}
+    video{display:block;width:100%;border-radius:14px;background:#0e231a;margin-top:14px}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:var(--pale)}
+    .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+    .shot img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#f3f6f3}
+    .shot .cap{padding:8px 10px;font-size:12px;color:var(--muted)}
+    .shot b{color:var(--ink)}
+    .contacts{display:grid;grid-template-columns:1fr;gap:12px}
+    .contacts img{width:100%;border-radius:10px;border:1px solid var(--line);background:#fff}
+    a.btn{display:inline-block;margin:8px 8px 0 0;padding:9px 14px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none}
+    a.btn.sec{background:#fff;color:var(--green);border:1px solid var(--line)}
+    @media(max-width:900px){.metrics,.shots{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">PRODUCTION-V2 · MICROSHOT CONTRACT · STRUCTURE ANIMATIC</div>
+    <h1>58 微镜头结构 Animatic</h1>
+    <p class="lead">按 <code>handoff-v2/microshot-timeline.json</code> 顺序实现 K01-S01～K18-S04。章节不是页面；每镜有独立 entry / performance / exit 与非文字层运动。静音结构验证，不填充未审核医学结论，不仿造包装。</p>
+    <div class="ok"><strong>已删除：</strong>production-v1 中被否决的「一章一页」结构 animatic 及其源工程。</div>
+    <div class="warn"><strong>不是完整金样：</strong>正式旁白仅 K08 三镜可 ready；其余 55 镜保持门禁标记。授权包装 / 说明书未齐前不得进 M3 正式有声。</div>
+    <div class="metrics">
+      <div class="metric"><strong>58</strong>微镜头</div>
+      <div class="metric"><strong>193.3s</strong>成片时长（目标 175–215）</div>
+      <div class="metric"><strong>18</strong>章接触表</div>
+      <div class="metric"><strong>3×58</strong>逐镜 QA 帧</div>
+    </div>
+    <video id="player" controls playsinline
+      poster="qa/frames/K08-S02/performance.png"
+      src="renders/kekang-green-microshot-animatic-v2.mp4"></video>
+    <div>
+      <a class="btn" href="renders/kekang-green-microshot-animatic-v2.mp4" target="_blank">打开 MP4</a>
+      <a class="btn sec" href="qa/qa-report.json" target="_blank">QA 报告</a>
+      <a class="btn sec" href="../handoff-v2/EXECUTION_PROMPT.md" target="_blank">执行合同</a>
+      <a class="btn sec" href="../handoff-v2/microshot-timeline.json" target="_blank">时间线 JSON</a>
+      <a class="btn sec" href="../production-v1/renders/k08-audiovisual-v2.mp4" target="_blank">K08 有声签样</a>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>代表微镜头（performance 帧）</h2>
+    <p class="lead">证明不是一章一页：不同 recipe、不同主体与门禁状态。</p>
+    <div class="shots">
+      <div class="shot"><img src="qa/frames/K01-S01/performance.png" alt="K01-S01"><div class="cap"><b>K01-S01</b> R01 hero · REVIEW</div></div>
+      <div class="shot"><img src="qa/frames/K03-S01/performance.png" alt="K03-S01"><div class="cap"><b>K03-S01</b> R02 life · MEDICAL</div></div>
+      <div class="shot"><img src="qa/frames/K08-S02/performance.png" alt="K08-S02"><div class="cap"><b>K08-S02</b> R04 split · READY</div></div>
+      <div class="shot"><img src="qa/frames/K08-S03/performance.png" alt="K08-S03"><div class="cap"><b>K08-S03</b> R04 双路径</div></div>
+      <div class="shot"><img src="qa/frames/K13-S02/performance.png" alt="K13-S02"><div class="cap"><b>K13-S02</b> R07 process · EVIDENCE</div></div>
+      <div class="shot"><img src="qa/frames/K17-S02/performance.png" alt="K17-S02"><div class="cap"><b>K17-S02</b> R09 calendar</div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>18 章接触表（不得当作成片素材）</h2>
+    <div class="contacts" id="contacts"></div>
+  </section>
+
+  <section class="panel">
+    <h2>微镜头索引（点击可定位到约略时刻）</h2>
+    <table>
+      <thead><tr><th>ID</th><th>时长</th><th>Recipe</th><th>焦点</th><th>门禁</th><th>定位</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+</main>
+<script>
+const TIMELINE = {
+  // contract seconds; player uses proportional seek
+  shots: [
+// filled by generator below in static form for portability
+  ]
+};
+</script>
+<script src="./review-data.js"></script>
+<script>
+(function(){
+  const player = document.getElementById('player');
+  const rows = document.getElementById('rows');
+  const contacts = document.getElementById('contacts');
+  const scale = (window.REVIEW_DATA && window.REVIEW_DATA.scale) || 1;
+  const shots = (window.REVIEW_DATA && window.REVIEW_DATA.shots) || [];
+  shots.forEach((s, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><code>${s.id}</code></td><td>${s.dur}s</td><td>${s.recipe}</td><td>${s.focus}</td><td>${s.gate}</td><td><button type="button" data-t="${s.start * scale}">跳转</button></td>`;
+    rows.appendChild(tr);
+  });
+  rows.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-t]');
+    if (!b || !player) return;
+    player.currentTime = Number(b.dataset.t);
+    player.play();
+  });
+  for (let i = 1; i <= 18; i++) {
+    const id = 'K' + String(i).padStart(2,'0');
+    const wrap = document.createElement('div');
+    wrap.innerHTML = `<div class="cap" style="margin:6px 0 4px;font-weight:700">${id}</div><img src="qa/contact-sheets/${id}-contact.png" alt="${id} contact">`;
+    contacts.appendChild(wrap);
+  }
+})();
+</script>
+</body>
+</html>

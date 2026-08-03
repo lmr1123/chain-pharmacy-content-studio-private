@@ -1,0 +1,34 @@
+{
+  "project_id": "validation.kekang-pfizer-k08-motion-v1",
+  "theme_id": "theme.product.kekang-lingzhi-capsule",
+  "scene_id": "K08",
+  "template_reference": "pfizer-antacid-h2-ppi-v1:F03",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "style_pack_status": "validation-candidate-not-registered",
+  "content_scope": ["灵芝多糖", "灵芝三萜"],
+  "excluded": [
+    "功效结论",
+    "成分作用机制",
+    "治疗结果",
+    "正式旁白",
+    "商品包装"
+  ],
+  "motion_beats": [
+    {"time": "0.0-1.2s", "beat": "标题和灵芝主体进入"},
+    {"time": "1.2-3.2s", "beat": "双路径形成，两个成分标签依次进入"},
+    {"time": "3.2-5.1s", "beat": "两个标签轮流聚焦"},
+    {"time": "5.1-7.7s", "beat": "稳定完成帧与低强度环境运动"}
+  ],
+  "canvas": {"width": 1920, "height": 1080, "fps": 30},
+  "technical_qa": {
+    "duration_seconds": 7.733333,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "full_decode": "passed",
+    "black_frame_detection": "passed",
+    "visual_frames_reviewed_seconds": [0.5, 1.5, 2.8, 4.1, 5.2, 6.2, 7.5],
+    "layout_overflow": "not-detected",
+    "sha256": "e56306d64cca43a11d8bc2993a0ffe36e21caa04ea93cb56cf26ee6d07b7614a"
+  },
+  "status": "candidate-awaiting-user-motion-review"
+}

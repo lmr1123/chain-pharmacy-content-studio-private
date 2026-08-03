@@ -1,0 +1,1200 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/xysxxe",
+    "id": "xysxxe",
+    "slide": 13,
+    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bmpgvepg",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        28,
+        0,
+        76,
+        84
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wnyx4jq1",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        25,
+        17,
+        82,
+        47
+      ],
+      "geometry": "rect",
+      "text": "3.2",
+      "textPreview": "3.2",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3.2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3.2",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#FFFFFF",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3.2",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xo7yxo7m",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+      "textPreview": "场景篇——什么时候推荐穿心莲内酯滴丸",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "场景篇——什么时候推荐穿心莲内酯滴丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+              "fontSize": 28,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ypgz6t8r",
+      "id": "4",
+      "name": "chrome-green-rule",
+      "bbox": [
+        104,
+        70,
+        1140,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqpgzypc",
+      "id": "5",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        150,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 15,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kryh83qx",
+      "id": "6",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1075,
+        685,
+        170,
+        24
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111111",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 14,
+              "color": "#111111",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lc7y187i",
+      "id": "7",
+      "name": "consultation-thesis",
+      "bbox": [
+        70,
+        115,
+        1100,
+        48
+      ],
+      "geometry": "rect",
+      "text": "实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐",
+      "textPreview": "实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#009900",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#009900",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐",
+              "fontSize": 25,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/etcfup8n",
+      "id": "8",
+      "name": "consultation-rule",
+      "bbox": [
+        90,
+        190,
+        1100,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fulgnup8",
+      "id": "9",
+      "name": "consultation-1-surface",
+      "bbox": [
+        70,
+        245,
+        260,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ju98zmts",
+      "id": "10",
+      "name": "consultation-1-accent",
+      "bbox": [
+        70,
+        245,
+        6,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yt07qhsn",
+      "id": "11",
+      "name": "consultation-1-title",
+      "bbox": [
+        88,
+        259,
+        228,
+        38
+      ],
+      "geometry": "rect",
+      "text": "望 · 观气色辨需求",
+      "textPreview": "望 · 观气色辨需求",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "望 · 观气色辨需求"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "望 · 观气色辨需求",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "望 · 观气色辨需求",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5grq1wby",
+      "id": "12",
+      "name": "consultation-1-divider",
+      "bbox": [
+        88,
+        303,
+        224,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kfipsrad",
+      "id": "13",
+      "name": "consultation-1-body",
+      "bbox": [
+        88,
+        315,
+        224,
+        236
+      ],
+      "geometry": "rect",
+      "text": "观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。",
+      "textPreview": "观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "观察顾客神态、面色"
+          },
+          {
+            "index": 2,
+            "text": "与精神状态，初步判"
+          },
+          {
+            "index": 3,
+            "text": "断体质倾向，找准沟"
+          },
+          {
+            "index": 4,
+            "text": "通切入点，建立专业"
+          },
+          {
+            "index": 5,
+            "text": "第一印象。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。",
+              "fontSize": 20,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq9ovmtw",
+      "id": "14",
+      "name": "consultation-2-surface",
+      "bbox": [
+        360,
+        245,
+        260,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/apg7mhsb",
+      "id": "15",
+      "name": "consultation-2-accent",
+      "bbox": [
+        360,
+        245,
+        6,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xsrqxcb2",
+      "id": "16",
+      "name": "consultation-2-title",
+      "bbox": [
+        378,
+        259,
+        228,
+        38
+      ],
+      "geometry": "rect",
+      "text": "闻 · 听诉求知痛点",
+      "textPreview": "闻 · 听诉求知痛点",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "闻 · 听诉求知痛点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "闻 · 听诉求知痛点",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "闻 · 听诉求知痛点",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wripo7ah",
+      "id": "17",
+      "name": "consultation-2-divider",
+      "bbox": [
+        378,
+        303,
+        224,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nmpor2t0",
+      "id": "18",
+      "name": "consultation-2-body",
+      "bbox": [
+        378,
+        315,
+        224,
+        236
+      ],
+      "geometry": "rect",
+      "text": "耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。",
+      "textPreview": "耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "耐心倾听顾客描述身"
+          },
+          {
+            "index": 2,
+            "text": "体不适与核心诉求，"
+          },
+          {
+            "index": 3,
+            "text": "从话语中捕捉深层痛"
+          },
+          {
+            "index": 4,
+            "text": "点，为后续辨证推荐"
+          },
+          {
+            "index": 5,
+            "text": "提供依据。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。",
+              "fontSize": 20,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mlg7ixsf",
+      "id": "19",
+      "name": "consultation-3-surface",
+      "bbox": [
+        650,
+        245,
+        260,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxw7axc7",
+      "id": "20",
+      "name": "consultation-3-accent",
+      "bbox": [
+        650,
+        245,
+        6,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ri5832ds",
+      "id": "21",
+      "name": "consultation-3-title",
+      "bbox": [
+        668,
+        259,
+        228,
+        38
+      ],
+      "geometry": "rect",
+      "text": "问 · 询细节定方案",
+      "textPreview": "问 · 询细节定方案",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "问 · 询细节定方案"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "问 · 询细节定方案",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "问 · 询细节定方案",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cjy9c7ud",
+      "id": "22",
+      "name": "consultation-3-divider",
+      "bbox": [
+        668,
+        303,
+        224,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dk7q5cvi",
+      "id": "23",
+      "name": "consultation-3-body",
+      "bbox": [
+        668,
+        315,
+        224,
+        236
+      ],
+      "geometry": "rect",
+      "text": "针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。",
+      "textPreview": "针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "针对性询问饮食、作"
+          },
+          {
+            "index": 2,
+            "text": "息、既往病史等细节"
+          },
+          {
+            "index": 3,
+            "text": "，层层递进厘清“证型”"
+          },
+          {
+            "index": 4,
+            "text": "，让方案更科学。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。",
+              "fontSize": 20,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/elgrexc3",
+      "id": "24",
+      "name": "consultation-4-surface",
+      "bbox": [
+        940,
+        245,
+        260,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zmp872do",
+      "id": "25",
+      "name": "consultation-4-accent",
+      "bbox": [
+        940,
+        245,
+        6,
+        320
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0ny9g7u9",
+      "id": "26",
+      "name": "consultation-4-title",
+      "bbox": [
+        958,
+        259,
+        228,
+        38
+      ],
+      "geometry": "rect",
+      "text": "切 · 据关键做推荐",
+      "textPreview": "切 · 据关键做推荐",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "切 · 据关键做推荐"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "切 · 据关键做推荐",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "切 · 据关键做推荐",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1o7q9cvu",
+      "id": "27",
+      "name": "consultation-4-divider",
+      "bbox": [
+        958,
+        303,
+        224,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mpgrihcf",
+      "id": "28",
+      "name": "consultation-4-body",
+      "bbox": [
+        958,
+        315,
+        224,
+        236
+      ],
+      "geometry": "rect",
+      "text": "结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。",
+      "textPreview": "结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "结合辨证结果，紧扣"
+          },
+          {
+            "index": 2,
+            "text": "顾客核心需求，精准"
+          },
+          {
+            "index": 3,
+            "text": "匹配产品与服务，用"
+          },
+          {
+            "index": 4,
+            "text": "专业术语解读益处。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。",
+              "fontSize": 20,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

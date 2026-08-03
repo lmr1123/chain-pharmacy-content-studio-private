@@ -1,0 +1,62 @@
+{
+  "artifact": "商品培训课件3_精细复刻_继续片段_v6",
+  "status": "technical-qa-passed-awaiting-user-signoff",
+  "supersedes": "商品培训课件3_精细复刻_继续片段_v5",
+  "correction_scope": [
+    "R10 儿童低呕吐率与安全盾牌改为统一画风精制透明位图",
+    "R10 呕吐率低与安全性良好文案恢复大字号视觉中心",
+    "R11 增加片剂无味／药小易吞与草莓口味两个独立气泡",
+    "R13 过渡页改为年龄中性人物轮廓",
+    "R13 最终页改用独立学龄期女孩并与过渡页素材去重",
+    "关键辅助元素补齐独立入场动效与起中末关键帧证据"
+  ],
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "pptx": {
+    "path": "商品培训课件3_精细复刻_PPTX继续片段_v6.pptx",
+    "sha256": "9a5135371dc5a6710739b79000acfdda68b2354dc556cecb91baec84a41daa3d",
+    "slides": 6,
+    "editable_layers": ["章节标题", "三段导航", "呕吐率低与安全性文字", "双气泡文字", "剂量文字", "品牌证据条", "人群标签"],
+    "slides_test": "passed-no-overflow",
+    "montage": "pptx-render-v6-next/pptx-6-page-montage-v6.png"
+  },
+  "video": {
+    "path": "商品培训课件3_精细复刻_动画视频继续片段_v6.mp4",
+    "sha256": "32f48d7cf7199c518defc9c6c07a95b07d0e6e936f6bfe9b9e34e6b156d3ded9",
+    "duration_seconds": 40.166667,
+    "resolution": "1920x1080",
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "channels": 2,
+    "integrated_loudness_lufs": -16.52,
+    "true_peak_dbfs": -1.38,
+    "full_decode": "passed",
+    "sustained_black_frames": "none-detected",
+    "audio_source": "与 v5 相同的新录音 40.60–80.72 秒切片，未改变音频内容或语速",
+    "motion_proofs": [
+      "儿童低呕吐率图标起中末",
+      "安全盾牌起中末",
+      "片剂气泡起中末",
+      "草莓口味气泡起中末",
+      "人物轮廓起中末",
+      "老人／学龄期女孩／慢病人群依次入场"
+    ],
+    "contact_sheet": "video-qa-v6-next/contact-sheet-v6-next.png"
+  },
+  "image_assets": {
+    "generation_mode": "built-in imagegen plus local chroma-key removal",
+    "alpha_files": [
+      "assets/v6-alpha/child-safety-alpha.png",
+      "assets/v6-alpha/safety-shield-alpha.png",
+      "assets/v6-alpha/speech-bubble-alpha.png",
+      "assets/v6-alpha/person-silhouette-alpha.png",
+      "assets/v6-alpha/schoolgirl-alpha.png"
+    ],
+    "alpha_gate": "all RGBA; alpha extrema 0–255; all corner alpha values are 0",
+    "schoolgirl_source_correction": "改用绿色色键源，避免紫色背景去除导致皮肤与橙色服装失色"
+  },
+  "timing_contract": "reference-analysis-v5/scene-contract-v6.json",
+  "business_asset_gap": "授权片剂／干混悬剂包装与品牌 Logo 尚未提供；当前仅使用无品牌可替换槽位，不仿造包装或 Logo。",
+  "next_gate": "请用户确认 v6 视觉与动效保真度；确认前不以本片段扩制后续主题。"
+}

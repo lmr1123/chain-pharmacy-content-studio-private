@@ -1,0 +1,195 @@
+{"kind":"slide","id":"sl/ewlzr2","slide":1,"title":"大参林 dashenlin","textShapes":5}
+{"kind":"shape","id":"sh/8ry10bq1","slide":1,"name":"cover-color-field","bbox":[0,0,1280,440]}
+{"kind":"shape","id":"sh/nqpkr6pg","slide":1,"name":"cover-blue-field","bbox":[560,0,720,440]}
+{"kind":"shape","id":"sh/mpgjy18v","slide":1,"name":"cover-green-overlay","bbox":[0,0,460,440]}
+{"kind":"shape","id":"sh/xgr2xg7i","slide":1,"name":"cover-building-band-1","bbox":[690,55,26,330]}
+{"kind":"shape","id":"sh/wfi14bqd","slide":1,"name":"cover-building-band-2","bbox":[740,73,26,304]}
+{"kind":"shape","id":"sh/ve9kvqps","slide":1,"name":"cover-building-band-3","bbox":[790,91,26,278]}
+{"kind":"shape","id":"sh/ad0j2l87","slide":1,"name":"cover-building-band-4","bbox":[840,55,26,252]}
+{"kind":"shape","id":"sh/5kb2107u","slide":1,"name":"cover-building-band-5","bbox":[890,73,26,330]}
+{"kind":"shape","id":"sh/kjil8vq9","slide":1,"name":"cover-building-band-6","bbox":[940,91,26,304]}
+{"kind":"shape","id":"sh/2x4n2dgf","slide":1,"name":"cover-building-band-7","bbox":[990,55,26,278]}
+{"kind":"shape","id":"sh/3id4vix0","slide":1,"name":"cover-building-band-8","bbox":[1040,73,26,252]}
+{"kind":"shape","id":"sh/4jm543yl","slide":1,"name":"cover-building-band-9","bbox":[1090,91,26,330]}
+{"kind":"shape","id":"sh/pkvmx8fq","slide":1,"name":"cover-building-band-10","bbox":[1140,55,26,304]}
+{"kind":"shape","id":"sh/ql4n6dgb","slide":1,"name":"cover-white-bottom","bbox":[0,500,1280,220]}
+{"kind":"shape","id":"sh/rmxozixw","slide":1,"name":"cover-white-curve","bbox":[0,330,1280,340]}
+{"kind":"shape","id":"sh/cn658nyh","slide":1,"name":"cover-frame-top","bbox":[200,120,880,4]}
+{"kind":"shape","id":"sh/dof61sf2","slide":1,"name":"cover-frame-left","bbox":[200,120,4,440]}
+{"kind":"shape","id":"sh/6pknutg7","slide":1,"name":"cover-frame-right","bbox":[1076,120,4,440]}
+{"kind":"shape","id":"sh/7qt4nyxs","slide":1,"name":"cover-frame-bottom","bbox":[200,556,880,4]}
+{"kind":"textbox","id":"sh/bupkvudk","slide":1,"name":"cover-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[236,136,190,52]}
+{"kind":"textbox","id":"sh/atgj2pwz","slide":1,"name":"cover-organization","text":"大参林医药集团","textPreview":"大参林医药集团","textChars":7,"textLines":1,"bbox":[490,195,300,44]}
+{"kind":"shape","id":"sh/xwr2xkva","slide":1,"name":"cover-rule-left","bbox":[305,215,175,2]}
+{"kind":"shape","id":"sh/wvy14ze5","slide":1,"name":"cover-rule-right","bbox":[800,215,175,2]}
+{"kind":"textbox","id":"sh/n6pkrad8","slide":1,"name":"cover-title","text":"福尔番茄红素软胶囊","textPreview":"福尔番茄红素软胶囊","textChars":9,"textLines":1,"bbox":[240,245,800,120]}
+{"kind":"textbox","id":"sh/m5gjy5wn","slide":1,"name":"cover-tagline","text":"【专业力】","textPreview":"【专业力】","textChars":5,"textLines":1,"bbox":[550,542,180,40]}
+{"kind":"textbox","id":"sh/9872tkve","slide":1,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"notes","id":"nt/ewlzr2","slide":1,"text":"[Sources]\n- Content: business-approved manuscript (content-first layout)\n- Style: product-courseware-green-v1 (dashenlin)\n- Reference id: content-approved-manuscript-2026-08-02\n- Compliance review required before external use.\n[/Sources]"}
+{"kind":"slide","id":"sl/9999k2","slide":2,"title":"01","textShapes":29}
+{"kind":"shape","id":"sh/l0nqhgzm","slide":2,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/yxw761gv","slide":2,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/jy58f6hg","slide":2,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/snepcbyx","slide":2,"name":"page-number","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/to7qlgfi","slide":2,"name":"page-title","text":"商品介绍、核心卖点、适宜人群","textPreview":"商品介绍、核心卖点、适宜人群","textChars":14,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/61w7a1g7","slide":2,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/7m58j6xc","slide":2,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"shape","id":"sh/grypgvy9","slide":2,"name":"primary-packshot-surface","bbox":[145,82,205,270]}
+{"kind":"textbox","id":"sh/hs7qp0fu","slide":2,"name":"primary-packshot-label","text":"商品包装高清图\n待接入","textPreview":"商品包装高清图 | 待接入","textChars":11,"textLines":2,"bbox":[155,192,185,50]}
+{"kind":"textbox","id":"sh/10fqx4nm","slide":2,"name":"product-name","text":"福尔番茄红素软胶囊","textPreview":"福尔番茄红素软胶囊","textChars":9,"textLines":1,"bbox":[110,360,280,42]}
+{"kind":"shape","id":"sh/0z6poz61","slide":2,"name":"product-table-head-0-surface","bbox":[38,420,120,48]}
+{"kind":"textbox","id":"sh/fyx8vu5g","slide":2,"name":"product-table-head-0-text","text":"编码","textPreview":"编码","textChars":2,"textLines":1,"bbox":[46,428,104,32]}
+{"kind":"shape","id":"sh/exo7mpov","slide":2,"name":"product-table-head-1-surface","bbox":[158,420,82,48]}
+{"kind":"textbox","id":"sh/pozq14ni","slide":2,"name":"product-table-head-1-text","text":"主推","textPreview":"主推","textChars":2,"textLines":1,"bbox":[166,428,66,32]}
+{"kind":"shape","id":"sh/onqpszmx","slide":2,"name":"product-table-head-2-surface","bbox":[240,420,153,48]}
+{"kind":"textbox","id":"sh/nmx8zu5c","slide":2,"name":"product-table-head-2-text","text":"规格","textPreview":"规格","textChars":2,"textLines":1,"bbox":[248,428,137,32]}
+{"kind":"shape","id":"sh/2lo7q9or","slide":2,"name":"product-table-head-3-surface","bbox":[393,420,112,48]}
+{"kind":"textbox","id":"sh/5svqpkne","slide":2,"name":"product-table-head-3-text","text":"零售价","textPreview":"零售价","textChars":3,"textLines":1,"bbox":[401,428,96,32]}
+{"kind":"shape","id":"sh/4rmpgf6t","slide":2,"name":"product-table-value-0-surface","bbox":[38,468,120,56]}
+{"kind":"textbox","id":"sh/gnahsjil","slide":2,"name":"product-table-value-0-text","text":"待确认","textPreview":"待确认","textChars":3,"textLines":1,"bbox":[46,476,104,40]}
+{"kind":"shape","id":"sh/hojyl4z6","slide":2,"name":"product-table-value-1-surface","bbox":[158,468,82,56]}
+{"kind":"textbox","id":"sh/ul8zq90v","slide":2,"name":"product-table-value-1-text","text":"A","textPreview":"A","textChars":1,"textLines":1,"bbox":[166,476,66,40]}
+{"kind":"shape","id":"sh/vm1gjehg","slide":2,"name":"product-table-value-2-surface","bbox":[240,468,153,56]}
+{"kind":"textbox","id":"sh/4rahwjix","slide":2,"name":"product-table-value-2-text","text":"待确认","textPreview":"待确认","textChars":3,"textLines":1,"bbox":[248,476,137,40]}
+{"kind":"shape","id":"sh/5cjipozi","slide":2,"name":"product-table-value-3-surface","bbox":[393,468,112,56]}
+{"kind":"textbox","id":"sh/ipszu90r","slide":2,"name":"product-table-value-3-text","text":"待确认","textPreview":"待确认","textChars":3,"textLines":1,"bbox":[401,476,96,40]}
+{"kind":"shape","id":"sh/3q1gnehc","slide":2,"name":"selling-point-highlight","bbox":[38,544,467,120]}
+{"kind":"textbox","id":"sh/sfuh03it","slide":2,"name":"selling-point","text":"一句话卖点：新疆番茄精华，1粒≈5个新鲜大番茄","textPreview":"一句话卖点：新疆番茄精华，1粒≈5个新鲜大番茄","textChars":23,"textLines":1,"bbox":[48,565,445,80]}
+{"kind":"textbox","id":"sh/dg3itoze","slide":2,"name":"section-title-0","text":"一、商品介绍：","textPreview":"一、商品介绍：","textChars":7,"textLines":1,"bbox":[525,102,170,34]}
+{"kind":"textbox","id":"sh/na5kj21w","slide":2,"name":"section-0-item-0","text":"1、主要成分：番茄红素（浓缩番茄精华）","textPreview":"1、主要成分：番茄红素（浓缩番茄精华）","textChars":19,"textLines":1,"bbox":[525,141,710,37]}
+{"kind":"textbox","id":"sh/29wjqxkb","slide":2,"name":"section-0-item-1","text":"2、功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力","textPreview":"2、功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力","textChars":41,"textLines":1,"bbox":[525,178,710,37]}
+{"kind":"textbox","id":"sh/pcn2lsjm","slide":2,"name":"section-0-item-2","text":"3、用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服","textPreview":"3、用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服","textChars":32,"textLines":1,"bbox":[525,215,710,37]}
+{"kind":"textbox","id":"sh/obe1s721","slide":2,"name":"section-0-item-3","text":"4、不适宜人群：少年儿童、孕妇、乳母","textPreview":"4、不适宜人群：少年儿童、孕妇、乳母","textChars":18,"textLines":1,"bbox":[525,252,710,37]}
+{"kind":"textbox","id":"sh/f65kfi1k","slide":2,"name":"section-title-1","text":"二、核心卖点：","textPreview":"二、核心卖点：","textChars":7,"textLines":1,"bbox":[525,289,170,34]}
+{"kind":"textbox","id":"sh/elwjmdkz","slide":2,"name":"section-1-item-0","text":"1、三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；增强免疫力。","textPreview":"1、三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；增强免疫力。","textChars":51,"textLines":1,"bbox":[525,328,710,60]}
+{"kind":"textbox","id":"sh/18n2hsjq","slide":2,"name":"section-1-item-1","text":"2、产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。","textPreview":"2、产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。","textChars":47,"textLines":1,"bbox":[525,388,710,60]}
+{"kind":"textbox","id":"sh/07e1on25","slide":2,"name":"section-1-item-2","text":"3、场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。","textPreview":"3、场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。","textChars":40,"textLines":1,"bbox":[525,448,710,60]}
+{"kind":"textbox","id":"sh/j2pkrm1o","slide":2,"name":"section-title-2","text":"三、适宜人群：","textPreview":"三、适宜人群：","textChars":7,"textLines":1,"bbox":[525,508,170,34]}
+{"kind":"textbox","id":"sh/yhg3yhkj","slide":2,"name":"section-2-item-0","text":"1、前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；","textPreview":"1、前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；","textChars":32,"textLines":1,"bbox":[525,547,710,32]}
+{"kind":"textbox","id":"sh/6pwnm1gn","slide":2,"name":"section-2-item-1","text":"2、备孕男士和女士；","textPreview":"2、备孕男士和女士；","textChars":10,"textLines":1,"bbox":[525,579,710,32]}
+{"kind":"textbox","id":"sh/7q5of6x8","slide":2,"name":"section-2-item-2","text":"3、爱美、关注抗衰老人士；","textPreview":"3、爱美、关注抗衰老人士；","textChars":13,"textLines":1,"bbox":[525,611,710,32]}
+{"kind":"textbox","id":"sh/sry5obyt","slide":2,"name":"section-2-item-3","text":"4、身体虚弱、需提升免疫力人群。","textPreview":"4、身体虚弱、需提升免疫力人群。","textChars":16,"textLines":1,"bbox":[525,643,710,32]}
+{"kind":"notes","id":"nt/9999k2","slide":2,"text":"[Sources]\n- Content: business-approved manuscript (content-first layout)\n- Style: product-courseware-green-v1 (dashenlin)\n- Reference id: content-approved-manuscript-2026-08-02\n- Compliance review required before external use.\n[/Sources]"}
+{"kind":"slide","id":"sl/gmi6ps","slide":3,"title":"02","textShapes":19}
+{"kind":"shape","id":"sh/4bmtojit","slide":3,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/jadcfe1o","slide":3,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/i94bm903","slide":3,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/h8vud4ji","slide":3,"name":"page-number","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/w72tkzix","slide":3,"name":"page-title","text":"联合推荐话术","textPreview":"联合推荐话术","textChars":6,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/v6tcbu1c","slide":3,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/u5kbip0r","slide":3,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"shape","id":"sh/94bu94j6","slide":3,"name":"combination-head-0-surface","bbox":[28,96,150,58]}
+{"kind":"textbox","id":"sh/832tgzi1","slide":3,"name":"combination-head-0-text","text":"应用场景（适宜人群）","textPreview":"应用场景（适宜人群）","textChars":10,"textLines":1,"bbox":[36,104,134,42]}
+{"kind":"shape","id":"sh/elgb2xs3","slide":3,"name":"combination-head-1-surface","bbox":[178,96,175,58]}
+{"kind":"textbox","id":"sh/fmpcv2to","slide":3,"name":"combination-head-1-text","text":"联合推荐","textPreview":"联合推荐","textChars":4,"textLines":1,"bbox":[186,104,159,42]}
+{"kind":"shape","id":"sh/0nyt47a9","slide":3,"name":"combination-head-2-surface","bbox":[353,96,230,58]}
+{"kind":"textbox","id":"sh/1o7uxcbe","slide":3,"name":"combination-head-2-text","text":"联合商品图","textPreview":"联合商品图","textChars":5,"textLines":1,"bbox":[361,104,214,42]}
+{"kind":"shape","id":"sh/qxwbyxcr","slide":3,"name":"combination-head-3-surface","bbox":[583,96,200,58]}
+{"kind":"textbox","id":"sh/ry5sr2tc","slide":3,"name":"combination-head-3-text","text":"本品图","textPreview":"本品图","textChars":3,"textLines":1,"bbox":[591,104,184,42]}
+{"kind":"shape","id":"sh/szet0nax","slide":3,"name":"combination-head-4-surface","bbox":[783,96,465,58]}
+{"kind":"textbox","id":"sh/dk7utsbi","slide":3,"name":"combination-head-4-text","text":"销售话术","textPreview":"销售话术","textChars":4,"textLines":1,"bbox":[791,104,449,42]}
+{"kind":"shape","id":"sh/itwbudcv","slide":3,"name":"combination-scenario-0-surface","bbox":[28,154,150,263]}
+{"kind":"textbox","id":"sh/3u5snitg","slide":3,"name":"combination-scenario-0-text","text":"备孕/男性生殖健康、前列腺日常养护","textPreview":"备孕/男性生殖健康、前列腺日常养护","textChars":17,"textLines":1,"bbox":[36,162,134,247]}
+{"kind":"shape","id":"sh/7mh0fu5w","slide":3,"name":"combination-name-0-surface","bbox":[178,154,175,263]}
+{"kind":"textbox","id":"sh/ml8z6pob","slide":3,"name":"combination-name-0-text","text":"番茄红素 + 锌/硒营养补充","textPreview":"番茄红素 + 锌/硒营养补充","textChars":14,"textLines":1,"bbox":[186,162,159,247]}
+{"kind":"shape","id":"sh/9ojihkn2","slide":3,"name":"combination-partner-surface-0","bbox":[353,154,230,263]}
+{"kind":"shape","id":"sh/8nah8fmh","slide":3,"name":"partner-slot-0-surface","bbox":[373,210.5,190,150]}
+{"kind":"textbox","id":"sh/vq10ju5s","slide":3,"name":"partner-slot-0-label","text":"锌/硒营养补充\n包装图待接入","textPreview":"锌/硒营养补充 | 包装图待接入","textChars":14,"textLines":2,"bbox":[383,260.5,170,50]}
+{"kind":"shape","id":"sh/upszap4n","slide":3,"name":"combination-talk-0-surface","bbox":[783,154,465,263]}
+{"kind":"textbox","id":"sh/hsjil4ny","slide":3,"name":"combination-talk-0-text","text":"备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿意带走。","textPreview":"备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿意带走。","textChars":88,"textLines":1,"bbox":[791,162,449,247]}
+{"kind":"shape","id":"sh/wrahczmd","slide":3,"name":"combination-scenario-1-surface","bbox":[28,417,150,263]}
+{"kind":"textbox","id":"sh/buxg7a5o","slide":3,"name":"combination-scenario-1-text","text":"抗氧化、抗衰老、爱美/体虚易累","textPreview":"抗氧化、抗衰老、爱美/体虚易累","textChars":15,"textLines":1,"bbox":[36,425,134,247]}
+{"kind":"shape","id":"sh/atoze5o3","slide":3,"name":"combination-name-1-surface","bbox":[178,417,175,263]}
+{"kind":"textbox","id":"sh/gzmx8bm1","slide":3,"name":"combination-name-1-text","text":"番茄红素 + 维生素E软胶囊","textPreview":"番茄红素 + 维生素E软胶囊","textChars":14,"textLines":1,"bbox":[186,425,159,247]}
+{"kind":"shape","id":"sh/10vehw3m","slide":3,"name":"combination-partner-surface-1","bbox":[353,417,230,263]}
+{"kind":"shape","id":"sh/ex4f614v","slide":3,"name":"partner-slot-1-surface","bbox":[373,473.5,190,150]}
+{"kind":"textbox","id":"sh/fydwf6lg","slide":3,"name":"partner-slot-1-label","text":"维生素E软胶囊\n包装图待接入","textPreview":"维生素E软胶囊 | 包装图待接入","textChars":14,"textLines":2,"bbox":[383,523.5,170,50]}
+{"kind":"shape","id":"sh/sv2d4rm5","slide":3,"name":"combination-talk-1-surface","bbox":[783,417,465,263]}
+{"kind":"textbox","id":"sh/twbedw3a","slide":3,"name":"combination-talk-1-text","text":"爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。","textPreview":"爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。","textChars":89,"textLines":1,"bbox":[791,425,449,247]}
+{"kind":"shape","id":"sh/6tkv2h4z","slide":3,"name":"combination-primary-merge-surface","bbox":[583,154,200,526]}
+{"kind":"shape","id":"sh/rutwbmlk","slide":3,"name":"combination-primary-divider","bbox":[583,154,3,526]}
+{"kind":"textbox","id":"sh/cr6xgv29","slide":3,"name":"combination-plus","text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[591,389,40,56]}
+{"kind":"shape","id":"sh/xsfepg3u","slide":3,"name":"combination-primary-product-surface","bbox":[628,277,130,280]}
+{"kind":"textbox","id":"sh/9c7uh8j6","slide":3,"name":"combination-primary-product-label","text":"福尔番茄红素\n包装图待接入","textPreview":"福尔番茄红素 | 包装图待接入","textChars":13,"textLines":2,"bbox":[638,392,110,50]}
+{"kind":"notes","id":"nt/gmi6ps","slide":3,"text":"[Sources]\n- Content: business-approved manuscript (content-first layout)\n- Style: product-courseware-green-v1 (dashenlin)\n- Reference id: content-approved-manuscript-2026-08-02\n- Compliance review required before external use.\n[/Sources]"}
+{"kind":"slide","id":"sl/7cxtpn","slide":4,"title":"03","textShapes":23}
+{"kind":"shape","id":"sh/m5o3mx8z","slide":4,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/9sfmhc7q","slide":4,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/8r65o7q5","slide":4,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/z2d4b2p8","slide":4,"name":"page-number","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/y143ix83","slide":4,"name":"page-title","text":"品种对标","textPreview":"品种对标","textChars":4,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/l4vmds7e","slide":4,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/03mlknqt","slide":4,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"shape","id":"sh/jyh4nmps","slide":4,"name":"benchmark-head-0-surface","bbox":[45,105,160,56]}
+{"kind":"textbox","id":"sh/ix8nuh87","slide":4,"name":"benchmark-head-0-text","text":"对比维度","textPreview":"对比维度","textChars":4,"textLines":1,"bbox":[53,113,144,40]}
+{"kind":"shape","id":"sh/4bu10j61","slide":4,"name":"benchmark-head-1-surface","bbox":[205,105,540,56]}
+{"kind":"textbox","id":"sh/pc3i9onm","slide":4,"name":"benchmark-head-1-text","text":"福尔番茄红素软胶囊（本品）","textPreview":"福尔番茄红素软胶囊（本品）","textChars":13,"textLines":1,"bbox":[213,113,524,40]}
+{"kind":"shape","id":"sh/29cjytov","slide":4,"name":"benchmark-head-2-surface","bbox":[745,105,500,56]}
+{"kind":"textbox","id":"sh/3al07y5g","slide":4,"name":"benchmark-head-2-text","text":"同类番茄红素（竞品·待确认）","textPreview":"同类番茄红素（竞品·待确认）","textChars":14,"textLines":1,"bbox":[753,113,484,40]}
+{"kind":"shape","id":"sh/g7a1wj6p","slide":4,"name":"benchmark-label-0-surface","bbox":[45,161,160,162]}
+{"kind":"textbox","id":"sh/h8ji5ona","slide":4,"name":"benchmark-label-0-text","text":"产品展示","textPreview":"产品展示","textChars":4,"textLines":1,"bbox":[53,169,144,146]}
+{"kind":"shape","id":"sh/ulsju9oz","slide":4,"name":"benchmark-product-left-cell","bbox":[205,161,540,162]}
+{"kind":"shape","id":"sh/fm103e54","slide":4,"name":"benchmark-product-right-cell","bbox":[745,161,500,162]}
+{"kind":"shape","id":"sh/sja1sz6t","slide":4,"name":"benchmark-primary-packshot-surface","bbox":[400,177,140,130]}
+{"kind":"textbox","id":"sh/tkji14ne","slide":4,"name":"benchmark-primary-packshot-label","text":"本品包装图\n待接入","textPreview":"本品包装图 | 待接入","textChars":9,"textLines":2,"bbox":[410,217,120,50]}
+{"kind":"shape","id":"sh/90by50f2","slide":4,"name":"benchmark-competitor-packshot-surface","bbox":[920,177,140,130]}
+{"kind":"textbox","id":"sh/8f2hwvyh","slide":4,"name":"benchmark-competitor-packshot-label","text":"竞品包装图\n待接入","textPreview":"竞品包装图 | 待接入","textChars":9,"textLines":2,"bbox":[930,217,120,50]}
+{"kind":"shape","id":"sh/netg3qxw","slide":4,"name":"benchmark-label-1-surface","bbox":[45,323,160,72]}
+{"kind":"textbox","id":"sh/mdkzulgb","slide":4,"name":"benchmark-label-1-text","text":"功能定位","textPreview":"功能定位","textChars":4,"textLines":1,"bbox":[53,331,144,56]}
+{"kind":"shape","id":"sh/lcry1gz6","slide":4,"name":"benchmark-merged-1-surface","bbox":[205,323,1040,72]}
+{"kind":"textbox","id":"sh/0bihsvyl","slide":4,"name":"benchmark-merged-1-text","text":"保护前列腺、提高精子活力；抗氧化延缓衰老；增强免疫力（以标签为准）","textPreview":"保护前列腺、提高精子活力；抗氧化延缓衰老；增强免疫力（以标签为准）","textChars":33,"textLines":1,"bbox":[213,331,1024,56]}
+{"kind":"shape","id":"sh/za9gzqh0","slide":4,"name":"benchmark-label-2-surface","bbox":[45,395,160,72]}
+{"kind":"textbox","id":"sh/y90zqlgf","slide":4,"name":"benchmark-label-2-text","text":"共有优势","textPreview":"共有优势","textChars":4,"textLines":1,"bbox":[53,403,144,56]}
+{"kind":"shape","id":"sh/58vidkfa","slide":4,"name":"benchmark-merged-2-surface","bbox":[205,395,1040,72]}
+{"kind":"textbox","id":"sh/47mh4fyp","slide":4,"name":"benchmark-merged-2-text","text":"软胶囊易服；番茄红素认知度高；适合作为男性健康/抗氧化联推单品","textPreview":"软胶囊易服；番茄红素认知度高；适合作为男性健康/抗氧化联推单品","textChars":31,"textLines":1,"bbox":[213,403,1024,56]}
+{"kind":"shape","id":"sh/21wnidsv","slide":4,"name":"benchmark-label-3-surface","bbox":[45,467,160,71]}
+{"kind":"textbox","id":"sh/3254bi9g","slide":4,"name":"benchmark-label-3-text","text":"原料与含量","textPreview":"原料与含量","textChars":5,"textLines":1,"bbox":[53,475,144,55]}
+{"kind":"shape","id":"sh/43e5kna1","slide":4,"name":"benchmark-left-3-surface","bbox":[205,467,540,71]}
+{"kind":"textbox","id":"sh/p4nmdsrm","slide":4,"name":"benchmark-left-3-text","text":"番茄肉提炼；1粒≈5个新鲜大番茄；新疆产区叙事清晰","textPreview":"番茄肉提炼；1粒≈5个新鲜大番茄；新疆产区叙事清晰","textChars":25,"textLines":1,"bbox":[213,475,524,55]}
+{"kind":"shape","id":"sh/udcnedsz","slide":4,"name":"benchmark-right-3-surface","bbox":[745,467,500,71]}
+{"kind":"textbox","id":"sh/fel47itk","slide":4,"name":"benchmark-right-3-text","text":"待确认：是否强调产区/提炼部位与含量话术","textPreview":"待确认：是否强调产区/提炼部位与含量话术","textChars":20,"textLines":1,"bbox":[753,475,484,55]}
+{"kind":"shape","id":"sh/gzu5gna5","slide":4,"name":"benchmark-label-4-surface","bbox":[45,538,160,71]}
+{"kind":"textbox","id":"sh/h03m9sba","slide":4,"name":"benchmark-label-4-text","text":"零售价","textPreview":"零售价","textChars":3,"textLines":1,"bbox":[53,546,144,55]}
+{"kind":"shape","id":"sh/e9gnqxs3","slide":4,"name":"benchmark-left-4-surface","bbox":[205,538,540,71]}
+{"kind":"textbox","id":"sh/zapoj29o","slide":4,"name":"benchmark-left-4-text","text":"待确认","textPreview":"待确认","textChars":3,"textLines":1,"bbox":[213,546,524,55]}
+{"kind":"shape","id":"sh/jm50fed4","slide":4,"name":"benchmark-right-4-surface","bbox":[745,538,500,71]}
+{"kind":"textbox","id":"sh/y1cj69wj","slide":4,"name":"benchmark-right-4-text","text":"待确认","textPreview":"待确认","textChars":3,"textLines":1,"bbox":[753,546,484,55]}
+{"kind":"shape","id":"sh/lon2h4va","slide":4,"name":"benchmark-label-5-surface","bbox":[45,609,160,71]}
+{"kind":"textbox","id":"sh/kne18jep","slide":4,"name":"benchmark-label-5-text","text":"卖点差异","textPreview":"卖点差异","textChars":4,"textLines":1,"bbox":[53,617,144,55]}
+{"kind":"shape","id":"sh/byl0buds","slide":4,"name":"benchmark-left-5-surface","bbox":[205,609,540,71]}
+{"kind":"textbox","id":"sh/axcj2pwn","slide":4,"name":"benchmark-left-5-text","text":"产地好+原料优+含量高\n话术可记、可对比，适合A类主推","textPreview":"产地好+原料优+含量高 | 话术可记、可对比，适合A类主推","textChars":27,"textLines":2,"bbox":[213,617,524,55]}
+{"kind":"shape","id":"sh/x03id4vy","slide":4,"name":"benchmark-right-5-surface","bbox":[745,609,500,71]}
+{"kind":"textbox","id":"sh/wzu14zed","slide":4,"name":"benchmark-right-5-text","text":"待业务填写竞品差异","textPreview":"待业务填写竞品差异","textChars":9,"textLines":1,"bbox":[753,617,484,55]}
+{"kind":"notes","id":"nt/7cxtpn","slide":4,"text":"[Sources]\n- Content: business-approved manuscript (content-first layout)\n- Style: product-courseware-green-v1 (dashenlin)\n- Reference id: content-approved-manuscript-2026-08-02\n- Compliance review required before external use.\n[/Sources]"}
+{"kind":"slide","id":"sl/nrzkbr","slide":5,"title":"04","textShapes":19}
+{"kind":"shape","id":"sh/f2dwzel8","slide":5,"name":"header-shadow-line","bbox":[0,69,1280,3]}
+{"kind":"shape","id":"sh/g3mdsjmt","slide":5,"name":"header-green-line","bbox":[95,69,1185,4]}
+{"kind":"shape","id":"sh/14ve1o3e","slide":5,"name":"page-number-block","bbox":[30,0,70,83]}
+{"kind":"textbox","id":"sh/254fut4z","slide":5,"name":"page-number","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[22,19,86,48]}
+{"kind":"textbox","id":"sh/36dw3ylk","slide":5,"name":"page-title","text":"注意事项","textPreview":"注意事项","textChars":4,"textLines":1,"bbox":[110,16,740,48]}
+{"kind":"textbox","id":"sh/o7mxw3m5","slide":5,"name":"brand-wordmark","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,165,42]}
+{"kind":"textbox","id":"sh/p8ve5o3q","slide":5,"name":"internal-notice","text":"仅供内部学习","textPreview":"仅供内部学习","textChars":6,"textLines":1,"bbox":[1080,688,170,22]}
+{"kind":"textbox","id":"sh/q9ofyt4b","slide":5,"name":"precautions-label","text":"注意事项：","textPreview":"注意事项：","textChars":5,"textLines":1,"bbox":[58,100,130,36]}
+{"kind":"textbox","id":"sh/buxw7ylg","slide":5,"name":"precaution-item-0","text":"1、本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医嘱治疗；营养补充不替代诊断与治疗。","textPreview":"1、本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医嘱治疗；营养补充不替代诊断与治疗。","textChars":46,"textLines":1,"bbox":[58,150,575,84]}
+{"kind":"textbox","id":"sh/3elsb6xg","slide":5,"name":"precaution-item-1","text":"2、不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎用，对本品及所含成分过敏者禁用。","textPreview":"2、不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎用，对本品及所含成分过敏者禁用。","textChars":45,"textLines":1,"bbox":[58,238,575,84]}
+{"kind":"textbox","id":"sh/2dcbi1gv","slide":5,"name":"precaution-item-2","text":"3、用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过量；建议随餐服用。","textPreview":"3、用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过量；建议随餐服用。","textChars":40,"textLines":1,"bbox":[58,326,575,84]}
+{"kind":"textbox","id":"sh/pg3adgfm","slide":5,"name":"precaution-item-3","text":"4、联合使用注意：正在服用处方药或其他保健品时，推荐前建议咨询药师，避免自行叠加多种同类抗氧化产品。","textPreview":"4、联合使用注意：正在服用处方药或其他保健品时，推荐前建议咨询药师，避免自行叠加多种同类抗氧化产品。","textChars":50,"textLines":1,"bbox":[58,414,575,84]}
+{"kind":"textbox","id":"sh/ofutkby1","slide":5,"name":"precaution-item-4","text":"5、贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用。","textPreview":"5、贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用。","textChars":30,"textLines":1,"bbox":[58,502,575,84]}
+{"kind":"textbox","id":"sh/fq1s76xk","slide":5,"name":"precaution-item-5","text":"6、就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症状，应停用相关自行补充并及时就医。","textPreview":"6、就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症状，应停用相关自行补充并及时就医。","textChars":46,"textLines":1,"bbox":[58,590,575,84]}
+{"kind":"shape","id":"sh/epsbe1gz","slide":5,"name":"precaution-card-0","bbox":[670,105,267,264.5]}
+{"kind":"textbox","id":"sh/1sja9wfa","slide":5,"name":"precaution-card-title-0","text":"！ 不替代药物治疗","textPreview":"！ 不替代药物治疗","textChars":9,"textLines":1,"bbox":[690,127,227,38]}
+{"kind":"shape","id":"sh/gratgbyp","slide":5,"name":"precaution-asset-0-surface","bbox":[705,181,197,159.5]}
+{"kind":"textbox","id":"sh/zm5cjqxo","slide":5,"name":"precaution-asset-0-label","text":"原创插图槽位\n不替代药物治疗","textPreview":"原创插图槽位 | 不替代药物治疗","textChars":14,"textLines":2,"bbox":[715,235.75,177,50]}
+{"kind":"shape","id":"sh/ylwbqlg3","slide":5,"name":"precaution-card-1","bbox":[943,105,267,264.5]}
+{"kind":"textbox","id":"sh/uhgvip0b","slide":5,"name":"precaution-card-title-1","text":"！ 特殊人群慎用","textPreview":"！ 特殊人群慎用","textChars":8,"textLines":1,"bbox":[963,127,227,38]}
+{"kind":"shape","id":"sh/vipwbuhw","slide":5,"name":"precaution-asset-1-surface","bbox":[978,181,197,159.5]}
+{"kind":"textbox","id":"sh/w3ydkzih","slide":5,"name":"precaution-asset-1-label","text":"原创插图槽位\n特殊人群慎用","textPreview":"原创插图槽位 | 特殊人群慎用","textChars":13,"textLines":2,"bbox":[988,235.75,177,50]}
+{"kind":"shape","id":"sh/h4red4z2","slide":5,"name":"precaution-card-2","bbox":[670,375.5,267,264.5]}
+{"kind":"textbox","id":"sh/i50fm90n","slide":5,"name":"precaution-card-title-2","text":"！ 按量随餐服用","textPreview":"！ 按量随餐服用","textChars":8,"textLines":1,"bbox":[690,397.5,227,38]}
+{"kind":"shape","id":"sh/j69wfehs","slide":5,"name":"precaution-asset-2-surface","bbox":[705,451.5,197,159.5]}
+{"kind":"textbox","id":"sh/47ixojid","slide":5,"name":"precaution-asset-2-label","text":"原创插图槽位\n按量随餐服用","textPreview":"原创插图槽位 | 按量随餐服用","textChars":13,"textLines":2,"bbox":[715,506.25,177,50]}
+{"kind":"shape","id":"sh/58reh4zy","slide":5,"name":"precaution-card-3","bbox":[943,375.5,267,264.5]}
+{"kind":"textbox","id":"sh/y9wva503","slide":5,"name":"precaution-card-title-3","text":"！ 不适及时就医","textPreview":"！ 不适及时就医","textChars":8,"textLines":1,"bbox":[963,397.5,227,38]}
+{"kind":"shape","id":"sh/za5w3aho","slide":5,"name":"precaution-asset-3-surface","bbox":[978,451.5,197,159.5]}
+{"kind":"textbox","id":"sh/14vy98j6","slide":5,"name":"precaution-asset-3-label","text":"原创插图槽位\n不适及时就医","textPreview":"原创插图槽位 | 不适及时就医","textChars":13,"textLines":2,"bbox":[988,506.25,177,50]}
+{"kind":"notes","id":"nt/nrzkbr","slide":5,"text":"[Sources]\n- Content: business-approved manuscript (content-first layout)\n- Style: product-courseware-green-v1 (dashenlin)\n- Reference id: content-approved-manuscript-2026-08-02\n- Compliance review required before external use.\n[/Sources]"}

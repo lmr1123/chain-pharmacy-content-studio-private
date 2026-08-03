@@ -1,0 +1,30 @@
+{
+  "id": "series.icon.advice-safety-v1",
+  "name_zh": "生活建议与禁忌图标系列 v1",
+  "version": "1.0.0",
+  "status": "selected",
+  "style_pack_ids": [
+    "style-pack.reference-medical-tech-v1",
+    "style-pack.reference-product-blue-v1",
+    "style-pack.dashenlin-courseware-green-v1"
+  ],
+  "series_style_id": "advice-safety-flat-icon-v1",
+  "purpose": "注意事项、生活建议列表使用的扁平图标与徽章，跨主题复用。",
+  "role_contracts": [
+    { "role_id": "advice_icon", "name_zh": "建议图标" },
+    { "role_id": "advice_badge", "name_zh": "建议/禁忌徽章" }
+  ],
+  "members": [
+    "ventilation-v1",
+    "warm-water-v1",
+    "light-diet-badge-v2",
+    "no-smoking-alcohol-badge-v2"
+  ],
+  "extension_gate": [
+    "新图标优先通道 B 商用/开源包统一改色，避免多套 icon 风混用。"
+  ],
+  "external_fill": {
+    "preferred_channel": "B",
+    "fallback_channel": "C"
+  }
+}

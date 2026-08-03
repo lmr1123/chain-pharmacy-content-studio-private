@@ -1,0 +1,55 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v2",
+  "artifact_role": "fidelity-gate-fragment-not-final-gold-sample",
+  "status": "rejected-visual-and-motion-fidelity",
+  "reference_range_seconds": [14.83, 42.27],
+  "formal_full_range_seconds": [0.0, 103.0],
+  "style_pack_id": "style-pack.product-courseware-3-reference-faithful-candidate-v2",
+  "pptx": {
+    "file": "商品培训课件3_参考忠实复刻_PPTX门槛片段_v2.pptx",
+    "slides": 4,
+    "editable": true,
+    "artifact_tool_rendered_every_slide": true,
+    "slides_test": "passed-no-overflow",
+    "speaker_notes_sources": true
+  },
+  "video": {
+    "file": "商品培训课件3_参考忠实复刻_动画视频门槛片段_v2.mp4",
+    "duration_seconds": 27.466,
+    "reference_target_seconds": 27.44,
+    "resolution": [1920, 1080],
+    "fps": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "integrated_loudness_lufs": -16.6,
+    "true_peak_dbfs": -1.5,
+    "blackdetect": "none",
+    "full_decode": "passed"
+  },
+  "absolute_timeline": [
+    {"range": [0.0, 2.0], "reference": "R05", "state": "chapter-ribbon-only"},
+    {"range": [2.0, 4.07], "reference": "R06", "state": "benefit-1-packshot-and-influenza-markers"},
+    {"range": [4.07, 20.24], "reference": "R07", "state": "benefit-2-mechanism-assembly"},
+    {"range": [20.24, 27.44], "reference": "R08", "state": "benefit-3-family-shield"}
+  ],
+  "fidelity_evidence": {
+    "reference_vs_replica": "side-by-side-qa/comparison-contact-sheet.png",
+    "video_keyframes": "video-qa-absolute/contact-sheet-v2-absolute.png",
+    "pptx_montage": "pptx-render/pptx-4-page-montage-v2.png"
+  },
+  "known_authorized_asset_gaps": [
+    "The original brand logo is not available; the fixed top-right position uses editable text, not a recreated logo image.",
+    "Authorized product packshots are not available; R06 uses editable unbranded package silhouettes and does not crop reference pixels.",
+    "The family-shield illustration is an original redraw with the same subject roles and composition, not an extracted reference image."
+  ],
+  "fidelity_deviations_to_resolve_before_full_expansion": [
+    "Typography, font weight and effective size do not match the reference visual weight.",
+    "The three navigation pills require re-measured equal visual gaps and reference-specific widths.",
+    "R06 is missing the angled speech-bubble image and its rotation/scale entrance.",
+    "R07 uses generic programmatic vector primitives and therefore reads as a demo rather than the reference illustration animation.",
+    "R08 uses a white-background composite rather than transparent layered characters and shield blended into the silk background.",
+    "Replace the unbranded package silhouettes with business-authorized packshots.",
+    "Replace the editable brand word position with the authorized high-resolution logo.",
+    "If the original PPTX is supplied, measure exact fonts, object coordinates and animation easing from the source rather than the video raster."
+  ]
+}

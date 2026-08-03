@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>门禁静态页 · TIME 榜单定格 t≈5.0s · CW4 保真复刻</title>
+  <link rel="stylesheet" href="fonts.css" />
+  <style>
+    :root {
+      --canvas-w: 1920px;
+      --canvas-h: 1080px;
+      /* measured from ref 854×480 × 2.25 */
+      --time-x: 211.3px; --time-y: 261px; --time-w: 388.9px; --time-h: 558px;
+      --card-x: 768.9px; --card-y: 276.8px; --card-w: 978px; --card-h: 519.8px;
+      --silk: #ccc9c2;
+      --card-bg: #4f4f4f;
+      --lime: #c6e000;
+      --yellow: #e9f200;
+      --time-red: #b11a1a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      color: #eee;
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+      gap: 12px;
+    }
+    .meta {
+      width: min(960px, 100%);
+      font-size: 13px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    .meta code { background: #333; padding: 1px 6px; border-radius: 4px; }
+    .stage-wrap {
+      width: min(960px, 100%);
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.45);
+    }
+    /* design space 1920×1080 scaled to container */
+    .canvas {
+      width: var(--canvas-w);
+      height: var(--canvas-h);
+      position: relative;
+      transform-origin: 0 0;
+      /* silk fabric */
+      background-color: var(--silk);
+      background-image:
+        url("silk-patch.jpg"),
+        linear-gradient(125deg, #d4d1ca 0%, #c5c2ba 40%, #d8d5ce 70%, #bdbab2 100%);
+      background-size: 280px 140px, cover;
+      background-blend-mode: soft-light, normal;
+      overflow: hidden;
+    }
+    /* TIME mock cover — same role as reference generic mock, not a real issue */
+    .time-cover {
+      position: absolute;
+      left: var(--time-x);
+      top: var(--time-y);
+      width: var(--time-w);
+      height: var(--time-h);
+      background: #fff;
+      border: 10px solid var(--time-red);
+      box-shadow: 0 10px 28px rgba(0,0,0,.18);
+      display: flex;
+      flex-direction: column;
+      padding: 28px 22px 18px;
+    }
+    .time-cover .masthead {
+      font-family: var(--font-latin-serif);
+      font-weight: 700;
+      font-size: 92px;
+      line-height: 0.9;
+      color: var(--time-red);
+      letter-spacing: -2px;
+      text-align: center;
+    }
+    .time-cover .big {
+      margin-top: 36px;
+      font-family: var(--font-latin-serif);
+      font-weight: 700;
+      font-size: 58px;
+      line-height: 1.05;
+      color: var(--time-red);
+    }
+    .time-cover .med {
+      margin-top: 18px;
+      font-family: var(--font-latin-serif);
+      font-size: 28px;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+    .time-cover .barcode {
+      margin-top: auto;
+      width: 120px;
+      height: 36px;
+      background: repeating-linear-gradient(
+        90deg,
+        #111 0 2px,
+        #fff 2px 4px,
+        #111 4px 5px,
+        #fff 5px 8px
+      );
+      opacity: 0.85;
+    }
+    .info-card {
+      position: absolute;
+      left: var(--card-x);
+      top: var(--card-y);
+      width: var(--card-w);
+      height: var(--card-h);
+      background: var(--card-bg);
+      border-radius: 48px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.2);
+      padding: 52px 56px 48px 64px;
+      color: #fff;
+    }
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    /* 双箭头：矢量图标；参考约 80–90px@1080 */
+    .chevron-icon {
+      flex: 0 0 auto;
+      width: 88px;
+      height: 88px;
+      margin-top: 0;
+      filter: drop-shadow(0 2px 1px rgba(0,0,0,.2));
+    }
+    .chevron-icon path {
+      fill: var(--lime);
+    }
+    .card-title-block { flex: 1; min-width: 0; }
+    /* 参考黄标题：常规字重；字号对标参考约 44–48px@1080 */
+    .card-title {
+      font-family: var(--font-display);
+      color: var(--yellow);
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+      font-feature-settings: "palt" 0;
+    }
+    .card-underline {
+      margin-top: 14px;
+      height: 3px;
+      background: var(--yellow);
+      width: 100%;
+      opacity: 0.95;
+      border-radius: 1px;
+    }
+    /* 参考列表：明显大于标题；字距开、行距松；~60–64px@1080 */
+    .card-list {
+      font-family: var(--font-display);
+      margin-top: 36px;
+      padding-left: 4px;
+      list-style: none;
+      font-size: 64px;
+      font-weight: 500;
+      line-height: 1.68;
+      color: #f2f2f2;
+      letter-spacing: 0.14em;
+    }
+    .card-list li {
+      margin: 4px 0;
+      padding-left: 0.05em;
+    }
+    /* 参考底字幕：约 50–52px@1080 字高 */
+    .subtitle {
+      position: absolute;
+      left: 50%;
+      bottom: 56px;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-size: 50px;
+      font-weight: 500;
+      color: #1a1a1a;
+      letter-spacing: 0.06em;
+      text-shadow:
+        0 0 4px #fff,
+        0 0 8px #fff,
+        1px 1px 0 #fff,
+        -1px -1px 0 #fff,
+        2px 0 0 #fff,
+        -2px 0 0 #fff,
+        0 2px 0 #fff,
+        0 -2px 0 #fff,
+        3px 0 0 #fff,
+        -3px 0 0 #fff,
+        0 3px 0 #fff,
+        0 -3px 0 #fff;
+      white-space: nowrap;
+      z-index: 40;
+    }
+    .badge {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      background: rgba(0,0,0,.55);
+      color: #9f9;
+      font-size: 18px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      z-index: 50;
+      font-family: ui-monospace, monospace;
+    }
+    body.embed {
+      padding: 0;
+      background: #000;
+      min-height: 0;
+      height: 100vh;
+    }
+    body.embed .meta { display: none; }
+    body.embed .stage-wrap {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="meta">
+    <strong>门禁静态页</strong> · 屏幕 <code>S01_time_list</code> · 参考锚点 <code>t≈5.0s</code><br />
+    版本 <code>product-courseware-4-faithful-replica-v1</code>（非 tomato-lycopene-faithful-v1）<br />
+    坐标来自参考 854×480 量测 ×2.25 → 1920×1080。本页无包装/Logo 依赖。
+  </div>
+  <div class="stage-wrap" id="stage">
+    <div class="canvas" id="canvas">
+      <div class="badge">STATIC · t=5.0s</div>
+      <div class="time-cover" data-layer="10">
+        <div class="masthead">TIME</div>
+        <div class="big">Big<br />Title</div>
+        <div class="med">Medium Black Title</div>
+        <div class="barcode" aria-hidden="true"></div>
+      </div>
+      <div class="info-card" data-layer="11">
+        <div class="card-head">
+          <svg class="chevron-icon" viewBox="0 0 72 72" aria-hidden="true">
+            <!-- 双箭头图标：两枚厚重 chevron，对齐参考 -->
+            <path d="M10 12 L34 36 L10 60 L18 60 L42 36 L18 12 Z"/>
+            <path d="M32 12 L56 36 L32 60 L40 60 L64 36 L40 12 Z"/>
+          </svg>
+          <div class="card-title-block">
+            <div class="card-title">对人类健康贡献最大的10种健康食品</div>
+            <div class="card-underline"></div>
+          </div>
+        </div>
+        <ul class="card-list">
+          <li>1.番茄</li>
+          <li>2.***</li>
+          <li>3.***</li>
+        </ul>
+      </div>
+      <div class="subtitle">“对人类健康贡献最大的10种健康食品”</div>
+    </div>
+  </div>
+  <script>
+    if (new URLSearchParams(location.search).has("embed") || window.self !== window.top) {
+      document.body.classList.add("embed");
+    }
+    function fit() {
+      const stage = document.getElementById("stage");
+      const canvas = document.getElementById("canvas");
+      const s = Math.min(stage.clientWidth / 1920, stage.clientHeight / 1080 || stage.clientWidth / 1920);
+      canvas.style.transform = `scale(${s})`;
+      if (!document.body.classList.contains("embed")) {
+        stage.style.height = `${1080 * s}px`;
+      }
+    }
+    fit();
+    window.addEventListener("resize", fit);
+  </script>
+</body>
+</html>

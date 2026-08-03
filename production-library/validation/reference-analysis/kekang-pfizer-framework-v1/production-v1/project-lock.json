@@ -1,0 +1,45 @@
+{
+  "project_id": "validation.kekang-green-gold-sample-v1",
+  "theme_id": "theme.product.kekang-lingzhi-capsule",
+  "template_reference": "pfizer-antacid-h2-ppi-v1:F01-F10",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "style_pack_status": "validation-candidate-not-registered",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "current_phase": "blocked-on-M0-content-and-assets",
+  "scene_id": "K08",
+  "allowed_content": [
+    "从灵芝主体，可以认识两类成分：灵芝多糖和灵芝三萜。",
+    "灵芝多糖",
+    "灵芝三萜",
+    "两条知识路径由同一灵芝主体展开"
+  ],
+  "excluded": [
+    "功效结论",
+    "成分作用机制",
+    "治疗结果",
+    "核心有效成分称谓",
+    "商品包装",
+    "数字人",
+    "K01-K18 full course"
+  ],
+  "source_plan": "production-library/validation/reference-analysis/kekang-pfizer-framework-v1/OTHER_MODEL_PRODUCTION_PLAN.md",
+  "base_motion_project": "poc/gold-sample/src/kekang-pfizer-k08-motion-project.tsx",
+  "status": "m2-animatic-done-awaiting-m0-content-lock",
+  "deliverable": "renders/k08-audiovisual-v2.mp4",
+  "k08_status": "user-approved-via-continue-2026-08-01",
+  "gates": {
+    "M1_k08_audiovisual": "user-approved-via-continue",
+    "M0_content_review_form": "BLOCKED-unfilled",
+    "authorized_packshot": "BLOCKED",
+    "leaflet_or_label": "BLOCKED",
+    "combo_packshots": "BLOCKED",
+    "logo_factory_gmp": "BLOCKED",
+    "formal_narration": "BLOCKED-until-M0",
+    "style_pack_registration": "BLOCKED-until-full-gold-sample"
+  },
+  "deliverables": {
+    "k08": "renders/k08-audiovisual-v2.mp4",
+    "animatic": "renders/kekang-green-animatic-v1.mp4",
+    "gate_checklist": "gate-checklist.md"
+  }
+}

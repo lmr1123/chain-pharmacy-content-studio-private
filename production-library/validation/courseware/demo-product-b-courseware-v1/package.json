@@ -1,0 +1,24 @@
+{
+  "name": "sufuda-product-courseware-3-gold-v1",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Independent gold-sample replica of 商品培训课件3 (速福达). Do not mix with other gold samples.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "render": "tsc && node dist/src/render.js",
+    "render:direct": "npx tsx src/render.ts",
+    "export:pptx": "node scripts/export-sufuda-pptx.mjs",
+    "start:editor": "node scripts/start-sufuda-editor.mjs",
+    "replicate:demo": "python3 ../../../../scripts/replicate_courseware_theme.py --theme theme-packages/demo-product-b --out-slug demo-product-b-courseware-v1 --skip-tts"
+  },
+  "dependencies": {
+    "@revideo/2d": "0.11.0",
+    "@revideo/core": "0.11.0",
+    "@revideo/renderer": "0.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "5.5.4",
+    "tsx": "^4.19.0"
+  }
+}

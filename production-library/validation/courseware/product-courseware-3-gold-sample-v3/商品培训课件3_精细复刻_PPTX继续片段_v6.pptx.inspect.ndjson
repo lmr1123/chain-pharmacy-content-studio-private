@@ -1,0 +1,156 @@
+{"kind":"deck","id":"pr/zb30f8","name":"Deck"}
+{"kind":"layout","layoutId":"f9f4f1d1-95b7-4f69-ba78-d402e4e109b8","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"af26c7e2-8627-4561-af4d-e327e074aace","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/xrhy7s","slide":1,"title":"二、产品特点","textShapes":6}
+{"kind":"shape","id":"sh/s7ut8r6p","slide":1,"bbox":[405,54,80,55]}
+{"kind":"shape","id":"sh/d83ahwna","slide":1,"bbox":[795,54,80,55]}
+{"kind":"shape","id":"sh/ihcr2hon","slide":1,"name":"chapter-ribbon","bbox":[438,43,404,70]}
+{"kind":"textbox","id":"sh/3ilsbm58","slide":1,"name":"chapter-title","text":"二、产品特点","textPreview":"二、产品特点","textChars":6,"textLines":1,"bbox":[468,48,344,58]}
+{"kind":"textbox","id":"sh/4jut4r6t","slide":1,"text":"速","textPreview":"速","textChars":1,"textLines":1,"bbox":[1090,20,48,44]}
+{"kind":"textbox","id":"sh/543adwne","slide":1,"text":"福","textPreview":"福","textChars":1,"textLines":1,"bbox":[1132,20,48,44]}
+{"kind":"textbox","id":"sh/2dwbelor","slide":1,"text":"达","textPreview":"达","textChars":1,"textLines":1,"bbox":[1174,20,48,44]}
+{"kind":"textbox","id":"sh/ne5snq5c","slide":1,"text":"（玛巴洛沙韦）","textPreview":"（玛巴洛沙韦）","textChars":7,"textLines":1,"bbox":[1086,62,145,23]}
+{"kind":"textbox","id":"sh/n6ho3mho","slide":1,"text":"二、产品特点","textPreview":"二、产品特点","textChars":6,"textLines":1,"bbox":[430,648,420,44]}
+{"kind":"image","id":"im/elovqtcz","slide":1,"name":"","alt":"原创白色珍珠丝绸背景","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/xrhy7s","slide":1,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考时段 00:40.68–00:44.04。\n- 用户新录音：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3。\n- 章节条由小到大建立；生产视频按新录音 00:40.74 的语义节点重定时。\n- 人物、片剂和药瓶为内置 imagegen 生成的无品牌透明插画；品牌包装与 Logo 等待业务授权资产后原位替换，未裁取参考视频像素。"}
+{"kind":"slide","id":"sl/qwsidr","slide":2,"title":"二、产品特点","textShapes":14}
+{"kind":"shape","id":"sh/bqlc7qpk","slide":2,"bbox":[405,54,80,55]}
+{"kind":"shape","id":"sh/apcbyl8z","slide":2,"bbox":[795,54,80,55]}
+{"kind":"shape","id":"sh/lwnud07m","slide":2,"name":"chapter-ribbon","bbox":[438,43,404,70]}
+{"kind":"textbox","id":"sh/kvet4vq1","slide":2,"name":"chapter-title","text":"二、产品特点","textPreview":"二、产品特点","textChars":6,"textLines":1,"bbox":[468,48,344,58]}
+{"kind":"textbox","id":"sh/ju5cbqpw","slide":2,"text":"速","textPreview":"速","textChars":1,"textLines":1,"bbox":[1090,20,48,44]}
+{"kind":"textbox","id":"sh/ytwb2l8b","slide":2,"text":"福","textPreview":"福","textChars":1,"textLines":1,"bbox":[1132,20,48,44]}
+{"kind":"textbox","id":"sh/tk7uhk7y","slide":2,"text":"达","textPreview":"达","textChars":1,"textLines":1,"bbox":[1174,20,48,44]}
+{"kind":"textbox","id":"sh/8zyd8fqd","slide":2,"text":"（玛巴洛沙韦）","textPreview":"（玛巴洛沙韦）","textChars":7,"textLines":1,"bbox":[1086,62,145,23]}
+{"kind":"shape","id":"sh/qxw76tkb","slide":2,"name":"product-nav-1","bbox":[55,135,346,54]}
+{"kind":"shape","id":"sh/by5ofy1w","slide":2,"bbox":[61,140,44,44]}
+{"kind":"textbox","id":"sh/czep8321","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[65,144,36,36]}
+{"kind":"textbox","id":"sh/d0n6h8jm","slide":2,"text":"成人儿童安全性均良好","textPreview":"成人儿童安全性均良好","textChars":10,"textLines":1,"bbox":[105,139,290,44]}
+{"kind":"shape","id":"sh/y1g7atk7","slide":2,"name":"product-nav-2","bbox":[416,135,494,54]}
+{"kind":"shape","id":"sh/z2pojy1s","slide":2,"bbox":[422,140,44,44]}
+{"kind":"textbox","id":"sh/03ypc32d","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[426,144,36,36]}
+{"kind":"textbox","id":"sh/l476l8jy","slide":2,"text":"片剂、干混悬剂双剂型选择","textPreview":"片剂、干混悬剂双剂型选择","textChars":12,"textLines":1,"bbox":[466,139,438,44]}
+{"kind":"shape","id":"sh/e5cny9k3","slide":2,"name":"product-nav-3","bbox":[925,135,250,54]}
+{"kind":"shape","id":"sh/f6lo7e1o","slide":2,"bbox":[931,140,44,44]}
+{"kind":"textbox","id":"sh/jah4fahg","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[935,144,36,36]}
+{"kind":"textbox","id":"sh/i983650v","slide":2,"text":"原研品牌","textPreview":"原研品牌","textChars":4,"textLines":1,"bbox":[975,139,194,44]}
+{"kind":"shape","id":"sh/5cjmhkz6","slide":2,"name":"safety-ring","bbox":[365,210,550,390]}
+{"kind":"textbox","id":"sh/ul832l0j","slide":2,"name":"low-vomiting-label","text":"呕吐率低","textPreview":"呕吐率低","textChars":4,"textLines":1,"bbox":[52,488,252,62]}
+{"kind":"textbox","id":"sh/wnql4vip","slide":2,"name":"safety-label","text":"安全性良好","textPreview":"安全性良好","textChars":5,"textLines":1,"bbox":[955,485,270,58]}
+{"kind":"textbox","id":"sh/fil4nuho","slide":2,"text":"1：成人儿童安全性均良好","textPreview":"1：成人儿童安全性均良好","textChars":12,"textLines":1,"bbox":[340,650,600,42]}
+{"kind":"image","id":"im/1gn614ze","slide":2,"name":"","alt":"原创白色珍珠丝绸背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/7a147uls","slide":2,"name":"","alt":"无品牌包装组合透明插画","bbox":[420,270,440,248]}
+{"kind":"image","id":"im/k7qlwzm1","slide":2,"name":"","alt":"儿童安全与低呕吐率精制透明图标","bbox":[48,260,260,260]}
+{"kind":"image","id":"im/y583up4v","slide":2,"name":"","alt":"精制安全盾牌透明图标","bbox":[995,295,190,190]}
+{"kind":"notes","id":"nt/qwsidr","slide":2,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考时段 00:44.04–00:49.24。\n- 用户新录音：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3。\n- 中央包装在橙色圆环内，左侧儿童呕吐率低，右侧安全盾牌；文字均保持可编辑。\n- 人物、片剂和药瓶为内置 imagegen 生成的无品牌透明插画；品牌包装与 Logo 等待业务授权资产后原位替换，未裁取参考视频像素。"}
+{"kind":"slide","id":"sl/8sr530","slide":3,"title":"二、产品特点","textShapes":15}
+{"kind":"shape","id":"sh/o7mhgfa9","slide":3,"bbox":[405,54,80,55]}
+{"kind":"shape","id":"sh/p8fipkre","slide":3,"bbox":[795,54,80,55]}
+{"kind":"shape","id":"sh/a9ozipsz","slide":3,"name":"chapter-ribbon","bbox":[438,43,404,70]}
+{"kind":"textbox","id":"sh/bax0ru9k","slide":3,"name":"chapter-title","text":"二、产品特点","textPreview":"二、产品特点","textChars":6,"textLines":1,"bbox":[468,48,344,58]}
+{"kind":"textbox","id":"sh/cb6hkfa5","slide":3,"text":"速","textPreview":"速","textChars":1,"textLines":1,"bbox":[1090,20,48,44]}
+{"kind":"textbox","id":"sh/xwfitkrq","slide":3,"text":"福","textPreview":"福","textChars":1,"textLines":1,"bbox":[1132,20,48,44]}
+{"kind":"textbox","id":"sh/qdkz6lsv","slide":3,"text":"达","textPreview":"达","textChars":1,"textLines":1,"bbox":[1174,20,48,44]}
+{"kind":"textbox","id":"sh/retgfqtg","slide":3,"text":"（玛巴洛沙韦）","textPreview":"（玛巴洛沙韦）","textChars":7,"textLines":1,"bbox":[1086,62,145,23]}
+{"kind":"shape","id":"sh/7ed4f6dc","slide":3,"name":"product-nav-1","bbox":[55,135,346,54]}
+{"kind":"shape","id":"sh/6dk361w7","slide":3,"bbox":[61,140,44,44]}
+{"kind":"textbox","id":"sh/tgvmhwvi","slide":3,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[65,144,36,36]}
+{"kind":"textbox","id":"sh/sfml8bex","slide":3,"text":"成人儿童安全性均良好","textPreview":"成人儿童安全性均良好","textChars":10,"textLines":1,"bbox":[105,139,290,44]}
+{"kind":"shape","id":"sh/jqtkbmdg","slide":3,"name":"product-nav-2","bbox":[416,135,494,54]}
+{"kind":"shape","id":"sh/ipk32hwv","slide":3,"bbox":[422,140,44,44]}
+{"kind":"textbox","id":"sh/5sbmdwvm","slide":3,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[426,144,36,36]}
+{"kind":"textbox","id":"sh/kr2l4re1","slide":3,"text":"片剂、干混悬剂双剂型选择","textPreview":"片剂、干混悬剂双剂型选择","textChars":12,"textLines":1,"bbox":[466,139,438,44]}
+{"kind":"shape","id":"sh/vm9k7mxk","slide":3,"name":"product-nav-3","bbox":[925,135,250,54]}
+{"kind":"shape","id":"sh/al03yhwz","slide":3,"bbox":[931,140,44,44]}
+{"kind":"textbox","id":"sh/yh0nqhgr","slide":3,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[935,144,36,36]}
+{"kind":"textbox","id":"sh/zi94jmhc","slide":3,"text":"原研品牌","textPreview":"原研品牌","textChars":4,"textLines":1,"bbox":[975,139,194,44]}
+{"kind":"shape","id":"sh/0ji5s7yx","slide":3,"name":"tablet-stage","bbox":[42,230,330,360]}
+{"kind":"shape","id":"sh/lkrmlcz2","slide":3,"name":"dosage-center-ring","bbox":[395,235,490,350]}
+{"kind":"shape","id":"sh/ml0nuhgn","slide":3,"name":"suspension-stage","bbox":[908,230,330,360]}
+{"kind":"shape","id":"sh/apkny1gz","slide":3,"bbox":[370,408,70,0]}
+{"kind":"shape","id":"sh/vqt4r6hk","slide":3,"bbox":[840,408,70,0]}
+{"kind":"textbox","id":"sh/kjmpovi1","slide":3,"name":"tablet-bubble-text","text":"片剂无味\n药小易吞","textPreview":"片剂无味 | 药小易吞","textChars":9,"textLines":2,"bbox":[100,255,215,92]}
+{"kind":"textbox","id":"sh/ih47ml0v","slide":3,"name":"suspension-bubble-text","text":"草莓口味","textPreview":"草莓口味","textChars":4,"textLines":1,"bbox":[976,276,185,54]}
+{"kind":"textbox","id":"sh/t8fql0ji","slide":3,"name":"weight-dose-label","text":"可按体重精准给药","textPreview":"可按体重精准给药","textChars":8,"textLines":1,"bbox":[928,555,290,40]}
+{"kind":"textbox","id":"sh/s76psvid","slide":3,"text":"2：片剂、干混悬剂双剂型选择","textPreview":"2：片剂、干混悬剂双剂型选择","textChars":14,"textLines":1,"bbox":[300,650,680,42]}
+{"kind":"image","id":"im/ilcnmlcb","slide":3,"name":"","alt":"原创白色珍珠丝绸背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/onypcrap","slide":3,"name":"","alt":"四种无品牌白色片剂与刻度尺透明插画","bbox":[70,320,275,220]}
+{"kind":"image","id":"im/3mpo3mt4","slide":3,"name":"","alt":"无品牌包装组合透明插画","bbox":[435,305,410,230]}
+{"kind":"image","id":"im/2lg7ahsj","slide":3,"name":"","alt":"无品牌干混悬剂药瓶透明插画","bbox":[960,305,225,285]}
+{"kind":"image","id":"im/6pc3id8b","slide":3,"name":"","alt":"无字奶油橙色气泡壳","bbox":[62,220,290,200]}
+{"kind":"image","id":"im/srulknqh","slide":3,"name":"","alt":"无字奶油橙色气泡壳","bbox":[940,230,255,175]}
+{"kind":"notes","id":"nt/8sr530","slide":3,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考时段 00:49.24–01:00.32。\n- 用户新录音：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3。\n- 片剂、包装、干混悬剂瓶为三组独立透明层；业务授权包装到位后替换中央与右侧槽位。\n- 人物、片剂和药瓶为内置 imagegen 生成的无品牌透明插画；品牌包装与 Logo 等待业务授权资产后原位替换，未裁取参考视频像素。"}
+{"kind":"slide","id":"sl/2vclfg","slide":4,"title":"二、产品特点","textShapes":21}
+{"kind":"shape","id":"sh/x47mh0rm","slide":4,"bbox":[405,54,80,55]}
+{"kind":"shape","id":"sh/wjylofq1","slide":4,"bbox":[795,54,80,55]}
+{"kind":"shape","id":"sh/nep4bq9k","slide":4,"name":"chapter-ribbon","bbox":[438,43,404,70]}
+{"kind":"textbox","id":"sh/mdw3il8z","slide":4,"name":"chapter-title","text":"二、产品特点","textPreview":"二、产品特点","textChars":6,"textLines":1,"bbox":[468,48,344,58]}
+{"kind":"textbox","id":"sh/9g7md0ra","slide":4,"text":"速","textPreview":"速","textChars":1,"textLines":1,"bbox":[1090,20,48,44]}
+{"kind":"textbox","id":"sh/ofylkvq5","slide":4,"text":"福","textPreview":"福","textChars":1,"textLines":1,"bbox":[1132,20,48,44]}
+{"kind":"textbox","id":"sh/7a94nu9o","slide":4,"text":"达","textPreview":"达","textChars":1,"textLines":1,"bbox":[1174,20,48,44]}
+{"kind":"textbox","id":"sh/6903up83","slide":4,"text":"（玛巴洛沙韦）","textPreview":"（玛巴洛沙韦）","textChars":7,"textLines":1,"bbox":[1086,62,145,23]}
+{"kind":"shape","id":"sh/wrylovmx","slide":4,"name":"product-nav-1","bbox":[55,135,346,54]}
+{"kind":"shape","id":"sh/hs7mx03i","slide":4,"bbox":[61,140,44,44]}
+{"kind":"textbox","id":"sh/apg3ml47","slide":4,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[65,144,36,36]}
+{"kind":"textbox","id":"sh/vqp4vqlc","slide":4,"text":"成人儿童安全性均良好","textPreview":"成人儿童安全性均良好","textChars":10,"textLines":1,"bbox":[105,139,290,44]}
+{"kind":"shape","id":"sh/8nylkbm1","slide":4,"name":"product-nav-2","bbox":[416,135,494,54]}
+{"kind":"shape","id":"sh/9o7mtg3m","slide":4,"bbox":[422,140,44,44]}
+{"kind":"textbox","id":"sh/mlw3i14v","slide":4,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[426,144,36,36]}
+{"kind":"textbox","id":"sh/nmp4r6lg","slide":4,"text":"片剂、干混悬剂双剂型选择","textPreview":"片剂、干混悬剂双剂型选择","textChars":12,"textLines":1,"bbox":[466,139,438,44]}
+{"kind":"shape","id":"sh/0zelgbmp","slide":4,"name":"product-nav-3","bbox":[925,135,250,54]}
+{"kind":"shape","id":"sh/lknmpg3a","slide":4,"bbox":[931,140,44,44]}
+{"kind":"textbox","id":"sh/14vax8r2","slide":4,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[935,144,36,36]}
+{"kind":"textbox","id":"sh/g3mt43ah","slide":4,"text":"原研品牌","textPreview":"原研品牌","textChars":4,"textLines":1,"bbox":[975,139,194,44]}
+{"kind":"shape","id":"sh/f2dsvy9w","slide":4,"name":"brand-evidence-1","bbox":[175,235,930,86]}
+{"kind":"textbox","id":"sh/e14b2tsb","slide":4,"text":"⚑","textPreview":"⚑","textChars":1,"textLines":1,"bbox":[198,247,88,62]}
+{"kind":"textbox","id":"sh/tgvatobq","slide":4,"text":"来自第一代流感药奥司他韦厂家","textPreview":"来自第一代流感药奥司他韦厂家","textChars":14,"textLines":1,"bbox":[300,243,735,40]}
+{"kind":"textbox","id":"sh/sfm90ja5","slide":4,"text":"全球制药企业罗氏","textPreview":"全球制药企业罗氏","textChars":8,"textLines":1,"bbox":[300,279,735,30]}
+{"kind":"shape","id":"sh/redsret0","slide":4,"name":"brand-evidence-2","bbox":[175,350,930,86]}
+{"kind":"textbox","id":"sh/6dkrytsf","slide":4,"text":"70+","textPreview":"70+","textChars":3,"textLines":1,"bbox":[198,362,88,62]}
+{"kind":"textbox","id":"sh/dcza5sra","slide":4,"text":"70+ 国家和地区获批上市","textPreview":"70+ 国家和地区获批上市","textChars":13,"textLines":1,"bbox":[300,358,735,40]}
+{"kind":"textbox","id":"sh/cb6tcnap","slide":4,"text":"覆盖全球多个市场","textPreview":"覆盖全球多个市场","textChars":8,"textLines":1,"bbox":[300,394,735,30]}
+{"kind":"shape","id":"sh/uh076p87","slide":4,"name":"brand-evidence-3","bbox":[175,465,930,86]}
+{"kind":"textbox","id":"sh/vi98zu9s","slide":4,"text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[198,477,88,62]}
+{"kind":"textbox","id":"sh/wjip8fqx","slide":4,"text":"中国卫健委与 WHO 一致推荐","textPreview":"中国卫健委与 WHO 一致推荐","textChars":15,"textLines":1,"bbox":[300,473,735,40]}
+{"kind":"textbox","id":"sh/hkrq1k7i","slide":4,"text":"14 项国内外权威指南纳入","textPreview":"14 项国内外权威指南纳入","textChars":13,"textLines":1,"bbox":[300,509,735,30]}
+{"kind":"textbox","id":"sh/mdg7258v","slide":4,"text":"3：原研品牌","textPreview":"3：原研品牌","textChars":6,"textLines":1,"bbox":[465,650,350,42]}
+{"kind":"image","id":"im/nqx4f2to","slide":4,"name":"","alt":"原创白色珍珠丝绸背景","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/2vclfg","slide":4,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考时段 01:00.32–01:11.92。\n- 用户新录音：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3。\n- 参考为三条证据卡累积；未使用或伪造罗氏 Logo，品牌事实文字按用户参考保留为可编辑层。\n- 人物、片剂和药瓶为内置 imagegen 生成的无品牌透明插画；品牌包装与 Logo 等待业务授权资产后原位替换，未裁取参考视频像素。"}
+{"kind":"slide","id":"sl/rk9jpy","slide":5,"title":"三、适宜人群","textShapes":8}
+{"kind":"shape","id":"sh/wjyd87i9","slide":5,"bbox":[405,54,80,55]}
+{"kind":"shape","id":"sh/xk7e1cze","slide":5,"bbox":[795,54,80,55]}
+{"kind":"shape","id":"sh/mdwv2x0r","slide":5,"name":"chapter-ribbon","bbox":[438,43,404,70]}
+{"kind":"textbox","id":"sh/ne5wv2hc","slide":5,"name":"chapter-title","text":"三、适宜人群","textPreview":"三、适宜人群","textChars":6,"textLines":1,"bbox":[468,48,344,58]}
+{"kind":"textbox","id":"sh/ofed47ix","slide":5,"text":"速","textPreview":"速","textChars":1,"textLines":1,"bbox":[1090,20,48,44]}
+{"kind":"textbox","id":"sh/9gnexczi","slide":5,"text":"福","textPreview":"福","textChars":1,"textLines":1,"bbox":[1132,20,48,44]}
+{"kind":"textbox","id":"sh/69gfe1gb","slide":5,"text":"达","textPreview":"达","textChars":1,"textLines":1,"bbox":[1174,20,48,44]}
+{"kind":"textbox","id":"sh/7apw76hw","slide":5,"text":"（玛巴洛沙韦）","textPreview":"（玛巴洛沙韦）","textChars":7,"textLines":1,"bbox":[1086,62,145,23]}
+{"kind":"shape","id":"sh/yp8z2lwn","slide":5,"name":"age-five-badge","bbox":[610,250,300,300]}
+{"kind":"textbox","id":"sh/lsjidgfy","slide":5,"text":"≥ 5岁","textPreview":"≥ 5岁","textChars":4,"textLines":1,"bbox":[645,310,230,90]}
+{"kind":"textbox","id":"sh/0rah4bet","slide":5,"text":"既往健康或存在流感并发症高风险的\n单纯性甲型或乙型流感患者","textPreview":"既往健康或存在流感并发症高风险的 | 单纯性甲型或乙型流感患者","textChars":29,"textLines":2,"bbox":[625,405,270,95]}
+{"kind":"textbox","id":"sh/nu10fqx4","slide":5,"text":"三、适宜人群","textPreview":"三、适宜人群","textChars":6,"textLines":1,"bbox":[440,650,400,42]}
+{"kind":"image","id":"im/6lkvipgv","slide":5,"name":"","alt":"原创白色珍珠丝绸背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/wvy9snm5","slide":5,"name":"","alt":"年龄中性人物轮廓透明插画","bbox":[245,215,280,410]}
+{"kind":"notes","id":"nt/rk9jpy","slide":5,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考时段 01:11.92–01:17.36。\n- 用户新录音：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3。\n- 先建立抽象人物轮廓和5岁以上门槛；轮廓不是最终页具体儿童，文字独立可编辑。\n- 人物、片剂和药瓶为内置 imagegen 生成的无品牌透明插画；品牌包装与 Logo 等待业务授权资产后原位替换，未裁取参考视频像素。"}
+{"kind":"slide","id":"sl/6sbb83","slide":6,"title":"三、适宜人群","textShapes":10}
+{"kind":"shape","id":"sh/zihcfqdg","slide":6,"bbox":[405,54,80,55]}
+{"kind":"shape","id":"sh/yh8v6lcv","slide":6,"bbox":[795,54,80,55]}
+{"kind":"shape","id":"sh/9ojulkvi","slide":6,"name":"chapter-ribbon","bbox":[438,43,404,70]}
+{"kind":"textbox","id":"sh/8nadcfux","slide":6,"name":"chapter-title","text":"三、适宜人群","textPreview":"三、适宜人群","textChars":6,"textLines":1,"bbox":[468,48,344,58]}
+{"kind":"textbox","id":"sh/nm1cjadc","slide":6,"text":"速","textPreview":"速","textChars":1,"textLines":1,"bbox":[1090,20,48,44]}
+{"kind":"textbox","id":"sh/mlsva5cr","slide":6,"text":"福","textPreview":"福","textChars":1,"textLines":1,"bbox":[1132,20,48,44]}
+{"kind":"textbox","id":"sh/xc3epkbe","slide":6,"text":"达","textPreview":"达","textChars":1,"textLines":1,"bbox":[1174,20,48,44]}
+{"kind":"textbox","id":"sh/wbadgfut","slide":6,"text":"（玛巴洛沙韦）","textPreview":"（玛巴洛沙韦）","textChars":7,"textLines":1,"bbox":[1086,62,145,23]}
+{"kind":"textbox","id":"sh/elgbmtcv","slide":6,"text":"5岁及以上的既往健康或存在流感并发症高风险的单纯性甲型或乙型流感患者","textPreview":"5岁及以上的既往健康或存在流感并发症高风险的单纯性甲型或乙型流感患者","textChars":34,"textLines":1,"bbox":[125,138,1030,54]}
+{"kind":"shape","id":"sh/zm9svytg","slide":6,"name":"audience-elder-card","bbox":[55,215,330,405]}
+{"kind":"textbox","id":"sh/1oraxob6","slide":6,"name":"audience-elder-label","text":"老年人（≥65岁）","textPreview":"老年人（≥65岁）","textChars":9,"textLines":1,"bbox":[70,548,300,58]}
+{"kind":"shape","id":"sh/mp0bqtcr","slide":6,"name":"audience-schoolgirl-card","bbox":[430,215,330,405]}
+{"kind":"textbox","id":"sh/obits3ux","slide":6,"name":"audience-schoolgirl-label","text":"学龄期儿童\n（5岁及以上）","textPreview":"学龄期儿童 | （5岁及以上）","textChars":13,"textLines":2,"bbox":[445,548,300,58]}
+{"kind":"shape","id":"sh/9cru18bi","slide":6,"name":"audience-chronic-card","bbox":[805,215,420,405]}
+{"kind":"textbox","id":"sh/3upsnet8","slide":6,"name":"audience-chronic-label","text":"自身有基础性疾病的慢病患者","textPreview":"自身有基础性疾病的慢病患者","textChars":13,"textLines":1,"bbox":[820,548,390,58]}
+{"kind":"textbox","id":"sh/7yl8va90","slide":6,"text":"特别关注：老年人、学龄期儿童及慢病患者","textPreview":"特别关注：老年人、学龄期儿童及慢病患者","textChars":19,"textLines":1,"bbox":[285,650,710,42]}
+{"kind":"image","id":"im/9c36xwru","slide":6,"name":"","alt":"原创白色珍珠丝绸背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/nu14zqpc","slide":6,"name":"","alt":"老年人（≥65岁）","bbox":[116,235,205,310]}
+{"kind":"image","id":"im/wjulcf69","slide":6,"name":"","alt":"学龄期儿童\n（5岁及以上）","bbox":[500,225,190,320]}
+{"kind":"image","id":"im/doj2tg7a","slide":6,"name":"","alt":"自身有基础性疾病的慢病患者","bbox":[825,260,380,270]}
+{"kind":"notes","id":"nt/6sbb83","slide":6,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考时段 01:17.36–01:22.96。\n- 用户新录音：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3。\n- 老人、儿童和慢病患者三组人物按参考逐个出现；无白底，人物标签可编辑。\n- 人物、片剂和药瓶为内置 imagegen 生成的无品牌透明插画；品牌包装与 Logo 等待业务授权资产后原位替换，未裁取参考视频像素。"}

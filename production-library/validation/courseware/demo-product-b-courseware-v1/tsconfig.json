@@ -1,0 +1,13 @@
+{
+  "extends": "@revideo/2d/tsconfig.project.json",
+  "include": ["src", "storyboard.json", "content-model.json"],
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

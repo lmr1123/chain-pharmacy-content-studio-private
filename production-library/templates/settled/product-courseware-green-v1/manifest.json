@@ -1,0 +1,61 @@
+{
+  "template_id": "template.product-courseware-dashenlin-green-v1",
+  "template_type": "pptx-courseware",
+  "status": "user-approved",
+  "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+  "canonical_artifact": "金银花露_商品培训课件_复刻验证.pptx",
+  "canonical_confirmed_by": "user",
+  "canonical_confirmed_at": "2026-07-30",
+  "generator": "poc/courseware-export/work/build-product-courseware.mjs",
+  "structured_input": "poc/courseware-export/product-courseware-green.json",
+  "business_input": {
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+    "example_source": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+    "sync_script": "scripts/sync_settled_template_business_words.py"
+  },
+  "validation_root": "production-library/validation/courseware/product-courseware-green-v1",
+  "usage_workflow": "业务使用流程.md",
+  "usage_steps": [
+    "1-select-template",
+    "2-provide-partial-or-product-only-materials",
+    "3-review-content-draft",
+    "4-generate-pptx-after-draft-approval"
+  ],
+  "notes": "五页绿色商品培训原版式可编辑模板。标准用法见 业务使用流程.md：先选模板→交资料(可残缺)→审初稿→确认后再出PPT。联合用药页：联合商品图按行独立 + 本品图纵向合并。字体统一微软雅黑。被否决的三页品牌升级签样只保留在 validation。",
+  "preview": {
+    "cover": "preview/cover.png",
+    "key_frames": [
+      "preview/key-01.png",
+      "preview/key-02.png",
+      "preview/key-03.png",
+      "preview/key-04.png",
+      "preview/key-05.png"
+    ],
+    "key_frame_labels_zh": [
+      "封面/介绍",
+      "卖点与人群",
+      "联合用药",
+      "品种对标",
+      "注意事项"
+    ],
+    "gallery_title_zh": "绿色商品培训 · 5 页",
+    "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意",
+    "name_zh": "绿色单品 PPT（如金银花露）",
+    "category_zh": "商品培训",
+    "outputs": [
+      "可编辑 PPTX"
+    ],
+    "production_ready": true,
+    "status_label": "已签样 · 可换主题量产",
+    "online_url": null
+  },
+  "business_catalog": {
+    "name_zh": "绿色单品 PPT（如金银花露）",
+    "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意",
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "framework_guide": "../../框架填写说明.md"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "project_id": "product.q10.features-faithful-v1",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "style_pack_locked": true,
+  "content_lock": "reference-transcript",
+  "referenceRange": {
+    "start": 90.7,
+    "end": 116.94,
+    "duration": 29.835
+  },
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-product-training-features-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；自然语速铺轨，禁止超1.18×暴力加速",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "min_tempo": 0.95,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "产品特点：1、原研工艺，锁住活性，辅酶Q10遇光易失活，通过避光工艺与稳定制剂技术，杜绝分解，牢牢锁活，保障核心治疗效果，2、海外原料，提升品质，甄选进口大品牌原料，产品纯度高、杂质少，兼顾更优治疗效果与安全性，3、医疗背书，50年临床验证，院端市占率90%，是千万医生的安心之选，医生都在吃的辅酶Q10，适宜人群。",
+          "raw_duration": 34.416,
+          "used_duration": 29.675,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 24.765,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "产品特点：1、原研工艺，锁住活性，辅酶Q10遇光易失活，通过避光工艺与稳定制剂技术，杜绝分解，牢牢锁活，保障核心治疗效果，2、海外原料，提升品质，甄选进口大品牌原料，产品纯度高、杂质少，兼顾更优治疗效果与安全性，3、医疗背书，50年临床验证，院端市占率90%，是千万医生的安心之选，医生都在吃的辅酶Q10，适宜人群。"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "product": "/product-training-faithful/q10-reference-approx-v1.png",
+    "restriction": "商品包装、文件与证据均为重新制作的内部结构示意，不含参考视频证据或包装像素"
+  },
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 3.312,
+      "text": "产品特点：1、原研工艺，锁住活性"
+    },
+    {
+      "start": 3.312,
+      "end": 5.345,
+      "text": "辅酶Q10遇光易失活"
+    },
+    {
+      "start": 5.345,
+      "end": 7.987,
+      "text": "通过避光工艺与稳定制剂技术"
+    },
+    {
+      "start": 7.987,
+      "end": 11.645,
+      "text": "杜绝分解，牢牢锁活，保障核心治疗效果"
+    },
+    {
+      "start": 11.645,
+      "end": 13.881,
+      "text": "2、海外原料，提升品质"
+    },
+    {
+      "start": 13.881,
+      "end": 15.71,
+      "text": "甄选进口大品牌原料"
+    },
+    {
+      "start": 15.71,
+      "end": 17.54,
+      "text": "产品纯度高、杂质少"
+    },
+    {
+      "start": 17.54,
+      "end": 19.979,
+      "text": "兼顾更优治疗效果与安全性"
+    },
+    {
+      "start": 19.979,
+      "end": 22.824,
+      "text": "3、医疗背书，50年临床验证"
+    },
+    {
+      "start": 22.824,
+      "end": 26.686,
+      "text": "院端市占率90%，是千万医生的安心之选"
+    },
+    {
+      "start": 26.686,
+      "end": 28.922,
+      "text": "医生都在吃的辅酶Q10"
+    },
+    {
+      "start": 28.922,
+      "end": 29.735,
+      "text": "适宜人群"
+    }
+  ],
+  "playback_duration": 29.835
+}

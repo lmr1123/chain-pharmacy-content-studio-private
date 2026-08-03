@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>速福达®玛巴洛沙韦 · 商品培训课件3 金样预览</title>
+<link rel="stylesheet" href="../../gold-samples/shared/preview.css" />
+<style>
+  /* 本金样强调色：丝绸橙 */
+  :root { --accent: #e98200; --orange2: #f4a437; }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumb">
+      <a href="../../gold-samples/index.html">金样案例汇总</a>
+      · 速福达®玛巴洛沙韦 · 商品培训课件3
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="badge">金样 · 业务预览</div>
+        <h1>速福达®玛巴洛沙韦 · 商品培训课件3</h1>
+        <p class="sub">
+          通用四段式：章节跳转 → 整片视频 → 关键画面 → PPT 页截图。
+          包装 / Logo 为业务授权槽位（当前示意）。
+        </p>
+        <div class="meta">
+          <span class="chip">视频 · 约 94s · 1920×1080</span>
+          <span class="chip">PPT · 13 页</span>
+          <span class="chip">丝绸橙</span>
+          <span class="chip">签样 2026-08-02</span>
+        </div>
+      </div>
+      <div class="actions" id="editorActions">
+        <a class="btn editor" id="btnOpenEditor" href="http://127.0.0.1:9010/" target="_blank" rel="noopener noreferrer">打开视频编辑器</a>
+        <a class="btn" href="media/courseware-settled.pptx" download>下载可编辑 PPT</a>
+        <a class="btn secondary" href="media/film.mp4" download>下载金样视频</a>
+      </div>
+    </header>
+
+    <!-- 1 章节跳转 -->
+    <section class="block" id="sec-chapters">
+      <div class="block-head">
+        <h2><span class="idx">1</span>章节跳转</h2>
+        <span class="hint">点选跳到对应时点并播放</span>
+      </div>
+      <div class="scene-tabs" id="tabs"></div>
+    </section>
+
+    <!-- 2 视频 -->
+    <section class="block" id="sec-video" style="padding:0;overflow:hidden;">
+      <div class="block-head" style="padding:14px 14px 0;">
+        <h2><span class="idx">2</span>视频播放</h2>
+        <span class="hint">金样成片 · 可拖动进度</span>
+      </div>
+      <div class="player-card" style="border:0;border-radius:0;box-shadow:none;">
+        <div class="stage">
+          <video id="video" playsinline preload="metadata" poster="media/cover-product.png" src="media/film.mp4"></video>
+          <div class="caption-bar" id="caption"></div>
+        </div>
+        <div class="controls">
+          <button type="button" class="primary" id="btnPlay">播放</button>
+          <button type="button" id="btnRestart">从头</button>
+          <input class="seek" id="seek" type="range" min="0" max="94" step="0.05" value="0" />
+          <div class="clock" id="clock">0.00 / 94.13s</div>
+          <div class="scene-label" id="sceneLabel">当前章节：—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 关键画面 -->
+    <section class="block" id="sec-thumbs">
+      <div class="block-head">
+        <h2><span class="idx">3</span>关键画面一览</h2>
+        <span class="hint">视频抽帧 · 点击跳转</span>
+      </div>
+      <div class="thumb-grid" id="strip"></div>
+    </section>
+
+    <!-- 4 PPT 截图 -->
+    <section class="block" id="sec-pptx">
+      <div class="block-head">
+        <h2><span class="idx">4</span>PPT 完整页截图</h2>
+        <span class="hint">可编辑课件 13 页 · 点击放大</span>
+      </div>
+      <div class="ppt-grid" id="pptGrid"></div>
+    </section>
+
+    <footer class="notes">
+      通用壳：<code>gold-samples/shared/preview.{css,js}</code>。
+      归档：<code>templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/</code>。
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="close">关闭</button>
+    <img id="lightboxImg" alt="PPT 页" />
+  </div>
+
+  <script>
+  window.GOLD_CASE = {
+    id: "sufuda-mabaloshawei-courseware3",
+    title: "速福达®玛巴洛沙韦 · 商品培训课件3",
+    duration: 94.13,
+    editorUrl: "http://127.0.0.1:9010/",
+    editorLabel: "打开视频编辑器",
+    editorHint: "业务图层编辑 · 改字/换图/导出（需本机已启动 npm run start:editor）",
+    videoFallback: "media/film-settled.mp4",
+    scenes: [
+      { id: "cover_flu", start: 0.0, end: 10.975, label: "流感背景" },
+      { id: "ch_benefit", start: 10.975, end: 13.956, label: "一、三大核心功效" },
+      { id: "benefit_mech", start: 13.956, end: 29.634, label: "功效 · 机制对比" },
+      { id: "benefit_protect", start: 29.634, end: 37.004, label: "功效 · 保护身边人" },
+      { id: "ch_feature", start: 37.004, end: 42.65, label: "二、产品特点" },
+      { id: "feature_dual", start: 42.65, end: 51.43, label: "特点 · 双剂型" },
+      { id: "feature_brand", start: 51.43, end: 62.405, label: "特点 · 原研证据" },
+      { id: "ch_audience", start: 62.405, end: 68.365, label: "适宜人群 · ≥5岁" },
+      { id: "audience_people", start: 68.365, end: 74.951, label: "适宜人群 · 三类人" },
+      { id: "ch_combo", start: 74.951, end: 82.948, label: "联合用药 · 退热药" },
+      { id: "combo2", start: 82.948, end: 89.848, label: "联合用药 · 慢病药" },
+      { id: "summary", start: 89.848, end: 94.2, label: "总结" }
+    ],
+    thumbs: [
+      { t: 1.0, src: "media/t-flu.png", title: "流感背景", note: "三卡 + 黄金48小时" },
+      { t: 18.0, src: "media/t-benefit.png", title: "核心功效", note: "机制对比" },
+      { t: 48.0, src: "media/t-feature.png", title: "产品特点", note: "双剂型 / 证据" },
+      { t: 70.0, src: "media/t-audience.png", title: "适宜人群", note: "三类重点人群" },
+      { t: 86.0, src: "media/t-combo.png", title: "联合用药", note: "退热 / 慢病" },
+      { t: 92.0, src: "media/t-summary.png", title: "总结", note: "四列表" }
+    ],
+    slides: [
+      { src: "media/pptx-slides/slide-01.png", title: "封面", note: "PPT 第 1 页" },
+      { src: "media/pptx-slides/slide-02.png", title: "流感背景", note: "PPT 第 2 页" },
+      { src: "media/pptx-slides/slide-03.png", title: "功效 · 专治甲乙流", note: "PPT 第 3 页" },
+      { src: "media/pptx-slides/slide-04.png", title: "功效 · 机制对比", note: "PPT 第 4 页" },
+      { src: "media/pptx-slides/slide-05.png", title: "功效 · 保护身边人", note: "PPT 第 5 页" },
+      { src: "media/pptx-slides/slide-06.png", title: "特点 · 安全性", note: "PPT 第 6 页" },
+      { src: "media/pptx-slides/slide-07.png", title: "特点 · 双剂型", note: "PPT 第 7 页" },
+      { src: "media/pptx-slides/slide-08.png", title: "特点 · 原研证据", note: "PPT 第 8 页" },
+      { src: "media/pptx-slides/slide-09.png", title: "适宜人群 · ≥5岁", note: "PPT 第 9 页" },
+      { src: "media/pptx-slides/slide-10.png", title: "适宜人群 · 三类人", note: "PPT 第 10 页" },
+      { src: "media/pptx-slides/slide-11.png", title: "联合用药 · 退热药", note: "PPT 第 11 页" },
+      { src: "media/pptx-slides/slide-12.png", title: "联合用药 · 慢病药", note: "PPT 第 12 页" },
+      { src: "media/pptx-slides/slide-13.png", title: "总结", note: "PPT 第 13 页" }
+    ],
+    captions: [
+      { start: 0.06, end: 1.243, text: "流感全年可发生" },
+      { start: 1.243, end: 3.271, text: "冬春高发，夏季也可能高发" },
+      { start: 3.271, end: 5.299, text: "传染性强，危害大，可致死" },
+      { start: 5.299, end: 8.171, text: "每年中国流感患病人数可高达1.4亿" },
+      { start: 8.171, end: 10.875, text: "抗流感药需要抓住黄金48小时用药" },
+      { start: 11.035, end: 12.446, text: "一、三大核心功效" },
+      { start: 12.446, end: 13.856, text: "一、专治甲流乙流" },
+      { start: 14.016, end: 15.852, text: "二、全程一次，一天退热" },
+      { start: 15.852, end: 17.687, text: "速福达全程只需口服一次" },
+      { start: 17.687, end: 21.692, text: "且早期阻断病毒复制，遏制新病毒生成，一天快速退热" },
+      { start: 21.692, end: 24.194, text: "传统药物奥司他韦不阻止病毒复制" },
+      { start: 24.194, end: 27.531, text: "而是阻止已复制的病毒释放，减少在体内扩散" },
+      { start: 27.531, end: 29.534, text: "且需一天两次，连续吃五天" },
+      { start: 29.694, end: 31.706, text: "三、治疗自己，保护身边人" },
+      { start: 31.706, end: 34.892, text: "仅需患者本人服用即可早期阻断流感传播" },
+      { start: 34.892, end: 36.904, text: "大大降低传染给家人的可能" },
+      { start: 37.064, end: 38.092, text: "二、产品特点" },
+      { start: 38.092, end: 40.149, text: "一、成人儿童安全性均良好" },
+      { start: 40.149, end: 42.55, text: "儿童服用呕吐率低，安全性良好" },
+      { start: 42.71, end: 45.076, text: "二、片剂、干混悬剂双剂型选择" },
+      { start: 45.076, end: 46.597, text: "片剂无味，药小易吞" },
+      { start: 46.597, end: 47.95, text: "干混悬剂草莓口味" },
+      { start: 47.95, end: 51.33, text: "小体重孩子也可按体重精准给药，服药更轻松" },
+      { start: 51.49, end: 52.504, text: "三、原研品牌" },
+      { start: 52.504, end: 56.56, text: "来自第一代流感药奥司他韦厂家——全球制药巨头罗氏" },
+      { start: 56.56, end: 58.081, text: "70+国家获批上市" },
+      { start: 58.081, end: 60.277, text: "中国卫健委与WHO一致推荐" },
+      { start: 60.277, end: 62.305, text: "14项国内外权威指南纳入" },
+      { start: 62.465, end: 63.459, text: "三、适宜人群" },
+      { start: 63.459, end: 68.265, text: "5岁及以上既往健康或存在流感并发症高风险的单纯性甲乙流患者" },
+      { start: 68.425, end: 70.623, text: "特别是：老年人（≥65岁）" },
+      { start: 70.623, end: 72.653, text: "学龄期儿童（5岁及以上）" },
+      { start: 72.653, end: 74.851, text: "自身有基础性疾病的慢病患者" },
+      { start: 75.011, end: 76.011, text: "三、联合用药" },
+      { start: 76.011, end: 78.846, text: "一、玛巴洛沙韦+退烧药（如布洛芬）" },
+      { start: 78.846, end: 82.848, text: "在抑制流感病毒复制的同时，快速缓解发热等不适症状" },
+      { start: 83.008, end: 86.624, text: "二、玛巴洛沙韦+慢病药物（如降压药和降糖药）" },
+      { start: 86.624, end: 89.748, text: "无需调整剂量，不影响慢病患者的日常管理" },
+      { start: 89.908, end: 93.513, text: "总结：核心功效 · 产品特点 · 适宜人群 · 联合用药" }
+    ]
+  };
+  </script>
+  <script src="../../gold-samples/shared/preview.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "project_id": "courseware.wind-heat-and-chuanxinlian.replica-v1",
+  "template_id": "template.dashenlin-disease-product-scenario-v1",
+  "status": "user-approved",
+  "approved_at": "2026-07-30",
+  "approval_source": "user",
+  "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+  "style_pack_locked": true,
+  "source_pdf": "/Users/liminrong/Downloads/商品培训课件2.pdf",
+  "source_mode": "flattened-slide-images",
+  "locked_company_pages": {
+    "cover": {
+      "source_slide": 1,
+      "status": "present-and-locked"
+    },
+    "back_cover": {
+      "status": "missing-from-source-pdf",
+      "policy": "do-not-invent; wait for original PPTX or approved company back-cover asset"
+    }
+  },
+  "slides": [
+    {"slide": 1, "section": "封面", "title": "清热泻火，专攻风热诸证", "scene_type": "locked_company_cover"},
+    {"slide": 2, "section": "导语", "title": "精准辨证是中医临床的基石", "scene_type": "opening_thesis"},
+    {"slide": 3, "section": "目录", "title": "目录", "scene_type": "courseware_agenda"},
+    {"slide": 4, "section": "疾病篇", "title": "风热证的定义", "scene_type": "definition_and_pathogenesis"},
+    {"slide": 5, "section": "疾病篇", "title": "风热证的典型症状", "scene_type": "symptom_gallery"},
+    {"slide": 6, "section": "疾病篇", "title": "风热证的鉴别", "scene_type": "syndrome_comparison"},
+    {"slide": 7, "section": "疾病篇", "title": "风热证的治疗：辨证用药总原则", "scene_type": "treatment_principles"},
+    {"slide": 8, "section": "疾病篇", "title": "风热证的证候细分（常见）", "scene_type": "syndrome_subtypes"},
+    {"slide": 9, "section": "商品篇", "title": "穿心莲内酯滴丸的产品信息", "scene_type": "product_information"},
+    {"slide": 10, "section": "商品篇", "title": "穿心莲内酯滴丸的产品优势", "scene_type": "product_advantage_map"},
+    {"slide": 11, "section": "商品篇", "title": "穿心莲内酯滴丸的核心优势总结", "scene_type": "product_advantage_summary"},
+    {"slide": 12, "section": "场景篇", "title": "什么时候推荐穿心莲内酯滴丸", "scene_type": "audience_scenarios"},
+    {"slide": 13, "section": "场景篇", "title": "以“望闻问切”辨顾客，以专业方案做推荐", "scene_type": "consultation_framework"},
+    {"slide": 14, "section": "场景篇", "title": "场景1：顾客主诉“喉咙痛”", "scene_type": "scenario_solution"},
+    {"slide": 15, "section": "场景篇", "title": "场景2：顾客主诉“感冒了，发烧，有黄痰”", "scene_type": "scenario_solution"},
+    {"slide": 16, "section": "关怀篇", "title": "日常生活叮嘱", "scene_type": "daily_care_guidance"},
+    {"slide": 17, "section": "权重篇", "title": "广誉远安宫牛黄丸", "scene_type": "weighted_product_detail"},
+    {"slide": 18, "section": "权重篇", "title": "白云山安宫＋宏济堂安宫", "scene_type": "weighted_product_comparison"}
+  ],
+  "reusable_contract": {
+    "input": "natural text or Word",
+    "batch_unit": "one product per Word document; batch by placing multiple documents in one folder",
+    "business_sample": "outputs/courseware-natural-import/穿心莲内酯滴丸_商品培训课件_业务真实内容样本.docx",
+    "missing_content": "blank or omit; never fabricate",
+    "overflow": "duplicate the same page type as a continuation slide",
+    "real_product_assets": "authorized originals or source-PDF internal material with explicit provenance",
+    "ai_images": "auxiliary text-free illustrations only"
+  }
+}

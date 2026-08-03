@@ -1,0 +1,486 @@
+{"kind":"layout","layoutId":"bdcd76d7-4d67-4a26-b482-5d03a65551e8","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"947d6a96-e62f-4306-a792-fa383c300bc9","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/dlecwu","slide":1,"title":"Slide 1","textShapes":0}
+{"kind":"image","id":"im/rqpo7exs","slide":1,"name":"","alt":"公司锁定封面，来自源 PDF 第 1 张课件画面","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/dlecwu","slide":1,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 1\n- Full-slide source PDF image reused because the company cover is locked.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/0hjkik","slide":2,"title":"精准辨证是中医临床的基石","textShapes":11}
+{"kind":"shape","id":"sh/7adszmtc","slide":2,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"shape","id":"sh/8b69srax","slide":2,"name":"chrome-page-number","bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/9cfa1wri","slide":2,"name":"chrome-title","text":"精准辨证是中医临床的基石","textPreview":"精准辨证是中医临床的基石","textChars":12,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/y54rmxsv","slide":2,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/z6d8v2t0","slide":2,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/k7m9o7al","slide":2,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"textbox","id":"sh/l8vqxcb6","slide":2,"name":"opening-thesis","text":"辨证论治是中医的灵魂，而精准辨证则是临床疗效的根本保障。唯有在纷繁复杂的症状中\n抓住证候本质，才能实现理、法、方、药的一脉贯通。","textPreview":"辨证论治是中医的灵魂，而精准辨证则是临床疗效的根本保障。唯有在纷繁复杂的症状中 | 抓住证候本质，才能实现理、法、方、药的一脉贯通。","textChars":64,"textLines":2,"bbox":[90,112,1100,110]}
+{"kind":"shape","id":"sh/ahkrixsj","slide":2,"name":"opening-focus-surface","bbox":[90,238,340,250]}
+{"kind":"shape","id":"sh/bit8r2t4","slide":2,"name":"opening-focus-accent","bbox":[90,238,6,250]}
+{"kind":"textbox","id":"sh/ru5gfm1o","slide":2,"name":"opening-focus-title","text":"聚焦核心：风热证","textPreview":"聚焦核心：风热证","textChars":8,"textLines":1,"bbox":[108,252,308,38]}
+{"kind":"shape","id":"sh/6twzmh03","slide":2,"name":"opening-focus-divider","bbox":[108,296,304,1]}
+{"kind":"textbox","id":"sh/twnyhwju","slide":2,"name":"opening-focus-body","text":"深入剖析风热证的核心临床表现，从发热、咽痛、舌象等维度，提炼其最具代表性的辨证要点。","textPreview":"深入剖析风热证的核心临床表现，从发热、咽痛、舌象等维度，提炼其最具代表性的辨证要点。","textChars":42,"textLines":1,"bbox":[108,308,304,166]}
+{"kind":"shape","id":"sh/svehori9","slide":2,"name":"opening-compare-surface","bbox":[470,238,340,250]}
+{"kind":"shape","id":"sh/fy5gj61k","slide":2,"name":"opening-compare-accent","bbox":[470,238,6,250]}
+{"kind":"textbox","id":"sh/exwzq10z","slide":2,"name":"opening-compare-title","text":"关键鉴别：异于风寒","textPreview":"关键鉴别：异于风寒","textChars":9,"textLines":1,"bbox":[488,252,308,38]}
+{"kind":"shape","id":"sh/107ylwjq","slide":2,"name":"opening-compare-divider","bbox":[488,296,304,1]}
+{"kind":"textbox","id":"sh/gzyhsri5","slide":2,"name":"opening-compare-body","text":"对比风热与风寒证在寒热轻重、口渴与否、鼻涕性质的关键差异，厘清易混淆症状，避免辨证失误。","textPreview":"对比风热与风寒证在寒热轻重、口渴与否、鼻涕性质的关键差异，厘清易混淆症状，避免辨证失误。","textChars":44,"textLines":1,"bbox":[488,308,304,166]}
+{"kind":"shape","id":"sh/v2lg721g","slide":2,"name":"opening-apply-surface","bbox":[850,238,340,250]}
+{"kind":"shape","id":"sh/a1cfexkv","slide":2,"name":"opening-apply-accent","bbox":[850,238,6,250]}
+{"kind":"textbox","id":"sh/yh0jm5kj","slide":2,"name":"opening-apply-title","text":"知行合一：分型用药","textPreview":"知行合一：分型用药","textChars":9,"textLines":1,"bbox":[868,252,308,38]}
+{"kind":"shape","id":"sh/zitkval4","slide":2,"name":"opening-apply-divider","bbox":[868,296,304,1]}
+{"kind":"textbox","id":"sh/0j21of2p","slide":2,"name":"opening-apply-body","text":"细化风热证的不同分型，结合经典方剂，讲解如何根据具体兼证灵活化裁，将辨证结果转化为精准用药方案。","textPreview":"细化风热证的不同分型，结合经典方剂，讲解如何根据具体兼证灵活化裁，将辨证结果转化为精准用药方案。","textChars":48,"textLines":1,"bbox":[868,308,304,166]}
+{"kind":"textbox","id":"sh/lkb2xk3u","slide":2,"name":"opening-conclusion","text":"愿诸位练就一双辨证的“慧眼”，于细微处见真章，在临床中精准识证、果敢用药。","textPreview":"愿诸位练就一双辨证的“慧眼”，于细微处见真章，在临床中精准识证、果敢用药。","textChars":37,"textLines":1,"bbox":[90,548,1100,60]}
+{"kind":"notes","id":"nt/0hjkik","slide":2,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 2\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/bhbiag","slide":3,"title":"目 录","textShapes":7}
+{"kind":"textbox","id":"sh/4belgrad","slide":3,"name":"agenda-title","text":"目 录","textPreview":"目 录","textChars":3,"textLines":1,"bbox":[625,80,400,80]}
+{"kind":"shape","id":"sh/pcn29wbi","slide":3,"name":"agenda-rule","bbox":[625,175,520,3]}
+{"kind":"textbox","id":"sh/u5cjahsv","slide":3,"name":"agenda-item-1","text":"一  疾病篇—风热证","textPreview":"一  疾病篇—风热证","textChars":10,"textLines":1,"bbox":[625,220,600,48]}
+{"kind":"textbox","id":"sh/f6lk3mtg","slide":3,"name":"agenda-item-2","text":"二  商品篇—穿心莲内酯滴丸的核心优势","textPreview":"二  商品篇—穿心莲内酯滴丸的核心优势","textChars":19,"textLines":1,"bbox":[625,290,600,48]}
+{"kind":"textbox","id":"sh/g7elc7a1","slide":3,"name":"agenda-item-3","text":"三  场景篇—什么时候推荐穿心莲内酯滴丸","textPreview":"三  场景篇—什么时候推荐穿心莲内酯滴丸","textChars":20,"textLines":1,"bbox":[625,360,600,48]}
+{"kind":"textbox","id":"sh/h8n25cbm","slide":3,"name":"agenda-item-4","text":"四  关怀篇—日常生活叮嘱","textPreview":"四  关怀篇—日常生活叮嘱","textChars":13,"textLines":1,"bbox":[625,430,600,48]}
+{"kind":"textbox","id":"sh/e1g3m1sf","slide":3,"name":"agenda-item-5","text":"五  权重篇—活动权重","textPreview":"五  权重篇—活动权重","textChars":11,"textLines":1,"bbox":[625,500,600,48]}
+{"kind":"textbox","id":"sh/z2pkf6t0","slide":3,"name":"agenda-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1050,675,170,24]}
+{"kind":"image","id":"im/excnmp8f","slide":3,"name":"","alt":"源 PDF 目录页中的大参林建筑图","bbox":[0,0,580,720]}
+{"kind":"notes","id":"nt/bhbiag","slide":3,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 3\n- PDF slide 3 left-side building photograph reused as an internal source crop.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/otodlk","slide":4,"title":"1.1","textShapes":11}
+{"kind":"shape","id":"sh/d03a9wru","slide":4,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/qxsby1s3","slide":4,"name":"chrome-page-number","text":"1.1","textPreview":"1.1","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/byls7m9o","slide":4,"name":"chrome-title","text":"疾病篇——风热证的定义","textPreview":"疾病篇——风热证的定义","textChars":11,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/0nut4ba5","slide":4,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/lo3adgrq","slide":4,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/y1cb21sf","slide":4,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/z2lsb690","slide":4,"name":"definition-surface","bbox":[90,100,1100,180]}
+{"kind":"shape","id":"sh/gra9s7a1","slide":4,"name":"definition-accent","bbox":[90,100,6,180]}
+{"kind":"textbox","id":"sh/1sja1crm","slide":4,"name":"definition-title","text":"什么是风热证？","textPreview":"什么是风热证？","textChars":7,"textLines":1,"bbox":[108,114,1068,38]}
+{"kind":"shape","id":"sh/tormd8v2","slide":4,"name":"definition-divider","bbox":[108,158,1064,1]}
+{"kind":"textbox","id":"sh/snilk3uh","slide":4,"name":"definition-body","text":"指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。","textPreview":"指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。","textChars":85,"textLines":1,"bbox":[108,170,1064,96]}
+{"kind":"shape","id":"sh/7m94bidw","slide":4,"name":"cause-surface","bbox":[90,300,520,280]}
+{"kind":"shape","id":"sh/6l03idcr","slide":4,"name":"cause-accent","bbox":[90,300,6,280]}
+{"kind":"textbox","id":"sh/hcbmhsve","slide":4,"name":"cause-title","text":"核心病因：内外合邪，热邪入侵","textPreview":"核心病因：内外合邪，热邪入侵","textChars":14,"textLines":1,"bbox":[108,314,488,38]}
+{"kind":"shape","id":"sh/gb25onut","slide":4,"name":"cause-divider","bbox":[108,358,484,1]}
+{"kind":"textbox","id":"sh/fat4fid8","slide":4,"name":"cause-body","text":"外感风邪：多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。\n\n内生积热：过食辛辣、油腻、温补之品，或情志不畅化火，致体内“火气”过旺。","textPreview":"外感风邪：多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。 |  | 内生积热：过食辛辣、油腻、温补之品，或情志不畅化火，致体内“火气”过旺。","textChars":74,"textLines":3,"bbox":[108,370,484,196]}
+{"kind":"shape","id":"sh/u9k3mdcn","slide":4,"name":"pathogenesis-surface","bbox":[650,300,540,280]}
+{"kind":"shape","id":"sh/pgbmlsva","slide":4,"name":"pathogenesis-accent","bbox":[650,300,6,280]}
+{"kind":"textbox","id":"sh/of25snup","slide":4,"name":"pathogenesis-title","text":"关键病机：正邪交争，肺卫失和","textPreview":"关键病机：正邪交争，肺卫失和","textChars":14,"textLines":1,"bbox":[668,314,508,38]}
+{"kind":"shape","id":"sh/8vux4v6d","slide":4,"name":"pathogenesis-divider","bbox":[668,358,504,1]}
+{"kind":"textbox","id":"sh/9w3yd0ni","slide":4,"name":"pathogenesis-body","text":"正邪相争：风热犯表，卫阳被遏，正邪交争于肌表则发热。\n\n津伤肺逆：热邪易灼伤津液，故见口干、口渴；肺失宣肃，气逆于上，则引发咳嗽、咽喉肿痛。","textPreview":"正邪相争：风热犯表，卫阳被遏，正邪交争于肌表则发热。 |  | 津伤肺逆：热邪易灼伤津液，故见口干、口渴；肺失宣肃，气逆于上，则引发咳嗽、咽喉肿痛。","textChars":70,"textLines":3,"bbox":[668,370,504,196]}
+{"kind":"textbox","id":"sh/mtcf25o7","slide":4,"name":"definition-summary","text":"总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。","textPreview":"总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。","textChars":34,"textLines":1,"bbox":[90,600,1100,55]}
+{"kind":"notes","id":"nt/otodlk","slide":4,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 4\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/1cnod2","slide":5,"title":"1.2","textShapes":12}
+{"kind":"shape","id":"sh/l0jahs7q","slide":5,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/yxsbmd8z","slide":5,"name":"chrome-page-number","text":"1.2","textPreview":"1.2","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/zy1sfipk","slide":5,"name":"chrome-title","text":"疾病篇——风热证的典型症状","textPreview":"疾病篇——风热证的典型症状","textChars":13,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/cvqtk3qt","slide":5,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/xwzad87e","slide":5,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/at8bid83","slide":5,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/tkz6lona","slide":5,"name":"symptom-throat-surface","bbox":[70,308,320,190]}
+{"kind":"shape","id":"sh/szqpsj65","slide":5,"name":"symptom-throat-accent","bbox":[70,308,6,190]}
+{"kind":"textbox","id":"sh/7yhoje5k","slide":5,"name":"symptom-throat-title","text":"咽喉红肿疼痛","textPreview":"咽喉红肿疼痛","textChars":6,"textLines":1,"bbox":[88,322,288,38]}
+{"kind":"shape","id":"sh/6x87qtoz","slide":5,"name":"symptom-throat-divider","bbox":[88,366,284,1]}
+{"kind":"textbox","id":"sh/5wf6hone","slide":5,"name":"symptom-throat-body","text":"最典型的特征之一，咽喉黏膜充血明显，吞咽时痛感加剧，是风热之邪侵犯肺卫的直接表现。","textPreview":"最典型的特征之一，咽喉黏膜充血明显，吞咽时痛感加剧，是风热之邪侵犯肺卫的直接表现。","textChars":41,"textLines":1,"bbox":[88,378,284,106]}
+{"kind":"shape","id":"sh/kv6poj6t","slide":5,"name":"symptom-nose-surface","bbox":[445,308,320,190]}
+{"kind":"shape","id":"sh/juxofe58","slide":5,"name":"symptom-nose-accent","bbox":[445,308,6,190]}
+{"kind":"textbox","id":"sh/itonm9on","slide":5,"name":"symptom-nose-title","text":"流黄稠涕，咳黄黏痰","textPreview":"流黄稠涕，咳黄黏痰","textChars":9,"textLines":1,"bbox":[463,322,288,38]}
+{"kind":"shape","id":"sh/psjqt8ni","slide":5,"name":"symptom-nose-divider","bbox":[463,366,284,1]}
+{"kind":"textbox","id":"sh/4rap036x","slide":5,"name":"symptom-nose-body","text":"鼻腔与呼吸道分泌物颜色发黄且质地黏稠，是热邪煎灼津液所致，与风寒证清稀分泌物形成鲜明对比。","textPreview":"鼻腔与呼吸道分泌物颜色发黄且质地黏稠，是热邪煎灼津液所致，与风寒证清稀分泌物形成鲜明对比。","textChars":45,"textLines":1,"bbox":[463,378,284,106]}
+{"kind":"shape","id":"sh/o72hcbil","slide":5,"name":"symptom-fever-surface","bbox":[820,308,320,190]}
+{"kind":"shape","id":"sh/98bilgz6","slide":5,"name":"symptom-fever-accent","bbox":[820,308,6,190]}
+{"kind":"textbox","id":"sh/m50za10f","slide":5,"name":"symptom-fever-title","text":"发热重，微恶风","textPreview":"发热重，微恶风","textChars":7,"textLines":1,"bbox":[838,322,288,38]}
+{"kind":"shape","id":"sh/n6t0j6h0","slide":5,"name":"symptom-fever-divider","bbox":[838,366,284,1]}
+{"kind":"textbox","id":"sh/03ih8bi9","slide":5,"name":"symptom-fever-body","text":"患者自觉身体发烫，体温较高，但怕冷感觉不明显，仅稍有怕风，是风热证在体温上的核心表现。","textPreview":"患者自觉身体发烫，体温较高，但怕冷感觉不明显，仅稍有怕风，是风热证在体温上的核心表现。","textChars":43,"textLines":1,"bbox":[838,378,284,106]}
+{"kind":"textbox","id":"sh/14rihwzu","slide":5,"name":"symptom-thirst","text":"口干口渴，喜冷饮\n热邪耗伤津液，导致口渴，且偏好凉水。","textPreview":"口干口渴，喜冷饮 | 热邪耗伤津液，导致口渴，且偏好凉水。","textChars":27,"textLines":2,"bbox":[70,520,350,92]}
+{"kind":"textbox","id":"sh/eh0z610j","slide":5,"name":"symptom-tongue","text":"舌尖红，苔薄黄\n舌尖红为热象；薄黄苔提示病邪尚在表浅。","textPreview":"舌尖红，苔薄黄 | 舌尖红为热象；薄黄苔提示病邪尚在表浅。","textChars":27,"textLines":2,"bbox":[455,520,350,92]}
+{"kind":"image","id":"im/yl87ypsz","slide":5,"name":"","alt":"咽喉红肿疼痛图片","bbox":[70,112,320,185]}
+{"kind":"image","id":"im/pk3q5ore","slide":5,"name":"","alt":"流黄鼻涕图片","bbox":[445,112,320,185]}
+{"kind":"image","id":"im/4ju9c3a9","slide":5,"name":"","alt":"黄色黏痰图片","bbox":[820,112,320,185]}
+{"kind":"image","id":"im/kfyp8zy1","slide":5,"name":"","alt":"源 PDF 中的舌象图片","bbox":[845,505,210,120]}
+{"kind":"notes","id":"nt/1cnod2","slide":5,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 5\n- Four medical symptom images are cropped from flattened PDF slide 5.\n- These crops remain internal-source assets and should be replaced by approved high-resolution originals when available.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/ru4mcj","slide":6,"title":"1.3","textShapes":16}
+{"kind":"shape","id":"sh/ve94japg","slide":6,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/gfi5cfq1","slide":6,"name":"chrome-page-number","text":"1.3","textPreview":"1.3","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/hgrmlk7m","slide":6,"name":"chrome-title","text":"疾病篇——风热证的鉴别","textPreview":"疾病篇——风热证的鉴别","textChars":11,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/ih0nep87","slide":6,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/3itonups","slide":6,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/4j25gzqd","slide":6,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/5kb6p47i","slide":6,"name":"风热证 · 热象显著-surface","bbox":[70,105,550,360]}
+{"kind":"shape","id":"sh/qlkni983","slide":6,"name":"风热证 · 热象显著-header","bbox":[70,105,550,68]}
+{"kind":"textbox","id":"sh/r6torupo","slide":6,"name":"风热证 · 热象显著-title","text":"风热证 · 热象显著","textPreview":"风热证 · 热象显著","textChars":10,"textLines":1,"bbox":[100,120,490,44]}
+{"kind":"textbox","id":"sh/fu9gn2p0","slide":6,"name":"风热证 · 热象显著-left","text":"01 寒热汗出\n发热重，恶寒轻；有汗出，体表疏松。\n\n02 鼻痰色泽\n流黄稠涕，咳痰黄黏，里热灼津。","textPreview":"01 寒热汗出 | 发热重，恶寒轻；有汗出，体表疏松。 |  | 02 鼻痰色泽 | 流黄稠涕，咳痰黄黏，里热灼津。","textChars":50,"textLines":5,"bbox":[92,205,240,185]}
+{"kind":"shape","id":"sh/et0fex8f","slide":6,"name":"风热证 · 热象显著-middle-rule","bbox":[344,205,1,185]}
+{"kind":"textbox","id":"sh/1gbyps76","slide":6,"name":"风热证 · 热象显著-right","text":"03 咽喉症状\n咽喉红肿疼痛，热邪上攻。\n\n04 口渴喜饮\n口干渴明显，偏好冷饮。","textPreview":"03 咽喉症状 | 咽喉红肿疼痛，热邪上攻。 |  | 04 口渴喜饮 | 口干渴明显，偏好冷饮。","textChars":41,"textLines":5,"bbox":[365,205,230,185]}
+{"kind":"textbox","id":"sh/0fixgnql","slide":6,"name":"风热证 · 热象显著-bottom","text":"05 舌脉特征  舌红、苔薄黄，脉浮数。","textPreview":"05 舌脉特征  舌红、苔薄黄，脉浮数。","textChars":20,"textLines":1,"bbox":[92,390,500,65]}
+{"kind":"shape","id":"sh/rq9gjipo","slide":6,"name":"风寒证 · 寒象突出-surface","bbox":[660,105,550,360]}
+{"kind":"shape","id":"sh/qp0fad8j","slide":6,"name":"风寒证 · 寒象突出-header","bbox":[660,105,550,68]}
+{"kind":"textbox","id":"sh/dsryls7u","slide":6,"name":"风寒证 · 寒象突出-title","text":"风寒证 · 寒象突出","textPreview":"风寒证 · 寒象突出","textChars":10,"textLines":1,"bbox":[690,120,490,44]}
+{"kind":"textbox","id":"sh/srixcnq9","slide":6,"name":"风寒证 · 寒象突出-left","text":"01 寒热汗出\n恶寒重，发热轻；无汗出，寒束肌表。\n\n02 鼻痰色泽\n流清稀涕，咳痰白稀，寒邪未化热。","textPreview":"01 寒热汗出 | 恶寒重，发热轻；无汗出，寒束肌表。 |  | 02 鼻痰色泽 | 流清稀涕，咳痰白稀，寒邪未化热。","textChars":51,"textLines":5,"bbox":[682,205,240,185]}
+{"kind":"shape","id":"sh/bmtgvmp8","slide":6,"name":"风寒证 · 寒象突出-middle-rule","bbox":[934,205,1,185]}
+{"kind":"textbox","id":"sh/alkzmh8n","slide":6,"name":"风寒证 · 寒象突出-right","text":"03 咽喉症状\n咽喉发痒，不红不痛，寒邪客于咽喉。\n\n04 口渴情况\n口不渴或喜热饮，体内无明显热邪。","textPreview":"03 咽喉症状 | 咽喉发痒，不红不痛，寒邪客于咽喉。 |  | 04 口渴情况 | 口不渴或喜热饮，体内无明显热邪。","textChars":51,"textLines":5,"bbox":[955,205,230,185]}
+{"kind":"textbox","id":"sh/6hojelsv","slide":6,"name":"风寒证 · 寒象突出-bottom","text":"05 舌脉特征  舌淡、苔薄白，脉浮紧。","textPreview":"05 舌脉特征  舌淡、苔薄白，脉浮紧。","textChars":20,"textLines":1,"bbox":[682,390,500,65]}
+{"kind":"textbox","id":"sh/7ix0n69g","slide":6,"name":"memory-1","text":"辨证核心口诀\n热重寒轻是风热，寒重热轻是风寒；有汗无汗要分清。","textPreview":"辨证核心口诀 | 热重寒轻是风热，寒重热轻是风寒；有汗无汗要分清。","textChars":31,"textLines":2,"bbox":[70,500,350,95]}
+{"kind":"textbox","id":"sh/8j61gba1","slide":6,"name":"memory-2","text":"分泌物色诊口诀\n黄浊黄痰是风热，清涕白痰属风寒；红肿热痛辨咽喉。","textPreview":"分泌物色诊口诀 | 黄浊黄痰是风热，清涕白痰属风寒；红肿热痛辨咽喉。","textChars":32,"textLines":2,"bbox":[465,500,350,95]}
+{"kind":"textbox","id":"sh/tkf2pgr6","slide":6,"name":"memory-3","text":"津液喜恶口诀\n口渴喜凉为风热，口不渴属风寒；喜热饮者寒象真。","textPreview":"津液喜恶口诀 | 口渴喜凉为风热，口不渴属风寒；喜热饮者寒象真。","textChars":30,"textLines":2,"bbox":[860,500,350,95]}
+{"kind":"textbox","id":"sh/u5ojilsr","slide":6,"name":"change-note","text":"病情演变：清涕转黄涕，应紧扣当前主症及时调整治法，不拘泥于初期寒象。","textPreview":"病情演变：清涕转黄涕，应紧扣当前主症及时调整治法，不拘泥于初期寒象。","textChars":34,"textLines":1,"bbox":[70,620,1140,42]}
+{"kind":"notes","id":"nt/ru4mcj","slide":6,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 6\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/okd203","slide":7,"title":"1.4","textShapes":11}
+{"kind":"shape","id":"sh/pgbupojq","slide":7,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/2d0vetkz","slide":7,"name":"chrome-page-number","text":"1.4","textPreview":"1.4","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/3e9cny1k","slide":7,"name":"chrome-title","text":"疾病篇——风热证的治疗：辨证用药总原则","textPreview":"疾病篇——风热证的治疗：辨证用药总原则","textChars":19,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/gbidcj2t","slide":7,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/hcruloje","slide":7,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/up0va9k3","slide":7,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/fa9cje1o","slide":7,"name":"principle-1-surface","bbox":[70,140,350,380]}
+{"kind":"shape","id":"sh/snyd8z2x","slide":7,"name":"principle-1-accent","bbox":[70,140,6,380]}
+{"kind":"textbox","id":"sh/to7uh4ji","slide":7,"name":"principle-1-title","text":"01. 禁用辛温，勿助热","textPreview":"01. 禁用辛温，勿助热","textChars":12,"textLines":1,"bbox":[88,154,318,38]}
+{"kind":"shape","id":"sh/tgnytc36","slide":7,"name":"principle-1-divider","bbox":[88,198,314,1]}
+{"kind":"textbox","id":"sh/8vex072l","slide":7,"name":"principle-1-body","text":"核心原则：风热证为“阳热”之证，绝对禁用麻黄、桂枝等辛温发汗药。\n\n机理警示：温药入体如同“火上浇油”，会加重内热，灼伤津液，导致病情由表入里。","textPreview":"核心原则：风热证为“阳热”之证，绝对禁用麻黄、桂枝等辛温发汗药。 |  | 机理警示：温药入体如同“火上浇油”，会加重内热，灼伤津液，导致病情由表入里。","textChars":72,"textLines":3,"bbox":[88,210,314,296]}
+{"kind":"shape","id":"sh/7u5gr2l0","slide":7,"name":"principle-2-surface","bbox":[465,140,350,380]}
+{"kind":"shape","id":"sh/6tcfyxkf","slide":7,"name":"principle-2-accent","bbox":[465,140,6,380]}
+{"kind":"textbox","id":"sh/ls3yps3u","slide":7,"name":"principle-2-title","text":"02. 分清主次，随证施方","textPreview":"02. 分清主次，随证施方","textChars":13,"textLines":1,"bbox":[483,154,318,38]}
+{"kind":"shape","id":"sh/kruxwn29","slide":7,"name":"principle-2-divider","bbox":[483,198,314,1]}
+{"kind":"textbox","id":"sh/jqlwnilo","slide":7,"name":"principle-2-body","text":"根据病程阶段与兼症针对性加减药物，不拘泥于一方一药。\n\n表热轻症单用辛凉解表；肺热偏重佐以清热化痰；咽喉肿痛则重加板蓝根、桔梗等解毒利咽之品。","textPreview":"根据病程阶段与兼症针对性加减药物，不拘泥于一方一药。 |  | 表热轻症单用辛凉解表；肺热偏重佐以清热化痰；咽喉肿痛则重加板蓝根、桔梗等解毒利咽之品。","textChars":71,"textLines":3,"bbox":[483,210,314,296]}
+{"kind":"shape","id":"sh/ypcfux4j","slide":7,"name":"principle-3-surface","bbox":[860,140,350,380]}
+{"kind":"shape","id":"sh/xo3els3y","slide":7,"name":"principle-3-accent","bbox":[860,140,6,380]}
+{"kind":"textbox","id":"sh/cnuxsnmd","slide":7,"name":"principle-3-title","text":"03. 兼顾兼证，不可偏颇","textPreview":"03. 兼顾兼证，不可偏颇","textChars":13,"textLines":1,"bbox":[878,154,318,38]}
+{"kind":"shape","id":"sh/o7ex8nu9","slide":7,"name":"principle-3-divider","bbox":[878,198,314,1]}
+{"kind":"textbox","id":"sh/p87y1sbu","slide":7,"name":"principle-3-body","text":"临床多见风热夹湿等兼证，治疗时切忌只清热而不顾湿邪。\n\n在辛凉清热基础上，需酌情配伍藿香、佩兰、薏苡仁等化湿药物，使热得清解、湿得化除。","textPreview":"临床多见风热夹湿等兼证，治疗时切忌只清热而不顾湿邪。 |  | 在辛凉清热基础上，需酌情配伍藿香、佩兰、薏苡仁等化湿药物，使热得清解、湿得化除。","textChars":68,"textLines":3,"bbox":[878,210,314,296]}
+{"kind":"textbox","id":"sh/25wf6dc3","slide":7,"name":"principle-summary","text":"总结：风热证治疗核心在于“辛凉解表、清热解毒”，同时严守禁忌，辨明主次兼证。","textPreview":"总结：风热证治疗核心在于“辛凉解表、清热解毒”，同时严守禁忌，辨明主次兼证。","textChars":38,"textLines":1,"bbox":[70,570,1140,58]}
+{"kind":"notes","id":"nt/okd203","slide":7,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 7\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/r6rpc8","slide":8,"title":"1.5","textShapes":16}
+{"kind":"shape","id":"sh/lkjil4zi","slide":8,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/yh8jq90r","slide":8,"name":"chrome-page-number","text":"1.5","textPreview":"1.5","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/zih0jehc","slide":8,"name":"chrome-title","text":"疾病篇——风热证的证候细分（常见）","textPreview":"疾病篇——风热证的证候细分（常见）","textChars":17,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/cfqhozi1","slide":8,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/xgzih4z6","slide":8,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/ad8zmp0v","slide":8,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/beh0fuhg","slide":8,"name":"subtype-1-surface","bbox":[70,110,550,230]}
+{"kind":"shape","id":"sh/ob6hkfip","slide":8,"name":"subtype-1-accent","bbox":[70,110,6,230]}
+{"kind":"textbox","id":"sh/pczidkza","slide":8,"name":"subtype-1-title","text":"01. 风热感冒（表热轻症）","textPreview":"01. 风热感冒（表热轻症）","textChars":14,"textLines":1,"bbox":[88,120,514,44]}
+{"kind":"shape","id":"sh/58zmxgju","slide":8,"name":"subtype-1-rule","bbox":[88,166,514,1]}
+{"kind":"textbox","id":"sh/47qlobi9","slide":8,"name":"subtype-1-clinical","text":"临床表现：发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。","textPreview":"临床表现：发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。","textChars":26,"textLines":1,"bbox":[88,186,245,135]}
+{"kind":"shape","id":"sh/36x4v61o","slide":8,"name":"subtype-1-column-rule","bbox":[344,186,1,135]}
+{"kind":"textbox","id":"sh/i5o3m103","slide":8,"name":"subtype-1-treatment","text":"治则与方药：辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。","textPreview":"治则与方药：辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。","textChars":38,"textLines":1,"bbox":[362,186,240,135]}
+{"kind":"shape","id":"sh/h4fmtwjy","slide":8,"name":"subtype-2-surface","bbox":[660,110,550,230]}
+{"kind":"shape","id":"sh/g36lkrid","slide":8,"name":"subtype-2-accent","bbox":[660,110,6,230]}
+{"kind":"textbox","id":"sh/v2xkr61s","slide":8,"name":"subtype-2-title","text":"02. 风热犯肺（咳嗽为主）","textPreview":"02. 风热犯肺（咳嗽为主）","textChars":14,"textLines":1,"bbox":[678,120,514,44]}
+{"kind":"shape","id":"sh/u1o3i107","slide":8,"name":"subtype-2-rule","bbox":[678,166,514,1]}
+{"kind":"textbox","id":"sh/tgf2pwjm","slide":8,"name":"subtype-2-clinical","text":"临床表现：咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。","textPreview":"临床表现：咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。","textChars":28,"textLines":1,"bbox":[678,186,245,135]}
+{"kind":"shape","id":"sh/8fmlgri1","slide":8,"name":"subtype-2-column-rule","bbox":[934,186,1,135]}
+{"kind":"textbox","id":"sh/kjqlwrqx","slide":8,"name":"subtype-2-treatment","text":"治则与方药：疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。","textPreview":"治则与方药：疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。","textChars":37,"textLines":1,"bbox":[952,186,240,135]}
+{"kind":"shape","id":"sh/lkzm5wri","slide":8,"name":"subtype-3-surface","bbox":[70,380,550,230]}
+{"kind":"shape","id":"sh/yh83uhsr","slide":8,"name":"subtype-3-accent","bbox":[70,380,6,230]}
+{"kind":"textbox","id":"sh/zih43m9c","slide":8,"name":"subtype-3-title","text":"03. 风热上攻（头面热象偏重）","textPreview":"03. 风热上攻（头面热象偏重）","textChars":16,"textLines":1,"bbox":[88,390,514,44]}
+{"kind":"shape","id":"sh/cvqlsra1","slide":8,"name":"subtype-3-rule","bbox":[88,436,514,1]}
+{"kind":"textbox","id":"sh/xgzm1wrm","slide":8,"name":"subtype-3-clinical","text":"临床表现：头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。","textPreview":"临床表现：头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。","textChars":31,"textLines":1,"bbox":[88,456,245,135]}
+{"kind":"shape","id":"sh/qt83qhsv","slide":8,"name":"subtype-3-column-rule","bbox":[344,456,1,135]}
+{"kind":"textbox","id":"sh/buhkzm9g","slide":8,"name":"subtype-3-treatment","text":"治则与方药：疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。","textPreview":"治则与方药：疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。","textChars":38,"textLines":1,"bbox":[362,456,240,135]}
+{"kind":"shape","id":"sh/wral4bq5","slide":8,"name":"subtype-4-surface","bbox":[660,380,550,230]}
+{"kind":"shape","id":"sh/hc3mdgrq","slide":8,"name":"subtype-4-accent","bbox":[660,380,6,230]}
+{"kind":"textbox","id":"sh/r65o3ats","slide":8,"name":"subtype-4-title","text":"04. 风热夹湿（夏季多见）","textPreview":"04. 风热夹湿（夏季多见）","textChars":14,"textLines":1,"bbox":[678,390,514,44]}
+{"kind":"shape","id":"sh/6lw7a5s7","slide":8,"name":"subtype-4-rule","bbox":[678,436,514,1]}
+{"kind":"textbox","id":"sh/t8n65kby","slide":8,"name":"subtype-4-clinical","text":"临床表现：发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。","textPreview":"临床表现：发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。","textChars":35,"textLines":1,"bbox":[678,456,245,135]}
+{"kind":"shape","id":"sh/s7epcfad","slide":8,"name":"subtype-4-column-rule","bbox":[934,456,1,135]}
+{"kind":"textbox","id":"sh/fa5o7ut4","slide":8,"name":"subtype-4-treatment","text":"治则与方药：疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。","textPreview":"治则与方药：疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。","textChars":36,"textLines":1,"bbox":[952,456,240,135]}
+{"kind":"notes","id":"nt/r6rpc8","slide":8,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 8\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/eet5yo","slide":9,"title":"2.1","textShapes":16}
+{"kind":"shape","id":"sh/t8rexkzq","slide":9,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/650fm50z","slide":9,"name":"chrome-page-number","text":"2.1","textPreview":"2.1","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/769wvahk","slide":9,"name":"chrome-title","text":"商品篇——穿心莲内酯滴丸的产品信息","textPreview":"商品篇——穿心莲内酯滴丸的产品信息","textChars":17,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/gv2xszi1","slide":9,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/hwbe14zm","slide":9,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/u9kfqp0v","slide":9,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/czydwvix","slide":9,"name":"product-info-outline","bbox":[360,135,835,440]}
+{"kind":"textbox","id":"sh/x07ep0ji","slide":9,"name":"product-info-label-1","text":"【成  份】","textPreview":"【成  份】","textChars":6,"textLines":1,"bbox":[400,170,170,38]}
+{"kind":"textbox","id":"sh/t4vm5wve","slide":9,"name":"product-info-value-1","text":"穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。","textPreview":"穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。","textChars":33,"textLines":1,"bbox":[565,170,590,48]}
+{"kind":"textbox","id":"sh/s3m5cbe9","slide":9,"name":"product-info-label-2","text":"【性  状】","textPreview":"【性  状】","textChars":6,"textLines":1,"bbox":[400,232,170,38]}
+{"kind":"textbox","id":"sh/72d436xo","slide":9,"name":"product-info-value-2","text":"本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。","textPreview":"本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。","textChars":24,"textLines":1,"bbox":[565,232,590,48]}
+{"kind":"textbox","id":"sh/614na1w3","slide":9,"name":"product-info-label-3","text":"【功能主治】","textPreview":"【功能主治】","textChars":6,"textLines":1,"bbox":[400,294,170,38]}
+{"kind":"textbox","id":"sh/hsfm9gvq","slide":9,"name":"product-info-value-3","text":"清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛。","textPreview":"清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛。","textChars":27,"textLines":1,"bbox":[565,294,590,48]}
+{"kind":"textbox","id":"sh/grm5gbe5","slide":9,"name":"product-info-label-4","text":"【规  格】","textPreview":"【规  格】","textChars":6,"textLines":1,"bbox":[400,356,170,38]}
+{"kind":"textbox","id":"sh/f6d476dk","slide":9,"name":"product-info-value-4","text":"每袋含穿心莲内酯0.15g。","textPreview":"每袋含穿心莲内酯0.15g。","textChars":14,"textLines":1,"bbox":[565,356,590,48]}
+{"kind":"textbox","id":"sh/u54ne1wz","slide":9,"name":"product-info-label-5","text":"【用量用法】","textPreview":"【用量用法】","textChars":6,"textLines":1,"bbox":[400,418,170,38]}
+{"kind":"textbox","id":"sh/pwfmdgvm","slide":9,"name":"product-info-value-5","text":"口服，一次1袋，一日3次。（建议首次服用两袋）","textPreview":"口服，一次1袋，一日3次。（建议首次服用两袋）","textChars":23,"textLines":1,"bbox":[565,418,590,48]}
+{"kind":"textbox","id":"sh/4v65kve1","slide":9,"name":"product-info-label-6","text":"【禁  忌】","textPreview":"【禁  忌】","textChars":6,"textLines":1,"bbox":[400,480,170,38]}
+{"kind":"textbox","id":"sh/ozepgzmd","slide":9,"name":"product-info-value-6","text":"对本品过敏者禁用。","textPreview":"对本品过敏者禁用。","textChars":9,"textLines":1,"bbox":[565,480,590,48]}
+{"kind":"image","id":"im/ixobmpw7","slide":9,"name":"","alt":"穿心莲内酯滴丸包装，裁自源 PDF","bbox":[50,220,250,250]}
+{"kind":"notes","id":"nt/eet5yo","slide":9,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 9\n- Product packshot is cropped from flattened PDF slide 9.\n- Replace with an authorized high-resolution packshot before production validation.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/088lx2","slide":10,"title":"2.2","textShapes":17}
+{"kind":"shape","id":"sh/wvmp47ux","slide":10,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/vudobmtc","slide":10,"name":"chrome-page-number","text":"2.2","textPreview":"2.2","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/ut472hcr","slide":10,"name":"chrome-title","text":"商品篇——穿心莲内酯滴丸的产品优势","textPreview":"商品篇——穿心莲内酯滴丸的产品优势","textChars":17,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/9sv69cb6","slide":10,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/8rmp07ul","slide":10,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/n6do72tg","slide":10,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/m547yxcv","slide":10,"name":"advantage-core","bbox":[535,105,210,150]}
+{"kind":"textbox","id":"sh/tozqlwbq","slide":10,"name":"advantage-core-text","text":"一机理\n三优势","textPreview":"一机理 | 三优势","textChars":7,"textLines":2,"bbox":[555,140,170,82]}
+{"kind":"shape","id":"sh/sn6pcru5","slide":10,"name":"advantage-axis","bbox":[220,365,830,3]}
+{"kind":"shape","id":"sh/adgne98j","slide":10,"name":"advantage-node-1","bbox":[130,325,72,72]}
+{"kind":"textbox","id":"sh/vepo7epo","slide":10,"name":"advantage-node-label-1","text":"机理","textPreview":"机理","textChars":2,"textLines":1,"bbox":[130,343,72,38]}
+{"kind":"textbox","id":"sh/wfy5gjq9","slide":10,"name":"advantage-heading-1","text":"抑制核转录因子表达","textPreview":"抑制核转录因子表达","textChars":9,"textLines":1,"bbox":[65,425,205,58]}
+{"kind":"textbox","id":"sh/xg769o7u","slide":10,"name":"advantage-body-1","text":"提高机体防御能力\n减轻细菌或病毒感染带来的不适症状","textPreview":"提高机体防御能力 | 减轻细菌或病毒感染带来的不适症状","textChars":25,"textLines":2,"bbox":[65,492,205,120]}
+{"kind":"shape","id":"sh/m9wnap87","slide":10,"name":"advantage-node-2","bbox":[400,325,72,72]}
+{"kind":"textbox","id":"sh/nap43u9s","slide":10,"name":"advantage-node-label-2","text":"单","textPreview":"单","textChars":1,"textLines":1,"bbox":[400,343,72,38]}
+{"kind":"textbox","id":"sh/8by5czqd","slide":10,"name":"advantage-heading-2","text":"百分百纯植物提取","textPreview":"百分百纯植物提取","textChars":8,"textLines":1,"bbox":[335,425,205,58]}
+{"kind":"textbox","id":"sh/9c7m547y","slide":10,"name":"advantage-body-2","text":"单体制剂、植物化学药\n机理确切可控，降低联合用药风险","textPreview":"单体制剂、植物化学药 | 机理确切可控，降低联合用药风险","textChars":26,"textLines":2,"bbox":[335,492,205,120]}
+{"kind":"shape","id":"sh/650nmt8b","slide":10,"name":"advantage-node-3","bbox":[680,325,72,72]}
+{"kind":"textbox","id":"sh/769ofypw","slide":10,"name":"advantage-node-label-3","text":"纯","textPreview":"纯","textChars":1,"textLines":1,"bbox":[680,343,72,38]}
+{"kind":"textbox","id":"sh/3q1k7qpo","slide":10,"name":"advantage-heading-3","text":"穿心莲内酯纯度97%","textPreview":"穿心莲内酯纯度97%","textChars":10,"textLines":1,"bbox":[615,425,205,58]}
+{"kind":"textbox","id":"sh/2psjelo3","slide":10,"name":"advantage-body-3","text":"质量稳定，载药量高\n疗效好","textPreview":"质量稳定，载药量高 | 疗效好","textChars":13,"textLines":2,"bbox":[615,492,205,120]}
+{"kind":"shape","id":"sh/pc3290ne","slide":10,"name":"advantage-node-4","bbox":[960,325,72,72]}
+{"kind":"textbox","id":"sh/orulgv6t","slide":10,"name":"advantage-node-label-4","text":"快","textPreview":"快","textChars":1,"textLines":1,"bbox":[960,343,72,38]}
+{"kind":"textbox","id":"sh/belkbq5k","slide":10,"name":"advantage-heading-4","text":"滴丸剂型固体分散技术","textPreview":"滴丸剂型固体分散技术","textChars":10,"textLines":1,"bbox":[895,425,205,58]}
+{"kind":"textbox","id":"sh/qdc3iloz","slide":10,"name":"advantage-body-4","text":"溶散时间短\n快速吸收，起效迅速","textPreview":"溶散时间短 | 快速吸收，起效迅速","textChars":15,"textLines":2,"bbox":[895,492,205,120]}
+{"kind":"notes","id":"nt/088lx2","slide":10,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 10\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/8u2ef6","slide":11,"title":"2.3","textShapes":10}
+{"kind":"shape","id":"sh/s72pcfel","slide":11,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/r6to3ax0","slide":11,"name":"chrome-page-number","text":"2.3","textPreview":"2.3","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/65k7a5wv","slide":11,"name":"chrome-title","text":"商品篇——穿心莲内酯滴丸的核心优势总结","textPreview":"商品篇——穿心莲内酯滴丸的核心优势总结","textChars":19,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/5kr61kfa","slide":11,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/4jip8fep","slide":11,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/ji9ozax4","slide":11,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/pgvqd4fe","slide":11,"name":"dosage-advantage-surface","bbox":[60,130,400,230]}
+{"kind":"shape","id":"sh/ofmpkzet","slide":11,"name":"dosage-advantage-accent","bbox":[60,130,6,230]}
+{"kind":"textbox","id":"sh/q18jetsz","slide":11,"name":"dosage-advantage-title","text":"剂型优势","textPreview":"剂型优势","textChars":4,"textLines":1,"bbox":[78,144,368,38]}
+{"kind":"shape","id":"sh/b210nytk","slide":11,"name":"dosage-advantage-divider","bbox":[78,188,364,1]}
+{"kind":"textbox","id":"sh/c3a1g3ap","slide":11,"name":"dosage-advantage-body","text":"• 全国独家：全国唯一穿心莲内酯滴丸剂型\n• 起效更快：5–10分钟内全部崩解\n• 易携带：独立包装，方便携带","textPreview":"• 全国独家：全国唯一穿心莲内酯滴丸剂型 | • 起效更快：5–10分钟内全部崩解 | • 易携带：独立包装，方便携带","textChars":55,"textLines":3,"bbox":[78,200,364,146]}
+{"kind":"shape","id":"sh/d4jip8ba","slide":11,"name":"process-advantage-surface","bbox":[60,390,440,220]}
+{"kind":"shape","id":"sh/2x8jatsn","slide":11,"name":"process-advantage-accent","bbox":[60,390,6,220]}
+{"kind":"textbox","id":"sh/3yh0jyt8","slide":11,"name":"process-advantage-title","text":"工艺优势","textPreview":"工艺优势","textChars":4,"textLines":1,"bbox":[78,404,408,38]}
+{"kind":"shape","id":"sh/ozq1c3at","slide":11,"name":"process-advantage-divider","bbox":[78,448,404,1]}
+{"kind":"textbox","id":"sh/p0zilobe","slide":11,"name":"process-advantage-body","text":"• 纯度高：穿心莲内酯纯度高达97%\n• 稳定性强：高速滴丸机，含量均匀度高\n• 安全保证：0糖0添加，纯中药制剂","textPreview":"• 纯度高：穿心莲内酯纯度高达97% | • 稳定性强：高速滴丸机，含量均匀度高 | • 安全保证：0糖0添加，纯中药制剂","textChars":57,"textLines":3,"bbox":[78,460,404,136]}
+{"kind":"shape","id":"sh/mtsjmds7","slide":11,"name":"formula-advantage-surface","bbox":[820,220,390,300]}
+{"kind":"shape","id":"sh/nulkvitc","slide":11,"name":"formula-advantage-accent","bbox":[820,220,6,300]}
+{"kind":"textbox","id":"sh/j2torq5s","slide":11,"name":"formula-advantage-title","text":"组方优势","textPreview":"组方优势","textChars":4,"textLines":1,"bbox":[838,234,358,38]}
+{"kind":"shape","id":"sh/i1k7yl47","slide":11,"name":"formula-advantage-divider","bbox":[838,278,354,1]}
+{"kind":"textbox","id":"sh/5ob6tgny","slide":11,"name":"formula-advantage-body","text":"• 植物单体制剂：经典老药，植物单体制剂\n• 功能全面：清热解毒＋抗菌消炎\n• 疗效显著：治疗感冒、流感、咽痛总有效率95%","textPreview":"• 植物单体制剂：经典老药，植物单体制剂 | • 功能全面：清热解毒＋抗菌消炎 | • 疗效显著：治疗感冒、流感、咽痛总有效率95%","textChars":62,"textLines":3,"bbox":[838,290,354,216]}
+{"kind":"image","id":"im/3mlsfe10","slide":11,"name":"","alt":"穿心莲内酯滴丸包装，裁自源 PDF","bbox":[500,210,280,260]}
+{"kind":"notes","id":"nt/8u2ef6","slide":11,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 11\n- Product packshot is cropped from flattened PDF slide 11.\n- Replace with an authorized high-resolution packshot before production validation.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/wbluo1","slide":12,"title":"3.1","textShapes":29}
+{"kind":"shape","id":"sh/cfm5kfmt","slide":12,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/bed4bal8","slide":12,"name":"chrome-page-number","text":"3.1","textPreview":"3.1","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/qd4nip4n","slide":12,"name":"chrome-title","text":"场景篇——什么时候推荐穿心莲内酯滴丸","textPreview":"场景篇——什么时候推荐穿心莲内酯滴丸","textChars":18,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/pcvm9k32","slide":12,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/obm5gfmh","slide":12,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/3at47alc","slide":12,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"textbox","id":"sh/29kne54r","slide":12,"name":"scenario-product-name","text":"＞ 穿心莲内酯滴丸","textPreview":"＞ 穿心莲内酯滴丸","textChars":9,"textLines":1,"bbox":[70,100,430,55]}
+{"kind":"textbox","id":"sh/gjqx4nqt","slide":12,"name":"audience-label-child","text":"儿童","textPreview":"儿童","textChars":2,"textLines":1,"bbox":[355,225,76,48]}
+{"kind":"textbox","id":"sh/1kzexsre","slide":12,"name":"audience-arrow-child-1","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[600,214,78,48]}
+{"kind":"textbox","id":"sh/6d8vyd8r","slide":12,"name":"audience-child-scene","text":"学校感冒交叉感染","textPreview":"学校感冒交叉感染","textChars":8,"textLines":1,"bbox":[700,215,220,48]}
+{"kind":"textbox","id":"sh/rehwri9c","slide":12,"name":"audience-arrow-child-2","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[915,214,70,48]}
+{"kind":"textbox","id":"sh/sfqd0nqx","slide":12,"name":"audience-child-need","text":"酸奶送服更安全","textPreview":"酸奶送服更安全","textChars":7,"textLines":1,"bbox":[995,215,210,48]}
+{"kind":"textbox","id":"sh/tgzetsr2","slide":12,"name":"audience-label-adult","text":"中青年","textPreview":"中青年","textChars":3,"textLines":1,"bbox":[395,368,104,48]}
+{"kind":"textbox","id":"sh/q9sfah8v","slide":12,"name":"audience-arrow-adult-1","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[625,372,78,48]}
+{"kind":"textbox","id":"sh/ba1w3m9g","slide":12,"name":"audience-adult-person-1","text":"办公室白领","textPreview":"办公室白领","textChars":5,"textLines":1,"bbox":[710,320,155,38]}
+{"kind":"textbox","id":"sh/nudcveps","slide":12,"name":"audience-arrow-adult-1","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[865,317,65,42]}
+{"kind":"textbox","id":"sh/mtkb29o7","slide":12,"name":"audience-adult-need-1","text":"办公室空调干燥易咽痛","textPreview":"办公室空调干燥易咽痛","textChars":10,"textLines":1,"bbox":[935,320,275,38]}
+{"kind":"textbox","id":"sh/9wvux47y","slide":12,"name":"audience-adult-person-2","text":"商旅人士","textPreview":"商旅人士","textChars":4,"textLines":1,"bbox":[710,363,155,38]}
+{"kind":"textbox","id":"sh/8vmt4z6d","slide":12,"name":"audience-arrow-adult-2","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[865,360,65,42]}
+{"kind":"textbox","id":"sh/vydczep4","slide":12,"name":"audience-adult-need-2","text":"出差出行劳累抵抗力低","textPreview":"出差出行劳累抵抗力低","textChars":10,"textLines":1,"bbox":[935,363,275,38]}
+{"kind":"textbox","id":"sh/ux4b69oj","slide":12,"name":"audience-adult-person-3","text":"老师","textPreview":"老师","textChars":2,"textLines":1,"bbox":[710,406,155,38]}
+{"kind":"textbox","id":"sh/hkvu1o7u","slide":12,"name":"audience-arrow-adult-3","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[865,403,65,42]}
+{"kind":"textbox","id":"sh/wjmt8j6p","slide":12,"name":"audience-adult-need-3","text":"课堂授课易咽炎","textPreview":"课堂授课易咽炎","textChars":7,"textLines":1,"bbox":[935,406,275,38]}
+{"kind":"textbox","id":"sh/jmxc3yp0","slide":12,"name":"audience-adult-person-4","text":"全职妈妈","textPreview":"全职妈妈","textChars":4,"textLines":1,"bbox":[710,449,155,38]}
+{"kind":"textbox","id":"sh/il4batof","slide":12,"name":"audience-arrow-adult-4","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[865,446,65,42]}
+{"kind":"textbox","id":"sh/gr6t03mt","slide":12,"name":"audience-adult-need-4","text":"换季更新药箱","textPreview":"换季更新药箱","textChars":6,"textLines":1,"bbox":[935,449,275,38]}
+{"kind":"textbox","id":"sh/1sfat83e","slide":12,"name":"audience-label-senior","text":"老年","textPreview":"老年","textChars":2,"textLines":1,"bbox":[355,550,76,48]}
+{"kind":"textbox","id":"sh/epobyt4n","slide":12,"name":"audience-arrow-senior-1","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[600,552,78,48]}
+{"kind":"textbox","id":"sh/fqxsry58","slide":12,"name":"audience-senior-scene","text":"秋冬呼吸\n疾病高发","textPreview":"秋冬呼吸 | 疾病高发","textChars":9,"textLines":2,"bbox":[705,525,160,88]}
+{"kind":"textbox","id":"sh/sn6twjmh","slide":12,"name":"audience-arrow-senior-2","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[865,552,65,42]}
+{"kind":"textbox","id":"sh/tofapon2","slide":12,"name":"audience-senior-need","text":"冬日晨起锻炼易感冒\n北方暖气干燥早备药","textPreview":"冬日晨起锻炼易感冒 | 北方暖气干燥早备药","textChars":19,"textLines":2,"bbox":[935,525,285,88]}
+{"kind":"image","id":"im/0ri1gv65","slide":12,"name":"","alt":"穿心莲内酯滴丸包装，裁自源 PDF","bbox":[70,195,260,320]}
+{"kind":"image","id":"im/1sri907q","slide":12,"name":"","alt":"儿童插画，裁自源 PDF","bbox":[455,140,135,165]}
+{"kind":"image","id":"im/hsvepsvq","slide":12,"name":"","alt":"中青年插画，裁自源 PDF","bbox":[490,315,135,160]}
+{"kind":"image","id":"im/grmdgnel","slide":12,"name":"","alt":"老年人物插画，裁自源 PDF","bbox":[430,505,170,150]}
+{"kind":"notes","id":"nt/wbluo1","slide":12,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 12\n- Product packshot is cropped from flattened PDF slide 12.\n- Child, adult, and senior illustrations are cropped from flattened PDF slide 12 and reused as internal-source assets.\n- Replace all four slide-12 crops with approved high-resolution originals when available.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/xysxxe","slide":13,"title":"3.2","textShapes":13}
+{"kind":"shape","id":"sh/bmpgvepg","slide":13,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/wnyx4jq1","slide":13,"name":"chrome-page-number","text":"3.2","textPreview":"3.2","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/xo7yxo7m","slide":13,"name":"chrome-title","text":"场景篇——什么时候推荐穿心莲内酯滴丸","textPreview":"场景篇——什么时候推荐穿心莲内酯滴丸","textChars":18,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/ypgz6t8r","slide":13,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/jqpgzypc","slide":13,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/kryh83qx","slide":13,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"textbox","id":"sh/lc7y187i","slide":13,"name":"consultation-thesis","text":"实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐","textPreview":"实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐","textChars":26,"textLines":1,"bbox":[70,115,1100,48]}
+{"kind":"shape","id":"sh/etcfup8n","slide":13,"name":"consultation-rule","bbox":[90,190,1100,2]}
+{"kind":"shape","id":"sh/fulgnup8","slide":13,"name":"consultation-1-surface","bbox":[70,245,260,320]}
+{"kind":"shape","id":"sh/ju98zmts","slide":13,"name":"consultation-1-accent","bbox":[70,245,6,320]}
+{"kind":"textbox","id":"sh/yt07qhsn","slide":13,"name":"consultation-1-title","text":"望 · 观气色辨需求","textPreview":"望 · 观气色辨需求","textChars":10,"textLines":1,"bbox":[88,259,228,38]}
+{"kind":"shape","id":"sh/5grq1wby","slide":13,"name":"consultation-1-divider","bbox":[88,303,224,1]}
+{"kind":"textbox","id":"sh/kfipsrad","slide":13,"name":"consultation-1-body","text":"观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。","textPreview":"观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。","textChars":41,"textLines":1,"bbox":[88,315,224,236]}
+{"kind":"shape","id":"sh/bq9ovmtw","slide":13,"name":"consultation-2-surface","bbox":[360,245,260,320]}
+{"kind":"shape","id":"sh/apg7mhsb","slide":13,"name":"consultation-2-accent","bbox":[360,245,6,320]}
+{"kind":"textbox","id":"sh/xsrqxcb2","slide":13,"name":"consultation-2-title","text":"闻 · 听诉求知痛点","textPreview":"闻 · 听诉求知痛点","textChars":10,"textLines":1,"bbox":[378,259,228,38]}
+{"kind":"shape","id":"sh/wripo7ah","slide":13,"name":"consultation-2-divider","bbox":[378,303,224,1]}
+{"kind":"textbox","id":"sh/nmpor2t0","slide":13,"name":"consultation-2-body","text":"耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。","textPreview":"耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。","textChars":41,"textLines":1,"bbox":[378,315,224,236]}
+{"kind":"shape","id":"sh/mlg7ixsf","slide":13,"name":"consultation-3-surface","bbox":[650,245,260,320]}
+{"kind":"shape","id":"sh/qxw7axc7","slide":13,"name":"consultation-3-accent","bbox":[650,245,6,320]}
+{"kind":"textbox","id":"sh/ri5832ds","slide":13,"name":"consultation-3-title","text":"问 · 询细节定方案","textPreview":"问 · 询细节定方案","textChars":10,"textLines":1,"bbox":[668,259,228,38]}
+{"kind":"shape","id":"sh/cjy9c7ud","slide":13,"name":"consultation-3-divider","bbox":[668,303,224,1]}
+{"kind":"textbox","id":"sh/dk7q5cvi","slide":13,"name":"consultation-3-body","text":"针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。","textPreview":"针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。","textChars":37,"textLines":1,"bbox":[668,315,224,236]}
+{"kind":"shape","id":"sh/elgrexc3","slide":13,"name":"consultation-4-surface","bbox":[940,245,260,320]}
+{"kind":"shape","id":"sh/zmp872do","slide":13,"name":"consultation-4-accent","bbox":[940,245,6,320]}
+{"kind":"textbox","id":"sh/0ny9g7u9","slide":13,"name":"consultation-4-title","text":"切 · 据关键做推荐","textPreview":"切 · 据关键做推荐","textChars":10,"textLines":1,"bbox":[958,259,228,38]}
+{"kind":"shape","id":"sh/1o7q9cvu","slide":13,"name":"consultation-4-divider","bbox":[958,303,224,1]}
+{"kind":"textbox","id":"sh/mpgrihcf","slide":13,"name":"consultation-4-body","text":"结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。","textPreview":"结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。","textChars":36,"textLines":1,"bbox":[958,315,224,236]}
+{"kind":"notes","id":"nt/xysxxe","slide":13,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 13\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/kmd3ab","slide":14,"title":"3.3","textShapes":12}
+{"kind":"shape","id":"sh/cnel8j69","slide":14,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/bm5kfepo","slide":14,"name":"chrome-page-number","text":"3.3","textPreview":"3.3","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/qlw369o3","slide":14,"name":"chrome-title","text":"场景篇——什么时候推荐穿心莲内酯滴丸","textPreview":"场景篇——什么时候推荐穿心莲内酯滴丸","textChars":18,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/lc72lo7q","slide":14,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/0bylcj6l","slide":14,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/zapkjyp0","slide":14,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"textbox","id":"sh/y9g3atof","slide":14,"name":"scenario1-title","text":"场景1：顾客主诉“喉咙痛”","textPreview":"场景1：顾客主诉“喉咙痛”","textChars":13,"textLines":1,"bbox":[80,90,600,45]}
+{"kind":"shape","id":"sh/8fylg36h","slide":14,"name":"scenario1-communication-surface","bbox":[455,175,230,340]}
+{"kind":"shape","id":"sh/ixk3axsr","slide":14,"name":"scenario1-communication-accent","bbox":[455,175,6,340]}
+{"kind":"textbox","id":"sh/jit4j29c","slide":14,"name":"scenario1-communication-title","text":"辨证沟通","textPreview":"辨证沟通","textChars":4,"textLines":1,"bbox":[473,189,198,38]}
+{"kind":"shape","id":"sh/4j25cnax","slide":14,"name":"scenario1-communication-divider","bbox":[473,233,194,1]}
+{"kind":"textbox","id":"sh/5kvmlsri","slide":14,"name":"scenario1-communication-body","text":"通过关键提问“是否觉得身上热”，快速判断顾客属于风热型咽喉肿痛，而非风寒。这是精准推荐用药的第一步。","textPreview":"通过关键提问“是否觉得身上热”，快速判断顾客属于风热型咽喉肿痛，而非风寒。这是精准推荐用药的第一步。","textChars":50,"textLines":1,"bbox":[473,245,194,256]}
+{"kind":"shape","id":"sh/6l4nexs3","slide":14,"name":"scenario1-product-surface","bbox":[710,175,230,340]}
+{"kind":"shape","id":"sh/rmd4n29o","slide":14,"name":"scenario1-product-accent","bbox":[710,175,6,340]}
+{"kind":"textbox","id":"sh/snm5g7at","slide":14,"name":"scenario1-product-title","text":"核心用药","textPreview":"核心用药","textChars":4,"textLines":1,"bbox":[728,189,198,38]}
+{"kind":"shape","id":"sh/dovmpcre","slide":14,"name":"scenario1-product-divider","bbox":[728,233,194,1]}
+{"kind":"textbox","id":"sh/mp032dsj","slide":14,"name":"scenario1-product-body","text":"主推穿心莲内酯滴丸，其核心成分穿心莲内酯清热解毒、抗菌消炎。重点强调滴丸剂型吸收快、见效迅速。","textPreview":"主推穿心莲内酯滴丸，其核心成分穿心莲内酯清热解毒、抗菌消炎。重点强调滴丸剂型吸收快、见效迅速。","textChars":47,"textLines":1,"bbox":[728,245,194,256]}
+{"kind":"shape","id":"sh/7q94bi94","slide":14,"name":"scenario1-service-surface","bbox":[965,175,230,340]}
+{"kind":"shape","id":"sh/bi5snalk","slide":14,"name":"scenario1-service-accent","bbox":[965,175,6,340]}
+{"kind":"textbox","id":"sh/qhwru54f","slide":14,"name":"scenario1-service-title","text":"关联服务","textPreview":"关联服务","textChars":4,"textLines":1,"bbox":[983,189,198,38]}
+{"kind":"shape","id":"sh/dknapk3q","slide":14,"name":"scenario1-service-divider","bbox":[983,233,194,1]}
+{"kind":"textbox","id":"sh/cjetwfm5","slide":14,"name":"scenario1-service-body","text":"关联推荐熊胆薄荷含片，内服＋外用双管齐下。同时给予多饮温水、忌辛辣刺激等饮食建议。","textPreview":"关联推荐熊胆薄荷含片，内服＋外用双管齐下。同时给予多饮温水、忌辛辣刺激等饮食建议。","textChars":41,"textLines":1,"bbox":[983,245,194,256]}
+{"kind":"textbox","id":"sh/3ulsjalo","slide":14,"name":"scenario1-summary","text":"服务要点：辨证精准是前提，剂型优势是卖点，关联用药是增值，健康叮嘱是保障。","textPreview":"服务要点：辨证精准是前提，剂型优势是卖点，关联用药是增值，健康叮嘱是保障。","textChars":37,"textLines":1,"bbox":[455,555,740,55]}
+{"kind":"image","id":"im/kfaxcfmx","slide":14,"name":"","alt":"顾客咽痛人物照片，裁自源 PDF","bbox":[80,175,330,340]}
+{"kind":"notes","id":"nt/kmd3ab","slide":14,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 14\n- Customer throat-pain photograph is cropped from flattened PDF slide 14.\n- Replace with the approved original photograph if available.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/g3aeek","slide":15,"title":"3.4","textShapes":12}
+{"kind":"shape","id":"sh/21c3it0z","slide":15,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/p432d8zq","slide":15,"name":"chrome-page-number","text":"3.4","textPreview":"3.4","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/43ulk3i5","slide":15,"name":"chrome-title","text":"场景篇——什么时候推荐穿心莲内酯滴丸","textPreview":"场景篇——什么时候推荐穿心莲内酯滴丸","textChars":18,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/r654fihg","slide":15,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/q5w3md0b","slide":15,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/d8nmh8zm","slide":15,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"textbox","id":"sh/c7eloni1","slide":15,"name":"scenario2-title","text":"场景2：顾客主诉“感冒了，发烧，有黄痰”","textPreview":"场景2：顾客主诉“感冒了，发烧，有黄痰”","textChars":20,"textLines":1,"bbox":[80,90,750,45]}
+{"kind":"shape","id":"sh/7a1kjehc","slide":15,"name":"scenario2-diagnosis-surface","bbox":[80,170,340,360]}
+{"kind":"shape","id":"sh/69s3a90r","slide":15,"name":"scenario2-diagnosis-accent","bbox":[80,170,6,360]}
+{"kind":"textbox","id":"sh/kbupszmx","slide":15,"name":"scenario2-diagnosis-title","text":"01 症状辨析","textPreview":"01 症状辨析","textChars":7,"textLines":1,"bbox":[98,184,308,38]}
+{"kind":"shape","id":"sh/lc36l43i","slide":15,"name":"scenario2-diagnosis-divider","bbox":[98,228,304,1]}
+{"kind":"textbox","id":"sh/y9c7qp4r","slide":15,"name":"scenario2-diagnosis-body","text":"顾客表现为发烧38℃以上、自觉身热不恶寒、咳嗽伴黄痰。这是典型的风热感冒症状，核心病机为风热之邪犯表，肺气失和，体内有热毒积聚。","textPreview":"顾客表现为发烧38℃以上、自觉身热不恶寒、咳嗽伴黄痰。这是典型的风热感冒症状，核心病机为风热之邪犯表，肺气失和，体内有热毒积聚。","textChars":64,"textLines":1,"bbox":[98,240,304,276]}
+{"kind":"shape","id":"sh/jalojulc","slide":15,"name":"scenario2-core-surface","bbox":[470,170,340,360]}
+{"kind":"shape","id":"sh/8fepwjmt","slide":15,"name":"scenario2-core-accent","bbox":[470,170,6,360]}
+{"kind":"textbox","id":"sh/tgn6po3e","slide":15,"name":"scenario2-core-title","text":"02 核心推荐方案","textPreview":"02 核心推荐方案","textChars":9,"textLines":1,"bbox":[488,184,308,38]}
+{"kind":"shape","id":"sh/6dc7u943","slide":15,"name":"scenario2-core-divider","bbox":[488,228,304,1]}
+{"kind":"textbox","id":"sh/7e5onelo","slide":15,"name":"scenario2-core-body","text":"推荐穿心莲内酯滴丸。它能直接清除体内热毒，从根源上解决发热、咽痛、咳黄痰等风热感冒症状；药力集中、起效快。","textPreview":"推荐穿心莲内酯滴丸。它能直接清除体内热毒，从根源上解决发热、咽痛、咳黄痰等风热感冒症状；药力集中、起效快。","textChars":53,"textLines":1,"bbox":[488,240,304,276]}
+{"kind":"shape","id":"sh/oja5kfmp","slide":15,"name":"scenario2-combo-surface","bbox":[860,170,340,360]}
+{"kind":"shape","id":"sh/9kj6dkna","slide":15,"name":"scenario2-combo-accent","bbox":[860,170,6,360]}
+{"kind":"textbox","id":"sh/p4re1cb2","slide":15,"name":"scenario2-combo-title","text":"03 联合用药解惑","textPreview":"03 联合用药解惑","textChars":9,"textLines":1,"bbox":[878,184,308,38]}
+{"kind":"shape","id":"sh/43ids7ah","slide":15,"name":"scenario2-combo-divider","bbox":[878,228,304,1]}
+{"kind":"textbox","id":"sh/329wzmtw","slide":15,"name":"scenario2-combo-body","text":"若顾客家中有复方氨酚烷胺片，可说明：西药缓解咳嗽、流涕等症状是“治标”；穿心莲清除热毒是“治本”，二者联用。","textPreview":"若顾客家中有复方氨酚烷胺片，可说明：西药缓解咳嗽、流涕等症状是“治标”；穿心莲清除热毒是“治本”，二者联用。","textChars":54,"textLines":1,"bbox":[878,240,304,276]}
+{"kind":"textbox","id":"sh/210vqhsb","slide":15,"name":"scenario2-talktrack","text":"关键话术：“您这是风热感冒，穿心莲内酯滴丸清除热毒是治本，复方氨酚烷胺片缓解症状是治标，一个治标一个治本，一起用效果更好。”","textPreview":"关键话术：“您这是风热感冒，穿心莲内酯滴丸清除热毒是治本，复方氨酚烷胺片缓解症状是治标，一个治标一个治本，一起用效果更好。”","textChars":62,"textLines":1,"bbox":[80,570,1120,65]}
+{"kind":"notes","id":"nt/g3aeek","slide":15,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 15\n- No source-PDF image crop reused on this editable page.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/7a76xw","slide":16,"title":"4.1","textShapes":12}
+{"kind":"shape","id":"sh/y1snihkv","slide":16,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/l436dwjm","slide":16,"name":"chrome-page-number","text":"4.1","textPreview":"4.1","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/03u5kri1","slide":16,"name":"chrome-title","text":"关怀篇——日常生活叮嘱","textPreview":"关怀篇——日常生活叮嘱","textChars":11,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/n6lof61c","slide":16,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/m5cnm10r","slide":16,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/9836hgji","slide":16,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"textbox","id":"sh/298naxkn","slide":16,"name":"care-food-good","text":"✓ 饮食之宜 · 清热生津\n日常多喝水，可饮菊花茶、绿豆汤，适当食用梨、西瓜、苦瓜等寒凉性蔬果。","textPreview":"✓ 饮食之宜 · 清热生津 | 日常多喝水，可饮菊花茶、绿豆汤，适当食用梨、西瓜、苦瓜等寒凉性蔬果。","textChars":48,"textLines":2,"bbox":[70,350,245,190]}
+{"kind":"textbox","id":"sh/8r6h0jih","slide":16,"name":"care-food-bad","text":"✕ 饮食之忌 · 避热动火\n避免辛辣刺激、油腻煎炸食物，同时慎食羊肉、人参、桂圆等温补食材。","textPreview":"✕ 饮食之忌 · 避热动火 | 避免辛辣刺激、油腻煎炸食物，同时慎食羊肉、人参、桂圆等温补食材。","textChars":46,"textLines":2,"bbox":[335,350,245,190]}
+{"kind":"shape","id":"sh/9sfy9oj2","slide":16,"name":"care-rest-surface","bbox":[650,120,550,145]}
+{"kind":"shape","id":"sh/mpozyt0b","slide":16,"name":"care-rest-accent","bbox":[650,120,6,145]}
+{"kind":"textbox","id":"sh/nqxg7e1w","slide":16,"name":"care-rest-title","text":"保证充足休息，养足精神","textPreview":"保证充足休息，养足精神","textChars":11,"textLines":1,"bbox":[668,134,518,38]}
+{"kind":"shape","id":"sh/wvqh43it","slide":16,"name":"care-rest-divider","bbox":[668,178,514,1]}
+{"kind":"textbox","id":"sh/hwzyd8jy","slide":16,"name":"care-rest-body","text":"建议保证7–8小时高质量睡眠，避免熬夜，让脏腑功能在夜间充分休养，促进津液恢复。","textPreview":"建议保证7–8小时高质量睡眠，避免熬夜，让脏腑功能在夜间充分休养，促进津液恢复。","textChars":40,"textLines":1,"bbox":[668,190,514,61]}
+{"kind":"shape","id":"sh/utoz2t0n","slide":16,"name":"care-air-surface","bbox":[650,285,550,145]}
+{"kind":"shape","id":"sh/vuxgby18","slide":16,"name":"care-air-accent","bbox":[650,285,6,145]}
+{"kind":"textbox","id":"sh/czmxszi9","slide":16,"name":"care-air-title","text":"保持室内通风，空气清新","textPreview":"保持室内通风，空气清新","textChars":11,"textLines":1,"bbox":[668,299,518,38]}
+{"kind":"shape","id":"sh/d0vy14ju","slide":16,"name":"care-air-divider","bbox":[668,343,514,1]}
+{"kind":"textbox","id":"sh/dgnep0bi","slide":16,"name":"care-air-body","text":"每日开窗通风2–3次，每次30分钟。新鲜空气有助于驱散室内浊气，保持呼吸道通畅。","textPreview":"每日开窗通风2–3次，每次30分钟。新鲜空气有助于驱散室内浊气，保持呼吸道通畅。","textChars":40,"textLines":1,"bbox":[668,355,514,61]}
+{"kind":"shape","id":"sh/svexwvud","slide":16,"name":"care-voice-surface","bbox":[650,450,550,145]}
+{"kind":"shape","id":"sh/ru5wnqts","slide":16,"name":"care-voice-accent","bbox":[650,450,6,145]}
+{"kind":"textbox","id":"sh/qtwfulc7","slide":16,"name":"care-voice-title","text":"减少过度用嗓，静养咽喉","textPreview":"减少过度用嗓，静养咽喉","textChars":11,"textLines":1,"bbox":[668,464,518,38]}
+{"kind":"shape","id":"sh/1k7et0bu","slide":16,"name":"care-voice-divider","bbox":[668,508,514,1]}
+{"kind":"textbox","id":"sh/0jex0fu9","slide":16,"name":"care-voice-body","text":"尽量少说话，避免大声喊叫或长时间交谈，让咽喉、声带充分休息，减少外界刺激。","textPreview":"尽量少说话，避免大声喊叫或长时间交谈，让咽喉、声带充分休息，减少外界刺激。","textChars":37,"textLines":1,"bbox":[668,520,514,61]}
+{"kind":"image","id":"im/lgralk32","slide":16,"name":"","alt":"菊花图片，裁自源 PDF","bbox":[70,130,245,190]}
+{"kind":"image","id":"im/mh0repkn","slide":16,"name":"","alt":"绿豆汤图片，裁自源 PDF","bbox":[335,130,245,190]}
+{"kind":"notes","id":"nt/7a76xw","slide":16,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 16\n- Chrysanthemum and mung-bean soup images are cropped from flattened PDF slide 16.\n- Replace with approved high-resolution originals if available.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/ygucz7","slide":17,"title":"5.1","textShapes":28}
+{"kind":"shape","id":"sh/jyl8vqhw","slide":17,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/kzupovi1","slide":17,"name":"chrome-page-number","text":"5.1","textPreview":"5.1","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/503qx0zm","slide":17,"name":"chrome-title","text":"权重篇——广誉远安宫牛黄丸","textPreview":"权重篇——广誉远安宫牛黄丸","textChars":13,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/ats7il0z","slide":17,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/bu18rqhk","slide":17,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/wvapkvi5","slide":17,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/m587e103","slide":17,"name":"weighted-code-h-surface","bbox":[45,425,90,48]}
+{"kind":"textbox","id":"sh/nqh8n61o","slide":17,"name":"weighted-code-h-text","text":"编码","textPreview":"编码","textChars":2,"textLines":1,"bbox":[51,431,78,36]}
+{"kind":"shape","id":"sh/r6lkvulk","slide":17,"name":"weighted-priority-h-surface","bbox":[135,425,90,48]}
+{"kind":"textbox","id":"sh/q5cjmpkz","slide":17,"name":"weighted-priority-h-text","text":"主推","textPreview":"主推","textChars":2,"textLines":1,"bbox":[141,431,78,36]}
+{"kind":"shape","id":"sh/d8n2x43q","slide":17,"name":"weighted-spec-h-surface","bbox":[225,425,160,48]}
+{"kind":"textbox","id":"sh/c7e1oz25","slide":17,"name":"weighted-spec-h-text","text":"规格","textPreview":"规格","textChars":2,"textLines":1,"bbox":[231,431,148,36]}
+{"kind":"shape","id":"sh/za5kzelw","slide":17,"name":"weighted-price-h-surface","bbox":[385,425,125,48]}
+{"kind":"textbox","id":"sh/e9wjq9kb","slide":17,"name":"weighted-price-h-text","text":"零售价","textPreview":"零售价","textChars":3,"textLines":1,"bbox":[391,431,113,36]}
+{"kind":"shape","id":"sh/1wn2143m","slide":17,"name":"weighted-code-surface","bbox":[45,473,90,62]}
+{"kind":"textbox","id":"sh/0velsz21","slide":17,"name":"weighted-code-text","text":"2205770","textPreview":"2205770","textChars":7,"textLines":1,"bbox":[51,479,78,50]}
+{"kind":"shape","id":"sh/fe1knalc","slide":17,"name":"weighted-priority-surface","bbox":[135,473,90,62]}
+{"kind":"textbox","id":"sh/udsju5kr","slide":17,"name":"weighted-priority-text","text":"A","textPreview":"A","textChars":1,"textLines":1,"bbox":[141,479,78,50]}
+{"kind":"shape","id":"sh/i5kvih8r","slide":17,"name":"weighted-spec-surface","bbox":[225,473,160,62]}
+{"kind":"textbox","id":"sh/j6twbm9c","slide":17,"name":"weighted-spec-text","text":"3克/丸\n（双天然）","textPreview":"3克/丸 | （双天然）","textChars":10,"textLines":2,"bbox":[231,479,148,50]}
+{"kind":"shape","id":"sh/k72dk7qx","slide":17,"name":"weighted-price-surface","bbox":[385,473,125,62]}
+{"kind":"textbox","id":"sh/58bedcri","slide":17,"name":"weighted-price-text","text":"880","textPreview":"880","textChars":3,"textLines":1,"bbox":[391,479,113,50]}
+{"kind":"textbox","id":"sh/a10vex8v","slide":17,"name":"weighted-slogan","text":"一句话卖点（员工宣传语）：\n安宫鼻祖，胆红素含量高于同品","textPreview":"一句话卖点（员工宣传语）： | 安宫鼻祖，胆红素含量高于同品","textChars":28,"textLines":2,"bbox":[45,555,465,75]}
+{"kind":"shape","id":"sh/v29w7290","slide":17,"name":"weighted-selling-points-surface","bbox":[550,100,660,175]}
+{"kind":"shape","id":"sh/w32dg7ql","slide":17,"name":"weighted-selling-points-accent","bbox":[550,100,6,175]}
+{"kind":"textbox","id":"sh/x4be9cr6","slide":17,"name":"weighted-selling-points-title","text":"一、核心卖点","textPreview":"一、核心卖点","textChars":6,"textLines":1,"bbox":[568,114,628,38]}
+{"kind":"shape","id":"sh/md0vax8j","slide":17,"name":"weighted-selling-points-divider","bbox":[568,158,624,1]}
+{"kind":"textbox","id":"sh/ne9w3294","slide":17,"name":"weighted-selling-points-body","text":"广誉远安宫被誉为安宫鼻祖。广誉远是较早规模化炮制安宫牛黄丸的厂家，早在光绪11年（1885年）开始规模化炮制；2014年获得“国家级非物质文化遗产”荣誉。","textPreview":"广誉远安宫被誉为安宫鼻祖。广誉远是较早规模化炮制安宫牛黄丸的厂家，早在光绪11年（1885年）开始规模化炮制；2014年获得“国家级非物质文化遗产”荣誉。","textChars":77,"textLines":1,"bbox":[568,170,624,91]}
+{"kind":"shape","id":"sh/psfyp0bm","slide":17,"name":"bilirubin-h1-surface","bbox":[585,295,260,44]}
+{"kind":"textbox","id":"sh/or6hgva1","slide":17,"name":"bilirubin-h1-text","text":"品种","textPreview":"品种","textChars":2,"textLines":1,"bbox":[591,301,248,32]}
+{"kind":"shape","id":"sh/3qxgnqtg","slide":17,"name":"bilirubin-h2-surface","bbox":[845,295,120,44]}
+{"kind":"textbox","id":"sh/25ozelsv","slide":17,"name":"bilirubin-h2-text","text":"牛黄","textPreview":"牛黄","textChars":2,"textLines":1,"bbox":[851,301,108,32]}
+{"kind":"shape","id":"sh/14fylgbq","slide":17,"name":"bilirubin-h3-surface","bbox":[965,295,210,44]}
+{"kind":"textbox","id":"sh/g36hcba5","slide":17,"name":"bilirubin-h3-text","text":"胆红素含量","textPreview":"胆红素含量","textChars":5,"textLines":1,"bbox":[971,301,198,32]}
+{"kind":"shape","id":"sh/f2xgj6tk","slide":17,"name":"bilirubin-1-1-surface","bbox":[585,339,260,38]}
+{"kind":"textbox","id":"sh/e14zalsz","slide":17,"name":"bilirubin-1-1-text","text":"安宫牛黄丸（广誉远）","textPreview":"安宫牛黄丸（广誉远）","textChars":10,"textLines":1,"bbox":[591,345,248,26]}
+{"kind":"shape","id":"sh/t0vyhgbe","slide":17,"name":"bilirubin-1-2-surface","bbox":[845,339,120,38]}
+{"kind":"textbox","id":"sh/szmh8bat","slide":17,"name":"bilirubin-1-2-text","text":"天然","textPreview":"天然","textChars":2,"textLines":1,"bbox":[851,345,108,26]}
+{"kind":"shape","id":"sh/8ruhsb6t","slide":17,"name":"bilirubin-1-3-surface","bbox":[965,339,210,38]}
+{"kind":"textbox","id":"sh/tsny1gne","slide":17,"name":"bilirubin-1-3-text","text":"46.6mg/丸","textPreview":"46.6mg/丸","textChars":8,"textLines":1,"bbox":[971,345,198,26]}
+{"kind":"shape","id":"sh/6pcfqlon","slide":17,"name":"bilirubin-2-1-surface","bbox":[585,377,260,38]}
+{"kind":"textbox","id":"sh/7qlgzqp8","slide":17,"name":"bilirubin-2-1-text","text":"北京同仁堂安宫","textPreview":"北京同仁堂安宫","textChars":7,"textLines":1,"bbox":[591,383,248,26]}
+{"kind":"shape","id":"sh/gvehwv6p","slide":17,"name":"bilirubin-2-2-surface","bbox":[845,377,120,38]}
+{"kind":"textbox","id":"sh/hwny50na","slide":17,"name":"bilirubin-2-2-text","text":"天然","textPreview":"天然","textChars":2,"textLines":1,"bbox":[851,383,108,26]}
+{"kind":"shape","id":"sh/utwzuloz","slide":17,"name":"bilirubin-2-3-surface","bbox":[965,377,210,38]}
+{"kind":"textbox","id":"sh/vu5g3q54","slide":17,"name":"bilirubin-2-3-text","text":"40.1mg/丸","textPreview":"40.1mg/丸","textChars":8,"textLines":1,"bbox":[971,383,198,26]}
+{"kind":"shape","id":"sh/czaxkr6l","slide":17,"name":"bilirubin-3-1-surface","bbox":[585,415,260,38]}
+{"kind":"textbox","id":"sh/x0jytw76","slide":17,"name":"bilirubin-3-1-text","text":"安宫国家标准","textPreview":"安宫国家标准","textChars":6,"textLines":1,"bbox":[591,421,248,26]}
+{"kind":"shape","id":"sh/zqtsfyt0","slide":17,"name":"bilirubin-3-2-surface","bbox":[845,415,120,38]}
+{"kind":"textbox","id":"sh/epkrmtcf","slide":17,"name":"bilirubin-3-2-text","text":"天然","textPreview":"天然","textChars":2,"textLines":1,"bbox":[851,421,108,26]}
+{"kind":"shape","id":"sh/1sbah8bq","slide":17,"name":"bilirubin-3-3-surface","bbox":[965,415,210,38]}
+{"kind":"textbox","id":"sh/0r2to3u5","slide":17,"name":"bilirubin-3-3-text","text":"≥18.5mg/丸","textPreview":"≥18.5mg/丸","textChars":9,"textLines":1,"bbox":[971,421,198,26]}
+{"kind":"textbox","id":"sh/r29sbedo","slide":17,"name":"weighted-indications","text":"二、适应症：\n1. 中风或脑梗塞后遗症患者；2. 癫痫、惊厥、昏迷患者；3. 心血管疾病患者；4. 神经衰弱或失眠患者；5. 儿童高热惊厥；6. 严重感染性疾病伴高热神昏者。","textPreview":"二、适应症： | 1. 中风或脑梗塞后遗症患者；2. 癫痫、惊厥、昏迷患者；3. 心血管疾病患者；4. 神经衰弱或失眠患者；5. 儿童高热惊厥；6. 严重感染性疾病伴高热神昏者。","textChars":87,"textLines":2,"bbox":[550,470,660,160]}
+{"kind":"image","id":"im/gfq1gzip","slide":17,"name":"","alt":"广誉远安宫牛黄丸包装与商品图，裁自源 PDF","bbox":[45,120,465,285]}
+{"kind":"notes","id":"nt/ygucz7","slide":17,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 17\n- The product presentation crop is reused from flattened PDF slide 17.\n- All product data and claims are transcribed from the supplied internal courseware and require the normal internal review.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}
+{"kind":"slide","id":"sl/q31l49","slide":18,"title":"5.2","textShapes":15}
+{"kind":"shape","id":"sh/cb6t4vuh","slide":18,"name":"chrome-left-number","bbox":[28,0,76,84]}
+{"kind":"textbox","id":"sh/radcbqtw","slide":18,"name":"chrome-page-number","text":"5.2","textPreview":"5.2","textChars":3,"textLines":1,"bbox":[25,17,82,47]}
+{"kind":"textbox","id":"sh/q94b2lcb","slide":18,"name":"chrome-title","text":"权重篇——白云山安宫＋宏济堂安宫","textPreview":"权重篇——白云山安宫＋宏济堂安宫","textChars":16,"textLines":1,"bbox":[114,14,900,50]}
+{"kind":"shape","id":"sh/10fuhkby","slide":18,"name":"chrome-green-rule","bbox":[104,70,1140,3]}
+{"kind":"textbox","id":"sh/0z6t8fud","slide":18,"name":"chrome-brand","text":"大参林 dashenlin","textPreview":"大参林 dashenlin","textChars":13,"textLines":1,"bbox":[1080,18,150,40]}
+{"kind":"textbox","id":"sh/zexcfat8","slide":18,"name":"chrome-internal-notice","text":"仅限于内部学习","textPreview":"仅限于内部学习","textChars":7,"textLines":1,"bbox":[1075,685,170,24]}
+{"kind":"shape","id":"sh/edob65cn","slide":18,"name":"compare-dim-surface","bbox":[40,100,150,66]}
+{"kind":"textbox","id":"sh/h4va5gbu","slide":18,"name":"compare-dim-text","text":"对比维度","textPreview":"对比维度","textChars":4,"textLines":1,"bbox":[46,106,138,54]}
+{"kind":"shape","id":"sh/gjmtwbu9","slide":18,"name":"compare-product-a-surface","bbox":[190,100,455,66]}
+{"kind":"textbox","id":"sh/exc76twj","slide":18,"name":"compare-product-a-text","text":"安宫牛黄丸（白云山中一）\n8202533（人工体培）","textPreview":"安宫牛黄丸（白云山中一） | 8202533（人工体培）","textChars":26,"textLines":2,"bbox":[196,106,443,54]}
+{"kind":"shape","id":"sh/fy5ozyd4","slide":18,"name":"compare-product-b-surface","bbox":[645,100,585,66]}
+{"kind":"textbox","id":"sh/0zep83up","slide":18,"name":"compare-product-b-text","text":"安宫牛黄丸（宏济堂）1185781（单天然）、\n1185783（人工体培）2373089（单天然包金衣）","textPreview":"安宫牛黄丸（宏济堂）1185781（单天然）、 | 1185783（人工体培）2373089（单天然包金衣）","textChars":52,"textLines":2,"bbox":[651,106,573,54]}
+{"kind":"shape","id":"sh/10n61ova","slide":18,"name":"compare-image-label-surface","bbox":[40,166,150,100]}
+{"kind":"textbox","id":"sh/21w7atcf","slide":18,"name":"compare-image-label-text","text":"产品图片","textPreview":"产品图片","textChars":4,"textLines":1,"bbox":[46,172,138,88]}
+{"kind":"shape","id":"sh/p4n658v6","slide":18,"name":"compare-selling-label-surface","bbox":[40,266,150,170]}
+{"kind":"textbox","id":"sh/a5g7edcr","slide":18,"name":"compare-selling-label-text","text":"核心卖点","textPreview":"核心卖点","textChars":4,"textLines":1,"bbox":[46,272,138,158]}
+{"kind":"shape","id":"sh/b6po7idc","slide":18,"name":"compare-selling-a-surface","bbox":[190,266,455,170]}
+{"kind":"textbox","id":"sh/7upovit4","slide":18,"name":"compare-selling-a-text","text":"1. 药材道地：胆红素含量是国家标准2倍；\n2. 古法手工：166年老手艺纯手工制丸；\n3. 广药白云山品牌，质量保证。","textPreview":"1. 药材道地：胆红素含量是国家标准2倍； | 2. 古法手工：166年老手艺纯手工制丸； | 3. 广药白云山品牌，质量保证。","textChars":60,"textLines":3,"bbox":[196,272,443,158]}
+{"kind":"shape","id":"sh/mtgn2dsz","slide":18,"name":"compare-selling-b-surface","bbox":[645,266,585,170]}
+{"kind":"textbox","id":"sh/9w76xsba","slide":18,"name":"compare-selling-b-text","text":"1. 系出名门，与北京同仁同宗同源，百年老号；\n2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全；\n3. 优质优价，性价比高。","textPreview":"1. 系出名门，与北京同仁同宗同源，百年老号； | 2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全； | 3. 优质优价，性价比高。","textChars":68,"textLines":3,"bbox":[651,272,573,158]}
+{"kind":"shape","id":"sh/8vy54nap","slide":18,"name":"compare-audience-label-surface","bbox":[40,436,150,85]}
+{"kind":"textbox","id":"sh/z6poryt8","slide":18,"name":"compare-audience-label-text","text":"适宜人群","textPreview":"适宜人群","textChars":4,"textLines":1,"bbox":[46,442,138,73]}
+{"kind":"shape","id":"sh/y5gnytsn","slide":18,"name":"compare-audience-surface","bbox":[190,436,1040,85]}
+{"kind":"textbox","id":"sh/l876t8be","slide":18,"name":"compare-audience-text","text":"1. 高血压、中风病史等心脑血管高风险人群家庭备用；\n2. 用于中风（热闭证）及高热神昏的急救。","textPreview":"1. 高血压、中风病史等心脑血管高风险人群家庭备用； | 2. 用于中风（热闭证）及高热神昏的急救。","textChars":48,"textLines":2,"bbox":[196,442,1028,73]}
+{"kind":"shape","id":"sh/k7y503at","slide":18,"name":"compare-combo-label-surface","bbox":[40,521,150,150]}
+{"kind":"textbox","id":"sh/b254nytc","slide":18,"name":"compare-combo-label-text","text":"联合用药","textPreview":"联合用药","textChars":4,"textLines":1,"bbox":[46,527,138,138]}
+{"kind":"shape","id":"sh/a1wnutsr","slide":18,"name":"compare-combo-surface","bbox":[190,521,1040,150]}
+{"kind":"textbox","id":"sh/gvat8vmd","slide":18,"name":"compare-combo-text","text":"1. 针对三高人群：按内部审核话术说明节气前备用逻辑；\n2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导；\n3. 小儿高热：必须严格按内部审核和专业人员指导使用。\n严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。","textPreview":"1. 针对三高人群：按内部审核话术说明节气前备用逻辑； | 2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导； | 3. 小儿高热：必须严格按内部审核和专业人员指导使用。 | 严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。","textChars":116,"textLines":4,"bbox":[196,527,1028,138]}
+{"kind":"image","id":"im/4jihov6x","slide":18,"name":"","alt":"白云山中一安宫产品图，裁自源 PDF","bbox":[275,178,260,75]}
+{"kind":"image","id":"im/ji90vqps","slide":18,"name":"","alt":"宏济堂安宫产品图，裁自源 PDF","bbox":[690,178,485,75]}
+{"kind":"notes","id":"nt/q31l49","slide":18,"text":"[Sources]\n- User-provided internal PDF: /Users/liminrong/Downloads/商品培训课件2.pdf\n- Source slide: 18\n- Product images are cropped from flattened PDF slide 18.\n- The editable wording keeps the source structure; high-risk usage wording must be confirmed by the user's pharmacist/compliance team before production use.\n- Visible medical/product copy is transcribed from the supplied internal courseware and still requires the user's normal pharmacist/compliance review.\n[/Sources]"}

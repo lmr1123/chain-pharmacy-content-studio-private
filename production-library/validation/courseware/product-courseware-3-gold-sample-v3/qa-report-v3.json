@@ -1,0 +1,42 @@
+{
+  "artifact": "商品培训课件3_精细复刻门槛片段_v3",
+  "status": "technical-qa-passed-awaiting-user-signoff",
+  "scope": "参考片 00:14.83–00:42.27 的三大核心功效门槛片段",
+  "outputs": {
+    "pptx": {
+      "path": "商品培训课件3_精细复刻_PPTX门槛片段_v3.pptx",
+      "slides": 5,
+      "editable_text": true,
+      "slides_test": "passed-no-overflow"
+    },
+    "video": {
+      "path": "商品培训课件3_精细复刻_动画视频门槛片段_v3.mp4",
+      "duration_seconds": 27.5,
+      "resolution": "1920x1080",
+      "frame_rate": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "audio_sample_rate": 48000,
+      "full_decode": "passed",
+      "sustained_black_frames": "none-detected"
+    }
+  },
+  "user_feedback_addressed": [
+    "R06 商品包装组、甲乙图标、胶囊和气泡整体放大，主视觉占屏比例提高",
+    "R07 不再使用 SVG Demo：药物、病毒细胞和传统药路径均为独立透明插画层，并分阶段累积动画",
+    "R08 患者和家庭盾牌使用独立透明 PNG；四角 alpha=0，无白色矩形底",
+    "字体、字号与三段导航间距沿用 v3 精细复刻门禁"
+  ],
+  "alpha_asset_check": {
+    "files_checked": 11,
+    "mode": "RGBA",
+    "corner_alpha": 0,
+    "result": "passed"
+  },
+  "evidence": {
+    "pptx_montage": "pptx-render-v3/pptx-5-page-montage-v3.png",
+    "video_contact_sheet": "video-qa-v3/contact-sheet-v3.png"
+  },
+  "business_asset_gap": "未取得授权品牌包装与 Logo；当前保留无品牌可替换槽位，不仿造品牌包装。",
+  "next_gate": "用户确认本片段保真度后，才扩制正式 00:00–01:43 全片。"
+}

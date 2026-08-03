@@ -1,0 +1,170 @@
+{
+  "project_id": "product.tomato-lycopene-courseware.green-v1",
+  "template_id": "template.product-courseware-dashenlin-green-v1",
+  "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+  "style_pack_locked": true,
+  "content_lock": "business-approved-manuscript-content-first",
+  "layout_policy": "content-driven-adapt-from-green-template",
+  "outputs": ["pptx", "png-qa"],
+  "output_policy": {
+    "pptx": "native-editable-static",
+    "pdf": "optional-follow-up",
+    "video": "not-in-scope",
+    "animation_parity": "not-guaranteed"
+  },
+  "asset_policy": {
+    "reference_screenshots": "measurement-only",
+    "crop_reference_assets": false,
+    "missing_assets": "editable-labeled-slots"
+  },
+  "brand": {
+    "display_name": "大参林 dashenlin",
+    "primary": "#009900",
+    "secondary": "#45A817",
+    "pale": "#C9E7BE",
+    "internal_notice": "仅供内部学习"
+  },
+  "pages": [
+    {
+      "id": "cover",
+      "scene_type": "courseware_cover",
+      "title": "福尔番茄红素软胶囊",
+      "organization": "大参林医药集团",
+      "tagline": "【专业力】",
+      "reference": "content-approved-manuscript-2026-08-02"
+    },
+    {
+      "id": "product-overview",
+      "scene_type": "product_overview",
+      "page_number": "01",
+      "title": "商品介绍、核心卖点、适宜人群",
+      "product": {
+        "display_name": "福尔番茄红素软胶囊",
+        "image_slot": "asset://product-packshot-primary",
+        "code": "待确认",
+        "priority": "A",
+        "specification": "待确认",
+        "retail_price": "待确认",
+        "one_line_selling_point": "新疆番茄精华，1粒≈5个新鲜大番茄"
+      },
+      "sections": [
+        {
+          "title": "一、商品介绍：",
+          "items": [
+            "主要成分：番茄红素（浓缩番茄精华）",
+            "功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力",
+            "用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服",
+            "不适宜人群：少年儿童、孕妇、乳母"
+          ]
+        },
+        {
+          "title": "二、核心卖点：",
+          "items": [
+            "三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；增强免疫力。",
+            "产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。",
+            "场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。"
+          ]
+        },
+        {
+          "title": "三、适宜人群：",
+          "items": [
+            "前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；",
+            "备孕男士和女士；",
+            "爱美、关注抗衰老人士；",
+            "身体虚弱、需提升免疫力人群。"
+          ]
+        }
+      ],
+      "reference": "content-approved-manuscript-2026-08-02"
+    },
+    {
+      "id": "combination-guidance",
+      "scene_type": "combination_guidance",
+      "page_number": "02",
+      "title": "联合推荐话术",
+      "columns": ["应用场景（适宜人群）", "联合推荐", "联合商品图", "本品图", "销售话术"],
+      "primary_column_title": "本品图",
+      "primary_pack_label": "福尔番茄红素\n包装图待接入",
+      "layout_note": "联合商品图按行独立；本品图纵向合并，保证每一行都与本品关联",
+      "rows": [
+        {
+          "scenario": "备孕/男性生殖健康、前列腺日常养护",
+          "combination": "番茄红素 + 锌/硒营养补充",
+          "partner": "锌/硒营养补充",
+          "partner_asset": "asset://partner-zinc-selenium",
+          "talk_track": "备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿意带走。"
+        },
+        {
+          "scenario": "抗氧化、抗衰老、爱美/体虚易累",
+          "combination": "番茄红素 + 维生素E软胶囊",
+          "partner": "维生素E软胶囊",
+          "partner_asset": "asset://partner-vitamin-e",
+          "talk_track": "爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。"
+        }
+      ],
+      "reference": "content-approved-manuscript-2026-08-02"
+    },
+    {
+      "id": "product-benchmark",
+      "scene_type": "product_benchmark",
+      "page_number": "03",
+      "title": "品种对标",
+      "columns": ["对比维度", "福尔番茄红素软胶囊（本品）", "同类番茄红素（竞品·待确认）"],
+      "primary_pack_label": "本品包装图\n待接入",
+      "competitor_pack_label": "竞品包装图\n待接入",
+      "rows": [
+        {
+          "label": "产品展示",
+          "values": ["asset://product-packshot-primary", "asset://product-packshot-competitor"]
+        },
+        {
+          "label": "功能定位",
+          "merge": true,
+          "value": "保护前列腺、提高精子活力；抗氧化延缓衰老；增强免疫力（以标签为准）"
+        },
+        {
+          "label": "共有优势",
+          "merge": true,
+          "value": "软胶囊易服；番茄红素认知度高；适合作为男性健康/抗氧化联推单品"
+        },
+        {
+          "label": "原料与含量",
+          "values": [
+            "番茄肉提炼；1粒≈5个新鲜大番茄；新疆产区叙事清晰",
+            "待确认：是否强调产区/提炼部位与含量话术"
+          ]
+        },
+        {
+          "label": "零售价",
+          "values": ["待确认", "待确认"]
+        },
+        {
+          "label": "卖点差异",
+          "values": ["产地好+原料优+含量高\n话术可记、可对比，适合A类主推", "待业务填写竞品差异"]
+        }
+      ],
+      "reference": "content-approved-manuscript-2026-08-02"
+    },
+    {
+      "id": "precautions",
+      "scene_type": "precautions",
+      "page_number": "04",
+      "title": "注意事项",
+      "items": [
+        "本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医嘱治疗；营养补充不替代诊断与治疗。",
+        "不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎用，对本品及所含成分过敏者禁用。",
+        "用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过量；建议随餐服用。",
+        "联合使用注意：正在服用处方药或其他保健品时，推荐前建议咨询药师，避免自行叠加多种同类抗氧化产品。",
+        "贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用。",
+        "就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症状，应停用相关自行补充并及时就医。"
+      ],
+      "illustration_slots": [
+        { "title": "不替代药物治疗", "asset": "asset://precaution-not-drug" },
+        { "title": "特殊人群慎用", "asset": "asset://precaution-special-groups" },
+        { "title": "按量随餐服用", "asset": "asset://precaution-with-meal" },
+        { "title": "不适及时就医", "asset": "asset://precaution-see-doctor" }
+      ],
+      "reference": "content-approved-manuscript-2026-08-02"
+    }
+  ]
+}

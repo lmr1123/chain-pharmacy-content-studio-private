@@ -1,0 +1,382 @@
+{
+  "schema_version": "1.0",
+  "assets": [
+    {
+      "id": "asset.bg.green-cream",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "按 scene-recipes.md 色板程序化生成。"
+    },
+    {
+      "id": "asset.ganoderma.hero.v3",
+      "status": "candidate",
+      "path": "poc/gold-sample/public/kekang-lingzhi/v3/ganoderma-hero-v3.png",
+      "rights": "project-candidate",
+      "allowed": [
+        "animatic",
+        "k08-pilot"
+      ],
+      "notes": "完整金样前需确认视觉与来源；不得自动升级为生产授权。"
+    },
+    {
+      "id": "asset.packshot.kekang.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "禁止 AI 仿造；当前低清截图不能用于生产。"
+    },
+    {
+      "id": "asset.logo.dashenlin.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "正式封底必须使用授权 Logo。"
+    },
+    {
+      "id": "asset.logo.dashenlin.candidate",
+      "status": "candidate",
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/dashenlin-logo.png",
+      "rights": "project-candidate",
+      "allowed": [
+        "animatic"
+      ],
+      "notes": "只用于内部结构验证。"
+    },
+    {
+      "id": "asset.audience.young.insomnia",
+      "status": "candidate",
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/audience-young-woman-insomnia-v7.png",
+      "rights": "self-generated-candidate",
+      "allowed": [
+        "animatic"
+      ],
+      "notes": "年龄只作画面覆盖，不代表医学适用年龄。"
+    },
+    {
+      "id": "asset.audience.middle.alcohol",
+      "status": "candidate",
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/audience-middle-man-alcohol-v7.png",
+      "rights": "self-generated-candidate",
+      "allowed": [
+        "animatic"
+      ],
+      "notes": "不展示酒类品牌。"
+    },
+    {
+      "id": "asset.audience.elder.low-immunity",
+      "status": "candidate",
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/audience-elder-woman-seasonal-v7.png",
+      "rights": "self-generated-candidate",
+      "allowed": [
+        "animatic"
+      ],
+      "notes": "年龄只作视觉覆盖。"
+    },
+    {
+      "id": "asset.sleep.problem.candidate",
+      "status": "candidate",
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/sleep-problem-illustration-candidate-v1.png",
+      "rights": "self-generated-candidate",
+      "allowed": [
+        "animatic"
+      ],
+      "notes": "只作生活状态，不是医学证据。"
+    },
+    {
+      "id": "asset.scene.sleep-night.required",
+      "status": "generate-one-then-review",
+      "path": null,
+      "rights": "self-generated-after-review",
+      "allowed": [
+        "animatic"
+      ],
+      "prompt": "16:9 企业培训扁平插画，成年中国女性夜间卧室中清醒翻身，床头时钟可见但无文字数字，圆润低细节造型，奶油白、浅薄荷绿、柔紫夜色，人物自然手部和五官，分层清晰，禁止药品、文字、Logo、诊断符号。"
+    },
+    {
+      "id": "asset.scene.alcohol-context.required",
+      "status": "generate-one-then-review",
+      "path": null,
+      "rights": "self-generated-after-review",
+      "allowed": [
+        "animatic"
+      ],
+      "prompt": "16:9 企业培训扁平插画，成年中国男性在普通餐桌旁放下无品牌酒杯，表现疲惫但不夸张痛苦，奶油白与暖金环境、品牌绿点缀，圆润低细节、分层可动画，禁止酒类品牌、药品、文字、器官机制和疾病诊断。"
+    },
+    {
+      "id": "asset.scene.low-immunity.required",
+      "status": "generate-one-then-review",
+      "path": null,
+      "rights": "self-generated-after-review",
+      "allowed": [
+        "animatic"
+      ],
+      "prompt": "16:9 企业培训扁平插画，成年中国女性处于季节变化环境，轻微打喷嚏或疲倦动作，衣物和叶片便于分层动画，奶油白、浅薄荷绿、少量青色，圆润低细节，禁止儿童、药品、文字、病菌恐怖形象和具体疾病。"
+    },
+    {
+      "id": "asset.body.torso-neutral.required",
+      "status": "generate-after-medical-review",
+      "path": null,
+      "rights": "self-generated-after-review",
+      "allowed": [
+        "animatic"
+      ],
+      "prompt": "中性成人躯干定位插画，企业培训扁平风，只显示器官位置层级，不表现损伤、病毒或治疗结果，透明背景，奶油白、浅绿、柔和赭色，禁止文字、包装和诊断。"
+    },
+    {
+      "id": "asset.body.circulation-neutral.required",
+      "status": "blocked-until-medical-review",
+      "path": null,
+      "rights": "not-authorized",
+      "allowed": [],
+      "notes": "只有审核终稿要求时才制作；不得先画血压改善或心血管预防。"
+    },
+    {
+      "id": "asset.cell.diagram.required",
+      "status": "blocked-until-medical-review",
+      "path": null,
+      "rights": "not-authorized",
+      "allowed": [],
+      "notes": "不得在审核前制作肿瘤或免疫细胞机制。"
+    },
+    {
+      "id": "asset.origin.dabie.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "正式片需公司可用的产地图／视频；不可用通用山景冒充产地证据。"
+    },
+    {
+      "id": "asset.process.extraction.required",
+      "status": "generate-after-evidence-review",
+      "path": null,
+      "rights": "self-generated-after-review",
+      "allowed": [
+        "animatic"
+      ],
+      "prompt": "横向四阶段工艺插画组件：赤灵芝原料、第一次提取、第二次浓缩提取、胶囊成形；企业培训扁平风、透明背景、无文字、无实验数据、无吸收率、无专利编号，品牌绿与暖金统一色板，节点彼此独立便于动画。"
+    },
+    {
+      "id": "asset.factory.kekang.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "禁止 AI 生成虚构工厂冒充中山可可康。"
+    },
+    {
+      "id": "asset.evidence.product-label.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "说明书或批准信息终稿。"
+    },
+    {
+      "id": "asset.evidence.polysaccharide.required",
+      "status": "evidence-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "支持 9.13g/100g 的可展示证据。"
+    },
+    {
+      "id": "asset.evidence.triterpene.required",
+      "status": "evidence-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "支持三萜含量表述的可展示证据。"
+    },
+    {
+      "id": "asset.evidence.process.required",
+      "status": "evidence-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "专利／工艺／吸收相关批准证据。"
+    },
+    {
+      "id": "asset.evidence.gmp.required",
+      "status": "evidence-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "当前有效 GMP／生产技术批准材料。"
+    },
+    {
+      "id": "asset.packshot.guweisu.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "谷维素片授权高清包装。"
+    },
+    {
+      "id": "asset.packshot.hugan.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "护肝片授权高清包装。"
+    },
+    {
+      "id": "asset.packshot.transfer-factor.required",
+      "status": "authorized-required",
+      "path": null,
+      "rights": "business-must-provide",
+      "allowed": [],
+      "notes": "转移因子口服溶液授权高清包装。"
+    },
+    {
+      "id": "asset.calendar.code",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "程序化月历，不显示剂量频次。"
+    },
+    {
+      "id": "asset.icon.ingredients-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.direction-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.feature-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.use-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.clock-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.fatigue-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.sleep-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.liver-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.immune-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.discomfort-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.shield-neutral",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    },
+    {
+      "id": "asset.icon.review-lock",
+      "status": "code-generated",
+      "path": null,
+      "rights": "self-made",
+      "allowed": [
+        "animatic",
+        "production"
+      ],
+      "notes": "仅作中性导航／状态符号，不承载医学结论。"
+    }
+  ]
+}

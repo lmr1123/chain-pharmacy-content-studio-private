@@ -1,0 +1,25 @@
+{
+  "slug": "fuler-fanqiehongsu-product-courseware-4-v1",
+  "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）",
+  "one_liner": "保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）",
+  "gallery_title_zh": "商品培训课件4 · 福尔番茄红素金样",
+  "outputs": [
+    "MP4",
+    "可编辑 PPTX"
+  ],
+  "category": "商品培训",
+  "production_ready": true,
+  "status_label": "已签样 · 可换主题量产",
+  "status_note": "关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。",
+  "key_frame_labels_zh": [
+    "封面",
+    "商品介绍",
+    "利益点",
+    "适宜人群",
+    "关联用药",
+    "总结"
+  ],
+  "voice_id": "voice.sufuda-courseware-pharmacist-v1",
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx"
+}

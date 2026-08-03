@@ -1,0 +1,138 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v3",
+  "status": "analysis-complete-awaiting-plan-confirmation",
+  "reference_range_seconds": [14.83, 42.27],
+  "principle": "match visible material, typography, spacing and motion—not only structure and timestamps",
+  "production_route": {
+    "pptx": "transparent raster illustration layers plus native editable text; only simple containers remain native shapes",
+    "video": "reuse the same transparent illustration layers, animate each layer on the measured reference path",
+    "forbidden": [
+      "generic SVG/demo primitives replacing reference illustration material",
+      "white rectangular backgrounds behind figures",
+      "baking editable Chinese labels into generated images",
+      "inventing brand logo or branded packshot pixels"
+    ]
+  },
+  "typography": {
+    "observation": "reference uses heavy, compact, slightly rounded Chinese display text; v2 PingFang treatment is too regular and too small",
+    "candidate_order": [
+      {"font": "Gen Jyuu Gothic Bold", "reason": "closest installed rounded heavy candidate"},
+      {"font": "Source Han Sans SC Heavy", "reason": "fallback for compact heavy strokes"},
+      {"font": "HarmonyOS Sans SC Black", "reason": "fallback for navigation legibility"}
+    ],
+    "reference_size_at_850x480": {
+      "chapter_title_px": "approximately 27–30",
+      "navigation_px": "approximately 18–21",
+      "bottom_caption_px": "approximately 18–21"
+    },
+    "gate": "render one reference title and all three navigation labels in the three candidate fonts; choose by side-by-side visual weight before rebuilding"
+  },
+  "navigation_geometry_at_1275x720_analysis_frame": {
+    "item_1": {"approx_left": 128, "approx_width": 282},
+    "item_2": {"approx_left": 431, "approx_width": 322},
+    "item_3": {"approx_left": 782, "approx_width": 378},
+    "preliminary_gap_1_2_px": 21,
+    "preliminary_gap_2_3_px": 29,
+    "v3_target_equal_visual_gap_px": "24 ± 2 after outline and shadow",
+    "note": "verify final pill boundaries from high-resolution thresholded crops; use equal perceived clear space rather than raw group X values so item 1 and item 2 never read as touching"
+  },
+  "microshot_findings": [
+    {
+      "id": "R05",
+      "range": [14.83, 16.83],
+      "observed_motion": [
+        "previous three cards clear, leaving open silk background",
+        "orange ribbon starts very small at upper center",
+        "ribbon scales to final size with a short eased settle",
+        "chapter title grows with the ribbon; it is not a static full-size cut"
+      ]
+    },
+    {
+      "id": "R06",
+      "range": [16.83, 18.90],
+      "observed_layers": [
+        "three navigation pills",
+        "authorized package group",
+        "blue 甲 burst",
+        "orange 乙 burst",
+        "small orange capsule/particle mark",
+        "orange speech bubble with tail and white text"
+      ],
+      "observed_motion": [
+        "navigation arrives as a separated row, item 1 active",
+        "package group scales/slides upward from lower center",
+        "甲 and 乙 bursts pop in separately",
+        "speech bubble enters from the right with visible tilt, rotation settle and scale-up"
+      ],
+      "implementation": "generate the bubble and decorative marks as transparent text-free PNG layers; overlay native editable text; animate rotation, scale and translation independently"
+    },
+    {
+      "id": "R07",
+      "range": [18.90, 35.07],
+      "observed_layers": [
+        "white rounded stage",
+        "organic pink infected-cell illustration",
+        "virus particles inside the cell",
+        "left oral-dose and drug illustration",
+        "orange replication-blocking mechanism",
+        "gray release-blocking mechanism",
+        "right comparison drug block",
+        "dose-frequency and duration marks"
+      ],
+      "observed_motion": [
+        "R06 content clears before the white stage enters",
+        "cell appears first, then virus content accumulates",
+        "left treatment label and orange mechanism assemble in steps",
+        "virus count visibly reduces/fades after the orange block",
+        "gray release path and right medicine appear later",
+        "outgoing particles and frequency information accumulate rather than appearing as one static diagram"
+      ],
+      "implementation": "use several transparent illustration PNG layers and masks; do not rebuild the finished scene from basic ellipse/arrow SVG shapes"
+    },
+    {
+      "id": "R08",
+      "range": [35.07, 42.27],
+      "observed_layers": [
+        "masked patient on left",
+        "orange particles around patient",
+        "blue shield outline",
+        "five-person masked family inside shield"
+      ],
+      "observed_motion": [
+        "patient and family/shield enter from opposite sides",
+        "orange particles drift from patient toward the shield",
+        "particles stop or disappear at the shield boundary",
+        "final frame has no white rectangular image background"
+      ],
+      "implementation": "patient, particles, shield and family must be separate transparent PNG layers; the shield interior may be white but the outer canvas must be alpha-transparent"
+    }
+  ],
+  "fidelity_gates": {
+    "static": [
+      "font family/weight/size and single-line width",
+      "navigation bounds and gaps",
+      "transparent-edge check on checkerboard and final silk background",
+      "no producer labels or white image rectangles"
+    ],
+    "motion": [
+      "start/mid/end frame for every entrance",
+      "position tolerance within 2 percent of frame",
+      "rotation tolerance within 2 degrees",
+      "major cue timing tolerance within 0.10 seconds",
+      "reference vs replica overlay and side-by-side at each semantic node"
+    ],
+    "release_sequence": [
+      "approve one R06 three-second bubble proof",
+      "approve one R07 mechanism motion proof",
+      "approve one R08 transparent integration proof",
+      "only then rebuild the full 27.44-second gate and PPTX"
+    ]
+  },
+  "prevention_loop": [
+    "classify every reference layer as native text, native simple shape, transparent raster illustration, or authorized brand asset before implementation",
+    "lock font tokens and object measurements in one scene contract",
+    "do not accept technical QA as fidelity QA",
+    "require representative still and three-frame motion signoff before expanding a scene family",
+    "record every rejected fidelity pattern in tasks/lessons.md and the lesson registry"
+  ]
+}

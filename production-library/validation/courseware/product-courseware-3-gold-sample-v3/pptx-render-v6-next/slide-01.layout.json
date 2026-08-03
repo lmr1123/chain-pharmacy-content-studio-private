@@ -1,0 +1,525 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/xrhy7s",
+    "id": "xrhy7s",
+    "slide": 1,
+    "layoutId": "af26c7e2-8627-4561-af4d-e327e074aace",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "f9f4f1d1-95b7-4f69-ba78-d402e4e109b8",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "af26c7e2-8627-4561-af4d-e327e074aace",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "f9f4f1d1-95b7-4f69-ba78-d402e4e109b8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "f9f4f1d1-95b7-4f69-ba78-d402e4e109b8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/elovqtcz",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "原创白色珍珠丝绸背景",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "cfa9a88f-14c1-490f-8dab-a77811d1bfe1",
+        "contentType": "image/png",
+        "byteLength": 1386415
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s7ut8r6p",
+      "id": "2",
+      "bbox": [
+        405,
+        54,
+        80,
+        55
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#D36D00",
+      "lineColor": "#D36D00",
+      "lineWidth": 1
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d83ahwna",
+      "id": "3",
+      "bbox": [
+        795,
+        54,
+        80,
+        55
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#D36D00",
+      "lineColor": "#D36D00",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ihcr2hon",
+      "id": "4",
+      "name": "chapter-ribbon",
+      "bbox": [
+        438,
+        43,
+        404,
+        70
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F28A00",
+      "lineColor": "#D36D00",
+      "lineWidth": 2
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ilsbm58",
+      "id": "5",
+      "name": "chapter-title",
+      "bbox": [
+        468,
+        48,
+        344,
+        58
+      ],
+      "geometry": "rect",
+      "text": "二、产品特点",
+      "textPreview": "二、产品特点",
+      "resolvedFontSize": 38,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 38,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "二、产品特点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "二、产品特点",
+          "resolvedTextStyle": {
+            "fontSize": 38,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "二、产品特点",
+              "fontSize": 38,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4jut4r6t",
+      "id": "6",
+      "bbox": [
+        1090,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "速",
+      "textPreview": "速",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "速"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "速",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "速",
+              "fontSize": 34,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/543adwne",
+      "id": "7",
+      "bbox": [
+        1132,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "福",
+      "textPreview": "福",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#F28A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "福"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "福",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#F28A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "福",
+              "fontSize": 34,
+              "color": "#F28A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2dwbelor",
+      "id": "8",
+      "bbox": [
+        1174,
+        20,
+        48,
+        44
+      ],
+      "geometry": "rect",
+      "text": "达",
+      "textPreview": "达",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "达"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "达",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "达",
+              "fontSize": 34,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ne5snq5c",
+      "id": "9",
+      "bbox": [
+        1086,
+        62,
+        145,
+        23
+      ],
+      "geometry": "rect",
+      "text": "（玛巴洛沙韦）",
+      "textPreview": "（玛巴洛沙韦）",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#123A84",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "（玛巴洛沙韦）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "（玛巴洛沙韦）",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#123A84",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "（玛巴洛沙韦）",
+              "fontSize": 13,
+              "color": "#123A84",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6ho3mho",
+      "id": "10",
+      "bbox": [
+        430,
+        648,
+        420,
+        44
+      ],
+      "geometry": "rect",
+      "text": "二、产品特点",
+      "textPreview": "二、产品特点",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 29,
+        "typeface": "+mn-lt",
+        "color": "#171717",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "二、产品特点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "二、产品特点",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "color": "#171717",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "二、产品特点",
+              "fontSize": 29,
+              "color": "#171717",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

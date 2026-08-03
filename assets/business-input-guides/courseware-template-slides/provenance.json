@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-30",
+  "policy": "Exact slide renders from the designated settled PPTX outputs; no AI generation or redraw.",
+  "items": [
+    {
+      "file": "honeysuckle-template-slide-01.png",
+      "source_pptx": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+      "source_render": "production-library/validation/courseware/product-courseware-green-v1/qa/slide-01.png",
+      "slide": 1,
+      "sha256": "260acfef5d5e6c8e9defc5feac047e457bf9f086ebeef2f9378b06b8ba17d920"
+    },
+    {
+      "file": "honeysuckle-template-slide-02.png",
+      "source_pptx": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+      "source_render": "production-library/validation/courseware/product-courseware-green-v1/qa/slide-02.png",
+      "slide": 2,
+      "sha256": "c85b512bd37d985007782e7574cf7dfe936071a33a2180085d27c499efd8c972"
+    },
+    {
+      "file": "honeysuckle-template-slide-03.png",
+      "source_pptx": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+      "source_render": "production-library/validation/courseware/product-courseware-green-v1/qa/slide-03.png",
+      "slide": 3,
+      "sha256": "f9f3eccbd8e0f84c1bb062fa5d2b3d25ec900b1b7604469ee99daf2e7fb66ebe"
+    },
+    {
+      "file": "andrographolide-template-slide-01.png",
+      "source_pptx": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+      "source_render": "production-library/validation/courseware/disease-product-scenario-v1/qa-editable/slide-01.png",
+      "slide": 1,
+      "sha256": "508788f251d5c818c36b5357cb08e72f0c0db6ed2a39fdf5add8ce195b666c27"
+    },
+    {
+      "file": "andrographolide-template-slide-09.png",
+      "source_pptx": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+      "source_render": "production-library/validation/courseware/disease-product-scenario-v1/qa-editable/slide-09.png",
+      "slide": 9,
+      "sha256": "a0480100f4a76eb62540964ce8332c6ab007f9058b420dcef9e0e3eb28f49bd3"
+    },
+    {
+      "file": "andrographolide-template-slide-14.png",
+      "source_pptx": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+      "source_render": "production-library/validation/courseware/disease-product-scenario-v1/qa-editable/slide-14.png",
+      "slide": 14,
+      "sha256": "9c20ab7e0a889895811c2a363a63c615e234e9f7b08865167c7e8e5281c2d71e"
+    }
+  ]
+}

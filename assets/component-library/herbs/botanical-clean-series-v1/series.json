@@ -1,0 +1,36 @@
+{
+  "id": "series.herb.botanical-clean-v1",
+  "name_zh": "健康课件写实清洁草本系列 v1",
+  "version": "1.0.0",
+  "status": "selected",
+  "style_pack_ids": [
+    "style-pack.reference-medical-tech-v1"
+  ],
+  "series_style_id": "health-courseware-realistic-botanical-v1",
+  "purpose": "调理/成分网格使用的写实清洁草本单株素材，跨主题复用桑菊薄等食药示意。",
+  "role_contracts": [
+    {
+      "role_id": "herb_single",
+      "name_zh": "单株草本主图",
+      "required": ["centered", "clean_background_or_transparent"]
+    }
+  ],
+  "composition_contract": {
+    "preferred_size": [1254, 1254],
+    "subject_readable_at": "50% thumbnail"
+  },
+  "members": [
+    "mulberry-leaf-v1",
+    "chrysanthemum-v1",
+    "mint-v1"
+  ],
+  "generation_recipe": "assets/component-library/herbs/herbs-v1-generation-recipes.md",
+  "extension_gate": [
+    "新草本先查本系列；保持写实清洁与同类光感。",
+    "外补优先通道 B 商用植物图或 C 再生，须去水印并统一背景。"
+  ],
+  "external_fill": {
+    "preferred_channel": "B",
+    "fallback_channel": "C"
+  }
+}

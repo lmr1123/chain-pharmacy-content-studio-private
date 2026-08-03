@@ -1,0 +1,2637 @@
+{
+  "microshots": [
+    {
+      "duration_seconds": 2.5,
+      "narration_candidate": "这是可可康灵芝胶囊。",
+      "subtitle": "可可康灵芝胶囊",
+      "recipe_id": "R01.hero_reveal",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "灵芝与产品身份",
+      "visual_action": "奶油白环境先建立，灵芝主体从圆形遮罩内上揭示；授权包装缺失时只保留产品空槽。",
+      "asset_ids": [
+        "asset.bg.green-cream",
+        "asset.ganoderma.hero.v3",
+        "asset.packshot.kekang.required"
+      ],
+      "layers": [
+        "background",
+        "environment_shape",
+        "hero_subject",
+        "title",
+        "short_label",
+        "focus_halo"
+      ],
+      "animated_nontext_layers": [
+        "hero_subject",
+        "focus_halo"
+      ],
+      "entry": "环境形状淡入；主体由 0.72 倍回弹到 1 倍",
+      "performance": "光环轻呼吸，标题从左侧进入",
+      "exit": "主体缩小并右移为课程导航锚点",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "ambient_in",
+        "soft_whoosh"
+      ],
+      "content_approval": "source-aligned-review-required",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K01-S01",
+      "chapter_id": "K01",
+      "sequence_in_chapter": 1,
+      "transition_to": "K01-S02",
+      "timeline_order": 1
+    },
+    {
+      "duration_seconds": 2.5,
+      "narration_candidate": "这堂内部培训，将从多个方面认识这款产品。",
+      "subtitle": "一条完整产品知识路径",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "课程路径节点",
+      "visual_action": "成分、方向、特点、使用四个短节点沿弧线依次出现；同一时刻只高亮当前节点。",
+      "asset_ids": [
+        "asset.bg.green-cream",
+        "asset.icon.ingredients-neutral",
+        "asset.icon.direction-neutral",
+        "asset.icon.feature-neutral",
+        "asset.icon.use-neutral"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "路径由产品锚点向左绘制",
+      "performance": "节点逐个聚焦，非当前节点降至 0.68 透明度",
+      "exit": "四节点沿路径汇聚成三类状态入口",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "label_tick_01",
+        "label_tick_02",
+        "label_tick_03"
+      ],
+      "content_approval": "source-aligned-review-required",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K01-S02",
+      "chapter_id": "K01",
+      "sequence_in_chapter": 2,
+      "transition_to": "K01-S03",
+      "timeline_order": 2
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "先从三类常见状态开始。",
+      "subtitle": "先看三类状态",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三类状态入口",
+      "visual_action": "三个空白状态轮廓从同一锚点分开，为 K02 的三个人物位置预热。",
+      "asset_ids": [
+        "asset.bg.green-cream",
+        "asset.audience.young.insomnia",
+        "asset.audience.middle.alcohol",
+        "asset.audience.elder.low-immunity"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "上一镜四节点收束为中央光点",
+      "performance": "三个人物轮廓按 01→02→03 快速显现",
+      "exit": "镜头跟随 01 人物进入夜间环境",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "converge_soft",
+        "three_node_ticks"
+      ],
+      "content_approval": "source-aligned-review-required",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K01-S03",
+      "chapter_id": "K01",
+      "sequence_in_chapter": 3,
+      "transition_to": "K02-S01",
+      "timeline_order": 3
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第一类，是经常失眠的成人状态。",
+      "subtitle": "经常失眠",
+      "recipe_id": "R02.life_context_sequence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "夜间清醒人物",
+      "visual_action": "卧室环境中人物翻身，时钟指针推进；只演生活状态，不做诊断。",
+      "asset_ids": [
+        "asset.scene.sleep-night.required",
+        "asset.audience.young.insomnia"
+      ],
+      "layers": [
+        "environment_back",
+        "adult_character",
+        "foreground_prop",
+        "state_symbol",
+        "short_caption",
+        "ambient_motion"
+      ],
+      "animated_nontext_layers": [
+        "adult_character",
+        "foreground_prop",
+        "ambient_motion"
+      ],
+      "entry": "从 K01 的 01 人物轮廓匹配切入",
+      "performance": "时钟、呼吸和被角轻动",
+      "exit": "紫色夜间光点沿弧线飞向下一人物",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "night_ambience",
+        "clock_tick_soft"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K02-S01",
+      "chapter_id": "K02",
+      "sequence_in_chapter": 1,
+      "transition_to": "K02-S02",
+      "timeline_order": 4
+    },
+    {
+      "duration_seconds": 3.2,
+      "narration_candidate": "第二类，是长期饮酒或肝功能较差的成人状态。",
+      "subtitle": "饮酒／肝功能较差",
+      "recipe_id": "R02.life_context_sequence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "餐桌旁中年人物",
+      "visual_action": "酒杯仅作生活情境；人物按住右上腹或表现疲惫，不展示体内机制。",
+      "asset_ids": [
+        "asset.scene.alcohol-context.required",
+        "asset.audience.middle.alcohol"
+      ],
+      "layers": [
+        "environment_back",
+        "adult_character",
+        "foreground_prop",
+        "state_symbol",
+        "short_caption",
+        "ambient_motion"
+      ],
+      "animated_nontext_layers": [
+        "adult_character",
+        "foreground_prop",
+        "ambient_motion"
+      ],
+      "entry": "夜间光点变成暖金桌面高光",
+      "performance": "酒杯轻放、人物姿态变化",
+      "exit": "暖金高光滑向第三人物的环境",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "table_roomtone",
+        "glass_setdown_soft"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K02-S02",
+      "chapter_id": "K02",
+      "sequence_in_chapter": 2,
+      "transition_to": "K02-S03",
+      "timeline_order": 5
+    },
+    {
+      "duration_seconds": 3.8,
+      "narration_candidate": "第三类，是免疫力低下、容易反复不适的成人状态。",
+      "subtitle": "免疫力低下",
+      "recipe_id": "R02.life_context_sequence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "季节变化中的成人",
+      "visual_action": "人物在季节变化中出现打喷嚏或疲倦符号，随后三类人物沿深度轴形成总览。",
+      "asset_ids": [
+        "asset.scene.low-immunity.required",
+        "asset.audience.elder.low-immunity"
+      ],
+      "layers": [
+        "environment_back",
+        "adult_character",
+        "foreground_prop",
+        "state_symbol",
+        "short_caption",
+        "ambient_motion"
+      ],
+      "animated_nontext_layers": [
+        "adult_character",
+        "foreground_prop",
+        "ambient_motion"
+      ],
+      "entry": "暖金高光转为青绿色季节气流",
+      "performance": "人物动作与季节符号局部循环",
+      "exit": "三类人物缩入弧线节点并把 01 放大进入 K03",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "season_breeze",
+        "focus_shift"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K02-S03",
+      "chapter_id": "K02",
+      "sequence_in_chapter": 3,
+      "transition_to": "K03-S01",
+      "timeline_order": 6
+    },
+    {
+      "duration_seconds": 3.2,
+      "narration_candidate": "失眠可能表现为入睡困难。",
+      "subtitle": "入睡困难",
+      "recipe_id": "R02.life_context_sequence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "床上清醒人物与时钟",
+      "visual_action": "镜头从人物眼睛推到时钟，时针移动但人物仍清醒。",
+      "asset_ids": [
+        "asset.scene.sleep-night.required",
+        "asset.audience.young.insomnia"
+      ],
+      "layers": [
+        "environment_back",
+        "adult_character",
+        "foreground_prop",
+        "state_symbol",
+        "short_caption",
+        "ambient_motion"
+      ],
+      "animated_nontext_layers": [
+        "adult_character",
+        "foreground_prop",
+        "ambient_motion"
+      ],
+      "entry": "K02 的 01 节点扩大为卧室圆窗",
+      "performance": "眼睛、呼吸、时针持续微动",
+      "exit": "时钟圆面扩大成为下一镜时间轴",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "clock_tick_soft",
+        "low_pulse"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K03-S01",
+      "chapter_id": "K03",
+      "sequence_in_chapter": 1,
+      "transition_to": "K03-S02",
+      "timeline_order": 7
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "也可能出现夜间易醒、早醒或醒后难以再次入睡。",
+      "subtitle": "易醒 · 早醒 · 再入睡困难",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三个时间节点",
+      "visual_action": "凌晨 1 点、3 点、5 点三个时间节点依次点亮，人物姿态随节点变化。",
+      "asset_ids": [
+        "asset.scene.sleep-night.required",
+        "asset.icon.clock-neutral"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "上一镜时钟圆面分裂为三个节点",
+      "performance": "节点依次聚焦并带动人物姿态切换",
+      "exit": "05:00 节点拉出晨光",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "three_clock_ticks",
+        "focus_shift"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K03-S02",
+      "chapter_id": "K03",
+      "sequence_in_chapter": 2,
+      "transition_to": "K03-S03",
+      "timeline_order": 8
+    },
+    {
+      "duration_seconds": 3.8,
+      "narration_candidate": "第二天，还可能感到疲倦。",
+      "subtitle": "次日疲倦",
+      "recipe_id": "R02.life_context_sequence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "清晨工作状态",
+      "visual_action": "晨光进入，人物坐在桌前揉眼或扶额；夜间时间轴缩成背景。",
+      "asset_ids": [
+        "asset.sleep.problem.candidate",
+        "asset.icon.fatigue-neutral"
+      ],
+      "layers": [
+        "environment_back",
+        "adult_character",
+        "foreground_prop",
+        "state_symbol",
+        "short_caption",
+        "ambient_motion"
+      ],
+      "animated_nontext_layers": [
+        "adult_character",
+        "foreground_prop",
+        "ambient_motion"
+      ],
+      "entry": "05:00 节点擦拭转场到办公桌",
+      "performance": "人物轻微点头、杯中热气上升",
+      "exit": "疲倦符号向右移动并转为 K04 的杯沿",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "morning_roomtone",
+        "soft_transition"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K03-S03",
+      "chapter_id": "K03",
+      "sequence_in_chapter": 3,
+      "transition_to": "K04-S01",
+      "timeline_order": 9
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "长期饮酒，是旧课件列出的生活情境之一。",
+      "subtitle": "长期饮酒情境",
+      "recipe_id": "R02.life_context_sequence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "餐桌与成人",
+      "visual_action": "由 K03 杯沿匹配切入餐桌，人物与酒杯在真实生活环境中出现。",
+      "asset_ids": [
+        "asset.scene.alcohol-context.required",
+        "asset.audience.middle.alcohol"
+      ],
+      "layers": [
+        "environment_back",
+        "adult_character",
+        "foreground_prop",
+        "state_symbol",
+        "short_caption",
+        "ambient_motion"
+      ],
+      "animated_nontext_layers": [
+        "adult_character",
+        "foreground_prop",
+        "ambient_motion"
+      ],
+      "entry": "杯沿形状匹配转场",
+      "performance": "手部放杯、人物呼吸、背景人群虚化移动",
+      "exit": "镜头从杯子推向人物身体轮廓",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "restaurant_roomtone",
+        "glass_setdown_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K04-S01",
+      "chapter_id": "K04",
+      "sequence_in_chapter": 1,
+      "transition_to": "K04-S02",
+      "timeline_order": 10
+    },
+    {
+      "duration_seconds": 3.4,
+      "narration_candidate": "旧课件把它与肝脏负担和肝功能较差联系起来。",
+      "subtitle": "肝脏负担",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "生活情境到肝脏位置的关系",
+      "visual_action": "只用中性身体轮廓和位置高亮建立关系；不展示病毒、炎症或损伤机制。",
+      "asset_ids": [
+        "asset.body.torso-neutral.required",
+        "asset.icon.liver-neutral"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "人物轮廓覆盖到画面中央",
+      "performance": "位置高亮呼吸，单一光点沿路径移动",
+      "exit": "位置高亮缩成肝脏方向标签",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "low_organ_pulse"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K04-S02",
+      "chapter_id": "K04",
+      "sequence_in_chapter": 2,
+      "transition_to": "K04-S03",
+      "timeline_order": 11
+    },
+    {
+      "duration_seconds": 3.6,
+      "narration_candidate": "具体医学表述，应以药师和合规审核终稿为准。",
+      "subtitle": "等待审核终稿",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "审核门禁标签",
+      "visual_action": "三个高风险旧词只以模糊占位出现并锁闭，不可作为正式画面输出。",
+      "asset_ids": [
+        "asset.bg.green-cream",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "肝脏方向标签移动到锁定节点",
+      "performance": "锁定节点轻呼吸，其他文字保持不可读占位",
+      "exit": "锁定节点移出，绿色路径进入 K05",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K04-S03",
+      "chapter_id": "K04",
+      "sequence_in_chapter": 3,
+      "transition_to": "K05-S01",
+      "timeline_order": 12
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第三类状态，是免疫力低下。",
+      "subtitle": "免疫力低下",
+      "recipe_id": "R02.life_context_sequence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "季节变化中的成人",
+      "visual_action": "成人从室内进入换季户外，气流与衣物轻动。",
+      "asset_ids": [
+        "asset.scene.low-immunity.required",
+        "asset.audience.elder.low-immunity"
+      ],
+      "layers": [
+        "environment_back",
+        "adult_character",
+        "foreground_prop",
+        "state_symbol",
+        "short_caption",
+        "ambient_motion"
+      ],
+      "animated_nontext_layers": [
+        "adult_character",
+        "foreground_prop",
+        "ambient_motion"
+      ],
+      "entry": "K04 绿色路径变成季节气流",
+      "performance": "人物呼吸、衣物和叶片局部运动",
+      "exit": "气流卷起两个状态符号",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "season_breeze",
+        "soft_whoosh"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K05-S01",
+      "chapter_id": "K05",
+      "sequence_in_chapter": 1,
+      "transition_to": "K05-S02",
+      "timeline_order": 13
+    },
+    {
+      "duration_seconds": 3.2,
+      "narration_candidate": "旧课件使用容易反复不适、抵抗力差等描述。",
+      "subtitle": "反复不适 · 抵抗力差",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "两个状态符号",
+      "visual_action": "两个短标签围绕人物依次出现，人物不被框进静态卡片。",
+      "asset_ids": [
+        "asset.scene.low-immunity.required",
+        "asset.icon.discomfort-neutral",
+        "asset.icon.shield-neutral"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "状态符号沿季节气流进入",
+      "performance": "两个符号轮流聚焦",
+      "exit": "符号沿弧线汇入三类状态总览",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "label_tick_01",
+        "label_tick_02"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K05-S02",
+      "chapter_id": "K05",
+      "sequence_in_chapter": 2,
+      "transition_to": "K05-S03",
+      "timeline_order": 14
+    },
+    {
+      "duration_seconds": 3.3,
+      "narration_candidate": "最终称谓与画面范围，以审核结果为准。",
+      "subtitle": "非疾病诊断",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三类状态回扣",
+      "visual_action": "三类状态节点短暂回扣，强调年龄只用于画面演绎。",
+      "asset_ids": [
+        "asset.audience.young.insomnia",
+        "asset.audience.middle.alcohol",
+        "asset.audience.elder.low-immunity"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "两个符号汇聚成第三节点",
+      "performance": "三节点依次轻亮",
+      "exit": "三节点移动到 K06 的三方向位置",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "three_node_ticks"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K05-S03",
+      "chapter_id": "K05",
+      "sequence_in_chapter": 3,
+      "transition_to": "K06-S01",
+      "timeline_order": 15
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "旧课件把第一类状态对应到睡眠方向。",
+      "subtitle": "睡眠方向",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "睡眠方向节点",
+      "visual_action": "第一状态节点沿路径连接到中性月亮与休息符号。",
+      "asset_ids": [
+        "asset.icon.sleep-neutral",
+        "asset.audience.young.insomnia"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "K05 第一节点扩大",
+      "performance": "路径绘制，睡眠符号轻呼吸",
+      "exit": "节点缩到左上导航位",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "label_tick_01"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K06-S01",
+      "chapter_id": "K06",
+      "sequence_in_chapter": 1,
+      "transition_to": "K06-S02",
+      "timeline_order": 16
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第二类状态对应到肝脏方向。",
+      "subtitle": "肝脏方向",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "肝脏方向节点",
+      "visual_action": "第二状态节点连接到中性肝脏位置图标，不表现治疗结果。",
+      "asset_ids": [
+        "asset.icon.liver-neutral",
+        "asset.audience.middle.alcohol"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "第二节点从深度轴进入",
+      "performance": "路径绘制，位置图标轻呼吸",
+      "exit": "节点缩到左侧导航位",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "label_tick_02"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K06-S02",
+      "chapter_id": "K06",
+      "sequence_in_chapter": 2,
+      "transition_to": "K06-S03",
+      "timeline_order": 17
+    },
+    {
+      "duration_seconds": 4.0,
+      "narration_candidate": "第三类状态对应到免疫方向，三条最终口径必须逐项审核。",
+      "subtitle": "免疫方向 · 待审核",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "免疫方向与三方向总览",
+      "visual_action": "第三节点连接到中性盾牌；随后三方向沿弧线依次聚焦并收束。",
+      "asset_ids": [
+        "asset.icon.immune-neutral",
+        "asset.audience.elder.low-immunity"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "第三节点进入",
+      "performance": "第三路径完成，三方向轮流聚焦",
+      "exit": "三方向收束到产品空槽进入 K07",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "label_tick_03",
+        "converge_soft"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K06-S03",
+      "chapter_id": "K06",
+      "sequence_in_chapter": 3,
+      "transition_to": "K07-S01",
+      "timeline_order": 18
+    },
+    {
+      "duration_seconds": 2.8,
+      "narration_candidate": "回到产品本身。",
+      "subtitle": "回到产品",
+      "recipe_id": "R01.hero_reveal",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "授权包装空槽",
+      "visual_action": "产品空槽从三方向汇聚点放大；有授权包装后才替换。",
+      "asset_ids": [
+        "asset.packshot.kekang.required",
+        "asset.bg.green-cream"
+      ],
+      "layers": [
+        "background",
+        "environment_shape",
+        "hero_subject",
+        "title",
+        "short_label",
+        "focus_halo"
+      ],
+      "animated_nontext_layers": [
+        "hero_subject",
+        "focus_halo"
+      ],
+      "entry": "三方向汇聚成包装轮廓",
+      "performance": "轮廓轻旋转后稳定",
+      "exit": "局部放大到 OTC 位置",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "converge_soft",
+        "soft_whoosh"
+      ],
+      "content_approval": "asset-and-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K07-S01",
+      "chapter_id": "K07",
+      "sequence_in_chapter": 1,
+      "transition_to": "K07-S02",
+      "timeline_order": 19
+    },
+    {
+      "duration_seconds": 2.8,
+      "narration_candidate": "包装信息中的 OTC 和规格，需要以高清真包装核对。",
+      "subtitle": "OTC · 规格待核对",
+      "recipe_id": "R06.evidence_zoom",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "OTC 与规格证据位",
+      "visual_action": "在授权真包装上依次放大 OTC 和规格位置；没有真包装时显示锁定占位。",
+      "asset_ids": [
+        "asset.packshot.kekang.required",
+        "asset.evidence.product-label.required"
+      ],
+      "layers": [
+        "background",
+        "authorized_evidence",
+        "zoom_window",
+        "measure_line",
+        "data_label",
+        "source_caption"
+      ],
+      "animated_nontext_layers": [
+        "zoom_window",
+        "measure_line"
+      ],
+      "entry": "包装主体保持，放大框出现",
+      "performance": "放大框从 OTC 移到规格位置",
+      "exit": "放大框收束为说明书页角",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "zoom_soft",
+        "evidence_tick"
+      ],
+      "content_approval": "asset-and-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K07-S02",
+      "chapter_id": "K07",
+      "sequence_in_chapter": 2,
+      "transition_to": "K07-S03",
+      "timeline_order": 20
+    },
+    {
+      "duration_seconds": 2.9,
+      "narration_candidate": "功能主治必须以说明书或批准信息终稿为准。",
+      "subtitle": "功能主治 · 以说明书为准",
+      "recipe_id": "R06.evidence_zoom",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "说明书批准信息",
+      "visual_action": "说明书授权页进入，获准文字区域高亮；不读取低清截图。",
+      "asset_ids": [
+        "asset.evidence.product-label.required",
+        "asset.packshot.kekang.required"
+      ],
+      "layers": [
+        "background",
+        "authorized_evidence",
+        "zoom_window",
+        "measure_line",
+        "data_label",
+        "source_caption"
+      ],
+      "animated_nontext_layers": [
+        "zoom_window",
+        "measure_line"
+      ],
+      "entry": "说明书页角展开",
+      "performance": "高亮带沿批准文字区域移动",
+      "exit": "高亮带变成 K08 的中央轨道",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "paper_open_soft",
+        "highlight_sweep"
+      ],
+      "content_approval": "asset-and-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K07-S03",
+      "chapter_id": "K07",
+      "sequence_in_chapter": 3,
+      "transition_to": "K08-S01",
+      "timeline_order": 21
+    },
+    {
+      "duration_seconds": 2.3,
+      "narration_candidate": "从灵芝主体，可以认识两类成分。",
+      "subtitle": "从灵芝主体，认识两类成分",
+      "recipe_id": "R04.central_split_orbit",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "灵芝主体",
+      "visual_action": "复用已完成的中央灵芝主体、光环和虚线轨道；标题进入后让位。",
+      "asset_ids": [
+        "asset.bg.green-cream",
+        "asset.ganoderma.hero.v3"
+      ],
+      "layers": [
+        "background",
+        "central_subject",
+        "orbit",
+        "branch_left",
+        "branch_right",
+        "label_left",
+        "label_right"
+      ],
+      "animated_nontext_layers": [
+        "orbit",
+        "branch_left",
+        "branch_right",
+        "label_left",
+        "label_right"
+      ],
+      "entry": "K07 高亮带转成虚线轨道",
+      "performance": "灵芝主体遮罩上揭示，轨道缓慢旋转",
+      "exit": "左路径开始绘制",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "ambient_in",
+        "soft_whoosh"
+      ],
+      "content_approval": "approved",
+      "voice_render_policy": "allowed-for-k08-pilot",
+      "production_ready": true,
+      "id": "K08-S01",
+      "chapter_id": "K08",
+      "sequence_in_chapter": 1,
+      "transition_to": "K08-S02",
+      "timeline_order": 22
+    },
+    {
+      "duration_seconds": 2.5,
+      "narration_candidate": "第一类，是灵芝多糖。",
+      "subtitle": "01 灵芝多糖",
+      "recipe_id": "R04.central_split_orbit",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "灵芝多糖标签",
+      "visual_action": "左绿色路径完成，01 标签从路径末端回弹进入。",
+      "asset_ids": [
+        "asset.ganoderma.hero.v3",
+        "asset.icon.ingredients-neutral"
+      ],
+      "layers": [
+        "background",
+        "central_subject",
+        "orbit",
+        "branch_left",
+        "branch_right",
+        "label_left",
+        "label_right"
+      ],
+      "animated_nontext_layers": [
+        "orbit",
+        "branch_left",
+        "branch_right",
+        "label_left",
+        "label_right"
+      ],
+      "entry": "左路径逐段绘制",
+      "performance": "01 标签放大 1.045 后稳定，右路径保持未完成",
+      "exit": "右路径开始绘制",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "label_tick_01"
+      ],
+      "content_approval": "approved",
+      "voice_render_policy": "allowed-for-k08-pilot",
+      "production_ready": true,
+      "id": "K08-S02",
+      "chapter_id": "K08",
+      "sequence_in_chapter": 2,
+      "transition_to": "K08-S03",
+      "timeline_order": 23
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第二类，是灵芝三萜。",
+      "subtitle": "02 灵芝三萜",
+      "recipe_id": "R04.central_split_orbit",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "灵芝三萜与双标签完成",
+      "visual_action": "右金色路径完成，02 标签进入；两标签轮流聚焦后形成完成帧。",
+      "asset_ids": [
+        "asset.ganoderma.hero.v3",
+        "asset.icon.ingredients-neutral"
+      ],
+      "layers": [
+        "background",
+        "central_subject",
+        "orbit",
+        "branch_left",
+        "branch_right",
+        "label_left",
+        "label_right"
+      ],
+      "animated_nontext_layers": [
+        "orbit",
+        "branch_left",
+        "branch_right",
+        "label_left",
+        "label_right"
+      ],
+      "entry": "右路径逐段绘制",
+      "performance": "02 标签回弹；01、02 轮流聚焦；轨道低强度旋转",
+      "exit": "02 标签扩大为 K10 预备锚点，01 移入 K09",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw_gold",
+        "label_tick_02",
+        "focus_shift"
+      ],
+      "content_approval": "approved",
+      "voice_render_policy": "allowed-for-k08-pilot",
+      "production_ready": true,
+      "id": "K08-S03",
+      "chapter_id": "K08",
+      "sequence_in_chapter": 3,
+      "transition_to": "K09-S01",
+      "timeline_order": 24
+    },
+    {
+      "duration_seconds": 4.0,
+      "narration_candidate": "旧课件首先列出灵芝多糖与免疫系统机能的相关表述。",
+      "subtitle": "灵芝多糖 · 相关表述待审核",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "灵芝多糖节点",
+      "visual_action": "01 标签扩大为来源节点；未审核过程节点保持锁定，不显示具体细胞。",
+      "asset_ids": [
+        "asset.ganoderma.hero.v3",
+        "asset.icon.review-lock",
+        "asset.icon.immune-neutral"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "K08 的 01 标签扩大",
+      "performance": "光点到达锁定过程节点后停止",
+      "exit": "锁定节点移到下一镜左侧",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K09-S01",
+      "chapter_id": "K09",
+      "sequence_in_chapter": 1,
+      "transition_to": "K09-S02",
+      "timeline_order": 25
+    },
+    {
+      "duration_seconds": 4.0,
+      "narration_candidate": "关于血压和心血管疾病预防的表述，属于高风险内容。",
+      "subtitle": "血压／心血管表述 · 阻断",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "高风险锁定路径",
+      "visual_action": "路径在进入高风险区前断开并出现审核锁；不得展示血流改善或疾病预防结果。",
+      "asset_ids": [
+        "asset.icon.review-lock",
+        "asset.body.circulation-neutral.required"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "上一镜锁定节点展开为路径",
+      "performance": "光点到达断点，审核锁呼吸",
+      "exit": "路径折返形成审核清单轨迹",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "risk_stop_soft",
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K09-S02",
+      "chapter_id": "K09",
+      "sequence_in_chapter": 2,
+      "transition_to": "K09-S03",
+      "timeline_order": 26
+    },
+    {
+      "duration_seconds": 4.0,
+      "narration_candidate": "正式旁白与动画必须等待药师和合规终稿。",
+      "subtitle": "等待药师／合规终稿",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "审核状态收束",
+      "visual_action": "可保留、需改写、需删除三个状态节点依次出现，仅用于内部 animatic。",
+      "asset_ids": [
+        "asset.icon.review-lock",
+        "asset.bg.green-cream"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "折返路径分成三个审核节点",
+      "performance": "节点按保留→改写→删除依次聚焦",
+      "exit": "节点收束到 02 标签进入 K10",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "three_node_ticks",
+        "converge_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K09-S03",
+      "chapter_id": "K09",
+      "sequence_in_chapter": 3,
+      "transition_to": "K10-S01",
+      "timeline_order": 27
+    },
+    {
+      "duration_seconds": 4.0,
+      "narration_candidate": "旧课件列出灵芝三萜的多项作用描述。",
+      "subtitle": "灵芝三萜 · 多项表述待审核",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "灵芝三萜节点",
+      "visual_action": "02 标签扩大；作用节点以模糊锁定圆点呈现，不显示具体结论。",
+      "asset_ids": [
+        "asset.ganoderma.hero.v3",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "K09 收束点变成 02 标签",
+      "performance": "多个锁定圆点沿路径依次出现",
+      "exit": "高风险圆点聚到中央",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw_gold",
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K10-S01",
+      "chapter_id": "K10",
+      "sequence_in_chapter": 1,
+      "transition_to": "K10-S02",
+      "timeline_order": 28
+    },
+    {
+      "duration_seconds": 4.0,
+      "narration_candidate": "其中涉及抗肿瘤和免疫细胞机制的内容，不能直接进入正式片。",
+      "subtitle": "抗肿瘤／细胞机制 · 阻断",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "高风险机制断点",
+      "visual_action": "在高风险关键词进入画面前以审核锁替代，禁止出现肿瘤细胞消失动画。",
+      "asset_ids": [
+        "asset.icon.review-lock",
+        "asset.cell.diagram.required"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "锁定圆点聚合",
+      "performance": "路径在机制节点前停止，锁定标识轻呼吸",
+      "exit": "机制节点缩为待审核标签",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "risk_stop_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K10-S02",
+      "chapter_id": "K10",
+      "sequence_in_chapter": 2,
+      "transition_to": "K10-S03",
+      "timeline_order": 29
+    },
+    {
+      "duration_seconds": 4.0,
+      "narration_candidate": "只允许使用逐句批准后的终稿，不得自行补充靶点和因果。",
+      "subtitle": "逐句批准后再制作",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "逐句审核状态",
+      "visual_action": "三个原则节点：只用终稿、不补靶点、不升级因果；作为内部制作门禁。",
+      "asset_ids": [
+        "asset.icon.review-lock",
+        "asset.bg.green-cream"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "待审核标签分成三个原则节点",
+      "performance": "节点依次聚焦",
+      "exit": "两个成分标签同时返回进入 K11",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "three_node_ticks",
+        "converge_soft"
+      ],
+      "content_approval": "high-risk-medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K10-S03",
+      "chapter_id": "K10",
+      "sequence_in_chapter": 3,
+      "transition_to": "K11-S01",
+      "timeline_order": 30
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "审核后，两类成分知识将与睡眠方向建立对应。",
+      "subtitle": "成分 → 睡眠方向",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "睡眠对应路径",
+      "visual_action": "两成分标签位于左侧，批准后才绘制到睡眠方向的具体关系。",
+      "asset_ids": [
+        "asset.icon.ingredients-neutral",
+        "asset.icon.sleep-neutral",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "K10 的两标签返回左侧",
+      "performance": "路径先以锁定虚线预演",
+      "exit": "睡眠标签移至总览上方",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw_dashed",
+        "review_lock_soft"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K11-S01",
+      "chapter_id": "K11",
+      "sequence_in_chapter": 1,
+      "transition_to": "K11-S02",
+      "timeline_order": 31
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "同样的方法，用于说明肝脏方向。",
+      "subtitle": "成分 → 肝脏方向",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "肝脏对应路径",
+      "visual_action": "复用路径语法但改变节点位置，不复制整页布局。",
+      "asset_ids": [
+        "asset.icon.ingredients-neutral",
+        "asset.icon.liver-neutral",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "上一条路径退到背景",
+      "performance": "第二条锁定路径逐段绘制",
+      "exit": "肝脏标签移至总览左下",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw_dashed",
+        "focus_shift"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K11-S02",
+      "chapter_id": "K11",
+      "sequence_in_chapter": 2,
+      "transition_to": "K11-S03",
+      "timeline_order": 32
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "最后回到免疫方向，三条关系均以审核终稿为准。",
+      "subtitle": "成分 → 免疫方向",
+      "recipe_id": "R05.pathway_explain",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三方向关系总览",
+      "visual_action": "第三条路径完成后，三方向围绕两成分形成空间关系图。",
+      "asset_ids": [
+        "asset.icon.ingredients-neutral",
+        "asset.icon.immune-neutral",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "source_subject",
+        "path",
+        "process_node",
+        "moving_token",
+        "result_label"
+      ],
+      "animated_nontext_layers": [
+        "path",
+        "process_node",
+        "moving_token"
+      ],
+      "entry": "第三路径从右侧进入",
+      "performance": "三方向轮流聚焦，成分标签保持中心锚点",
+      "exit": "关系图折叠成产地地图轮廓进入 K12",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw_dashed",
+        "three_node_ticks"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K11-S03",
+      "chapter_id": "K11",
+      "sequence_in_chapter": 3,
+      "transition_to": "K12-S01",
+      "timeline_order": 33
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "第一项产品特点，从产地开始。",
+      "subtitle": "特点一 · 产地",
+      "recipe_id": "R06.evidence_zoom",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "大别山产地素材",
+      "visual_action": "授权产地图先展示环境，再把区域位置和赤灵芝原料建立关系。",
+      "asset_ids": [
+        "asset.origin.dabie.required",
+        "asset.ganoderma.hero.v3"
+      ],
+      "layers": [
+        "background",
+        "authorized_evidence",
+        "zoom_window",
+        "measure_line",
+        "data_label",
+        "source_caption"
+      ],
+      "animated_nontext_layers": [
+        "zoom_window",
+        "measure_line"
+      ],
+      "entry": "K11 关系图折叠成地图轮廓",
+      "performance": "地图轻推近，产地区域高亮",
+      "exit": "产地高亮缩成原料标签",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "map_open_soft",
+        "highlight_sweep"
+      ],
+      "content_approval": "evidence-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K12-S01",
+      "chapter_id": "K12",
+      "sequence_in_chapter": 1,
+      "transition_to": "K12-S02",
+      "timeline_order": 34
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "旧课件标注每一百克含多糖九点一三克。",
+      "subtitle": "9.13g／100g · 待证据",
+      "recipe_id": "R06.evidence_zoom",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "含量证据数字",
+      "visual_action": "检测报告或批准材料进入后才显示数字；当前以锁定数据槽表示。",
+      "asset_ids": [
+        "asset.evidence.polysaccharide.required",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "authorized_evidence",
+        "zoom_window",
+        "measure_line",
+        "data_label",
+        "source_caption"
+      ],
+      "animated_nontext_layers": [
+        "zoom_window",
+        "measure_line"
+      ],
+      "entry": "原料标签移动到数据槽旁",
+      "performance": "数字逐位出现并被证据框圈定",
+      "exit": "证据框移向三萜陈述",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "data_count_soft",
+        "evidence_tick"
+      ],
+      "content_approval": "evidence-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K12-S02",
+      "chapter_id": "K12",
+      "sequence_in_chapter": 2,
+      "transition_to": "K12-S03",
+      "timeline_order": 35
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "关于灵芝三萜含量的表述，也必须与可展示证据一致。",
+      "subtitle": "三萜含量表述 · 待证据",
+      "recipe_id": "R06.evidence_zoom",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三萜证据槽",
+      "visual_action": "不显示“含量高”结论，直到证据和展示范围批准。",
+      "asset_ids": [
+        "asset.evidence.triterpene.required",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "authorized_evidence",
+        "zoom_window",
+        "measure_line",
+        "data_label",
+        "source_caption"
+      ],
+      "animated_nontext_layers": [
+        "zoom_window",
+        "measure_line"
+      ],
+      "entry": "上一镜证据框滑入",
+      "performance": "三萜证据槽轻呼吸",
+      "exit": "两个证据槽沿折线变成工艺步骤进入 K13",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "review_lock_soft",
+        "process_bridge"
+      ],
+      "content_approval": "evidence-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K12-S03",
+      "chapter_id": "K12",
+      "sequence_in_chapter": 3,
+      "transition_to": "K13-S01",
+      "timeline_order": 36
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "第二项特点，是旧课件中的双重提取工艺。",
+      "subtitle": "特点二 · 双重提取",
+      "recipe_id": "R07.process_conveyor",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "灵芝原料与第一次提取",
+      "visual_action": "灵芝原料进入第一次提取容器，材料 token 沿路径移动。",
+      "asset_ids": [
+        "asset.ganoderma.hero.v3",
+        "asset.process.extraction.required"
+      ],
+      "layers": [
+        "background",
+        "raw_material",
+        "stage_01",
+        "stage_02",
+        "stage_03",
+        "moving_material",
+        "stage_label"
+      ],
+      "animated_nontext_layers": [
+        "moving_material",
+        "stage_01",
+        "stage_02",
+        "stage_03"
+      ],
+      "entry": "K12 折线路径延伸成工艺轴",
+      "performance": "原料 token 进入第一次提取节点",
+      "exit": "token 离开第一节点进入第二节点",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "process_start",
+        "liquid_move_soft"
+      ],
+      "content_approval": "evidence-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K13-S01",
+      "chapter_id": "K13",
+      "sequence_in_chapter": 1,
+      "transition_to": "K13-S02",
+      "timeline_order": 37
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "随后进入第二次浓缩提取。",
+      "subtitle": "第二次浓缩提取",
+      "recipe_id": "R07.process_conveyor",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "第二次提取节点",
+      "visual_action": "第二节点放大成为唯一焦点，其他阶段降低透明度。",
+      "asset_ids": [
+        "asset.process.extraction.required",
+        "asset.evidence.process.required"
+      ],
+      "layers": [
+        "background",
+        "raw_material",
+        "stage_01",
+        "stage_02",
+        "stage_03",
+        "moving_material",
+        "stage_label"
+      ],
+      "animated_nontext_layers": [
+        "moving_material",
+        "stage_01",
+        "stage_02",
+        "stage_03"
+      ],
+      "entry": "材料 token 从第一节点抵达第二节点",
+      "performance": "第二节点局部流动，证据角标保持锁定",
+      "exit": "token 离开第二节点",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "liquid_move_soft",
+        "stage_focus"
+      ],
+      "content_approval": "evidence-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K13-S02",
+      "chapter_id": "K13",
+      "sequence_in_chapter": 2,
+      "transition_to": "K13-S03",
+      "timeline_order": 38
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "工艺、专利和吸收相关表述，都必须与批准证据一致。",
+      "subtitle": "工艺证据通过后使用",
+      "recipe_id": "R07.process_conveyor",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "胶囊成形与证据锁",
+      "visual_action": "材料 token 进入胶囊成形；专利、质地纯、吸收好仍显示锁定状态。",
+      "asset_ids": [
+        "asset.process.extraction.required",
+        "asset.evidence.process.required",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "raw_material",
+        "stage_01",
+        "stage_02",
+        "stage_03",
+        "moving_material",
+        "stage_label"
+      ],
+      "animated_nontext_layers": [
+        "moving_material",
+        "stage_01",
+        "stage_02",
+        "stage_03"
+      ],
+      "entry": "token 进入成形节点",
+      "performance": "胶囊轮廓闭合，审核锁依次出现",
+      "exit": "胶囊轮廓移动到 K14 质量检查位",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "capsule_form_soft",
+        "review_lock_soft"
+      ],
+      "content_approval": "evidence-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K13-S03",
+      "chapter_id": "K13",
+      "sequence_in_chapter": 3,
+      "transition_to": "K14-S01",
+      "timeline_order": 39
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第三项特点，回到生产主体。",
+      "subtitle": "特点三 · 生产",
+      "recipe_id": "R06.evidence_zoom",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "授权工厂素材",
+      "visual_action": "胶囊轮廓落入真实授权生产线画面；没有授权时只保留工厂空槽。",
+      "asset_ids": [
+        "asset.factory.kekang.required",
+        "asset.process.extraction.required"
+      ],
+      "layers": [
+        "background",
+        "authorized_evidence",
+        "zoom_window",
+        "measure_line",
+        "data_label",
+        "source_caption"
+      ],
+      "animated_nontext_layers": [
+        "zoom_window",
+        "measure_line"
+      ],
+      "entry": "K13 胶囊轮廓匹配切入生产线",
+      "performance": "生产线局部移动，主体名称短标签出现",
+      "exit": "镜头推近质量检查区域",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "factory_roomtone",
+        "soft_whoosh"
+      ],
+      "content_approval": "evidence-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K14-S01",
+      "chapter_id": "K14",
+      "sequence_in_chapter": 1,
+      "transition_to": "K14-S02",
+      "timeline_order": 40
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "GMP 和生产技术信息，需要使用当前有效证据。",
+      "subtitle": "GMP／生产技术 · 待证据",
+      "recipe_id": "R06.evidence_zoom",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "GMP 与生产证据",
+      "visual_action": "只对授权证据做局部放大，不制作通用证书图。",
+      "asset_ids": [
+        "asset.evidence.gmp.required",
+        "asset.factory.kekang.required"
+      ],
+      "layers": [
+        "background",
+        "authorized_evidence",
+        "zoom_window",
+        "measure_line",
+        "data_label",
+        "source_caption"
+      ],
+      "animated_nontext_layers": [
+        "zoom_window",
+        "measure_line"
+      ],
+      "entry": "质量检查区域变成证据放大框",
+      "performance": "放大框依次移动到有效信息位置",
+      "exit": "证据框收成质量标签",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "zoom_soft",
+        "evidence_tick"
+      ],
+      "content_approval": "evidence-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K14-S02",
+      "chapter_id": "K14",
+      "sequence_in_chapter": 2,
+      "transition_to": "K14-S03",
+      "timeline_order": 41
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "最终措辞与素材范围，以公司批准内容为准。",
+      "subtitle": "公司批准后使用",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "生产、质量、封装三节点",
+      "visual_action": "三个生产节点沿短路径依次聚焦后收束为产品轮廓。",
+      "asset_ids": [
+        "asset.factory.kekang.required",
+        "asset.evidence.gmp.required",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "质量标签分成三个节点",
+      "performance": "生产→质量→封装依次聚焦",
+      "exit": "产品轮廓移动到 K15 的组合中心",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "three_node_ticks",
+        "converge_soft"
+      ],
+      "content_approval": "evidence-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K14-S03",
+      "chapter_id": "K14",
+      "sequence_in_chapter": 3,
+      "transition_to": "K15-S01",
+      "timeline_order": 42
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "旧课件给出了三套联合应用场景。",
+      "subtitle": "三套联合应用",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三个组合入口",
+      "visual_action": "三个问题节点沿弧线出现，不展示商品表格。",
+      "asset_ids": [
+        "asset.icon.sleep-neutral",
+        "asset.icon.liver-neutral",
+        "asset.icon.immune-neutral"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "K14 产品轮廓成为组合中心",
+      "performance": "三个问题节点按 01→02→03 出现",
+      "exit": "01 节点扩大进入第一组合",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "three_node_ticks",
+        "focus_shift"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K15-S01",
+      "chapter_id": "K15",
+      "sequence_in_chapter": 1,
+      "transition_to": "K15-S02",
+      "timeline_order": 43
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "分别对应失眠、肝功能异常和免疫力低下。",
+      "subtitle": "失眠 · 肝功能异常 · 免疫力低下",
+      "recipe_id": "R03.multi_node_focus",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三场景标签",
+      "visual_action": "三场景用人物／器官方向短动画依次成为主体，年龄仅用于视觉覆盖。",
+      "asset_ids": [
+        "asset.audience.young.insomnia",
+        "asset.audience.middle.alcohol",
+        "asset.audience.elder.low-immunity"
+      ],
+      "layers": [
+        "background",
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "animated_nontext_layers": [
+        "path_arc",
+        "node_01",
+        "node_02",
+        "node_03",
+        "focus_indicator"
+      ],
+      "entry": "01 人物进入",
+      "performance": "焦点从 01 切到 02、03",
+      "exit": "三人物缩入各自商品组合轨迹",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "focus_shift",
+        "three_node_ticks"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K15-S02",
+      "chapter_id": "K15",
+      "sequence_in_chapter": 2,
+      "transition_to": "K15-S03",
+      "timeline_order": 44
+    },
+    {
+      "duration_seconds": 3.5,
+      "narration_candidate": "组合及适用情境必须由药师和合规逐项确认。",
+      "subtitle": "逐项审核后使用",
+      "recipe_id": "R08.product_pair_relation",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三套组合锁定轮廓",
+      "visual_action": "三套商品组合仅以包装空槽轮廓快速预演，不显示品牌仿图。",
+      "asset_ids": [
+        "asset.packshot.kekang.required",
+        "asset.packshot.guweisu.required",
+        "asset.packshot.hugan.required",
+        "asset.packshot.transfer-factor.required"
+      ],
+      "layers": [
+        "context_background",
+        "problem_subject",
+        "product_a",
+        "relation_symbol",
+        "product_b",
+        "approved_role_label",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "problem_subject",
+        "product_a",
+        "product_b",
+        "relation_symbol"
+      ],
+      "entry": "三条轨迹拉出商品空槽",
+      "performance": "三套空槽轮流聚焦并显示审核锁",
+      "exit": "第一组合空槽移到前景进入 K16",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "product_slot_in",
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K15-S03",
+      "chapter_id": "K15",
+      "sequence_in_chapter": 3,
+      "transition_to": "K16-S01",
+      "timeline_order": 45
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第一套方案对应失眠场景。",
+      "subtitle": "方案一 · 失眠",
+      "recipe_id": "R08.product_pair_relation",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "失眠问题与两商品空槽",
+      "visual_action": "先演入睡困难的短动作，再让谷维素片与可可康包装空槽从两侧进入。",
+      "asset_ids": [
+        "asset.scene.sleep-night.required",
+        "asset.packshot.guweisu.required",
+        "asset.packshot.kekang.required"
+      ],
+      "layers": [
+        "context_background",
+        "problem_subject",
+        "product_a",
+        "relation_symbol",
+        "product_b",
+        "approved_role_label",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "problem_subject",
+        "product_a",
+        "product_b",
+        "relation_symbol"
+      ],
+      "entry": "K15 第一组合空槽扩大",
+      "performance": "问题人物先动，商品 A／B 依次进入",
+      "exit": "关系符号生成",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "night_ambience",
+        "product_in_left",
+        "product_in_right"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K16-S01",
+      "chapter_id": "K16",
+      "sequence_in_chapter": 1,
+      "transition_to": "K16-S02",
+      "timeline_order": 46
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "具体组合逻辑和注意事项，以批准终稿为准。",
+      "subtitle": "组合逻辑 · 待审核",
+      "recipe_id": "R08.product_pair_relation",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "第一组合关系与注意事项",
+      "visual_action": "批准后只显示各自一个短作用标签；‘长期容易依赖’默认锁定。",
+      "asset_ids": [
+        "asset.packshot.guweisu.required",
+        "asset.packshot.kekang.required",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "context_background",
+        "problem_subject",
+        "product_a",
+        "relation_symbol",
+        "product_b",
+        "approved_role_label",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "problem_subject",
+        "product_a",
+        "product_b",
+        "relation_symbol"
+      ],
+      "entry": "关系符号稳定",
+      "performance": "两个作用标签依次出现，注意事项最后进入",
+      "exit": "第一组合沿深度轴后退",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "relation_connect",
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K16-S02",
+      "chapter_id": "K16",
+      "sequence_in_chapter": 2,
+      "transition_to": "K16-S03",
+      "timeline_order": 47
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第二套方案对应肝功能异常场景。",
+      "subtitle": "方案二 · 肝功能异常",
+      "recipe_id": "R08.product_pair_relation",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "肝脏问题与两商品空槽",
+      "visual_action": "先建立肝脏方向，再让护肝片与可可康包装空槽进入。",
+      "asset_ids": [
+        "asset.icon.liver-neutral",
+        "asset.packshot.hugan.required",
+        "asset.packshot.kekang.required"
+      ],
+      "layers": [
+        "context_background",
+        "problem_subject",
+        "product_a",
+        "relation_symbol",
+        "product_b",
+        "approved_role_label",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "problem_subject",
+        "product_a",
+        "product_b",
+        "relation_symbol"
+      ],
+      "entry": "第一组合退后，暖金路径拉出第二场景",
+      "performance": "肝脏方向先聚焦，商品 A／B 依次进入",
+      "exit": "关系符号生成",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw_gold",
+        "product_in_left",
+        "product_in_right"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K16-S03",
+      "chapter_id": "K16",
+      "sequence_in_chapter": 3,
+      "transition_to": "K16-S04",
+      "timeline_order": 48
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "药品作用和联合依据，必须逐句审核。",
+      "subtitle": "药品作用／联合依据 · 待审核",
+      "recipe_id": "R08.product_pair_relation",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "第二组合关系与证据",
+      "visual_action": "不显示降低转氨酶、解毒等结论，直到批准终稿和依据齐全。",
+      "asset_ids": [
+        "asset.packshot.hugan.required",
+        "asset.packshot.kekang.required",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "context_background",
+        "problem_subject",
+        "product_a",
+        "relation_symbol",
+        "product_b",
+        "approved_role_label",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "problem_subject",
+        "product_a",
+        "product_b",
+        "relation_symbol"
+      ],
+      "entry": "关系符号稳定",
+      "performance": "证据锁位于两个作用标签之间",
+      "exit": "第二组合沿深度轴后退",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "relation_connect",
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K16-S04",
+      "chapter_id": "K16",
+      "sequence_in_chapter": 4,
+      "transition_to": "K16-S05",
+      "timeline_order": 49
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "第三套方案对应免疫力低下场景。",
+      "subtitle": "方案三 · 免疫力低下",
+      "recipe_id": "R08.product_pair_relation",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "免疫问题与两商品空槽",
+      "visual_action": "先建立免疫方向，再让转移因子口服溶液与可可康包装空槽进入。",
+      "asset_ids": [
+        "asset.icon.immune-neutral",
+        "asset.packshot.transfer-factor.required",
+        "asset.packshot.kekang.required"
+      ],
+      "layers": [
+        "context_background",
+        "problem_subject",
+        "product_a",
+        "relation_symbol",
+        "product_b",
+        "approved_role_label",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "problem_subject",
+        "product_a",
+        "product_b",
+        "relation_symbol"
+      ],
+      "entry": "第二组合退后，青绿路径拉出第三场景",
+      "performance": "免疫方向先聚焦，商品 A／B 依次进入",
+      "exit": "关系符号生成",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "path_draw",
+        "product_in_left",
+        "product_in_right"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K16-S05",
+      "chapter_id": "K16",
+      "sequence_in_chapter": 5,
+      "transition_to": "K16-S06",
+      "timeline_order": 50
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "全部联合应用内容通过审核后，才能进入正式培训片。",
+      "subtitle": "全部方案审核后使用",
+      "recipe_id": "R08.product_pair_relation",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "三组合收束与审核门禁",
+      "visual_action": "第三组合关系保持，前两组合从背景返回，三套同时缩成导航节点而非表格。",
+      "asset_ids": [
+        "asset.packshot.guweisu.required",
+        "asset.packshot.hugan.required",
+        "asset.packshot.transfer-factor.required",
+        "asset.packshot.kekang.required"
+      ],
+      "layers": [
+        "context_background",
+        "problem_subject",
+        "product_a",
+        "relation_symbol",
+        "product_b",
+        "approved_role_label",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "problem_subject",
+        "product_a",
+        "product_b",
+        "relation_symbol"
+      ],
+      "entry": "第三关系符号稳定",
+      "performance": "三组合沿深度轴汇聚，审核锁覆盖中心",
+      "exit": "审核锁变形为 K17 月历轮廓",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "converge_soft",
+        "review_lock_soft"
+      ],
+      "content_approval": "high-risk-medical-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K16-S06",
+      "chapter_id": "K16",
+      "sequence_in_chapter": 6,
+      "transition_to": "K17-S01",
+      "timeline_order": 51
+    },
+    {
+      "duration_seconds": 2.8,
+      "narration_candidate": "旧课件以一个月作为一个服用周期。",
+      "subtitle": "1 个月 · 1 个周期",
+      "recipe_id": "R09.calendar_progression",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "第一个月历节点",
+      "visual_action": "月历从审核锁轮廓中展开，第一个月高亮。",
+      "asset_ids": [
+        "asset.calendar.code",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "calendar",
+        "month_01",
+        "month_02",
+        "month_03",
+        "time_path",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "calendar",
+        "month_01",
+        "month_02",
+        "month_03",
+        "time_path"
+      ],
+      "entry": "K16 审核锁变成月历边框",
+      "performance": "日期格按周轻微推进",
+      "exit": "时间路径从第一个月向右延伸",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "calendar_open",
+        "page_flip_soft"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K17-S01",
+      "chapter_id": "K17",
+      "sequence_in_chapter": 1,
+      "transition_to": "K17-S02",
+      "timeline_order": 52
+    },
+    {
+      "duration_seconds": 2.8,
+      "narration_candidate": "旧课件建议连续服用两到三个月。",
+      "subtitle": "连续 2–3 个月 · 待审核",
+      "recipe_id": "R09.calendar_progression",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "第二、第三个月历节点",
+      "visual_action": "第二、第三个月沿时间路径依次进入，当前月高亮。",
+      "asset_ids": [
+        "asset.calendar.code",
+        "asset.icon.review-lock"
+      ],
+      "layers": [
+        "background",
+        "calendar",
+        "month_01",
+        "month_02",
+        "month_03",
+        "time_path",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "calendar",
+        "month_01",
+        "month_02",
+        "month_03",
+        "time_path"
+      ],
+      "entry": "时间路径绘制",
+      "performance": "第 2 月、第 3 月依次翻页聚焦",
+      "exit": "第三个月移动到注意事项位置",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "page_flip_soft",
+        "page_flip_soft"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K17-S02",
+      "chapter_id": "K17",
+      "sequence_in_chapter": 2,
+      "transition_to": "K17-S03",
+      "timeline_order": 53
+    },
+    {
+      "duration_seconds": 2.9,
+      "narration_candidate": "周期和注意事项，必须与说明书或审核终稿一致。",
+      "subtitle": "以说明书／审核终稿为准",
+      "recipe_id": "R09.calendar_progression",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "周期注意事项",
+      "visual_action": "说明书证据槽与月历并置；不新增剂量和频次。",
+      "asset_ids": [
+        "asset.calendar.code",
+        "asset.evidence.product-label.required"
+      ],
+      "layers": [
+        "background",
+        "calendar",
+        "month_01",
+        "month_02",
+        "month_03",
+        "time_path",
+        "caution_label"
+      ],
+      "animated_nontext_layers": [
+        "calendar",
+        "month_01",
+        "month_02",
+        "month_03",
+        "time_path"
+      ],
+      "entry": "第三个月缩小",
+      "performance": "说明书证据槽进入并高亮",
+      "exit": "时间路径弯成 K18 总结环",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "evidence_tick",
+        "summary_bridge"
+      ],
+      "content_approval": "medical-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K17-S03",
+      "chapter_id": "K17",
+      "sequence_in_chapter": 3,
+      "transition_to": "K18-S01",
+      "timeline_order": 54
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "最后，从成分和产品方向开始回顾。",
+      "subtitle": "成分 · 产品方向",
+      "recipe_id": "R10.summary_convergence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "前两个总结节点",
+      "visual_action": "K17 时间路径弯成总结环；成分、产品方向两个节点依次返回。",
+      "asset_ids": [
+        "asset.ganoderma.hero.v3",
+        "asset.icon.ingredients-neutral",
+        "asset.icon.direction-neutral"
+      ],
+      "layers": [
+        "background",
+        "central_subject",
+        "summary_path",
+        "summary_nodes",
+        "brand_endframe",
+        "internal_label"
+      ],
+      "animated_nontext_layers": [
+        "summary_path",
+        "summary_nodes",
+        "central_subject"
+      ],
+      "entry": "时间路径闭合成环",
+      "performance": "两个节点按课程顺序进入并聚焦",
+      "exit": "总结环旋转到下两个空位",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "summary_bridge",
+        "label_tick_01",
+        "label_tick_02"
+      ],
+      "content_approval": "content-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K18-S01",
+      "chapter_id": "K18",
+      "sequence_in_chapter": 1,
+      "transition_to": "K18-S02",
+      "timeline_order": 55
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "再回顾人群和产品特点。",
+      "subtitle": "人群 · 产品特点",
+      "recipe_id": "R10.summary_convergence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "中间两个总结节点",
+      "visual_action": "人群、特点两个节点从前述镜头位置飞回总结环。",
+      "asset_ids": [
+        "asset.audience.young.insomnia",
+        "asset.icon.feature-neutral"
+      ],
+      "layers": [
+        "background",
+        "central_subject",
+        "summary_path",
+        "summary_nodes",
+        "brand_endframe",
+        "internal_label"
+      ],
+      "animated_nontext_layers": [
+        "summary_path",
+        "summary_nodes",
+        "central_subject"
+      ],
+      "entry": "前两节点退到环上",
+      "performance": "人群、特点依次进入并聚焦",
+      "exit": "总结环旋转到最后两个空位",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "focus_shift",
+        "label_tick_03"
+      ],
+      "content_approval": "content-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K18-S02",
+      "chapter_id": "K18",
+      "sequence_in_chapter": 2,
+      "transition_to": "K18-S03",
+      "timeline_order": 56
+    },
+    {
+      "duration_seconds": 2.5,
+      "narration_candidate": "最后是联合应用和服用周期。",
+      "subtitle": "联合应用 · 服用周期",
+      "recipe_id": "R10.summary_convergence",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "最后两个总结节点",
+      "visual_action": "联合应用、周期节点进入；只引用前镜已批准的短标签。",
+      "asset_ids": [
+        "asset.icon.use-neutral",
+        "asset.calendar.code"
+      ],
+      "layers": [
+        "background",
+        "central_subject",
+        "summary_path",
+        "summary_nodes",
+        "brand_endframe",
+        "internal_label"
+      ],
+      "animated_nontext_layers": [
+        "summary_path",
+        "summary_nodes",
+        "central_subject"
+      ],
+      "entry": "前四节点保持环形位置",
+      "performance": "最后两节点进入并轮流聚焦",
+      "exit": "六节点沿路径向中央收束",
+      "camera_motion": "slow_push_1.5_percent",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "label_tick_04",
+        "label_tick_05",
+        "converge_soft"
+      ],
+      "content_approval": "content-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K18-S03",
+      "chapter_id": "K18",
+      "sequence_in_chapter": 3,
+      "transition_to": "K18-S04",
+      "timeline_order": 57
+    },
+    {
+      "duration_seconds": 3.0,
+      "narration_candidate": "以上内容全部通过审核后，完成本次内部培训。",
+      "subtitle": "内部培训 · 审核后使用",
+      "recipe_id": "R01.hero_reveal",
+      "frame_mode": "continuous_microshot",
+      "focal_subject": "产品与品牌封底",
+      "visual_action": "六节点收束到授权真包装；品牌 Logo 与内部培训声明最后进入。",
+      "asset_ids": [
+        "asset.packshot.kekang.required",
+        "asset.logo.dashenlin.required",
+        "asset.bg.green-cream"
+      ],
+      "layers": [
+        "background",
+        "environment_shape",
+        "hero_subject",
+        "title",
+        "short_label",
+        "focus_halo"
+      ],
+      "animated_nontext_layers": [
+        "hero_subject",
+        "focus_halo"
+      ],
+      "entry": "六节点汇聚成产品轮廓",
+      "performance": "真包装稳定，Logo 与声明依次出现",
+      "exit": "音乐尾音收束，末帧稳定 1 秒",
+      "camera_motion": "stable_with_local_halo_motion",
+      "static_hold_max_seconds": 2.0,
+      "sfx_events": [
+        "converge_soft",
+        "brand_end_chime"
+      ],
+      "content_approval": "content-and-asset-blocked",
+      "voice_render_policy": "guide-voice-only-until-approved",
+      "production_ready": false,
+      "id": "K18-S04",
+      "chapter_id": "K18",
+      "sequence_in_chapter": 4,
+      "transition_to": "END",
+      "timeline_order": 58
+    }
+  ],
+  "total_duration": 186.8,
+  "meta": {
+    "schema_version": "2.0",
+    "project_id": "validation.kekang-green-gold-sample-v1",
+    "theme_id": "theme.product.kekang-lingzhi-capsule",
+    "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+    "voice_id": "voice.reference-pharmacist-qwen-v1",
+    "production_mode": "microshot-contract",
+    "chapter_is_not_page": true,
+    "global_constraints": {
+      "canvas": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 30
+      },
+      "target_duration_seconds": [
+        175,
+        215
+      ],
+      "chapter_microshot_count": [
+        2,
+        6
+      ],
+      "microshot_duration_seconds": [
+        1.8,
+        6.5
+      ],
+      "max_static_hold_seconds": 2.2,
+      "min_layers_per_microshot": 4,
+      "min_animated_nontext_layers": 1,
+      "forbidden_frame_modes": [
+        "chapter_page",
+        "static_slide",
+        "ppt_page",
+        "fullpage_card"
+      ],
+      "forbidden_transitions": [
+        "repeated_fullpage_fade",
+        "static_page_cut",
+        "whole_frame_push_only"
+      ]
+    },
+    "summary": {
+      "chapter_count": 18,
+      "microshot_count": 58,
+      "total_duration_seconds": 186.8,
+      "production_ready_microshots": 3,
+      "blocked_microshots": 55
+    }
+  }
+}

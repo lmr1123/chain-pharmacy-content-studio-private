@@ -1,0 +1,59 @@
+{
+  "asset_series_id": "asset-series.presenter.wind-heat-pharmacist-v2",
+  "component_id": "component.presenter.bound-pharmacist",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "status": "technical-qa-passed",
+  "runtime_root": "/wind-heat-presenter-v2",
+  "source_policy": "project-generated-character-assets-only; no reference-video frame pixels",
+  "body_assets": [
+    {
+      "pose": "palm",
+      "file": "pharmacist-palm-mouthless.png",
+      "size": [334, 941],
+      "sha256": "fc7a855eb369e4bd4aafd01a9364abfab7032f39ed67a5e37433d6d60b91254",
+      "source_series": "poc/reference-replica/assets/generated/poses/palm.png",
+      "derivation": "mouthless production derivative of the project-generated pose"
+    },
+    {
+      "pose": "openArms",
+      "file": "pharmacist-open-arms-mouthless.png",
+      "size": [415, 941],
+      "sha256": "11c859607144d3fa3b147b8c5215e0e859e2ba6c44277e925e07639ad2ae1d8f",
+      "source_series": "poc/reference-replica/assets/generated/poses/open-arms.png",
+      "derivation": "mouthless production derivative of the project-generated pose"
+    },
+    {
+      "pose": "point",
+      "file": "pharmacist-point-mouthless.png",
+      "size": [405, 941],
+      "sha256": "ee215bc02ff2a5a860dbb7959f92b03d7ea6758251d84531839b7f9510db47c4",
+      "source_series": "poc/reference-replica/assets/generated/poses/point.png",
+      "derivation": "mouthless production derivative of the project-generated pose"
+    },
+    {
+      "pose": "megaphone",
+      "file": "pharmacist-megaphone-mouthless.png",
+      "size": [462, 941],
+      "sha256": "61f7ec20ce160971f50ea528ff1c137bec7ff7d7480fa4edf2cf3fb79e9aec79",
+      "source_series": "poc/reference-replica/assets/generated/poses/megaphone.png",
+      "derivation": "mouthless production derivative of the project-generated pose"
+    }
+  ],
+  "mouth_assets": [
+    "mouth-closed-vector.svg",
+    "mouth-small-vector.svg",
+    "mouth-o-vector.svg",
+    "mouth-wide-vector.svg"
+  ],
+  "mouth_palette": {
+    "version": "soft-pink-v3",
+    "line": "#d58d98",
+    "cavity": "#dfa0a9",
+    "tongue": "#f8c7cc",
+    "teeth": "#fffaf7",
+    "max_stroke_width": 1.35,
+    "reason": "user-corrected low-contrast light-pink palette that blends with the presenter's soft facial rendering"
+  },
+  "rig_contract": "poc/gold-sample/src/wind-heat-production-contract.ts#PRESENTER_RIG",
+  "restriction": "The runtime series is valid for the internal wind-heat template. A new presenter identity requires a new generated series and fresh normalized anchors."
+}

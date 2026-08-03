@@ -1,0 +1,119 @@
+{
+  "template_id": "template.product-training-faithful-v1",
+  "template_type": "video-courseware",
+  "status": "user-approved",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "canonical_artifact": "product-training-reference-full-script-system-v3-final-exact.mp4",
+  "canonical_confirmed_by": "user",
+  "canonical_confirmed_at": "2026-07-30",
+  "source_projects": [
+    "poc/gold-sample/src/product-training-opening-project.tsx",
+    "poc/gold-sample/src/product-training-faithful-project.tsx",
+    "poc/gold-sample/src/product-training-brand-overview-project.tsx",
+    "poc/gold-sample/src/product-training-efficacy-project.tsx",
+    "poc/gold-sample/src/product-training-features-project.tsx",
+    "poc/gold-sample/src/product-training-audience-project.tsx",
+    "poc/gold-sample/src/product-training-combination-project.tsx",
+    "poc/gold-sample/src/product-training-summary-project.tsx",
+    "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx"
+  ],
+  "business_input": {
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "blank_source": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
+    "example_source": "outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx",
+    "sync_script": "scripts/sync_settled_template_business_words.py"
+  },
+  "validation_root": "production-library/validation/video",
+  "seed_theme_id": "theme.product.coenzyme-q10",
+  "extensions": {
+    "dashenlin_brand_adaptation_v1": {
+      "status": "user-approved",
+      "confirmed_by": "user",
+      "confirmed_at": "2026-07-30",
+      "role": "同模板品牌壳扩展金样：厂商案例壳 → 大参林母版 + 克隆旁白 + 药师口型 + 分享封面",
+      "chrome_component": "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx",
+      "voice": {
+        "script": "scripts/generate_cloned_product_all_narration.py",
+        "version": "v5-smooth",
+        "policy": "decision.semantic-block-voice-speed-gate",
+        "lesson": "lesson.voice-continuous-segment-smooth"
+      },
+      "presenter_mouth": {
+        "lesson": "lesson.mouth-anchor-from-diff-not-guess",
+        "anchors": {
+          "palm": [
+            0.548,
+            0.391
+          ],
+          "point": [
+            0.528,
+            0.418
+          ]
+        }
+      },
+      "cover": {
+        "png": "production-library/validation/video/cover-q10-dashenlin.png",
+        "jpg": "production-library/validation/video/cover-q10-dashenlin.jpg",
+        "jpg_1280": "production-library/validation/video/cover-q10-dashenlin-1280.jpg",
+        "note": "右上角品牌 Logo 安全区，勿被声明竖条或人物遮挡"
+      },
+      "preview": "production-library/validation/video/review-q10-dashenlin.html",
+      "segment_renders": [
+        "production-library/validation/video/product-training-opening-replica.mp4",
+        "production-library/validation/video/product-training-brand-overview-replica.mp4",
+        "production-library/validation/video/product-training-faithful-replica.mp4",
+        "production-library/validation/video/product-training-efficacy-replica.mp4",
+        "production-library/validation/video/product-training-features-replica.mp4",
+        "production-library/validation/video/product-training-audience-replica.mp4",
+        "production-library/validation/video/product-training-combination-replica.mp4",
+        "production-library/validation/video/product-training-summary-replica.mp4"
+      ],
+      "reusable_for": "同 style-pack.reference-product-blue-v1 的新商品主题：换审核文案 + 授权包装/Logo，复用 chrome、voice v5-smooth、MOUTH_RIG、封面版式"
+    }
+  },
+  "notes": "canonical 仍为 156s 完整复刻终版。2026-07-30 用户确认大参林品牌扩展（角标/克隆声/口型/封面）可沉淀为同模板可复用扩展层；真包装与医学审核文案仍须业务提供后方可 production-validated 批量。",
+  "preview": {
+    "cover": "preview/cover.png",
+    "key_frames": [
+      "preview/key-01.png",
+      "preview/key-02.png",
+      "preview/key-03.png",
+      "preview/key-04.png",
+      "preview/key-05.png",
+      "preview/key-06.png"
+    ],
+    "key_frame_labels_zh": [
+      "开场",
+      "品牌/品类",
+      "核心功效",
+      "产品特点",
+      "适宜人群",
+      "联合用药"
+    ],
+    "gallery_title_zh": "商品培训视频 · 辅酶 Q10 金样",
+    "one_liner": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结",
+    "name_zh": "商品培训视频（如辅酶 Q10）",
+    "category_zh": "商品培训",
+    "outputs": [
+      "MP4 培训视频"
+    ],
+    "production_ready": true,
+    "status_label": "已签样 · 可换主题量产",
+    "online_url": null
+  },
+  "business_catalog": {
+    "name_zh": "商品培训视频（如辅酶 Q10）",
+    "one_liner": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结",
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "framework_guide": "../../框架填写说明.md"
+  },
+  "voice": {
+    "voice_id": "voice.reference-pharmacist-qwen-v1",
+    "engine": "Qwen3-TTS-local-clone",
+    "pace_policy": "v5-smooth",
+    "forbid_system_tts": true
+  },
+  "voice_pack_id": "voice.reference-pharmacist-qwen-v1"
+}

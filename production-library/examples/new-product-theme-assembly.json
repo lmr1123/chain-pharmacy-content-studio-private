@@ -1,0 +1,40 @@
+{
+  "project_id": "product.example.training.v1",
+  "purpose": "跨主题快速装配验证，不代表具体商品内容或合规结论",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "content_lock": "approved-script-required",
+  "required_company_assets": ["authorized_product_packshot", "approved_logo"],
+  "reuse_plan": [
+    {
+      "scene_type": "product_hero",
+      "reuse": [
+        "component.master.reference-medical-tech",
+        "component.presenter.bound-pharmacist",
+        "component.subtitle.reference-bottom",
+        "effect.background.four-way-current-v1"
+      ],
+      "replace_slots": ["product_name", "packshot", "approved_claim"]
+    },
+    {
+      "scene_type": "benefit_overview",
+      "reuse": [
+        "component.card.advice-row",
+        "effect.border.rounded-trace-v1"
+      ],
+      "replace_slots": ["benefit_title", "benefit_explanation", "approved_icon"]
+    },
+    {
+      "scene_type": "evidence_cards",
+      "reuse": [
+        "effect.card.reveal-back-v1",
+        "effect.border.rounded-trace-v1"
+      ],
+      "replace_slots": ["evidence_title", "approved_evidence_image", "source_note"]
+    }
+  ],
+  "blocked_until": [
+    "商品培训模板完成视觉重签样",
+    "公司提供授权商品包装图与审核稿"
+  ]
+}

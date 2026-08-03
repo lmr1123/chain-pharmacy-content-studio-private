@@ -1,0 +1,4 @@
+interface:
+  display_name: "药店课件模板复刻"
+  short_description: "查询并复用药店培训视频课件的模板、风格、组件、特效与经验"
+  default_prompt: "Use $pharmacy-template-replication to assemble an approved training topic from the reusable production library."

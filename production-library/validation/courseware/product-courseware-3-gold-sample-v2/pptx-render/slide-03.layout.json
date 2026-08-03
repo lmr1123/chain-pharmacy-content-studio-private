@@ -1,0 +1,1947 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/d1flah",
+    "id": "d1flah",
+    "slide": 3,
+    "layoutId": "592708aa-24ee-4ec7-8e71-60e10c609c4d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "334fa3fe-1482-42f6-afa4-c017b7ba5340",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "592708aa-24ee-4ec7-8e71-60e10c609c4d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "334fa3fe-1482-42f6-afa4-c017b7ba5340",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "334fa3fe-1482-42f6-afa4-c017b7ba5340",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zydo3etw",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "白色丝绸课件背景",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "f9a0d7e6-d395-4894-bce8-d7179a2aa065",
+        "contentType": "image/png",
+        "byteLength": 1527552
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pwjqlw7m",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "rgba(255, 255, 255, 0.08)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ova9cb6h",
+      "id": "3",
+      "bbox": [
+        410,
+        67,
+        64,
+        53
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#C96E00",
+      "lineColor": "#C96E00",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fqh8fmpk",
+      "id": "4",
+      "bbox": [
+        806,
+        67,
+        64,
+        53
+      ],
+      "geometry": "parallelogram",
+      "fillColor": "#C96E00",
+      "lineColor": "#C96E00",
+      "lineWidth": 1
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ep876hoz",
+      "id": "5",
+      "name": "chapter-ribbon",
+      "bbox": [
+        440,
+        54,
+        400,
+        73
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#ED8A00",
+      "lineColor": "#C96E00",
+      "lineWidth": 3
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1szqhw7q",
+      "id": "6",
+      "name": "chapter-title",
+      "bbox": [
+        468,
+        63,
+        344,
+        52
+      ],
+      "geometry": "rect",
+      "text": "一、三大核心功效",
+      "textPreview": "一、三大核心功效",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一、三大核心功效"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一、三大核心功效",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一、三大核心功效",
+              "fontSize": 34,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/grqp8r65",
+      "id": "7",
+      "name": "nav-1",
+      "bbox": [
+        128,
+        158,
+        282,
+        60
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#C8C8C8",
+      "lineColor": "#BEBEBE",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r2x8bmpo",
+      "id": "8",
+      "bbox": [
+        136,
+        164,
+        48,
+        48
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B6B6B6",
+      "lineWidth": 2
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61o72ho3",
+      "id": "9",
+      "bbox": [
+        142,
+        169,
+        36,
+        36
+      ],
+      "geometry": "rect",
+      "text": "1",
+      "textPreview": "1",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#8C8C8C",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#8C8C8C",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1",
+              "fontSize": 25,
+              "color": "#8C8C8C",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83ad83mh",
+      "id": "10",
+      "bbox": [
+        186,
+        165,
+        216,
+        46
+      ],
+      "geometry": "rect",
+      "text": "专治甲流乙流",
+      "textPreview": "专治甲流乙流",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "专治甲流乙流"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "专治甲流乙流",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "专治甲流乙流",
+              "fontSize": 25,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tojuh832",
+      "id": "11",
+      "name": "nav-2",
+      "bbox": [
+        431,
+        158,
+        322,
+        60
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#ED8A00",
+      "lineColor": "#D97900",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61sv6t4b",
+      "id": "12",
+      "bbox": [
+        439,
+        164,
+        48,
+        48
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#ED8A00",
+      "lineWidth": 2
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/721cfylw",
+      "id": "13",
+      "bbox": [
+        445,
+        169,
+        36,
+        36
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#ED8A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 25,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzqd43ml",
+      "id": "14",
+      "bbox": [
+        489,
+        165,
+        256,
+        46
+      ],
+      "geometry": "rect",
+      "text": "全程1次，1天退热",
+      "textPreview": "全程1次，1天退热",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "全程1次，1天退热"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "全程1次，1天退热",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "全程1次，1天退热",
+              "fontSize": 25,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l0zudo3q",
+      "id": "15",
+      "name": "nav-3",
+      "bbox": [
+        782,
+        158,
+        378,
+        60
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#C8C8C8",
+      "lineColor": "#BEBEBE",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yx8v2t4f",
+      "id": "16",
+      "bbox": [
+        790,
+        164,
+        48,
+        48
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B6B6B6",
+      "lineWidth": 2
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zyhcbyl0",
+      "id": "17",
+      "bbox": [
+        796,
+        169,
+        36,
+        36
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#8C8C8C",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#8C8C8C",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 25,
+              "color": "#8C8C8C",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vudgnmp",
+      "id": "18",
+      "bbox": [
+        840,
+        165,
+        312,
+        46
+      ],
+      "geometry": "rect",
+      "text": "治疗自己，保护身边人",
+      "textPreview": "治疗自己，保护身边人",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "治疗自己，保护身边人"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "治疗自己，保护身边人",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "治疗自己，保护身边人",
+              "fontSize": 25,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5w3eps3a",
+      "id": "19",
+      "bbox": [
+        1094,
+        22,
+        50,
+        45
+      ],
+      "geometry": "rect",
+      "text": "速",
+      "textPreview": "速",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#142E76",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "速"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "速",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#142E76",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "速",
+              "fontSize": 33,
+              "color": "#142E76",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0fmdor2",
+      "id": "20",
+      "bbox": [
+        1138,
+        22,
+        50,
+        45
+      ],
+      "geometry": "rect",
+      "text": "福",
+      "textPreview": "福",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#ED8A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "福"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "福",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "福",
+              "fontSize": 33,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sz6lkjah",
+      "id": "21",
+      "bbox": [
+        1182,
+        22,
+        50,
+        45
+      ],
+      "geometry": "rect",
+      "text": "达",
+      "textPreview": "达",
+      "resolvedFontSize": 33,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 33,
+        "typeface": "+mn-lt",
+        "color": "#142E76",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "达"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "达",
+          "resolvedTextStyle": {
+            "fontSize": 33,
+            "color": "#142E76",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "达",
+              "fontSize": 33,
+              "color": "#142E76",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ryx4be9w",
+      "id": "22",
+      "bbox": [
+        1094,
+        65,
+        138,
+        20
+      ],
+      "geometry": "rect",
+      "text": "（玛巴洛沙韦）",
+      "textPreview": "（玛巴洛沙韦）",
+      "resolvedFontSize": 11,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 11,
+        "typeface": "+mn-lt",
+        "color": "#142E76",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "（玛巴洛沙韦）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "（玛巴洛沙韦）",
+          "resolvedTextStyle": {
+            "fontSize": 11,
+            "color": "#142E76",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "（玛巴洛沙韦）",
+              "fontSize": 11,
+              "color": "#142E76",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxo3itsr",
+      "id": "23",
+      "name": "mechanism-board",
+      "bbox": [
+        72,
+        240,
+        1136,
+        388
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#EEEEEE",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5cfm9or6",
+      "id": "24",
+      "bbox": [
+        105,
+        300,
+        185,
+        48
+      ],
+      "geometry": "rect",
+      "text": "① 口服1次",
+      "textPreview": "① 口服1次",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#ED8A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "① 口服1次"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "① 口服1次",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "① 口服1次",
+              "fontSize": 26,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4b6lgjal",
+      "id": "25",
+      "bbox": [
+        176,
+        393,
+        255,
+        78
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#ED8A00",
+      "lineColor": "#C96E00",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ax47e90",
+      "id": "26",
+      "bbox": [
+        194,
+        405,
+        220,
+        54
+      ],
+      "geometry": "rect",
+      "text": "玛巴洛沙韦",
+      "textPreview": "玛巴洛沙韦",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "玛巴洛沙韦"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "玛巴洛沙韦",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "玛巴洛沙韦",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i943e9sf",
+      "id": "27",
+      "bbox": [
+        116,
+        502,
+        300,
+        44
+      ],
+      "geometry": "rect",
+      "text": "-24h  1天快速退热",
+      "textPreview": "-24h  1天快速退热",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#ED8A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "-24h  1天快速退热"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "-24h  1天快速退热",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "-24h  1天快速退热",
+              "fontSize": 21,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h8v254ru",
+      "id": "28",
+      "name": "infected-cell",
+      "bbox": [
+        460,
+        330,
+        300,
+        250
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FAD6DF",
+      "lineColor": "#C63A57",
+      "lineWidth": 4
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7mlcza9",
+      "id": "29",
+      "name": "virus-1",
+      "bbox": [
+        500,
+        415,
+        45,
+        45
+      ],
+      "geometry": "star12",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 1
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mdkj6587",
+      "id": "30",
+      "bbox": [
+        515.3,
+        430.3,
+        14.4,
+        14.4
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7et0faps",
+      "id": "31",
+      "name": "virus-2",
+      "bbox": [
+        600,
+        370,
+        45,
+        45
+      ],
+      "geometry": "star12",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 1
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8f218fqd",
+      "id": "32",
+      "bbox": [
+        615.3,
+        385.3,
+        14.4,
+        14.4
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gbihk7y",
+      "id": "33",
+      "name": "virus-3",
+      "bbox": [
+        675,
+        395,
+        45,
+        45
+      ],
+      "geometry": "star12",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 1
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y90j258b",
+      "id": "34",
+      "bbox": [
+        690.3,
+        410.3,
+        14.4,
+        14.4
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/za90bapw",
+      "id": "35",
+      "name": "virus-4",
+      "bbox": [
+        585,
+        470,
+        45,
+        45
+      ],
+      "geometry": "star12",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 1
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kb214vq1",
+      "id": "36",
+      "bbox": [
+        600.3,
+        485.3,
+        14.4,
+        14.4
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lcbid07m",
+      "id": "37",
+      "name": "virus-5",
+      "bbox": [
+        675,
+        480,
+        45,
+        45
+      ],
+      "geometry": "star12",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 1
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al0zyl8z",
+      "id": "38",
+      "bbox": [
+        690.3,
+        495.3,
+        14.4,
+        14.4
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#E93E5E",
+      "lineColor": "#E93E5E",
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm907qpk",
+      "id": "39",
+      "bbox": [
+        555,
+        265,
+        48,
+        120
+      ],
+      "geometry": "downArrow",
+      "fillColor": "#ED8A00",
+      "lineColor": "#ED8A00",
+      "lineWidth": 1
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ytwjmtg",
+      "id": "40",
+      "bbox": [
+        420,
+        273,
+        185,
+        70
+      ],
+      "geometry": "rect",
+      "text": "早期阻断病毒复制，\n遏制新病毒生成",
+      "textPreview": "早期阻断病毒复制， | 遏制新病毒生成",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#ED8A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "早期阻断病毒复制，"
+          },
+          {
+            "index": 2,
+            "text": "遏制新病毒生成"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "早期阻断病毒复制，",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "早期阻断病毒复制，",
+              "fontSize": 18,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "遏制新病毒生成",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "遏制新病毒生成",
+              "fontSize": 18,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xkfa1sv",
+      "id": "41",
+      "bbox": [
+        558,
+        375,
+        50,
+        52
+      ],
+      "geometry": "rect",
+      "text": "×",
+      "textPreview": "×",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": "+mn-lt",
+        "color": "#ED8A00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "×"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "×",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "color": "#ED8A00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "×",
+              "fontSize": 40,
+              "color": "#ED8A00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p0belwb6",
+      "id": "42",
+      "bbox": [
+        760,
+        300,
+        44,
+        130
+      ],
+      "geometry": "downArrow",
+      "fillColor": "#8C8C8C",
+      "lineColor": "#8C8C8C",
+      "lineWidth": 1
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oz2xcra1",
+      "id": "43",
+      "bbox": [
+        760,
+        406,
+        50,
+        50
+      ],
+      "geometry": "rect",
+      "text": "×",
+      "textPreview": "×",
+      "resolvedFontSize": 37,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 37,
+        "typeface": "+mn-lt",
+        "color": "#8C8C8C",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "×"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "×",
+          "resolvedTextStyle": {
+            "fontSize": 37,
+            "color": "#8C8C8C",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "×",
+              "fontSize": 37,
+              "color": "#8C8C8C",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 44,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fa9wfmt4",
+      "id": "44",
+      "bbox": [
+        798,
+        423,
+        85,
+        38
+      ],
+      "geometry": "rightArrow",
+      "fillColor": "#8C8C8C",
+      "lineColor": "#8C8C8C",
+      "lineWidth": 1
+    },
+    {
+      "order": 45,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e90f6hcj",
+      "id": "45",
+      "name": "released-virus-1",
+      "bbox": [
+        875,
+        403,
+        54,
+        54
+      ],
+      "geometry": "star12",
+      "fillColor": "#F6DDE2",
+      "lineColor": "#F6DDE2",
+      "lineWidth": 1
+    },
+    {
+      "order": 46,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1wbehwba",
+      "id": "46",
+      "bbox": [
+        893.36,
+        421.36,
+        17.28,
+        17.28
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#F6DDE2",
+      "lineColor": "#F6DDE2",
+      "lineWidth": 0
+    },
+    {
+      "order": 47,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gvix8rap",
+      "id": "47",
+      "name": "released-virus-2",
+      "bbox": [
+        920,
+        466,
+        54,
+        54
+      ],
+      "geometry": "star12",
+      "fillColor": "#F6DDE2",
+      "lineColor": "#F6DDE2",
+      "lineWidth": 1
+    },
+    {
+      "order": 48,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r69wb2t8",
+      "id": "48",
+      "bbox": [
+        938.36,
+        484.36,
+        17.28,
+        17.28
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#F6DDE2",
+      "lineColor": "#F6DDE2",
+      "lineWidth": 0
+    },
+    {
+      "order": 49,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/650f2hcn",
+      "id": "49",
+      "bbox": [
+        954,
+        392,
+        205,
+        78
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#8C8C8C",
+      "lineColor": "#777777",
+      "lineWidth": 1
+    },
+    {
+      "order": 50,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbetc3al",
+      "id": "50",
+      "bbox": [
+        972,
+        404,
+        170,
+        54
+      ],
+      "geometry": "rect",
+      "text": "奥司他韦",
+      "textPreview": "奥司他韦",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "奥司他韦"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "奥司他韦",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "奥司他韦",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 51,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcnul8r6",
+      "id": "51",
+      "bbox": [
+        968,
+        502,
+        180,
+        42
+      ],
+      "geometry": "rect",
+      "text": "2次/天 × 5天",
+      "textPreview": "2次/天 × 5天",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#8C8C8C",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2次/天 × 5天"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2次/天 × 5天",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#8C8C8C",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2次/天 × 5天",
+              "fontSize": 20,
+              "color": "#8C8C8C",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 52,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9wbadsf",
+      "id": "52",
+      "bbox": [
+        330,
+        645,
+        620,
+        46
+      ],
+      "geometry": "rect",
+      "text": "传统药物奥司他韦不阻止病毒复制",
+      "textPreview": "传统药物奥司他韦不阻止病毒复制",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#171717",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "传统药物奥司他韦不阻止病毒复制"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "传统药物奥司他韦不阻止病毒复制",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#171717",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "传统药物奥司他韦不阻止病毒复制",
+              "fontSize": 28,
+              "color": "#171717",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

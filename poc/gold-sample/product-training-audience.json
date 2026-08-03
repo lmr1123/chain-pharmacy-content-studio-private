@@ -1,0 +1,85 @@
+{
+  "project_id": "product.q10.audience-faithful-v1",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "style_pack_locked": true,
+  "content_lock": "reference-transcript",
+  "referenceRange": {
+    "start": 116.94,
+    "end": 126.74,
+    "duration": 10.422
+  },
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-product-training-audience-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；自然语速铺轨，禁止超1.18×暴力加速",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "min_tempo": 0.95,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "适宜人群，1、顽固心慌、胸闷、气短的心血管人群，2、常服他汀出现肌肉疲劳、疼痛的人群，3、备孕男女，联合用药。",
+          "raw_duration": 11.92,
+          "used_duration": 10.262,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 8.621,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "适宜人群，1、顽固心慌、胸闷、气短的心血管人群，2、常服他汀出现肌肉疲劳、疼痛的人群，3、备孕男女，联合用药。"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "heart": [
+      "/product-training-faithful/q10-chest-v1.png",
+      "/product-training-faithful/q10-breathless-v1.png"
+    ],
+    "muscle": [
+      "/product-training-audience/muscle-fatigue-v1.png",
+      "/product-training-audience/muscle-pain-v1.png"
+    ],
+    "fertility": [
+      "/product-training-audience/preconception-couple-v1.png",
+      "/product-training-audience/pregnancy-consult-v1.png"
+    ],
+    "restriction": "心血管插画复用同风格生产组件；肌肉与备孕插画为重新生成素材，不含参考视频像素"
+  },
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 0.881,
+      "text": "适宜人群"
+    },
+    {
+      "start": 0.881,
+      "end": 4.575,
+      "text": "1、顽固心慌、胸闷、气短的心血管人群"
+    },
+    {
+      "start": 4.575,
+      "end": 8.27,
+      "text": "2、常服他汀出现肌肉疲劳、疼痛的人群"
+    },
+    {
+      "start": 8.27,
+      "end": 9.501,
+      "text": "3、备孕男女"
+    },
+    {
+      "start": 9.501,
+      "end": 10.322,
+      "text": "联合用药"
+    }
+  ],
+  "playback_duration": 10.422
+}

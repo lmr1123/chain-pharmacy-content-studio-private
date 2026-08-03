@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>金银花露 · 绿色商品培训课件 金样预览</title>
+<link rel="stylesheet" href="../../shared/preview.css" />
+<style>
+  :root {
+    --accent: #2f8f4e;
+    --orange2: #7dcea0;
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumb">
+      <a href="../../index.html">金样案例汇总</a>
+      · 金银花露 · 绿色商品培训 PPT
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="badge">PPT 金样 · settled · 已签样</div>
+        <h1>金银花露 · 商品培训课件（绿色母版）</h1>
+        <p class="sub">
+          正式 settled PPTX 金样（template.product-courseware-dashenlin-green-v1）。
+          五页绿色原版式可编辑模板；被否决的三页品牌升级签样不在此列。
+        </p>
+        <div class="meta">
+          <span class="chip">PPT · 5 页</span>
+          <span class="chip">可编辑</span>
+          <span class="chip">user-approved</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="media/deck.pptx" download>下载可编辑 PPTX</a>
+        <a class="btn secondary" href="../../../../../templates/settled/product-courseware-green-v1/manifest.json">manifest</a>
+      </div>
+    </header>
+
+    <section class="block" id="sec-pptx">
+      <div class="block-head">
+        <h2><span class="idx">1</span>PPT 完整截图</h2>
+        <span class="hint">5 页 · 点击放大</span>
+      </div>
+      <div class="ppt-grid" id="pptGrid"></div>
+    </section>
+
+    <footer class="notes">
+      权威产物：<code>templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx</code>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="close">关闭</button>
+    <img id="lightboxImg" alt="PPT 页" />
+  </div>
+
+  <script>
+  (function () {
+    const slides = [
+      { title: "第 1 页", note: "封面 / 引入", src: "media/slides/slide-01.png" },
+      { title: "第 2 页", note: "商品介绍", src: "media/slides/slide-02.png" },
+      { title: "第 3 页", note: "核心卖点", src: "media/slides/slide-03.png" },
+      { title: "第 4 页", note: "适宜人群", src: "media/slides/slide-04.png" },
+      { title: "第 5 页", note: "联合 / 收尾", src: "media/slides/slide-05.png" }
+    ];
+    const grid = document.getElementById("pptGrid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    slides.forEach((sl, i) => {
+      const a = document.createElement("a");
+      a.className = "tile";
+      a.href = sl.src;
+      a.innerHTML = `<img src="${sl.src}" alt="${sl.title}" loading="lazy" /><div class="cap"><strong>${sl.title}</strong>${sl.note || ""}</div>`;
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        lightboxImg.src = sl.src;
+        lightboxImg.alt = sl.title;
+        lightbox.classList.add("open");
+      });
+      grid.appendChild(a);
+    });
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.classList.contains("close")) {
+        lightbox.classList.remove("open");
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") lightbox.classList.remove("open");
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+{
+  "project_id": "video.kekang-lingzhi-courseware-v2",
+  "theme_id": "theme.product.kekang-lingzhi-capsule",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+  "content_source": "production-library/themes/kekang-lingzhi-capsule/storyboard-v7-interactive-multi-audience.md",
+  "status": "interactive-multi-audience-design-candidate",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "narrative": {
+    "subject": "可可康灵芝胶囊及其产品知识",
+    "scene_order": [
+      "产品认识",
+      "两类核心有效成分",
+      "灵芝的五方面作用",
+      "产品三大核心功效",
+      "适应人群与多人群覆盖",
+      "三项产品特点",
+      "联合应用方案",
+      "建议服用周期",
+      "产品知识总结"
+    ],
+    "excluded": [
+      "顾客对话开场",
+      "顾客信号识别",
+      "门店沟通口诀",
+      "销售话术",
+      "refs/07～08 销售案例"
+    ]
+  },
+  "representative_sample": {
+    "path": "kekang-lingzhi-product-centered-sample-v2.mp4",
+    "duration_seconds": 23.666667,
+    "audio": "explicit-silence-for-motion-review",
+    "motion_sequence": [
+      "产品与灵芝主体进入",
+      "灵芝多糖与灵芝三萜从主体分化",
+      "青年、中年、老年三个生活阶段依次成为视觉主体",
+      "睡眠、肝脏、免疫三条知识路径汇聚回产品"
+    ]
+  },
+  "complete_design": {
+    "html": "product-course-design-v7.html",
+    "montage": "product-course-v7-montage.png",
+    "representative_frames": [
+      "product-course-v7-01.png",
+      "product-course-v7-02.png",
+      "product-course-v7-03.png",
+      "product-course-v7-04.png",
+      "product-course-v7-05.png",
+      "product-course-v7-06.png"
+    ],
+    "representative_page_count": 6,
+    "chapters": 5,
+    "scenes": 16,
+    "estimated_duration": "3～4分钟",
+    "status": "candidate-awaiting-user-visual-approval"
+  },
+  "audience_visual_contract": {
+    "age_stages": ["年轻成人", "中年成人", "老年成人"],
+    "gender_coverage": ["女性", "男性"],
+    "lead_cast": [
+      "年轻女性：失眠／夜醒",
+      "中年男性：饮酒与肝脏负担",
+      "老年女性：季节刺激与反复不适"
+    ],
+    "page_rule": "三类主角色在同一页面容器内依次聚焦，不拆成三张独立页面。",
+    "approved_audience_copy": [
+      "经常失眠",
+      "常喝酒伤肝／肝功能差",
+      "免疫力低下"
+    ],
+    "restriction": "年龄层只用于视觉覆盖，不得解释为新增医学适用年龄；儿童适用未经审核，不使用儿童形象。"
+  },
+  "presenter_interaction_contract": {
+    "component_id": "component.presenter.product-trainer-v1",
+    "poses": ["open-arms", "point", "palm"],
+    "teaching_states": [
+      "hero-center-opening",
+      "side-pointing",
+      "offscreen-full-performance",
+      "support-return-explanation",
+      "hero-center-summary"
+    ],
+    "rule": "数字人每次出现必须承担提问、指向、解释、转场或总结任务，不得作为角落常驻装饰。"
+  },
+  "visual_motion_contract": {
+    "opening_and_summary_background": "浅薄荷绿＋奶油白＋少量金色；禁止大面积深绿色压暗学习氛围。",
+    "decorative_motion": [
+      "低对比漂浮光点",
+      "柔和圆形光环",
+      "虚线轨迹缓慢旋转"
+    ],
+    "focus_motion": {
+      "treatment": "当前项线框发光＋约1.025～1.055倍放大；非当前项降低饱和度与透明度。",
+      "sequence": [
+        "两类成分及作用节点依次聚焦",
+        "三类人群按01→02→03依次聚焦",
+        "原料→工艺→生产依次聚焦",
+        "总结六维度依次聚焦"
+      ],
+      "timing_rule": "最终视频由旁白语义时码驱动；HTML评审稿使用CSS循环示意。"
+    }
+  },
+  "asset_sources": {
+    "packshot": {
+      "path": "poc/gold-sample/public/kekang-lingzhi/packshot.png",
+      "status": "internal-courseware-candidate-awaiting-authorized-hd-original"
+    },
+    "young_woman_sleep": {
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/audience-young-woman-insomnia-v7.png",
+      "generation": "Codex built-in imagegen; pharmacy-health-cartoon-v1 style reference",
+      "status": "candidate"
+    },
+    "middle_man_alcohol": {
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/audience-middle-man-alcohol-v7.png",
+      "generation": "Codex built-in imagegen; pharmacy-health-cartoon-v1 style reference",
+      "status": "candidate"
+    },
+    "elder_woman_seasonal": {
+      "path": "production-library/validation/courseware/kekang-lingzhi-video-keyframes-v1/assets/audience-elder-woman-seasonal-v7.png",
+      "generation": "Codex built-in imagegen; pharmacy-health-cartoon-v1 style reference",
+      "status": "candidate"
+    },
+    "presenter": {
+      "path": "poc/gold-sample/public/product-training-dashenlin-presenter/",
+      "status": "technical-qa-passed"
+    }
+  },
+  "technical_qa": {
+    "html_render": "passed",
+    "representative_frame_count": 8,
+    "resolution": "1920x1080",
+    "visual_review": "passed-for-design-signoff",
+    "video_render": "not-started-until-design-approval"
+  }
+}

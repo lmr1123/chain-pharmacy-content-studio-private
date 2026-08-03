@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>风热证 · 健康知识视频培训 金样预览</title>
+<link rel="stylesheet" href="../../shared/preview.css" />
+<style>
+  :root {
+    --accent: #2f9e8f;
+    --orange2: #5fd4c4;
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumb">
+      <a href="../../index.html">金样案例汇总</a>
+      · 风热证 · 健康知识视频
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="badge">视频金样 · settled</div>
+        <h1>风热证 · 健康知识视频培训</h1>
+        <p class="sub">
+          正式 settled 视频金样之一（template.health-reference-tech-v1）。
+          181s 全片对照基线；当前状态为历史冻结对照（视觉重制中），仍作为案例汇总展示。
+        </p>
+        <div class="meta">
+          <span class="chip">视频 · 181s · 1920×1080</span>
+          <span class="chip">健康科普</span>
+          <span class="chip">settled · visual-rework-required</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn editor" id="btnOpenEditor" href="http://127.0.0.1:9000/" target="_blank" rel="noopener noreferrer" title="需本机已启动 npm run start:wind-heat-editable">打开视频编辑器</a>
+        <a class="btn" href="media/film.mp4" download>下载金样视频</a>
+        <a class="btn secondary" href="../../../../../templates/settled/health-video-reference-tech-v1/manifest.json">manifest</a>
+      </div>
+    </header>
+
+    <section class="block" id="sec-chapters">
+      <div class="block-head">
+        <h2><span class="idx">1</span>章节跳转</h2>
+        <span class="hint">点选跳到对应时点并播放</span>
+      </div>
+      <div class="scene-tabs" id="tabs"></div>
+    </section>
+
+    <section class="block" id="sec-video" style="padding:0;overflow:hidden;">
+      <div class="block-head" style="padding:14px 14px 0;">
+        <h2><span class="idx">2</span>视频播放</h2>
+        <span class="hint">canonical · wind-heat-reference-full-181s.mp4</span>
+      </div>
+      <div class="player-card" style="border:0;border-radius:0;box-shadow:none;">
+        <div class="stage">
+          <video id="video" playsinline preload="metadata" poster="media/cover-product.jpg" src="media/film.mp4"></video>
+          <div class="caption-bar" id="caption"></div>
+        </div>
+        <div class="controls">
+          <button type="button" class="primary" id="btnPlay">播放</button>
+          <button type="button" id="btnRestart">从头</button>
+          <input class="seek" id="seek" type="range" min="0" max="181" step="0.05" value="0" />
+          <div class="clock" id="clock">0.00 / 181.20s</div>
+          <div class="scene-label" id="sceneLabel">当前章节：—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-thumbs">
+      <div class="block-head">
+        <h2><span class="idx">3</span>关键画面一览</h2>
+        <span class="hint">章节静帧 · 点击跳转</span>
+      </div>
+      <div class="thumb-grid" id="strip"></div>
+    </section>
+
+    <section class="block" id="sec-pptx">
+      <div class="block-head">
+        <h2><span class="idx">4</span>关键帧放大</h2>
+        <span class="hint">与章节静帧同源（本案例为纯视频金样，无独立 PPT）</span>
+      </div>
+      <div class="ppt-grid" id="pptGrid"></div>
+    </section>
+
+    <footer class="notes">
+      权威产物：<code>templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4</code>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="close">关闭</button>
+    <img id="lightboxImg" alt="关键帧" />
+  </div>
+
+  <script>
+  window.GOLD_CASE = {
+    id: "wind-heat-video-gold",
+    title: "风热证 · 健康知识视频培训",
+    duration: 181.2,
+    editorUrl: "http://127.0.0.1:9000/",
+    editorLabel: "打开视频编辑器",
+    editorHint: "业务图层编辑 · 右侧「画面属性」面板 · editable:*（需本机已启动 npm run start:wind-heat-editable）",
+    scenes: [
+      { id: "intro", start: 0, end: 4.5, label: "开场引入" },
+      { id: "character", start: 4.5, end: 28, label: "人物情境" },
+      { id: "mechanism", start: 28, end: 43.8, label: "病机机理" },
+      { id: "symptoms", start: 43.8, end: 70.1, label: "典型症状" },
+      { id: "treatment", start: 70.1, end: 112.1, label: "治疗要点" },
+      { id: "medication", start: 112.1, end: 153.2, label: "用药建议" },
+      { id: "summary", start: 153.2, end: 181.2, label: "总结收尾" }
+    ],
+    thumbs: [
+      { t: 0.5, title: "开场", note: "封面引入", src: "media/thumbs/cover.jpg" },
+      { t: 4.5, title: "人物", note: "情境演绎", src: "media/thumbs/character.jpg" },
+      { t: 28, title: "病机", note: "机理讲解", src: "media/thumbs/mechanism.jpg" },
+      { t: 44, title: "症状", note: "典型表现", src: "media/thumbs/symptoms.jpg" },
+      { t: 70, title: "治疗", note: "处置要点", src: "media/thumbs/treatment.jpg" },
+      { t: 112, title: "用药", note: "建议段", src: "media/thumbs/medication.jpg" },
+      { t: 153, title: "总结", note: "收尾", src: "media/thumbs/summary.jpg" }
+    ],
+    slides: [
+      { title: "开场", note: "0s", src: "media/thumbs/cover.jpg" },
+      { title: "人物情境", note: "4.5s", src: "media/thumbs/character.jpg" },
+      { title: "病机机理", note: "28s", src: "media/thumbs/mechanism.jpg" },
+      { title: "典型症状", note: "44s", src: "media/thumbs/symptoms.jpg" },
+      { title: "治疗要点", note: "70s", src: "media/thumbs/treatment.jpg" },
+      { title: "用药建议", note: "112s", src: "media/thumbs/medication.jpg" },
+      { title: "总结收尾", note: "153s", src: "media/thumbs/summary.jpg" }
+    ],
+    captions: []
+  };
+  </script>
+  <script src="../../shared/preview.js"></script>
+</body>
+</html>

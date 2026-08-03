@@ -1,0 +1,1029 @@
+{
+  "registry_type": "component",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "component.master.reference-medical-tech",
+      "name_zh": "参考片品牌母版",
+      "status": "deprecated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "背景",
+        "Logo",
+        "章节导航",
+        "内部声明"
+      ],
+      "source": "poc/gold-sample/public/reference-replica/master-clean.png",
+      "restriction": "历史分段成片兼容项；来源未完成生产溯源审计，不得用于新主题或新渲染。"
+    },
+    {
+      "id": "component.master.reference-medical-tech-native-v1",
+      "name_zh": "原生分层医疗科技母版 v1",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "原生图层",
+        "背景",
+        "章节导航",
+        "内部声明",
+        "可编辑"
+      ],
+      "editable": [
+        "active_chapter",
+        "page_title",
+        "brand_text",
+        "internal_notice"
+      ],
+      "source": "poc/gold-sample/src/components/reference-medical-tech-master.tsx",
+      "restriction": "母版结构、片头表现和全片一致性已获用户确认；品牌 Logo 槽位仍必须使用公司授权透明原图，不得以临时重绘或来源不明素材替代。"
+    },
+    {
+      "id": "component.presenter.bound-pharmacist",
+      "name_zh": "归一化绑定卡通药师",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "数字人",
+        "药师",
+        "口型",
+        "直接换位",
+        "归一化锚点"
+      ],
+      "source": "poc/gold-sample/public/wind-heat-presenter-v2/manifest.json",
+      "rig_contract": "poc/gold-sample/src/wind-heat-production-contract.ts#PRESENTER_RIG",
+      "mouth_palette": "soft-pink-v3",
+      "mouth_qa": "production-library/validation/revideo-editability/wind-heat-v2/mouth-soft-palette-contact-sheet.png",
+      "restriction": "2026-07-31 已迁出旧 reference-replica 运行命名空间并统一姿势尺寸、脚底基线和归一化嘴锚点；用户复审认为 soft-warm-v2 仍偏深，现改为低对比浅粉 soft-pink-v3，口腔底色、舌色和细描边统一调整并重新执行四姿势抽帧 QA。组件保持 technical-qa-passed，待用户视觉确认后方可晋升。"
+    },
+    {
+      "id": "component.card.symptom-board",
+      "name_zh": "症状分组信息板",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "症状",
+        "信息卡",
+        "插图网格",
+        "逐项强调"
+      ],
+      "source": "poc/gold-sample/src/reference-symptoms-project.tsx"
+    },
+    {
+      "id": "component.card.herb-grid",
+      "name_zh": "草本三列卡片",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "草本",
+        "三列",
+        "高亮",
+        "剂量"
+      ],
+      "source": "poc/gold-sample/src/reference-treatment-project.tsx"
+    },
+    {
+      "id": "component.card.medication",
+      "name_zh": "药品包装示意卡",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "药品",
+        "包装示意",
+        "圆角",
+        "扫描光"
+      ],
+      "source": "poc/gold-sample/src/components/reference-courseware-cards.tsx"
+    },
+    {
+      "id": "component.card.advice-row",
+      "name_zh": "生活建议横向卡",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "建议",
+        "禁忌",
+        "圆角",
+        "图标",
+        "顺序高亮"
+      ],
+      "source": "poc/gold-sample/src/components/reference-courseware-cards.tsx"
+    },
+    {
+      "id": "component.subtitle.reference-bottom",
+      "name_zh": "参考片底部字幕",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "字幕",
+        "高对比",
+        "底部安全区"
+      ],
+      "source": "poc/gold-sample/src/reference-medication-advice-project.tsx"
+    },
+    {
+      "id": "component.input.health-training-business-word-v1",
+      "name_zh": "健康知识视频培训业务 Word 输入 v1",
+      "status": "deprecated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "Word",
+        "业务脚本",
+        "自然语言",
+        "真实样例",
+        "自由组合",
+        "健康知识培训"
+      ],
+      "editable": [
+        "training_title",
+        "audience",
+        "learning_objective",
+        "section_title",
+        "approved_text",
+        "on_screen_facts",
+        "authorized_assets",
+        "file_level_review_reference"
+      ],
+      "source": "samples/health-training-script/风热证视频培训_业务填写真实样本.json",
+      "builder": "poc/health-training-script-input/build_health_business_word_sample.py",
+      "visual_master": "poc/business_word_common.py",
+      "parser": "scripts/plan_training_course.py",
+      "business_sample": "outputs/health-training-script-input/健康知识视频培训_业务Word脚本填写示例_风热证.docx",
+      "storyboard_preview": "outputs/storyboard-previews/健康知识视频培训_系统分镜预览.html",
+      "storyboard_preview_audience": "production-team",
+      "business_video_frame_examples": [
+        "assets/business-input-guides/settled-template-frames/health-template-reference-005s.png",
+        "assets/business-input-guides/settled-template-frames/health-template-reference-018s.png",
+        "assets/business-input-guides/settled-template-frames/health-template-reference-026s.png"
+      ],
+      "business_video_frame_provenance": "assets/business-input-guides/settled-template-frames/provenance.json",
+      "contract": "production-library/business-video-word-input-contract.md",
+      "restriction": "历史逐章 Word，仅供旧数据回归；不得再作为业务入口或进入业务压缩包。新项目统一使用 component.input.universal-video-notebook-v1。"
+    },
+    {
+      "id": "component.input.universal-video-notebook-v1",
+      "name_zh": "视频培训记事本式内容与素材输入 v1",
+      "status": "technical-qa-passed",
+      "compatible_template_ids": [
+        "template.health-reference-tech-v1",
+        "template.product-training-faithful-v1"
+      ],
+      "compatible_style_pack_ids": [
+        "style-pack.reference-medical-tech-v1",
+        "style-pack.reference-product-blue-v1"
+      ],
+      "tags": [
+        "Word",
+        "DOCX",
+        "视频培训",
+        "健康知识",
+        "商品培训",
+        "内容驱动",
+        "图片粘贴",
+        "自适应镜头"
+      ],
+      "editable": [
+        "video.theme",
+        "video.audience",
+        "video.objective",
+        "video.expected_duration",
+        "sections[].title",
+        "sections[].approved_narration",
+        "sections[].images",
+        "sections[].images[].caption_or_source"
+      ],
+      "business_template": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
+      "health_filled_example": "outputs/video-training-natural-import/风热证健康知识视频培训_真实已填样本.docx",
+      "product_filled_example": "outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx",
+      "builder": "poc/video-training-natural-import/build_universal_video_business_words.py",
+      "parser": "poc/video-training-natural-import/import_universal_video_content.py",
+      "tests": "poc/video-training-natural-import/test_import_universal_video_content.py",
+      "health_business_distribution_package": "outputs/业务使用资料包/01_健康知识视频培训_业务内容整理包.zip",
+      "product_business_distribution_package": "outputs/业务使用资料包/02_商品培训视频课件_业务内容整理包.zip",
+      "business_distribution_package_builder": "scripts/build_business_distribution_packages.py",
+      "contract": "production-library/business-video-word-input-contract.md",
+      "restriction": "业务只写主题、自然板块、可直接用于讲解／旁白的审核正文，并在相关板块下粘贴授权图片；不得按样片章节、镜头、场景或时长填空。视频类型由提交入口路由，Word 不暴露模板与风格包。"
+    },
+    {
+      "id": "component.summary.matrix-v1",
+      "name_zh": "风热证四象限总结板 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "总结",
+        "四象限",
+        "2x2",
+        "1x4",
+        "独立图层",
+        "科技面板"
+      ],
+      "editable": [
+        "layout",
+        "items",
+        "panel_size",
+        "label_size",
+        "body_width",
+        "font_scale"
+      ],
+      "source": "poc/gold-sample/src/components/reference-summary-outro.tsx",
+      "restriction": "用户已否决其作为当前公司原版式批量模板；仅保留为未采用的设计探索，不得替代封面或 01 页原布局"
+    },
+    {
+      "id": "component.outro.training-brand-v1",
+      "name_zh": "营运培训品牌片尾 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "片尾",
+        "品牌",
+        "粒子",
+        "心电线",
+        "分层"
+      ],
+      "editable": [
+        "brand_name",
+        "headline",
+        "credit",
+        "logo_asset",
+        "particle_density"
+      ],
+      "source": "poc/gold-sample/src/components/reference-summary-outro.tsx",
+      "restriction": "当前为明确标注的临时重绘 Logo 占位；替换公司授权透明原图并经用户签样后方可进入生产"
+    },
+    {
+      "id": "component.presenter.product-trainer-v1",
+      "name_zh": "浅蓝商品培训二维讲师 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "数字人",
+        "商品培训",
+        "栅格口型",
+        "归一化锚点",
+        "两姿势",
+        "大参林"
+      ],
+      "source": "assets/component-library/presenters/product-trainer/component.json",
+      "impl": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "assets": "poc/gold-sample/public/product-training-dashenlin-presenter/",
+      "mouth_rig": {
+        "palm": {
+          "anchor": [
+            0.548,
+            0.391
+          ],
+          "source_size": [
+            334,
+            941
+          ]
+        },
+        "point": {
+          "anchor": [
+            0.528,
+            0.418
+          ],
+          "source_size": [
+            405,
+            941
+          ]
+        },
+        "layout": "position=(anchor-0.5)*displaySize; body keeps source aspect ratio",
+        "lesson_ids": [
+          "lesson.mouth-anchor-from-diff-not-guess",
+          "lesson.presenter-mouth-anchor-from-metadata"
+        ]
+      },
+      "restriction": "身体与闭口、小口、O 形、张口四个嘴型为透明 PNG；口型锚点须读 mouth_rig，禁止场景手填像素。用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "component.card.product-symptom-board-v1",
+      "name_zh": "商品培训三症状白板 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "症状插图",
+        "白板",
+        "圆形遮罩",
+        "逐项入场",
+        "内部循环",
+        "顺序退场"
+      ],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx"
+    },
+    {
+      "id": "component.scene.product-brand-overview-v1",
+      "name_zh": "浅蓝商品品牌总览页 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "品牌总览",
+        "商品包装",
+        "三卖点",
+        "顶部标识",
+        "浅蓝母版"
+      ],
+      "editable": [
+        "brand_marks",
+        "product_asset",
+        "selling_points",
+        "product_position",
+        "label_positions"
+      ],
+      "source": "poc/gold-sample/src/product-training-brand-overview-project.tsx",
+      "restriction": "当前品牌标识为代码重绘近似、商品为明确标注的无品牌包装示意；替换授权原图并经用户签样后方可进入生产"
+    },
+    {
+      "id": "component.scene.product-efficacy-evidence-v1",
+      "name_zh": "浅蓝商品两大功效证据累积页 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "两大核心功效",
+        "功效证据",
+        "三图累积",
+        "白色闪光",
+        "浅蓝母版"
+      ],
+      "editable": [
+        "main_title",
+        "section_title",
+        "evidence_assets",
+        "positions",
+        "reveal_times",
+        "subtitle_cues"
+      ],
+      "source": "poc/gold-sample/src/product-training-efficacy-project.tsx",
+      "asset": "assets/component-library/product-training-efficacy/component.json",
+      "restriction": "六张功效图为重制示意，等待用户视觉签样和内部医学审核前不得标记 production-validated"
+    },
+    {
+      "id": "component.scene.product-feature-evidence-v1",
+      "name_zh": "浅蓝商品三类产品特点证据页 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "产品特点",
+        "原研工艺",
+        "海外原料",
+        "医疗背书",
+        "移动放大镜"
+      ],
+      "editable": [
+        "section_titles",
+        "document_fields",
+        "comparison_rows",
+        "product_asset",
+        "magnifier_path",
+        "subtitle_cues"
+      ],
+      "source": "poc/gold-sample/src/product-training-features-project.tsx",
+      "restriction": "文件、表格、包装和医疗资料均为代码重制示意；接入授权资料并经用户签样前不得标记 production-validated"
+    },
+    {
+      "id": "component.scene.product-audience-sequence-v1",
+      "name_zh": "浅蓝商品三类适宜人群序列页 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "适宜人群",
+        "双图切换",
+        "心血管",
+        "肌肉不适",
+        "备孕男女"
+      ],
+      "editable": [
+        "audience_groups",
+        "illustration_pairs",
+        "keywords",
+        "reveal_times",
+        "subtitle_cues"
+      ],
+      "source": "poc/gold-sample/src/product-training-audience-project.tsx",
+      "asset": "assets/component-library/product-training-audience/component.json",
+      "restriction": "人物插画为重制示意，等待用户视觉签样和内部医学审核前不得标记 production-validated"
+    },
+    {
+      "id": "component.mechanism.wind-heat-assembly-v1",
+      "name_zh": "风邪热邪平滑医学人体组装机理图 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+      "tags": [
+        "病因",
+        "风邪",
+        "热邪",
+        "平滑医学人体",
+        "分层组装",
+        "扫描线",
+        "发光"
+      ],
+      "editable": [
+        "positions",
+        "icon_scale",
+        "body_scale",
+        "glow",
+        "scan_line",
+        "reveal_timing"
+      ],
+      "source": "poc/gold-sample/src/components/reference-mechanism-gap.tsx",
+      "asset": "asset.mechanism.wind-heat-dynamic-v1",
+      "restriction": "等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "asset.mechanism.medical-human-body-v1",
+      "name_zh": "蓝色半透明真实医学人体 v1",
+      "status": "visual-rework-required",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": [
+        "真实人体",
+        "医学扫描",
+        "半透明",
+        "蓝青色",
+        "透明PNG",
+        "机理"
+      ],
+      "editable": [
+        "scale",
+        "position",
+        "glow",
+        "opacity"
+      ],
+      "source": "assets/component-library/mechanisms/medical-human-body-v1/component.json",
+      "restriction": "用户已明确否决其用于本风热组装镜头：解剖细节过高且静态感强；不得再用于 component.mechanism.wind-heat-assembly-v1"
+    },
+    {
+      "id": "asset.mechanism.wind-heat-dynamic-v1",
+      "name_zh": "风热证平滑蓝青医学人体四镜头资产 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+      "tags": [
+        "平滑人体",
+        "医学扫描",
+        "肺部",
+        "紫蓝体积邪气",
+        "咽喉",
+        "喉部剖面",
+        "透明PNG",
+        "四镜头"
+      ],
+      "editable": [
+        "asset_variant",
+        "mist_phase_assets",
+        "scale",
+        "position",
+        "glow",
+        "opacity"
+      ],
+      "source": "assets/component-library/mechanisms/wind-heat-dynamic-v1/component.json",
+      "restriction": "仅完成技术 QA；用户视觉签样和医学内容复核前不得标记 production-validated"
+    },
+    {
+      "id": "component.mechanism.surface-lung-panel-v1",
+      "name_zh": "体表、肺部、咽喉与喉部动态机制序列 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+      "tags": [
+        "机制图",
+        "体表受邪",
+        "肺气不顺",
+        "肺部",
+        "咽喉",
+        "喉部剖面",
+        "动态序列"
+      ],
+      "editable": [
+        "panel_size",
+        "image_assets",
+        "tag_text",
+        "tag_position",
+        "tag_color",
+        "scene_timing"
+      ],
+      "source": "poc/gold-sample/src/components/reference-mechanism-gap.tsx",
+      "asset": "asset.mechanism.wind-heat-dynamic-v1",
+      "restriction": "四镜头机制图为技术 QA 资产；用户视觉签样和医学内容复核前不得标记 production-validated"
+    },
+    {
+      "id": "component.product.q10-reference-approx-v1",
+      "name_zh": "辅酶 Q10 红白盒瓶包装示意 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "商品主视觉",
+        "包装示意",
+        "无真实品牌",
+        "可替换"
+      ],
+      "source": "assets/component-library/products/q10-reference-approx/component.json"
+    },
+    {
+      "id": "component.courseware.dashenlin-green-chrome-v1",
+      "name_zh": "大参林绿色课件页眉页脚 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": [
+        "PPTX",
+        "页码",
+        "页标题",
+        "品牌文字",
+        "内部声明"
+      ],
+      "editable": [
+        "page_number",
+        "title",
+        "brand_text",
+        "internal_notice"
+      ],
+      "source": "poc/courseware-export/work/build-product-courseware.mjs"
+    },
+    {
+      "id": "component.courseware.native-grid-table-v1",
+      "name_zh": "商品课件原生可编辑表格 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": [
+        "PPTX",
+        "表格",
+        "联合用药",
+        "品种对标",
+        "原生对象"
+      ],
+      "editable": [
+        "headers",
+        "rows",
+        "column_widths",
+        "row_heights",
+        "colors",
+        "font_scale"
+      ],
+      "source": "poc/courseware-export/work/build-product-courseware.mjs"
+    },
+    {
+      "id": "component.courseware.editable-asset-slot-v1",
+      "name_zh": "课件可替换素材槽位 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": [
+        "PPTX",
+        "素材槽位",
+        "包装",
+        "Logo",
+        "插图",
+        "可替换"
+      ],
+      "editable": [
+        "asset",
+        "label",
+        "position",
+        "size",
+        "fill"
+      ],
+      "source": "poc/courseware-export/work/build-product-courseware.mjs",
+      "restriction": "槽位标签不得被误认为正式商品或品牌资产"
+    },
+    {
+      "id": "component.courseware.brand-editorial-overview-v1",
+      "name_zh": "品牌化商品卖点叙事页 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": [
+        "PPTX",
+        "商品介绍",
+        "核心卖点",
+        "适宜人群",
+        "自动续页"
+      ],
+      "editable": [
+        "product",
+        "selling_points",
+        "audiences",
+        "facts",
+        "items_per_page",
+        "asset_slot"
+      ],
+      "source": "poc/courseware-export/work/build-brand-upgrade.mjs",
+      "restriction": "等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "component.courseware.combination-decision-lane-v1",
+      "name_zh": "联合用药决策行 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": [
+        "PPTX",
+        "联合用药",
+        "应用场景",
+        "销售话术",
+        "自动续页"
+      ],
+      "editable": [
+        "scenario",
+        "combination",
+        "talk_track",
+        "rows_per_page",
+        "asset_slots"
+      ],
+      "source": "poc/courseware-export/work/build-brand-upgrade.mjs",
+      "restriction": "用户已否决其作为当前公司原版式批量模板；仅保留为未采用的设计探索，不得替代 02 页原四列表格布局"
+    },
+    {
+      "id": "component.courseware.batch-excel-input-v1",
+      "name_zh": "商品课件多商品 Excel 输入协议 v1",
+      "status": "deprecated",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": [
+        "Excel",
+        "批量生成",
+        "product_id",
+        "可变模块",
+        "自动续页",
+        "素材校验"
+      ],
+      "editable": [
+        "products",
+        "introduction",
+        "selling_points",
+        "audiences",
+        "combinations",
+        "benchmarks",
+        "precautions",
+        "assets"
+      ],
+      "source": "poc/courseware-export/workbook-work/build-batch-courseware-workbook.mjs",
+      "parser": "poc/courseware-export/workbook-work/parse-batch-courseware-workbook.mjs",
+      "restriction": "用户已否决 Excel 作为日常批量入口；仅保留为历史技术验证或内部调试工具，不得作为默认操作流程"
+    },
+    {
+      "id": "component.courseware.natural-document-input-v1",
+      "name_zh": "两类商品课件文本与 Word 自动整理输入 v2",
+      "status": "deprecated",
+      "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "tags": [
+        "文本",
+        "Word",
+        "DOCX",
+        "批量导入",
+        "课件类型路由",
+        "空字段",
+        "原文保真",
+        "自动续页"
+      ],
+      "editable": [
+        "product",
+        "introduction",
+        "selling_points",
+        "audiences",
+        "combinations",
+        "benchmarks",
+        "precautions",
+        "image_requests",
+        "courseware_type",
+        "disease_definition",
+        "disease_symptoms",
+        "syndrome_comparison",
+        "treatment_principles",
+        "syndrome_subtypes",
+        "product_advantages",
+        "consultation_framework",
+        "scenario_solutions",
+        "daily_care",
+        "weighted_products",
+        "authorized_assets"
+      ],
+      "source": "poc/courseware-export/text-word-import/import_courseware_content.py",
+      "tests": "poc/courseware-export/text-word-import/test_import_courseware_content.py",
+      "template_slide_provenance": "assets/business-input-guides/courseware-template-slides/provenance.json",
+      "contract": "production-library/business-pptx-courseware-word-input-contract.md",
+      "image_prompt_builder": "poc/courseware-export/text-word-import/image_prompt_protocol.py",
+      "restriction": "历史固定课型路由验证，仅供回归旧数据；不得作为多主题业务 Word 入口，不得重新生成已删除的 5 页／18 页固定填写样本。"
+    },
+    {
+      "id": "component.courseware.universal-notebook-input-v1",
+      "name_zh": "培训课件记事本式内容与素材输入 v1",
+      "status": "technical-qa-passed",
+      "tags": [
+        "Word",
+        "DOCX",
+        "多主题",
+        "内容驱动",
+        "图片粘贴",
+        "自适应页型",
+        "批量导入"
+      ],
+      "editable": [
+        "course.theme",
+        "course.audience",
+        "course.objective",
+        "sections[].title",
+        "sections[].paragraphs",
+        "sections[].images",
+        "sections[].images[].caption_or_source"
+      ],
+      "business_template": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+      "business_template_builder": "poc/courseware-export/text-word-import/build_universal_courseware_business_word.py",
+      "filled_example": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+      "filled_example_builder": "poc/courseware-export/text-word-import/build_universal_courseware_real_sample.py",
+      "business_distribution_package": "outputs/业务使用资料包/03_通用PPTX培训课件_业务内容整理包.zip",
+      "business_distribution_package_builder": "scripts/build_business_distribution_packages.py",
+      "source": "poc/courseware-export/text-word-import/import_universal_courseware_content.py",
+      "tests": "poc/courseware-export/text-word-import/test_import_universal_courseware_content.py",
+      "contract": "production-library/business-pptx-courseware-word-input-contract.md",
+      "restriction": "业务只写主题、自然板块、审核内容并在相关板块下直接粘贴图片；不得要求业务选择固定模板、页码、卡片数量、坐标或动画。AI 从已验收页型库中选择结构并按内容与图片数量自适应拆页，禁止空卡和硬凑条目。"
+    },
+    {
+      "id": "component.scene.product-combination-guidance-v1",
+      "name_zh": "浅蓝商品两组联合用药页 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "联合用药",
+        "两组搭配",
+        "包装示意",
+        "中央加号",
+        "字幕话术"
+      ],
+      "editable": [
+        "combination_groups",
+        "partner_assets",
+        "product_asset",
+        "switch_time",
+        "subtitle_cues"
+      ],
+      "source": "poc/gold-sample/src/product-training-combination-project.tsx",
+      "restriction": "所有包装均为授权原图或明确标注的重制示意；当前未接入授权包装"
+    },
+    {
+      "id": "component.scene.product-summary-table-v1",
+      "name_zh": "浅蓝商品培训四列总结页 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "总结",
+        "核心功效",
+        "产品特点",
+        "适宜人群",
+        "联合用药",
+        "四列表格"
+      ],
+      "editable": [
+        "headers",
+        "cell_text",
+        "column_widths",
+        "badge",
+        "tagline"
+      ],
+      "source": "poc/gold-sample/src/product-training-summary-project.tsx",
+      "restriction": "表格内容读取锁定审核字段；用户视觉签样及内部审核前不得标记 production-validated",
+      "note_2026_08_02": "培训默认优先 component.scene.summary-row-headers-v1；本四列组件作备选。"
+    },
+    {
+      "id": "component.scene.product-opening-education-v1",
+      "name_zh": "浅蓝商品需求教育与机理片头 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "片头",
+        "办公压力",
+        "心脏",
+        "辅酶Q10",
+        "年龄量表"
+      ],
+      "editable": [
+        "office_elements",
+        "character_assets",
+        "heart_asset",
+        "heart_label",
+        "meter_levels",
+        "subtitle_cues"
+      ],
+      "source": "poc/gold-sample/src/product-training-opening-project.tsx",
+      "restriction": "办公人物、四阶段年龄人物和心脏均已替换为参考抽象层级的原创透明 PNG；背景、量表和标签仍可由代码图形驱动。用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "component.asset.product-training-reference-flat-characters-v2",
+      "name_zh": "商品培训参考扁平人物系列 v2",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "series_id": "series.product-training.reference-flat-characters-v1",
+      "tags": [
+        "人物资产",
+        "办公疲劳",
+        "年龄变化",
+        "扁平动画",
+        "透明PNG",
+        "禁止现代化"
+      ],
+      "editable": [
+        "role_asset",
+        "position",
+        "scale",
+        "crossfade_time",
+        "baseline"
+      ],
+      "source": "assets/component-library/product-training-opening-characters/component.json",
+      "restriction": "必须保持参考片朴素、圆润、低细节的企业培训动画抽象层级；不得改成动漫、潮流或写实人物。用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "component.scene.product-hero-v1",
+      "name_zh": "浅蓝商品旋转光束主视觉 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "商品主视觉",
+        "授权包装",
+        "旋转光束",
+        "商品承接"
+      ],
+      "editable": [
+        "product_asset",
+        "product_name",
+        "approved_claim",
+        "center",
+        "scale",
+        "duration"
+      ],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "真实商品必须使用公司授权包装图；无授权时只能生成明确标注的无品牌结构示意。用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "component.scene.product-relation-graph-v1",
+      "name_zh": "浅蓝商品机制关系图 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "作用机制",
+        "关系图",
+        "虚线连接",
+        "顺序入场"
+      ],
+      "editable": [
+        "center_node",
+        "surrounding_nodes",
+        "connector_style",
+        "node_order",
+        "subtitle_cues"
+      ],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "节点文字只读取审核稿；默认 3–5 个节点，超量内容使用同配方续镜，不压缩字号。用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "component.input.product-training-script-planner-v1",
+      "name_zh": "商品培训 Word/文本自由分镜规划器 v1",
+      "status": "deprecated",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": [
+        "Word",
+        "文本",
+        "脚本导入",
+        "自由组合",
+        "场景配方",
+        "原文锁定"
+      ],
+      "editable": [
+        "course_title",
+        "section_title",
+        "approved_text",
+        "on_screen_facts",
+        "authorized_assets",
+        "file_level_review_reference"
+      ],
+      "source": "scripts/plan_training_course.py",
+      "tests": "scripts/test_plan_training_course.py",
+      "builder": "poc/product-training-script-input/build_business_word_sample.py",
+      "visual_master": "poc/business_word_common.py",
+      "business_sample": "outputs/product-training-script-input/商品培训视频课件_业务填写Word样本.docx",
+      "storyboard_preview": "outputs/storyboard-previews/商品培训视频课件_系统分镜预览.html",
+      "storyboard_preview_audience": "production-team",
+      "business_video_frame_examples": [
+        "assets/business-input-guides/settled-template-frames/product-template-reference-pair01.png",
+        "assets/business-input-guides/settled-template-frames/product-template-reference-pair04.png",
+        "assets/business-input-guides/settled-template-frames/product-template-reference-pair06.png"
+      ],
+      "business_video_frame_provenance": "assets/business-input-guides/settled-template-frames/provenance.json",
+      "contract": "production-library/business-video-word-input-contract.md",
+      "restriction": "历史逐章 Word／文本规划入口，仅供旧数据回归；不得再作为业务入口或进入业务压缩包。新项目统一使用 component.input.universal-video-notebook-v1。"
+    },
+    {
+      "id": "component.editor.scene-direct-manipulation-v1",
+      "name_zh": "业务在线场景直接精修器 v1",
+      "status": "deprecated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "template_id": "template.health-reference-tech-v1",
+      "scene_recipe_id": "scene-recipe.symptom-overview.reference-medical-tech-v1",
+      "tags": [
+        "在线精修",
+        "业务使用",
+        "拖拽",
+        "缩放",
+        "卡片间距",
+        "模板沉淀",
+        "版本回滚"
+      ],
+      "editable": [
+        "direct_move",
+        "proportional_resize",
+        "group_resize",
+        "gap_handle",
+        "alignment",
+        "undo_redo",
+        "reset_to_template"
+      ],
+      "source": "docs/open-source-editor-core-evaluation.md",
+      "render_consumer": "poc/gold-sample/src/render-reference-symptoms.ts",
+      "restriction": "2026-07-30 已否决并删除实现。个人内部使用改为通过 VectCutAPI 生成剪映草稿；本条只保留历史查询，不得作为生产入口。"
+    },
+    {
+      "id": "component.scene.related-meds-note-above-v1",
+      "name_zh": "关联用药页（讲解在上·包装在下）v1",
+      "status": "experience-settled",
+      "kind": "scene_layout",
+      "channels": [
+        "video_still",
+        "pptx"
+      ],
+      "layout_order": [
+        "chapter",
+        "nav_pills",
+        "note_above",
+        "pack_stage"
+      ],
+      "slots": {
+        "section_title": {
+          "kind": "text"
+        },
+        "nav_items": {
+          "kind": "text_list",
+          "min": 1,
+          "max": 4
+        },
+        "active_nav": {
+          "kind": "int"
+        },
+        "note_sentence": {
+          "kind": "text",
+          "position": "above_packs"
+        },
+        "pack_primary": {
+          "kind": "image_slot",
+          "slot": "slot.pack.primary"
+        },
+        "pack_related": {
+          "kind": "image_slot",
+          "slot": "slot.pack.related"
+        },
+        "pack_primary_label": {
+          "kind": "text"
+        },
+        "pack_related_label": {
+          "kind": "text"
+        }
+      },
+      "rules": [
+        "note_sentence 必须在 pack_stage 上方",
+        "nav 已含组合名时不渲染与 nav 同义的底部 headline",
+        "pack 缺省时显示占坑，不伪造品牌包装"
+      ],
+      "source_experience": "product-courseware-4-faithful-replica-v1"
+    },
+    {
+      "id": "component.scene.summary-row-headers-v1",
+      "name_zh": "培训总结行标题完整复习表 v1",
+      "status": "experience-settled",
+      "kind": "scene_layout",
+      "channels": [
+        "video_still",
+        "pptx"
+      ],
+      "layout": "row_headers",
+      "slots": {
+        "section_title": {
+          "kind": "text",
+          "default": "总结"
+        },
+        "eyebrow": {
+          "kind": "text",
+          "default": "敲重点 · 一页复习"
+        },
+        "rows": {
+          "kind": "row_list",
+          "item": {
+            "label": "text",
+            "body": "text_multiline"
+          }
+        },
+        "footer": {
+          "kind": "text",
+          "optional": true
+        }
+      },
+      "rules": [
+        "body 必须是完整句，禁止仅关键词",
+        "左列行标题高对比（如红底白字）",
+        "默认 4 行：核心功效 / 产品特点 / 适宜人群与用法 / 关联用药"
+      ],
+      "source_experience": "product-courseware-4-faithful-replica-v1",
+      "supersedes_default_for_training": "component.scene.product-summary-table-v1"
+    }
+  ]
+}

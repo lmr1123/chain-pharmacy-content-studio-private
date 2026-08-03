@@ -1,0 +1,10 @@
+{
+  "project_id": "validation.kekang-green-gold-sample-v1",
+  "phase": "B-structure-animatic-microshot-v2",
+  "microshot_count": 58,
+  "timeline_duration_seconds": 186.80000000000004,
+  "render": "renders/kekang-green-microshot-animatic-v2.mp4",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "chapter_is_not_page": true,
+  "status": "structure-animatic-candidate"
+}

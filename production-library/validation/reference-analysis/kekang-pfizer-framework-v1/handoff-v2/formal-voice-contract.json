@@ -1,0 +1,889 @@
+{
+  "schema_version": "1.0",
+  "project_id": "validation.kekang-green-gold-sample-v1",
+  "purpose": "formal-gold-sample-voice-validation",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "engine": "Qwen3-TTS 0.6B Base BF16 with locked pharmacist reference prompt",
+  "reference_prompt": "poc/reference-replica/reference-analysis/audio/reference-clone-prompt.wav",
+  "generation_rules": {
+    "all_chapters_required": true,
+    "segment_count": 18,
+    "generate_by": "chapter semantic segment, never micro-word or isolated list number",
+    "sample_rate_hz": 48000,
+    "channels": 1,
+    "max_post_tempo_ratio": 1.18,
+    "if_too_long": "extend visual window or tighten non-claim wording; never exceed 1.18x",
+    "required_real_duration_probe": true,
+    "required_timeline_backfill": true,
+    "content_gate_is_separate_from_voice_acceptance": true
+  },
+  "pronunciation_lexicon": [
+    {
+      "term": "可可康",
+      "expected": "kě kě kāng"
+    },
+    {
+      "term": "灵芝多糖",
+      "expected": "líng zhī duō táng"
+    },
+    {
+      "term": "灵芝三萜",
+      "expected": "líng zhī sān tiē",
+      "note": "ASR 可能误写为三贴，权威字幕必须保持三萜"
+    },
+    {
+      "term": "GMP",
+      "expected": "G M P，逐字母清晰读出"
+    },
+    {
+      "term": "九点一三克",
+      "expected": "jiǔ diǎn yī sān kè"
+    }
+  ],
+  "mastering": {
+    "integrated_lufs": [
+      -17,
+      -15
+    ],
+    "target_lufs": -16,
+    "true_peak_dbtp_max": -1,
+    "chapter_head_silence_seconds": 0.12,
+    "chapter_tail_silence_seconds": 0.18,
+    "crossfade_milliseconds": 20
+  },
+  "required_deliverables": [
+    "18 chapter WAV files",
+    "full narration master WAV",
+    "SRT and VTT generated from final authoritative text",
+    "voice-sync-map.json with real durations and final placements",
+    "loudness-report.json",
+    "pronunciation-qa.json",
+    "review.html with chapter audition and full-master audition"
+  ],
+  "segments": [
+    {
+      "segment_id": "VOICE-K01",
+      "chapter_id": "K01",
+      "microshot_ids": [
+        "K01-S01",
+        "K01-S02",
+        "K01-S03"
+      ],
+      "text": "这是可可康灵芝胶囊。本次课程将从适用状态、核心成分、产品特点和使用方法，完整认识这款产品。我们先从三类常见状态开始。",
+      "cues": [
+        {
+          "microshot_id": "K01-S01",
+          "visual_anchor": "灵芝与产品身份",
+          "text": "这是可可康灵芝胶囊。",
+          "target_start_seconds": 0.0,
+          "target_window_seconds": 2.8
+        },
+        {
+          "microshot_id": "K01-S02",
+          "visual_anchor": "课程路径节点",
+          "text": "本次课程将从适用状态、核心成分、产品特点和使用方法，完整认识这款产品。",
+          "target_start_seconds": 2.8,
+          "target_window_seconds": 5.7
+        },
+        {
+          "microshot_id": "K01-S03",
+          "visual_anchor": "三类状态入口",
+          "text": "我们先从三类常见状态开始。",
+          "target_start_seconds": 8.5,
+          "target_window_seconds": 3.1
+        }
+      ],
+      "visual_start_seconds": 0.0,
+      "visual_duration_seconds": 11.6,
+      "target_audio_duration_seconds": [
+        9.048,
+        11.25
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "asset-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k01-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K02",
+      "chapter_id": "K02",
+      "microshot_ids": [
+        "K02-S01",
+        "K02-S02",
+        "K02-S03"
+      ],
+      "text": "第一类，是经常失眠、夜间休息不佳的成人。第二类，是长期饮酒，或关注肝脏健康的成人。第三类，是免疫力偏低、容易反复不适的成人。",
+      "cues": [
+        {
+          "microshot_id": "K02-S01",
+          "visual_anchor": "夜间清醒人物",
+          "text": "第一类，是经常失眠、夜间休息不佳的成人。",
+          "target_start_seconds": 11.6,
+          "target_window_seconds": 3.9
+        },
+        {
+          "microshot_id": "K02-S02",
+          "visual_anchor": "餐桌旁中年人物",
+          "text": "第二类，是长期饮酒，或关注肝脏健康的成人。",
+          "target_start_seconds": 15.5,
+          "target_window_seconds": 4.0
+        },
+        {
+          "microshot_id": "K02-S03",
+          "visual_anchor": "季节变化中的成人",
+          "text": "第三类，是免疫力偏低、容易反复不适的成人。",
+          "target_start_seconds": 19.5,
+          "target_window_seconds": 3.9
+        }
+      ],
+      "visual_start_seconds": 11.6,
+      "visual_duration_seconds": 11.8,
+      "target_audio_duration_seconds": [
+        9.204,
+        11.45
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k02-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K03",
+      "chapter_id": "K03",
+      "microshot_ids": [
+        "K03-S01",
+        "K03-S02",
+        "K03-S03"
+      ],
+      "text": "失眠常见的表现，包括入睡困难。有些人还会夜间易醒、早醒，醒后难以再次入睡。到了第二天，也容易感到疲倦，影响精神状态。",
+      "cues": [
+        {
+          "microshot_id": "K03-S01",
+          "visual_anchor": "床上清醒人物与时钟",
+          "text": "失眠常见的表现，包括入睡困难。",
+          "target_start_seconds": 23.4,
+          "target_window_seconds": 3.3
+        },
+        {
+          "microshot_id": "K03-S02",
+          "visual_anchor": "三个时间节点",
+          "text": "有些人还会夜间易醒、早醒，醒后难以再次入睡。",
+          "target_start_seconds": 26.7,
+          "target_window_seconds": 4.0
+        },
+        {
+          "microshot_id": "K03-S03",
+          "visual_anchor": "清晨工作状态",
+          "text": "到了第二天，也容易感到疲倦，影响精神状态。",
+          "target_start_seconds": 30.7,
+          "target_window_seconds": 3.9
+        }
+      ],
+      "visual_start_seconds": 23.4,
+      "visual_duration_seconds": 11.2,
+      "target_audio_duration_seconds": [
+        8.736,
+        10.85
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k03-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K04",
+      "chapter_id": "K04",
+      "microshot_ids": [
+        "K04-S01",
+        "K04-S02",
+        "K04-S03"
+      ],
+      "text": "长期饮酒，是需要关注的生活情境之一。酒精代谢会增加肝脏负担，肝功能较差的人群更需要重视日常健康管理。本段医学口径以公司最终批准资料为准。",
+      "cues": [
+        {
+          "microshot_id": "K04-S01",
+          "visual_anchor": "餐桌与成人",
+          "text": "长期饮酒，是需要关注的生活情境之一。",
+          "target_start_seconds": 34.6,
+          "target_window_seconds": 3.9
+        },
+        {
+          "microshot_id": "K04-S02",
+          "visual_anchor": "生活情境到肝脏位置的关系",
+          "text": "酒精代谢会增加肝脏负担，肝功能较差的人群更需要重视日常健康管理。",
+          "target_start_seconds": 38.5,
+          "target_window_seconds": 5.9
+        },
+        {
+          "microshot_id": "K04-S03",
+          "visual_anchor": "审核门禁标签",
+          "text": "本段医学口径以公司最终批准资料为准。",
+          "target_start_seconds": 44.4,
+          "target_window_seconds": 4.1
+        }
+      ],
+      "visual_start_seconds": 34.6,
+      "visual_duration_seconds": 13.9,
+      "target_audio_duration_seconds": [
+        10.842,
+        13.55
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "high-risk-medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k04-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K05",
+      "chapter_id": "K05",
+      "microshot_ids": [
+        "K05-S01",
+        "K05-S02",
+        "K05-S03"
+      ],
+      "text": "第三类需要关注的状态，是免疫力偏低。常见感受包括抵抗力较差，身体容易反复出现不适。这些表现用于帮助理解健康状态，不作为疾病诊断。",
+      "cues": [
+        {
+          "microshot_id": "K05-S01",
+          "visual_anchor": "季节变化中的成人",
+          "text": "第三类需要关注的状态，是免疫力偏低。",
+          "target_start_seconds": 48.5,
+          "target_window_seconds": 3.8
+        },
+        {
+          "microshot_id": "K05-S02",
+          "visual_anchor": "两个状态符号",
+          "text": "常见感受包括抵抗力较差，身体容易反复出现不适。",
+          "target_start_seconds": 52.3,
+          "target_window_seconds": 4.5
+        },
+        {
+          "microshot_id": "K05-S03",
+          "visual_anchor": "三类状态回扣",
+          "text": "这些表现用于帮助理解健康状态，不作为疾病诊断。",
+          "target_start_seconds": 56.8,
+          "target_window_seconds": 4.6
+        }
+      ],
+      "visual_start_seconds": 48.5,
+      "visual_duration_seconds": 12.9,
+      "target_audio_duration_seconds": [
+        10.062,
+        12.55
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k05-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K06",
+      "chapter_id": "K06",
+      "microshot_ids": [
+        "K06-S01",
+        "K06-S02",
+        "K06-S03"
+      ],
+      "text": "针对第一类状态，课程关注睡眠方向。针对第二类状态，课程关注肝脏健康方向。针对第三类状态，课程关注免疫方向，具体表述以批准资料为准。",
+      "cues": [
+        {
+          "microshot_id": "K06-S01",
+          "visual_anchor": "睡眠方向节点",
+          "text": "针对第一类状态，课程关注睡眠方向。",
+          "target_start_seconds": 61.4,
+          "target_window_seconds": 3.7
+        },
+        {
+          "microshot_id": "K06-S02",
+          "visual_anchor": "肝脏方向节点",
+          "text": "针对第二类状态，课程关注肝脏健康方向。",
+          "target_start_seconds": 65.1,
+          "target_window_seconds": 4.0
+        },
+        {
+          "microshot_id": "K06-S03",
+          "visual_anchor": "免疫方向与三方向总览",
+          "text": "针对第三类状态，课程关注免疫方向，具体表述以批准资料为准。",
+          "target_start_seconds": 69.1,
+          "target_window_seconds": 5.2
+        }
+      ],
+      "visual_start_seconds": 61.4,
+      "visual_duration_seconds": 12.9,
+      "target_audio_duration_seconds": [
+        10.062,
+        12.55
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k06-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K07",
+      "chapter_id": "K07",
+      "microshot_ids": [
+        "K07-S01",
+        "K07-S02",
+        "K07-S03"
+      ],
+      "text": "接下来，回到可可康灵芝胶囊本身。产品的标识、规格和包装信息，应以授权的高清实物包装为准。功能主治等关键信息，应以产品说明书或批准信息为准。",
+      "cues": [
+        {
+          "microshot_id": "K07-S01",
+          "visual_anchor": "授权包装空槽",
+          "text": "接下来，回到可可康灵芝胶囊本身。",
+          "target_start_seconds": 74.3,
+          "target_window_seconds": 3.6
+        },
+        {
+          "microshot_id": "K07-S02",
+          "visual_anchor": "OTC 与规格证据位",
+          "text": "产品的标识、规格和包装信息，应以授权的高清实物包装为准。",
+          "target_start_seconds": 77.9,
+          "target_window_seconds": 5.2
+        },
+        {
+          "microshot_id": "K07-S03",
+          "visual_anchor": "说明书批准信息",
+          "text": "功能主治等关键信息，应以产品说明书或批准信息为准。",
+          "target_start_seconds": 83.1,
+          "target_window_seconds": 4.9
+        }
+      ],
+      "visual_start_seconds": 74.3,
+      "visual_duration_seconds": 13.7,
+      "target_audio_duration_seconds": [
+        10.686,
+        13.35
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "asset-and-medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k07-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K08",
+      "chapter_id": "K08",
+      "microshot_ids": [
+        "K08-S01",
+        "K08-S02",
+        "K08-S03"
+      ],
+      "text": "从灵芝主体，可以认识两类核心成分。第一类，是灵芝多糖。第二类，是灵芝三萜。",
+      "cues": [
+        {
+          "microshot_id": "K08-S01",
+          "visual_anchor": "灵芝主体",
+          "text": "从灵芝主体，可以认识两类核心成分。",
+          "target_start_seconds": 88.0,
+          "target_window_seconds": 3.1
+        },
+        {
+          "microshot_id": "K08-S02",
+          "visual_anchor": "灵芝多糖标签",
+          "text": "第一类，是灵芝多糖。",
+          "target_start_seconds": 91.1,
+          "target_window_seconds": 2.4
+        },
+        {
+          "microshot_id": "K08-S03",
+          "visual_anchor": "灵芝三萜与双标签完成",
+          "text": "第二类，是灵芝三萜。",
+          "target_start_seconds": 93.5,
+          "target_window_seconds": 2.3
+        }
+      ],
+      "visual_start_seconds": 88.0,
+      "visual_duration_seconds": 7.8,
+      "target_audio_duration_seconds": [
+        6.084,
+        7.45
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "source-aligned-review-required",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k08-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K09",
+      "chapter_id": "K09",
+      "microshot_ids": [
+        "K09-S01",
+        "K09-S02",
+        "K09-S03"
+      ],
+      "text": "先看灵芝多糖，它是灵芝中的重要成分之一。课程将从免疫、血压和心血管健康等方向认识相关资料。涉及具体作用和疾病预防的表述，必须以批准终稿为准。",
+      "cues": [
+        {
+          "microshot_id": "K09-S01",
+          "visual_anchor": "灵芝多糖节点",
+          "text": "先看灵芝多糖，它是灵芝中的重要成分之一。",
+          "target_start_seconds": 95.8,
+          "target_window_seconds": 4.2
+        },
+        {
+          "microshot_id": "K09-S02",
+          "visual_anchor": "高风险锁定路径",
+          "text": "课程将从免疫、血压和心血管健康等方向认识相关资料。",
+          "target_start_seconds": 100.0,
+          "target_window_seconds": 5.0
+        },
+        {
+          "microshot_id": "K09-S03",
+          "visual_anchor": "审核状态收束",
+          "text": "涉及具体作用和疾病预防的表述，必须以批准终稿为准。",
+          "target_start_seconds": 105.0,
+          "target_window_seconds": 4.9
+        }
+      ],
+      "visual_start_seconds": 95.8,
+      "visual_duration_seconds": 14.1,
+      "target_audio_duration_seconds": [
+        10.998,
+        13.75
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "high-risk-medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k09-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K10",
+      "chapter_id": "K10",
+      "microshot_ids": [
+        "K10-S01",
+        "K10-S02",
+        "K10-S03"
+      ],
+      "text": "再看灵芝三萜，它同样是灵芝的重要成分。关于免疫细胞和肿瘤等高风险医学内容，本金样只验证讲解结构。正式培训必须使用逐句批准后的口径，不自行补充靶点和因果关系。",
+      "cues": [
+        {
+          "microshot_id": "K10-S01",
+          "visual_anchor": "灵芝三萜节点",
+          "text": "再看灵芝三萜，它同样是灵芝的重要成分。",
+          "target_start_seconds": 109.9,
+          "target_window_seconds": 4.2
+        },
+        {
+          "microshot_id": "K10-S02",
+          "visual_anchor": "高风险机制断点",
+          "text": "关于免疫细胞和肿瘤等高风险医学内容，本金样只验证讲解结构。",
+          "target_start_seconds": 114.1,
+          "target_window_seconds": 5.7
+        },
+        {
+          "microshot_id": "K10-S03",
+          "visual_anchor": "逐句审核状态",
+          "text": "正式培训必须使用逐句批准后的口径，不自行补充靶点和因果关系。",
+          "target_start_seconds": 119.8,
+          "target_window_seconds": 5.9
+        }
+      ],
+      "visual_start_seconds": 109.9,
+      "visual_duration_seconds": 15.8,
+      "target_audio_duration_seconds": [
+        12.324,
+        15.45
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "high-risk-medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k10-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K11",
+      "chapter_id": "K11",
+      "microshot_ids": [
+        "K11-S01",
+        "K11-S02",
+        "K11-S03"
+      ],
+      "text": "完成审核后，两类成分知识将与睡眠方向建立对应。同样的方法，也用于说明肝脏健康方向。最后回到免疫方向，三条关系都以批准资料为准。",
+      "cues": [
+        {
+          "microshot_id": "K11-S01",
+          "visual_anchor": "睡眠对应路径",
+          "text": "完成审核后，两类成分知识将与睡眠方向建立对应。",
+          "target_start_seconds": 125.7,
+          "target_window_seconds": 4.5
+        },
+        {
+          "microshot_id": "K11-S02",
+          "visual_anchor": "肝脏对应路径",
+          "text": "同样的方法，也用于说明肝脏健康方向。",
+          "target_start_seconds": 130.2,
+          "target_window_seconds": 3.8
+        },
+        {
+          "microshot_id": "K11-S03",
+          "visual_anchor": "三方向关系总览",
+          "text": "最后回到免疫方向，三条关系都以批准资料为准。",
+          "target_start_seconds": 134.0,
+          "target_window_seconds": 4.4
+        }
+      ],
+      "visual_start_seconds": 125.7,
+      "visual_duration_seconds": 12.7,
+      "target_audio_duration_seconds": [
+        9.906,
+        12.35
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k11-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K12",
+      "chapter_id": "K12",
+      "microshot_ids": [
+        "K12-S01",
+        "K12-S02",
+        "K12-S03"
+      ],
+      "text": "第一项产品特点，从原料产地开始。现有资料标注，每一百克原料含多糖九点一三克。灵芝三萜含量等数据，也必须与最终可展示的证据保持一致。",
+      "cues": [
+        {
+          "microshot_id": "K12-S01",
+          "visual_anchor": "大别山产地素材",
+          "text": "第一项产品特点，从原料产地开始。",
+          "target_start_seconds": 138.4,
+          "target_window_seconds": 3.6
+        },
+        {
+          "microshot_id": "K12-S02",
+          "visual_anchor": "含量证据数字",
+          "text": "现有资料标注，每一百克原料含多糖九点一三克。",
+          "target_start_seconds": 142.0,
+          "target_window_seconds": 4.4
+        },
+        {
+          "microshot_id": "K12-S03",
+          "visual_anchor": "三萜证据槽",
+          "text": "灵芝三萜含量等数据，也必须与最终可展示的证据保持一致。",
+          "target_start_seconds": 146.4,
+          "target_window_seconds": 5.1
+        }
+      ],
+      "visual_start_seconds": 138.4,
+      "visual_duration_seconds": 13.1,
+      "target_audio_duration_seconds": [
+        10.218,
+        12.75
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "evidence-and-asset-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k12-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K13",
+      "chapter_id": "K13",
+      "microshot_ids": [
+        "K13-S01",
+        "K13-S02",
+        "K13-S03"
+      ],
+      "text": "第二项特点，是双重提取工艺。原料经过第一次提取后，再进入第二次浓缩提取。经过两次提取，原料逐步浓缩，最终形成胶囊。",
+      "cues": [
+        {
+          "microshot_id": "K13-S01",
+          "visual_anchor": "灵芝原料与第一次提取",
+          "text": "第二项特点，是双重提取工艺。",
+          "target_start_seconds": 151.5,
+          "target_window_seconds": 3.1
+        },
+        {
+          "microshot_id": "K13-S02",
+          "visual_anchor": "第二次提取节点",
+          "text": "原料经过第一次提取后，再进入第二次浓缩提取。",
+          "target_start_seconds": 154.6,
+          "target_window_seconds": 4.2
+        },
+        {
+          "microshot_id": "K13-S03",
+          "visual_anchor": "胶囊成形",
+          "text": "经过两次提取，原料逐步浓缩，最终形成胶囊。",
+          "target_start_seconds": 158.8,
+          "target_window_seconds": 3.9
+        }
+      ],
+      "visual_start_seconds": 151.5,
+      "visual_duration_seconds": 11.2,
+      "target_audio_duration_seconds": [
+        8.736,
+        10.85
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "evidence-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k13-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K14",
+      "chapter_id": "K14",
+      "microshot_ids": [
+        "K14-S01",
+        "K14-S02",
+        "K14-S03"
+      ],
+      "text": "第三项特点，回到产品的生产过程。生产主体、GMP 和生产技术信息，需要使用当前有效的证明材料。最终措辞与可展示素材，以公司批准内容为准。",
+      "cues": [
+        {
+          "microshot_id": "K14-S01",
+          "visual_anchor": "授权工厂素材",
+          "text": "第三项特点，回到产品的生产过程。",
+          "target_start_seconds": 162.7,
+          "target_window_seconds": 3.6
+        },
+        {
+          "microshot_id": "K14-S02",
+          "visual_anchor": "GMP 与生产证据",
+          "text": "生产主体、GMP 和生产技术信息，需要使用当前有效的证明材料。",
+          "target_start_seconds": 166.3,
+          "target_window_seconds": 5.1
+        },
+        {
+          "microshot_id": "K14-S03",
+          "visual_anchor": "生产、质量、封装三节点",
+          "text": "最终措辞与可展示素材，以公司批准内容为准。",
+          "target_start_seconds": 171.4,
+          "target_window_seconds": 4.2
+        }
+      ],
+      "visual_start_seconds": 162.7,
+      "visual_duration_seconds": 12.9,
+      "target_audio_duration_seconds": [
+        10.062,
+        12.55
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "evidence-and-asset-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k14-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K15",
+      "chapter_id": "K15",
+      "microshot_ids": [
+        "K15-S01",
+        "K15-S02",
+        "K15-S03"
+      ],
+      "text": "在联合应用部分，课程设置了三类场景。分别对应失眠、肝功能异常和免疫力偏低。每套组合及其适用情境，都必须由药师和合规人员逐项确认。",
+      "cues": [
+        {
+          "microshot_id": "K15-S01",
+          "visual_anchor": "三个组合入口",
+          "text": "在联合应用部分，课程设置了三类场景。",
+          "target_start_seconds": 175.6,
+          "target_window_seconds": 3.8
+        },
+        {
+          "microshot_id": "K15-S02",
+          "visual_anchor": "三场景标签",
+          "text": "分别对应失眠、肝功能异常和免疫力偏低。",
+          "target_start_seconds": 179.4,
+          "target_window_seconds": 4.0
+        },
+        {
+          "microshot_id": "K15-S03",
+          "visual_anchor": "三套组合锁定轮廓",
+          "text": "每套组合及其适用情境，都必须由药师和合规人员逐项确认。",
+          "target_start_seconds": 183.4,
+          "target_window_seconds": 5.1
+        }
+      ],
+      "visual_start_seconds": 175.6,
+      "visual_duration_seconds": 12.9,
+      "target_audio_duration_seconds": [
+        10.062,
+        12.55
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "high-risk-medical-and-asset-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k15-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K16",
+      "chapter_id": "K16",
+      "microshot_ids": [
+        "K16-S01",
+        "K16-S02",
+        "K16-S03",
+        "K16-S04",
+        "K16-S05",
+        "K16-S06"
+      ],
+      "text": "第一套方案，对应失眠场景。谷维素片与灵芝胶囊，组成这一方向的联合方案。第二套方案，对应肝功能异常场景。护肝片与灵芝胶囊，组成这一方向的联合方案。第三套方案，对应免疫力偏低场景。转移因子口服溶液与灵芝胶囊，组成这一方向的联合方案。",
+      "cues": [
+        {
+          "microshot_id": "K16-S01",
+          "visual_anchor": "失眠问题与两商品空槽",
+          "text": "第一套方案，对应失眠场景。",
+          "target_start_seconds": 188.5,
+          "target_window_seconds": 2.9
+        },
+        {
+          "microshot_id": "K16-S02",
+          "visual_anchor": "第一组合关系",
+          "text": "谷维素片与灵芝胶囊，组成这一方向的联合方案。",
+          "target_start_seconds": 191.4,
+          "target_window_seconds": 4.0
+        },
+        {
+          "microshot_id": "K16-S03",
+          "visual_anchor": "肝脏问题与两商品空槽",
+          "text": "第二套方案，对应肝功能异常场景。",
+          "target_start_seconds": 195.4,
+          "target_window_seconds": 3.3
+        },
+        {
+          "microshot_id": "K16-S04",
+          "visual_anchor": "第二组合关系",
+          "text": "护肝片与灵芝胶囊，组成这一方向的联合方案。",
+          "target_start_seconds": 198.7,
+          "target_window_seconds": 3.9
+        },
+        {
+          "microshot_id": "K16-S05",
+          "visual_anchor": "免疫问题与两商品空槽",
+          "text": "第三套方案，对应免疫力偏低场景。",
+          "target_start_seconds": 202.6,
+          "target_window_seconds": 3.3
+        },
+        {
+          "microshot_id": "K16-S06",
+          "visual_anchor": "第三组合关系与三方案收束",
+          "text": "转移因子口服溶液与灵芝胶囊，组成这一方向的联合方案。",
+          "target_start_seconds": 205.9,
+          "target_window_seconds": 4.7
+        }
+      ],
+      "visual_start_seconds": 188.5,
+      "visual_duration_seconds": 22.1,
+      "target_audio_duration_seconds": [
+        17.238,
+        21.75
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "high-risk-medical-and-asset-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k16-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K17",
+      "chapter_id": "K17",
+      "microshot_ids": [
+        "K17-S01",
+        "K17-S02",
+        "K17-S03"
+      ],
+      "text": "关于服用周期，现有资料以一个月作为一个周期。并建议连续服用两到三个月。具体周期和注意事项，应与说明书或最终审核口径保持一致。",
+      "cues": [
+        {
+          "microshot_id": "K17-S01",
+          "visual_anchor": "第一个月历节点",
+          "text": "关于服用周期，现有资料以一个月作为一个周期。",
+          "target_start_seconds": 210.6,
+          "target_window_seconds": 4.4
+        },
+        {
+          "microshot_id": "K17-S02",
+          "visual_anchor": "第二、第三个月历节点",
+          "text": "并建议连续服用两到三个月。",
+          "target_start_seconds": 215.0,
+          "target_window_seconds": 3.3
+        },
+        {
+          "microshot_id": "K17-S03",
+          "visual_anchor": "周期注意事项",
+          "text": "具体周期和注意事项，应与说明书或最终审核口径保持一致。",
+          "target_start_seconds": 218.3,
+          "target_window_seconds": 5.0
+        }
+      ],
+      "visual_start_seconds": 210.6,
+      "visual_duration_seconds": 12.7,
+      "target_audio_duration_seconds": [
+        9.906,
+        12.35
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "medical-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k17-formal.wav"
+    },
+    {
+      "segment_id": "VOICE-K18",
+      "chapter_id": "K18",
+      "microshot_ids": [
+        "K18-S01",
+        "K18-S02",
+        "K18-S03",
+        "K18-S04"
+      ],
+      "text": "最后，我们从核心成分和产品方向开始回顾。再回顾适用状态和三项产品特点。最后是联合应用和服用周期。完成内容与素材审核后，本次可可康产品知识培训到这里就结束了。",
+      "cues": [
+        {
+          "microshot_id": "K18-S01",
+          "visual_anchor": "前两个总结节点",
+          "text": "最后，我们从核心成分和产品方向开始回顾。",
+          "target_start_seconds": 223.3,
+          "target_window_seconds": 4.0
+        },
+        {
+          "microshot_id": "K18-S02",
+          "visual_anchor": "中间两个总结节点",
+          "text": "再回顾适用状态和三项产品特点。",
+          "target_start_seconds": 227.3,
+          "target_window_seconds": 3.4
+        },
+        {
+          "microshot_id": "K18-S03",
+          "visual_anchor": "最后两个总结节点",
+          "text": "最后是联合应用和服用周期。",
+          "target_start_seconds": 230.7,
+          "target_window_seconds": 3.2
+        },
+        {
+          "microshot_id": "K18-S04",
+          "visual_anchor": "产品与品牌封底",
+          "text": "完成内容与素材审核后，本次可可康产品知识培训到这里就结束了。",
+          "target_start_seconds": 233.9,
+          "target_window_seconds": 5.2
+        }
+      ],
+      "visual_start_seconds": 223.3,
+      "visual_duration_seconds": 15.8,
+      "target_audio_duration_seconds": [
+        12.324,
+        15.45
+      ],
+      "generation_unit": "one-semantic-chapter-segment",
+      "delivery": "中性、可信、清晰的内部药师培训语气；自然连读，不逐条播报表格",
+      "content_status": "content-and-asset-blocked",
+      "gold_sample_voice_status": "must-generate-and-accept",
+      "output_file": "audio/narration/chapters/k18-formal.wav"
+    }
+  ]
+}

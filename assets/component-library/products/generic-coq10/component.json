@@ -1,0 +1,35 @@
+{
+  "id": "generic-coq10-packshot",
+  "category": "products",
+  "style_id": "product-training-generic-v1",
+  "version": "1.0.0",
+  "status": "approved",
+  "subject": "无品牌辅酶Q10通用包装示意",
+  "files": {
+    "master_chroma": "master/generic-coq10-packshot-v1-chroma.png",
+    "transparent": "transparent/generic-coq10-packshot-v1.png",
+    "thumbnail": "thumbnails/generic-coq10-packshot-v1.png",
+    "prompt": "prompts/generic-coq10-packshot-v1.md"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "reference_video_pixels_used": false,
+    "real_brand_packaging": false
+  },
+  "usage": {
+    "allowed": [
+      "商品培训模板签样",
+      "无真实包装原图时的明确标注示意"
+    ],
+    "prohibited": [
+      "冒充真实商品包装",
+      "对外广告或销售物料",
+      "替代内部已批准包装原图"
+    ]
+  },
+  "review": {
+    "visual": "passed",
+    "alpha": "passed",
+    "content": "not-applicable-generic-mockup"
+  }
+}

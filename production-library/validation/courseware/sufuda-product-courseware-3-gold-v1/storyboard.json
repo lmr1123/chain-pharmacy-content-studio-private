@@ -1,0 +1,366 @@
+{
+  "project_id": "courseware.sufuda-product-training-3.gold-v1",
+  "title": "速福达®玛巴洛沙韦 · 商品培训课件3 独立金样",
+  "template_id": "template.sufuda-product-courseware-3-v1",
+  "style_pack_id": "style-pack.sufuda-pearl-silk-orange-v1",
+  "source_authority": {
+    "video": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4",
+    "audio": "/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp3",
+    "duration_source": 136.83,
+    "duration_deliverable": 93.228,
+    "trim_reason": "新录音有效口播约至 96s；97s 后为静音垫，不进入成片",
+    "reference_resolution": [
+      850,
+      480
+    ],
+    "output_resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "pixel_policy": "measurement-only-never-import"
+  },
+  "audio": {
+    "file": "/assets/narration-0-103.wav",
+    "source": "voice.sufuda-courseware-pharmacist-v1",
+    "processing": "Qwen3-TTS semantic-block clone v5-smooth + loudnorm-16LUFS",
+    "loudness_target_lufs": -16,
+    "note": "v2.1：整课克隆轨替换重录原声，供评估克隆质量上限；原声备份 narration-rerecord-original-v2.wav",
+    "clone_report": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/sufuda-product-courseware-3-gold-v1/audio-work/clone-full-v1/clone-report.json"
+  },
+  "assets": {
+    "background": "/assets/bg-silk-v1.png",
+    "logo": "/assets/logo-sufuda-text-v1.png",
+    "packGroup": "/assets/pack-group-slot-v1.png",
+    "pack40": "/assets/pack-tablet-40-slot-v1.png",
+    "pack20": "/assets/pack-tablet-20-slot-v1.png",
+    "packSusp": "/assets/pack-suspension-slot-v1.png",
+    "icon365": "/assets/icon-365-v1.png",
+    "iconTree": "/assets/icon-season-tree-v1.png",
+    "iconVirus": "/assets/icon-virus-v1.png",
+    "iconLungs": "/assets/icon-lungs-v1.png",
+    "iconWarn": "/assets/icon-warn-v1.png",
+    "iconChina": "/assets/icon-china-cases-v1.png",
+    "iconBaby": "/assets/icon-baby-v1.png",
+    "iconShield": "/assets/icon-shield-check-v1.png",
+    "icon24h": "/assets/icon-24h-v1.png",
+    "iconThumb": "/assets/icon-thumb-v1.png",
+    "iconAward": "/assets/icon-award-v1.png",
+    "icon70": "/assets/icon-70plus-v1.png",
+    "iconFlag": "/assets/icon-flag-v1.png",
+    "iconHand": "/assets/icon-hand-pointer-v1.png",
+    "cell": "/assets/mechanism-cell-v1.png",
+    "family": "/assets/family-shield-v1.png",
+    "patient": "/assets/patient-masked-v1.png",
+    "charElder": "/assets/char-elder-v1.png",
+    "charChild": "/assets/char-child-v1.png",
+    "charChronic": "/assets/char-chronic-v1.png",
+    "bust": "/assets/bust-outline-v1.png",
+    "tablets": "/assets/tablets-closeup-v1.png",
+    "granule": "/assets/granule-kit-v1.png",
+    "boxFever": "/assets/box-antipyretic-v1.png",
+    "boxChronic": "/assets/box-chronic-v1.png"
+  },
+  "packshot_policy": "业务授权包装槽位；当前为自制无商标示意包装，替换路径即可。禁止从参考视频裁切像素。",
+  "captions": [
+    {
+      "start": 0.06,
+      "end": 1.243,
+      "text": "流感全年可发生"
+    },
+    {
+      "start": 1.243,
+      "end": 3.271,
+      "text": "冬春高发，夏季也可能高发"
+    },
+    {
+      "start": 3.271,
+      "end": 5.299,
+      "text": "传染性强，危害大，可致死"
+    },
+    {
+      "start": 5.299,
+      "end": 8.171,
+      "text": "每年中国流感患病人数可高达1.4亿"
+    },
+    {
+      "start": 8.171,
+      "end": 10.875,
+      "text": "抗流感药需要抓住黄金48小时用药"
+    },
+    {
+      "start": 11.035,
+      "end": 12.446,
+      "text": "一、三大核心功效"
+    },
+    {
+      "start": 12.446,
+      "end": 13.856,
+      "text": "一、专治甲流乙流"
+    },
+    {
+      "start": 14.016,
+      "end": 15.852,
+      "text": "二、全程一次，一天退热"
+    },
+    {
+      "start": 15.852,
+      "end": 17.687,
+      "text": "速福达全程只需口服一次"
+    },
+    {
+      "start": 17.687,
+      "end": 21.692,
+      "text": "且早期阻断病毒复制，遏制新病毒生成，一天快速退热"
+    },
+    {
+      "start": 21.692,
+      "end": 24.194,
+      "text": "传统药物奥司他韦不阻止病毒复制"
+    },
+    {
+      "start": 24.194,
+      "end": 27.531,
+      "text": "而是阻止已复制的病毒释放，减少在体内扩散"
+    },
+    {
+      "start": 27.531,
+      "end": 29.534,
+      "text": "且需一天两次，连续吃五天"
+    },
+    {
+      "start": 29.694,
+      "end": 31.706,
+      "text": "三、治疗自己，保护身边人"
+    },
+    {
+      "start": 31.706,
+      "end": 34.892,
+      "text": "仅需患者本人服用，即可早期阻断流感传播"
+    },
+    {
+      "start": 34.892,
+      "end": 36.904,
+      "text": "大大降低传染给家人的风险"
+    },
+    {
+      "start": 37.064,
+      "end": 38.092,
+      "text": "二、产品特点"
+    },
+    {
+      "start": 38.092,
+      "end": 40.149,
+      "text": "一、成人儿童安全性均良好"
+    },
+    {
+      "start": 40.149,
+      "end": 42.55,
+      "text": "儿童服用呕吐率低，安全性良好"
+    },
+    {
+      "start": 42.71,
+      "end": 45.076,
+      "text": "二、片剂、干混悬剂双剂型选择"
+    },
+    {
+      "start": 45.076,
+      "end": 46.597,
+      "text": "片剂无味，药小易吞"
+    },
+    {
+      "start": 46.597,
+      "end": 47.95,
+      "text": "干混悬剂草莓口味"
+    },
+    {
+      "start": 47.95,
+      "end": 51.33,
+      "text": "小体重孩子亦可按体重精准给药，服药更轻松"
+    },
+    {
+      "start": 51.49,
+      "end": 52.504,
+      "text": "三、原研品牌"
+    },
+    {
+      "start": 52.504,
+      "end": 56.56,
+      "text": "来自第一代流感药奥司他韦厂家——全球制药巨头罗氏"
+    },
+    {
+      "start": 56.56,
+      "end": 58.081,
+      "text": "70+国家获批上市"
+    },
+    {
+      "start": 58.081,
+      "end": 60.277,
+      "text": "中国卫健委与WHO一致推荐"
+    },
+    {
+      "start": 60.277,
+      "end": 62.305,
+      "text": "14项国内外权威指南纳入"
+    },
+    {
+      "start": 62.465,
+      "end": 63.459,
+      "text": "三、适宜人群"
+    },
+    {
+      "start": 63.459,
+      "end": 68.265,
+      "text": "5岁及以上既往健康或存在流感并发症高风险的单纯性甲乙流患者"
+    },
+    {
+      "start": 68.425,
+      "end": 70.623,
+      "text": "特别是：老年人（≥65岁）"
+    },
+    {
+      "start": 70.623,
+      "end": 72.653,
+      "text": "学龄期儿童（5岁及以上）"
+    },
+    {
+      "start": 72.653,
+      "end": 74.851,
+      "text": "自身有基础性疾病的慢病患者"
+    },
+    {
+      "start": 75.011,
+      "end": 76.011,
+      "text": "三、联合用药"
+    },
+    {
+      "start": 76.011,
+      "end": 78.846,
+      "text": "一、玛巴洛沙韦+退烧药（如布洛芬）"
+    },
+    {
+      "start": 78.846,
+      "end": 82.848,
+      "text": "在抑制流感病毒复制的同时，快速缓解发热等不适症状"
+    },
+    {
+      "start": 83.008,
+      "end": 86.624,
+      "text": "二、玛巴洛沙韦+慢病药物（如降压药和降糖药）"
+    },
+    {
+      "start": 86.624,
+      "end": 89.748,
+      "text": "无需调整剂量，不影响慢病患者的日常管理"
+    },
+    {
+      "start": 89.908,
+      "end": 93.513,
+      "text": "总结：核心功效 · 产品特点 · 适宜人群 · 联合用药"
+    }
+  ],
+  "pages": [
+    {
+      "id": "P01",
+      "range": [
+        0.0,
+        10.975
+      ],
+      "type": "flu-context"
+    },
+    {
+      "id": "P02",
+      "range": [
+        10.975,
+        13.956
+      ],
+      "type": "chapter",
+      "title": "一、三大核心功效"
+    },
+    {
+      "id": "P03",
+      "range": [
+        13.956,
+        29.634
+      ],
+      "type": "benefit-2"
+    },
+    {
+      "id": "P04",
+      "range": [
+        29.634,
+        37.004
+      ],
+      "type": "benefit-3"
+    },
+    {
+      "id": "P05",
+      "range": [
+        37.004,
+        42.65
+      ],
+      "type": "chapter",
+      "title": "二、产品特点"
+    },
+    {
+      "id": "P06",
+      "range": [
+        42.65,
+        51.43
+      ],
+      "type": "feature-2"
+    },
+    {
+      "id": "P07",
+      "range": [
+        51.43,
+        62.405
+      ],
+      "type": "feature-3"
+    },
+    {
+      "id": "P08",
+      "range": [
+        62.405,
+        68.365
+      ],
+      "type": "chapter",
+      "title": "三、适宜人群"
+    },
+    {
+      "id": "P09",
+      "range": [
+        68.365,
+        74.951
+      ],
+      "type": "audience-1"
+    },
+    {
+      "id": "P10",
+      "range": [
+        74.951,
+        82.948
+      ],
+      "type": "chapter",
+      "title": "三、联合用药"
+    },
+    {
+      "id": "P11",
+      "range": [
+        82.948,
+        89.848
+      ],
+      "type": "combo-2"
+    },
+    {
+      "id": "P12",
+      "range": [
+        89.848,
+        93.613
+      ],
+      "type": "chapter",
+      "title": "三、适宜人群"
+    }
+  ],
+  "duration": 93.228
+}

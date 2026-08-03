@@ -1,0 +1,1577 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/nrzkbr",
+    "id": "nrzkbr",
+    "slide": 5,
+    "layoutId": "d560fd2e-2110-47b6-90c3-e804a09e5ce4",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "d560fd2e-2110-47b6-90c3-e804a09e5ce4",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f2dwzel8",
+      "id": "1",
+      "name": "header-shadow-line",
+      "bbox": [
+        0,
+        69,
+        1280,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E8D4",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g3mdsjmt",
+      "id": "2",
+      "name": "header-green-line",
+      "bbox": [
+        95,
+        69,
+        1185,
+        4
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14ve1o3e",
+      "id": "3",
+      "name": "page-number-block",
+      "bbox": [
+        30,
+        0,
+        70,
+        83
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/254fut4z",
+      "id": "4",
+      "name": "page-number",
+      "bbox": [
+        22,
+        19,
+        86,
+        48
+      ],
+      "geometry": "rect",
+      "text": "04",
+      "textPreview": "04",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#FFFFFF",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04",
+              "fontSize": 28,
+              "color": "#FFFFFF",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/36dw3ylk",
+      "id": "5",
+      "name": "page-title",
+      "bbox": [
+        110,
+        16,
+        740,
+        48
+      ],
+      "geometry": "rect",
+      "text": "注意事项",
+      "textPreview": "注意事项",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "注意事项"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "注意事项",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "注意事项",
+              "fontSize": 30,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7mxw3m5",
+      "id": "6",
+      "name": "brand-wordmark",
+      "bbox": [
+        1080,
+        18,
+        165,
+        42
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#45A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#45A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 18,
+              "color": "#45A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8ve5o3q",
+      "id": "7",
+      "name": "internal-notice",
+      "bbox": [
+        1080,
+        688,
+        170,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅供内部学习",
+      "textPreview": "仅供内部学习",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅供内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅供内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111111",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅供内部学习",
+              "fontSize": 14,
+              "color": "#111111",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q9ofyt4b",
+      "id": "8",
+      "name": "precautions-label",
+      "bbox": [
+        58,
+        100,
+        130,
+        36
+      ],
+      "geometry": "rect",
+      "text": "注意事项：",
+      "textPreview": "注意事项：",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "注意事项："
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "注意事项：",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "注意事项：",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/buxw7ylg",
+      "id": "9",
+      "name": "precaution-item-0",
+      "bbox": [
+        58,
+        150,
+        575,
+        84
+      ],
+      "geometry": "rect",
+      "text": "1、本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医嘱治疗；营养补充不替代诊断与治疗。",
+      "textPreview": "1、本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医嘱治疗；营养补充不替代诊断与治疗。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1、本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医"
+          },
+          {
+            "index": 2,
+            "text": "嘱治疗；营养补充不替代诊断与治疗。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1、本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医嘱治疗；营养补充不替代诊断与治疗。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1、本品不能代替药物。已确诊前列腺疾病或其他疾病者，应遵医嘱治疗；营养补充不替代诊断与治疗。",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3elsb6xg",
+      "id": "10",
+      "name": "precaution-item-1",
+      "bbox": [
+        58,
+        238,
+        575,
+        84
+      ],
+      "geometry": "rect",
+      "text": "2、不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎用，对本品及所含成分过敏者禁用。",
+      "textPreview": "2、不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎用，对本品及所含成分过敏者禁用。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2、不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎"
+          },
+          {
+            "index": 2,
+            "text": "用，对本品及所含成分过敏者禁用。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2、不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎用，对本品及所含成分过敏者禁用。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2、不适宜人群：少年儿童、孕妇、乳母不宜服用；过敏体质者慎用，对本品及所含成分过敏者禁用。",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2dcbi1gv",
+      "id": "11",
+      "name": "precaution-item-2",
+      "bbox": [
+        58,
+        326,
+        575,
+        84
+      ],
+      "geometry": "rect",
+      "text": "3、用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过量；建议随餐服用。",
+      "textPreview": "3、用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过量；建议随餐服用。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3、用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过"
+          },
+          {
+            "index": 2,
+            "text": "量；建议随餐服用。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3、用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过量；建议随餐服用。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3、用法建议：按标签用量服用（每日1次，每次1～2粒），不宜过量；建议随餐服用。",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pg3adgfm",
+      "id": "12",
+      "name": "precaution-item-3",
+      "bbox": [
+        58,
+        414,
+        575,
+        84
+      ],
+      "geometry": "rect",
+      "text": "4、联合使用注意：正在服用处方药或其他保健品时，推荐前建议咨询药师，避免自行叠加多种同类抗氧化产品。",
+      "textPreview": "4、联合使用注意：正在服用处方药或其他保健品时，推荐前建议咨询药师，避免自行叠加多种同类抗氧化产品。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4、联合使用注意：正在服用处方药或其他保健品时，推荐前建议"
+          },
+          {
+            "index": 2,
+            "text": "咨询药师，避免自行叠加多种同类抗氧化产品。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4、联合使用注意：正在服用处方药或其他保健品时，推荐前建议咨询药师，避免自行叠加多种同类抗氧化产品。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "4、联合使用注意：正在服用处方药或其他保健品时，推荐前建议咨询药师，避免自行叠加多种同类抗氧化产品。",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofutkby1",
+      "id": "13",
+      "name": "precaution-item-4",
+      "bbox": [
+        58,
+        502,
+        575,
+        84
+      ],
+      "geometry": "rect",
+      "text": "5、贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用。",
+      "textPreview": "5、贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5、贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用"
+          },
+          {
+            "index": 2,
+            "text": "。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5、贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5、贮存与性状：密封、置阴凉干燥处；性状发生改变时禁止使用。",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fq1s76xk",
+      "id": "14",
+      "name": "precaution-item-5",
+      "bbox": [
+        58,
+        590,
+        575,
+        84
+      ],
+      "geometry": "rect",
+      "text": "6、就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症状，应停用相关自行补充并及时就医。",
+      "textPreview": "6、就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症状，应停用相关自行补充并及时就医。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "6、就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症"
+          },
+          {
+            "index": 2,
+            "text": "状，应停用相关自行补充并及时就医。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "6、就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症状，应停用相关自行补充并及时就医。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "6、就医提醒：出现明显或持续的排尿异常、会阴不适、血尿等症状，应停用相关自行补充并及时就医。",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/epsbe1gz",
+      "id": "15",
+      "name": "precaution-card-0",
+      "bbox": [
+        670,
+        105,
+        267,
+        264.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#F5FBEC",
+      "lineColor": "#009900",
+      "lineWidth": 3
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1sja9wfa",
+      "id": "16",
+      "name": "precaution-card-title-0",
+      "bbox": [
+        690,
+        127,
+        227,
+        38
+      ],
+      "geometry": "rect",
+      "text": "！ 不替代药物治疗",
+      "textPreview": "！ 不替代药物治疗",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "！ 不替代药物治疗"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "！ 不替代药物治疗",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "！ 不替代药物治疗",
+              "fontSize": 20,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gratgbyp",
+      "id": "17",
+      "name": "precaution-asset-0-surface",
+      "bbox": [
+        705,
+        181,
+        197,
+        159.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#DDF6E9",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zm5cjqxo",
+      "id": "18",
+      "name": "precaution-asset-0-label",
+      "bbox": [
+        715,
+        235.75,
+        177,
+        50
+      ],
+      "geometry": "rect",
+      "text": "原创插图槽位\n不替代药物治疗",
+      "textPreview": "原创插图槽位 | 不替代药物治疗",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "原创插图槽位"
+          },
+          {
+            "index": 2,
+            "text": "不替代药物治疗"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "原创插图槽位",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "原创插图槽位",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "不替代药物治疗",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不替代药物治疗",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ylwbqlg3",
+      "id": "19",
+      "name": "precaution-card-1",
+      "bbox": [
+        943,
+        105,
+        267,
+        264.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#F5FBEC",
+      "lineColor": "#009900",
+      "lineWidth": 3
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uhgvip0b",
+      "id": "20",
+      "name": "precaution-card-title-1",
+      "bbox": [
+        963,
+        127,
+        227,
+        38
+      ],
+      "geometry": "rect",
+      "text": "！ 特殊人群慎用",
+      "textPreview": "！ 特殊人群慎用",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "！ 特殊人群慎用"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "！ 特殊人群慎用",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "！ 特殊人群慎用",
+              "fontSize": 20,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vipwbuhw",
+      "id": "21",
+      "name": "precaution-asset-1-surface",
+      "bbox": [
+        978,
+        181,
+        197,
+        159.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFF4DB",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w3ydkzih",
+      "id": "22",
+      "name": "precaution-asset-1-label",
+      "bbox": [
+        988,
+        235.75,
+        177,
+        50
+      ],
+      "geometry": "rect",
+      "text": "原创插图槽位\n特殊人群慎用",
+      "textPreview": "原创插图槽位 | 特殊人群慎用",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "原创插图槽位"
+          },
+          {
+            "index": 2,
+            "text": "特殊人群慎用"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "原创插图槽位",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "原创插图槽位",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "特殊人群慎用",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "特殊人群慎用",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4red4z2",
+      "id": "23",
+      "name": "precaution-card-2",
+      "bbox": [
+        670,
+        375.5,
+        267,
+        264.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#F5FBEC",
+      "lineColor": "#009900",
+      "lineWidth": 3
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i50fm90n",
+      "id": "24",
+      "name": "precaution-card-title-2",
+      "bbox": [
+        690,
+        397.5,
+        227,
+        38
+      ],
+      "geometry": "rect",
+      "text": "！ 按量随餐服用",
+      "textPreview": "！ 按量随餐服用",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "！ 按量随餐服用"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "！ 按量随餐服用",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "！ 按量随餐服用",
+              "fontSize": 20,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j69wfehs",
+      "id": "25",
+      "name": "precaution-asset-2-surface",
+      "bbox": [
+        705,
+        451.5,
+        197,
+        159.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#DDF6E9",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47ixojid",
+      "id": "26",
+      "name": "precaution-asset-2-label",
+      "bbox": [
+        715,
+        506.25,
+        177,
+        50
+      ],
+      "geometry": "rect",
+      "text": "原创插图槽位\n按量随餐服用",
+      "textPreview": "原创插图槽位 | 按量随餐服用",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "原创插图槽位"
+          },
+          {
+            "index": 2,
+            "text": "按量随餐服用"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "原创插图槽位",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "原创插图槽位",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "按量随餐服用",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "按量随餐服用",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/58reh4zy",
+      "id": "27",
+      "name": "precaution-card-3",
+      "bbox": [
+        943,
+        375.5,
+        267,
+        264.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#F5FBEC",
+      "lineColor": "#009900",
+      "lineWidth": 3
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y9wva503",
+      "id": "28",
+      "name": "precaution-card-title-3",
+      "bbox": [
+        963,
+        397.5,
+        227,
+        38
+      ],
+      "geometry": "rect",
+      "text": "！ 不适及时就医",
+      "textPreview": "！ 不适及时就医",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "！ 不适及时就医"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "！ 不适及时就医",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "！ 不适及时就医",
+              "fontSize": 20,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/za5w3aho",
+      "id": "29",
+      "name": "precaution-asset-3-surface",
+      "bbox": [
+        978,
+        451.5,
+        197,
+        159.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFF4DB",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14vy98j6",
+      "id": "30",
+      "name": "precaution-asset-3-label",
+      "bbox": [
+        988,
+        506.25,
+        177,
+        50
+      ],
+      "geometry": "rect",
+      "text": "原创插图槽位\n不适及时就医",
+      "textPreview": "原创插图槽位 | 不适及时就医",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "原创插图槽位"
+          },
+          {
+            "index": 2,
+            "text": "不适及时就医"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "原创插图槽位",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "原创插图槽位",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "不适及时就医",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不适及时就医",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

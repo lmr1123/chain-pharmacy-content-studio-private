@@ -1,0 +1,41 @@
+{
+  "theme_id": "theme.product.kekang-lingzhi-capsule",
+  "product_name_zh": "可可康灵芝胶囊",
+  "purpose": "第二商品主题延伸：复用大参林四件套，验证换主题低成本",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "content_lock": "approved-script-required",
+  "reuse": {
+    "chrome": "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx",
+    "voice_script": "scripts/generate_cloned_product_all_narration.py",
+    "voice_version": "v5-smooth",
+    "mouth_rig": {
+      "palm": [0.548, 0.391],
+      "point": [0.528, 0.418]
+    },
+    "reference_theme": "theme.product.coenzyme-q10",
+    "scene_projects": [
+      "product-training-opening-project.tsx",
+      "product-training-brand-overview-project.tsx",
+      "product-training-faithful-project.tsx",
+      "product-training-efficacy-project.tsx",
+      "product-training-features-project.tsx",
+      "product-training-audience-project.tsx",
+      "product-training-combination-project.tsx",
+      "product-training-summary-project.tsx"
+    ]
+  },
+  "replace_slots": {
+    "product_column_badge": "可可康灵芝胶囊",
+    "cover_title": "可可康灵芝胶囊",
+    "cover_subtitle": "商品知识培训",
+    "narration_cues": "FROM_APPROVED_SCRIPT",
+    "packshot": "FROM_AUTHORIZED_ASSET",
+    "on_screen_facts": "FROM_APPROVED_SCRIPT"
+  },
+  "blocked_until": [
+    "approved_script",
+    "authorized_packshot_for_batch"
+  ],
+  "preview_when_ready": "production-library/validation/video/review-kekang-lingzhi-dashenlin.html"
+}

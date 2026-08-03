@@ -1,0 +1,28 @@
+{
+  "id": "asset.advice.light-diet-dashenlin-v1",
+  "name_zh": "药师提醒成年患者清淡饮食",
+  "type": "advice-illustration",
+  "status": "candidate",
+  "style_id": "asset-style.dashenlin-medical-flat-illustration-v1",
+  "compatible_style_packs": [
+    "style-pack.dashenlin-courseware-green-v1"
+  ],
+  "master_candidate": "candidates/light-diet-dashenlin-v1.png",
+  "prompt": "prompt-v1.txt",
+  "dimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sha256": "47a22255c11d953b7388750166741c57d2abcd9ce055861549474b3d03fd878d",
+  "generation_method": "Codex built-in imagegen",
+  "medical_role": "辅助插画，不作为诊断、疗效证明或药学证据",
+  "review": {
+    "technical": "passed",
+    "medical_content": "pending",
+    "visual_user_signoff": "pending"
+  },
+  "restrictions": [
+    "不得用于真实商品包装、说明书、检测报告、处方或品牌证据",
+    "未通过药师内容审核和用户视觉签样前不得进入批量生成"
+  ]
+}

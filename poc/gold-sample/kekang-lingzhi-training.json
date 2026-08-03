@@ -1,0 +1,157 @@
+{
+  "id": "kekang-lingzhi-training",
+  "title": "可可康灵芝胶囊 · 商品知识培训",
+  "theme_id": "theme.product.kekang-lingzhi-capsule",
+  "product": "可可康灵芝胶囊",
+  "version": "v4-pptx-order-multilayout",
+  "structure": [
+    "1 睡眠健康问题（引出）",
+    "2 三大核心功效",
+    "3 产品特点",
+    "4 适宜人群",
+    "5 联合用药（商品+商品=功效）",
+    "6 表格总结"
+  ],
+  "playback_duration": 65.141,
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 1.741,
+      "text": "今天从睡眠问题说起"
+    },
+    {
+      "start": 1.741,
+      "end": 5.288,
+      "text": "很多人入睡难、睡不踏实，白天还容易疲倦"
+    },
+    {
+      "start": 5.288,
+      "end": 9.21,
+      "text": "常见表现：入睡慢、夜间易醒、早醒后再难入睡"
+    },
+    {
+      "start": 9.21,
+      "end": 11.824,
+      "text": "持续加重，要建议咨询专业人员"
+    },
+    {
+      "start": 11.824,
+      "end": 16.492,
+      "text": "围绕可可康灵芝胶囊，讲清功效、特点、人群和联合用药"
+    },
+    {
+      "start": 16.492,
+      "end": 18.173,
+      "text": "先记住三大核心功效"
+    },
+    {
+      "start": 18.173,
+      "end": 23.028,
+      "text": "第一，宁心安神助睡眠：多糖调节神经递质，三萜镇静助眠"
+    },
+    {
+      "start": 23.028,
+      "end": 26.949,
+      "text": "第二，保肝护肝抗衰老：减轻肝损伤、增强解毒"
+    },
+    {
+      "start": 26.949,
+      "end": 31.244,
+      "text": "第三，提升免疫少生病：促进淋巴增殖，提高免疫力"
+    },
+    {
+      "start": 31.244,
+      "end": 37.406,
+      "text": "产品特点三句话：大别山赤灵芝含量高，双重提取吸收好，GMP品质放心"
+    },
+    {
+      "start": 37.406,
+      "end": 41.7,
+      "text": "适宜人群：经常失眠的、常喝酒伤肝的、免疫力差的"
+    },
+    {
+      "start": 41.7,
+      "end": 45.808,
+      "text": "联合用药记公式：场景商品加灵芝，解决对应问题"
+    },
+    {
+      "start": 45.808,
+      "end": 49.916,
+      "text": "失眠：谷维素片加灵芝胶囊，营养神经加镇静助眠"
+    },
+    {
+      "start": 49.916,
+      "end": 54.398,
+      "text": "肝功能异常：护肝片加灵芝胶囊，降酶疏肝加保肝解毒"
+    },
+    {
+      "start": 54.398,
+      "end": 59.253,
+      "text": "免疫力低下：转移因子加灵芝胶囊，调节免疫加提升杀伤力"
+    },
+    {
+      "start": 59.253,
+      "end": 65.041,
+      "text": "表格复盘：成分、功效、人群、联合都记住，建议连续服用两到三个月"
+    }
+  ],
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-kekang-lingzhi-training-v4-structure.wav",
+    "disclosure": "大参林药师克隆音色；PPTX六段叙事口语讲解 v4",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "min_tempo": 0.95,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "今天从睡眠问题说起，很多人入睡难、睡不踏实，白天还容易疲倦，常见表现：入睡慢、夜间易醒、早醒后再难入睡，持续加重，要建议咨询专业人员，围绕可可康灵芝胶囊，讲清功效、特点、人群和联合用药，先记住三大核心功效，第一，宁心安神助睡眠：多糖调节神经递质，三萜镇静助眠，第二，保肝护肝抗衰老：减轻肝损伤、增强解毒，第三，提升免疫少生病：促进淋巴增殖，提高免疫力，产品特点三句话：大别山赤灵芝含量高，双重提取吸收好，GMP品质放心，适宜人群：经常失眠的、常喝酒伤肝的、免疫力差的，联合用药记公式：场景商品加灵芝，解决对应问题，失眠：谷维素片加灵芝胶囊，营养神经加镇静助眠，肝功能异常：护肝片加灵芝胶囊，降酶疏肝加保肝解毒，免疫力低下：转移因子加灵芝胶囊，调节免疫加提升杀伤力，表格复盘：成分、功效、人群、联合都记住，建议连续服用两到三个月。",
+          "raw_duration": 75.376,
+          "used_duration": 64.981,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 57.053,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "今天从睡眠问题说起，很多人入睡难、睡不踏实，白天还容易疲倦，常见表现：入睡慢、夜间易醒、早醒后再难入睡，持续加重，要建议咨询专业人员，围绕可可康灵芝胶囊，讲清功效、特点、人群和联合用药，先记住三大核心功效，第一，宁心安神助睡眠：多糖调节神经递质，三萜镇静助眠，第二，保肝护肝抗衰老：减轻肝损伤、增强解毒，第三，提升免疫少生病：促进淋巴增殖，提高免疫力，产品特点三句话：大别山赤灵芝含量高，双重提取吸收好，GMP品质放心，适宜人群：经常失眠的、常喝酒伤肝的、免疫力差的，联合用药记公式：场景商品加灵芝，解决对应问题，失眠：谷维素片加灵芝胶囊，营养神经加镇静助眠，肝功能异常：护肝片加灵芝胶囊，降酶疏肝加保肝解毒，免疫力低下：转移因子加灵芝胶囊，调节免疫加提升杀伤力，表格复盘：成分、功效、人群、联合都记住，建议连续服用两到三个月。"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "style": "pharmacy-health-cartoon-v1",
+    "sleep": [
+      "/kekang-lingzhi/v3/audience-insomnia-v3.png",
+      "/kekang-lingzhi/v4/sleep-wake-v4.png",
+      "/kekang-lingzhi/v4/day-fatigue-v4.png"
+    ],
+    "efficacy": [
+      "/kekang-lingzhi/v3/efficacy-sleep-v3.png",
+      "/kekang-lingzhi/v3/efficacy-liver-v3.png",
+      "/kekang-lingzhi/v3/efficacy-immune-v3.png"
+    ],
+    "features": [
+      "/kekang-lingzhi/v3/sell-origin-v3.png",
+      "/kekang-lingzhi/v3/sell-extract-v3.png",
+      "/kekang-lingzhi/v3/sell-quality-v3.png"
+    ],
+    "audience": [
+      "/kekang-lingzhi/v3/audience-insomnia-v3.png",
+      "/kekang-lingzhi/v3/audience-alcohol-v3.png",
+      "/kekang-lingzhi/v3/audience-low-immune-v3.png"
+    ],
+    "jointIcon": [
+      "/kekang-lingzhi/v3/joint-insomnia-v3.png",
+      "/kekang-lingzhi/v3/joint-liver-v3.png",
+      "/kekang-lingzhi/v3/joint-immune-v3.png"
+    ],
+    "ganodermaHero": "/kekang-lingzhi/v3/ganoderma-hero-v3.png"
+  }
+}

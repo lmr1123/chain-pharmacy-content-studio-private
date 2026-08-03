@@ -1,0 +1,1369 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>可可康灵芝胶囊 · 多人群互动动画设计稿 v7</title>
+  <style>
+    :root {
+      --green: #078b3a;
+      --green-dark: #075b32;
+      --green-deep: #043f29;
+      --mint: #e5f3e8;
+      --cream: #fbfaf4;
+      --ink: #14241b;
+      --muted: #607067;
+      --line: #bdd8c5;
+      --gold: #c6912d;
+      --purple: #675bb6;
+      --teal: #2d8c9c;
+      --orange: #c9772d;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      background: #dce3de;
+      color: var(--ink);
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    body { padding: 34px 0 70px; }
+    .overview {
+      width: 1280px;
+      margin: 0 auto 34px;
+      padding: 30px 38px;
+      background: #fff;
+      border-top: 8px solid var(--green);
+      box-shadow: 0 16px 42px rgba(20, 61, 40, .12);
+    }
+    .overview h1 { margin: 0; font-size: 38px; }
+    .overview p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.65;
+    }
+    .overview .notice {
+      margin-top: 18px;
+      padding: 14px 18px;
+      color: var(--green-dark);
+      background: var(--mint);
+      border-left: 5px solid var(--green);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .chapter-grid div {
+      padding: 14px;
+      color: #fff;
+      background: var(--green-dark);
+      font-size: 16px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto 44px;
+      background: var(--cream);
+      box-shadow: 0 18px 60px rgba(20, 61, 40, .15);
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 22px;
+      background: var(--green);
+    }
+    .topline {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--green-dark);
+      font-size: 26px;
+      font-weight: 750;
+    }
+    .topline .chapter {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .topline b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 58px;
+      width: auto;
+      padding: 0 12px;
+      height: 42px;
+      color: #fff;
+      background: var(--green);
+      font-size: 24px;
+    }
+    .internal { color: var(--muted); font-size: 19px; font-weight: 600; }
+    .title {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      top: 94px;
+      padding-bottom: 22px;
+      border-bottom: 3px solid var(--green);
+      font-size: 60px;
+      line-height: 1.12;
+      font-weight: 850;
+    }
+    .subtitle {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 27px;
+      font-weight: 620;
+    }
+    .stage {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      top: 220px;
+      bottom: 86px;
+    }
+    .footer-note {
+      position: absolute;
+      right: 74px;
+      bottom: 24px;
+      color: #76837b;
+      font-size: 18px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 22px;
+      color: #fff;
+      background: var(--green);
+      border-radius: 999px;
+      font-size: 26px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .motion {
+      color: var(--orange);
+      font-weight: 800;
+    }
+
+    /* 01 */
+    .product-map {
+      display: grid;
+      grid-template-columns: 660px 1fr;
+      gap: 70px;
+      height: 100%;
+    }
+    .hero {
+      position: relative;
+      height: 100%;
+      border-radius: 48px;
+      background: #dcefe2;
+      overflow: hidden;
+    }
+    .hero .ganoderma {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      object-fit: cover;
+      left: 16px;
+      top: 58px;
+      opacity: .72;
+    }
+    .hero .packshot {
+      position: absolute;
+      width: 350px;
+      height: 425px;
+      object-fit: contain;
+      left: 170px;
+      top: 160px;
+      filter: drop-shadow(0 18px 24px rgba(34, 42, 31, .2));
+    }
+    .hero .hero-tag {
+      position: absolute;
+      left: 66px;
+      right: 66px;
+      bottom: 54px;
+      padding: 20px;
+      color: #fff;
+      background: var(--green-deep);
+      border-radius: 18px;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 820;
+    }
+    .knowledge-map {
+      position: relative;
+      height: 100%;
+    }
+    .ingredient-core {
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 24px;
+    }
+    .ingredient-core .badge:last-child { background: var(--gold); }
+    .knowledge-list {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 160px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .knowledge-item {
+      min-height: 128px;
+      padding: 25px 28px;
+      border: 2px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+    }
+    .knowledge-item strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 29px;
+    }
+    .knowledge-item span {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.45;
+    }
+    .flow-tip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 38px;
+      padding: 18px 26px;
+      background: #fff3e6;
+      border-left: 6px solid var(--orange);
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    /* symptom sequences */
+    .sequence {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 470px;
+      gap: 24px;
+      height: 100%;
+      align-items: stretch;
+    }
+    .shot {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #fff;
+      border: 2px solid var(--line);
+    }
+    .shot::after {
+      content: "→";
+      position: absolute;
+      right: -22px;
+      top: 42%;
+      z-index: 4;
+      color: var(--green);
+      font-size: 54px;
+      font-weight: 900;
+    }
+    .shot:nth-child(3)::after { display: none; }
+    .shot img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+    .shot .shot-copy {
+      padding: 22px 24px;
+    }
+    .shot .shot-no {
+      color: var(--orange);
+      font-size: 20px;
+      font-weight: 850;
+    }
+    .shot strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--green-dark);
+      font-size: 31px;
+    }
+    .shot p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.45;
+    }
+    .knowledge-panel {
+      padding: 34px 32px;
+      border-radius: 32px;
+      color: #fff;
+      background: var(--green-deep);
+    }
+    .knowledge-panel .eyebrow {
+      color: #8ee6a8;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .knowledge-panel h3 {
+      margin: 12px 0 18px;
+      font-size: 38px;
+      line-height: 1.25;
+    }
+    .knowledge-panel ul {
+      margin: 0;
+      padding-left: 26px;
+      font-size: 23px;
+      line-height: 1.65;
+    }
+    .knowledge-panel .result {
+      margin-top: 28px;
+      padding: 16px 18px;
+      color: var(--green-deep);
+      background: #fff;
+      border-radius: 16px;
+      font-size: 28px;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    /* features */
+    .feature-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      height: 100%;
+      position: relative;
+    }
+    .feature-block {
+      position: relative;
+      padding: 22px;
+      border-radius: 34px;
+      background: #fff;
+      border: 2px solid var(--line);
+      overflow: hidden;
+    }
+    .feature-block img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+    .feature-block .step-label {
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      width: 66px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: var(--green);
+      border-radius: 50%;
+      font-size: 28px;
+      font-weight: 850;
+    }
+    .feature-block h3 {
+      margin: 20px 8px 10px;
+      color: var(--green-dark);
+      font-size: 34px;
+    }
+    .feature-block p {
+      margin: 0 8px;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.5;
+    }
+    .feature-evidence {
+      margin: 18px 8px 0;
+      padding: 14px 16px;
+      color: #fff;
+      background: var(--green-dark);
+      border-radius: 14px;
+      font-size: 25px;
+      font-weight: 800;
+      text-align: center;
+    }
+    .feature-arrow {
+      position: absolute;
+      z-index: 5;
+      top: 330px;
+      color: var(--orange);
+      font-size: 72px;
+      font-weight: 900;
+    }
+    .feature-arrow.a { left: 558px; }
+    .feature-arrow.b { left: 1150px; }
+
+    /* combination */
+    .combination-list {
+      display: grid;
+      gap: 18px;
+    }
+    .combo-row {
+      display: grid;
+      grid-template-columns: 240px 1fr 100px 1fr 560px;
+      align-items: center;
+      min-height: 190px;
+      padding: 20px 26px;
+      background: #fff;
+      border: 2px solid var(--line);
+      border-radius: 26px;
+    }
+    .combo-direction {
+      color: var(--green-dark);
+      font-size: 31px;
+      font-weight: 850;
+    }
+    .pack-slot {
+      padding: 26px 18px;
+      border: 3px dashed #9fc7aa;
+      border-radius: 18px;
+      color: var(--green-dark);
+      background: #f0f7f2;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 760;
+    }
+    .plus {
+      color: var(--green);
+      font-size: 58px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .logic {
+      margin-left: 28px;
+      padding: 18px 24px;
+      color: #fff;
+      background: var(--green-deep);
+      border-radius: 18px;
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    /* full storyboard */
+    .storyboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 16px;
+      height: 770px;
+    }
+    .scene {
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .scene b {
+      color: var(--green);
+      font-size: 22px;
+    }
+    .scene strong {
+      display: block;
+      margin-top: 6px;
+      color: var(--green-dark);
+      font-size: 24px;
+    }
+    .scene span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .final-strip {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      bottom: 42px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: var(--green-deep);
+      border-radius: 44px;
+      font-size: 35px;
+      font-weight: 850;
+    }
+    .cinema {
+      background:
+        radial-gradient(circle at 16% 22%, rgba(255, 226, 139, .5), transparent 24%),
+        radial-gradient(circle at 78% 40%, rgba(116, 205, 146, .3), transparent 31%),
+        linear-gradient(135deg, #f9f6e9 0%, #e7f3e9 50%, #d8eee0 100%);
+      color: var(--ink);
+    }
+    .cinema::before { background: #efc95d; width: 12px; }
+    .cinema .brandbug,
+    .summary-video .brandbug {
+      color: var(--green-dark);
+      background: rgba(255,255,255,.78);
+      border-color: rgba(7,91,50,.28);
+      box-shadow: 0 8px 24px rgba(34,91,56,.1);
+    }
+    .brandbug {
+      position: absolute;
+      top: 40px;
+      right: 62px;
+      z-index: 20;
+      padding: 12px 22px;
+      border: 1px solid rgba(255,255,255,.44);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(3,44,29,.54);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .presenter {
+      position: absolute;
+      z-index: 10;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 20px rgba(0,0,0,.24));
+    }
+    .presenter.hero-presenter {
+      left: 160px;
+      bottom: -20px;
+      width: 430px;
+      height: 975px;
+    }
+    .presenter.side-presenter {
+      left: 70px;
+      bottom: -35px;
+      width: 350px;
+      height: 850px;
+    }
+    .presenter.right-presenter {
+      left: auto;
+      right: 55px;
+      bottom: -35px;
+      width: 350px;
+      height: 850px;
+    }
+    .talk-bubble {
+      position: absolute;
+      z-index: 12;
+      left: 475px;
+      top: 170px;
+      width: 570px;
+      padding: 30px 38px;
+      border: 3px solid #f0d481;
+      border-radius: 34px 34px 34px 8px;
+      color: #123d2c;
+      background: #fffdf2;
+      box-shadow: 0 20px 50px rgba(0,0,0,.18);
+    }
+    .talk-bubble .question {
+      color: var(--green);
+      font-size: 24px;
+      font-weight: 850;
+      letter-spacing: 2px;
+    }
+    .talk-bubble strong {
+      display: block;
+      margin-top: 14px;
+      font-size: 48px;
+      line-height: 1.26;
+    }
+    .talk-bubble p {
+      margin: 14px 0 0;
+      color: #587065;
+      font-size: 24px;
+      line-height: 1.55;
+    }
+    .product-focus {
+      position: absolute;
+      right: 90px;
+      top: 160px;
+      width: 720px;
+      height: 760px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,253,230,.98) 0 43%, rgba(255,255,255,.45) 44% 57%, transparent 58%);
+    }
+    .product-focus .ganoderma {
+      position: absolute;
+      left: 20px;
+      top: 70px;
+      width: 640px;
+      height: 640px;
+      object-fit: contain;
+      opacity: .85;
+    }
+    .product-focus .packshot {
+      position: absolute;
+      left: 235px;
+      top: 160px;
+      width: 270px;
+      height: 420px;
+      object-fit: contain;
+      filter: drop-shadow(0 25px 22px rgba(45,34,12,.3));
+    }
+    .lesson-tag {
+      position: absolute;
+      left: 630px;
+      bottom: 74px;
+      padding: 18px 30px;
+      border-left: 6px solid #f0c856;
+      color: #fff;
+      background: rgba(2,41,27,.72);
+      font-size: 30px;
+      font-weight: 760;
+    }
+    .interactive-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .screen-question {
+      position: absolute;
+      left: 445px;
+      top: 115px;
+      color: var(--green-dark);
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .screen-title {
+      position: absolute;
+      left: 445px;
+      top: 155px;
+      max-width: 1220px;
+      font-size: 62px;
+      line-height: 1.14;
+      font-weight: 900;
+    }
+    .ingredient-orbit {
+      position: absolute;
+      left: 490px;
+      right: 90px;
+      top: 310px;
+      bottom: 100px;
+      border-radius: 42px;
+      background: linear-gradient(135deg, #e3f3e6, #fffdf4);
+      border: 3px solid #b9d9c2;
+    }
+    .orbit-core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 290px;
+      height: 290px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: #0d6f3a;
+      box-shadow: 0 0 0 34px rgba(13,111,58,.12);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 39px;
+      font-weight: 880;
+    }
+    .orbit-node {
+      position: absolute;
+      width: 280px;
+      min-height: 116px;
+      padding: 22px 24px;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(5,73,39,.12);
+      color: var(--ink);
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+    .orbit-node span { display: block; color: var(--muted); font-size: 18px; margin-top: 6px; }
+    .orbit-node.n1 { left: 70px; top: 70px; border-left: 8px solid var(--green); }
+    .orbit-node.n2 { right: 70px; top: 70px; border-left: 8px solid var(--gold); }
+    .orbit-node.n3 { left: 70px; bottom: 70px; border-left: 8px solid var(--purple); }
+    .orbit-node.n4 { right: 70px; bottom: 70px; border-left: 8px solid var(--teal); }
+    .orbit-node {
+      animation: focusFour 12s ease-in-out infinite;
+      transform-origin: center;
+      will-change: transform, box-shadow, opacity;
+    }
+    .orbit-node.n1 { animation-delay: 0s; }
+    .orbit-node.n2 { animation-delay: -9s; }
+    .orbit-node.n3 { animation-delay: -6s; }
+    .orbit-node.n4 { animation-delay: -3s; }
+    .motion-route {
+      position: absolute;
+      left: 372px;
+      bottom: 56px;
+      color: #c8752a;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .performance {
+      background: #f5f0e7;
+    }
+    .performance::before { width: 0; }
+    .performance-head {
+      position: absolute;
+      z-index: 8;
+      top: 40px;
+      left: 60px;
+      right: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .performance-head .smallchapter {
+      color: var(--green-dark);
+      font-size: 22px;
+      font-weight: 850;
+    }
+    .performance-head .pace {
+      padding: 10px 20px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green-dark);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .scene-visual {
+      position: absolute;
+      left: 52px;
+      top: 105px;
+      width: 1020px;
+      height: 900px;
+      object-fit: cover;
+      border-radius: 42px;
+      box-shadow: 0 22px 44px rgba(31,49,36,.18);
+    }
+    .scene-copy {
+      position: absolute;
+      right: 68px;
+      top: 140px;
+      width: 720px;
+    }
+    .scene-copy .role {
+      display: inline-flex;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #e1efe4;
+      color: var(--green-dark);
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .scene-copy h2 {
+      margin: 24px 0 16px;
+      color: var(--ink);
+      font-size: 62px;
+      line-height: 1.1;
+    }
+    .scene-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 28px;
+      line-height: 1.55;
+    }
+    .beat-list {
+      display: flex;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .beat-list span {
+      flex: 1;
+      padding: 18px 12px;
+      border-top: 5px solid #b8c9bd;
+      color: #6b776f;
+      font-size: 20px;
+      font-weight: 750;
+      text-align: center;
+    }
+    .beat-list span.active {
+      border-color: var(--green);
+      color: var(--green-dark);
+      background: #e5f2e8;
+    }
+    .knowledge-return {
+      position: absolute;
+      right: 72px;
+      bottom: 74px;
+      width: 695px;
+      padding: 20px 24px 20px 138px;
+      border-radius: 28px;
+      color: #fff;
+      background: var(--green-deep);
+      font-size: 23px;
+      line-height: 1.45;
+    }
+    .knowledge-return img {
+      position: absolute;
+      left: 10px;
+      bottom: 0;
+      width: 112px;
+      height: 235px;
+      object-fit: contain;
+    }
+    .knowledge-return strong { display: block; color: #f6d77f; font-size: 28px; }
+    .audience-onepage {
+      background:
+        radial-gradient(circle at 48% 44%, rgba(247,224,157,.22), transparent 26%),
+        linear-gradient(140deg, #f7f2e8 0%, #e5efe7 100%);
+    }
+    .audience-onepage::before { width: 0; }
+    .audience-page-title {
+      position: absolute;
+      left: 75px;
+      top: 52px;
+      color: var(--green-dark);
+      font-size: 54px;
+      font-weight: 900;
+    }
+    .audience-page-sub {
+      position: absolute;
+      left: 78px;
+      top: 128px;
+      color: var(--muted);
+      font-size: 23px;
+    }
+    .audience-intro {
+      position: absolute;
+      left: 45px;
+      top: 220px;
+      width: 280px;
+      height: 780px;
+      padding: 26px 22px;
+      border-radius: 34px;
+      color: #fff;
+      background: var(--green-deep);
+    }
+    .audience-intro img {
+      position: absolute;
+      left: 22px;
+      bottom: 0;
+      width: 235px;
+      height: 590px;
+      object-fit: contain;
+    }
+    .audience-intro strong {
+      display: block;
+      color: #f2d77f;
+      font-size: 27px;
+      line-height: 1.35;
+    }
+    .audience-intro span {
+      display: block;
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+    .audience-scenes {
+      position: absolute;
+      left: 350px;
+      right: 45px;
+      top: 205px;
+      bottom: 65px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .audience-scene {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background: #fff;
+      box-shadow: 0 18px 40px rgba(29,70,43,.13);
+      animation: focusThree 9s ease-in-out infinite;
+      transform-origin: center;
+      will-change: transform, box-shadow, opacity;
+    }
+    .audience-scene:nth-child(1) { animation-delay: 0s; }
+    .audience-scene:nth-child(2) { animation-delay: -6s; }
+    .audience-scene:nth-child(3) { animation-delay: -3s; }
+    .audience-scene img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .audience-scene .scene-index {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      border: 4px solid #fff;
+      font-size: 23px;
+      font-weight: 900;
+    }
+    .audience-scene .scene-body { padding: 20px 23px; }
+    .audience-scene h3 {
+      margin: 0;
+      color: var(--green-dark);
+      font-size: 29px;
+    }
+    .audience-scene p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.45;
+    }
+    .audience-scene .scene-result {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      color: #fff;
+      background: var(--green-dark);
+      text-align: center;
+      font-size: 19px;
+      font-weight: 800;
+    }
+    .audience-sequence {
+      position: absolute;
+      left: 520px;
+      right: 130px;
+      top: 168px;
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #6168b2, #a94c3e, #188878);
+    }
+    .audience-sequence::after {
+      content: "同一页面内依次聚焦 01 → 02 → 03";
+      position: absolute;
+      right: 0;
+      top: -33px;
+      color: var(--green-dark);
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .mechanism-card {
+      position: absolute;
+      left: 1080px;
+      top: 482px;
+      width: 360px;
+      padding: 26px 28px;
+      border-radius: 30px;
+      color: #fff;
+      background: #a84d3c;
+      box-shadow: 0 16px 34px rgba(81,34,28,.18);
+      font-size: 22px;
+      line-height: 1.5;
+    }
+    .mechanism-card.green { background: #187a65; }
+    .mechanism-card strong { display: block; font-size: 30px; margin-bottom: 8px; }
+    .features-video {
+      background: linear-gradient(135deg, #f5f1e5, #e4efe6);
+    }
+    .features-video::before { width: 0; }
+    .feature-stage-title {
+      position: absolute;
+      left: 80px;
+      top: 54px;
+      color: var(--green-dark);
+      font-size: 56px;
+      font-weight: 900;
+    }
+    .feature-stations {
+      position: absolute;
+      left: 410px;
+      right: 60px;
+      top: 170px;
+      bottom: 90px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .station {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #fff;
+      box-shadow: 0 16px 35px rgba(26,73,43,.12);
+    }
+    .station img { width: 100%; height: 360px; object-fit: cover; }
+    .station .station-copy { padding: 22px 26px; }
+    .station .station-no { color: var(--green); font-size: 18px; font-weight: 900; }
+    .station h3 { margin: 7px 0 9px; color: var(--green-dark); font-size: 31px; }
+    .station p { margin: 0; color: var(--muted); font-size: 20px; line-height: 1.45; }
+    .station .evidence {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      padding: 14px;
+      border-radius: 15px;
+      color: #fff;
+      background: var(--green-dark);
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .teach-route {
+      position: absolute;
+      left: 70px;
+      top: 150px;
+      width: 300px;
+      color: var(--green-dark);
+      font-size: 23px;
+      line-height: 1.55;
+    }
+    .teach-route b { display: block; margin-bottom: 12px; font-size: 30px; }
+    .teach-route img {
+      position: absolute;
+      left: 0;
+      top: 175px;
+      width: 285px;
+      height: 680px;
+      object-fit: contain;
+    }
+    .journey-track {
+      position: absolute;
+      left: 400px;
+      right: 70px;
+      top: 188px;
+      bottom: 88px;
+    }
+    .journey-line {
+      position: absolute;
+      left: 120px;
+      right: 120px;
+      top: 335px;
+      height: 10px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #0b8f45, #e0ae3c, #0b8f45);
+      box-shadow: 0 0 0 14px rgba(11,143,69,.09);
+    }
+    .journey-arrow {
+      position: absolute;
+      top: 300px;
+      color: var(--green);
+      font-size: 58px;
+      font-weight: 900;
+    }
+    .journey-arrow.a { left: 30%; }
+    .journey-arrow.b { left: 64%; }
+    .journey-stop {
+      position: absolute;
+      top: 0;
+      width: 390px;
+      text-align: center;
+      animation: focusThree 9s ease-in-out infinite;
+      transform-origin: center;
+      will-change: transform, filter, opacity;
+    }
+    .journey-stop.s1 { animation-delay: 0s; }
+    .journey-stop.s2 { animation-delay: -6s; }
+    .journey-stop.s3 { animation-delay: -3s; }
+    .journey-stop.s1 { left: 0; }
+    .journey-stop.s2 { left: 50%; transform: translateX(-50%); }
+    .journey-stop.s3 { right: 0; }
+    .journey-stop img {
+      width: 370px;
+      height: 370px;
+      object-fit: cover;
+      border: 10px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 20px 42px rgba(32,76,48,.18);
+    }
+    .journey-stop .journey-no {
+      display: inline-flex;
+      margin-top: 24px;
+      padding: 7px 15px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      font-size: 18px;
+      font-weight: 850;
+    }
+    .journey-stop h3 {
+      margin: 10px 0 8px;
+      color: var(--green-dark);
+      font-size: 32px;
+    }
+    .journey-stop p {
+      margin: 0 auto;
+      max-width: 370px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.45;
+    }
+    .journey-stop .journey-proof {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 11px 18px;
+      border-radius: 14px;
+      color: var(--green-dark);
+      background: #fff8df;
+      border: 2px solid #efd58b;
+      font-size: 18px;
+      font-weight: 820;
+    }
+    .summary-video {
+      background:
+        radial-gradient(circle at 50% 54%, rgba(247,213,112,.34), transparent 24%),
+        radial-gradient(circle at 16% 18%, rgba(112,199,145,.28), transparent 22%),
+        linear-gradient(145deg, #f9f7eb, #deefe3);
+      color: var(--ink);
+    }
+    .summary-video::before { width: 0; }
+    .summary-title {
+      position: absolute;
+      top: 52px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 54px;
+      font-weight: 900;
+      color: var(--green-dark);
+    }
+    .summary-presenter {
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      transform: translateX(-50%);
+      width: 420px;
+      height: 940px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 25px rgba(0,0,0,.25));
+    }
+    .summary-chip {
+      position: absolute;
+      width: 430px;
+      padding: 24px 28px;
+      border: 2px solid rgba(7,91,50,.22);
+      border-radius: 26px;
+      color: var(--green-dark);
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 12px 28px rgba(35,91,57,.1);
+      font-size: 24px;
+      font-weight: 780;
+      line-height: 1.35;
+      animation: focusSix 18s ease-in-out infinite;
+      transform-origin: center;
+      will-change: transform, box-shadow, opacity;
+    }
+    .summary-chip span { display: block; margin-top: 6px; color: #6a7b70; font-size: 18px; }
+    .summary-chip.c1 { left: 90px; top: 190px; animation-delay: 0s; }
+    .summary-chip.c2 { right: 90px; top: 190px; animation-delay: -15s; }
+    .summary-chip.c3 { left: 90px; top: 415px; animation-delay: -12s; }
+    .summary-chip.c4 { right: 90px; top: 415px; animation-delay: -9s; }
+    .summary-chip.c5 { left: 90px; top: 640px; animation-delay: -6s; }
+    .summary-chip.c6 { right: 90px; top: 640px; animation-delay: -3s; }
+    .audience-thumbs {
+      position: absolute;
+      left: 690px;
+      bottom: 44px;
+      z-index: 12;
+      display: flex;
+      gap: 16px;
+    }
+    .audience-thumbs img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 10px 22px rgba(0,0,0,.2);
+    }
+    .ambient-deco {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .ambient-deco i {
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      border: 2px solid rgba(7,139,58,.24);
+      background: rgba(255,255,255,.32);
+      animation: floatDeco 5.6s ease-in-out infinite;
+    }
+    .ambient-deco .d1 { width: 74px; height: 74px; left: 72px; top: 90px; }
+    .ambient-deco .d2 { width: 26px; height: 26px; left: 650px; top: 86px; animation-delay: -1.4s; background: rgba(239,201,93,.5); border: 0; }
+    .ambient-deco .d3 { width: 48px; height: 48px; right: 230px; bottom: 82px; animation-delay: -2.8s; }
+    .ambient-deco .d4 { width: 18px; height: 18px; right: 530px; top: 128px; animation-delay: -4.1s; background: rgba(7,139,58,.34); border: 0; }
+    .ambient-deco .trail {
+      left: auto;
+      right: 110px;
+      top: 118px;
+      width: 520px;
+      height: 520px;
+      background: transparent;
+      border: 3px dashed rgba(7,139,58,.14);
+      animation: spinDeco 24s linear infinite;
+    }
+    .current-focus::after {
+      content: "当前讲解";
+      position: absolute;
+      right: 16px;
+      top: 14px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      font-size: 14px;
+      font-weight: 800;
+      opacity: .9;
+    }
+    @keyframes focusThree {
+      0%, 24% {
+        opacity: 1;
+        transform: scale(1.025);
+        filter: saturate(1.05);
+        box-shadow: 0 0 0 5px rgba(19,153,72,.5), 0 0 34px rgba(19,153,72,.34);
+      }
+      31%, 93% {
+        opacity: .78;
+        transform: scale(.985);
+        filter: saturate(.82);
+        box-shadow: 0 10px 24px rgba(29,70,43,.08);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1.025);
+        filter: saturate(1.05);
+        box-shadow: 0 0 0 5px rgba(19,153,72,.5), 0 0 34px rgba(19,153,72,.34);
+      }
+    }
+    @keyframes focusFour {
+      0%, 18% {
+        opacity: 1;
+        transform: scale(1.055);
+        box-shadow: 0 0 0 5px rgba(19,153,72,.5), 0 0 32px rgba(19,153,72,.32);
+      }
+      25%, 94% { opacity: .72; transform: scale(.98); box-shadow: 0 9px 20px rgba(5,73,39,.08); }
+      100% { opacity: 1; transform: scale(1.055); box-shadow: 0 0 0 5px rgba(19,153,72,.5), 0 0 32px rgba(19,153,72,.32); }
+    }
+    @keyframes focusSix {
+      0%, 12% {
+        opacity: 1;
+        transform: scale(1.045);
+        border-color: rgba(19,153,72,.7);
+        box-shadow: 0 0 0 4px rgba(19,153,72,.34), 0 0 28px rgba(19,153,72,.24);
+      }
+      18%, 95% { opacity: .76; transform: scale(.985); box-shadow: 0 8px 18px rgba(35,91,57,.07); }
+      100% { opacity: 1; transform: scale(1.045); box-shadow: 0 0 0 4px rgba(19,153,72,.34), 0 0 28px rgba(19,153,72,.24); }
+    }
+    @keyframes floatDeco {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(8deg); }
+    }
+    @keyframes spinDeco { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .orbit-node, .audience-scene, .journey-stop, .summary-chip, .ambient-deco i { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="overview">
+    <h1>多人群互动动画设计稿 v7</h1>
+    <p>保留 v6 的完整商品科普内容，升级为“数字人讲师互动＋男女多年龄人物症状演绎”的视频结构。讲师只在提问、指向、解释和总结时出现；症状发生时让出全屏，不做角落常驻念稿。</p>
+    <div class="notice">本版重点：年轻女性／中年男性／老年女性分别进入真实生活状态；讲师有主讲、侧讲、退场、回场四种教学状态。儿童适用未经审核，不以儿童形象暗示全年龄可用。</div>
+    <div class="chapter-grid">
+      <div>讲师开场</div><div>指向知识</div><div>全屏症状演绎</div><div>回场解释</div><div>互动总结</div>
+    </div>
+  </section>
+
+  <section class="slide cinema" id="v7-slide-1">
+    <div class="ambient-deco"><i class="d1"></i><i class="d2"></i><i class="d3"></i><i class="d4"></i><i class="trail"></i></div>
+    <div class="brandbug">大参林 · 内部商品培训</div>
+    <img class="presenter hero-presenter" src="../../../../poc/gold-sample/public/product-training-dashenlin-presenter/open-arms-mouthless.png" />
+    <div class="talk-bubble"><span class="question">讲师开场 · 建立学习问题</span><strong>一粒灵芝胶囊，应该从哪几层真正认识？</strong><p>先看灵芝与核心成分，再进入功效、人群、产品特点、联合应用和周期。</p></div>
+    <div class="product-focus"><img class="ganoderma" src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/ganoderma-hero-v3.png" /><img class="packshot" src="../../../../poc/gold-sample/public/kekang-lingzhi/packshot.png" /></div>
+    <div class="lesson-tag">镜头状态：讲师主讲 → 产品由光影中出现 → 镜头推进灵芝纹理</div>
+  </section>
+
+  <section class="slide" id="v7-slide-2">
+    <div class="interactive-stage">
+      <img class="presenter side-presenter" src="../../../../poc/gold-sample/public/product-training-dashenlin-presenter/point-mouthless.png" />
+      <div class="screen-question">讲师指向 · 不是把整页一次铺满</div>
+      <div class="screen-title">先抓住两类核心有效成分</div>
+      <div class="ingredient-orbit">
+        <div class="orbit-core">灵芝多糖<br />＋<br />灵芝三萜</div>
+        <div class="orbit-node n1">灵芝多糖<span>免疫系统机能方向</span></div>
+        <div class="orbit-node n2">灵芝三萜<span>镇静、抗炎、抗衰老方向</span></div>
+        <div class="orbit-node n3">五方面作用<span>免疫 · 抗氧化 · 护肝 · 睡眠等</span></div>
+        <div class="orbit-node n4">进入三大功效<span>由成分路径切入具体人群状态</span></div>
+        <div class="motion-route">动画：讲师提出问题 → 中央灵芝分化 → 两条路径逐一建立 → 讲师退场</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide audience-onepage" id="v7-slide-3">
+    <div class="audience-page-title">三类典型成人状态，在同一页完成演绎</div>
+    <div class="audience-page-sub">讲师只引入一次；随后同一舞台依次切换夜间、应酬、季节变化三种环境，最后统一回收产品方向。</div>
+    <div class="audience-sequence"></div>
+    <div class="audience-intro"><strong>先看状态发生，再解释产品方向</strong><span>不是按人群复制三页，也不是三个人静态站立。</span><img src="../../../../poc/gold-sample/public/product-training-dashenlin-presenter/palm-mouthless.png" /></div>
+    <div class="audience-scenes">
+      <div class="audience-scene"><span class="scene-index">01</span><img src="./assets/audience-young-woman-insomnia-v7.png" /><div class="scene-body"><h3>年轻女性 · 失眠</h3><p>难入睡 → 夜醒 → 次日疲倦；多糖与三萜承接睡眠方向。</p></div><div class="scene-result">宁心安神助睡眠</div></div>
+      <div class="audience-scene"><span class="scene-index">02</span><img src="./assets/audience-middle-man-alcohol-v7.png" /><div class="scene-body"><h3>中年男性 · 饮酒</h3><p>饮酒累积 → 肝脏负担 → 防护路径建立。</p></div><div class="scene-result">保肝护肝抗衰老</div></div>
+      <div class="audience-scene"><span class="scene-index">03</span><img src="./assets/audience-elder-woman-seasonal-v7.png" /><div class="scene-body"><h3>老年女性 · 季节刺激</h3><p>冷暖变化 → 反复不适 → 免疫盾牌闭合。</p></div><div class="scene-result">提升免疫少生病</div></div>
+    </div>
+  </section>
+
+  <section class="slide features-video" id="v7-slide-4">
+    <div class="feature-stage-title">讲师带着学员走过“三项产品特点”</div>
+    <div class="teach-route"><b>不是读三张卡</b>讲师先指向产地，沿提取管线移动视线，再在质检／GMP 证据处停下解释。<img src="../../../../poc/gold-sample/public/product-training-dashenlin-presenter/point-mouthless.png" /></div>
+    <div class="journey-track">
+      <div class="journey-line"></div><div class="journey-arrow a">›</div><div class="journey-arrow b">›</div>
+      <div class="journey-stop s1"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/sell-origin-v3.png" /><span class="journey-no">站点 01 · 原料</span><h3>优质产地，含量高</h3><p>云雾越过大别山，镜头落到林下赤灵芝，再进入称量／检测。</p><span class="journey-proof">9.13g/100g</span></div>
+      <div class="journey-stop s2"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/sell-extract-v3.png" /><span class="journey-no">站点 02 · 工艺</span><h3>专利工艺，吸收好</h3><p>提取液穿过两段装置，浓度视觉逐步加强，最后进入胶囊成形。</p><span class="journey-proof">二次浓缩提取</span></div>
+      <div class="journey-stop s3"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/sell-quality-v3.png" /><span class="journey-no">站点 03 · 生产</span><h3>大品牌，值得信赖</h3><p>镜头跟随生产、质检、封装，最终停在授权认证证据。</p><span class="journey-proof">中山可可康 · GMP</span></div>
+    </div>
+  </section>
+
+  <section class="slide" id="v7-slide-5">
+    <div class="interactive-stage">
+      <img class="presenter right-presenter" src="../../../../poc/gold-sample/public/product-training-dashenlin-presenter/palm-mouthless.png" />
+      <div class="screen-question" style="left:90px">讲师互动复盘 · 先问，再逐项点亮</div>
+      <div class="screen-title" style="left:90px">你能把“人群状态”和“产品方向”对应起来吗？</div>
+      <div class="ingredient-orbit" style="left:90px;right:450px">
+        <div class="orbit-core">三类状态<br />逐段回放</div>
+        <div class="orbit-node n1">年轻女性 · 失眠<span>入睡困难 → 夜醒 → 日间疲倦</span></div>
+        <div class="orbit-node n2">中年男性 · 饮酒<span>饮酒累积 → 肝脏负担 → 防护</span></div>
+        <div class="orbit-node n3">老年女性 · 季节刺激<span>反复不适 → 免疫盾牌闭合</span></div>
+        <div class="orbit-node n4">更多成人顾客类型<span>不同性别和生活阶段轮换演绎</span></div>
+        <div class="motion-route">不是销售提问：讲师只帮助学员回忆产品知识对应关系</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide summary-video" id="v7-slide-6">
+    <div class="ambient-deco"><i class="d1"></i><i class="d2"></i><i class="d3"></i><i class="d4"></i><i class="trail"></i></div>
+    <div class="brandbug">S16 · 讲师回到画面中央完成总结</div>
+    <div class="summary-title">从六个维度，真正认识可可康灵芝胶囊</div>
+    <img class="summary-presenter" src="../../../../poc/gold-sample/public/product-training-dashenlin-presenter/open-arms-mouthless.png" />
+    <div class="summary-chip c1">核心有效成分<span>灵芝多糖 · 灵芝三萜</span></div>
+    <div class="summary-chip c2">灵芝五方面作用<span>按公司课件完整归纳</span></div>
+    <div class="summary-chip c3">三大核心功效<span>安神助眠 · 保肝抗衰 · 提升免疫</span></div>
+    <div class="summary-chip c4">三类适应情况<span>通过男女、多年龄成人状态演绎</span></div>
+    <div class="summary-chip c5">三项产品特点<span>大别山 · 二次浓缩提取 · 可可康/GMP</span></div>
+    <div class="summary-chip c6">联合应用与周期<span>三套组合 · 1个月为1周期</span></div>
+    <div class="audience-thumbs"><img src="./assets/audience-young-woman-insomnia-v7.png" /><img src="./assets/audience-middle-man-alcohol-v7.png" /><img src="./assets/audience-elder-woman-seasonal-v7.png" /></div>
+  </section>
+</body>
+</html>

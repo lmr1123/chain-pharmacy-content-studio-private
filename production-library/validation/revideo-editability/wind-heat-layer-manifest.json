@@ -1,0 +1,97 @@
+{
+  "project_id": "health.wind-heat.full-editable-validation-v1",
+  "template_id": "template.health-reference-tech-v1",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "status": "validation",
+  "fps": 30,
+  "canonical_frame_count": 5436,
+  "canonical_duration_seconds": 181.2,
+  "editor_entry": "poc/gold-sample/src/wind-heat-editable-project.tsx",
+  "interaction_contract": {
+    "selection": "click; shift-click for multi-select",
+    "move": "drag selected layer on canvas",
+    "scale": "drag the visible lower-right scale handle",
+    "asset_replace": "replace one or all shift-selected image layers",
+    "undo_redo": "visible buttons and Cmd/Ctrl+Z",
+    "export_current_project": "export MP4 or native editable PPTX from an independent snapshot without saving a template",
+    "save": "only the two-step business action '另存为新模板版本' creates a timestamped candidate; settled templates and historical candidates are never overwritten"
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "canonical_frames": [0, 135],
+      "source": "reference-native-intro-project.tsx",
+      "layers": ["editable:intro:group:title"]
+    },
+    {
+      "id": "character",
+      "canonical_frames": [136, 839],
+      "source": "reference-replica-project.tsx",
+      "source_start_frame": 136,
+      "layers": [
+        "editable:character:group:title",
+        "editable:character:asset:title-frame",
+        "editable:character:group:presenter",
+        "editable:character:text:mechanism-title",
+        "editable:character:group:equation"
+      ]
+    },
+    {
+      "id": "mechanism",
+      "canonical_frames": [840, 1314],
+      "source": "reference-mechanism-gap-project.tsx",
+      "layers": [
+        "editable:mechanism:group:intro-presenter",
+        "editable:mechanism:group:wind-heat-assembly",
+        "editable:mechanism:group:megaphone-presenter",
+        "editable:mechanism:group:point-presenter",
+        "editable:mechanism:group:medical-sequence"
+      ]
+    },
+    {
+      "id": "symptoms",
+      "canonical_frames": [1315, 2104],
+      "source": "reference-symptoms-project.tsx",
+      "layers": [
+        "editable:symptoms:group:intro-presenter",
+        "editable:symptoms:group:symptom-cards",
+        "editable:symptoms:asset:<group>-<index>",
+        "editable:symptoms:group:point-presenter",
+        "editable:symptoms:group:treatment-transition"
+      ]
+    },
+    {
+      "id": "treatment",
+      "canonical_frames": [2105, 3362],
+      "source": "reference-treatment-project.tsx",
+      "layers": [
+        "editable:treatment:group:core",
+        "editable:treatment:group:herb-cards",
+        "editable:treatment:group:recipe",
+        "editable:treatment:asset:tea",
+        "editable:treatment:group:drink-tag"
+      ]
+    },
+    {
+      "id": "medication",
+      "canonical_frames": [3363, 4595],
+      "source": "reference-medication-advice-project.tsx",
+      "layers": [
+        "editable:medication:group:medication",
+        "editable:medication:group:card-one",
+        "editable:medication:group:card-two",
+        "editable:medication:group:reminder",
+        "editable:medication:group:advice"
+      ]
+    },
+    {
+      "id": "summary",
+      "canonical_frames": [4596, 5435],
+      "source": "reference-summary-outro-project.tsx",
+      "layers": [
+        "editable:summary:group:advice",
+        "editable:summary:group:summary"
+      ]
+    }
+  ]
+}

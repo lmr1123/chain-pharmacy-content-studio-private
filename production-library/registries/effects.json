@@ -1,0 +1,292 @@
+{
+  "registry_type": "effect",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "effect.border.rounded-trace-v1",
+      "name_zh": "圆角边框扫描光",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["发光线框", "扫描线", "圆角", "当前模块", "沿边移动"],
+      "editable": ["color", "glow", "segment_length", "cycles", "duration", "width", "height"],
+      "source": "poc/gold-sample/src/components/premium-medical-effects.tsx"
+    },
+    {
+      "id": "effect.background.four-way-current-v1",
+      "name_zh": "四路背景电流脉冲",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["背景", "电流", "30fps", "矢量", "无GIF"],
+      "editable": ["color", "glow", "period", "opacity", "edge_offset"],
+      "source": "poc/gold-sample/src/components/premium-medical-effects.tsx"
+    },
+    {
+      "id": "effect.background.global-current-track-v1",
+      "name_zh": "全片级四路背景光电轨道 v1",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["全片轨道", "背景", "电流", "连续性", "章节一致"],
+      "editable": ["top_speed", "bottom_speed", "side_speed", "opacity", "edge_offset"],
+      "source": "poc/gold-sample/scripts/assemble-wind-heat-full.mjs",
+      "restriction": "已获用户确认并作为整片环境轨道统一应用；不得由各章节自行决定是否出现，场景只能在不破坏连续性的前提下调节强度。"
+    },
+    {
+      "id": "effect.intro.glitch-title-reveal-v1",
+      "name_zh": "医疗科技片头故障辉光揭示 v1",
+      "status": "production-validated",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["片头", "字体辉光", "故障电视", "RGB错位", "扫描线"],
+      "editable": ["glow", "ghost_offset", "glitch_times", "scan_duration", "stabilize_time"],
+      "source": "poc/gold-sample/src/reference-native-intro-project.tsx",
+      "restriction": "字体辉光、扫描线、RGB 错位和短促故障电视过渡已获用户确认；只能使用原生文字与图形，不得引用参考截图像素。"
+    },
+    {
+      "id": "effect.presenter.stable-mouth-v1",
+      "name_zh": "稳定局部口型",
+      "status": "production-validated",
+      "tags": ["数字人", "口型", "不抖动", "非等间隔"],
+      "editable": ["mouth_frames", "normalized_anchor", "step_pattern"],
+      "source": "poc/gold-sample/src/reference-medication-advice-project.tsx"
+    },
+    {
+      "id": "effect.presenter.direct-relocation-v1",
+      "name_zh": "角色直接换位",
+      "status": "production-validated",
+      "tags": ["数字人", "换位", "无走路过渡", "参考片行为"],
+      "source": "docs/reference-style-component-system.md"
+    },
+    {
+      "id": "effect.card.reveal-back-v1",
+      "name_zh": "卡片回弹显现",
+      "status": "production-validated",
+      "tags": ["卡片", "淡入", "回弹", "节点揭示"],
+      "editable": ["duration", "scale_from", "opacity_from"],
+      "source": "poc/gold-sample/src/reference-medication-advice-project.tsx"
+    },
+    {
+      "id": "effect.summary.panel-reveal-v1",
+      "name_zh": "总结板分级揭示 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["总结", "面板入场", "标题先行", "正文揭示"],
+      "editable": ["panel_duration", "label_delay", "body_delay", "scale_from"],
+      "source": "poc/gold-sample/src/components/reference-summary-outro.tsx",
+      "restriction": "等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.summary.top-current-arrow-v1",
+      "name_zh": "总结板顶部电流箭头 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["总结", "箭头", "电流", "持续运动"],
+      "editable": ["position", "length", "period", "color", "glow"],
+      "source": "poc/gold-sample/src/components/reference-summary-outro.tsx",
+      "restriction": "等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.outro.handwritten-light-v1",
+      "name_zh": "片尾手写光线 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "tags": ["片尾", "手写线", "黄色光点", "路径绘制"],
+      "editable": ["points", "duration", "line_color", "light_color", "light_size"],
+      "source": "poc/gold-sample/src/components/reference-summary-outro.tsx",
+      "restriction": "等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.card.circle-subject-rise-v1",
+      "name_zh": "圆形缩放与主体上揭示",
+      "status": "candidate",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["症状插画", "圆形缩放", "圆形遮罩", "主体上揭示", "顺序入场"],
+      "editable": [
+        "circle_fill",
+        "circle_scale_duration",
+        "subject_start_y",
+        "subject_reveal_duration",
+        "item_interval"
+      ],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "用户指出该效果仅复刻入场，缺少插画内部摇摆/吐气/疼痛循环及分项向上退场；补齐完整行为并重新签样前不得用于本模板生产成片。"
+    },
+    {
+      "id": "effect.card.symptom-performance-loop-v1",
+      "name_zh": "症状插画内部循环表演",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["插画动画", "摇摆", "吐气", "疼痛脉冲", "持续循环"],
+      "editable": [
+        "start_time",
+        "cycle_duration",
+        "subject_rotation",
+        "subject_offset",
+        "symbol_scale",
+        "symbol_opacity"
+      ],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "已通过10fps局部动态QA；用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.card.staggered-up-exit-v1",
+      "name_zh": "卡片顺序向上缩小退场",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["退场", "向上飞出", "缩小", "顺序执行"],
+      "editable": ["order", "target_y", "target_scale", "duration", "opacity"],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "已通过10fps退场序列QA；用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.graph.directional-node-entry-v1",
+      "name_zh": "关系图方向性节点入场",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["关系图", "中心上左右", "顺序入场", "虚线连接"],
+      "editable": ["node_order", "start_positions", "target_positions", "duration", "connector_style"],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "已移除参考不存在的脉冲圈；用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.product.overview-label-pop-v1",
+      "name_zh": "商品总览卖点标签顺序弹出",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["商品总览", "卖点标签", "顺序弹出", "轻微回摆"],
+      "editable": ["labels", "positions", "interval", "scale_from", "wobble"],
+      "source": "poc/gold-sample/src/product-training-brand-overview-project.tsx",
+      "restriction": "等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.evidence.flash-scale-accumulate-v1",
+      "name_zh": "功效证据闪光缩放累积入场 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["功效证据", "白色闪光", "缩放入场", "三图累积", "顺序执行"],
+      "editable": ["items", "positions", "flash_size", "scale_from", "reveal_duration", "intervals"],
+      "source": "poc/gold-sample/src/product-training-efficacy-project.tsx",
+      "restriction": "已通过两组10fps动态接触表与完整解码；用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.evidence.magnifier-focus-v1",
+      "name_zh": "证据页放大镜聚焦 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["产品特点", "证据资料", "放大镜", "聚焦", "轻微移动"],
+      "editable": ["start_position", "focus_positions", "scale", "rotation", "move_duration"],
+      "source": "poc/gold-sample/src/product-training-features-project.tsx",
+      "restriction": "资料与包装均为重制示意；已通过10fps放大镜动态接触表，用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.audience.flash-pair-switch-v1",
+      "name_zh": "适宜人群双图闪光切换 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["适宜人群", "双图", "白色闪光", "缩放进入", "关键词切换"],
+      "editable": ["pairs", "positions", "flash_size", "reveal_interval", "keyword_items", "group_duration"],
+      "source": "poc/gold-sample/src/product-training-audience-project.tsx",
+      "restriction": "已通过4fps全段与10fps局部动态QA；用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.mechanism.pathogen-assembly-v1",
+      "name_zh": "病邪人体分层组装、扫描与聚拢 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+      "tags": ["机理", "依次显现", "风热聚拢", "人体扫描", "人体发光", "稳定锚点"],
+      "editable": ["reveal_order", "reveal_duration", "pathogen_travel", "scan_period", "pulse_scale", "pulse_period"],
+      "source": "poc/gold-sample/src/reference-mechanism-gap-project.tsx",
+      "restriction": "等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.mechanism.wind-heat-internal-motion-v1",
+      "name_zh": "风热证肺咽喉分层内部动态 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+      "tags": ["肺部呼吸", "紫蓝体积邪气", "气体上涌", "相位交叉", "咽喉红光", "喉部红光", "气流路径", "局部循环"],
+      "editable": ["scene_timing", "lung_pulse", "mist_phase_assets", "mist_crossfade", "mist_drift", "mist_scale", "throat_pulse", "larynx_pulse", "airflow_path"],
+      "source": "poc/gold-sample/src/reference-mechanism-gap-project.tsx",
+      "restriction": "体积邪气子效果已获用户确认；肺、咽喉、喉部组合序列仍只完成技术 QA，用户视觉签样和医学内容复核前不得标记 production-validated"
+    },
+    {
+      "id": "effect.mechanism.volumetric-pathogen-field-v1",
+      "name_zh": "紫蓝体积病邪环境循环 v1",
+      "status": "user-approved",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+      "tags": ["紫蓝体积邪气", "烟焰", "相位交叉", "上涌", "漂移", "尺度呼吸", "明暗呼吸", "可组合"],
+      "editable": ["phase_assets", "subject_safe_area", "crossfade_seconds", "drift_pixels", "scale_range", "opacity_range"],
+      "source": "poc/gold-sample/src/reference-mechanism-gap-project.tsx",
+      "restriction": "当前风热证体积邪气视觉效果已获用户确认；用于新主题时可复用运动契约，但新气体纹理仍需独立视觉、技术、来源和医学审核"
+    },
+    {
+      "id": "effect.product.rotating-rays-v1",
+      "name_zh": "商品持续旋转放射光束",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["商品主视觉", "旋转光效", "放射光束", "宽窄交替", "商品静止"],
+      "editable": [
+        "center",
+        "halo_size",
+        "ray_count",
+        "ray_colors",
+        "ray_opacity",
+        "reveal_delay",
+        "reveal_duration",
+        "rotation_degrees",
+        "rotation_duration"
+      ],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "已通过10fps动态、0.5秒差分和完整渲染技术QA；等待用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.product.radial-reveal-v1",
+      "name_zh": "商品中心柔光放射展开",
+      "status": "candidate",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["商品主视觉", "中心柔光", "宽窄射线", "延迟展开"],
+      "editable": [
+        "center",
+        "halo_size",
+        "ray_count",
+        "ray_colors",
+        "ray_opacity",
+        "reveal_delay",
+        "reveal_duration",
+        "product_breathe_scale"
+      ],
+      "source": "poc/gold-sample/src/product-training-faithful-project.tsx",
+      "restriction": "用户已否决其作为参考商品背景；该实现已被 effect.product.rotating-rays-v1 取代，不得用于本参考模板的生产成片。"
+    },
+    {
+      "id": "effect.combination.partner-flash-switch-v1",
+      "name_zh": "联合用药搭配包装闪光替换 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["联合用药", "包装示意", "中央加号", "白色闪光", "搭配替换"],
+      "editable": ["partner_products", "positions", "flash_size", "switch_time", "subtitle_cues"],
+      "source": "poc/gold-sample/src/product-training-combination-project.tsx",
+      "restriction": "包装均为明确标注的重制示意；接入授权包装且经用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.education.heart-age-meter-v1",
+      "name_zh": "心脏心跳与年龄-Q10反向量表 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["需求教育", "心脏心跳", "年龄增长", "Q10下降", "人物老化"],
+      "editable": ["heart_pulse", "meter_duration", "age_level", "q10_level", "age_assets", "scene_times"],
+      "source": "poc/gold-sample/src/product-training-opening-project.tsx",
+      "restriction": "心脏与青年、白发老人、蓄须老人、戴眼镜老人已替换为原创透明 PNG；量表、箭头和标签保留代码动画。用户视觉签样前不得标记 production-validated"
+    },
+    {
+      "id": "effect.summary.table-pop-v1",
+      "name_zh": "总结四列表格快速弹出 v1",
+      "status": "technical-qa-passed",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "tags": ["总结", "四列表格", "划重点", "品牌收束", "快速弹出"],
+      "editable": ["columns", "rows", "badge", "tagline", "reveal_duration"],
+      "source": "poc/gold-sample/src/product-training-summary-project.tsx",
+      "restriction": "品牌口号来自锁定参考内容；用户视觉签样及内部内容审核前不得标记 production-validated"
+    }
+  ]
+}

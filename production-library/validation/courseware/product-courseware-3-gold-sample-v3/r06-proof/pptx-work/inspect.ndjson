@@ -1,0 +1,32 @@
+{"kind":"slide","id":"sl/piocei","slide":1,"title":"一、三大核心功效","textShapes":15}
+{"kind":"shape","id":"sh/4byd8b2h","slide":1,"bbox":[405,54,80,55]}
+{"kind":"shape","id":"sh/5c7e1gj2","slide":1,"bbox":[795,54,80,55]}
+{"kind":"shape","id":"sh/ulwv21kf","slide":1,"name":"chapter-ribbon","bbox":[438,43,404,70]}
+{"kind":"textbox","id":"sh/vm5wv610","slide":1,"name":"chapter-title","text":"一、三大核心功效","textPreview":"一、三大核心功效","textChars":8,"textLines":1,"bbox":[468,48,344,58]}
+{"kind":"textbox","id":"sh/gned4b2l","slide":1,"text":"速","textPreview":"速","textChars":1,"textLines":1,"bbox":[1090,20,48,44]}
+{"kind":"textbox","id":"sh/h87exwj6","slide":1,"text":"福","textPreview":"福","textChars":1,"textLines":1,"bbox":[1132,20,48,44]}
+{"kind":"textbox","id":"sh/6hwvyhk3","slide":1,"text":"达","textPreview":"达","textChars":1,"textLines":1,"bbox":[1174,20,48,44]}
+{"kind":"textbox","id":"sh/7i5wrmlo","slide":1,"text":"（玛巴洛沙韦）","textPreview":"（玛巴洛沙韦）","textChars":7,"textLines":1,"bbox":[1086,62,145,23]}
+{"kind":"shape","id":"sh/v2t4nmlc","slide":1,"name":"nav-1","bbox":[128,135,282,58]}
+{"kind":"shape","id":"sh/u1k3uh4r","slide":1,"name":"nav-number-1","bbox":[135,141,46,46]}
+{"kind":"textbox","id":"sh/h4bmpw3i","slide":1,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[139,145,38,38]}
+{"kind":"textbox","id":"sh/w32lwrmx","slide":1,"name":"nav-label-1","text":"专治甲流乙流","textPreview":"专治甲流乙流","textChars":6,"textLines":1,"bbox":[182,140,222,48]}
+{"kind":"shape","id":"sh/3qd4r6lo","slide":1,"name":"nav-2","bbox":[434,135,322,58]}
+{"kind":"shape","id":"sh/ipk3y143","slide":1,"name":"nav-number-2","bbox":[441,141,46,46]}
+{"kind":"textbox","id":"sh/5svmtw3e","slide":1,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[445,145,38,38]}
+{"kind":"textbox","id":"sh/4rml0r2t","slide":1,"name":"nav-label-2","text":"全程1次，1天退热","textPreview":"全程1次，1天退热","textChars":9,"textLines":1,"bbox":[488,140,262,48]}
+{"kind":"shape","id":"sh/zu9kf2l4","slide":1,"name":"nav-3","bbox":[780,135,378,58]}
+{"kind":"shape","id":"sh/yt03mx4j","slide":1,"name":"nav-number-3","bbox":[787,141,46,46]}
+{"kind":"textbox","id":"sh/m18fa9sj","slide":1,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[791,145,38,38]}
+{"kind":"textbox","id":"sh/n2hgju94","slide":1,"name":"nav-label-3","text":"治疗自己，保护身边人","textPreview":"治疗自己，保护身边人","textChars":10,"textLines":1,"bbox":[834,140,318,48]}
+{"kind":"textbox","id":"sh/ex8f6ps7","slide":1,"name":"influenza-a-text","text":"甲","textPreview":"甲","textChars":1,"textLines":1,"bbox":[269,365,58,52]}
+{"kind":"textbox","id":"sh/0zqx8zad","slide":1,"name":"influenza-b-text","text":"乙","textPreview":"乙","textChars":1,"textLines":1,"bbox":[560,244,60,55]}
+{"kind":"textbox","id":"sh/ruxwba9w","slide":1,"name":"benefit-editable-text","text":"专治\n甲流乙流","textPreview":"专治 | 甲流乙流","textChars":7,"textLines":2,"bbox":[835,295,220,150]}
+{"kind":"textbox","id":"sh/tonihsbe","slide":1,"name":"caption","text":"1：专治甲流乙流","textPreview":"1：专治甲流乙流","textChars":8,"textLines":1,"bbox":[370,650,540,45]}
+{"kind":"image","id":"im/61o7ypc7","slide":1,"name":"","alt":"原创白色珍珠丝绸背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/nepw7m9k","slide":1,"name":"","alt":"无品牌白色药品包装组合透明插画","bbox":[300,248,590,332]}
+{"kind":"image","id":"im/2dgvyh8z","slide":1,"name":"","alt":"深蓝色甲流爆裂标记透明插画","bbox":[230,340,140,104]}
+{"kind":"image","id":"im/c3id4rqh","slide":1,"name":"","alt":"橙色乙流爆裂标记透明插画","bbox":[520,220,145,110]}
+{"kind":"image","id":"im/a10v218b","slide":1,"name":"","alt":"橙色胶囊徽章透明插画","bbox":[730,425,100,100]}
+{"kind":"image","id":"im/l8behgry","slide":1,"name":"","alt":"橙色两段式聊天气泡透明插画","bbox":[800,238,300,300]}
+{"kind":"notes","id":"nt/piocei","slide":1,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考时段 00:16.83–00:18.90。\n- 本页按参考镜头的标题、导航、包装组、甲/乙标记、胶囊徽章、聊天气泡与字幕层级重建。\n- 包装为原创无品牌透明插画，品牌位为可编辑文字；未裁取参考视频的品牌包装或 Logo 像素。\n- 字体统一为 Gen Jyuu Gothic；三段导航可见间距均为 24 px；气泡底图和文字分层。"}

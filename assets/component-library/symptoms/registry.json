@@ -1,0 +1,478 @@
+{
+  "library_version": "1.0.0",
+  "style_id": "pharmacy-health-cartoon-v1",
+  "generation_mode": "built-in image generation",
+  "reference_policy": "reference images provide style or semantic guidance only; reference pixels are forbidden in production masters",
+  "components": [
+    {
+      "id": "symptom.fever",
+      "name_zh": "发热",
+      "type": "patient",
+      "master": "fever/master/fever-v1.png",
+      "thumbnail": "fever/thumbnails/fever-v1.png",
+      "transparent": "fever/transparent/fever-v1.png",
+      "status": "selected",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.thirst",
+      "name_zh": "口渴",
+      "type": "patient",
+      "master": "thirst/master/thirst-v1.png",
+      "thumbnail": "thirst/thumbnails/thirst-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.dry-mouth",
+      "name_zh": "嘴巴干",
+      "type": "anatomy-closeup",
+      "master": "dry-mouth/master/dry-mouth-v1.png",
+      "thumbnail": "dry-mouth/thumbnails/dry-mouth-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.irritable",
+      "name_zh": "心里烦躁",
+      "type": "patient",
+      "master": "irritable/master/irritable-v1.png",
+      "thumbnail": "irritable/thumbnails/irritable-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.sore-throat",
+      "name_zh": "喉咙肿痛",
+      "type": "patient",
+      "master": "sore-throat/master/sore-throat-v1.png",
+      "thumbnail": "sore-throat/thumbnails/sore-throat-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.cough",
+      "name_zh": "咳嗽",
+      "type": "patient",
+      "master": "cough/master/cough-v1.png",
+      "thumbnail": "cough/thumbnails/cough-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.yellow-phlegm",
+      "name_zh": "痰黄",
+      "type": "symptom-symbol",
+      "master": "yellow-phlegm/master/yellow-phlegm-v1.png",
+      "thumbnail": "yellow-phlegm/thumbnails/yellow-phlegm-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "symptom_symbol"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.yellow-nasal",
+      "name_zh": "鼻涕黄稠",
+      "type": "anatomy-closeup",
+      "master": "yellow-nasal/master/yellow-nasal-v1.png",
+      "thumbnail": "yellow-nasal/thumbnails/yellow-nasal-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.red-tongue",
+      "name_zh": "舌头红",
+      "type": "anatomy-closeup",
+      "master": "red-tongue/master/red-tongue-v1.png",
+      "thumbnail": "red-tongue/thumbnails/red-tongue-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.yellow-coat",
+      "name_zh": "舌苔黄",
+      "type": "anatomy-closeup",
+      "master": "yellow-coat/master/yellow-coat-v1.png",
+      "thumbnail": "yellow-coat/thumbnails/yellow-coat-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.dry-stool",
+      "name_zh": "大便干结",
+      "type": "symptom-symbol",
+      "master": "dry-stool/master/dry-stool-v1.png",
+      "thumbnail": "dry-stool/thumbnails/dry-stool-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "symptom_symbol"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.stomach-discomfort",
+      "name_zh": "胃部不适",
+      "type": "patient",
+      "master": "stomach-discomfort/master/stomach-discomfort-v1.png",
+      "thumbnail": "stomach-discomfort/thumbnails/stomach-discomfort-v1.png",
+      "status": "cross-theme-proof",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    }
+  ],
+  "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+  "series_source": "assets/component-library/symptoms/pharmacy-health-cartoon-series-v1/series.json",
+  "registry_type": "asset",
+  "items": [
+    {
+      "id": "series.symptom.pharmacy-health-cartoon-v1",
+      "name_zh": "药店健康科普卡通症状系列 v1",
+      "kind": "series",
+      "status": "selected",
+      "series_style_id": "pharmacy-health-cartoon-v1",
+      "style_pack_ids": [
+        "style-pack.reference-medical-tech-v1",
+        "style-pack.reference-product-blue-v1"
+      ],
+      "tags": [
+        "症状",
+        "系列",
+        "卡通"
+      ],
+      "source": "assets/component-library/symptoms/pharmacy-health-cartoon-series-v1/series.json",
+      "member_ids": [
+        "symptom.fever",
+        "symptom.thirst",
+        "symptom.dry-mouth",
+        "symptom.irritable",
+        "symptom.sore-throat",
+        "symptom.cough",
+        "symptom.yellow-phlegm",
+        "symptom.yellow-nasal",
+        "symptom.red-tongue",
+        "symptom.yellow-coat",
+        "symptom.dry-stool",
+        "symptom.stomach-discomfort"
+      ]
+    },
+    {
+      "id": "symptom.fever",
+      "name_zh": "发热",
+      "type": "patient",
+      "master": "fever/master/fever-v1.png",
+      "thumbnail": "fever/thumbnails/fever-v1.png",
+      "transparent": "fever/transparent/fever-v1.png",
+      "status": "selected",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.thirst",
+      "name_zh": "口渴",
+      "type": "patient",
+      "master": "thirst/master/thirst-v1.png",
+      "thumbnail": "thirst/thumbnails/thirst-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.dry-mouth",
+      "name_zh": "嘴巴干",
+      "type": "anatomy-closeup",
+      "master": "dry-mouth/master/dry-mouth-v1.png",
+      "thumbnail": "dry-mouth/thumbnails/dry-mouth-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.irritable",
+      "name_zh": "心里烦躁",
+      "type": "patient",
+      "master": "irritable/master/irritable-v1.png",
+      "thumbnail": "irritable/thumbnails/irritable-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.sore-throat",
+      "name_zh": "喉咙肿痛",
+      "type": "patient",
+      "master": "sore-throat/master/sore-throat-v1.png",
+      "thumbnail": "sore-throat/thumbnails/sore-throat-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.cough",
+      "name_zh": "咳嗽",
+      "type": "patient",
+      "master": "cough/master/cough-v1.png",
+      "thumbnail": "cough/thumbnails/cough-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.yellow-phlegm",
+      "name_zh": "痰黄",
+      "type": "symptom-symbol",
+      "master": "yellow-phlegm/master/yellow-phlegm-v1.png",
+      "thumbnail": "yellow-phlegm/thumbnails/yellow-phlegm-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "symptom_symbol"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.yellow-nasal",
+      "name_zh": "鼻涕黄稠",
+      "type": "anatomy-closeup",
+      "master": "yellow-nasal/master/yellow-nasal-v1.png",
+      "thumbnail": "yellow-nasal/thumbnails/yellow-nasal-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.red-tongue",
+      "name_zh": "舌头红",
+      "type": "anatomy-closeup",
+      "master": "red-tongue/master/red-tongue-v1.png",
+      "thumbnail": "red-tongue/thumbnails/red-tongue-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.yellow-coat",
+      "name_zh": "舌苔黄",
+      "type": "anatomy-closeup",
+      "master": "yellow-coat/master/yellow-coat-v1.png",
+      "thumbnail": "yellow-coat/thumbnails/yellow-coat-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "anatomy_closeup"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.dry-stool",
+      "name_zh": "大便干结",
+      "type": "symptom-symbol",
+      "master": "dry-stool/master/dry-stool-v1.png",
+      "thumbnail": "dry-stool/thumbnails/dry-stool-v1.png",
+      "status": "visual-reviewed",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "symptom_symbol"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    },
+    {
+      "id": "symptom.stomach-discomfort",
+      "name_zh": "胃部不适",
+      "type": "patient",
+      "master": "stomach-discomfort/master/stomach-discomfort-v1.png",
+      "thumbnail": "stomach-discomfort/thumbnails/stomach-discomfort-v1.png",
+      "status": "cross-theme-proof",
+      "series_id": "series.symptom.pharmacy-health-cartoon-v1",
+      "role_ids": [
+        "patient_symptom"
+      ],
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen per symptoms-v1-generation-recipes",
+        "style_id": "pharmacy-health-cartoon-v1"
+      }
+    }
+  ]
+}

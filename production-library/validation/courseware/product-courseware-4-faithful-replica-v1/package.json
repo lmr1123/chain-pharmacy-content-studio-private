@@ -1,0 +1,24 @@
+{
+  "name": "product-courseware-4-faithful-replica-v1",
+  "private": true,
+  "version": "1.0.0",
+  "description": "商品培训课件4 保真复刻 · Revideo 可编辑视频（对接项目既有编辑器）",
+  "scripts": {
+    "start:editor": "bash scripts/run-editor-daemon.sh",
+    "start:editor:fg": "node scripts/start-cw4-editor.mjs",
+    "render:direct": "npx tsx src/render.ts",
+    "export:video": "python3 scripts/export-full-film-video.py",
+    "export:pptx": "node scripts/export-cw4-pptx.mjs",
+    "build:stills": "python3 scripts/export-full-film-video.py"
+  },
+  "dependencies": {
+    "@revideo/2d": "0.11.0",
+    "@revideo/core": "0.11.0",
+    "@revideo/renderer": "0.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "5.5.4",
+    "tsx": "^4.19.0"
+  }
+}

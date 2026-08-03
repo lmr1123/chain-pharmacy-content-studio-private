@@ -1,0 +1,136 @@
+{"kind":"deck","id":"pr/tgzp1i","name":"Deck"}
+{"kind":"layout","layoutId":"baa3343f-9dbf-4d3d-9fca-4b082dc74f6a","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"4f0cc211-d201-49c4-b2e8-367e9d3cf322","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/e3b20u","slide":1,"title":"一、三大核心功效","textShapes":16}
+{"kind":"shape","id":"sh/cvedsbqx","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/dwnelwri","slide":1,"name":"chapter-ribbon","bbox":[420,28,440,58]}
+{"kind":"textbox","id":"sh/yxwvu183","slide":1,"name":"chapter-title","text":"一、三大核心功效","textPreview":"一、三大核心功效","textChars":8,"textLines":1,"bbox":[455,36,370,42]}
+{"kind":"shape","id":"sh/zy5wn69o","slide":1,"name":"nav-1","bbox":[176,99,285,42]}
+{"kind":"shape","id":"sh/0zedwbq9","slide":1,"name":"nav-number-1","bbox":[185,105,30,30]}
+{"kind":"textbox","id":"sh/l0nepgru","slide":1,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[189,107,22,26]}
+{"kind":"textbox","id":"sh/mlwvyl8z","slide":1,"name":"nav-label-1","text":"专治甲流、乙流","textPreview":"专治甲流、乙流","textChars":7,"textLines":1,"bbox":[220,104,233,30]}
+{"kind":"shape","id":"sh/nm5wrq9k","slide":1,"name":"nav-2","bbox":[473,99,300,42]}
+{"kind":"shape","id":"sh/3y1sjih4","slide":1,"name":"nav-number-2","bbox":[482,105,30,30]}
+{"kind":"textbox","id":"sh/ixsrqd0j","slide":1,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[486,107,22,26]}
+{"kind":"textbox","id":"sh/50jalszu","slide":1,"name":"nav-label-2","text":"全程1次，1天退热","textPreview":"全程1次，1天退热","textChars":9,"textLines":1,"bbox":[517,104,248,30]}
+{"kind":"shape","id":"sh/4zatsnyp","slide":1,"name":"nav-3","bbox":[785,99,330,42]}
+{"kind":"shape","id":"sh/vu1sfihs","slide":1,"name":"nav-number-3","bbox":[794,105,30,30]}
+{"kind":"textbox","id":"sh/ut8rmd07","slide":1,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[798,107,22,26]}
+{"kind":"textbox","id":"sh/hwjah8zy","slide":1,"name":"nav-label-3","text":"治疗自己，保护身边人","textPreview":"治疗自己，保护身边人","textChars":10,"textLines":1,"bbox":[829,104,278,30]}
+{"kind":"textbox","id":"sh/gva9onid","slide":1,"name":"sample-label","text":"模板示例","textPreview":"模板示例","textChars":4,"textLines":1,"bbox":[1138,28,92,28]}
+{"kind":"textbox","id":"sh/fqlsr2hc","slide":1,"name":"review-footer","text":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textPreview":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textChars":24,"textLines":1,"bbox":[74,675,520,24]}
+{"kind":"textbox","id":"sh/epcbyxgr","slide":1,"name":"slide1-headline","text":"针对甲流、乙流的抗流感治疗路径","textPreview":"针对甲流、乙流的抗流感治疗路径","textChars":15,"textLines":1,"bbox":[105,188,650,62]}
+{"kind":"textbox","id":"sh/algvq10z","slide":1,"name":"slide1-subhead","text":"先识别流感类型，再进入完整疗程说明","textPreview":"先识别流感类型，再进入完整疗程说明","textChars":17,"textLines":1,"bbox":[108,253,590,38]}
+{"kind":"shape","id":"sh/bmpwj61k","slide":1,"name":"influenza-a-circle","bbox":[130,345,150,150]}
+{"kind":"textbox","id":"sh/cnydsbip","slide":1,"text":"甲流","textPreview":"甲流","textChars":2,"textLines":1,"bbox":[155,380,100,45]}
+{"kind":"textbox","id":"sh/xo7elgja","slide":1,"text":"A 型流感","textPreview":"A 型流感","textChars":5,"textLines":1,"bbox":[155,425,100,30]}
+{"kind":"shape","id":"sh/ypgvul0v","slide":1,"name":"influenza-b-circle","bbox":[315,345,150,150]}
+{"kind":"textbox","id":"sh/zqpwnq1g","slide":1,"text":"乙流","textPreview":"乙流","textChars":2,"textLines":1,"bbox":[340,380,100,45]}
+{"kind":"textbox","id":"sh/krydwvi1","slide":1,"text":"B 型流感","textPreview":"B 型流感","textChars":5,"textLines":1,"bbox":[340,425,100,30]}
+{"kind":"shape","id":"sh/lsrepgjm","slide":1,"name":"packshot-halo","bbox":[790,194,370,370]}
+{"kind":"shape","id":"sh/fu5cbm1c","slide":1,"name":"packshot-label","bbox":[895,510,160,34]}
+{"kind":"textbox","id":"sh/h8byhk3u","slide":1,"text":"包装示意 · 可替换","textPreview":"包装示意 · 可替换","textChars":10,"textLines":1,"bbox":[905,514,140,26]}
+{"kind":"image","id":"im/29sretc7","slide":1,"name":"","alt":"原创白色丝绸医疗课件背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/9s7qtkfa","slide":1,"name":"","alt":"无品牌胶囊包装示意，可替换","bbox":[860,250,230,245]}
+{"kind":"notes","id":"nt/e3b20u","slide":1,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考片段 00:14.84–00:44.04。\n- 页面 1 的可见文案来自参考片观察与转录，未引入外部医学结论；正式使用前须业务与医学审核。\n- 背景与插画为本项目原创生成资产；包装为 series.medication.generic-packshot-v1 的无品牌示意。"}
+{"kind":"slide","id":"sl/9iwbw5","slide":2,"title":"一、三大核心功效","textShapes":17}
+{"kind":"shape","id":"sh/4n25oj6l","slide":2,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/pobmxon6","slide":2,"name":"chapter-ribbon","bbox":[420,28,440,58]}
+{"kind":"textbox","id":"sh/ux0ni9oj","slide":2,"name":"chapter-title","text":"一、三大核心功效","textPreview":"一、三大核心功效","textChars":8,"textLines":1,"bbox":[455,36,370,42]}
+{"kind":"shape","id":"sh/fy94re54","slide":2,"name":"nav-1","bbox":[176,99,285,42]}
+{"kind":"shape","id":"sh/gzi5kj6p","slide":2,"name":"nav-number-1","bbox":[185,105,30,30]}
+{"kind":"textbox","id":"sh/h0rmt4nu","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[189,107,22,26]}
+{"kind":"textbox","id":"sh/6tg3epo7","slide":2,"name":"nav-label-1","text":"专治甲流、乙流","textPreview":"专治甲流、乙流","textChars":7,"textLines":1,"bbox":[220,104,233,30]}
+{"kind":"shape","id":"sh/7up4nu5s","slide":2,"name":"nav-2","bbox":[473,99,300,42]}
+{"kind":"shape","id":"sh/z6tw3i9k","slide":2,"name":"nav-number-2","bbox":[482,105,30,30]}
+{"kind":"textbox","id":"sh/y5kfadsz","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[486,107,22,26]}
+{"kind":"textbox","id":"sh/l8be5sra","slide":2,"name":"nav-label-2","text":"全程1次，1天退热","textPreview":"全程1次，1天退热","textChars":9,"textLines":1,"bbox":[517,104,248,30]}
+{"kind":"shape","id":"sh/072xcna5","slide":2,"name":"nav-3","bbox":[785,99,330,42]}
+{"kind":"shape","id":"sh/natw7i9g","slide":2,"name":"nav-number-3","bbox":[794,105,30,30]}
+{"kind":"textbox","id":"sh/m9kfedsv","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[798,107,22,26]}
+{"kind":"textbox","id":"sh/9cve9srm","slide":2,"name":"nav-label-3","text":"治疗自己，保护身边人","textPreview":"治疗自己，保护身边人","textChars":10,"textLines":1,"bbox":[829,104,278,30]}
+{"kind":"textbox","id":"sh/8b2xgna1","slide":2,"name":"sample-label","text":"模板示例","textPreview":"模板示例","textChars":4,"textLines":1,"bbox":[1138,28,92,28]}
+{"kind":"textbox","id":"sh/3e9wvytc","slide":2,"name":"review-footer","text":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textPreview":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textChars":24,"textLines":1,"bbox":[74,675,520,24]}
+{"kind":"textbox","id":"sh/2d0v2tsr","slide":2,"name":"slide2-headline","text":"全程一次，一天退热","textPreview":"全程一次，一天退热","textChars":9,"textLines":1,"bbox":[92,180,620,64]}
+{"kind":"textbox","id":"sh/69oza1cf","slide":2,"name":"slide2-body","text":"全程仅需口服 1 次，早期阻断病毒复制。","textPreview":"全程仅需口服 1 次，早期阻断病毒复制。","textChars":20,"textLines":1,"bbox":[95,250,610,42]}
+{"kind":"shape","id":"sh/rux036t0","slide":2,"name":"dose-clock","bbox":[118,338,250,250]}
+{"kind":"textbox","id":"sh/svqhcbu5","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[166,365,150,120]}
+{"kind":"textbox","id":"sh/twzi5wbq","slide":2,"text":"全程口服","textPreview":"全程口服","textChars":4,"textLines":1,"bbox":[170,485,142,34]}
+{"kind":"textbox","id":"sh/i5oz6hc3","slide":2,"text":"次","textPreview":"次","textChars":1,"textLines":1,"bbox":[248,418,72,55]}
+{"kind":"shape","id":"sh/j6x0zmto","slide":2,"name":"treatment-arrow","bbox":[405,418,190,76]}
+{"kind":"textbox","id":"sh/476h8ru9","slide":2,"text":"早期阻断","textPreview":"早期阻断","textChars":4,"textLines":1,"bbox":[426,434,126,40]}
+{"kind":"shape","id":"sh/58fi1wbu","slide":2,"name":"slide2-pack-halo","bbox":[730,205,395,395]}
+{"kind":"textbox","id":"sh/v2dgvmts","slide":2,"name":"one-day","text":"1 天","textPreview":"1 天","textChars":3,"textLines":1,"bbox":[810,475,235,72]}
+{"kind":"textbox","id":"sh/dw321kva","slide":2,"text":"快速退热","textPreview":"快速退热","textChars":4,"textLines":1,"bbox":[824,540,210,38]}
+{"kind":"image","id":"im/idsny5kb","slide":2,"name":"","alt":"原创白色丝绸医疗课件背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/dwbipwfm","slide":2,"name":"","alt":"无品牌胶囊包装示意，可替换","bbox":[822,270,210,220]}
+{"kind":"notes","id":"nt/9iwbw5","slide":2,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考片段 00:14.84–00:44.04。\n- 页面 2 的可见文案来自参考片观察与转录，未引入外部医学结论；正式使用前须业务与医学审核。\n- 背景与插画为本项目原创生成资产；包装为 series.medication.generic-packshot-v1 的无品牌示意。"}
+{"kind":"slide","id":"sl/6m4los","slide":3,"title":"一、三大核心功效","textShapes":16}
+{"kind":"shape","id":"sh/8b65k32l","slide":3,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/9cf6d836","slide":3,"name":"chapter-ribbon","bbox":[420,28,440,58]}
+{"kind":"textbox","id":"sh/udonmdkr","slide":3,"name":"chapter-title","text":"一、三大核心功效","textPreview":"一、三大核心功效","textChars":8,"textLines":1,"bbox":[455,36,370,42]}
+{"kind":"shape","id":"sh/vexofilc","slide":3,"name":"nav-1","bbox":[176,99,285,42]}
+{"kind":"shape","id":"sh/wfq5on2h","slide":3,"name":"nav-number-1","bbox":[185,105,30,30]}
+{"kind":"textbox","id":"sh/hgz6h832","slide":3,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[189,107,22,26]}
+{"kind":"textbox","id":"sh/ih8nqdkn","slide":3,"name":"nav-label-1","text":"专治甲流、乙流","textPreview":"专治甲流、乙流","textChars":7,"textLines":1,"bbox":[220,104,233,30]}
+{"kind":"shape","id":"sh/jihojil8","slide":3,"name":"nav-2","bbox":[473,99,300,42]}
+{"kind":"shape","id":"sh/zyhcri9s","slide":3,"name":"nav-number-2","bbox":[482,105,30,30]}
+{"kind":"textbox","id":"sh/yd8bid87","slide":3,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[486,107,22,26]}
+{"kind":"textbox","id":"sh/l0zutsry","slide":3,"name":"nav-label-2","text":"全程1次，1天退热","textPreview":"全程1次，1天退热","textChars":9,"textLines":1,"bbox":[517,104,248,30]}
+{"kind":"shape","id":"sh/kzqtknqd","slide":3,"name":"nav-3","bbox":[785,99,330,42]}
+{"kind":"shape","id":"sh/bahcny9w","slide":3,"name":"nav-number-3","bbox":[794,105,30,30]}
+{"kind":"textbox","id":"sh/a9obet8b","slide":3,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[798,107,22,26]}
+{"kind":"textbox","id":"sh/xczup8rm","slide":3,"name":"nav-label-3","text":"治疗自己，保护身边人","textPreview":"治疗自己，保护身边人","textChars":10,"textLines":1,"bbox":[829,104,278,30]}
+{"kind":"textbox","id":"sh/cbqtg3qh","slide":3,"name":"sample-label","text":"模板示例","textPreview":"模板示例","textChars":4,"textLines":1,"bbox":[1138,28,92,28]}
+{"kind":"textbox","id":"sh/v61cz2p0","slide":3,"name":"review-footer","text":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textPreview":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textChars":24,"textLines":1,"bbox":[74,675,520,24]}
+{"kind":"textbox","id":"sh/u5svqx8f","slide":3,"name":"slide3-headline","text":"从源头遏制新病毒生成","textPreview":"从源头遏制新病毒生成","textChars":10,"textLines":1,"bbox":[86,167,700,58]}
+{"kind":"textbox","id":"sh/qdwnelwz","slide":3,"text":"一个机制图，讲清两条不同的抗病毒路径","textPreview":"一个机制图，讲清两条不同的抗病毒路径","textChars":18,"textLines":1,"bbox":[88,225,570,34]}
+{"kind":"shape","id":"sh/repo7qxk","slide":3,"name":"mechanism-surface","bbox":[70,280,1140,340]}
+{"kind":"shape","id":"sh/szy5gve5","slide":3,"name":"new-path-label","bbox":[103,398,190,68]}
+{"kind":"textbox","id":"sh/d07690va","slide":3,"text":"早期阻断路径","textPreview":"早期阻断路径","textChars":6,"textLines":1,"bbox":[116,412,164,40]}
+{"kind":"shape","id":"sh/e1g7i5wv","slide":3,"name":"infected-cell","bbox":[427,318,315,260]}
+{"kind":"textbox","id":"sh/f2pobadg","slide":3,"text":"感染细胞","textPreview":"感染细胞","textChars":4,"textLines":1,"bbox":[505,425,160,36]}
+{"kind":"shape","id":"sh/03ypkfe1","slide":3,"name":"virus-1","bbox":[472,360,38,38]}
+{"kind":"shape","id":"sh/1476dkvm","slide":3,"name":"virus-core-1","bbox":[484,372,14,14]}
+{"kind":"shape","id":"sh/u5cn61wr","slide":3,"name":"virus-2","bbox":[545,350,38,38]}
+{"kind":"shape","id":"sh/v6loz6xc","slide":3,"name":"virus-core-2","bbox":[557,362,14,14]}
+{"kind":"shape","id":"sh/x0bq5ofu","slide":3,"name":"virus-3","bbox":[620,366,38,38]}
+{"kind":"shape","id":"sh/wz29cjy9","slide":3,"name":"virus-core-3","bbox":[632,378,14,14]}
+{"kind":"shape","id":"sh/byt83eho","slide":3,"name":"virus-4","bbox":[497,500,38,38]}
+{"kind":"shape","id":"sh/ax0ra9g3","slide":3,"name":"virus-core-4","bbox":[509,512,14,14]}
+{"kind":"shape","id":"sh/l4ba9ofq","slide":3,"name":"virus-5","bbox":[610,490,38,38]}
+{"kind":"shape","id":"sh/k329gjyl","slide":3,"name":"virus-core-5","bbox":[622,502,14,14]}
+{"kind":"shape","id":"sh/j2t87ex0","slide":3,"name":"block-arrow","bbox":[560,280,52,95]}
+{"kind":"textbox","id":"sh/y1kre9gf","slide":3,"text":"阻断复制","textPreview":"阻断复制","textChars":4,"textLines":1,"bbox":[497,286,116,28]}
+{"kind":"shape","id":"sh/18rqx4zm","slide":3,"name":"release-arrow","bbox":[748,406,116,54]}
+{"kind":"shape","id":"sh/07i94zy1","slide":3,"name":"traditional-label","bbox":[884,388,210,72]}
+{"kind":"textbox","id":"sh/4n6tc7ip","slide":3,"text":"传统释放阻断路径","textPreview":"传统释放阻断路径","textChars":8,"textLines":1,"bbox":[897,403,184,42]}
+{"kind":"textbox","id":"sh/5ozu5sza","slide":3,"name":"comparison-takeaway","text":"对比重点：阻断复制源头，而不是等病毒复制后再限制释放","textPreview":"对比重点：阻断复制源头，而不是等病毒复制后再限制释放","textChars":26,"textLines":1,"bbox":[158,578,956,34]}
+{"kind":"image","id":"im/itgru54z","slide":3,"name":"","alt":"原创白色丝绸医疗课件背景","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/6m4los","slide":3,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考片段 00:14.84–00:44.04。\n- 页面 3 的可见文案来自参考片观察与转录，未引入外部医学结论；正式使用前须业务与医学审核。\n- 背景与插画为本项目原创生成资产；包装为 series.medication.generic-packshot-v1 的无品牌示意。"}
+{"kind":"slide","id":"sl/66a32a","slide":4,"title":"一、三大核心功效","textShapes":13}
+{"kind":"shape","id":"sh/mpsb2x0v","slide":4,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/nq1sv21g","slide":4,"name":"chapter-ribbon","bbox":[420,28,440,58]}
+{"kind":"textbox","id":"sh/03qt0nip","slide":4,"name":"chapter-title","text":"一、三大核心功效","textPreview":"一、三大核心功效","textChars":8,"textLines":1,"bbox":[455,36,370,42]}
+{"kind":"shape","id":"sh/1ojatsja","slide":4,"name":"nav-1","bbox":[176,99,285,42]}
+{"kind":"shape","id":"sh/e18byd0z","slide":4,"name":"nav-number-1","bbox":[185,105,30,30]}
+{"kind":"textbox","id":"sh/z2hsri1k","slide":4,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[189,107,22,26]}
+{"kind":"textbox","id":"sh/kzutcri9","slide":4,"name":"nav-label-1","text":"专治甲流、乙流","textPreview":"专治甲流、乙流","textChars":7,"textLines":1,"bbox":[220,104,233,30]}
+{"kind":"shape","id":"sh/lk3u5cju","slide":4,"name":"nav-2","bbox":[473,99,300,42]}
+{"kind":"shape","id":"sh/dkvm5sje","slide":4,"name":"nav-number-2","bbox":[482,105,30,30]}
+{"kind":"textbox","id":"sh/cjmlwn29","slide":4,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[486,107,22,26]}
+{"kind":"textbox","id":"sh/rid4321o","slide":4,"name":"nav-label-2","text":"全程1次，1天退热","textPreview":"全程1次，1天退热","textChars":9,"textLines":1,"bbox":[517,104,248,30]}
+{"kind":"shape","id":"sh/qh43uxk3","slide":4,"name":"nav-3","bbox":[785,99,330,42]}
+{"kind":"shape","id":"sh/pgvm1sji","slide":4,"name":"nav-number-3","bbox":[794,105,30,30]}
+{"kind":"textbox","id":"sh/4fmlsn2x","slide":4,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[798,107,22,26]}
+{"kind":"textbox","id":"sh/3ud4zi1c","slide":4,"name":"nav-label-3","text":"治疗自己，保护身边人","textPreview":"治疗自己，保护身边人","textChars":10,"textLines":1,"bbox":[829,104,278,30]}
+{"kind":"textbox","id":"sh/2tk3qdkr","slide":4,"name":"sample-label","text":"模板示例","textPreview":"模板示例","textChars":4,"textLines":1,"bbox":[1138,28,92,28]}
+{"kind":"textbox","id":"sh/9cfmxcjm","slide":4,"name":"review-footer","text":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textPreview":"仅用于金样复刻验证 · 包装与医学内容待业务审核","textChars":24,"textLines":1,"bbox":[74,675,520,24]}
+{"kind":"textbox","id":"sh/ob65472h","slide":4,"name":"slide4-headline","text":"治疗自己，保护身边人","textPreview":"治疗自己，保护身边人","textChars":10,"textLines":1,"bbox":[84,188,560,64]}
+{"kind":"textbox","id":"sh/87yxgfup","slide":4,"name":"slide4-body","text":"早期阻断流感传播，降低传染给家人的风险。","textPreview":"早期阻断流感传播，降低传染给家人的风险。","textChars":20,"textLines":1,"bbox":[88,258,555,66]}
+{"kind":"shape","id":"sh/t87ypkva","slide":4,"name":"impact-callout","bbox":[88,364,430,130]}
+{"kind":"textbox","id":"sh/65gfe5cj","slide":4,"text":"本人尽早治疗","textPreview":"本人尽早治疗","textChars":6,"textLines":1,"bbox":[116,386,220,34]}
+{"kind":"textbox","id":"sh/76pgnad4","slide":4,"text":"→ 传播链更早被截断","textPreview":"→ 传播链更早被截断","textChars":10,"textLines":1,"bbox":[116,427,320,38]}
+{"kind":"image","id":"im/03qd8r25","slide":4,"name":"","alt":"原创白色丝绸医疗课件背景","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/zelw321k","slide":4,"name":"","geometry":"roundRect","alt":"康复成人与受到盾牌保护的多代家庭原创插画","bbox":[630,170,540,470]}
+{"kind":"notes","id":"nt/66a32a","slide":4,"text":"[Sources]\n- 用户提供参考视频：/Users/liminrong/Downloads/商品培训课件3/商品培训课件3.mp4，参考片段 00:14.84–00:44.04。\n- 页面 4 的可见文案来自参考片观察与转录，未引入外部医学结论；正式使用前须业务与医学审核。\n- 背景与插画为本项目原创生成资产；包装为 series.medication.generic-packshot-v1 的无品牌示意。"}

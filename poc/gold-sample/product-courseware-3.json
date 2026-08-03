@@ -1,0 +1,24 @@
+{
+  "project_id": "courseware.product-training-3.gold-sample-v1",
+  "template_id": "template.product-training-faithful-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "duration": 29.2,
+  "audio": {
+    "file": "/product-courseware-3/reference-sample-audio.wav",
+    "source": "user-provided-reference",
+    "loudness_target_lufs": -16
+  },
+  "assets": {
+    "background": "/product-courseware-3/white-silk-medical-bg-v1.png",
+    "packshot": "/product-courseware-3/generic-packshot-v1.png",
+    "family": "/product-courseware-3/family-shield-v1.png"
+  },
+  "cues": [
+    {"start": 0.00, "end": 3.92, "text": "一、三大核心功效。一，专治甲流、乙流。"},
+    {"start": 3.92, "end": 9.88, "text": "二，全程一次，一天退热。全程只需口服一次，且早期阻断病毒复制。"},
+    {"start": 9.88, "end": 14.88, "text": "遏制新病毒生成，一天快速退热。传统药物不阻止病毒复制。"},
+    {"start": 14.88, "end": 20.52, "text": "而是阻止已复制的病毒释放，减少体内扩散，且需一天两次，连续吃五天。"},
+    {"start": 20.52, "end": 25.84, "text": "三，治疗自己，保护身边人。仅需患者本人服用，即可早期阻断流感传播。"},
+    {"start": 25.84, "end": 29.20, "text": "大大降低传染给家人的风险。"}
+  ]
+}

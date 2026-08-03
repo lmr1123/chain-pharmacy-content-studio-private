@@ -1,0 +1,35 @@
+{
+  "id": "product-training.q10-efficacy-evidence-v1",
+  "category": "product-training-efficacy",
+  "style_id": "q10-reference-faithful-v1",
+  "version": "1.0.0",
+  "status": "technical-qa-passed",
+  "subjects": [
+    "促进能量生成",
+    "抗氧化",
+    "组织细胞保护"
+  ],
+  "files": {
+    "energy_growth": [
+      "energy-growth/master/energy-idea-v1.png",
+      "energy-growth/master/energy-atp-v1.png",
+      "energy-growth/master/energy-tissues-v1.png"
+    ],
+    "antioxidant": [
+      "antioxidant/master/oxidative-stress-v1.png",
+      "antioxidant/master/antioxidant-molecules-v1.png",
+      "antioxidant/master/cell-protection-v1.png"
+    ],
+    "prompt": "prompts/q10-efficacy-evidence-v1.md"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "reference_role": "参考片只用于题材、构图和画面密度对标",
+    "reference_video_pixels_used": false
+  },
+  "review": {
+    "visual": "pending-user-signoff",
+    "medical": "pending-internal-review",
+    "dynamic_qa": "production-library/validation/video/product-training-efficacy-qa/"
+  }
+}

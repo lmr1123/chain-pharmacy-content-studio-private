@@ -1,0 +1,59 @@
+{
+  "theme_id": "theme.blank-product-v1",
+  "slug": "blank-product-courseware-v1",
+  "style_pack_id": "style-pack.sufuda-pearl-silk-orange-v1",
+  "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1",
+  "product": {
+    "brand_name": "（品牌名）",
+    "generic_name": "（通用名）",
+    "display_name": "（品牌名） （通用名）"
+  },
+  "title": "（商品名） · 商品培训课件",
+  "required_business_assets": ["logo", "packGroup"],
+  "assets": {
+    "logo": "TODO",
+    "packGroup": "TODO"
+  },
+  "pages": [
+    {
+      "id": "cover",
+      "elements": {
+        "title": "（品牌名） （通用名）",
+        "tagline": "（一句话定位，审核稿）",
+        "check1": "（卖点1）",
+        "check2": "（卖点2）",
+        "check3": "（卖点3）"
+      }
+    },
+    {
+      "id": "flu",
+      "elements": {
+        "card1_title": "（背景卡1标题）",
+        "card1_body": "（背景卡1正文）",
+        "card2_t1": "（要点A）",
+        "card2_t2": "（要点B）",
+        "card2_t3": "（要点C）",
+        "card3_num": "（关键数字）",
+        "card3_body": "（数字说明）",
+        "footer": "（页脚提示）"
+      }
+    },
+    {
+      "id": "benefit_1",
+      "chapter": "一、（章节名）",
+      "nav": ["（导航1）", "（导航2）", "（导航3）"],
+      "elements": {
+        "chapter": "一、（章节名）",
+        "nav1": "（导航1）",
+        "nav2": "（导航2）",
+        "nav3": "（导航3）",
+        "bubble_text": "（气泡文案）"
+      }
+    }
+  ],
+  "captions": [
+    "（旁白第1句，审核稿）",
+    "（旁白第2句，审核稿）"
+  ],
+  "notes": "业务只填审核文案与授权图路径；不要填坐标或 layer_id。未改的字段保留金样结构，换主题时务必替换医学相关文案。"
+}

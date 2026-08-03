@@ -1,0 +1,123 @@
+{
+  "id": "asset-series.mechanism.reference-medical-tech-v1",
+  "name_zh": "蓝青医学机理可视化系列 v1",
+  "version": "1.0.0",
+  "status": "user-approved",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "series_style_id": "medical-mechanism-cyan-volumetric-v1",
+  "purpose": "为连锁药店健康知识与培训课件持续沉淀可复用、可组合的医学机理人体、器官、症状和病邪介质素材。",
+  "visual_tokens": {
+    "panel_background": "#102230",
+    "body_base": "#148db7",
+    "body_highlight": "#55f0ff",
+    "body_rim": "#8cffff",
+    "organ_base": "#ff6479",
+    "organ_highlight": "#ff9bab",
+    "symptom_glow": "#ff375f",
+    "pathogen_core": "#4d28a8",
+    "pathogen_mid": "#7650d7",
+    "pathogen_rim": "#c0a6ff",
+    "panel_stroke": "#4cb9c2"
+  },
+  "material_contract": {
+    "body": "平滑蓝青半透明 3D 医学扫描表面，保留柔和体积光和青色边缘光，不展示高细节骨骼血管。",
+    "organ": "非血腥、教学友好的珊瑚红器官，轮廓清晰，允许局部柔光和节律脉动。",
+    "symptom": "症状仅以局部红色体积光或受控色区表达，不把红光烘焙进需要独立动画的主体图。",
+    "pathogen": "紫蓝半透明体积烟焰，具有高光边缘、深色内核和羽化层次，不使用字符、细线或重复波纹。",
+    "cross_section": "蓝青透明外形加珊瑚红内部路径，结构简化但方向和部位可辨，避免写实血腥。"
+  },
+  "role_contracts": [
+    {
+      "role_id": "whole_body_front",
+      "name_zh": "正面全身人体",
+      "required": ["transparent_subject", "full_body", "complete_hands_feet", "centered_anchor"],
+      "default_effects": ["body_scan", "body_pulse", "pathogen_converge"]
+    },
+    {
+      "role_id": "organ_torso",
+      "name_zh": "器官躯干机制图",
+      "required": ["transparent_subject", "organ_visible", "central_safe_area"],
+      "default_effects": ["organ_pulse", "pathogen_drift"]
+    },
+    {
+      "role_id": "symptom_focus_front",
+      "name_zh": "正面症状聚焦",
+      "required": ["transparent_subject", "focus_anchor"],
+      "default_effects": ["focus_glow_pulse"]
+    },
+    {
+      "role_id": "anatomy_cross_section",
+      "name_zh": "侧面或局部解剖剖面",
+      "required": ["transparent_subject", "path_anchor", "focus_anchor"],
+      "default_effects": ["focus_glow_pulse", "airflow_or_process_path"]
+    },
+    {
+      "role_id": "pathogen_field",
+      "name_zh": "病邪或环境体积介质",
+      "required": ["subject_safe_area", "two_motion_phases", "edge_overscan"],
+      "default_effects": ["phase_crossfade", "vertical_drift", "scale_breathe", "luminance_breathe"]
+    },
+    {
+      "role_id": "process_path",
+      "name_zh": "气流、液流或病理过程路径",
+      "required": ["normalized_path_points", "direction", "start_end_anchors"],
+      "default_effects": ["path_particle_flow", "path_glow"]
+    }
+  ],
+  "composition_contract": {
+    "canvas": [1920, 1080],
+    "panel_aspect_ratio": "16:9",
+    "subject_safe_area_normalized": [0.29, 0.08, 0.42, 0.84],
+    "effect_overscan_percent": 6,
+    "organ_readability_rule": "50% 预览下主体和主要器官必须可辨；病邪介质不得覆盖主要器官超过 15%。",
+    "layer_order": [
+      "panel_background",
+      "pathogen_back",
+      "subject",
+      "organ_or_internal_path",
+      "symptom_glow",
+      "pathogen_front",
+      "labels_and_frame"
+    ]
+  },
+  "animation_contract": {
+    "body_scan_seconds": [0.7, 1.1],
+    "body_or_organ_pulse_scale": [1.0, 1.03],
+    "pathogen_phase_seconds": [0.35, 0.8],
+    "pathogen_drift_pixels": [4, 14],
+    "focus_glow_opacity": [0.32, 0.82],
+    "minimum_distinct_dynamic_layers": 2,
+    "proof": "每个动态效果至少提交两个时间分离帧；体积介质和内部过程需额外提供稳定区间局部差分。"
+  },
+  "naming": {
+    "asset_id": "asset.mechanism.<theme>-<role>-v<major>",
+    "folder": "assets/component-library/mechanisms/<theme>-<role>-v<major>/",
+    "series_member_field": "series_id",
+    "role_field": "role_ids"
+  },
+  "extension_gate": [
+    "先按 style_pack_id 和 series_id 查询已有资产。",
+    "已有角色可表达时，只新增主题内容资产或新版本，不新建系列。",
+    "新资产必须复用本文件的视觉令牌、材质契约、构图安全区和动画契约。",
+    "保存生成提示词、来源策略、尺寸、可编辑锚点、缩略图和 QA 证据。",
+    "视觉确认、技术 QA、来源检查和医学审核分别记录；状态不得自动继承。",
+    "通过审核后更新 mechanisms/registry.json 的 members，并在生产组件中只引用稳定资产 ID。"
+  ],
+  "current_members": [
+    {
+      "asset_id": "asset.mechanism.wind-heat-dynamic-v1",
+      "theme": "wind-heat",
+      "role_ids": [
+        "whole_body_front",
+        "organ_torso",
+        "symptom_focus_front",
+        "anatomy_cross_section",
+        "pathogen_field",
+        "process_path"
+      ],
+      "status": "technical-qa-passed",
+      "source": "assets/component-library/mechanisms/wind-heat-dynamic-v1/component.json"
+    }
+  ],
+  "restriction": "系列风格与扩展方式已获用户确认；新增成员仍需逐项视觉、技术、来源和医学审核。"
+}

@@ -1,0 +1,451 @@
+{
+  "registry_type": "theme",
+  "version": "1.0.0",
+  "description_zh": "业务培训主题注册表。主题只描述「讲什么」与默认风格/系列引用，不替代 series 视觉契约，也不存放外部参考像素。",
+  "schema_notes": {
+    "theme_id": "theme.<kind>.<slug>",
+    "theme_kind": [
+      "disease",
+      "product",
+      "scenario",
+      "mixed"
+    ],
+    "default_style_pack_id": "新项目默认锁定；可被项目覆盖但须兼容",
+    "related_series_ids": "装配时优先查询的视觉系列，非强制全用",
+    "source_class_of_content": "主题脚本来源层级；医学终审独立于视觉状态"
+  },
+  "items": [
+    {
+      "id": "theme.disease.wind-heat",
+      "name_zh": "风热证",
+      "theme_kind": "disease",
+      "status": "selected",
+      "tags": [
+        "疾病",
+        "健康科普",
+        "风热",
+        "咽喉",
+        "呼吸系统",
+        "视频"
+      ],
+      "default_style_pack_id": "style-pack.reference-medical-tech-v1",
+      "compatible_style_packs": [
+        "style-pack.reference-medical-tech-v1"
+      ],
+      "default_template_ids": [
+        "template.health-reference-tech-v1"
+      ],
+      "related_series_ids": [
+        "asset-series.mechanism.reference-medical-tech-v1",
+        "series.symptom.pharmacy-health-cartoon-v1",
+        "series.herb.botanical-clean-v1",
+        "series.icon.advice-safety-v1"
+      ],
+      "related_series_planned": [
+        "series.presenter.pharmacist-cartoon-v1"
+      ],
+      "example_assembly_ids": [
+        "production-library/examples/wind-heat-full-frame-assembly.json",
+        "production-library/examples/wind-heat-mechanism-gap.json",
+        "production-library/examples/wind-heat-medication-advice.json",
+        "production-library/examples/wind-heat-summary-outro.json"
+      ],
+      "approved_script_refs": [
+        {
+          "path": "samples/health-training-script/风热证视频培训_业务填写真实样本.json",
+          "source_class": "in_house_authored",
+          "note": "结构样本；不自动代表新项目医学终审"
+        },
+        {
+          "path": "outputs/health-training-script-input/健康知识视频培训_业务Word脚本填写示例_风热证.docx",
+          "source_class": "in_house_authored",
+          "note": "业务 Word 结构示例"
+        }
+      ],
+      "approved_deliverable_refs": [
+        {
+          "path": "production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4",
+          "source_class": "in_house_authored",
+          "format": "mp4",
+          "note": "181 秒正式完整复刻金样"
+        }
+      ],
+      "authorized_asset_policy": {
+        "packshot": "company_authorized_required_for_real_product",
+        "logo": "company_authorized_required",
+        "teaching_illustration": "in_house_generated_with_series"
+      },
+      "review": {
+        "visual_baseline": "user-approved-for-reference-replica-segments",
+        "medical": "pending-pharmacist-per-project",
+        "provenance": "reference-pixels-forbidden-in-masters"
+      },
+      "restriction": "主题元数据用于检索与默认装配；每条新课程仍须绑定当次审核脚本与授权资产。参考片像素不得进入生产 master。",
+      "plan_doc": "docs/seed-asset-library-bootstrap.md"
+    },
+    {
+      "id": "theme.product.andrographolide-drop-pills",
+      "name_zh": "穿心莲内酯滴丸",
+      "theme_kind": "product",
+      "status": "selected",
+      "tags": [
+        "商品培训",
+        "中成药",
+        "穿心莲",
+        "课件",
+        "PPTX",
+        "PDF",
+        "视频可选"
+      ],
+      "default_style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "compatible_style_packs": [
+        "style-pack.dashenlin-courseware-green-v1",
+        "style-pack.reference-product-blue-v1"
+      ],
+      "default_template_ids": [
+        "template.dashenlin-disease-product-scenario-v1"
+      ],
+      "optional_template_ids": [
+        "template.product-training-faithful-v1"
+      ],
+      "related_series_ids": [
+        "series.medication.company-authorized-v1",
+        "series.icon.advice-safety-v1"
+      ],
+      "related_series_planned": [
+        "series.symptom.pharmacy-health-cartoon-v1",
+        "asset-series.mechanism.reference-medical-tech-v1"
+      ],
+      "packshot_policy": "awaiting-business-asset",
+      "approved_script_refs": [
+        {
+          "path": "outputs/courseware-natural-import/穿心莲内酯滴丸_商品培训课件_业务真实内容样本.docx",
+          "source_class": "in_house_authored",
+          "note": "一商品一 Word 真实内容样本；不等于药学/法务终审"
+        }
+      ],
+      "approved_deliverable_refs": [
+        {
+          "path": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+          "source_class": "in_house_authored",
+          "format": "pptx"
+        }
+      ],
+      "validation_refs": [
+        {
+          "path": "production-library/validation/courseware/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pdf",
+          "source_class": "in_house_authored",
+          "format": "pdf"
+        }
+      ],
+      "authorized_asset_policy": {
+        "packshot": "company_authorized_required",
+        "logo": "company_authorized_required",
+        "evidence": "company_authorized_required",
+        "teaching_illustration": "in_house_generated_non_evidence"
+      },
+      "review": {
+        "courseware_layout": "user-approved",
+        "medical": "pending-pharmacist",
+        "claims_and_data": "pending-compliance",
+        "provenance": "authorized-or-labeled-internal-only"
+      },
+      "restriction": "用户已确认课件版式可纳入模板；正文功效、数据与销售话术须公司药师/法务终审。真包装与证据仅允许授权原图。",
+      "plan_doc": "docs/seed-asset-library-bootstrap.md"
+    },
+    {
+      "id": "theme.product.coenzyme-q10",
+      "name_zh": "辅酶Q10",
+      "theme_kind": "product",
+      "status": "selected",
+      "tags": [
+        "商品培训",
+        "辅酶Q10",
+        "心代谢",
+        "视频",
+        "大参林品牌适配"
+      ],
+      "default_style_pack_id": "style-pack.reference-product-blue-v1",
+      "compatible_style_packs": [
+        "style-pack.reference-product-blue-v1"
+      ],
+      "default_template_ids": [
+        "template.product-training-faithful-v1"
+      ],
+      "related_series_ids": [
+        "series.product-training.reference-flat-characters-v1",
+        "series.medication.generic-packshot-v1",
+        "series.medication.company-authorized-v1"
+      ],
+      "related_series_planned": [
+        "series.audience.lifestyle-flat-v1"
+      ],
+      "brand_adaptation": {
+        "status": "user-approved",
+        "confirmed_at": "2026-07-30",
+        "chrome": "poc/gold-sample/src/components/product-training-dashenlin-chrome.tsx",
+        "voice": "qwen-cloned-v5-smooth",
+        "cover": "production-library/validation/video/cover-q10-dashenlin.jpg",
+        "preview": "production-library/validation/video/review-q10-dashenlin.html",
+        "preview_renders": [
+          "production-library/validation/video/product-training-opening-replica.mp4",
+          "production-library/validation/video/product-training-brand-overview-replica.mp4",
+          "production-library/validation/video/product-training-faithful-replica.mp4",
+          "production-library/validation/video/product-training-efficacy-replica.mp4",
+          "production-library/validation/video/product-training-features-replica.mp4",
+          "production-library/validation/video/product-training-audience-replica.mp4",
+          "production-library/validation/video/product-training-combination-replica.mp4",
+          "production-library/validation/video/product-training-summary-replica.mp4"
+        ],
+        "done": [
+          "大参林角标/内部声明/栏目签/封底",
+          "药师克隆旁白连读 v5-smooth",
+          "数字人口型归一化锚点验收",
+          "分享封面（右上角品牌 Logo 不遮挡）"
+        ],
+        "pending_for_batch_production": [
+          "审核稿替换残留厂商商品名",
+          "真包装由业务提供",
+          "商品培训专用 Logo（可选，现为疾病知识角标资产）"
+        ]
+      },
+      "packshot_policy": "awaiting-business-asset",
+      "approved_script_refs": [
+        {
+          "path": "samples/product-training-script/辅酶Q10商品培训_业务填写样本.txt",
+          "source_class": "in_house_authored",
+          "note": "填写结构示例；不自动等同公司已审核生产文案"
+        },
+        {
+          "path": "outputs/product-training-script-input/商品培训视频课件_业务填写Word样本.docx",
+          "source_class": "in_house_authored",
+          "note": "业务 Word 样本；内容可含示意商品"
+        },
+        {
+          "path": "outputs/product-training-script-input/辅酶Q10商品培训_自动分镜清单.json",
+          "source_class": "in_house_generated",
+          "note": "系统分镜清单样例"
+        }
+      ],
+      "approved_deliverable_refs": [
+        {
+          "path": "production-library/templates/settled/product-video-faithful-v1/product-training-reference-full-script-system-v3-final-exact.mp4",
+          "source_class": "in_house_authored",
+          "format": "mp4",
+          "note": "156.166667 秒商品培训完整复刻终版"
+        }
+      ],
+      "authorized_asset_policy": {
+        "packshot": "company_authorized_required_for_production",
+        "logo": "company_authorized_required_for_production",
+        "poc_packshot": "poc_placeholder_allowed_in_preview_only"
+      },
+      "review": {
+        "technical_video": "technical-qa-passed",
+        "visual_signoff": "user-approved-framework-2026-07-30",
+        "medical": "pending-pharmacist",
+        "provenance": "in-house-illustrations-ok-packshot-must-be-authorized"
+      },
+      "restriction": "模板扩展（品牌壳/声/口型/封面）已用户确认可复用。批量 production-validated 仍须审核文案与授权包装。PoC 示意包装不得对外批量。",
+      "plan_doc": "docs/seed-asset-library-bootstrap.md"
+    },
+    {
+      "id": "theme.product.kekang-lingzhi-capsule",
+      "name_zh": "可可康灵芝胶囊",
+      "theme_kind": "product",
+      "status": "in-progress",
+      "tags": [
+        "商品培训",
+        "视频",
+        "可可康",
+        "灵芝胶囊",
+        "第二主题延伸",
+        "大参林四件套复用"
+      ],
+      "display_aliases": [
+        "可可康·灵芝胶囊",
+        "灵芝胶囊（可可康）"
+      ],
+      "default_style_pack_id": "style-pack.reference-product-blue-v1",
+      "compatible_style_packs": [
+        "style-pack.reference-product-blue-v1"
+      ],
+      "default_template_ids": [
+        "template.product-training-faithful-v1"
+      ],
+      "reuse_stack": {
+        "from_theme": "theme.product.coenzyme-q10",
+        "template_id": "template.product-training-faithful-v1",
+        "extension": "dashenlin_extension_v1",
+        "items": [
+          "product-training-dashenlin-chrome",
+          "v5-smooth voice",
+          "MOUTH_RIG palm/point",
+          "cover top-right brand safe zone"
+        ],
+        "lesson_id": "lesson.product-training-dashenlin-extension-stack"
+      },
+      "related_series_ids": [
+        "series.product-training.reference-flat-characters-v1",
+        "series.medication.company-authorized-v1"
+      ],
+      "related_series_planned": [
+        "series.medication.generic-packshot-v1"
+      ],
+      "packshot_policy": "awaiting-business-asset",
+      "approved_script_refs": [
+        {
+          "path": "production-library/themes/kekang-lingzhi-capsule/script-draft-v3.md",
+          "source_class": "company_confirmed_pptx",
+          "note": "全套确认PPT：认识灵芝/功效人群/卖点/联合三方案/案例/总结"
+        }
+      ],
+      "script_status": "v3-full-pptx-aligned",
+      "work_dir": "production-library/themes/kekang-lingzhi-capsule/",
+      "gap_list": "production-library/themes/kekang-lingzhi-capsule/asset-gaps.md",
+      "authorized_asset_policy": {
+        "packshot": "company_authorized_required_for_production",
+        "logo": "company_authorized_required_for_production",
+        "label_insert": "company_authorized_required_for_production",
+        "poc_packshot": "poc_placeholder_allowed_in_preview_only"
+      },
+      "review": {
+        "technical_video": "not-started",
+        "visual_signoff": "pending-user",
+        "medical": "pending-pharmacist",
+        "provenance": "no-script-no-packshot-yet",
+        "script_draft": "v2-aligned-confirmed-pptx-2026-07-30"
+      },
+      "blocked_until": [
+        "药师/合规审核 script-draft-v1 并改写与说明书冲突处",
+        "授权真包装图（批量前强制）"
+      ],
+      "restriction": "第二主题延伸仅登记与套壳；药学结论与功效话术必须来自审核稿。未到稿前不得生成可对外培训的完整旁白成片。",
+      "created_at": "2026-07-30",
+      "created_reason": "用户指定下一商品主题，验证大参林扩展四件套可复用（tasks/todo.md 支线 A）",
+      "joint_medication": [
+        {
+          "scene": "失眠",
+          "combo": "谷维素片 + 灵芝胶囊"
+        },
+        {
+          "scene": "肝功能异常",
+          "combo": "护肝片 + 灵芝胶囊"
+        },
+        {
+          "scene": "免疫力低下",
+          "combo": "转移因子口服溶液 + 灵芝胶囊"
+        }
+      ]
+    },
+    {
+      "id": "theme.product.honeysuckle-dew",
+      "name_zh": "金银花露",
+      "theme_kind": "product",
+      "status": "selected",
+      "tags": [
+        "商品培训",
+        "金银花露",
+        "可可康",
+        "课件",
+        "PPTX",
+        "PDF",
+        "复刻验证",
+        "品牌升级签样",
+        "批量导入样例"
+      ],
+      "display_aliases": [
+        "金银花露（可可康）"
+      ],
+      "product_codes": [
+        "2429715"
+      ],
+      "default_style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+      "compatible_style_packs": [
+        "style-pack.dashenlin-courseware-green-v1"
+      ],
+      "default_template_ids": [
+        "template.product-courseware-dashenlin-green-v1"
+      ],
+      "related_series_ids": [
+        "series.medication.company-authorized-v1",
+        "series.icon.advice-safety-v1"
+      ],
+      "related_series_planned": [
+        "series.symptom.pharmacy-health-cartoon-v1",
+        "series.herb.botanical-clean-v1"
+      ],
+      "packshot_policy": "awaiting-business-asset",
+      "example_assembly_ids": [
+        "poc/courseware-export/product-courseware-green.json",
+        "outputs/batch-courseware/manifests/P001.json"
+      ],
+      "approved_script_refs": [
+        {
+          "path": "poc/courseware-export/product-courseware-green.json",
+          "source_class": "in_house_authored",
+          "note": "金银花露 5 页课件结构化输入：封面、商品介绍、联合用药、品种对标、注意事项；文案来自参考转录，生产前需内部复核"
+        },
+        {
+          "path": "outputs/batch-courseware/manifests/P001.json",
+          "source_class": "in_house_authored",
+          "note": "批量导入 P001 清单；与结构化课件同源商品"
+        }
+      ],
+      "approved_deliverable_refs": [
+        {
+          "path": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+          "source_class": "in_house_authored",
+          "format": "pptx",
+          "note": "5 页复刻验证；原生可编辑对象"
+        }
+      ],
+      "validation_refs": [
+        {
+          "path": "production-library/validation/courseware/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pdf",
+          "source_class": "in_house_authored",
+          "format": "pdf",
+          "note": "5 页复刻验证 PDF"
+        },
+        {
+          "path": "production-library/validation/courseware/product-courseware-green-v1/金银花露_商品培训课件_品牌升级签样.pptx",
+          "source_class": "in_house_authored",
+          "format": "pptx",
+          "note": "被否决为批量模板基线的三页设计探索"
+        },
+        {
+          "path": "production-library/validation/courseware/product-courseware-green-v1/金银花露_商品培训课件_品牌升级签样.pdf",
+          "source_class": "in_house_authored",
+          "format": "pdf",
+          "note": "品牌升级签样 PDF"
+        }
+      ],
+      "qa_refs": [
+        "production-library/validation/courseware/product-courseware-green-v1/qa/",
+        "production-library/validation/courseware/product-courseware-green-v1/qa-brand-upgrade/"
+      ],
+      "scene_coverage": [
+        "courseware_cover",
+        "product_overview",
+        "combination_guidance",
+        "product_benchmark",
+        "precautions"
+      ],
+      "authorized_asset_policy": {
+        "packshot": "company_authorized_required_for_production",
+        "logo": "company_authorized_required_for_production",
+        "competitor_packshot": "company_authorized_or_labeled_slot",
+        "missing_assets": "editable-labeled-slots"
+      },
+      "review": {
+        "courseware_layout_replica": "user-approved-template",
+        "brand_upgrade_signoff": "rejected-as-template-baseline",
+        "medical": "pending-pharmacist",
+        "claims_and_data": "pending-compliance",
+        "provenance": "reference-screenshots-measurement-only"
+      },
+      "restriction": "用户已确认五页复刻版沉淀为绿色商品课件模板；三页品牌升级稿已被否决为批量模板基线，仅保留在 validation。content_lock 仍为参考转录待复核；真包装/Logo 须授权原图，缺失时仅允许可编辑标注槽位。不等于药学或法务终审。",
+      "plan_doc": "docs/seed-asset-library-bootstrap.md"
+    }
+  ]
+}

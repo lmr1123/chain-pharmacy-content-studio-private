@@ -1,0 +1,165 @@
+{
+  "library": "herbs",
+  "version": "1.0.0",
+  "style": "health-courseware-realistic-botanical-v1",
+  "sourcePolicy": "newly-generated-no-reference-video-pixels",
+  "components": [
+    {
+      "id": "mulberry-leaf-v1",
+      "name": "桑叶",
+      "master": "mulberry-leaf/master/mulberry-leaf-v1.png",
+      "thumbnail": "mulberry-leaf/thumbnails/mulberry-leaf-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "status": "technical-qa-passed",
+      "series_id": "series.herb.botanical-clean-v1",
+      "role_ids": [
+        "herb_single"
+      ],
+      "kind": "member",
+      "name_zh": "桑叶",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen botanical clean",
+        "style_id": "health-courseware-realistic-botanical-v1"
+      }
+    },
+    {
+      "id": "chrysanthemum-v1",
+      "name": "菊花",
+      "master": "chrysanthemum/master/chrysanthemum-v1.png",
+      "thumbnail": "chrysanthemum/thumbnails/chrysanthemum-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "status": "technical-qa-passed",
+      "series_id": "series.herb.botanical-clean-v1",
+      "role_ids": [
+        "herb_single"
+      ],
+      "kind": "member",
+      "name_zh": "菊花",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen botanical clean",
+        "style_id": "health-courseware-realistic-botanical-v1"
+      }
+    },
+    {
+      "id": "mint-v1",
+      "name": "薄荷",
+      "master": "mint/master/mint-v1.png",
+      "thumbnail": "mint/thumbnails/mint-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "status": "technical-qa-passed",
+      "series_id": "series.herb.botanical-clean-v1",
+      "role_ids": [
+        "herb_single"
+      ],
+      "kind": "member",
+      "name_zh": "薄荷",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen botanical clean",
+        "style_id": "health-courseware-realistic-botanical-v1"
+      }
+    }
+  ],
+  "series_id": "series.herb.botanical-clean-v1",
+  "series_source": "assets/component-library/herbs/botanical-clean-series-v1/series.json",
+  "registry_type": "asset",
+  "items": [
+    {
+      "id": "series.herb.botanical-clean-v1",
+      "name_zh": "健康课件写实清洁草本系列 v1",
+      "kind": "series",
+      "status": "selected",
+      "series_style_id": "health-courseware-realistic-botanical-v1",
+      "style_pack_ids": [
+        "style-pack.reference-medical-tech-v1"
+      ],
+      "tags": [
+        "草本",
+        "系列"
+      ],
+      "source": "assets/component-library/herbs/botanical-clean-series-v1/series.json",
+      "member_ids": [
+        "mulberry-leaf-v1",
+        "chrysanthemum-v1",
+        "mint-v1"
+      ]
+    },
+    {
+      "id": "mulberry-leaf-v1",
+      "name": "桑叶",
+      "master": "mulberry-leaf/master/mulberry-leaf-v1.png",
+      "thumbnail": "mulberry-leaf/thumbnails/mulberry-leaf-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "status": "technical-qa-passed",
+      "series_id": "series.herb.botanical-clean-v1",
+      "role_ids": [
+        "herb_single"
+      ],
+      "kind": "member",
+      "name_zh": "桑叶",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen botanical clean",
+        "style_id": "health-courseware-realistic-botanical-v1"
+      }
+    },
+    {
+      "id": "chrysanthemum-v1",
+      "name": "菊花",
+      "master": "chrysanthemum/master/chrysanthemum-v1.png",
+      "thumbnail": "chrysanthemum/thumbnails/chrysanthemum-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "status": "technical-qa-passed",
+      "series_id": "series.herb.botanical-clean-v1",
+      "role_ids": [
+        "herb_single"
+      ],
+      "kind": "member",
+      "name_zh": "菊花",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen botanical clean",
+        "style_id": "health-courseware-realistic-botanical-v1"
+      }
+    },
+    {
+      "id": "mint-v1",
+      "name": "薄荷",
+      "master": "mint/master/mint-v1.png",
+      "thumbnail": "mint/thumbnails/mint-v1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "status": "technical-qa-passed",
+      "series_id": "series.herb.botanical-clean-v1",
+      "role_ids": [
+        "herb_single"
+      ],
+      "kind": "member",
+      "name_zh": "薄荷",
+      "source": {
+        "source_class": "in_house_generated",
+        "method": "image-gen botanical clean",
+        "style_id": "health-courseware-realistic-botanical-v1"
+      }
+    }
+  ]
+}

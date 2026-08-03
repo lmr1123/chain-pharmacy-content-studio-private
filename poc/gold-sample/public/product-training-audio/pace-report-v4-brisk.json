@@ -1,0 +1,805 @@
+[
+  {
+    "stem": "product-training-opening",
+    "duration": 23.367833333333333,
+    "reports": [
+      {
+        "text": "在快节奏的现代生活中",
+        "raw_duration": 2.64,
+        "used_duration": 2.315,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.463,
+        "min_audible": 1.595,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 0
+      },
+      {
+        "text": "心脏长期面临压力与消耗",
+        "raw_duration": 3.04,
+        "used_duration": 2.685,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.858,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 1
+      },
+      {
+        "text": "其核心动力源于心肌细胞的能量代谢",
+        "raw_duration": 3.656,
+        "used_duration": 3.213,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.419,
+        "min_audible": 2.552,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 2
+      },
+      {
+        "text": "辅酶Q10是存在于每个细胞",
+        "raw_duration": 3.36,
+        "used_duration": 2.948,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.138,
+        "min_audible": 2.073,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 3
+      },
+      {
+        "text": "尤其是心脏中的关键物质",
+        "raw_duration": 2.32,
+        "used_duration": 2.015,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.15,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 4
+      },
+      {
+        "text": "它直接参与细胞能量的合成",
+        "raw_duration": 2.4,
+        "used_duration": 2.104,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.226,
+        "min_audible": 1.914,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 5
+      },
+      {
+        "text": "随着年龄增长、身体透支等原因",
+        "raw_duration": 4.08,
+        "used_duration": 3.573,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.792,
+        "min_audible": 2.233,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 6
+      },
+      {
+        "text": "人体自身合成的辅酶Q10会减少",
+        "raw_duration": 3.76,
+        "used_duration": 3.285,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.507,
+        "min_audible": 2.392,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 7
+      }
+    ]
+  },
+  {
+    "stem": "product-training-faithful",
+    "duration": 31.481875,
+    "reports": [
+      {
+        "text": "一旦缺乏，心肌细胞能量生产下降",
+        "raw_duration": 3.656,
+        "used_duration": 3.215,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.425,
+        "min_audible": 2.392,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 0
+      },
+      {
+        "text": "可导致收缩力减弱，引发一系列症状",
+        "raw_duration": 4.0,
+        "used_duration": 3.479,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.704,
+        "min_audible": 2.552,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 1
+      },
+      {
+        "text": "如易疲劳、乏力、活动后心慌气短、胸闷、心悸等不适",
+        "raw_duration": 6.445,
+        "used_duration": 5.666,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 6.027,
+        "min_audible": 3.828,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 2
+      },
+      {
+        "text": "因此",
+        "raw_duration": 1.84,
+        "used_duration": 1.593,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 1.691,
+        "min_audible": 0.482,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 3
+      },
+      {
+        "text": "它常用于慢性心力衰竭、心肌炎、心绞痛的辅助治疗，以改善心肌代谢",
+        "raw_duration": 7.083,
+        "used_duration": 6.229,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 6.639,
+        "min_audible": 4.944,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 4
+      },
+      {
+        "text": "辅酶Q10作为常用辅酶制剂",
+        "raw_duration": 2.88,
+        "used_duration": 2.529,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.697,
+        "min_audible": 2.073,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 5
+      },
+      {
+        "text": "直接补充这一关键物质",
+        "raw_duration": 2.72,
+        "used_duration": 2.383,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.547,
+        "min_audible": 1.595,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 6
+      },
+      {
+        "text": "从细胞层面优化心肌能量代谢",
+        "raw_duration": 3.28,
+        "used_duration": 2.89,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.076,
+        "min_audible": 2.073,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 7
+      },
+      {
+        "text": "为心脏健康提供支持",
+        "raw_duration": 2.48,
+        "used_duration": 2.148,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.297,
+        "min_audible": 1.435,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 8
+      }
+    ]
+  },
+  {
+    "stem": "product-training-brand-overview",
+    "duration": 18.034541666666666,
+    "reports": [
+      {
+        "text": "今天给大家介绍的",
+        "raw_duration": 2.08,
+        "used_duration": 1.799,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 1.924,
+        "min_audible": 1.276,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 0
+      },
+      {
+        "text": "连锁药店在售的辅酶Q10相关商品",
+        "raw_duration": 4.08,
+        "used_duration": 3.586,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.822,
+        "min_audible": 2.552,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 1
+      },
+      {
+        "text": "它源自诺贝尔奖相关成果",
+        "raw_duration": 2.4,
+        "used_duration": 2.107,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.241,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 2
+      },
+      {
+        "text": "是维持生命活力的关键物质",
+        "raw_duration": 3.36,
+        "used_duration": 2.955,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.152,
+        "min_audible": 1.914,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 3
+      },
+      {
+        "text": "精准覆盖心脏保护",
+        "raw_duration": 2.48,
+        "used_duration": 2.184,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.309,
+        "min_audible": 1.276,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 4
+      },
+      {
+        "text": "辅助生殖活力提升等核心场景",
+        "raw_duration": 3.12,
+        "used_duration": 2.744,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.921,
+        "min_audible": 2.073,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 5
+      },
+      {
+        "text": "两大核心功效",
+        "raw_duration": 1.76,
+        "used_duration": 1.55,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 1.645,
+        "min_audible": 0.957,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "stem": "product-training-efficacy",
+    "duration": 37.089666666666666,
+    "reports": [
+      {
+        "text": "1、促进能量生成",
+        "raw_duration": 2.56,
+        "used_duration": 2.208,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.373,
+        "min_audible": 1.276,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 0
+      },
+      {
+        "text": "辅酶Q10是细胞线粒体内ATP合成的关键辅酶",
+        "raw_duration": 4.532,
+        "used_duration": 3.974,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.235,
+        "min_audible": 3.509,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 1
+      },
+      {
+        "text": "是能量ATP生成的开关",
+        "raw_duration": 2.48,
+        "used_duration": 2.157,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.302,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 2
+      },
+      {
+        "text": "可提高组织器官功能",
+        "raw_duration": 2.4,
+        "used_duration": 2.108,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.239,
+        "min_audible": 1.435,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 3
+      },
+      {
+        "text": "改善因缺乏能量导致的胸闷、气短、心痛、运动耐力下降、亚健康等症状",
+        "raw_duration": 6.96,
+        "used_duration": 6.075,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 6.469,
+        "min_audible": 5.104,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 4
+      },
+      {
+        "text": "2、抗氧化，减少组织细胞损伤",
+        "raw_duration": 3.68,
+        "used_duration": 3.236,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.436,
+        "min_audible": 2.233,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 5
+      },
+      {
+        "text": "辅酶Q10可直接抗氧化",
+        "raw_duration": 3.28,
+        "used_duration": 2.858,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.045,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 6
+      },
+      {
+        "text": "也可恢复维E等抗氧化物质活性",
+        "raw_duration": 3.2,
+        "used_duration": 2.772,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.971,
+        "min_audible": 2.233,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 7
+      },
+      {
+        "text": "其抗氧化能力是维E的50倍",
+        "raw_duration": 3.04,
+        "used_duration": 2.635,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.809,
+        "min_audible": 2.073,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 8
+      },
+      {
+        "text": "可保护组织器官",
+        "raw_duration": 2.48,
+        "used_duration": 2.176,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.317,
+        "min_audible": 1.116,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 9
+      },
+      {
+        "text": "治疗不孕不育、心功能损伤、皮肤衰老等问题",
+        "raw_duration": 4.32,
+        "used_duration": 3.797,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.047,
+        "min_audible": 3.19,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 10
+      },
+      {
+        "text": "产品特点",
+        "raw_duration": 1.6,
+        "used_duration": 1.383,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 1.475,
+        "min_audible": 0.658,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 11
+      }
+    ]
+  },
+  {
+    "stem": "product-training-features",
+    "duration": 36.69566666666667,
+    "reports": [
+      {
+        "text": "产品特点：1、原研工艺，锁住活性",
+        "raw_duration": 4.08,
+        "used_duration": 3.571,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.813,
+        "min_audible": 2.552,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 0
+      },
+      {
+        "text": "辅酶Q10遇光易失活",
+        "raw_duration": 2.72,
+        "used_duration": 2.371,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.521,
+        "min_audible": 1.595,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 1
+      },
+      {
+        "text": "通过避光工艺与稳定制剂技术",
+        "raw_duration": 3.337,
+        "used_duration": 2.926,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.128,
+        "min_audible": 2.073,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 2
+      },
+      {
+        "text": "杜绝分解，牢牢锁活，保障核心治疗效果",
+        "raw_duration": 4.72,
+        "used_duration": 4.142,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.405,
+        "min_audible": 2.871,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 3
+      },
+      {
+        "text": "2、海外原料，提升品质",
+        "raw_duration": 3.68,
+        "used_duration": 3.246,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.444,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 4
+      },
+      {
+        "text": "甄选进口大品牌原料",
+        "raw_duration": 2.88,
+        "used_duration": 2.498,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.655,
+        "min_audible": 1.435,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 5
+      },
+      {
+        "text": "产品纯度高、杂质少",
+        "raw_duration": 2.96,
+        "used_duration": 2.589,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.766,
+        "min_audible": 1.435,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 6
+      },
+      {
+        "text": "兼顾更优治疗效果与安全性",
+        "raw_duration": 2.96,
+        "used_duration": 2.612,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.776,
+        "min_audible": 1.914,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 7
+      },
+      {
+        "text": "3、医疗背书，50年临床验证",
+        "raw_duration": 3.6,
+        "used_duration": 3.167,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.373,
+        "min_audible": 2.233,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 8
+      },
+      {
+        "text": "院端市占率90%，是千万医生的安心之选",
+        "raw_duration": 4.56,
+        "used_duration": 4.003,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.266,
+        "min_audible": 3.03,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 9
+      },
+      {
+        "text": "医生都在吃的辅酶Q10",
+        "raw_duration": 2.48,
+        "used_duration": 2.174,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.322,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 10
+      },
+      {
+        "text": "适宜人群",
+        "raw_duration": 1.92,
+        "used_duration": 1.688,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 1.803,
+        "min_audible": 0.658,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 11
+      }
+    ]
+  },
+  {
+    "stem": "product-training-audience",
+    "duration": 14.979583333333334,
+    "reports": [
+      {
+        "text": "适宜人群",
+        "raw_duration": 1.92,
+        "used_duration": 1.645,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 1.776,
+        "min_audible": 0.658,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 0
+      },
+      {
+        "text": "1、顽固心慌、胸闷、气短的心血管人群",
+        "raw_duration": 4.72,
+        "used_duration": 4.13,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.4,
+        "min_audible": 2.871,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 1
+      },
+      {
+        "text": "2、常服他汀出现肌肉疲劳、疼痛的人群",
+        "raw_duration": 4.532,
+        "used_duration": 3.977,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.235,
+        "min_audible": 2.871,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 2
+      },
+      {
+        "text": "3、备孕男女",
+        "raw_duration": 3.04,
+        "used_duration": 2.67,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.847,
+        "min_audible": 0.957,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 3
+      },
+      {
+        "text": "联合用药",
+        "raw_duration": 1.92,
+        "used_duration": 1.688,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 1.796,
+        "min_audible": 0.658,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 4
+      }
+    ]
+  },
+  {
+    "stem": "product-training-combination",
+    "duration": 35.92245833333333,
+    "reports": [
+      {
+        "text": "联合用药：1、复方丹参滴丸＋辅酶Q10",
+        "raw_duration": 4.8,
+        "used_duration": 4.217,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.49,
+        "min_audible": 3.03,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 0
+      },
+      {
+        "text": "话术：服用丹参滴丸之后，仍存在顽固心慌、胸闷、气短问题",
+        "raw_duration": 6.08,
+        "used_duration": 5.295,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 5.661,
+        "min_audible": 4.306,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 1
+      },
+      {
+        "text": "这是心肌缺能量，辅酶Q10可营养心肌",
+        "raw_duration": 4.213,
+        "used_duration": 3.698,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.939,
+        "min_audible": 2.871,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 2
+      },
+      {
+        "text": "提高心功能，给心脏充能",
+        "raw_duration": 3.44,
+        "used_duration": 3.018,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.217,
+        "min_audible": 1.754,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 3
+      },
+      {
+        "text": "解决顽固心慌、胸闷、气短症状",
+        "raw_duration": 3.92,
+        "used_duration": 3.442,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.652,
+        "min_audible": 2.233,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 4
+      },
+      {
+        "text": "2、他汀＋辅酶Q10",
+        "raw_duration": 2.8,
+        "used_duration": 2.474,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 2.623,
+        "min_audible": 1.595,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 5
+      },
+      {
+        "text": "话术：长期服用他汀会引起肌肉疲劳、疼痛",
+        "raw_duration": 5.01,
+        "used_duration": 4.399,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.687,
+        "min_audible": 3.03,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 6
+      },
+      {
+        "text": "这是他汀抑制了肌肉内的辅酶Q10合成导致的",
+        "raw_duration": 4.054,
+        "used_duration": 3.562,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 3.794,
+        "min_audible": 3.349,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 7
+      },
+      {
+        "text": "辅酶Q10可缓解长期服用他汀引发的疲劳、肌痛问题",
+        "raw_duration": 5.09,
+        "used_duration": 4.467,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": 4.755,
+        "min_audible": 3.828,
+        "policy": "default-brisk-1.14",
+        "gate": "ok",
+        "index": 8
+      }
+    ]
+  },
+  {
+    "stem": "product-training-summary",
+    "duration": 4.563583333333333,
+    "reports": [
+      {
+        "text": "大参林内部培训 · 辅酶Q10 商品知识",
+        "raw_duration": 4.8,
+        "used_duration": 4.214,
+        "tempo": 1.14,
+        "default_tempo": 1.14,
+        "preferred_slot": null,
+        "min_audible": 2.711,
+        "policy": "default-brisk-1.14",
+        "gate": "ok"
+      }
+    ]
+  }
+]

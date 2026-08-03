@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>可可康灵芝胶囊 · 完整商品科普动画设计稿 v6</title>
+  <style>
+    :root {
+      --green: #078b3a;
+      --green-dark: #075b32;
+      --green-deep: #043f29;
+      --mint: #e5f3e8;
+      --cream: #fbfaf4;
+      --ink: #14241b;
+      --muted: #607067;
+      --line: #bdd8c5;
+      --gold: #c6912d;
+      --purple: #675bb6;
+      --teal: #2d8c9c;
+      --orange: #c9772d;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      background: #dce3de;
+      color: var(--ink);
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    body { padding: 34px 0 70px; }
+    .overview {
+      width: 1280px;
+      margin: 0 auto 34px;
+      padding: 30px 38px;
+      background: #fff;
+      border-top: 8px solid var(--green);
+      box-shadow: 0 16px 42px rgba(20, 61, 40, .12);
+    }
+    .overview h1 { margin: 0; font-size: 38px; }
+    .overview p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.65;
+    }
+    .overview .notice {
+      margin-top: 18px;
+      padding: 14px 18px;
+      color: var(--green-dark);
+      background: var(--mint);
+      border-left: 5px solid var(--green);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .chapter-grid div {
+      padding: 14px;
+      color: #fff;
+      background: var(--green-dark);
+      font-size: 16px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto 44px;
+      background: var(--cream);
+      box-shadow: 0 18px 60px rgba(20, 61, 40, .15);
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 22px;
+      background: var(--green);
+    }
+    .topline {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--green-dark);
+      font-size: 26px;
+      font-weight: 750;
+    }
+    .topline .chapter {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .topline b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 58px;
+      width: auto;
+      padding: 0 12px;
+      height: 42px;
+      color: #fff;
+      background: var(--green);
+      font-size: 24px;
+    }
+    .internal { color: var(--muted); font-size: 19px; font-weight: 600; }
+    .title {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      top: 94px;
+      padding-bottom: 22px;
+      border-bottom: 3px solid var(--green);
+      font-size: 60px;
+      line-height: 1.12;
+      font-weight: 850;
+    }
+    .subtitle {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 27px;
+      font-weight: 620;
+    }
+    .stage {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      top: 220px;
+      bottom: 86px;
+    }
+    .footer-note {
+      position: absolute;
+      right: 74px;
+      bottom: 24px;
+      color: #76837b;
+      font-size: 18px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 22px;
+      color: #fff;
+      background: var(--green);
+      border-radius: 999px;
+      font-size: 26px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .motion {
+      color: var(--orange);
+      font-weight: 800;
+    }
+
+    /* 01 */
+    .product-map {
+      display: grid;
+      grid-template-columns: 660px 1fr;
+      gap: 70px;
+      height: 100%;
+    }
+    .hero {
+      position: relative;
+      height: 100%;
+      border-radius: 48px;
+      background: #dcefe2;
+      overflow: hidden;
+    }
+    .hero .ganoderma {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      object-fit: cover;
+      left: 16px;
+      top: 58px;
+      opacity: .72;
+    }
+    .hero .packshot {
+      position: absolute;
+      width: 350px;
+      height: 425px;
+      object-fit: contain;
+      left: 170px;
+      top: 160px;
+      filter: drop-shadow(0 18px 24px rgba(34, 42, 31, .2));
+    }
+    .hero .hero-tag {
+      position: absolute;
+      left: 66px;
+      right: 66px;
+      bottom: 54px;
+      padding: 20px;
+      color: #fff;
+      background: var(--green-deep);
+      border-radius: 18px;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 820;
+    }
+    .knowledge-map {
+      position: relative;
+      height: 100%;
+    }
+    .ingredient-core {
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 24px;
+    }
+    .ingredient-core .badge:last-child { background: var(--gold); }
+    .knowledge-list {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 160px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .knowledge-item {
+      min-height: 128px;
+      padding: 25px 28px;
+      border: 2px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+    }
+    .knowledge-item strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 29px;
+    }
+    .knowledge-item span {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.45;
+    }
+    .flow-tip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 38px;
+      padding: 18px 26px;
+      background: #fff3e6;
+      border-left: 6px solid var(--orange);
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    /* symptom sequences */
+    .sequence {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 470px;
+      gap: 24px;
+      height: 100%;
+      align-items: stretch;
+    }
+    .shot {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #fff;
+      border: 2px solid var(--line);
+    }
+    .shot::after {
+      content: "→";
+      position: absolute;
+      right: -22px;
+      top: 42%;
+      z-index: 4;
+      color: var(--green);
+      font-size: 54px;
+      font-weight: 900;
+    }
+    .shot:nth-child(3)::after { display: none; }
+    .shot img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+    .shot .shot-copy {
+      padding: 22px 24px;
+    }
+    .shot .shot-no {
+      color: var(--orange);
+      font-size: 20px;
+      font-weight: 850;
+    }
+    .shot strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--green-dark);
+      font-size: 31px;
+    }
+    .shot p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.45;
+    }
+    .knowledge-panel {
+      padding: 34px 32px;
+      border-radius: 32px;
+      color: #fff;
+      background: var(--green-deep);
+    }
+    .knowledge-panel .eyebrow {
+      color: #8ee6a8;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .knowledge-panel h3 {
+      margin: 12px 0 18px;
+      font-size: 38px;
+      line-height: 1.25;
+    }
+    .knowledge-panel ul {
+      margin: 0;
+      padding-left: 26px;
+      font-size: 23px;
+      line-height: 1.65;
+    }
+    .knowledge-panel .result {
+      margin-top: 28px;
+      padding: 16px 18px;
+      color: var(--green-deep);
+      background: #fff;
+      border-radius: 16px;
+      font-size: 28px;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    /* features */
+    .feature-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      height: 100%;
+      position: relative;
+    }
+    .feature-block {
+      position: relative;
+      padding: 22px;
+      border-radius: 34px;
+      background: #fff;
+      border: 2px solid var(--line);
+      overflow: hidden;
+    }
+    .feature-block img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+    .feature-block .step-label {
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      width: 66px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: var(--green);
+      border-radius: 50%;
+      font-size: 28px;
+      font-weight: 850;
+    }
+    .feature-block h3 {
+      margin: 20px 8px 10px;
+      color: var(--green-dark);
+      font-size: 34px;
+    }
+    .feature-block p {
+      margin: 0 8px;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.5;
+    }
+    .feature-evidence {
+      margin: 18px 8px 0;
+      padding: 14px 16px;
+      color: #fff;
+      background: var(--green-dark);
+      border-radius: 14px;
+      font-size: 25px;
+      font-weight: 800;
+      text-align: center;
+    }
+    .feature-arrow {
+      position: absolute;
+      z-index: 5;
+      top: 330px;
+      color: var(--orange);
+      font-size: 72px;
+      font-weight: 900;
+    }
+    .feature-arrow.a { left: 558px; }
+    .feature-arrow.b { left: 1150px; }
+
+    /* combination */
+    .combination-list {
+      display: grid;
+      gap: 18px;
+    }
+    .combo-row {
+      display: grid;
+      grid-template-columns: 240px 1fr 100px 1fr 560px;
+      align-items: center;
+      min-height: 190px;
+      padding: 20px 26px;
+      background: #fff;
+      border: 2px solid var(--line);
+      border-radius: 26px;
+    }
+    .combo-direction {
+      color: var(--green-dark);
+      font-size: 31px;
+      font-weight: 850;
+    }
+    .pack-slot {
+      padding: 26px 18px;
+      border: 3px dashed #9fc7aa;
+      border-radius: 18px;
+      color: var(--green-dark);
+      background: #f0f7f2;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 760;
+    }
+    .plus {
+      color: var(--green);
+      font-size: 58px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .logic {
+      margin-left: 28px;
+      padding: 18px 24px;
+      color: #fff;
+      background: var(--green-deep);
+      border-radius: 18px;
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    /* full storyboard */
+    .storyboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 16px;
+      height: 770px;
+    }
+    .scene {
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .scene b {
+      color: var(--green);
+      font-size: 22px;
+    }
+    .scene strong {
+      display: block;
+      margin-top: 6px;
+      color: var(--green-dark);
+      font-size: 24px;
+    }
+    .scene span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .final-strip {
+      position: absolute;
+      left: 80px;
+      right: 72px;
+      bottom: 42px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: var(--green-deep);
+      border-radius: 44px;
+      font-size: 35px;
+      font-weight: 850;
+    }
+  </style>
+</head>
+<body>
+  <section class="overview">
+    <h1>完整商品科普动画设计稿 v6</h1>
+    <p>这不是23秒示例，也不是销售话术课。正式课程按“认识产品 → 成分与作用 → 三大功效与症状演绎 → 三项产品特点 → 联合应用与周期 → 总结”完整展开，共16场。以下8张代表设计画面用于确认完整内容、信息密度和动画演绎方式。</p>
+    <div class="notice">核心修正：人物不再站立陈列。失眠、饮酒伤肝、免疫力低下均通过连续状态变化演绎；三项产品特点分别用产地、二次浓缩提取、生产与 GMP 场景完整展开。</div>
+    <div class="chapter-grid">
+      <div>01 认识产品</div><div>02 成分与作用</div><div>03 功效与人群</div><div>04 产品特点</div><div>05 联合应用与总结</div>
+    </div>
+  </section>
+
+  <section class="slide" id="v6-slide-1">
+    <div class="topline"><span class="chapter"><b>01</b>认识产品</span><span class="internal">大参林 · 内部商品培训</span></div>
+    <div class="title">不是只认识包装，而是建立完整商品知识地图<span class="subtitle">产品 → 核心有效成分 → 作用 → 功效 → 人群 → 特点 → 联合应用</span></div>
+    <div class="stage product-map">
+      <div class="hero">
+        <img class="ganoderma" src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/ganoderma-hero-v3.png" />
+        <img class="packshot" src="../../../../poc/gold-sample/public/kekang-lingzhi/packshot.png" />
+        <div class="hero-tag">可可康灵芝胶囊</div>
+      </div>
+      <div class="knowledge-map">
+        <div class="ingredient-core"><span class="badge">灵芝多糖</span><span class="badge">灵芝三萜</span></div>
+        <div class="knowledge-list">
+          <div class="knowledge-item"><strong>灵芝五方面作用</strong><span>免疫 · 抗氧化 · 护肝 · 睡眠 · 课件列明的辅助抗肿瘤</span></div>
+          <div class="knowledge-item"><strong>三大核心功效</strong><span>安神助眠 · 保肝抗衰 · 提升免疫</span></div>
+          <div class="knowledge-item"><strong>三类适应人群</strong><span>失眠 · 伤肝／肝功能差 · 免疫力低下</span></div>
+          <div class="knowledge-item"><strong>三项产品特点</strong><span>大别山原料 · 二次浓缩提取 · 可可康与 GMP</span></div>
+          <div class="knowledge-item"><strong>三套联合应用</strong><span>只讲组合方案与作用逻辑，不讲销售话术</span></div>
+          <div class="knowledge-item"><strong>建议服用周期</strong><span>1个月为1个周期，建议连续服用2～3个月</span></div>
+        </div>
+        <div class="flow-tip"><span class="motion">动画：</span>镜头从灵芝进入产品，再沿两类成分逐层展开六个知识模块；不是一开始把整页信息全部铺满。</div>
+      </div>
+    </div>
+    <div class="footer-note">包装图为内部课件候选，正式交付等待授权高清原图</div>
+  </section>
+
+  <section class="slide" id="v6-slide-2">
+    <div class="topline"><span class="chapter"><b>06</b>核心功效一</span><span class="internal">症状演绎 · 不是人物展示</span></div>
+    <div class="title">宁心安神助睡眠<span class="subtitle">从“入睡困难 → 夜间易醒 → 日间疲倦”连续演绎，再进入成分与功效解释</span></div>
+    <div class="stage sequence">
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/audience-insomnia-v3.png" /><div class="shot-copy"><span class="shot-no">镜头 01</span><strong>入睡困难</strong><p>人物翻身，时钟从23:30推进到01:10。</p></div></div>
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v4/sleep-wake-v4.png" /><div class="shot-copy"><span class="shot-no">镜头 02</span><strong>夜间易醒</strong><p>房间明暗变化，人物两次睁眼看向时钟。</p></div></div>
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v4/day-fatigue-v4.png" /><div class="shot-copy"><span class="shot-no">镜头 03</span><strong>日间疲倦</strong><p>次日工作状态下降，眼下疲态与注意力变化出现。</p></div></div>
+      <div class="knowledge-panel"><div class="eyebrow">产品知识解释</div><h3>多糖＋三萜<br />承接睡眠方向</h3><ul><li>多糖调节神经递质的含量和分泌</li><li>三萜具有镇静、助眠作用</li><li>夜间呼吸与环境节奏逐渐平稳</li></ul><div class="result">宁心安神助睡眠</div></div>
+    </div>
+    <div class="footer-note">来源：refs/03 · 功效及适应人群</div>
+  </section>
+
+  <section class="slide" id="v6-slide-3">
+    <div class="topline"><span class="chapter"><b>07</b>核心功效二</span><span class="internal">状态演绎 · 体内机制承接</span></div>
+    <div class="title">保肝护肝抗衰老<span class="subtitle">从饮酒情境进入肝脏负担，再用多糖与三萜解释产品方向</span></div>
+    <div class="stage sequence">
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/audience-alcohol-v3.png" /><div class="shot-copy"><span class="shot-no">镜头 01</span><strong>饮酒情境累积</strong><p>应酬时间推进，酒杯数量与疲态同步增加。</p></div></div>
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/efficacy-liver-v3.png" /><div class="shot-copy"><span class="shot-no">镜头 02</span><strong>肝脏负担出现</strong><p>镜头进入体内，肝脏周围出现负担红光与积压粒子。</p></div></div>
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/joint-liver-v3.png" /><div class="shot-copy"><span class="shot-no">镜头 03</span><strong>防护路径建立</strong><p>多糖、三萜两条路径进入，保护层建立，负担粒子减少。</p></div></div>
+      <div class="knowledge-panel"><div class="eyebrow">产品知识解释</div><h3>多糖＋三萜<br />承接肝脏方向</h3><ul><li>减轻肝功能损伤</li><li>增强肝的解毒作用</li><li>具体表述严格按公司课件</li></ul><div class="result">保肝护肝抗衰老</div></div>
+    </div>
+    <div class="footer-note">来源：refs/03 · 功效及适应人群</div>
+  </section>
+
+  <section class="slide" id="v6-slide-4">
+    <div class="topline"><span class="chapter"><b>08</b>核心功效三</span><span class="internal">状态演绎 · 免疫盾牌建立</span></div>
+    <div class="title">提升免疫少生病<span class="subtitle">从季节刺激与反复不适进入免疫细胞变化，不使用人物站立陈列</span></div>
+    <div class="stage sequence">
+      <div class="shot"><img src="../../../../poc/gold-sample/public/product-training-opening-characters/age-reference-elder-glasses-v2.png" /><div class="shot-copy"><span class="shot-no">镜头 01</span><strong>季节刺激</strong><p>老年人物从暖室进入冷风，冷暖气流掠过身体。</p></div></div>
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/audience-low-immune-v3.png" /><div class="shot-copy"><span class="shot-no">镜头 02</span><strong>反复不适</strong><p>打喷嚏、擦鼻、疲倦等状态依次发生，不添加疾病诊断词。</p></div></div>
+      <div class="shot"><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/efficacy-immune-v3.png" /><div class="shot-copy"><span class="shot-no">镜头 03</span><strong>免疫盾牌闭合</strong><p>淋巴细胞与相关免疫细胞加入，盾牌缺口逐步闭合。</p></div></div>
+      <div class="knowledge-panel"><div class="eyebrow">产品知识解释</div><h3>灵芝三萜<br />承接免疫方向</h3><ul><li>促进淋巴细胞增殖</li><li>提升相关免疫细胞能力</li><li>三类适应情况最终统一复盘</li></ul><div class="result">提升免疫少生病</div></div>
+    </div>
+    <div class="footer-note">来源：refs/03 · 功效及适应人群</div>
+  </section>
+
+  <section class="slide" id="v6-slide-5">
+    <div class="topline"><span class="chapter"><b>10—13</b>三项产品特点</span><span class="internal">原料 → 工艺 → 生产</span></div>
+    <div class="title">三项产品特点必须完整讲清<span class="subtitle">不是三个只有标题的插画卡，而是一条连续的产品差异形成路径</span></div>
+    <div class="stage feature-flow">
+      <div class="feature-arrow a">→</div><div class="feature-arrow b">→</div>
+      <div class="feature-block"><span class="step-label">01</span><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/sell-origin-v3.png" /><h3>优质产地，含量高</h3><p>镜头越过大别山云雾，落到林下赤灵芝；灵芝进入称量／检测视觉。</p><div class="feature-evidence">大别山赤灵芝 · 9.13g/100g</div></div>
+      <div class="feature-block"><span class="step-label">02</span><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/sell-extract-v3.png" /><h3>专利工艺，吸收好</h3><p>第一次浓缩提取液进入第二段装置，明确演绎“二次浓缩提取”，再进入胶囊成形。</p><div class="feature-evidence">专利浓缩提取 · 二次浓缩提取</div></div>
+      <div class="feature-block"><span class="step-label">03</span><img src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/sell-quality-v3.png" /><h3>大品牌，值得信赖</h3><p>中山可可康生产主体、生产线、质量检查、封装与 GMP 证据依次建立。</p><div class="feature-evidence">中山可可康 · GMP</div></div>
+    </div>
+    <div class="footer-note">来源：refs/04；数据、工厂与认证最终以审核及授权材料为准</div>
+  </section>
+
+  <section class="slide" id="v6-slide-6">
+    <div class="topline"><span class="chapter"><b>14</b>联合应用</span><span class="internal">组合方案＋作用逻辑</span></div>
+    <div class="title">三套联合应用，不讲销售话术<span class="subtitle">每套方案先回放对应状态，再进入授权包装与作用互补路径</span></div>
+    <div class="stage combination-list">
+      <div class="combo-row"><div class="combo-direction">失眠方向</div><div class="pack-slot">谷维素片<br />授权包装槽</div><div class="plus">＋</div><div class="pack-slot">灵芝胶囊<br />授权包装槽</div><div class="logic">营养神经<br />＋ 镇静助眠</div></div>
+      <div class="combo-row"><div class="combo-direction">肝功能异常</div><div class="pack-slot">护肝片<br />授权包装槽</div><div class="plus">＋</div><div class="pack-slot">灵芝胶囊<br />授权包装槽</div><div class="logic">疏肝降酶<br />＋ 保肝解毒</div></div>
+      <div class="combo-row"><div class="combo-direction">免疫力低下</div><div class="pack-slot">转移因子口服溶液<br />授权包装槽</div><div class="plus">＋</div><div class="pack-slot">灵芝胶囊<br />授权包装槽</div><div class="logic">调节免疫<br />＋ 提升相关免疫细胞能力</div></div>
+    </div>
+    <div class="footer-note">来源：refs/05～06；真实包装等待业务授权高清原图</div>
+  </section>
+
+  <section class="slide" id="v6-slide-7">
+    <div class="topline"><span class="chapter"><b>01—16</b>完整课程分镜</span><span class="internal">5章 · 16场 · 约3～4分钟</span></div>
+    <div class="title">完整课程不是23秒示例<span class="subtitle">每个模块都有审核内容、屏显短文案和2～4个动作节点</span></div>
+    <div class="stage storyboard">
+      <div class="scene"><b>S01</b><strong>产品登场</strong><span>灵芝生长 → 包装出现 → 进入成分空间</span></div>
+      <div class="scene"><b>S02</b><strong>两类核心成分</strong><span>灵芝多糖与灵芝三萜从同一主体分化</span></div>
+      <div class="scene"><b>S03</b><strong>灵芝多糖</strong><span>免疫防护层与课件列明的心血管方向</span></div>
+      <div class="scene"><b>S04</b><strong>灵芝三萜</strong><span>镇静波纹与相关免疫细胞能力</span></div>
+      <div class="scene"><b>S05</b><strong>灵芝五方面作用</strong><span>五节点逐一建立，最后形成知识图谱</span></div>
+      <div class="scene"><b>S06</b><strong>安神助眠</strong><span>入睡困难 → 夜醒 → 日间疲倦 → 产品解释</span></div>
+      <div class="scene"><b>S07</b><strong>保肝抗衰</strong><span>饮酒累积 → 肝脏负担 → 防护路径</span></div>
+      <div class="scene"><b>S08</b><strong>提升免疫</strong><span>季节刺激 → 反复不适 → 免疫盾牌闭合</span></div>
+      <div class="scene"><b>S09</b><strong>适应人群复盘</strong><span>三段生活切片回放，不做人物排队</span></div>
+      <div class="scene"><b>S10</b><strong>大别山与含量</strong><span>产地 → 赤灵芝 → 9.13g/100g</span></div>
+      <div class="scene"><b>S11</b><strong>二次浓缩提取</strong><span>第一次提取 → 第二次提取 → 胶囊成形</span></div>
+      <div class="scene"><b>S12</b><strong>可可康与 GMP</strong><span>生产 → 质检 → 封装 → GMP 证据</span></div>
+      <div class="scene"><b>S13</b><strong>三项特点复盘</strong><span>原料—工艺—生产路径汇聚到产品</span></div>
+      <div class="scene"><b>S14</b><strong>三套联合应用</strong><span>只讲组合与作用逻辑，不讲销售话术</span></div>
+      <div class="scene"><b>S15</b><strong>服用周期</strong><span>1个月为1周期 → 推进到2～3个月</span></div>
+      <div class="scene"><b>S16</b><strong>商品知识总结</strong><span>六个知识维度回收到产品主视觉</span></div>
+    </div>
+    <div class="footer-note">详细逐场稿：storyboard-v6-complete-product-science.md</div>
+  </section>
+
+  <section class="slide" id="v6-slide-8">
+    <div class="topline"><span class="chapter"><b>16</b>商品知识总结</span><span class="internal">真正认识这个商品</span></div>
+    <div class="title">从六个维度认识可可康灵芝胶囊<span class="subtitle">不以销售口诀收尾，以完整产品知识闭环收尾</span></div>
+    <div class="stage product-map">
+      <div class="hero">
+        <img class="ganoderma" src="../../../../poc/gold-sample/public/kekang-lingzhi/v3/ganoderma-hero-v3.png" />
+        <img class="packshot" src="../../../../poc/gold-sample/public/kekang-lingzhi/packshot.png" />
+        <div class="hero-tag">可可康灵芝胶囊</div>
+      </div>
+      <div class="knowledge-map">
+        <div class="knowledge-list" style="top:30px">
+          <div class="knowledge-item"><strong>两类核心有效成分</strong><span>灵芝多糖 · 灵芝三萜</span></div>
+          <div class="knowledge-item"><strong>灵芝五方面作用</strong><span>按公司课件完整归纳</span></div>
+          <div class="knowledge-item"><strong>三大核心功效</strong><span>安神助眠 · 保肝抗衰 · 提升免疫</span></div>
+          <div class="knowledge-item"><strong>三类适应情况</strong><span>通过症状与状态变化演绎</span></div>
+          <div class="knowledge-item"><strong>三项产品特点</strong><span>大别山 · 二次浓缩提取 · 可可康/GMP</span></div>
+          <div class="knowledge-item"><strong>联合应用与周期</strong><span>三套组合 · 1个月为1周期</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="final-strip">从产品出发，认识成分、作用、功效、人群、特点与应用</div>
+  </section>
+</body>
+</html>

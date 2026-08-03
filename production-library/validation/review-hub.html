@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>连锁药店内容工厂 · 确认门户</title>
+<style>
+:root {
+  --green: #009900; --green-2: #45A817; --pale: #e8f6e8;
+  --ink: #142018; --muted: #5a6b5e; --card: #fff; --line: #d5e5d5;
+  --warn: #b45309; --ok: #047857; --bg: #f4faf4;
+}
+* { box-sizing: border-box; }
+body { margin:0; font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
+.top {
+  position: sticky; top: 0; z-index: 50;
+  background: linear-gradient(90deg, var(--green), var(--green-2));
+  color: #fff; padding: 14px 20px 0;
+  box-shadow: 0 2px 14px rgba(0,80,0,.18);
+}
+.top h1 { margin: 0 0 2px; font-size: 20px; font-weight: 800; }
+.top .sub { margin: 0 0 12px; font-size: 12px; opacity: .92; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 -4px; }
+.nav button {
+  font: inherit; font-size: 13px; font-weight: 700;
+  border: none; border-radius: 10px 10px 0 0;
+  padding: 10px 14px; cursor: pointer;
+  background: rgba(255,255,255,.18); color: #fff;
+}
+.nav button:hover { background: rgba(255,255,255,.28); }
+.nav button.active { background: var(--bg); color: var(--green); }
+.nav button .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.nav button .dot.warn { background: #fbbf24; }
+.nav button .dot.ok { background: #6ee7b7; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 18px 16px 56px; }
+.panel { display: none; }
+.panel.active { display: block; }
+.focus {
+  margin-bottom: 16px; padding: 14px 16px;
+  background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--green);
+  border-radius: 0 12px 12px 0;
+}
+.focus h3 { margin: 0 0 6px; font-size: 15px; }
+.focus p, .focus li { font-size: 13px; color: var(--muted); margin: 0; }
+.focus ul { margin: 6px 0 0; padding-left: 18px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  overflow: hidden; box-shadow: 0 4px 14px rgba(20,40,20,.05); margin-bottom: 14px;
+}
+.card-h { background: var(--pale); padding: 12px 14px; }
+.card-h h2 { margin: 0; font-size: 16px; }
+.card-h .meta { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+video, .thumb { width: 100%; aspect-ratio: 16/9; background: #0b1a0b; display: block; object-fit: cover; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--line); }
+.actions a, .actions button.sm {
+  font: inherit; font-size: 12px; font-weight: 700; border-radius: 8px; padding: 7px 10px;
+  text-decoration: none; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer;
+}
+.actions a.primary { background: var(--green); color: #fff; border-color: var(--green); }
+.tag {
+  display: inline-flex; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700;
+  background: #fff; border: 1px solid var(--line); color: var(--muted); margin: 2px;
+}
+.tag.ok { color: var(--ok); border-color: #a7f3d0; background: #ecfdf5; }
+.tag.warn { color: var(--warn); border-color: #fcd34d; background: #fffbeb; }
+/* 二级：侧边栏菜单（统一切换） */
+.split-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.side-menu {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 8px;
+  box-shadow: 0 4px 14px rgba(20,40,20,.05);
+}
+.side-menu .side-title {
+  font-size: 11px; font-weight: 800; color: var(--muted);
+  letter-spacing: .04em; text-transform: uppercase;
+  padding: 6px 10px 10px; border-bottom: 1px solid var(--line); margin-bottom: 6px;
+}
+.side-menu .subtab {
+  display: block; width: 100%; text-align: left;
+  font: inherit; font-size: 13px; font-weight: 650; cursor: pointer;
+  border: none; background: transparent; border-radius: 10px;
+  padding: 10px 12px; color: var(--ink); margin: 2px 0;
+  line-height: 1.35;
+}
+.side-menu .subtab:hover { background: var(--pale); }
+.side-menu .subtab.active {
+  background: var(--green); color: #fff; font-weight: 800;
+}
+.side-main { min-width: 0; }
+.subpanel { display: none; }
+.subpanel.active { display: block; }
+.md-body {
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px 32px; max-width: none;
+}
+@media (max-width: 900px) {
+  .split-layout { grid-template-columns: 1fr; }
+  .side-menu {
+    position: relative; top: 0; max-height: none;
+    display: flex; flex-wrap: wrap; gap: 4px; padding: 8px;
+  }
+  .side-menu .side-title { width: 100%; border: none; margin: 0; padding: 4px 8px; }
+  .side-menu .subtab { width: auto; border-radius: 999px; border: 1px solid var(--line); padding: 6px 12px; }
+}
+
+.md-body h1 { font-size: 22px; margin: 0 0 12px; }
+.md-body h2 { font-size: 18px; margin: 28px 0 10px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--green); }
+.md-body h2:first-of-type { border-top: none; margin-top: 0; }
+.md-body h3 { font-size: 15px; margin: 18px 0 8px; }
+.md-body h4 { font-size: 14px; margin: 14px 0 6px; }
+.md-body p { margin: 0 0 10px; font-size: 14px; }
+.md-body ul, .md-body ol { margin: 0 0 12px; padding-left: 22px; font-size: 14px; }
+.md-body blockquote {
+  margin: 12px 0; padding: 10px 14px; background: #ecfdf5; border-left: 4px solid var(--green);
+  border-radius: 0 8px 8px 0; font-size: 13px; color: #065f46;
+}
+.md-body code { background: #f0f4f0; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+.md-body pre { background: #1e293b; color: #e2e8f0; padding: 12px; border-radius: 8px; overflow: auto; font-size: 12px; }
+.md-body hr { border: none; border-top: 1px solid var(--line); margin: 20px 0; }
+.md-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0 16px; }
+.md-table th, .md-table td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+.md-table th { background: var(--pale); font-weight: 800; }
+.md-table tr:nth-child(even) td { background: #fafcfa; }
+.prog-list { list-style: none; padding: 0; margin: 0; }
+.prog-list li { padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 14px; display: flex; gap: 10px; }
+.prog-list .mk { font-weight: 900; width: 1.2em; }
+.prog-list .ok { color: var(--ok); }
+.prog-list .warn { color: var(--warn); background: #fffbeb; }
+.prog-list .muted { color: var(--muted); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+.note { font-size: 12px; color: var(--muted); margin-top: 16px; }
+.banner-ok {
+  background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46;
+  padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 14px;
+}
+.ref-shot {
+  max-width: 100%; border-radius: 12px; border: 1px solid var(--line); margin: 12px 0;
+}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>连锁药店内容工厂 · 确认门户</h1>
+  <p class="sub">本地确认入口 · <code>production-library/validation/review-hub.html</code> · 脚本 v3 已对齐全套确认 PPT（含联合用药三方案） · <a href="asset-map.html" style="color:#fff;font-weight:800;text-decoration:underline;">资产全景（淘汰/保留/深耕）</a></p>
+  <nav class="nav" id="main-nav">
+    <button type="button" class="active" data-tab="overview"><span class="dot ok"></span>总览</button>
+    <button type="button" data-tab="courseware-3"><span class="dot warn"></span>课件3·v6 返工</button>
+    <button type="button" data-tab="wind-heat"><span class="dot warn"></span>风热证·重制</button>
+    <button type="button" data-tab="q10-video"><span class="dot ok"></span>Q10 视频</button>
+    <button type="button" data-tab="kekang-video"><span class="dot warn"></span>可可康·视频</button>
+    <button type="button" data-tab="covers"><span class="dot ok"></span>封面图</button>
+    <button type="button" data-tab="script"><span class="dot warn"></span>可可康·脚本 v3</button>
+    <button type="button" data-tab="layout"><span class="dot ok"></span>认识灵芝·分镜</button>
+    <button type="button" data-tab="joint"><span class="dot ok"></span>联合用药原图</button>
+    <button type="button" data-tab="gaps"><span class="dot warn"></span>缺口清单</button>
+    <button type="button" data-tab="plan"><span class="dot ok"></span>进展</button>
+  </nav>
+</div>
+<div class="wrap">
+
+<section class="panel active" id="tab-overview">
+  <div class="focus">
+    <h3>本轮请确认</h3>
+    <ul>
+      <li><strong>风热证完整重制候选</strong>：7 场景已逐元素重建，零参考截图像素，
+        全片与七场景编辑证明均通过技术 QA；请点顶部「风热证·重制」审片</li>
+      <li><strong>商品培训课件3 · 新录音 v4＋继续片段 v6 待确认</strong>：v6 已重做安全图标、
+        双剂型气泡、≥5岁人物轮廓与最终人群素材去重；现可审 40.17 秒返工动画及 6 页 PPTX</li>
+      <li><strong>可可康绿色金样</strong>：K03 人物情境、K13 工艺流程、K16 商品组合已形成三类正式质量基线；K08 有声已确认；58 微镜头旧 Animatic 仅作结构草稿 — 点「可可康·视频」</li>
+      <li>联合用药：场景 + 商品A + 商品B = 功效 + 小插图</li>
+      <li>对标风热证多布局 stagger / 滑入，非单一切小图</li>
+    </ul>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-h"><h2>商品培训课件3</h2><p class="meta">新录音 v4＋v6 返工 · 待确认</p></div>
+      <div style="padding:12px;">
+        <span class="tag ok">主视觉放大</span><span class="tag ok">机制分层</span><span class="tag ok">透明融合</span><span class="tag ok">元素级动画</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>辅酶 Q10</h2><p class="meta">扩展已确认</p></div>
+      <div style="padding:12px;">
+        <span class="tag ok">品牌壳</span><span class="tag ok">旁白</span><span class="tag ok">口型</span><span class="tag ok">封面</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>可可康灵芝胶囊</h2><p class="meta">M1 已确认 · v2 微镜头 animatic · 待内容门禁</p></div>
+      <div style="padding:12px;">
+        <span class="tag ok">主体进入</span>
+        <span class="tag ok">双路径形成</span>
+        <span class="tag ok">标签轮流聚焦</span>
+        <span class="tag warn">局部样片</span>
+      </div>
+    </div>
+  </div>
+  <div class="actions" style="border:none;padding:0;gap:8px;display:flex;flex-wrap:wrap;">
+    <button type="button" class="sm" data-goto="courseware-3">→ 审课件3保真门槛</button>
+    <button type="button" class="sm" data-goto="wind-heat">→ 审风热证完整重制</button>
+    <button type="button" class="sm" data-goto="kekang-video">→ 审可可康视频 v2</button>
+    <button type="button" class="sm" data-goto="script">→ 审脚本 v3</button>
+    <button type="button" class="sm" data-goto="q10-video">→ 对照 Q10 质量</button>
+  </div>
+</section>
+
+<section class="panel" id="tab-courseware-3">
+  <div class="focus" style="border-left-color:#15803d;background:#f0fdf4;">
+    <h3 style="color:#166534;">新录音 v4 三功效门槛片段已完成 · 请确认后再扩制全片</h3>
+    <p>R06 商品组、甲乙图标、胶囊和聊天气泡已整体放大；R07 已改为透明插画分层和三阶段累积动画；
+      R08 患者与家庭盾牌分别入场并透明融合；本轮已按新录音词级时码重新校准全部节点。当前仍是
+      保真门槛，不是已签样完整金样。</p>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-h"><h2>新录音 v4 动画门槛片段</h2><p class="meta">27.63 秒 · 1920×1080 · 新时码连续复刻</p></div>
+      <video controls preload="metadata" playsinline
+        src="courseware/product-courseware-3-gold-sample-v3/商品培训课件3_精细复刻_动画视频门槛片段_新录音_v4.mp4"></video>
+      <div class="actions">
+        <a class="primary" href="courseware/product-courseware-3-gold-sample-v3/商品培训课件3_精细复刻_动画视频门槛片段_新录音_v4.mp4" target="_blank">打开新录音 v4</a>
+        <a href="courseware/product-courseware-3-gold-sample-v3/video-qa-v4-new-audio/contact-sheet-v4-new-audio.png" target="_blank">8 时刻接触表</a>
+        <a href="courseware/product-courseware-3-gold-sample-v3/qa-report-new-audio-v4.json" target="_blank">新录音 QA</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>v3 PPTX · 5 页</h2><p class="meta">标题、导航、标签和说明文字可编辑</p></div>
+      <img class="thumb" style="aspect-ratio:auto;object-fit:contain;background:#fff;"
+        src="courseware/product-courseware-3-gold-sample-v3/pptx-render-v3/pptx-5-page-montage-v3.png" alt="v3 PPTX 五页总览" />
+      <div class="actions">
+        <a class="primary" href="courseware/product-courseware-3-gold-sample-v3/商品培训课件3_精细复刻_PPTX门槛片段_v3.pptx">下载 v3 PPTX</a>
+        <a href="courseware/product-courseware-3-gold-sample-v3/pptx-render-v3/pptx-5-page-montage-v3.png" target="_blank">打开五页总览</a>
+      </div>
+    </div>
+  </div>
+  <div class="focus" style="border-left-color:#15803d;background:#f0fdf4;">
+    <h3 style="color:#166534;">v6 质量返工已完成 · v5 已降级为被纠正版本</h3>
+    <p>覆盖新录音 00:40.60–01:20.72：产品特点、安全性、双剂型、原研品牌与适宜人群。
+      安全性辅助图标、双气泡和人物轮廓均改为精制透明位图；最终学龄期人物不再与过渡页复用，
+      关键对象已补齐独立入场与起中末关键帧。品牌包装继续保留业务替换槽位。</p>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-h"><h2>v6 动画返工片段</h2><p class="meta">40.17 秒 · 1920×1080 · 新录音时码</p></div>
+      <video controls preload="metadata" playsinline
+        src="courseware/product-courseware-3-gold-sample-v3/商品培训课件3_精细复刻_动画视频继续片段_v6.mp4"></video>
+      <div class="actions">
+        <a class="primary" href="courseware/product-courseware-3-gold-sample-v3/商品培训课件3_精细复刻_动画视频继续片段_v6.mp4" target="_blank">打开 v6 动画</a>
+        <a href="courseware/product-courseware-3-gold-sample-v3/video-qa-v6-next/contact-sheet-v6-next.png" target="_blank">20 帧动效证据</a>
+        <a href="courseware/product-courseware-3-gold-sample-v3/qa-report-next-segments-v6.json" target="_blank">v6 QA</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>v6 PPTX · 6 页</h2><p class="meta">产品特点＋适宜人群质量返工</p></div>
+      <img class="thumb" style="aspect-ratio:auto;object-fit:contain;background:#fff;"
+        src="courseware/product-courseware-3-gold-sample-v3/pptx-render-v6-next/pptx-6-page-montage-v6.png" alt="v6 PPTX 六页总览" />
+      <div class="actions">
+        <a class="primary" href="courseware/product-courseware-3-gold-sample-v3/商品培训课件3_精细复刻_PPTX继续片段_v6.pptx">下载 v6 PPTX</a>
+        <a href="courseware/product-courseware-3-gold-sample-v3/reference-analysis-v5/scene-contract-v6.json" target="_blank">逐镜合同</a>
+      </div>
+    </div>
+  </div>
+  <div class="focus">
+    <h3>商品培训课件3 · v2 视觉与动效保真未通过</h3>
+    <p>用户确认时码与结构不足以证明复刻：字体和字号、三项导航间距、倾斜气泡入场、机制插画动画、
+      家庭盾牌透明融合均需重做。v3 将先分别签 R06／R07／R08 三个微镜头证明，再重建整段。</p>
+  </div>
+  <div class="focus" style="border-left-color:#b45309;background:#fffbeb;">
+    <h3 style="color:#b45309;">状态：rejected-visual-and-motion-fidelity</h3>
+    <p>v2 只保留为失败对照；不得扩制全片。v3 规格已增加字体候选、图层分类、透明 alpha 验收、
+      起／中／末三帧动效对照及坐标／角度／时码容差。</p>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-h"><h2>参考门槛片段</h2><p class="meta">00:14.83–00:42.27 · 左右对照基准</p></div>
+      <video controls preload="metadata" playsinline
+        src="courseware/product-courseware-3-gold-sample-v2/参考片段_14.83-42.27.mp4"></video>
+      <div class="actions">
+        <a href="courseware/product-courseware-3-gold-sample-v2/参考片段_14.83-42.27.mp4" target="_blank">打开参考片段</a>
+        <a href="courseware/product-courseware-3-gold-sample-v2/side-by-side-qa/comparison-contact-sheet.png" target="_blank">逐帧左右对照</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>失败对照：v2 动画</h2><p class="meta">时码对齐，但视觉与动效保真未通过</p></div>
+      <video controls preload="metadata" playsinline
+        src="courseware/product-courseware-3-gold-sample-v2/商品培训课件3_参考忠实复刻_动画视频门槛片段_v2.mp4"></video>
+      <div class="actions">
+        <a href="courseware/product-courseware-3-gold-sample-v2/商品培训课件3_参考忠实复刻_动画视频门槛片段_v2.mp4" target="_blank">打开失败对照 v2</a>
+        <a href="courseware/product-courseware-3-gold-sample-v2/video-qa-absolute/contact-sheet-v2-absolute.png" target="_blank">绝对时码接触表</a>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-h"><h2>失败对照：v2 PPTX · 4 页</h2>
+      <p class="meta">字体、字号、导航间距和主视觉材质未通过</p></div>
+    <img class="thumb" style="aspect-ratio:auto;object-fit:contain;background:#fff;"
+      src="courseware/product-courseware-3-gold-sample-v2/pptx-render/pptx-4-page-montage-v2.png" alt="v2 PPTX 四页总览" />
+    <div class="actions">
+      <a class="primary" href="courseware/product-courseware-3-gold-sample-v2/商品培训课件3_参考忠实复刻_PPTX门槛片段_v2.pptx">下载 v2 PPTX</a>
+      <a href="courseware/product-courseware-3-gold-sample-v2/reference-replication-contract-v2.json" target="_blank">参考复刻合同</a>
+      <a href="courseware/product-courseware-3-gold-sample-v2/qa-report-v2.json" target="_blank">v2 QA 报告</a>
+    </div>
+  </div>
+  <div class="focus" style="border-left-color:#7c2d12;background:#fff7ed;">
+    <h3>以下为首版失败对照，不再作为签样候选</h3>
+    <p>首版套用公共框架并重做内容，已被用户否决；保留是为了避免再次偏离“参考即权威”的复刻要求。</p>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-h"><h2>参考片段</h2><p class="meta">用户提供视频裁切 · 850×480 · 仅用于对照</p></div>
+      <video controls preload="metadata" playsinline
+        src="courseware/product-courseware-3-gold-sample-v1/reference-segment-14.84-44.04.mp4"></video>
+      <div class="actions">
+        <a href="courseware/product-courseware-3-gold-sample-v1/reference-segment-14.84-44.04.mp4" target="_blank">打开参考片段</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>失败对照：动画视频 v1</h2><p class="meta">已否决 · 不作为金样</p></div>
+      <video controls preload="metadata" playsinline
+        src="courseware/product-courseware-3-gold-sample-v1/商品培训课件3_金样复刻_动画视频小样_v1.mp4"></video>
+      <div class="actions">
+        <a class="primary" href="courseware/product-courseware-3-gold-sample-v1/商品培训课件3_金样复刻_动画视频小样_v1.mp4" target="_blank">打开动画成片</a>
+        <a href="courseware/product-courseware-3-gold-sample-v1/video-qa/contact-sheet.png" target="_blank">9 时刻接触表</a>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-h"><h2>失败对照：PPTX v1</h2>
+      <p class="meta">已否决 · 不作为金样</p></div>
+    <img class="thumb" style="aspect-ratio:auto;object-fit:contain;background:#fff;"
+      src="courseware/product-courseware-3-gold-sample-v1/商品培训课件3_金样复刻_PPTX小样_v1_montage.png" alt="PPTX 4 页总览" />
+    <div class="actions">
+      <a class="primary" href="courseware/product-courseware-3-gold-sample-v1/商品培训课件3_金样复刻_PPTX小样_v1.pptx">下载 PPTX</a>
+      <a href="courseware/product-courseware-3-gold-sample-v1/scene-contract.json" target="_blank">同源场景合同</a>
+      <a href="courseware/product-courseware-3-gold-sample-v1/qa-report.json" target="_blank">QA 报告</a>
+    </div>
+  </div>
+  <div class="focus">
+    <h3>v2 门槛确认边界</h3>
+    <ul>
+      <li>未伪造参考品牌 Logo 或真包装；当前包装明确标记为「包装示意」。</li>
+      <li>本轮屏显与原声来自用户提供参考，正式上线前仍需业务与医学审核。</li>
+      <li>门槛通过后扩制 00:00–01:43；当前 4 页／27.44 秒不能命名为完整金样。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="panel" id="tab-wind-heat">
+  <div class="focus">
+    <h3>风热证 · 181.2 秒完整原生分层重制候选</h3>
+    <p>7 场景、62 个盘点元素、112 个可编辑标记；统一母版、数字人、字幕、动效和
+      1.16 语速。生产源码不再读取参考视频截图、整帧或裁切帧。</p>
+  </div>
+  <div class="banner-ok">技术 QA 已通过：1920×1080 / 30fps / 5436 帧 /
+    H.264 + AAC / 完整解码 / 无持续黑场。当前等待业务视觉确认和透明授权 Logo，
+    尚未覆盖 settled 正式模板。</div>
+  <div class="card" style="max-width:960px;">
+    <div class="card-h"><h2>完整重制成片</h2>
+      <p class="meta">wind-heat-full-editable-v2.mp4 · 181.2s</p></div>
+    <video controls preload="metadata" playsinline
+      src="revideo-editability/wind-heat-v2/wind-heat-full-editable-v2.mp4"></video>
+    <div class="actions">
+      <a class="primary" href="revideo-editability/wind-heat-v2/wind-heat-full-editable-v2.mp4" target="_blank">打开完整成片</a>
+      <a href="revideo-editability/wind-heat-v2/full-contact-sheet.jpg" target="_blank">全片接触表</a>
+      <a href="revideo-editability/wind-heat-v2/mouth-soft-palette-contact-sheet.png" target="_blank">浅粉口型近景</a>
+      <a href="revideo-editability/wind-heat-v2/qa-report-v2.json" target="_blank">最终 QA 报告</a>
+      <a href="revideo-editability/wind-heat-v2/element-audit.json" target="_blank">62 元素清单</a>
+      <a href="revideo-editability/wind-heat-v2/provenance-qa.json" target="_blank">来源扫描</a>
+      <a href="revideo-editability/wind-heat-v2/mouth-soft-palette-contact-sheet.png" target="_blank">柔和口型近景</a>
+    </div>
+  </div>
+  <div class="card" style="max-width:960px;">
+    <div class="card-h"><h2>七场景逐一编辑证明</h2>
+      <p class="meta">片头、人物、机理、症状、调理、用药、总结各修改一个内部元素</p></div>
+    <video controls preload="metadata" playsinline
+      src="revideo-editability/wind-heat-v2/editability-proof-7-scenes.mp4"></video>
+    <div class="actions">
+      <a class="primary" href="revideo-editability/wind-heat-v2/editability-proof-7-scenes.mp4" target="_blank">打开编辑证明</a>
+      <a href="revideo-editability/wind-heat-v2/editability-proof-contact-sheet.jpg" target="_blank">编辑证明接触表</a>
+      <a href="revideo-editability/wind-heat-v2/editability-proof-manifest.json" target="_blank">编辑项明细</a>
+      <a href="revideo-editability/wind-heat-v2/audio/timing-manifest.json" target="_blank">统一音频报告</a>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="tab-q10-video">
+  <div class="focus"><h3>辅酶 Q10 · 大参林视频</h3><p>品牌壳 / 口型 / 连读旁白</p></div>
+  <div class="grid" id="q10-grid"></div>
+</section>
+
+
+<section class="panel" id="tab-kekang-video">
+  <div class="focus">
+    <h3>可可康灵芝胶囊 · 当前动画评审</h3>
+    <p><strong>当前进度：</strong>K03 人物情境、K13 工艺流程、K16 商品组合已按正式金样标准形成三类质量基线；K08 有声语法已确认。production-v2 的 58 微镜头旧 Animatic 继续只作结构草稿，不作为可交付金样。</p>
+  </div>
+  <div class="card" style="max-width:960px;">
+    <div class="card-h"><h2>K03／K13／K16 · 三类正式金样基线（当前）</h2>
+      <p class="meta">人物状态 · 工艺流程 · 商品组合关系 · 无内部制作提示 · 完整声音 QA</p></div>
+    <video controls preload="metadata" playsinline
+      poster="reference-analysis/kekang-pfizer-framework-v1/production-v2/qa/remake-comparison-v1/frames/k03-after-09.png"
+      src="reference-analysis/kekang-pfizer-framework-v1/production-v2/qa/remake-comparison-v1/k03-before-after.mp4"
+      style="width:100%;aspect-ratio:16/9;background:#f9f8f3;display:block;"></video>
+    <div class="actions">
+      <a class="primary" href="reference-analysis/kekang-pfizer-framework-v1/production-v2/qa/remake-comparison-v1/review.html" target="_blank">打开三类金样审片页</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/production-v2/qa/remake-comparison-v1/qa-summary-v2.json" target="_blank">查看 QA</a>
+    </div>
+  </div>
+  <div class="card" style="max-width:960px;">
+    <div class="card-h"><h2>K01–K18 · 58 微镜头结构 Animatic v2（当前）</h2>
+      <p class="meta">约 193s · 58 微镜头 · 静音结构 · entry/performance/exit · 非一章一页</p></div>
+    <video controls preload="metadata" playsinline
+      poster="reference-analysis/kekang-pfizer-framework-v1/production-v2/qa/frames/K08-S02/performance.png"
+      src="reference-analysis/kekang-pfizer-framework-v1/production-v2/renders/kekang-green-microshot-animatic-v2.mp4"
+      style="width:100%;aspect-ratio:16/9;background:#f9f8f3;display:block;"></video>
+    <div class="actions">
+      <a class="primary" href="reference-analysis/kekang-pfizer-framework-v1/production-v2/renders/kekang-green-microshot-animatic-v2.mp4" target="_blank">打开 v2 微镜头 Animatic</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/production-v2/review.html" target="_blank">打开专属审片页</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/handoff-v2/EXECUTION_PROMPT.md" target="_blank">执行合同</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/可可康绿色视频金样_逐镜内容审核确认表_v1.docx" target="_blank">下载审核表</a>
+    </div>
+  </div>
+  <div class="card" style="max-width:960px;margin-top:14px;">
+    <div class="card-h"><h2>K08 · 有声视听片段 v2（已确认）</h2>
+      <p class="meta">7.93s · 药师克隆声 + 字幕 + 音效 · -16.1 LUFS · user-approved</p></div>
+    <video controls preload="metadata" playsinline
+      poster="reference-analysis/kekang-pfizer-framework-v1/production-v1/qa/k08/frames/frame-7.5s.png"
+      src="reference-analysis/kekang-pfizer-framework-v1/production-v1/renders/k08-audiovisual-v2.mp4"
+      style="width:100%;aspect-ratio:16/9;background:#f9f8f3;display:block;"></video>
+    <div class="actions">
+      <a class="primary" href="reference-analysis/kekang-pfizer-framework-v1/production-v1/renders/k08-audiovisual-v2.mp4" target="_blank">打开有声片段</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/production-v1/qa/k08/qa-report.json" target="_blank">K08 QA</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/OTHER_MODEL_PRODUCTION_PLAN.md" target="_blank">制作交接书</a>
+    </div>
+  </div>
+  <div class="card" style="max-width:960px;margin-top:14px;">
+    <div class="card-h"><h2>K08 · 无声运动样片 v1（历史）</h2>
+      <p class="meta">7.73s · 仅运动语法 · 已由有声 v2 接替为当前审片对象</p></div>
+    <video controls preload="metadata" playsinline
+      poster="reference-analysis/kekang-pfizer-framework-v1/animation-k08-v1/qa-final/frame-7.5s.png"
+      src="reference-analysis/kekang-pfizer-framework-v1/animation-k08-v1/kekang-k08-two-ingredients-motion-v1.mp4"
+      style="width:100%;aspect-ratio:16/9;background:#f9f8f3;display:block;"></video>
+    <div class="actions">
+      <a class="primary" href="reference-analysis/kekang-pfizer-framework-v1/animation-k08-v1/kekang-k08-two-ingredients-motion-v1.mp4" target="_blank">打开无声片段</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/review.html" target="_blank">查看 Pfizer 映射与边界</a>
+      <a href="reference-analysis/kekang-pfizer-framework-v1/animation-k08-v1/contract.json" target="_blank">查看片段契约与 QA</a>
+    </div>
+  </div>
+  <div class="focus" style="margin-top:24px;">
+    <h3>历史探索稿（不作为本轮方向）</h3>
+    <p>下方 v4 为早期 PPTX 顺序与销售／功效视角探索稿，仅保留追溯，不继承为当前完整课程基线。</p>
+  </div>
+  <div class="card" style="max-width:960px;">
+    <div class="card-h"><h2>kekang-lingzhi-training.mp4</h2>
+      <p class="meta">v4-pptx-order-multilayout · 克隆药师声 v4-structure</p></div>
+    <video controls preload="metadata" playsinline poster="video/qa-kekang-v4-6s.png"
+      src="video/kekang-lingzhi-training.mp4" style="width:100%;aspect-ratio:16/9;background:#0b1a0b;display:block;"></video>
+    <div class="actions">
+      <a class="primary" href="video/kekang-lingzhi-training.mp4" target="_blank">打开文件</a>
+      <a href="video/qa-kekang-v4-6s.png" target="_blank">6s 睡眠问题</a>
+      <a href="video/qa-kekang-v4-24s.png" target="_blank">24s 功效</a>
+      <a href="video/qa-kekang-v4-32s.png" target="_blank">32s 特点</a>
+      <a href="video/qa-kekang-v4-47s.png" target="_blank">47s 联合公式</a>
+      <a href="video/qa-kekang-v4-62s.png" target="_blank">62s 表格</a>
+    </div>
+  </div>
+  <div class="grid" style="margin-top:14px;">
+    <div class="card"><div class="card-h"><h2>6s 睡眠健康问题</h2></div>
+      <img class="thumb" src="video/qa-kekang-v4-6s.png" alt="6s"/></div>
+    <div class="card"><div class="card-h"><h2>18s 三大功效</h2></div>
+      <img class="thumb" src="video/qa-kekang-v4-18s.png" alt="18s"/></div>
+    <div class="card"><div class="card-h"><h2>32s 产品特点滑入</h2></div>
+      <img class="thumb" src="video/qa-kekang-v4-32s.png" alt="32s"/></div>
+    <div class="card"><div class="card-h"><h2>38s 适宜人群</h2></div>
+      <img class="thumb" src="video/qa-kekang-v4-38s.png" alt="38s"/></div>
+    <div class="card"><div class="card-h"><h2>47s 联合 A+B=功效</h2></div>
+      <img class="thumb" src="video/qa-kekang-v4-47s.png" alt="47s"/></div>
+    <div class="card"><div class="card-h"><h2>56s 联合切换</h2></div>
+      <img class="thumb" src="video/qa-kekang-v4-56s.png" alt="56s"/></div>
+    <div class="card"><div class="card-h"><h2>62s 表格总结</h2></div>
+      <img class="thumb" src="video/qa-kekang-v4-62s.png" alt="62s"/></div>
+  </div>
+</section>
+
+<section class="panel" id="tab-covers">
+  <div class="focus"><h3>封面</h3><p>右上角品牌 Logo 不遮挡</p></div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-h"><h2>辅酶 Q10</h2></div>
+      <img class="thumb" src="video/cover-q10-dashenlin.jpg" alt="q10" />
+      <div class="actions"><a class="primary" href="video/cover-q10-dashenlin.jpg" target="_blank">打开</a></div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>可可康灵芝胶囊</h2></div>
+      <img class="thumb" src="video/cover-kekang-lingzhi-dashenlin.jpg" alt="kekang" />
+      <div class="actions"><a class="primary" href="video/cover-kekang-lingzhi-dashenlin.jpg" target="_blank">打开</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="tab-script">
+  <div class="banner-ok"><strong>v3 口径：</strong>全套公司确认 PPT 已归档 <code>refs/01～09</code>。<strong>联合用药三方案：</strong>谷维素+灵芝；护肝片+灵芝；转移因子+灵芝（课件原文）。源文件：<code>script-draft-v3.md</code></div>
+  <div class="split-layout" id="script-split">
+  <aside class="side-menu" id="script-subnav">
+    <div class="side-title">脚本章节</div>
+<button type="button" class="subtab active" data-subtab="script-sec-0" title="可可康灵芝胶囊 · 商品培训脚本 v3">可可康灵芝胶囊 · 商品培训脚本 v3</button><button type="button" class="subtab" data-subtab="script-sec-1" title="模块与课件页对照">模块与课件页对照</button><button type="button" class="subtab" data-subtab="script-sec-2" title="1. 认识灵芝 · 核心有效成分">1. 认识灵芝 · 核心有效成分</button><button type="button" class="subtab" data-subtab="script-sec-3" title="2. 灵芝的作用（五点 · 对齐课件）">2. 灵芝的作用（五点 · 对齐课件）</button><button type="button" class="subtab" data-subtab="script-sec-4" title="3. 产品功效及适应人群">3. 产品功效及适应人群</button><button type="button" class="subtab" data-subtab="script-sec-5" title="4. 产品卖点">4. 产品卖点</button><button type="button" class="subtab" data-subtab="script-sec-6" title="5. 联合用药（对齐课件 · 三套具体方案）">5. 联合用药（对齐课件 · 三套具体方案）</button><button type="button" class="subtab" data-subtab="script-sec-7" title="6. 优秀销售案例（课件原文 · 可选镜头）">6. 优秀销售案例（课件原文 · 可选镜头）</button><button type="button" class="subtab" data-subtab="script-sec-8" title="7. 总结（对齐课件「六 总结」）">7. 总结（对齐课件「六 总结」）</button><button type="button" class="subtab" data-subtab="script-sec-9" title="附录 · 成片镜头建议">附录 · 成片镜头建议</button><button type="button" class="subtab" data-subtab="script-sec-10" title="制作备注">制作备注</button>
+  </aside>
+  <div class="side-main">
+<div class="subpanel active" id="script-sec-0"><div class="md-body"><h1>可可康灵芝胶囊 · 商品培训脚本 v3</h1>
+<table class="md-table"><thead><tr><th>字段</th><th>内容</th></tr></thead><tbody><tr><td>商品</td><td>可可康灵芝胶囊（OTC）</td></tr><tr><td>theme_id</td><td><code>theme.product.kekang-lingzhi-capsule</code></td></tr><tr><td>版本</td><td><strong>v3</strong> · 2026-07-30</td></tr><tr><td>口径来源</td><td>公司已确认内部培训 PPT 全套截图（<code>refs/01</code>～<code>09</code>）</td></tr><tr><td>原则</td><td><strong>按课件原文整理</strong>；联合用药为课件中的 <strong>具体方案</strong>，不另编</td></tr></tbody></table>> 参考图：`production-library/themes/kekang-lingzhi-capsule/refs/`  
+<blockquote>成片母版：大参林 chrome + 浅蓝商品培训模板。</blockquote>
+<hr></div></div><div class="subpanel" id="script-sec-1"><div class="md-body"><h2>模块与课件页对照</h2>
+<table class="md-table"><thead><tr><th>脚本模块</th><th>对应 PPT</th></tr></thead><tbody><tr><td>1 认识灵芝 · 多糖/三萜</td><td>01</td></tr><tr><td>2 灵芝的作用（五点）</td><td>02</td></tr><tr><td>3 三大核心功效 + 适应人群</td><td>03</td></tr><tr><td>4 产品卖点</td><td>04</td></tr><tr><td>5 <strong>联合用药（三方案）</strong></td><td><strong>05 + 06</strong></td></tr><tr><td>6 优秀销售案例（可选成片）</td><td>07 + 08</td></tr><tr><td>7 总结表</td><td>09</td></tr></tbody></table>---</div></div><div class="subpanel" id="script-sec-2"><div class="md-body"><h2>1. 认识灵芝 · 核心有效成分</h2>
+<h3>【页标题】认识灵芝</h3>
+<h3>【中心图】灵芝/孢子</h3>
+<h3>【旁白 · 对齐课件】</h3>
+<p>认识灵芝。灵芝的核心有效成分，一是 <strong>灵芝多糖</strong>，二是 <strong>灵芝三萜</strong>。</p>
+<p><strong>核心有效成分：灵芝多糖</strong>  </p>
+<p>① 增强免疫系统的机能。  </p>
+<p>② 降低血压，预防心血管疾病的产生。</p>
+<p><strong>核心有效成分：灵芝三萜</strong>  </p>
+<p>① 对抗肿瘤的重要成分。  </p>
+<p>② 抗炎、镇痛、镇静、抗衰老、抑制肿瘤细胞。  </p>
+<p>③ 迅速提高免疫力，促进淋巴细胞增殖，提高巨噬细胞、NK细胞、T细胞的吞噬能力和杀伤力。</p>
+<h3>【上屏】与课件左右分栏一致（红标题 + 蓝关键词）</h3>
+<hr></div></div><div class="subpanel" id="script-sec-3"><div class="md-body"><h2>2. 灵芝的作用（五点 · 对齐课件）</h2>
+<h3>【旁白 / 上屏原文】</h3>
+<p><strong>灵芝的作用：</strong></p>
+<ol>
+<li><strong>增强与调节免疫力：</strong> 灵芝多糖和肽聚糖等成分被认为能激活巨噬细胞、自然杀伤细胞（NK细胞）、T淋巴细胞、B淋巴细胞等多种免疫细胞，促进细胞因子（如干扰素、白介素）的产生。  </li>
+<li><strong>抗氧化与延缓衰老：</strong> 灵芝富含多糖、三萜类、多酚等强效抗氧化剂。  </li>
+<li><strong>辅助保护肝脏：</strong> 辅助减轻化学性肝损伤（如长期饮酒、接触环境毒素、某些药物带来的负担），促进肝细胞修复，帮助维持正常的肝功能指标（如转氨酶水平）。  </li>
+<li><strong>改善睡眠质量与缓解神经衰弱：</strong> 对于入睡困难、睡眠浅、多梦、早醒等睡眠障碍人群，可帮助改善睡眠质量，延长深度睡眠时间。也可能帮助缓解焦虑、紧张情绪和精神疲劳（神经衰弱症状），使人感觉更平静、精力更充沛。  </li>
+<li><strong>辅助抗肿瘤：</strong> 具有抑制肿瘤细胞增殖、促进肿瘤细胞凋亡、抑制肿瘤血管生成、增强放化疗效果或减轻其副作用的作用。</li>
+</ol>
+<h3>【画面】左文右图（灵芝实体图，课件绿框）</h3>
+<hr></div></div><div class="subpanel" id="script-sec-4"><div class="md-body"><h2>3. 产品功效及适应人群</h2>
+<h3>【标题】二 产品功效及适应人群</h3>
+<h3>三大核心功效（原文）</h3>
+<p><strong>① 宁心安神助睡眠</strong>  </p>
+<p>灵芝胶囊含有多糖和三萜，其中灵芝多糖可以通过调节神经递质的含量和分泌，而灵芝三萜，具有镇静、助眠作用；两者结合，改善失眠效果更佳。</p>
+<p><strong>② 保肝护肝抗衰老</strong>  </p>
+<p>灵芝多糖和三萜，能减轻肝功能损伤并能增强肝的解毒作用，避免毒物在体内积压，从而达到保肝护肝抗衰老作用。</p>
+<p><strong>③ 提升免疫少生病</strong>  </p>
+<p>灵芝三萜能促进淋巴细胞增殖，提高巨噬细胞、NK细胞、T细胞的吞噬能力和杀伤力，提高免疫力。</p>
+<h3>适应人群（原文）</h3>
+<table class="md-table"><thead><tr><th>序号</th><th>人群</th></tr></thead><tbody><tr><td>01</td><td>经常失眠人群</td></tr><tr><td>02</td><td>常喝酒伤肝人群</td></tr><tr><td>03</td><td>免疫力低下人群</td></tr></tbody></table>---</div></div><div class="subpanel" id="script-sec-5"><div class="md-body"><h2>4. 产品卖点</h2>
+<h3>【标题】三 产品卖点</h3>
+<p><strong>包装功能主治（盒面，课件可见）：</strong>  </p>
+<p>宁心安神，健脾和胃。用于失眠健忘，身体虚弱，神经衰弱。  </p>
+<p>规格示意：60粒/瓶 · OTC · 可可康 COCOKING</p>
+<h3>三大卖点（原文）</h3>
+<p><strong>① 优质产地含量高</strong>  </p>
+<p>可可康灵芝胶囊，选用安徽大别山产区 <strong>赤灵芝</strong>。大别山独特的气候、温度等自然条件，孕育出优良的灵芝品种。灵芝胶囊每100g含多糖 <strong>9.13g</strong>，<strong>灵芝三萜含量高</strong>，增强免疫力效果更强。</p>
+<p><strong>② 专利工艺吸收好</strong>  </p>
+<p>采用专利浓缩提取工艺，二次浓缩提取，也就是双重提取，含量高，质地纯；胶囊剂型，锁住营养，服用方便，吸收好。</p>
+<p><strong>③ 大品牌值得信赖</strong>  </p>
+<p>可可康灵芝胶囊由中山可可康生产，一家通过国家GMP的工厂，采用国内先进生产技术，品质保证。</p>
+<h3>【画面】左包装主视觉 + 右三条蓝条卖点（对齐课件）</h3>
+<hr></div></div><div class="subpanel" id="script-sec-6"><div class="md-body"><h2>5. 联合用药（对齐课件 · 三套具体方案）</h2>
+<h3>【标题】四 联合用药</h3>
+<blockquote>以下三套方案、联合品种与话术 <strong>均来自公司确认 PPT</strong>，成片/脚本保持一致。</blockquote>
+<hr>
+<h3>方案 A · 失眠</h3>
+<table class="md-table"><thead><tr><th>项目</th><th>内容（课件原文）</th></tr></thead><tbody><tr><td>场景标签</td><td><strong>失眠</strong></td></tr><tr><td>症状描述</td><td>入睡困难、易醒、早醒和醒后再入睡困难</td></tr><tr><td>联合方案</td><td><strong>谷维素片 + 灵芝胶囊</strong></td></tr><tr><td>话术</td><td>百谷维素能营养神经，有助于入眠，但长期吃，比较容易导致依赖；灵芝胶囊含有多糖和三萜，其中灵芝多糖可以通过调节神经递质的含量和分泌，而灵芝三萜，具有镇静、助眠作用；两者结合，改善失眠效果更佳。</td></tr></tbody></table>**画面：** 左症状卡 + 谷维素片包装 +「+」+ 灵芝胶囊包装 + 右侧话术。
+<hr>
+<h3>方案 B · 肝功能异常</h3>
+<table class="md-table"><thead><tr><th>项目</th><th>内容（课件原文）</th></tr></thead><tbody><tr><td>场景标签</td><td><strong>肝功能异常</strong></td></tr><tr><td>症状描述</td><td>肝损伤，病毒性肝炎</td></tr><tr><td>联合方案</td><td><strong>护肝片 + 灵芝胶囊</strong></td></tr><tr><td>话术</td><td>护肝片能疏肝理气，健脾消食，具有降低转氨酶的功效。搭配灵芝胶囊，能减轻肝功能损伤并能增强肝的解毒作用，避免毒物在体内积压，从而达到保肝护肝作用。</td></tr></tbody></table>**画面：** 左症状卡 + 护肝片（葵花药业）+「+」+ 灵芝胶囊 + 右侧话术。
+<hr>
+<h3>方案 C · 免疫力低下</h3>
+<table class="md-table"><thead><tr><th>项目</th><th>内容（课件原文）</th></tr></thead><tbody><tr><td>场景标签</td><td><strong>免疫力低下</strong></td></tr><tr><td>症状描述</td><td>易反复生病，抵抗力差</td></tr><tr><td>联合方案</td><td><strong>转移因子口服溶液 + 灵芝胶囊</strong></td></tr><tr><td>话术</td><td>转移因子能增强或抑制体液免疫和细胞免疫功能，增加T细胞数；搭配灵芝胶囊，其中灵芝三萜能促进淋巴细胞增殖，提高免疫细胞的吞噬能力和杀伤力，提高免疫力。</td></tr></tbody></table>**画面：** 左症状卡 + 转移因子口服溶液 +「+」+ 灵芝胶囊 + 右侧话术。
+<hr>
+<h3>【联合用药旁白串讲 · 可连读】</h3>
+<p>联合用药，课件给出三套方案，请同事记牢场景和搭配。</p>
+<p>第一，<strong>失眠</strong>：入睡困难、易醒、早醒。方案是 <strong>谷维素片加灵芝胶囊</strong>。谷维素营养神经、有助于入眠，但长期吃容易依赖；灵芝胶囊多糖调节神经递质，三萜镇静助眠，两者结合改善失眠效果更佳。</p>
+<p>第二，<strong>肝功能异常</strong>：肝损伤、病毒性肝炎。方案是 <strong>护肝片加灵芝胶囊</strong>。护肝片疏肝理气、健脾消食、降低转氨酶；搭配灵芝胶囊减轻肝损伤、增强解毒，保肝护肝。</p>
+<p>第三，<strong>免疫力低下</strong>：易反复生病、抵抗力差。方案是 <strong>转移因子口服溶液加灵芝胶囊</strong>。转移因子调节免疫、增加T细胞；灵芝三萜促进淋巴细胞增殖，提高吞噬与杀伤力，提高免疫力。</p>
+<hr></div></div><div class="subpanel" id="script-sec-7"><div class="md-body"><h2>6. 优秀销售案例（课件原文 · 可选镜头）</h2>
+<h3>案例 1 · 主题联合用药：气血康口服液 + 灵芝胶囊</h3>
+<ul>
+<li><strong>顾客背景：</strong> 顾客感觉自身气血虚弱，胃口差吃不下还睡不好。  </li>
+<li><strong>回顾：</strong> 女性顾客进店买气血康口服液，沟通后了解到晚上经常睡不着、状态差、没胃口。在气血康基础上推荐搭配灵芝胶囊：可宁心安神，用于神经衰弱的失眠健忘，还有健脾和胃，与症状匹配。顾客百度后认可，拿了 4 盒。  </li>
+<li><strong>点评：</strong> 细问顾客情况 + 专业解说功效 + 适合方案推荐。</li>
+</ul>
+<h3>案例 2 · 阳江营运区 01895 店刘仕开</h3>
+<ul>
+<li><strong>顾客背景：</strong> 顾客进店买胃药，问诊后推荐灵芝胶囊。  </li>
+<li><strong>回顾：</strong> 长期消化不良，常买健胃消食片、多潘立酮片，免疫力也差。分析：胃药可缓解胀气促进消化，但肠胃弱、体质差还要从根上调，建议搭配灵芝胶囊——<strong>不仅能健脾和胃还能增强免疫力</strong>，像“修车的同时还要保养发动机”。叮嘱少吃辣的冰的，多吃小米粥、山药。复购两盒。  </li>
+<li><strong>点评：</strong> 耐心服务顾客 + 专业推荐 + 贴心叮嘱。</li>
+</ul>
+<hr></div></div><div class="subpanel" id="script-sec-8"><div class="md-body"><h2>7. 总结（对齐课件「六 总结」）</h2>
+<h3>【旁白 / 上屏原文】</h3>
+<p><strong>有效成分：</strong> 灵芝多糖、灵芝三萜  </p>
+<p><strong>产品卖点：</strong> ①优质产地含量高；②专利工艺吸收好；③大品牌值得信赖。  </p>
+<p><strong>三大核心功效：</strong> ①宁心安神助睡眠；②保肝护肝抗衰老；③提升免疫少生病。  </p>
+<p><strong>适应人群：</strong> ①经常失眠人群；②肝功能差人群；③免疫力低下人群。  </p>
+<p><strong>建议服用周期：</strong> 1个月为1个服用周期，建议连续服用2-3个月；  </p>
+<h3>【联合用药记忆（补充收束）】</h3>
+<table class="md-table"><thead><tr><th>场景</th><th>方案</th></tr></thead><tbody><tr><td>失眠</td><td>谷维素片 + 灵芝胶囊</td></tr><tr><td>肝功能异常</td><td>护肝片 + 灵芝胶囊</td></tr><tr><td>免疫力低下</td><td>转移因子口服溶液 + 灵芝胶囊</td></tr></tbody></table>---</div></div><div class="subpanel" id="script-sec-9"><div class="md-body"><h2>附录 · 成片镜头建议</h2>
+<table class="md-table"><thead><tr><th>镜号</th><th>内容</th><th>模板槽位</th></tr></thead><tbody><tr><td>01</td><td>认识灵芝 · 多糖/三萜</td><td>左右分栏 + 中心图</td></tr><tr><td>02</td><td>灵芝的作用五点</td><td>左文右图</td></tr><tr><td>03</td><td>三大功效 + 三个人群</td><td>双栏卡片</td></tr><tr><td>04</td><td>产品卖点 + 包装</td><td>左包装右三点</td></tr><tr><td>05</td><td>联合用药三方案</td><td>可拆 2～3 镜（失眠/护肝/免疫）</td></tr><tr><td>06</td><td>销售案例（可选）</td><td>案例卡</td></tr><tr><td>07</td><td>总结表</td><td>summary 表</td></tr></tbody></table>---</div></div><div class="subpanel" id="script-sec-10"><div class="md-body"><h2>制作备注</h2>
+<ol>
+<li>联合用药 <strong>必须</strong> 用课件中的三种搭配，不得改回「通用先问药」空话。  </li>
+<li>包装图以课件/授权原图为准（可可康灵芝胶囊、谷维素片、护肝片、转移因子口服溶液、气血康等）。  </li>
+<li>成片仅内部培训；水印学员信息成片须去掉。</li>
+</ol></div></div>
+  </div>
+</div>
+
+<section class="panel" id="tab-layout">
+  <div class="focus">
+    <h3>认识灵芝 · 视频页信息架构（对齐确认课件）</h3>
+    <p>成片应复用该结构：左多糖、中孢子图、右三萜；红标题 + 蓝关键词。</p>
+  </div>
+  <div class="card">
+    <div class="card-h"><h2>参考课件截图（公司确认）</h2>
+      <p class="meta">会话附件已归档；成片请用无水印教材导出图</p></div>
+    <div style="padding:12px;">
+      <img class="ref-shot" src="../../.grok/sessions/%2FUsers%2Fliminrong/019fb121-aede-7dc0-a9dd-81b97e361172/assets/image-398da9b4-b791-4d71-8f8e-a58ecf062c21.jpg" alt="ref"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <p style="display:none;color:#b45309;font-size:13px;">参考图路径若打不开，请以确认门户「脚本」Tab 原文为准；请从公司课件导出无水印图替换中心图。</p>
+      <table class="md-table">
+        <thead><tr><th>区域</th><th>内容（与 PPTX 一致）</th><th>视频呈现</th></tr></thead>
+        <tbody>
+          <tr><td>页标题</td><td>认识灵芝</td><td>左上大标题 + 绿色条</td></tr>
+          <tr><td>中心</td><td>灵芝/孢子图</td><td>六边形容器 · 先出现</td></tr>
+          <tr><td>左栏</td><td>灵芝多糖：①增强免疫系统机能 ②降低血压，预防心血管疾病的产生</td><td>红标题 · 「免疫系统」蓝字 · 逐条入</td></tr>
+          <tr><td>右栏</td><td>灵芝三萜：①对抗肿瘤… ②抗炎镇痛镇静抗衰抑制肿瘤细胞 ③免疫力/淋巴/巨噬/NK/T</td><td>红标题 · 关键词蓝字 · 逐条入</td></tr>
+          <tr><td>母版</td><td>大参林 Logo · 内部培训</td><td>dashenlin-chrome</td></tr>
+          <tr><td>数字人</td><td>—</td><td>本页建议隐藏，保证图文密度</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section class="panel" id="tab-joint">
+  <div class="focus"><h3>联合用药 · 课件原图（公司确认）</h3>
+  <p>三套方案：失眠（谷维素）· 肝功能异常（护肝片）· 免疫力低下（转移因子）</p></div>
+  <div class="grid">
+    <div class="card"><div class="card-h"><h2>失眠 / 护肝</h2></div>
+      <img class="thumb" src="video/ref-kekang-joint-1.png" style="aspect-ratio:auto;object-fit:contain;background:#fff" alt="joint1"/></div>
+    <div class="card"><div class="card-h"><h2>免疫力低下</h2></div>
+      <img class="thumb" src="video/ref-kekang-joint-2.png" style="aspect-ratio:auto;object-fit:contain;background:#fff" alt="joint2"/></div>
+  </div>
+</section>
+
+<section class="panel" id="tab-gaps">
+  <div class="md-body"><h1>可可康灵芝胶囊 — 素材与内容缺口</h1>
+<blockquote>原则：缺什么只列槽位；<strong>不</strong>用 AI 仿品牌包装、<strong>不</strong>编造药学结论。</blockquote>
+<h2>阻塞生产（必须业务/药师提供）</h2>
+<table class="md-table"><thead><tr><th>槽位</th><th>用途</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td>审核旁白全文</td><td>开场～总结各段 TTS + 字幕</td><td>❌ 缺</td><td>分场景：需求教育/机制/症状/商品亮相/功效/特点/人群/联合/总结</td></tr><tr><td>必须原样上屏短文案</td><td>标题、要点、表格</td><td>❌ 缺</td><td>与审核稿一致，系统不得改写结论</td></tr><tr><td>授权包装正面/多面</td><td>商品主视觉</td><td>❌ 缺</td><td>批量前强制；PoC 仅可空白槽</td></tr><tr><td>说明书/批准文号等</td><td>信息页以终稿为准</td><td>❌ 缺</td><td>以公司提交件为准</td></tr><tr><td>证据图（若有）</td><td>功效证据页</td><td>❌ 缺或 N/A</td><td>有则授权原图；无则省略该镜头结构</td></tr></tbody></table>## 可选
+<table class="md-table"><thead><tr><th>槽位</th><th>状态</th></tr></thead><tbody><tr><td>商品培训专用 Logo</td><td>可选；暂用大参林现有角标资产</td></tr><tr><td>联合用药对比包装</td><td>若课程需要，须授权图</td></tr></tbody></table>## 可复用（无需重做）
+<table class="md-table"><thead><tr><th>资产</th><th>来源</th></tr></thead><tbody><tr><td>大参林母版角标/声明/封底</td><td><code>product-training-dashenlin-chrome</code></td></tr><tr><td>药师数字人 + 口型</td><td>dashenlin presenter + MOUTH_RIG</td></tr><tr><td>浅蓝商品风格包</td><td><code>style-pack.reference-product-blue-v1</code></td></tr><tr><td>场景配方结构</td><td>Q10 八段 product-training-* 工程</td></tr></tbody></table>## 制作侧可先做（不依赖功效文案）
+<ul class="checklist">
+<li><label><input type="checkbox" disabled checked> 主题登记  </label></li>
+<li><label><input type="checkbox" disabled checked> 工作目录与缺口表  </label></li>
+<li><label><input type="checkbox" disabled checked> 结构封面（仅商品名 + 大参林身份，无功效断言）  </label></li>
+<li><label><input type="checkbox" disabled > 有审核稿后：v5-smooth 旁白 + 八段渲染 + 预览页  </label></li>
+</ul></div>
+</section>
+
+<section class="panel" id="tab-plan">
+  <div class="card">
+    <div class="card-h"><h2>进展</h2></div>
+    <ul class="prog-list"><li class="prog ok"><span class="mk">✓</span> 四套正式模板 settled / validation 分目录</li><li class="prog ok"><span class="mk">✓</span> Q10 大参林扩展：壳 / 旁白 / 口型 / 封面</li><li class="prog ok"><span class="mk">✓</span> 确认门户 review-hub.html（Tab 审内容）</li><li class="prog ok"><span class="mk">✓</span> 可可康脚本 v2：对齐公司确认 PPTX「认识灵芝」多糖/三萜原文</li><li class="prog warn"><span class="mk">◎</span> 成片「认识灵芝」镜头待套模板渲染</li><li class="prog muted"><span class="mk">○</span> 授权无水印孢子/包装图 + v5-smooth 配音成片</li></ul>
+  </div>
+  <div class="card">
+    <div class="card-h"><h2>你怎么回</h2></div>
+    <div style="padding:14px;font-size:14px;">
+      <ol>
+        <li>在「可可康·脚本 v3」核对多糖/三萜是否与课件一字不差</li>
+        <li>回复「脚本 v2 过」或指出要改的条目编号</li>
+        <li>通过后制作：套「认识灵芝」镜头 + v5-smooth 配音 + 成片 Tab</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</div>
+<script>
+const segments = [{"id": "opening", "title": "01 开场 / 需求教育", "file": "product-training-opening-replica.mp4", "note": "全局克隆药师声", "exists": true}, {"id": "brand", "title": "02 品牌总览 / 商品亮相", "file": "product-training-brand-overview-replica.mp4", "note": "大参林页头", "exists": true}, {"id": "faithful", "title": "03 症状 + 产品主段（数字人重点）", "file": "product-training-faithful-replica.mp4", "note": "口型重点", "exists": true}, {"id": "efficacy", "title": "04 核心功效", "file": "product-training-efficacy-replica.mp4", "note": "功效页", "exists": true}, {"id": "features", "title": "05 产品特点", "file": "product-training-features-replica.mp4", "note": "特点页", "exists": true}, {"id": "audience", "title": "06 适宜人群", "file": "product-training-audience-replica.mp4", "note": "人群页", "exists": true}, {"id": "combination", "title": "07 联合用药", "file": "product-training-combination-replica.mp4", "note": "联合页", "exists": true}, {"id": "summary", "title": "08 总结", "file": "product-training-summary-replica.mp4", "note": "总结", "exists": true}];
+function buildQ10() {
+  const grid = document.getElementById('q10-grid');
+  grid.innerHTML = segments.map(s => {
+    const miss = s.exists ? '' : '<span class="tag warn">缺失</span>';
+    const src = 'video/' + s.file;
+    return `<div class="card"><div class="card-h"><h2>${s.title}</h2><p class="meta">${s.note} ${miss}</p></div>
+      <video controls preload="metadata" playsinline poster="video/cover-q10-dashenlin.jpg" src="${src}"></video>
+      <div class="actions"><a class="primary" href="${src}" target="_blank">打开</a></div></div>`;
+  }).join('');
+}
+function showTab(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
+  document.querySelectorAll('#main-nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+  history.replaceState(null, '', '#' + id);
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+document.getElementById('main-nav').addEventListener('click', e => {
+  const b = e.target.closest('button[data-tab]');
+  if (b) showTab(b.dataset.tab);
+});
+document.querySelectorAll('[data-goto]').forEach(b => b.addEventListener('click', () => showTab(b.dataset.goto)));
+document.getElementById('script-subnav')?.addEventListener('click', e => {
+  const b = e.target.closest('.subtab');
+  if (!b) return;
+  document.querySelectorAll('#script-subnav .subtab').forEach(x => x.classList.toggle('active', x === b));
+  document.querySelectorAll('#tab-script .subpanel').forEach(p => p.classList.toggle('active', p.id === b.dataset.subtab));
+  const main = document.querySelector('#script-split .side-main');
+  if (main) main.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+buildQ10();
+const hash = (location.hash || '#overview').slice(1);
+showTab(document.getElementById('tab-' + hash) ? hash : 'overview');
+</script>
+</body>
+</html>

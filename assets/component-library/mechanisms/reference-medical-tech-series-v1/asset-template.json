@@ -1,0 +1,40 @@
+{
+  "id": "asset.mechanism.<theme>-<role>-v1",
+  "name_zh": "<主题><素材角色> v1",
+  "version": "1.0.0",
+  "status": "candidate",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "series_id": "asset-series.mechanism.reference-medical-tech-v1",
+  "role_ids": ["<role_id>"],
+  "source_type": "ai-generated-original-or-authorized",
+  "source": {
+    "source_class": "in_house_generated",
+    "method": "<image-gen|redraw|licensed-adapt>",
+    "prompt_ref": "<prompt-file>",
+    "model_or_tool": "<recorded-at-generation-time>",
+    "license": "company-internal",
+    "commercial_use": true,
+    "reference_inputs": []
+  },
+  "files": {
+    "source": "<source-file>",
+    "production": "<production-file>",
+    "thumbnail": "<thumbnail-file>",
+    "prompts": "<prompt-file>"
+  },
+  "anchors_normalized": {
+    "subject_center": [0.5, 0.5],
+    "focus": [0.5, 0.5],
+    "path_start": [0.5, 0.25],
+    "path_end": [0.5, 0.75]
+  },
+  "editable": ["position", "scale", "opacity", "focus_anchor", "path_anchors"],
+  "reference_policy": "参考只用于风格、构图和语义；生产资产不得包含参考像素。",
+  "qa": {
+    "visual": "pending",
+    "technical": "pending",
+    "source": "pending",
+    "medical": "pending"
+  },
+  "restriction": "所有审核完成前不得进入默认批量生产"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "asset.product-training.reference-flat-characters-v2",
+  "name_zh": "商品培训参考扁平人物与医学主体 v2",
+  "category": "product-training-opening-characters",
+  "series_id": "series.product-training.reference-flat-characters-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "version": "2.0.0",
+  "status": "technical-qa-passed",
+  "role_ids": [
+    "office_worker",
+    "age_young",
+    "age_senior",
+    "age_elder",
+    "age_elder_glasses",
+    "medical_heart"
+  ],
+  "files": {
+    "office_worker": {
+      "working": "transparent/office-reference-flat-v1.png",
+      "tired": "transparent/office-reference-flat-eyes-closed-v1.png"
+    },
+    "age_progression": {
+      "young": "transparent/age-reference-young-v2.png",
+      "senior": "transparent/age-reference-senior-v2.png",
+      "elder": "transparent/age-reference-elder-v2.png",
+      "elder_glasses": "transparent/age-reference-elder-glasses-v2.png"
+    },
+    "medical_heart": "transparent/heart-reference-flat-v2.png",
+    "prompt": "prompts/reference-flat-characters-v2.md"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "reference_role": "仅用于匹配人物年龄、服装、姿势、构图与低细节企业培训扁平画风",
+    "reference_video_pixels_used": false
+  },
+  "animation_contract": {
+    "office": "同构图双姿势交叉淡化并叠加轻微呼吸位移",
+    "age_progression": "青年、白发老人、蓄须老人、戴眼镜老人按参考时码交叉替换，共享脚底基线",
+    "medical_heart": "主体保持栅格图，代码只驱动整体心跳缩放和标签动画"
+  },
+  "review": {
+    "alpha": "passed",
+    "reference_abstraction_level": "passed",
+    "visual": "pending-user-signoff",
+    "rejected_direction": "rejected-modern-anime-v1"
+  },
+  "restriction": "不得将角色现代化、动漫化或写实化；高质量仅指清晰栅格、自然手部与五官、透明边缘和跨阶段一致性。用户视觉确认前不得标记 production-validated。"
+}

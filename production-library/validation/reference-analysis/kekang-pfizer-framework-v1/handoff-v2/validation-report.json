@@ -1,0 +1,24 @@
+{
+  "schema": "kekang-handoff-v2-validation/1.0",
+  "passed": true,
+  "summary": {
+    "chapter_count": 18,
+    "microshot_count": 58,
+    "total_duration_seconds": 239.1,
+    "error_count": 0,
+    "warning_count": 8,
+    "formal_voice_segment_count": 18,
+    "formal_voice_microshot_coverage": 58
+  },
+  "errors": [],
+  "warnings": [
+    "asset.packshot.kekang.required: waiting for business-authorized source",
+    "asset.logo.dashenlin.required: waiting for business-authorized source",
+    "asset.origin.dabie.required: waiting for business-authorized source",
+    "asset.factory.kekang.required: waiting for business-authorized source",
+    "asset.evidence.product-label.required: waiting for business-authorized source",
+    "asset.packshot.guweisu.required: waiting for business-authorized source",
+    "asset.packshot.hugan.required: waiting for business-authorized source",
+    "asset.packshot.transfer-factor.required: waiting for business-authorized source"
+  ]
+}

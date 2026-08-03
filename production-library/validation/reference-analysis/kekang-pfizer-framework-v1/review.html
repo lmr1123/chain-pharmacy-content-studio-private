@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>可可康 × Pfizer 场景配方映射</title>
+  <style>
+    :root{--ink:#17241f;--muted:#66746e;--green:#087c45;--pale:#edf6f0;--line:#d8e5dc;--warn:#a43d19;--warnbg:#fff1ea;--paper:#f5f7f5}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(1180px,calc(100% - 32px));margin:36px auto 72px}header,.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px}
+    h1{margin:4px 0 10px;font-size:clamp(30px,4.5vw,52px);line-height:1.1}h2{margin:40px 0 14px;font-size:24px}.eyebrow{color:var(--green);font-weight:750;letter-spacing:.08em}.lead{font-size:19px;max-width:900px}.muted{color:var(--muted)}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:24px}.metric{padding:18px;border-radius:14px;background:var(--pale)}.metric strong{display:block;font-size:28px;color:var(--green)}
+    .warn{margin-top:18px;padding:18px 20px;border-left:5px solid var(--warn);border-radius:10px;background:var(--warnbg);color:#6c2b14}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden}th,td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:var(--pale)}tr:last-child td{border-bottom:0}.ok{color:var(--green);font-weight:700}.block{color:var(--warn);font-weight:700}
+    .flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.step{padding:16px 12px;border:1px solid var(--line);border-radius:14px;background:#fff}.step b{display:block;color:var(--green)}
+    a{color:var(--green)}.button{display:inline-block;margin-right:10px;padding:10px 16px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none}
+    .sample{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:24px;align-items:start}.sample video{display:block;width:100%;border-radius:16px;background:#0e231a;box-shadow:0 18px 50px rgba(17,50,38,.14)}.sample h3{margin:0 0 10px;font-size:24px}.sample ul{margin:12px 0;padding-left:22px}
+    @media(max-width:850px){.metrics{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.sample{grid-template-columns:1fr}}
+  </style>
+</head>
+<body><main>
+  <header>
+    <div class="eyebrow">CONTENT MAPPING · VALIDATION ONLY</div>
+    <h1>可可康 × Pfizer 场景配方映射</h1>
+    <p class="lead">现有内容足以形成完整课程骨架，但还不能进入正式动画：结构已齐，药师／合规审核、授权包装和绿色视频金样尚未齐。</p>
+    <div class="metrics">
+      <div class="metric"><strong>9/10</strong>Pfizer 配方可映射</div>
+      <div class="metric"><strong>18</strong>完整教学镜头</div>
+      <div class="metric"><strong>3–4 分钟</strong>目标成片长度</div>
+      <div class="metric"><strong>0</strong>允许仿造的包装／证据</div>
+    </div>
+    <div class="warn"><strong>当前阻断：</strong>PPT 内含降血压、抗肿瘤、联合用药、服用周期等高风险表述；主题登记仍为药师审核待完成。旧课件出现过，不等于可直接进入正式旁白。</div>
+    <p><a class="button" href="content-mapping-v1.md">打开完整映射</a><a href="storyboard-v1.json">查看结构化分镜 JSON</a></p>
+  </header>
+
+  <h2>K08 局部动画效果</h2>
+  <section class="panel sample">
+    <video controls preload="metadata" poster="animation-k08-v1/qa-final/frame-7.5s.png">
+      <source src="animation-k08-v1/kekang-k08-two-ingredients-motion-v1.mp4" type="video/mp4">
+    </video>
+    <div>
+      <div class="eyebrow">7.73 秒 · 1920×1080 · 30fps</div>
+      <h3>主体 → 双分支 → 标签聚焦</h3>
+      <ul>
+        <li>只展示“灵芝多糖／灵芝三萜”名称。</li>
+        <li>不加入功效、机制、治疗结果或正式旁白。</li>
+        <li>背景、主体、路径和标签均为独立动画图层。</li>
+      </ul>
+      <div class="warn"><strong>评审边界：</strong>这是一个局部运动语法样片，不代表完整课程、医学内容或绿色视频风格包已经通过。</div>
+    </div>
+  </section>
+
+  <h2>课程骨架</h2>
+  <div class="flow">
+    <div class="step"><b>01 问题</b>三类生活状态</div>
+    <div class="step"><b>02 方向</b>三大产品方向</div>
+    <div class="step"><b>03 成分</b>多糖与三萜</div>
+    <div class="step"><b>04 产品</b>产地、工艺、生产</div>
+    <div class="step"><b>05 使用</b>联合方案与周期</div>
+    <div class="step"><b>06 回扣</b>六维总结</div>
+  </div>
+
+  <h2>配方适配判断</h2>
+  <table>
+    <thead><tr><th>配方</th><th>可可康内容</th><th>判断</th></tr></thead>
+    <tbody>
+      <tr><td>F01–F03</td><td>三类状态、三大产品方向、两类成分</td><td class="ok">高度适配</td></tr>
+      <tr><td>F04</td><td>成分作用、双重提取、联合逻辑</td><td class="block">内容审核后使用</td></tr>
+      <tr><td>F05</td><td>受体／靶点阻断</td><td class="block">不适用，禁止虚构</td></tr>
+      <tr><td>F06–F09</td><td>功效对应、服用周期、卖点标签、结果回扣</td><td class="block">审核／证据后使用</td></tr>
+      <tr><td>F10</td><td>大参林内部培训封底、产品主视觉</td><td class="block">缺授权真包装</td></tr>
+    </tbody>
+  </table>
+
+  <h2>进入金样制作前的四个门禁</h2>
+  <div class="panel">
+    <ol>
+      <li>药师／合规确认 18 镜中的保留、改写和删除内容。</li>
+      <li>提供说明书、授权真包装、联合用药包装和卖点证据。</li>
+      <li>完整制作一条绿色视频金样，不能继续混绑蓝色视频模板与绿色 PPT 风格包。</li>
+      <li>金样通过后抽出唯一绿色视频 style pack，再用第二商品验证不改组件代码。</li>
+    </ol>
+  </div>
+</main></body>
+</html>

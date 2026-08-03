@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>资产全景 · 连锁药店内容工厂</title>
+<style>
+:root {
+  --ink: #0f172a; --muted: #64748b; --line: #e2e8f0; --bg: #f8fafc; --card: #fff;
+  --keep: #047857; --keep-bg: #ecfdf5; --keep-bd: #a7f3d0;
+  --iterate: #1d4ed8; --iterate-bg: #eff6ff; --iterate-bd: #bfdbfe;
+  --drop: #b91c1c; --drop-bg: #fef2f2; --drop-bd: #fecaca;
+  --freeze: #b45309; --freeze-bg: #fffbeb; --freeze-bd: #fcd34d;
+  --infra: #6d28d9; --infra-bg: #f5f3ff; --infra-bd: #ddd6fe;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+.top {
+  position: sticky; top: 0; z-index: 40;
+  background: #0f172a; color: #fff; padding: 16px 20px 0;
+  box-shadow: 0 4px 20px rgba(15,23,42,.25);
+}
+.top h1 { margin: 0 0 4px; font-size: 20px; font-weight: 800; }
+.top .sub { margin: 0 0 12px; font-size: 12px; opacity: .85; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav button {
+  font: inherit; font-size: 13px; font-weight: 700; border: none;
+  border-radius: 10px 10px 0 0; padding: 10px 14px; cursor: pointer;
+  background: rgba(255,255,255,.12); color: #fff;
+}
+.nav button:hover { background: rgba(255,255,255,.2); }
+.nav button.active { background: var(--bg); color: var(--ink); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 20px 16px 64px; }
+.panel { display: none; }
+.panel.active { display: block; }
+h2 { font-size: 18px; margin: 0 0 12px; }
+h3 { font-size: 15px; margin: 0 0 8px; }
+p, li { font-size: 14px; }
+.muted { color: var(--muted); font-size: 13px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800;
+  border: 1px solid var(--line); background: #fff;
+}
+.tag.keep { color: var(--keep); background: var(--keep-bg); border-color: var(--keep-bd); }
+.tag.iterate { color: var(--iterate); background: var(--iterate-bg); border-color: var(--iterate-bd); }
+.tag.drop { color: var(--drop); background: var(--drop-bg); border-color: var(--drop-bd); }
+.tag.freeze { color: var(--freeze); background: var(--freeze-bg); border-color: var(--freeze-bd); }
+.tag.infra { color: var(--infra); background: var(--infra-bg); border-color: var(--infra-bd); }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  overflow: hidden; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(15,23,42,.04);
+}
+.card-h {
+  padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  justify-content: space-between; border-bottom: 1px solid var(--line); background: #fff;
+}
+.card-h .title { font-size: 15px; font-weight: 800; margin: 0; }
+.card-b { padding: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.stat {
+  background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px;
+}
+.stat .n { font-size: 22px; font-weight: 900; line-height: 1.1; }
+.stat .l { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+th { background: #f1f5f9; font-weight: 800; position: sticky; top: 0; }
+tr:last-child td { border-bottom: none; }
+tr.drop-row { background: #fff7f7; }
+tr.iterate-row { background: #f8fbff; }
+tr.keep-row { background: #f7fdf9; }
+tr.freeze-row { background: #fffdf5; }
+code, .path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #334155; word-break: break-all; }
+a { color: #1d4ed8; text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.actions a {
+  font-size: 12px; font-weight: 700; border-radius: 8px; padding: 7px 10px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+}
+.actions a.primary { background: #0f172a; color: #fff; border-color: #0f172a; }
+.banner {
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; font-size: 13px;
+  border: 1px solid var(--line); background: #fff;
+}
+.banner.ok { background: var(--keep-bg); border-color: var(--keep-bd); color: #065f46; }
+.banner.warn { background: var(--freeze-bg); border-color: var(--freeze-bd); color: #92400e; }
+.banner.info { background: var(--iterate-bg); border-color: var(--iterate-bd); color: #1e3a8a; }
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline li {
+  position: relative; padding: 0 0 16px 22px; border-left: 2px solid var(--line);
+}
+.timeline li:last-child { border-left-color: transparent; }
+.timeline li::before {
+  content: ""; position: absolute; left: -6px; top: 4px; width: 10px; height: 10px;
+  border-radius: 50%; background: #94a3b8;
+}
+.timeline li.done::before { background: var(--keep); }
+.timeline li.now::before { background: var(--iterate); box-shadow: 0 0 0 4px #dbeafe; }
+.timeline li.block::before { background: var(--freeze); }
+.timeline .when { font-size: 11px; color: var(--muted); font-weight: 700; }
+.timeline .what { font-size: 14px; font-weight: 700; margin: 2px 0; }
+.timeline .why { font-size: 13px; color: var(--muted); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 800px) { .two { grid-template-columns: 1fr; } }
+.note { font-size: 12px; color: var(--muted); margin-top: 18px; }
+ul.compact { margin: 6px 0 0; padding-left: 18px; }
+ul.compact li { margin: 3px 0; }
+.kicker { font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>资产全景 · 淘汰 / 保留 / 深耕</h1>
+  <p class="sub">梳理日期 2026-08-02 · 与 <code>review-hub.html</code>（逐条审片）互补 · 本页回答「整仓有什么、谁算数、下一步做什么」</p>
+  <nav class="nav" id="main-nav">
+    <button type="button" class="active" data-tab="overview">总览</button>
+    <button type="button" data-tab="triage">三栏处置</button>
+    <button type="button" data-tab="lines">主线地图</button>
+    <button type="button" data-tab="settled">已沉淀模板</button>
+    <button type="button" data-tab="roadmap">交付路径</button>
+    <button type="button" data-tab="cleanup">清理建议</button>
+  </nav>
+</div>
+
+<div class="wrap">
+
+<!-- ========== OVERVIEW ========== -->
+<section class="panel active" id="tab-overview">
+  <div class="banner info">
+    <strong>一句话状态：</strong>方案与生产能力已验证（Word 入口、Revideo 渲染、可编辑 PPTX、旁白克隆、剪映草稿），但仓库是「多条试验线并行」状态。真正可交付的是少数 settled 模板；最近两周主力在课件3/4 与可可康保真复刻，尚未统一收敛。
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="n" style="color:var(--keep)">4</div><div class="l">settled 正式模板</div></div>
+    <div class="stat"><div class="n" style="color:var(--iterate)">4</div><div class="l">当前深耕主线</div></div>
+    <div class="stat"><div class="n" style="color:var(--freeze)">1</div><div class="l">冻结待重制</div></div>
+    <div class="stat"><div class="n" style="color:var(--drop)">多批</div><div class="l">过程/否决对照</div></div>
+    <div class="stat"><div class="n">~195</div><div class="l">仓库内 mp4 文件</div></div>
+    <div class="stat"><div class="n">~5GB+</div><div class="l">validation + poc 体量</div></div>
+  </div>
+
+  <div class="legend">
+    <span class="tag keep">保留 · 可交付/基建</span>
+    <span class="tag iterate">深耕 · 主进度</span>
+    <span class="tag freeze">冻结 · 勿用生产</span>
+    <span class="tag drop">淘汰 · 仅对照或可删</span>
+    <span class="tag infra">基建 · 不直接交付</span>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><p class="title">已证明能做的事</p></div>
+      <div class="card-b">
+        <ul class="compact">
+          <li>完整参考视频复刻（风热证 181s、Q10 全片）</li>
+          <li>可编辑 PPTX 原生导出（课件2、绿色课件、速福达 12 页）</li>
+          <li>业务 Word 通用笔记本输入 + 分镜预览 HTML</li>
+          <li>药师克隆音色 + 语义段语速门禁</li>
+          <li>Revideo 轻量业务图层编辑 → MP4/PPTX</li>
+          <li>剪映草稿导出（场景级精修，非元素级）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><p class="title">混乱的根因（不是缺方向）</p></div>
+      <div class="card-b">
+        <ul class="compact">
+          <li><strong>多金样并行</strong>：课件3 v1/v2/v3、速福达独立金样、课件4、可可康 v1/v2 同存</li>
+          <li><strong>过程稿与正式稿未分层可视化</strong>：~195 个 mp4 难以一眼看出谁是当前基线</li>
+          <li><strong>签样未闭环</strong>：多条线停在「技术 QA 通过 · 等用户确认」</li>
+          <li><strong>参考保真反复纠正</strong>：同色系重设计 ≠ 复刻（课件4 tomato 线已否决）</li>
+          <li><strong>业务真题未跑通</strong>：第二商品主题 / 真实审核稿仍缺</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><p class="title">目标交付形态（锁定）</p></div>
+    <div class="card-b">
+      <p>每一条正式培训线最终应落到：</p>
+      <ol>
+        <li><strong>可编辑 PPTX</strong>（原生文字/图片框，业务可改）</li>
+        <li><strong>可编辑/可重渲视频工程</strong>（content-model 或 Scene JSON + Revideo）</li>
+        <li><strong>成片 MP4</strong>（1920×1080 · 30fps · 规范响度）</li>
+        <li><strong>业务 Word 空白 + 填写参考</strong></li>
+        <li>签样后进入 <code>templates/settled/&lt;slug&gt;/</code>，过程稿只留 validation</li>
+      </ol>
+      <div class="actions">
+        <a class="primary" href="review-hub.html">打开确认门户 review-hub</a>
+        <a href="../../templates/settled/README.md">settled 规则</a>
+        <a href="../../registries/templates.json">模板注册表</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRIAGE ========== -->
+<section class="panel" id="tab-triage">
+  <div class="banner warn">
+    <strong>处置原则：</strong>「淘汰」优先指<strong>不再作为生产母版/签样候选</strong>；大体积过程稿可归档或延后物理删除。未获你确认前，本页不执行删除。
+  </div>
+
+  <div class="kicker">1 · 建议淘汰（禁止当母版）</div>
+  <div class="table-wrap" style="margin-bottom:18px;">
+    <table>
+      <thead>
+        <tr><th style="width:22%">资产 / 线</th><th style="width:12%">处置</th><th>原因</th><th style="width:28%">路径</th></tr>
+      </thead>
+      <tbody>
+        <tr class="drop-row">
+          <td>番茄红素 tomato-lycopene-faithful-v1</td>
+          <td><span class="tag drop">淘汰</span></td>
+          <td>同色系重设计，非参考保真复刻；课件4 禁止读取</td>
+          <td class="path">validation/video/tomato-lycopene-faithful-v1/</td>
+        </tr>
+        <tr class="drop-row">
+          <td>课件3 gold-sample-v1 / v2 失败对照</td>
+          <td><span class="tag drop">淘汰·对照</span></td>
+          <td>用户否决视觉/动效保真；仅作失败案例</td>
+          <td class="path">validation/courseware/product-courseware-3-gold-sample-v1|v2/</td>
+        </tr>
+        <tr class="drop-row">
+          <td>课件3 v5 动画/PPTX 中间稿</td>
+          <td><span class="tag drop">降级</span></td>
+          <td>已被 v6 质量返工取代</td>
+          <td class="path">…/product-courseware-3-gold-sample-v3/*_v5.*</td>
+        </tr>
+        <tr class="drop-row">
+          <td>可可康 other-model-remake-attempt</td>
+          <td><span class="tag drop">淘汰·对照</span></td>
+          <td>目标理解错误的对比尝试，禁止回灌正式线</td>
+          <td class="path">…/kekang…/production-v2/qa/other-model-*</td>
+        </tr>
+        <tr class="drop-row">
+          <td>可可康 production-v1 一章一页 animatic</td>
+          <td><span class="tag drop">淘汰</span></td>
+          <td>用户否决结构，被 production-v2 微镜头取代</td>
+          <td class="path">…/production-v1/</td>
+        </tr>
+        <tr class="drop-row">
+          <td>速福达 bad-clone-backup.mp4</td>
+          <td><span class="tag drop">可删</span></td>
+          <td>错误克隆备份，非交付</td>
+          <td class="path">sufuda…/out/*-bad-clone-backup.mp4</td>
+        </tr>
+        <tr class="drop-row">
+          <td>早期 wind-heat 30s / 74s 探索稿</td>
+          <td><span class="tag drop">淘汰·对照</span></td>
+          <td>非 canonical；注册表已标 non_canonical</td>
+          <td class="path">validation/video/wind-heat-gold-sample*.mp4 等</td>
+        </tr>
+        <tr class="drop-row">
+          <td>tmp/ + out/ 根目录过程图</td>
+          <td><span class="tag drop">可清</span></td>
+          <td>OCR/对照/临时音频，无生产语义</td>
+          <td class="path">tmp/ · out/</td>
+        </tr>
+        <tr class="drop-row">
+          <td>课件绿色「三页品牌升级签样」</td>
+          <td><span class="tag drop">非基线</span></td>
+          <td>曾被否决为批量模板基线；五页复刻版才是 settled</td>
+          <td class="path">validation/courseware/product-courseware-green-v1/*品牌升级*</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="kicker">2 · 建议保留（基建 / 已签样 / 业务入口）</div>
+  <div class="table-wrap" style="margin-bottom:18px;">
+    <table>
+      <thead>
+        <tr><th style="width:22%">资产 / 线</th><th style="width:12%">处置</th><th>原因</th><th style="width:28%">路径</th></tr>
+      </thead>
+      <tbody>
+        <tr class="keep-row">
+          <td>商品培训视频 Q10 + 大参林扩展</td>
+          <td><span class="tag keep">保留·可复用</span></td>
+          <td>user-approved；下一商品套壳基线</td>
+          <td class="path">templates/settled/product-video-faithful-v1/</td>
+        </tr>
+        <tr class="keep-row">
+          <td>绿色商品 PPT 模板（金银花露 5 页）</td>
+          <td><span class="tag keep">保留</span></td>
+          <td>user-approved 页型来源</td>
+          <td class="path">templates/settled/product-courseware-green-v1/</td>
+        </tr>
+        <tr class="keep-row">
+          <td>疾病辨证场景 PPT（穿心莲 18 页型）</td>
+          <td><span class="tag keep">保留</span></td>
+          <td>user-approved 第二套课件页型</td>
+          <td class="path">templates/settled/disease-product-scenario-v1/</td>
+        </tr>
+        <tr class="keep-row">
+          <td>业务 Word 通用模板 + 资料包</td>
+          <td><span class="tag keep">保留</span></td>
+          <td>业务入口契约</td>
+          <td class="path">outputs/业务使用资料包/ · video/courseware natural-import</td>
+        </tr>
+        <tr class="keep-row">
+          <td>production-library 注册表 / 协议 / 音色</td>
+          <td><span class="tag infra">基建</span></td>
+          <td>查询先于创建；决策与质量门禁</td>
+          <td class="path">registries/ · assembly-protocol · voices/</td>
+        </tr>
+        <tr class="keep-row">
+          <td>component-library 已登记系列</td>
+          <td><span class="tag keep">保留</span></td>
+          <td>按系列扩展，勿另起一次性素材</td>
+          <td class="path">assets/component-library/</td>
+        </tr>
+        <tr class="keep-row">
+          <td>scripts + skills 生产脚本</td>
+          <td><span class="tag infra">基建</span></td>
+          <td>旁白、剪映、主题复制、查询</td>
+          <td class="path">scripts/ · skills/</td>
+        </tr>
+        <tr class="keep-row">
+          <td>poc/gold-sample 工程源码</td>
+          <td><span class="tag infra">基建</span></td>
+          <td>Revideo 场景工程；可瘦身 node_modules</td>
+          <td class="path">poc/gold-sample/src/</td>
+        </tr>
+        <tr class="keep-row">
+          <td>风热证 181s settled 成片</td>
+          <td><span class="tag freeze">冻结对照</span></td>
+          <td>历史确认成片，但编辑性不足且有重制要求；勿用于新主题生产</td>
+          <td class="path">templates/settled/health-video-reference-tech-v1/</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="kicker">3 · 建议深耕（当前主进度）</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th style="width:22%">资产 / 线</th><th style="width:12%">处置</th><th>当前状态</th><th style="width:28%">下一步</th></tr>
+      </thead>
+      <tbody>
+        <tr class="iterate-row">
+          <td>速福达课件3 独立金样</td>
+          <td><span class="tag iterate">深耕</span></td>
+          <td>全片 MP4 + 12 页可编辑 PPTX + content-model + 编辑器 + 换主题 demo；未晋升 settled</td>
+          <td>用户签样 → settled；真包装授权后批量</td>
+        </tr>
+        <tr class="iterate-row">
+          <td>课件3 精细复刻 v3/v4/v6 片段线</td>
+          <td><span class="tag iterate">收敛</span></td>
+          <td>门槛片段技术 QA 过，待用户确认；与速福达独立金样有重叠风险</td>
+          <td><strong>二选一合并为唯一课件3 基线</strong>，避免双母版</td>
+        </tr>
+        <tr class="iterate-row">
+          <td>课件4 保真门禁</td>
+          <td><span class="tag iterate">深耕</span></td>
+          <td>gate-pending：1 静态 + 1 微镜头；等「同一版本」确认</td>
+          <td>签门禁 → 全片 → PPTX+视频导出</td>
+        </tr>
+        <tr class="iterate-row">
+          <td>可可康绿色视频 K01–K18</td>
+          <td><span class="tag iterate">深耕</span></td>
+          <td>K03/K13/K16 质量基线 + K08 有声；全片仍受内容/包装门禁阻塞</td>
+          <td>审核表 + 授权包装 → 全片有声 → settled</td>
+        </tr>
+        <tr class="iterate-row">
+          <td>风热证 v2 可编辑重制</td>
+          <td><span class="tag iterate">深耕</span></td>
+          <td>7 场景元素重建候选在 revideo-editability/wind-heat-v2；旧 settled 冻结</td>
+          <td>用户确认重制 → 替换 settled → 剪映精修可选</td>
+        </tr>
+        <tr class="iterate-row">
+          <td>Q10 第二商品主题闭环</td>
+          <td><span class="tag iterate">深耕</span></td>
+          <td>模板已批，缺真实新主题审核稿与授权图</td>
+          <td>跑通「换稿套壳」证明批量</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== LINES ========== -->
+<section class="panel" id="tab-lines">
+  <div class="banner ok">
+    按「产品线」看完整样貌。每条线只认一个当前基线；旧版本降为对照或淘汰。
+  </div>
+
+  <!-- Line: Health video -->
+  <div class="card">
+    <div class="card-h">
+      <p class="title">A · 健康科普视频（风热证）</p>
+      <div><span class="tag freeze">settled 冻结</span> <span class="tag iterate">v2 重制中</span></div>
+    </div>
+    <div class="card-b">
+      <div class="two">
+        <div>
+          <p><strong>当前基线</strong></p>
+          <ul class="compact">
+            <li>Canonical 对照：<code>settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4</code>（23MB，181s）</li>
+            <li>重制候选：<code>validation/revideo-editability/wind-heat-v2/</code></li>
+            <li>style：<code>style-pack.reference-medical-tech-v1</code></li>
+            <li>注册状态：<code>visual-rework-required</code></li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>过程版（勿当母版）</strong></p>
+          <ul class="compact">
+            <li>30s 视觉签样、74s gold-sample、分段 reference-*-replica</li>
+            <li>剪映 1.0.0 草稿：元素已烘焙，业务编辑性不足</li>
+          </ul>
+          <div class="actions">
+            <a href="revideo-editability/wind-heat-v2/wind-heat-full-editable-v2.mp4">v2 全片候选</a>
+            <a href="revideo-editability/wind-heat-v2/editability-proof-7-scenes.mp4">7 场景编辑证明</a>
+            <a href="review-hub.html">review-hub · 风热证</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line: Product video Q10 -->
+  <div class="card">
+    <div class="card-h">
+      <p class="title">B · 商品培训视频（辅酶 Q10 / 大参林）</p>
+      <div><span class="tag keep">user-approved</span></div>
+    </div>
+    <div class="card-b">
+      <ul class="compact">
+        <li>Canonical：<code>settled/product-video-faithful-v1/…v3-final-exact.mp4</code>（16MB）</li>
+        <li>扩展：chrome / v5-smooth 旁白 / MOUTH_RIG / 品牌封面 — 已确认可复用</li>
+        <li>预览：<a href="video/review-q10-dashenlin.html">review-q10-dashenlin.html</a></li>
+        <li>缺口：第二真实商品主题 + 授权包装，才能证明批量</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Line: Courseware green + disease -->
+  <div class="card">
+    <div class="card-h">
+      <p class="title">C · 商品培训 PPTX（绿色页型 + 疾病场景页型）</p>
+      <div><span class="tag keep">user-approved ×2</span></div>
+    </div>
+    <div class="card-b">
+      <div class="two">
+        <div>
+          <p><strong>C1 绿色 5 页（金银花露）</strong></p>
+          <p class="path">settled/product-courseware-green-v1/*.pptx</p>
+          <p class="muted">页型来源；业务不必填满固定栏目</p>
+        </div>
+        <div>
+          <p><strong>C2 疾病辨证 18 页型（穿心莲）</strong></p>
+          <p class="path">settled/disease-product-scenario-v1/*.pptx</p>
+          <p class="muted">封面封底锁定；AI 按 Word 板块选页型</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line: Courseware 3 -->
+  <div class="card">
+    <div class="card-h">
+      <p class="title">D · 商品培训课件3（速福达参考）— 最需收敛</p>
+      <div><span class="tag iterate">双线并存</span> <span class="tag freeze">待签样</span></div>
+    </div>
+    <div class="card-b">
+      <div class="banner warn" style="margin-bottom:12px;">
+        存在两条接近「金样」的实现：① 分段精细复刻 v3–v6（review-hub 主推）② 独立全片金样 + content-model PPTX（更接近可交付架构）。建议你确认后<strong>只保留一条正式线</strong>。
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>版本</th><th>角色</th><th>产物</th><th>建议</th></tr></thead>
+          <tbody>
+            <tr class="drop-row"><td>v1</td><td>失败对照</td><td>套公共模板重设计</td><td>淘汰</td></tr>
+            <tr class="drop-row"><td>v2</td><td>失败对照</td><td>时码对齐但视觉未过</td><td>淘汰·对照</td></tr>
+            <tr class="iterate-row"><td>v3 PPTX + v4 新录音门槛视频</td><td>保真门槛片段</td><td>5 页 PPTX · 27.6s 视频</td><td>若并入独立金样可归档</td></tr>
+            <tr class="drop-row"><td>v5</td><td>中间稿</td><td>已被 v6 取代</td><td>淘汰</td></tr>
+            <tr class="iterate-row"><td>v6 继续片段</td><td>质量返工片段</td><td>6 页 PPTX · 40s 视频</td><td>待确认；再决定是否扩全片</td></tr>
+            <tr class="iterate-row"><td><strong>sufuda 独立金样 v1</strong></td><td>全片候选 + 可交付架构</td><td>97s MP4 · 12 页 PPTX · content-model · 编辑器 · demo-product-b</td><td><strong>优先签样候选</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="actions">
+        <a class="primary" href="courseware/sufuda-product-courseware-3-gold-v1/out/速福达_商品培训课件3_独立金样_v1.mp4">独立金样 MP4</a>
+        <a class="primary" href="courseware/sufuda-product-courseware-3-gold-v1/out/速福达_商品培训课件3_可编辑课件_v1.pptx">12 页可编辑 PPTX</a>
+        <a href="courseware/product-courseware-3-gold-sample-v3/商品培训课件3_精细复刻_动画视频继续片段_v6.mp4">v6 片段 MP4</a>
+        <a href="courseware/demo-product-b-courseware-v1/out/demo-product-b-courseware-v1_可编辑课件.pptx">换主题 demo PPTX</a>
+        <a href="review-hub.html">review-hub · 课件3</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line: Courseware 4 -->
+  <div class="card">
+    <div class="card-h">
+      <p class="title">E · 商品培训课件4（番茄红素参考 · 保真）</p>
+      <div><span class="tag iterate">门禁待确认</span></div>
+    </div>
+    <div class="card-b">
+      <ul class="compact">
+        <li><strong>唯一有效线</strong>：<code>validation/courseware/product-courseware-4-faithful-replica-v1/</code></li>
+        <li>已否决：<code>validation/video/tomato-lycopene-faithful-v1/</code>（禁止母版）</li>
+        <li>当前停在：1 静态页 + 1 微镜头左右对照，等「确实是同一个版本」</li>
+      </ul>
+      <div class="actions">
+        <a class="primary" href="courseware/product-courseware-4-faithful-replica-v1/gate/compare.html">门禁对照 compare.html</a>
+        <a href="courseware/product-courseware-4-faithful-replica-v1/VERSION.md">VERSION 边界</a>
+        <a href="video/tomato-lycopene-faithful-v1/review.html">（否决线）tomato review</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line: Kekang -->
+  <div class="card">
+    <div class="card-h">
+      <p class="title">F · 可可康灵芝 · 绿色视频金样</p>
+      <div><span class="tag iterate">片段基线 · 全片阻塞</span></div>
+    </div>
+    <div class="card-b">
+      <ul class="compact">
+        <li>正式线：<code>…/kekang-pfizer-framework-v1/production-v2/</code></li>
+        <li>质量基线：K03 人物、K13 工艺、K16 商品组合、K08 有声</li>
+        <li>结构草稿：58 微镜头静音 animatic（≠ 金样完成）</li>
+        <li>阻塞：审核表未填、真包装/联合方案资产未授权 → 不能宣称完整金样</li>
+        <li>style 候选：<code>style-pack.kekang-pfizer-green-candidate-v1</code></li>
+      </ul>
+      <div class="actions">
+        <a class="primary" href="reference-analysis/kekang-pfizer-framework-v1/production-v2/qa/remake-comparison-v1/review.html">K03/K13/K16 审片</a>
+        <a href="reference-analysis/kekang-pfizer-framework-v1/production-v2/review.html">v2 animatic review</a>
+        <a href="review-hub.html">review-hub · 可可康</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SETTLED ========== -->
+<section class="panel" id="tab-settled">
+  <div class="banner ok">
+    正式生产只认 <code>production-library/templates/settled/</code> + 注册表 <code>canonical_artifact</code>。validation 里任何漂亮成片都不能仅凭文件名进批量。
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>template_id</th><th>状态</th><th>canonical</th><th>业务包</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr class="freeze-row">
+          <td><code>template.health-reference-tech-v1</code><br><span class="muted">健康科普视频</span></td>
+          <td><span class="tag freeze">visual-rework-required</span></td>
+          <td>wind-heat 181s.mp4</td>
+          <td>空白+参考 Word</td>
+          <td>冻结对照；新主题勿用</td>
+        </tr>
+        <tr class="keep-row">
+          <td><code>template.product-training-faithful-v1</code><br><span class="muted">商品培训视频</span></td>
+          <td><span class="tag keep">user-approved</span></td>
+          <td>Q10 full v3.mp4</td>
+          <td>空白+参考 Word</td>
+          <td>大参林扩展可复用</td>
+        </tr>
+        <tr class="keep-row">
+          <td><code>template.product-courseware-dashenlin-green-v1</code><br><span class="muted">绿色商品 PPT</span></td>
+          <td><span class="tag keep">user-approved</span></td>
+          <td>金银花露.pptx</td>
+          <td>空白+参考 Word</td>
+          <td>5 页页型来源</td>
+        </tr>
+        <tr class="keep-row">
+          <td><code>template.dashenlin-disease-product-scenario-v1</code><br><span class="muted">疾病场景 PPT</span></td>
+          <td><span class="tag keep">user-approved</span></td>
+          <td>穿心莲.pptx</td>
+          <td>空白+参考 Word</td>
+          <td>18 页型；封面锁定</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted" style="margin-top:12px;">尚未 settled、但已具备交付骨架的候选：速福达课件3 独立金样（MP4+PPTX+content-model）。课件4、可可康全片、风热 v2 通过签样后写入各自 settled 目录。</p>
+</section>
+
+<!-- ========== ROADMAP ========== -->
+<section class="panel" id="tab-roadmap">
+  <div class="kicker">交付收敛路径（建议顺序）</div>
+  <ul class="timeline">
+    <li class="now">
+      <div class="when">P0 · 本周决策</div>
+      <div class="what">课件3 定唯一基线 + 课件4 门禁签样</div>
+      <div class="why">你确认：独立金样 vs 分段 v6 谁是正式线；课件4 compare 是否「同一版本」。未决策则继续双线分叉。</div>
+    </li>
+    <li>
+      <div class="when">P1 · 签样进 settled</div>
+      <div class="what">速福达课件3 → settled；课件4 扩全片后 settled</div>
+      <div class="why">每套：canonical MP4 + 可编辑 PPTX + 业务 Word + manifest + style_pack。过程稿留 validation。</div>
+    </li>
+    <li>
+      <div class="when">P2 · 批量证据</div>
+      <div class="what">Q10 模板跑第二真实商品；课件3 用 demo-product-b 流程换真主题</div>
+      <div class="why">证明「审核稿 + 授权包装 → 可编辑 PPT + 视频」，而非只有金样本身。</div>
+    </li>
+    <li class="block">
+      <div class="when">P3 · 阻塞解除后</div>
+      <div class="what">可可康全片有声金样；风热 v2 替换 settled</div>
+      <div class="why">依赖：医学审核表、授权包装/Logo、公司透明 Logo（风热晋升条件）。</div>
+    </li>
+    <li>
+      <div class="when">P4 · 工厂化</div>
+      <div class="what">Excel 批量、任务队列、网页工作台（方案已写，非当前瓶颈）</div>
+      <div class="why">先有 2–3 条 settled 可复用模板跑通真实业务，再堆工作台功能。</div>
+    </li>
+  </ul>
+
+  <div class="card" style="margin-top:16px;">
+    <div class="card-h"><p class="title">可编辑 PPT + 视频：每条线的完成定义</p></div>
+    <div class="card-b">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>产出</th><th>合格标准</th><th>当前最佳范例</th></tr></thead>
+          <tbody>
+            <tr><td>PPTX</td><td>原生对象可编辑；非视频截图；与视频共用 content-model</td><td>速福达 12 页 · 穿心莲 18 页型</td></tr>
+            <tr><td>MP4</td><td>1080p30 · 旁白/字幕同源 · 响度门禁 · 无黑场</td><td>Q10 settled · 速福达独立金样</td></tr>
+            <tr><td>工程</td><td>Scene/content-model + 稳定元素 ID + 槽位</td><td>sufuda content-model + layer-manifest</td></tr>
+            <tr><td>业务入口</td><td>空白 Word + 填写参考 + 导入脚本</td><td>outputs/业务使用资料包</td></tr>
+            <tr><td>精修</td><td>Revideo 元素级；剪映节奏/字幕级</td><td>决策已锁定，观察期</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CLEANUP ========== -->
+<section class="panel" id="tab-cleanup">
+  <div class="banner warn">
+    下列为<strong>建议</strong>清理顺序。执行前请你点头；默认只做「标记与归档说明」，不做 rm。
+  </div>
+
+  <div class="card">
+    <div class="card-h"><p class="title">阶段 1 · 零风险标记（推荐立刻做）</p></div>
+    <div class="card-b">
+      <ul class="compact">
+        <li>在本页与 review-hub 统一标注「当前基线 / 失败对照 / 禁止母版」</li>
+        <li>课件3 选定唯一正式目录后，在 VERSION/README 写死，其他目录加 <code>SUPERSEDED.md</code></li>
+        <li>注册表增加候选 template 条目时，显式写 <code>status: candidate</code> 与 validation 路径</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><p class="title">阶段 2 · 归档（可释放空间，可恢复）</p></div>
+    <div class="card-b">
+      <ul class="compact">
+        <li>打包移出工作树：tomato 否决线、课件3 v1/v2、v5 中间稿、other-model-*、production-v1 旧 animatic、tmp/、out/ 根临时文件</li>
+        <li>poc/gold-sample/node_modules（~300MB）可重建，不必进备份包</li>
+        <li>保留：每条失败线的 1 份代表性 mp4 + qa-report + lesson 记录即可</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><p class="title">阶段 3 · 物理删除（确认后）</p></div>
+    <div class="card-b">
+      <ul class="compact">
+        <li><code>*-bad-clone-backup.mp4</code>、<code>*-0.mp4</code> 重复渲染、纯 visuals 中间轨（若成片已留）</li>
+        <li>大量重复 wav 分段（仅保留最终混音轨 + 生成脚本参数）</li>
+        <li><code>.venv-qwen-tts</code> 可本地重建，不必当项目资产</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><p class="title">目录心智模型（以后新东西往哪放）</p></div>
+    <div class="card-b">
+<pre style="margin:0;font-size:12px;line-height:1.45;white-space:pre-wrap;">templates/settled/&lt;slug&gt;/     ← 用户签样后的唯一正式包
+validation/&lt;kind&gt;/&lt;line&gt;/     ← 过程/候选/QA（永不静默当生产）
+assets/component-library/     ← 系列化素材（服务已声明槽位）
+outputs/                      ← 业务分发包、分镜预览、批量索引
+poc/                          ← 引擎与导入实现（非交付物）
+tmp/ · out/                   ← 可清临时
+docs/ · tasks/                ← 方案与进度，不堆成片</pre>
+    </div>
+  </div>
+</section>
+
+<p class="note">
+  本页为 2026-08-02 全仓梳理快照。逐条播放审片请用
+  <a href="review-hub.html">review-hub.html</a>。
+  正式查询：<code>python3 scripts/query_production_library.py</code>。
+</p>
+</div>
+
+<script>
+const panels = document.querySelectorAll('.panel');
+const buttons = document.querySelectorAll('#main-nav button');
+function show(id) {
+  panels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
+  buttons.forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+  history.replaceState(null, '', '#' + id);
+}
+buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.tab)));
+const hash = (location.hash || '#overview').slice(1);
+if ([...buttons].some(b => b.dataset.tab === hash)) show(hash);
+</script>
+</body>
+</html>

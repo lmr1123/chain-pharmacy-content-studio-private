@@ -1,0 +1,6821 @@
+[
+  {
+    "file": "01-s01-cover.wav",
+    "text": "最大的十种健康食品中你是否知道番茄是日常餐桌上常见的健康食材它所含的番茄红素也是今天商品知识培训的核心成分",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.34,
+        "text": "最大的十种健康食品中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          25155,
+          30246,
+          5975,
+          50485
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07092884514066908,
+        "compression_ratio": 1.127659574468085,
+        "no_speech_prob": 1.670239120621364e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.5,
+            "probability": 0.95458984375
+          },
+          {
+            "word": "大的",
+            "start": 0.5,
+            "end": 0.88,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "十",
+            "start": 0.88,
+            "end": 1.2,
+            "probability": 0.822265625
+          },
+          {
+            "word": "种",
+            "start": 1.2,
+            "end": 1.44,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "健",
+            "start": 1.44,
+            "end": 1.6,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.6,
+            "end": 1.86,
+            "probability": 1.0
+          },
+          {
+            "word": "食",
+            "start": 1.86,
+            "end": 2.0,
+            "probability": 0.99169921875
+          },
+          {
+            "word": "品",
+            "start": 2.0,
+            "end": 2.16,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "中",
+            "start": 2.16,
+            "end": 2.34,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.8200000000000003,
+        "end": 3.7,
+        "text": "你是否知道",
+        "tokens": [
+          50485,
+          32526,
+          45334,
+          7758,
+          50552
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07092884514066908,
+        "compression_ratio": 1.127659574468085,
+        "no_speech_prob": 1.670239120621364e-11,
+        "words": [
+          {
+            "word": "你是",
+            "start": 2.8200000000000003,
+            "end": 3.2,
+            "probability": 0.97265625
+          },
+          {
+            "word": "否",
+            "start": 3.2,
+            "end": 3.38,
+            "probability": 1.0
+          },
+          {
+            "word": "知道",
+            "start": 3.38,
+            "end": 3.7,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 3.7,
+        "end": 6.96,
+        "text": "番茄是日常餐桌上常见的健康食材",
+        "tokens": [
+          50552,
+          33118,
+          27395,
+          226,
+          1541,
+          6890,
+          11279,
+          22217,
+          238,
+          162,
+          5475,
+          5708,
+          11279,
+          23813,
+          1546,
+          44201,
+          6346,
+          115,
+          25155,
+          4422,
+          238,
+          50714
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07092884514066908,
+        "compression_ratio": 1.127659574468085,
+        "no_speech_prob": 1.670239120621364e-11,
+        "words": [
+          {
+            "word": "番",
+            "start": 3.7,
+            "end": 4.14,
+            "probability": 0.9150390625
+          },
+          {
+            "word": "茄",
+            "start": 4.14,
+            "end": 4.48,
+            "probability": 0.998046875
+          },
+          {
+            "word": "是",
+            "start": 4.48,
+            "end": 4.68,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "日",
+            "start": 4.68,
+            "end": 4.92,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "常",
+            "start": 4.92,
+            "end": 5.12,
+            "probability": 1.0
+          },
+          {
+            "word": "餐",
+            "start": 5.12,
+            "end": 5.34,
+            "probability": 0.998046875
+          },
+          {
+            "word": "桌",
+            "start": 5.34,
+            "end": 5.5,
+            "probability": 1.0
+          },
+          {
+            "word": "上",
+            "start": 5.5,
+            "end": 5.64,
+            "probability": 1.0
+          },
+          {
+            "word": "常",
+            "start": 5.64,
+            "end": 5.9,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "见",
+            "start": 5.9,
+            "end": 6.12,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "的",
+            "start": 6.12,
+            "end": 6.24,
+            "probability": 1.0
+          },
+          {
+            "word": "健",
+            "start": 6.24,
+            "end": 6.38,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 6.38,
+            "end": 6.54,
+            "probability": 1.0
+          },
+          {
+            "word": "食",
+            "start": 6.54,
+            "end": 6.74,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "材",
+            "start": 6.74,
+            "end": 6.96,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 6.96,
+        "end": 8.68,
+        "text": "它所含的番茄红素",
+        "tokens": [
+          50714,
+          11284,
+          5966,
+          2392,
+          104,
+          1546,
+          33118,
+          27395,
+          226,
+          16853,
+          95,
+          37204,
+          50800
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07092884514066908,
+        "compression_ratio": 1.127659574468085,
+        "no_speech_prob": 1.670239120621364e-11,
+        "words": [
+          {
+            "word": "它",
+            "start": 6.96,
+            "end": 7.42,
+            "probability": 0.966796875
+          },
+          {
+            "word": "所",
+            "start": 7.42,
+            "end": 7.64,
+            "probability": 1.0
+          },
+          {
+            "word": "含",
+            "start": 7.64,
+            "end": 7.84,
+            "probability": 1.0
+          },
+          {
+            "word": "的",
+            "start": 7.84,
+            "end": 7.96,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "番",
+            "start": 7.96,
+            "end": 8.14,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "茄",
+            "start": 8.14,
+            "end": 8.34,
+            "probability": 1.0
+          },
+          {
+            "word": "红",
+            "start": 8.34,
+            "end": 8.52,
+            "probability": 0.99365234375
+          },
+          {
+            "word": "素",
+            "start": 8.52,
+            "end": 8.68,
+            "probability": 0.97314453125
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 8.68,
+        "end": 11.44,
+        "text": "也是今天商品知识培训的核心成分",
+        "tokens": [
+          50800,
+          22021,
+          12074,
+          45581,
+          30246,
+          6498,
+          5233,
+          228,
+          16262,
+          117,
+          7422,
+          255,
+          1546,
+          8987,
+          116,
+          7945,
+          11336,
+          6627,
+          50939
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07092884514066908,
+        "compression_ratio": 1.127659574468085,
+        "no_speech_prob": 1.670239120621364e-11,
+        "words": [
+          {
+            "word": "也是",
+            "start": 8.68,
+            "end": 9.28,
+            "probability": 0.998046875
+          },
+          {
+            "word": "今天",
+            "start": 9.28,
+            "end": 9.64,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "商",
+            "start": 9.64,
+            "end": 9.88,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "品",
+            "start": 9.88,
+            "end": 10.06,
+            "probability": 1.0
+          },
+          {
+            "word": "知",
+            "start": 10.06,
+            "end": 10.22,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "识",
+            "start": 10.22,
+            "end": 10.38,
+            "probability": 0.99609375
+          },
+          {
+            "word": "培",
+            "start": 10.38,
+            "end": 10.56,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "训",
+            "start": 10.56,
+            "end": 10.72,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "的",
+            "start": 10.72,
+            "end": 10.82,
+            "probability": 1.0
+          },
+          {
+            "word": "核",
+            "start": 10.82,
+            "end": 11.0,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "心",
+            "start": 11.0,
+            "end": 11.16,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "成",
+            "start": 11.16,
+            "end": 11.28,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "分",
+            "start": 11.28,
+            "end": 11.44,
+            "probability": 0.98388671875
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "02-s02-context.wav",
+    "text": "最大的十种健康视频中在快节奏生活中不少男性会遇到尿频尿疾会因不适或排尿灼痛等问题这些表现可能影响日常生活出现明显或持续不适时应及时就医下面了解福尔迈金利番茄红素软胶囊",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.18,
+        "text": "最大的十种健康视频中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          40656,
+          39752,
+          5975,
+          50478
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.38,
+            "probability": 0.943359375
+          },
+          {
+            "word": "大的",
+            "start": 0.38,
+            "end": 0.7,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "十",
+            "start": 0.7,
+            "end": 1.02,
+            "probability": 0.6904296875
+          },
+          {
+            "word": "种",
+            "start": 1.02,
+            "end": 1.28,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "健",
+            "start": 1.28,
+            "end": 1.48,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.48,
+            "end": 1.7,
+            "probability": 1.0
+          },
+          {
+            "word": "视",
+            "start": 1.7,
+            "end": 1.86,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "频",
+            "start": 1.86,
+            "end": 2.02,
+            "probability": 1.0
+          },
+          {
+            "word": "中",
+            "start": 2.02,
+            "end": 2.18,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.76,
+        "end": 4.24,
+        "text": "在快节奏生活中",
+        "tokens": [
+          50478,
+          3581,
+          10251,
+          45161,
+          1881,
+          237,
+          49958,
+          5975,
+          50580
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "在",
+            "start": 2.76,
+            "end": 3.16,
+            "probability": 0.98193359375
+          },
+          {
+            "word": "快",
+            "start": 3.16,
+            "end": 3.42,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "节",
+            "start": 3.42,
+            "end": 3.62,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "奏",
+            "start": 3.62,
+            "end": 3.74,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "生活",
+            "start": 3.74,
+            "end": 4.04,
+            "probability": 1.0
+          },
+          {
+            "word": "中",
+            "start": 4.04,
+            "end": 4.24,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 4.24,
+        "end": 6.46,
+        "text": "不少男性会遇到尿频",
+        "tokens": [
+          50580,
+          1960,
+          15686,
+          25243,
+          21686,
+          12949,
+          3330,
+          229,
+          4511,
+          1530,
+          123,
+          39752,
+          50691
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "不",
+            "start": 4.24,
+            "end": 4.7,
+            "probability": 0.9365234375
+          },
+          {
+            "word": "少",
+            "start": 4.7,
+            "end": 4.88,
+            "probability": 1.0
+          },
+          {
+            "word": "男",
+            "start": 4.88,
+            "end": 5.08,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "性",
+            "start": 5.08,
+            "end": 5.26,
+            "probability": 0.998046875
+          },
+          {
+            "word": "会",
+            "start": 5.26,
+            "end": 5.44,
+            "probability": 1.0
+          },
+          {
+            "word": "遇",
+            "start": 5.44,
+            "end": 5.58,
+            "probability": 1.0
+          },
+          {
+            "word": "到",
+            "start": 5.58,
+            "end": 5.78,
+            "probability": 1.0
+          },
+          {
+            "word": "尿",
+            "start": 5.78,
+            "end": 6.22,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "频",
+            "start": 6.22,
+            "end": 6.46,
+            "probability": 0.61083984375
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 6.46,
+        "end": 7.32,
+        "text": "尿疾",
+        "tokens": [
+          50691,
+          1530,
+          123,
+          18140,
+          122,
+          50731
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "尿",
+            "start": 6.46,
+            "end": 7.02,
+            "probability": 0.59912109375
+          },
+          {
+            "word": "疾",
+            "start": 7.02,
+            "end": 7.32,
+            "probability": 0.705078125
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 7.32,
+        "end": 8.32,
+        "text": "会因不适",
+        "tokens": [
+          50731,
+          12949,
+          8698,
+          1960,
+          2215,
+          224,
+          50781
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "会",
+            "start": 7.32,
+            "end": 7.7,
+            "probability": 0.81201171875
+          },
+          {
+            "word": "因",
+            "start": 7.7,
+            "end": 7.9,
+            "probability": 0.9462890625
+          },
+          {
+            "word": "不",
+            "start": 7.9,
+            "end": 8.12,
+            "probability": 0.99609375
+          },
+          {
+            "word": "适",
+            "start": 8.12,
+            "end": 8.32,
+            "probability": 0.9775390625
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 8.32,
+        "end": 10.18,
+        "text": "或排尿灼痛等问题",
+        "tokens": [
+          50781,
+          19780,
+          44647,
+          1530,
+          123,
+          13290,
+          120,
+          28737,
+          10187,
+          34069,
+          50877
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "或",
+            "start": 8.32,
+            "end": 8.84,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "排",
+            "start": 8.84,
+            "end": 9.04,
+            "probability": 0.998046875
+          },
+          {
+            "word": "尿",
+            "start": 9.04,
+            "end": 9.3,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "灼",
+            "start": 9.3,
+            "end": 9.54,
+            "probability": 0.7978515625
+          },
+          {
+            "word": "痛",
+            "start": 9.54,
+            "end": 9.7,
+            "probability": 0.97412109375
+          },
+          {
+            "word": "等",
+            "start": 9.7,
+            "end": 9.86,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "问题",
+            "start": 9.86,
+            "end": 10.18,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 10.18,
+        "end": 12.46,
+        "text": "这些表现可能影响日常生活",
+        "tokens": [
+          50877,
+          5562,
+          13824,
+          17571,
+          20204,
+          16657,
+          16820,
+          3858,
+          235,
+          6890,
+          11279,
+          49958,
+          50992
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "这",
+            "start": 10.18,
+            "end": 10.82,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "些",
+            "start": 10.82,
+            "end": 10.94,
+            "probability": 1.0
+          },
+          {
+            "word": "表",
+            "start": 10.94,
+            "end": 11.08,
+            "probability": 1.0
+          },
+          {
+            "word": "现",
+            "start": 11.08,
+            "end": 11.26,
+            "probability": 1.0
+          },
+          {
+            "word": "可能",
+            "start": 11.26,
+            "end": 11.48,
+            "probability": 1.0
+          },
+          {
+            "word": "影",
+            "start": 11.48,
+            "end": 11.7,
+            "probability": 1.0
+          },
+          {
+            "word": "响",
+            "start": 11.7,
+            "end": 11.84,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "日",
+            "start": 11.84,
+            "end": 11.98,
+            "probability": 1.0
+          },
+          {
+            "word": "常",
+            "start": 11.98,
+            "end": 12.14,
+            "probability": 1.0
+          },
+          {
+            "word": "生活",
+            "start": 12.14,
+            "end": 12.46,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 0,
+        "start": 12.46,
+        "end": 14.82,
+        "text": "出现明显或持续不适时",
+        "tokens": [
+          50992,
+          7781,
+          20204,
+          11100,
+          1431,
+          122,
+          19780,
+          17694,
+          10115,
+          255,
+          1960,
+          2215,
+          224,
+          15729,
+          51108
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "出",
+            "start": 12.46,
+            "end": 13.12,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "现",
+            "start": 13.12,
+            "end": 13.28,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "明",
+            "start": 13.28,
+            "end": 13.46,
+            "probability": 1.0
+          },
+          {
+            "word": "显",
+            "start": 13.46,
+            "end": 13.72,
+            "probability": 1.0
+          },
+          {
+            "word": "或",
+            "start": 13.72,
+            "end": 13.9,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "持",
+            "start": 13.9,
+            "end": 14.08,
+            "probability": 1.0
+          },
+          {
+            "word": "续",
+            "start": 14.08,
+            "end": 14.26,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "不",
+            "start": 14.26,
+            "end": 14.44,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "适",
+            "start": 14.44,
+            "end": 14.6,
+            "probability": 1.0
+          },
+          {
+            "word": "时",
+            "start": 14.6,
+            "end": 14.82,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "seek": 0,
+        "start": 14.82,
+        "end": 16.56,
+        "text": "应及时就医",
+        "tokens": [
+          51108,
+          44297,
+          25703,
+          15729,
+          3111,
+          9937,
+          119,
+          51175
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "应",
+            "start": 14.82,
+            "end": 15.34,
+            "probability": 0.998046875
+          },
+          {
+            "word": "及",
+            "start": 15.34,
+            "end": 15.6,
+            "probability": 0.9658203125
+          },
+          {
+            "word": "时",
+            "start": 15.6,
+            "end": 15.84,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "就",
+            "start": 15.84,
+            "end": 15.98,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "医",
+            "start": 15.98,
+            "end": 16.56,
+            "probability": 0.99853515625
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "seek": 0,
+        "start": 16.56,
+        "end": 18.3,
+        "text": "下面了解福尔迈金利",
+        "tokens": [
+          51175,
+          47150,
+          2289,
+          17278,
+          33952,
+          1530,
+          242,
+          3316,
+          230,
+          19117,
+          23700,
+          51281
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "下面",
+            "start": 16.56,
+            "end": 16.9,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "了",
+            "start": 16.9,
+            "end": 17.1,
+            "probability": 0.998046875
+          },
+          {
+            "word": "解",
+            "start": 17.1,
+            "end": 17.32,
+            "probability": 1.0
+          },
+          {
+            "word": "福",
+            "start": 17.32,
+            "end": 17.7,
+            "probability": 0.9794921875
+          },
+          {
+            "word": "尔",
+            "start": 17.7,
+            "end": 17.84,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "迈",
+            "start": 17.84,
+            "end": 18.0,
+            "probability": 0.70703125
+          },
+          {
+            "word": "金",
+            "start": 18.0,
+            "end": 18.14,
+            "probability": 0.94189453125
+          },
+          {
+            "word": "利",
+            "start": 18.14,
+            "end": 18.3,
+            "probability": 0.86865234375
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "seek": 0,
+        "start": 18.3,
+        "end": 19.72,
+        "text": "番茄红素软胶囊",
+        "tokens": [
+          51281,
+          33118,
+          27395,
+          226,
+          16853,
+          95,
+          37204,
+          17819,
+          107,
+          19095,
+          114,
+          3919,
+          232,
+          51354
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10902600248983084,
+        "compression_ratio": 1.1745283018867925,
+        "no_speech_prob": 1.7438307742256853e-11,
+        "words": [
+          {
+            "word": "番",
+            "start": 18.3,
+            "end": 18.68,
+            "probability": 0.90771484375
+          },
+          {
+            "word": "茄",
+            "start": 18.68,
+            "end": 18.9,
+            "probability": 0.99609375
+          },
+          {
+            "word": "红",
+            "start": 18.9,
+            "end": 19.06,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "素",
+            "start": 19.06,
+            "end": 19.22,
+            "probability": 0.9912109375
+          },
+          {
+            "word": "软",
+            "start": 19.22,
+            "end": 19.42,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "胶",
+            "start": 19.42,
+            "end": 19.6,
+            "probability": 0.99609375
+          },
+          {
+            "word": "囊",
+            "start": 19.6,
+            "end": 19.72,
+            "probability": 0.9990234375
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "03-s03-benefit-prostate.wav",
+    "text": "最大的十种健康视频中第一 按业务提供的包装功能信息产品核心关注前列腺保护与精子活力从成分科普角度番茄红素具有抗氧化活性产品具体功能以食物标签和说明书为准",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.1,
+        "text": "最大的十种健康视频中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          40656,
+          39752,
+          5975,
+          50473
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07613417787371941,
+        "compression_ratio": 1.135678391959799,
+        "no_speech_prob": 1.7160526472048687e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.4,
+            "probability": 0.9130859375
+          },
+          {
+            "word": "大的",
+            "start": 0.4,
+            "end": 0.72,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "十",
+            "start": 0.72,
+            "end": 1.04,
+            "probability": 0.7412109375
+          },
+          {
+            "word": "种",
+            "start": 1.04,
+            "end": 1.3,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "健",
+            "start": 1.3,
+            "end": 1.48,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.48,
+            "end": 1.66,
+            "probability": 1.0
+          },
+          {
+            "word": "视",
+            "start": 1.66,
+            "end": 1.8,
+            "probability": 0.6630859375
+          },
+          {
+            "word": "频",
+            "start": 1.8,
+            "end": 1.94,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "中",
+            "start": 1.94,
+            "end": 2.1,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.9000000000000004,
+        "end": 5.58,
+        "text": "第一 按业务提供的包装功能信息",
+        "tokens": [
+          50473,
+          18049,
+          220,
+          26613,
+          940,
+          248,
+          5087,
+          94,
+          20949,
+          3254,
+          249,
+          1546,
+          23305,
+          8083,
+          227,
+          32311,
+          8225,
+          17665,
+          26460,
+          50647
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07613417787371941,
+        "compression_ratio": 1.135678391959799,
+        "no_speech_prob": 1.7160526472048687e-11,
+        "words": [
+          {
+            "word": "第一",
+            "start": 2.9000000000000004,
+            "end": 3.2600000000000002,
+            "probability": 0.978515625
+          },
+          {
+            "word": " 按",
+            "start": 3.2600000000000002,
+            "end": 3.62,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "业",
+            "start": 3.62,
+            "end": 3.84,
+            "probability": 0.998046875
+          },
+          {
+            "word": "务",
+            "start": 3.84,
+            "end": 3.98,
+            "probability": 1.0
+          },
+          {
+            "word": "提",
+            "start": 3.98,
+            "end": 4.16,
+            "probability": 1.0
+          },
+          {
+            "word": "供",
+            "start": 4.16,
+            "end": 4.36,
+            "probability": 1.0
+          },
+          {
+            "word": "的",
+            "start": 4.36,
+            "end": 4.48,
+            "probability": 1.0
+          },
+          {
+            "word": "包",
+            "start": 4.48,
+            "end": 4.7,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "装",
+            "start": 4.7,
+            "end": 4.9,
+            "probability": 1.0
+          },
+          {
+            "word": "功",
+            "start": 4.9,
+            "end": 5.04,
+            "probability": 1.0
+          },
+          {
+            "word": "能",
+            "start": 5.04,
+            "end": 5.2,
+            "probability": 1.0
+          },
+          {
+            "word": "信",
+            "start": 5.2,
+            "end": 5.36,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "息",
+            "start": 5.36,
+            "end": 5.58,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 5.58,
+        "end": 9.28,
+        "text": "产品核心关注前列腺保护与精子活力",
+        "tokens": [
+          50647,
+          1369,
+          100,
+          30246,
+          8987,
+          116,
+          7945,
+          28053,
+          26432,
+          8945,
+          43338,
+          21184,
+          118,
+          24302,
+          7235,
+          97,
+          940,
+          236,
+          34910,
+          7626,
+          25956,
+          13486,
+          50830
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07613417787371941,
+        "compression_ratio": 1.135678391959799,
+        "no_speech_prob": 1.7160526472048687e-11,
+        "words": [
+          {
+            "word": "产",
+            "start": 5.58,
+            "end": 6.14,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "品",
+            "start": 6.14,
+            "end": 6.34,
+            "probability": 1.0
+          },
+          {
+            "word": "核",
+            "start": 6.34,
+            "end": 6.56,
+            "probability": 0.998046875
+          },
+          {
+            "word": "心",
+            "start": 6.56,
+            "end": 6.7,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "关",
+            "start": 6.7,
+            "end": 6.86,
+            "probability": 1.0
+          },
+          {
+            "word": "注",
+            "start": 6.86,
+            "end": 7.02,
+            "probability": 1.0
+          },
+          {
+            "word": "前",
+            "start": 7.02,
+            "end": 7.36,
+            "probability": 0.94482421875
+          },
+          {
+            "word": "列",
+            "start": 7.36,
+            "end": 7.56,
+            "probability": 0.998046875
+          },
+          {
+            "word": "腺",
+            "start": 7.56,
+            "end": 7.74,
+            "probability": 0.8564453125
+          },
+          {
+            "word": "保",
+            "start": 7.74,
+            "end": 7.94,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "护",
+            "start": 7.94,
+            "end": 8.24,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "与",
+            "start": 8.24,
+            "end": 8.56,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "精",
+            "start": 8.56,
+            "end": 8.7,
+            "probability": 0.9892578125
+          },
+          {
+            "word": "子",
+            "start": 8.7,
+            "end": 8.9,
+            "probability": 0.984375
+          },
+          {
+            "word": "活",
+            "start": 8.9,
+            "end": 9.1,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "力",
+            "start": 9.1,
+            "end": 9.28,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 9.28,
+        "end": 10.92,
+        "text": "从成分科普角度",
+        "tokens": [
+          50830,
+          35630,
+          11336,
+          6627,
+          42091,
+          29993,
+          29389,
+          13127,
+          50913
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07613417787371941,
+        "compression_ratio": 1.135678391959799,
+        "no_speech_prob": 1.7160526472048687e-11,
+        "words": [
+          {
+            "word": "从",
+            "start": 9.28,
+            "end": 9.74,
+            "probability": 0.994140625
+          },
+          {
+            "word": "成",
+            "start": 9.74,
+            "end": 9.98,
+            "probability": 1.0
+          },
+          {
+            "word": "分",
+            "start": 9.98,
+            "end": 10.2,
+            "probability": 0.98828125
+          },
+          {
+            "word": "科",
+            "start": 10.2,
+            "end": 10.4,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "普",
+            "start": 10.4,
+            "end": 10.56,
+            "probability": 0.9892578125
+          },
+          {
+            "word": "角",
+            "start": 10.56,
+            "end": 10.72,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "度",
+            "start": 10.72,
+            "end": 10.92,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 10.92,
+        "end": 13.0,
+        "text": "番茄红素具有抗氧化活性",
+        "tokens": [
+          50913,
+          33118,
+          27395,
+          226,
+          16853,
+          95,
+          37204,
+          39806,
+          2412,
+          7235,
+          245,
+          6610,
+          100,
+          23756,
+          25956,
+          21686,
+          51017
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07613417787371941,
+        "compression_ratio": 1.135678391959799,
+        "no_speech_prob": 1.7160526472048687e-11,
+        "words": [
+          {
+            "word": "番",
+            "start": 10.92,
+            "end": 11.32,
+            "probability": 0.10198974609375
+          },
+          {
+            "word": "茄",
+            "start": 11.32,
+            "end": 11.56,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "红",
+            "start": 11.56,
+            "end": 11.74,
+            "probability": 0.9892578125
+          },
+          {
+            "word": "素",
+            "start": 11.74,
+            "end": 11.9,
+            "probability": 0.98974609375
+          },
+          {
+            "word": "具",
+            "start": 11.9,
+            "end": 12.02,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "有",
+            "start": 12.02,
+            "end": 12.18,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "抗",
+            "start": 12.18,
+            "end": 12.36,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "氧",
+            "start": 12.36,
+            "end": 12.5,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "化",
+            "start": 12.5,
+            "end": 12.66,
+            "probability": 1.0
+          },
+          {
+            "word": "活",
+            "start": 12.66,
+            "end": 12.82,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "性",
+            "start": 12.82,
+            "end": 13.0,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 13.0,
+        "end": 16.36,
+        "text": "产品具体功能以食物标签和说明书为准",
+        "tokens": [
+          51017,
+          1369,
+          100,
+          30246,
+          39806,
+          29485,
+          32311,
+          8225,
+          3588,
+          25155,
+          23516,
+          162,
+          3921,
+          7973,
+          122,
+          12565,
+          8090,
+          11100,
+          2930,
+          99,
+          13992,
+          6336,
+          228,
+          51184
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.07613417787371941,
+        "compression_ratio": 1.135678391959799,
+        "no_speech_prob": 1.7160526472048687e-11,
+        "words": [
+          {
+            "word": "产",
+            "start": 13.0,
+            "end": 13.6,
+            "probability": 1.0
+          },
+          {
+            "word": "品",
+            "start": 13.6,
+            "end": 13.78,
+            "probability": 1.0
+          },
+          {
+            "word": "具",
+            "start": 13.78,
+            "end": 13.98,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "体",
+            "start": 13.98,
+            "end": 14.12,
+            "probability": 1.0
+          },
+          {
+            "word": "功",
+            "start": 14.12,
+            "end": 14.28,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "能",
+            "start": 14.28,
+            "end": 14.44,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "以",
+            "start": 14.44,
+            "end": 14.74,
+            "probability": 0.99609375
+          },
+          {
+            "word": "食",
+            "start": 14.74,
+            "end": 14.96,
+            "probability": 0.76123046875
+          },
+          {
+            "word": "物",
+            "start": 14.96,
+            "end": 15.1,
+            "probability": 0.998046875
+          },
+          {
+            "word": "标",
+            "start": 15.1,
+            "end": 15.3,
+            "probability": 1.0
+          },
+          {
+            "word": "签",
+            "start": 15.3,
+            "end": 15.48,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "和",
+            "start": 15.48,
+            "end": 15.64,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "说",
+            "start": 15.64,
+            "end": 15.8,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "明",
+            "start": 15.8,
+            "end": 15.92,
+            "probability": 1.0
+          },
+          {
+            "word": "书",
+            "start": 15.92,
+            "end": 16.08,
+            "probability": 1.0
+          },
+          {
+            "word": "为",
+            "start": 16.08,
+            "end": 16.2,
+            "probability": 1.0
+          },
+          {
+            "word": "准",
+            "start": 16.2,
+            "end": 16.36,
+            "probability": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "04-s04-benefit-antioxidant.wav",
+    "text": "最大的十种健康视频中第二 抗氧化番茄红素是一种类胡萝卜素可以参与单线泰氧和自由基相关反应本课只做成分知识介绍不使用未经核验的倍数比较或疗效承诺",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.14,
+        "text": "最大的十种健康视频中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          40656,
+          39752,
+          5975,
+          50476
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08551826664045745,
+        "compression_ratio": 1.122340425531915,
+        "no_speech_prob": 1.8267451787346012e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.34,
+            "probability": 0.9375
+          },
+          {
+            "word": "大的",
+            "start": 0.34,
+            "end": 0.7,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "十",
+            "start": 0.7,
+            "end": 1.0,
+            "probability": 0.72607421875
+          },
+          {
+            "word": "种",
+            "start": 1.0,
+            "end": 1.22,
+            "probability": 0.998046875
+          },
+          {
+            "word": "健",
+            "start": 1.22,
+            "end": 1.42,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.42,
+            "end": 1.62,
+            "probability": 1.0
+          },
+          {
+            "word": "视",
+            "start": 1.62,
+            "end": 1.78,
+            "probability": 0.82666015625
+          },
+          {
+            "word": "频",
+            "start": 1.78,
+            "end": 1.94,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "中",
+            "start": 1.94,
+            "end": 2.14,
+            "probability": 0.998046875
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 3.0599999999999987,
+        "end": 4.52,
+        "text": "第二 抗氧化",
+        "tokens": [
+          50476,
+          19693,
+          220,
+          7235,
+          245,
+          6610,
+          100,
+          23756,
+          50593
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08551826664045745,
+        "compression_ratio": 1.122340425531915,
+        "no_speech_prob": 1.8267451787346012e-11,
+        "words": [
+          {
+            "word": "第二",
+            "start": 3.0599999999999987,
+            "end": 3.42,
+            "probability": 0.9853515625
+          },
+          {
+            "word": " 抗",
+            "start": 3.88,
+            "end": 4.06,
+            "probability": 0.99609375
+          },
+          {
+            "word": "氧",
+            "start": 4.06,
+            "end": 4.26,
+            "probability": 0.99169921875
+          },
+          {
+            "word": "化",
+            "start": 4.26,
+            "end": 4.52,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 4.919999999999999,
+        "end": 7.2,
+        "text": "番茄红素是一种类胡萝卜素",
+        "tokens": [
+          50593,
+          33118,
+          27395,
+          226,
+          16853,
+          95,
+          37204,
+          1541,
+          2257,
+          39810,
+          22113,
+          119,
+          43861,
+          10674,
+          251,
+          5322,
+          250,
+          37204,
+          50728
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08551826664045745,
+        "compression_ratio": 1.122340425531915,
+        "no_speech_prob": 1.8267451787346012e-11,
+        "words": [
+          {
+            "word": "番",
+            "start": 4.919999999999999,
+            "end": 5.28,
+            "probability": 0.517578125
+          },
+          {
+            "word": "茄",
+            "start": 5.28,
+            "end": 5.54,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "红",
+            "start": 5.54,
+            "end": 5.76,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "素",
+            "start": 5.76,
+            "end": 5.94,
+            "probability": 0.98876953125
+          },
+          {
+            "word": "是",
+            "start": 5.94,
+            "end": 6.18,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "一",
+            "start": 6.18,
+            "end": 6.28,
+            "probability": 1.0
+          },
+          {
+            "word": "种",
+            "start": 6.28,
+            "end": 6.44,
+            "probability": 1.0
+          },
+          {
+            "word": "类",
+            "start": 6.44,
+            "end": 6.7,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "胡",
+            "start": 6.7,
+            "end": 6.78,
+            "probability": 0.9921875
+          },
+          {
+            "word": "萝",
+            "start": 6.78,
+            "end": 6.94,
+            "probability": 0.99609375
+          },
+          {
+            "word": "卜",
+            "start": 6.94,
+            "end": 7.1,
+            "probability": 0.998046875
+          },
+          {
+            "word": "素",
+            "start": 7.1,
+            "end": 7.2,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 7.2,
+        "end": 10.32,
+        "text": "可以参与单线泰氧和自由基相关反应",
+        "tokens": [
+          50728,
+          6723,
+          2129,
+          224,
+          940,
+          236,
+          47446,
+          16853,
+          123,
+          6847,
+          108,
+          6610,
+          100,
+          12565,
+          45233,
+          26008,
+          15106,
+          28053,
+          22138,
+          44297,
+          50884
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08551826664045745,
+        "compression_ratio": 1.122340425531915,
+        "no_speech_prob": 1.8267451787346012e-11,
+        "words": [
+          {
+            "word": "可以",
+            "start": 7.2,
+            "end": 7.86,
+            "probability": 0.99609375
+          },
+          {
+            "word": "参",
+            "start": 7.86,
+            "end": 8.06,
+            "probability": 1.0
+          },
+          {
+            "word": "与",
+            "start": 8.06,
+            "end": 8.22,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "单",
+            "start": 8.22,
+            "end": 8.36,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "线",
+            "start": 8.36,
+            "end": 8.64,
+            "probability": 0.99609375
+          },
+          {
+            "word": "泰",
+            "start": 8.64,
+            "end": 8.82,
+            "probability": 0.7333984375
+          },
+          {
+            "word": "氧",
+            "start": 8.82,
+            "end": 9.0,
+            "probability": 0.9658203125
+          },
+          {
+            "word": "和",
+            "start": 9.0,
+            "end": 9.14,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "自由",
+            "start": 9.14,
+            "end": 9.4,
+            "probability": 0.99609375
+          },
+          {
+            "word": "基",
+            "start": 9.4,
+            "end": 9.58,
+            "probability": 0.955078125
+          },
+          {
+            "word": "相",
+            "start": 9.58,
+            "end": 9.8,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "关",
+            "start": 9.8,
+            "end": 9.96,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "反",
+            "start": 9.96,
+            "end": 10.1,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "应",
+            "start": 10.1,
+            "end": 10.32,
+            "probability": 0.9873046875
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 10.32,
+        "end": 12.48,
+        "text": "本课只做成分知识介绍",
+        "tokens": [
+          50884,
+          8802,
+          5233,
+          122,
+          14003,
+          10907,
+          11336,
+          6627,
+          6498,
+          5233,
+          228,
+          30312,
+          10115,
+          235,
+          50989
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08551826664045745,
+        "compression_ratio": 1.122340425531915,
+        "no_speech_prob": 1.8267451787346012e-11,
+        "words": [
+          {
+            "word": "本",
+            "start": 10.32,
+            "end": 10.9,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "课",
+            "start": 10.9,
+            "end": 11.1,
+            "probability": 0.97509765625
+          },
+          {
+            "word": "只",
+            "start": 11.1,
+            "end": 11.28,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "做",
+            "start": 11.28,
+            "end": 11.44,
+            "probability": 0.91064453125
+          },
+          {
+            "word": "成",
+            "start": 11.44,
+            "end": 11.66,
+            "probability": 1.0
+          },
+          {
+            "word": "分",
+            "start": 11.66,
+            "end": 11.86,
+            "probability": 0.97802734375
+          },
+          {
+            "word": "知",
+            "start": 11.86,
+            "end": 12.02,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "识",
+            "start": 12.02,
+            "end": 12.14,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "介",
+            "start": 12.14,
+            "end": 12.3,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "绍",
+            "start": 12.3,
+            "end": 12.48,
+            "probability": 0.998046875
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 12.48,
+        "end": 15.82,
+        "text": "不使用未经核验的倍数比较或疗效承诺",
+        "tokens": [
+          50989,
+          1960,
+          22982,
+          9254,
+          29954,
+          30276,
+          8987,
+          116,
+          49657,
+          234,
+          1546,
+          35477,
+          33188,
+          11706,
+          9830,
+          225,
+          19780,
+          18140,
+          245,
+          43076,
+          3416,
+          123,
+          5233,
+          118,
+          51157
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08551826664045745,
+        "compression_ratio": 1.122340425531915,
+        "no_speech_prob": 1.8267451787346012e-11,
+        "words": [
+          {
+            "word": "不",
+            "start": 12.48,
+            "end": 12.92,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "使",
+            "start": 12.92,
+            "end": 13.1,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "用",
+            "start": 13.1,
+            "end": 13.24,
+            "probability": 1.0
+          },
+          {
+            "word": "未",
+            "start": 13.24,
+            "end": 13.42,
+            "probability": 0.984375
+          },
+          {
+            "word": "经",
+            "start": 13.42,
+            "end": 13.58,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "核",
+            "start": 13.58,
+            "end": 13.82,
+            "probability": 0.9375
+          },
+          {
+            "word": "验",
+            "start": 13.82,
+            "end": 13.98,
+            "probability": 0.8193359375
+          },
+          {
+            "word": "的",
+            "start": 13.98,
+            "end": 14.08,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "倍",
+            "start": 14.08,
+            "end": 14.2,
+            "probability": 0.76611328125
+          },
+          {
+            "word": "数",
+            "start": 14.2,
+            "end": 14.4,
+            "probability": 0.96826171875
+          },
+          {
+            "word": "比",
+            "start": 14.4,
+            "end": 14.64,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "较",
+            "start": 14.64,
+            "end": 14.88,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "或",
+            "start": 14.88,
+            "end": 15.12,
+            "probability": 0.99609375
+          },
+          {
+            "word": "疗",
+            "start": 15.12,
+            "end": 15.34,
+            "probability": 0.98046875
+          },
+          {
+            "word": "效",
+            "start": 15.34,
+            "end": 15.48,
+            "probability": 0.998046875
+          },
+          {
+            "word": "承",
+            "start": 15.48,
+            "end": 15.66,
+            "probability": 0.998046875
+          },
+          {
+            "word": "诺",
+            "start": 15.66,
+            "end": 15.82,
+            "probability": 0.99609375
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "05-s05-benefit-immunity.wav",
+    "text": "最大的10种健康食品中第三按业务提供的包装功能信息产品关注增强免疫力成分科普可介绍番茄红素的抗氧化活性但营养补充不替代均衡饮食运动和医疗建议",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.26,
+        "text": "最大的10种健康食品中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          3279,
+          39810,
+          44201,
+          6346,
+          115,
+          25155,
+          30246,
+          5975,
+          50481
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08727017155400028,
+        "compression_ratio": 1.08994708994709,
+        "no_speech_prob": 2.0460367775032573e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.42,
+            "probability": 0.88330078125
+          },
+          {
+            "word": "大的",
+            "start": 0.42,
+            "end": 0.76,
+            "probability": 0.998046875
+          },
+          {
+            "word": "10",
+            "start": 0.76,
+            "end": 1.08,
+            "probability": 0.45166015625
+          },
+          {
+            "word": "种",
+            "start": 1.08,
+            "end": 1.3,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "健",
+            "start": 1.3,
+            "end": 1.5,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.5,
+            "end": 1.72,
+            "probability": 1.0
+          },
+          {
+            "word": "食",
+            "start": 1.72,
+            "end": 1.88,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "品",
+            "start": 1.88,
+            "end": 2.08,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "中",
+            "start": 2.08,
+            "end": 2.26,
+            "probability": 0.9970703125
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.26,
+        "end": 2.96,
+        "text": "第三",
+        "tokens": [
+          50481,
+          35878,
+          50515
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08727017155400028,
+        "compression_ratio": 1.08994708994709,
+        "no_speech_prob": 2.0460367775032573e-11,
+        "words": [
+          {
+            "word": "第三",
+            "start": 2.26,
+            "end": 2.96,
+            "probability": 0.9697265625
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 2.96,
+        "end": 5.62,
+        "text": "按业务提供的包装功能信息",
+        "tokens": [
+          50515,
+          26613,
+          940,
+          248,
+          5087,
+          94,
+          20949,
+          3254,
+          249,
+          1546,
+          23305,
+          8083,
+          227,
+          32311,
+          8225,
+          17665,
+          26460,
+          50649
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08727017155400028,
+        "compression_ratio": 1.08994708994709,
+        "no_speech_prob": 2.0460367775032573e-11,
+        "words": [
+          {
+            "word": "按",
+            "start": 2.96,
+            "end": 3.56,
+            "probability": 0.1002197265625
+          },
+          {
+            "word": "业",
+            "start": 3.56,
+            "end": 3.78,
+            "probability": 0.9873046875
+          },
+          {
+            "word": "务",
+            "start": 3.78,
+            "end": 3.94,
+            "probability": 1.0
+          },
+          {
+            "word": "提",
+            "start": 3.94,
+            "end": 4.1,
+            "probability": 1.0
+          },
+          {
+            "word": "供",
+            "start": 4.1,
+            "end": 4.28,
+            "probability": 1.0
+          },
+          {
+            "word": "的",
+            "start": 4.28,
+            "end": 4.4,
+            "probability": 1.0
+          },
+          {
+            "word": "包",
+            "start": 4.4,
+            "end": 4.64,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "装",
+            "start": 4.64,
+            "end": 4.86,
+            "probability": 1.0
+          },
+          {
+            "word": "功",
+            "start": 4.86,
+            "end": 5.04,
+            "probability": 1.0
+          },
+          {
+            "word": "能",
+            "start": 5.04,
+            "end": 5.22,
+            "probability": 1.0
+          },
+          {
+            "word": "信",
+            "start": 5.22,
+            "end": 5.38,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "息",
+            "start": 5.38,
+            "end": 5.62,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 5.62,
+        "end": 7.58,
+        "text": "产品关注增强免疫力",
+        "tokens": [
+          50649,
+          1369,
+          100,
+          30246,
+          28053,
+          26432,
+          24228,
+          252,
+          5702,
+          118,
+          2347,
+          235,
+          31670,
+          13486,
+          50747
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08727017155400028,
+        "compression_ratio": 1.08994708994709,
+        "no_speech_prob": 2.0460367775032573e-11,
+        "words": [
+          {
+            "word": "产",
+            "start": 5.62,
+            "end": 6.12,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "品",
+            "start": 6.12,
+            "end": 6.26,
+            "probability": 1.0
+          },
+          {
+            "word": "关",
+            "start": 6.26,
+            "end": 6.46,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "注",
+            "start": 6.46,
+            "end": 6.62,
+            "probability": 1.0
+          },
+          {
+            "word": "增",
+            "start": 6.62,
+            "end": 6.88,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "强",
+            "start": 6.88,
+            "end": 7.04,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "免",
+            "start": 7.04,
+            "end": 7.26,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "疫",
+            "start": 7.26,
+            "end": 7.4,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "力",
+            "start": 7.4,
+            "end": 7.58,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 7.58,
+        "end": 11.14,
+        "text": "成分科普可介绍番茄红素的抗氧化活性",
+        "tokens": [
+          50747,
+          11336,
+          6627,
+          42091,
+          29993,
+          4429,
+          30312,
+          10115,
+          235,
+          33118,
+          27395,
+          226,
+          16853,
+          95,
+          37204,
+          1546,
+          7235,
+          245,
+          6610,
+          100,
+          23756,
+          25956,
+          21686,
+          50924
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08727017155400028,
+        "compression_ratio": 1.08994708994709,
+        "no_speech_prob": 2.0460367775032573e-11,
+        "words": [
+          {
+            "word": "成",
+            "start": 7.58,
+            "end": 8.08,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "分",
+            "start": 8.08,
+            "end": 8.28,
+            "probability": 0.9853515625
+          },
+          {
+            "word": "科",
+            "start": 8.28,
+            "end": 8.44,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "普",
+            "start": 8.44,
+            "end": 8.7,
+            "probability": 0.99072265625
+          },
+          {
+            "word": "可",
+            "start": 8.7,
+            "end": 8.96,
+            "probability": 0.998046875
+          },
+          {
+            "word": "介",
+            "start": 8.96,
+            "end": 9.12,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "绍",
+            "start": 9.12,
+            "end": 9.32,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "番",
+            "start": 9.32,
+            "end": 9.48,
+            "probability": 0.93798828125
+          },
+          {
+            "word": "茄",
+            "start": 9.48,
+            "end": 9.72,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "红",
+            "start": 9.72,
+            "end": 9.92,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "素",
+            "start": 9.92,
+            "end": 10.08,
+            "probability": 0.994140625
+          },
+          {
+            "word": "的",
+            "start": 10.08,
+            "end": 10.2,
+            "probability": 1.0
+          },
+          {
+            "word": "抗",
+            "start": 10.2,
+            "end": 10.42,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "氧",
+            "start": 10.42,
+            "end": 10.58,
+            "probability": 0.998046875
+          },
+          {
+            "word": "化",
+            "start": 10.58,
+            "end": 10.76,
+            "probability": 1.0
+          },
+          {
+            "word": "活",
+            "start": 10.76,
+            "end": 10.92,
+            "probability": 0.998046875
+          },
+          {
+            "word": "性",
+            "start": 10.92,
+            "end": 11.14,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 11.14,
+        "end": 13.96,
+        "text": "但营养补充不替代均衡饮食",
+        "tokens": [
+          50924,
+          8395,
+          10674,
+          98,
+          2347,
+          119,
+          9890,
+          98,
+          2347,
+          227,
+          1960,
+          9531,
+          123,
+          19105,
+          14872,
+          229,
+          9890,
+          94,
+          41520,
+          106,
+          25155,
+          51064
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08727017155400028,
+        "compression_ratio": 1.08994708994709,
+        "no_speech_prob": 2.0460367775032573e-11,
+        "words": [
+          {
+            "word": "但",
+            "start": 11.14,
+            "end": 11.62,
+            "probability": 0.998046875
+          },
+          {
+            "word": "营",
+            "start": 11.62,
+            "end": 11.86,
+            "probability": 0.998046875
+          },
+          {
+            "word": "养",
+            "start": 11.86,
+            "end": 12.04,
+            "probability": 0.998046875
+          },
+          {
+            "word": "补",
+            "start": 12.04,
+            "end": 12.24,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "充",
+            "start": 12.24,
+            "end": 12.44,
+            "probability": 1.0
+          },
+          {
+            "word": "不",
+            "start": 12.44,
+            "end": 12.74,
+            "probability": 0.998046875
+          },
+          {
+            "word": "替",
+            "start": 12.74,
+            "end": 12.88,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "代",
+            "start": 12.88,
+            "end": 13.04,
+            "probability": 0.99267578125
+          },
+          {
+            "word": "均",
+            "start": 13.04,
+            "end": 13.3,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "衡",
+            "start": 13.3,
+            "end": 13.5,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "饮",
+            "start": 13.5,
+            "end": 13.72,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "食",
+            "start": 13.72,
+            "end": 13.96,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 13.96,
+        "end": 15.5,
+        "text": "运动和医疗建议",
+        "tokens": [
+          51064,
+          3316,
+          238,
+          34961,
+          12565,
+          9937,
+          119,
+          18140,
+          245,
+          34157,
+          7422,
+          106,
+          51139
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08727017155400028,
+        "compression_ratio": 1.08994708994709,
+        "no_speech_prob": 2.0460367775032573e-11,
+        "words": [
+          {
+            "word": "运",
+            "start": 13.96,
+            "end": 14.4,
+            "probability": 0.8330078125
+          },
+          {
+            "word": "动",
+            "start": 14.4,
+            "end": 14.56,
+            "probability": 1.0
+          },
+          {
+            "word": "和",
+            "start": 14.56,
+            "end": 14.76,
+            "probability": 1.0
+          },
+          {
+            "word": "医",
+            "start": 14.76,
+            "end": 14.94,
+            "probability": 1.0
+          },
+          {
+            "word": "疗",
+            "start": 14.94,
+            "end": 15.1,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "建",
+            "start": 15.1,
+            "end": 15.24,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "议",
+            "start": 15.24,
+            "end": 15.5,
+            "probability": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "06-s06-feature-origin.wav",
+    "text": "最大的十种健康食品中产品特点第一项原料产地条件新疆日照时间长昼夜温差明显适合番茄生长门店介绍时应避免最好等绝对化用语产地信息也要以企业最新批词资料为准",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.16,
+        "text": "最大的十种健康食品中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          25155,
+          30246,
+          5975,
+          50475
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.3,
+            "probability": 0.8720703125
+          },
+          {
+            "word": "大的",
+            "start": 0.3,
+            "end": 0.66,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "十",
+            "start": 0.66,
+            "end": 0.98,
+            "probability": 0.6630859375
+          },
+          {
+            "word": "种",
+            "start": 0.98,
+            "end": 1.24,
+            "probability": 0.998046875
+          },
+          {
+            "word": "健",
+            "start": 1.24,
+            "end": 1.44,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.44,
+            "end": 1.66,
+            "probability": 1.0
+          },
+          {
+            "word": "食",
+            "start": 1.66,
+            "end": 1.82,
+            "probability": 0.95556640625
+          },
+          {
+            "word": "品",
+            "start": 1.82,
+            "end": 1.96,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "中",
+            "start": 1.96,
+            "end": 2.16,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.16,
+        "end": 3.8,
+        "text": "产品特点第一项",
+        "tokens": [
+          50475,
+          1369,
+          100,
+          30246,
+          17682,
+          12579,
+          18049,
+          10178,
+          117,
+          50555
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "产",
+            "start": 2.16,
+            "end": 2.78,
+            "probability": 0.9931640625
+          },
+          {
+            "word": "品",
+            "start": 2.78,
+            "end": 2.94,
+            "probability": 1.0
+          },
+          {
+            "word": "特",
+            "start": 2.94,
+            "end": 3.1,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "点",
+            "start": 3.1,
+            "end": 3.28,
+            "probability": 0.9873046875
+          },
+          {
+            "word": "第一",
+            "start": 3.28,
+            "end": 3.52,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "项",
+            "start": 3.52,
+            "end": 3.8,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 3.8,
+        "end": 5.2,
+        "text": "原料产地条件",
+        "tokens": [
+          50555,
+          19683,
+          33404,
+          1369,
+          100,
+          10928,
+          48837,
+          20485,
+          50626
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "原",
+            "start": 3.8,
+            "end": 4.16,
+            "probability": 0.85400390625
+          },
+          {
+            "word": "料",
+            "start": 4.16,
+            "end": 4.46,
+            "probability": 1.0
+          },
+          {
+            "word": "产",
+            "start": 4.46,
+            "end": 4.66,
+            "probability": 1.0
+          },
+          {
+            "word": "地",
+            "start": 4.66,
+            "end": 4.8,
+            "probability": 0.94775390625
+          },
+          {
+            "word": "条",
+            "start": 4.8,
+            "end": 4.96,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "件",
+            "start": 4.96,
+            "end": 5.2,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 5.2,
+        "end": 6.82,
+        "text": "新疆日照时间长",
+        "tokens": [
+          50626,
+          12560,
+          18140,
+          228,
+          6890,
+          32150,
+          44848,
+          32271,
+          50709
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "新",
+            "start": 5.2,
+            "end": 5.7,
+            "probability": 0.99609375
+          },
+          {
+            "word": "疆",
+            "start": 5.7,
+            "end": 5.92,
+            "probability": 0.9931640625
+          },
+          {
+            "word": "日",
+            "start": 5.92,
+            "end": 6.08,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "照",
+            "start": 6.08,
+            "end": 6.26,
+            "probability": 0.99072265625
+          },
+          {
+            "word": "时间",
+            "start": 6.26,
+            "end": 6.52,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "长",
+            "start": 6.52,
+            "end": 6.82,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 6.82,
+        "end": 8.4,
+        "text": "昼夜温差明显",
+        "tokens": [
+          50709,
+          1431,
+          120,
+          30124,
+          9592,
+          102,
+          21679,
+          11100,
+          1431,
+          122,
+          50785
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "昼",
+            "start": 6.82,
+            "end": 7.34,
+            "probability": 0.97265625
+          },
+          {
+            "word": "夜",
+            "start": 7.34,
+            "end": 7.52,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "温",
+            "start": 7.52,
+            "end": 7.74,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "差",
+            "start": 7.74,
+            "end": 7.94,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "明",
+            "start": 7.94,
+            "end": 8.12,
+            "probability": 1.0
+          },
+          {
+            "word": "显",
+            "start": 8.12,
+            "end": 8.4,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 8.4,
+        "end": 9.58,
+        "text": "适合番茄生长",
+        "tokens": [
+          50785,
+          2215,
+          224,
+          14245,
+          33118,
+          27395,
+          226,
+          8244,
+          32271,
+          50846
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "适",
+            "start": 8.4,
+            "end": 8.76,
+            "probability": 0.986328125
+          },
+          {
+            "word": "合",
+            "start": 8.76,
+            "end": 8.9,
+            "probability": 0.98876953125
+          },
+          {
+            "word": "番",
+            "start": 8.9,
+            "end": 9.06,
+            "probability": 0.96826171875
+          },
+          {
+            "word": "茄",
+            "start": 9.06,
+            "end": 9.24,
+            "probability": 0.99609375
+          },
+          {
+            "word": "生",
+            "start": 9.24,
+            "end": 9.38,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "长",
+            "start": 9.38,
+            "end": 9.58,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 9.58,
+        "end": 13.14,
+        "text": "门店介绍时应避免最好等绝对化用语",
+        "tokens": [
+          50846,
+          8259,
+          101,
+          22469,
+          30312,
+          10115,
+          235,
+          15729,
+          44297,
+          3330,
+          123,
+          2347,
+          235,
+          8661,
+          2131,
+          10187,
+          10115,
+          251,
+          8713,
+          23756,
+          9254,
+          5233,
+          255,
+          51023
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "门",
+            "start": 9.58,
+            "end": 10.06,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "店",
+            "start": 10.06,
+            "end": 10.24,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "介",
+            "start": 10.24,
+            "end": 10.48,
+            "probability": 1.0
+          },
+          {
+            "word": "绍",
+            "start": 10.48,
+            "end": 10.68,
+            "probability": 1.0
+          },
+          {
+            "word": "时",
+            "start": 10.68,
+            "end": 10.92,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "应",
+            "start": 10.92,
+            "end": 11.22,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "避",
+            "start": 11.22,
+            "end": 11.42,
+            "probability": 1.0
+          },
+          {
+            "word": "免",
+            "start": 11.42,
+            "end": 11.6,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "最",
+            "start": 11.6,
+            "end": 11.8,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "好",
+            "start": 11.8,
+            "end": 11.98,
+            "probability": 0.994140625
+          },
+          {
+            "word": "等",
+            "start": 11.98,
+            "end": 12.14,
+            "probability": 1.0
+          },
+          {
+            "word": "绝",
+            "start": 12.14,
+            "end": 12.48,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "对",
+            "start": 12.48,
+            "end": 12.62,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "化",
+            "start": 12.62,
+            "end": 12.78,
+            "probability": 0.9931640625
+          },
+          {
+            "word": "用",
+            "start": 12.78,
+            "end": 12.96,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "语",
+            "start": 12.96,
+            "end": 13.14,
+            "probability": 0.763671875
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 0,
+        "start": 13.14,
+        "end": 16.48,
+        "text": "产地信息也要以企业最新批词资料为准",
+        "tokens": [
+          51023,
+          1369,
+          100,
+          10928,
+          17665,
+          26460,
+          6404,
+          4275,
+          3588,
+          7384,
+          223,
+          940,
+          248,
+          8661,
+          12560,
+          3416,
+          117,
+          5233,
+          235,
+          5266,
+          226,
+          33404,
+          13992,
+          6336,
+          228,
+          51189
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09079583202089582,
+        "compression_ratio": 1.1479591836734695,
+        "no_speech_prob": 1.683735963153854e-11,
+        "words": [
+          {
+            "word": "产",
+            "start": 13.14,
+            "end": 13.62,
+            "probability": 1.0
+          },
+          {
+            "word": "地",
+            "start": 13.62,
+            "end": 13.82,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "信",
+            "start": 13.82,
+            "end": 13.98,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "息",
+            "start": 13.98,
+            "end": 14.22,
+            "probability": 1.0
+          },
+          {
+            "word": "也",
+            "start": 14.22,
+            "end": 14.48,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "要",
+            "start": 14.48,
+            "end": 14.64,
+            "probability": 1.0
+          },
+          {
+            "word": "以",
+            "start": 14.64,
+            "end": 14.82,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "企",
+            "start": 14.82,
+            "end": 15.1,
+            "probability": 1.0
+          },
+          {
+            "word": "业",
+            "start": 15.1,
+            "end": 15.22,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "最",
+            "start": 15.22,
+            "end": 15.36,
+            "probability": 1.0
+          },
+          {
+            "word": "新",
+            "start": 15.36,
+            "end": 15.62,
+            "probability": 1.0
+          },
+          {
+            "word": "批",
+            "start": 15.62,
+            "end": 15.76,
+            "probability": 0.998046875
+          },
+          {
+            "word": "词",
+            "start": 15.76,
+            "end": 15.94,
+            "probability": 0.8427734375
+          },
+          {
+            "word": "资",
+            "start": 15.94,
+            "end": 16.08,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "料",
+            "start": 16.08,
+            "end": 16.18,
+            "probability": 1.0
+          },
+          {
+            "word": "为",
+            "start": 16.18,
+            "end": 16.32,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "准",
+            "start": 16.32,
+            "end": 16.48,
+            "probability": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "07-s07-feature-material.wav",
+    "text": "最大的十种健康食品中第二 业务资料介绍本品采用番茄果肉提取第三 软胶囊便于定量补充业务稿载明每100克含番茄红素1.5克每日一至两粒实际介绍与使用必须以最新产品标签和说明书为准",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.22,
+        "text": "最大的十种健康食品中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          25155,
+          30246,
+          5975,
+          50479
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.5,
+            "probability": 0.9541015625
+          },
+          {
+            "word": "大的",
+            "start": 0.5,
+            "end": 0.84,
+            "probability": 0.998046875
+          },
+          {
+            "word": "十",
+            "start": 0.84,
+            "end": 1.1,
+            "probability": 0.7001953125
+          },
+          {
+            "word": "种",
+            "start": 1.1,
+            "end": 1.34,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "健",
+            "start": 1.34,
+            "end": 1.54,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.54,
+            "end": 1.72,
+            "probability": 1.0
+          },
+          {
+            "word": "食",
+            "start": 1.72,
+            "end": 1.88,
+            "probability": 0.62451171875
+          },
+          {
+            "word": "品",
+            "start": 1.88,
+            "end": 2.04,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "中",
+            "start": 2.04,
+            "end": 2.22,
+            "probability": 0.9970703125
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.22,
+        "end": 6.3,
+        "text": "第二 业务资料介绍本品采用番茄果肉提取",
+        "tokens": [
+          50479,
+          19693,
+          220,
+          940,
+          248,
+          5087,
+          94,
+          5266,
+          226,
+          33404,
+          30312,
+          10115,
+          235,
+          8802,
+          30246,
+          5873,
+          229,
+          9254,
+          33118,
+          27395,
+          226,
+          9319,
+          31980,
+          20949,
+          29436,
+          50681
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "第二",
+            "start": 2.22,
+            "end": 2.88,
+            "probability": 0.974609375
+          },
+          {
+            "word": " 业",
+            "start": 3.24,
+            "end": 3.36,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "务",
+            "start": 3.36,
+            "end": 3.48,
+            "probability": 1.0
+          },
+          {
+            "word": "资",
+            "start": 3.48,
+            "end": 3.68,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "料",
+            "start": 3.68,
+            "end": 3.84,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "介",
+            "start": 3.84,
+            "end": 4.08,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "绍",
+            "start": 4.08,
+            "end": 4.28,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "本",
+            "start": 4.28,
+            "end": 4.48,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "品",
+            "start": 4.48,
+            "end": 4.74,
+            "probability": 0.998046875
+          },
+          {
+            "word": "采",
+            "start": 4.74,
+            "end": 5.0,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "用",
+            "start": 5.0,
+            "end": 5.14,
+            "probability": 1.0
+          },
+          {
+            "word": "番",
+            "start": 5.14,
+            "end": 5.32,
+            "probability": 0.91943359375
+          },
+          {
+            "word": "茄",
+            "start": 5.32,
+            "end": 5.56,
+            "probability": 0.998046875
+          },
+          {
+            "word": "果",
+            "start": 5.56,
+            "end": 5.74,
+            "probability": 0.9853515625
+          },
+          {
+            "word": "肉",
+            "start": 5.74,
+            "end": 5.94,
+            "probability": 1.0
+          },
+          {
+            "word": "提",
+            "start": 5.94,
+            "end": 6.1,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "取",
+            "start": 6.1,
+            "end": 6.3,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 6.3,
+        "end": 9.28,
+        "text": "第三 软胶囊便于定量补充",
+        "tokens": [
+          50681,
+          35878,
+          220,
+          17819,
+          107,
+          19095,
+          114,
+          3919,
+          232,
+          27364,
+          37732,
+          12088,
+          26748,
+          9890,
+          98,
+          2347,
+          227,
+          50829
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "第三",
+            "start": 6.3,
+            "end": 7.02,
+            "probability": 0.99951171875
+          },
+          {
+            "word": " 软",
+            "start": 7.44,
+            "end": 7.6,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "胶",
+            "start": 7.6,
+            "end": 7.78,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "囊",
+            "start": 7.78,
+            "end": 8.0,
+            "probability": 0.998046875
+          },
+          {
+            "word": "便",
+            "start": 8.0,
+            "end": 8.24,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "于",
+            "start": 8.24,
+            "end": 8.44,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "定",
+            "start": 8.44,
+            "end": 8.66,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "量",
+            "start": 8.66,
+            "end": 8.88,
+            "probability": 1.0
+          },
+          {
+            "word": "补",
+            "start": 8.88,
+            "end": 9.08,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "充",
+            "start": 9.08,
+            "end": 9.28,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 9.28,
+        "end": 10.36,
+        "text": "业务稿载明",
+        "tokens": [
+          50829,
+          940,
+          248,
+          5087,
+          94,
+          10415,
+          123,
+          17819,
+          121,
+          11100,
+          50884
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "业",
+            "start": 9.28,
+            "end": 9.68,
+            "probability": 0.99365234375
+          },
+          {
+            "word": "务",
+            "start": 9.68,
+            "end": 9.82,
+            "probability": 1.0
+          },
+          {
+            "word": "稿",
+            "start": 9.82,
+            "end": 10.0,
+            "probability": 0.7626953125
+          },
+          {
+            "word": "载",
+            "start": 10.0,
+            "end": 10.18,
+            "probability": 0.818359375
+          },
+          {
+            "word": "明",
+            "start": 10.18,
+            "end": 10.36,
+            "probability": 0.64013671875
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 10.36,
+        "end": 12.96,
+        "text": "每100克含番茄红素1.5克",
+        "tokens": [
+          50884,
+          23664,
+          6879,
+          24881,
+          2392,
+          104,
+          33118,
+          27395,
+          226,
+          16853,
+          95,
+          37204,
+          16,
+          13,
+          20,
+          24881,
+          51016
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "每",
+            "start": 10.36,
+            "end": 10.8,
+            "probability": 0.8818359375
+          },
+          {
+            "word": "100",
+            "start": 10.8,
+            "end": 11.08,
+            "probability": 0.72802734375
+          },
+          {
+            "word": "克",
+            "start": 11.08,
+            "end": 11.32,
+            "probability": 0.98974609375
+          },
+          {
+            "word": "含",
+            "start": 11.32,
+            "end": 11.52,
+            "probability": 0.9921875
+          },
+          {
+            "word": "番",
+            "start": 11.52,
+            "end": 11.72,
+            "probability": 0.9873046875
+          },
+          {
+            "word": "茄",
+            "start": 11.72,
+            "end": 11.88,
+            "probability": 1.0
+          },
+          {
+            "word": "红",
+            "start": 11.88,
+            "end": 12.06,
+            "probability": 0.99609375
+          },
+          {
+            "word": "素",
+            "start": 12.06,
+            "end": 12.24,
+            "probability": 0.9892578125
+          },
+          {
+            "word": "1.",
+            "start": 12.24,
+            "end": 12.5,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "5",
+            "start": 12.58,
+            "end": 12.78,
+            "probability": 1.0
+          },
+          {
+            "word": "克",
+            "start": 12.78,
+            "end": 12.96,
+            "probability": 0.9970703125
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 12.96,
+        "end": 14.56,
+        "text": "每日一至两粒",
+        "tokens": [
+          51016,
+          23664,
+          6890,
+          2257,
+          20844,
+          36257,
+          18393,
+          240,
+          51089
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "每",
+            "start": 12.96,
+            "end": 13.4,
+            "probability": 0.425537109375
+          },
+          {
+            "word": "日",
+            "start": 13.4,
+            "end": 13.62,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "一",
+            "start": 13.62,
+            "end": 13.9,
+            "probability": 0.65966796875
+          },
+          {
+            "word": "至",
+            "start": 13.9,
+            "end": 14.08,
+            "probability": 0.94921875
+          },
+          {
+            "word": "两",
+            "start": 14.08,
+            "end": 14.28,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "粒",
+            "start": 14.28,
+            "end": 14.56,
+            "probability": 0.9228515625
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 14.56,
+        "end": 16.1,
+        "text": "实际介绍与使用",
+        "tokens": [
+          51089,
+          24726,
+          8842,
+          227,
+          30312,
+          10115,
+          235,
+          940,
+          236,
+          22982,
+          9254,
+          51171
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "实",
+            "start": 14.56,
+            "end": 15.0,
+            "probability": 0.994140625
+          },
+          {
+            "word": "际",
+            "start": 15.0,
+            "end": 15.18,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "介",
+            "start": 15.18,
+            "end": 15.34,
+            "probability": 1.0
+          },
+          {
+            "word": "绍",
+            "start": 15.34,
+            "end": 15.54,
+            "probability": 1.0
+          },
+          {
+            "word": "与",
+            "start": 15.54,
+            "end": 15.7,
+            "probability": 0.9580078125
+          },
+          {
+            "word": "使",
+            "start": 15.7,
+            "end": 15.9,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "用",
+            "start": 15.9,
+            "end": 16.1,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 0,
+        "start": 16.1,
+        "end": 18.96,
+        "text": "必须以最新产品标签和说明书为准",
+        "tokens": [
+          51171,
+          28531,
+          10178,
+          119,
+          3588,
+          8661,
+          12560,
+          1369,
+          100,
+          30246,
+          162,
+          3921,
+          7973,
+          122,
+          12565,
+          8090,
+          11100,
+          2930,
+          99,
+          13992,
+          6336,
+          228,
+          51314
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.09208489203637885,
+        "compression_ratio": 1.1428571428571428,
+        "no_speech_prob": 1.8489147712852372e-11,
+        "words": [
+          {
+            "word": "必",
+            "start": 16.1,
+            "end": 16.36,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "须",
+            "start": 16.36,
+            "end": 16.56,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "以",
+            "start": 16.56,
+            "end": 16.68,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "最",
+            "start": 16.68,
+            "end": 16.88,
+            "probability": 1.0
+          },
+          {
+            "word": "新",
+            "start": 16.88,
+            "end": 17.06,
+            "probability": 1.0
+          },
+          {
+            "word": "产",
+            "start": 17.06,
+            "end": 17.26,
+            "probability": 1.0
+          },
+          {
+            "word": "品",
+            "start": 17.26,
+            "end": 17.4,
+            "probability": 1.0
+          },
+          {
+            "word": "标",
+            "start": 17.4,
+            "end": 17.62,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "签",
+            "start": 17.62,
+            "end": 17.82,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "和",
+            "start": 17.82,
+            "end": 18.08,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "说",
+            "start": 18.08,
+            "end": 18.28,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "明",
+            "start": 18.28,
+            "end": 18.44,
+            "probability": 1.0
+          },
+          {
+            "word": "书",
+            "start": 18.44,
+            "end": 18.66,
+            "probability": 1.0
+          },
+          {
+            "word": "为",
+            "start": 18.66,
+            "end": 18.82,
+            "probability": 1.0
+          },
+          {
+            "word": "准",
+            "start": 18.82,
+            "end": 18.96,
+            "probability": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "08-s08-audience.wav",
+    "text": "最大的十种健康视频中适宜人群必须以产品说明书为准按本次业务资料可重点了解关注前列腺健康备孕阶段关注抗氧化营养以及需要日常营养补充的人群",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.22,
+        "text": "最大的十种健康视频中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          40656,
+          39752,
+          5975,
+          50480
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08892945409978478,
+        "compression_ratio": 1.1754385964912282,
+        "no_speech_prob": 2.3268754978378325e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.32,
+            "probability": 0.77783203125
+          },
+          {
+            "word": "大的",
+            "start": 0.32,
+            "end": 0.62,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "十",
+            "start": 0.62,
+            "end": 0.94,
+            "probability": 0.56787109375
+          },
+          {
+            "word": "种",
+            "start": 0.94,
+            "end": 1.22,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "健",
+            "start": 1.22,
+            "end": 1.4,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.4,
+            "end": 1.64,
+            "probability": 1.0
+          },
+          {
+            "word": "视",
+            "start": 1.64,
+            "end": 1.82,
+            "probability": 0.89794921875
+          },
+          {
+            "word": "频",
+            "start": 1.82,
+            "end": 2.0,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "中",
+            "start": 2.0,
+            "end": 2.22,
+            "probability": 0.99951171875
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.22,
+        "end": 5.5,
+        "text": "适宜人群必须以产品说明书为准",
+        "tokens": [
+          50480,
+          2215,
+          224,
+          2415,
+          250,
+          4035,
+          7248,
+          97,
+          28531,
+          10178,
+          119,
+          3588,
+          1369,
+          100,
+          30246,
+          8090,
+          11100,
+          2930,
+          99,
+          13992,
+          6336,
+          228,
+          50641
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08892945409978478,
+        "compression_ratio": 1.1754385964912282,
+        "no_speech_prob": 2.3268754978378325e-11,
+        "words": [
+          {
+            "word": "适",
+            "start": 2.22,
+            "end": 2.96,
+            "probability": 0.66845703125
+          },
+          {
+            "word": "宜",
+            "start": 2.96,
+            "end": 3.12,
+            "probability": 0.998046875
+          },
+          {
+            "word": "人",
+            "start": 3.12,
+            "end": 3.28,
+            "probability": 1.0
+          },
+          {
+            "word": "群",
+            "start": 3.28,
+            "end": 3.5,
+            "probability": 1.0
+          },
+          {
+            "word": "必",
+            "start": 3.5,
+            "end": 3.72,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "须",
+            "start": 3.72,
+            "end": 3.98,
+            "probability": 1.0
+          },
+          {
+            "word": "以",
+            "start": 3.98,
+            "end": 4.12,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "产",
+            "start": 4.12,
+            "end": 4.38,
+            "probability": 1.0
+          },
+          {
+            "word": "品",
+            "start": 4.38,
+            "end": 4.58,
+            "probability": 1.0
+          },
+          {
+            "word": "说",
+            "start": 4.58,
+            "end": 4.78,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "明",
+            "start": 4.78,
+            "end": 4.96,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "书",
+            "start": 4.96,
+            "end": 5.16,
+            "probability": 1.0
+          },
+          {
+            "word": "为",
+            "start": 5.16,
+            "end": 5.3,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "准",
+            "start": 5.3,
+            "end": 5.5,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 5.5,
+        "end": 8.18,
+        "text": "按本次业务资料可重点了解",
+        "tokens": [
+          50641,
+          26613,
+          8802,
+          9487,
+          940,
+          248,
+          5087,
+          94,
+          5266,
+          226,
+          33404,
+          4429,
+          12624,
+          12579,
+          2289,
+          17278,
+          50775
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08892945409978478,
+        "compression_ratio": 1.1754385964912282,
+        "no_speech_prob": 2.3268754978378325e-11,
+        "words": [
+          {
+            "word": "按",
+            "start": 5.5,
+            "end": 5.96,
+            "probability": 0.99169921875
+          },
+          {
+            "word": "本",
+            "start": 5.96,
+            "end": 6.16,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "次",
+            "start": 6.16,
+            "end": 6.34,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "业",
+            "start": 6.34,
+            "end": 6.5,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "务",
+            "start": 6.5,
+            "end": 6.6,
+            "probability": 1.0
+          },
+          {
+            "word": "资",
+            "start": 6.6,
+            "end": 6.78,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "料",
+            "start": 6.78,
+            "end": 6.92,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "可",
+            "start": 6.92,
+            "end": 7.3,
+            "probability": 0.9873046875
+          },
+          {
+            "word": "重",
+            "start": 7.3,
+            "end": 7.54,
+            "probability": 1.0
+          },
+          {
+            "word": "点",
+            "start": 7.54,
+            "end": 7.76,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "了",
+            "start": 7.76,
+            "end": 7.92,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "解",
+            "start": 7.92,
+            "end": 8.18,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 8.18,
+        "end": 9.64,
+        "text": "关注前列腺健康",
+        "tokens": [
+          50775,
+          28053,
+          26432,
+          8945,
+          43338,
+          21184,
+          118,
+          44201,
+          6346,
+          115,
+          50847
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08892945409978478,
+        "compression_ratio": 1.1754385964912282,
+        "no_speech_prob": 2.3268754978378325e-11,
+        "words": [
+          {
+            "word": "关",
+            "start": 8.18,
+            "end": 8.52,
+            "probability": 0.99462890625
+          },
+          {
+            "word": "注",
+            "start": 8.52,
+            "end": 8.7,
+            "probability": 1.0
+          },
+          {
+            "word": "前",
+            "start": 8.7,
+            "end": 8.88,
+            "probability": 0.98486328125
+          },
+          {
+            "word": "列",
+            "start": 8.88,
+            "end": 9.04,
+            "probability": 0.998046875
+          },
+          {
+            "word": "腺",
+            "start": 9.04,
+            "end": 9.2,
+            "probability": 0.8232421875
+          },
+          {
+            "word": "健",
+            "start": 9.2,
+            "end": 9.34,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "康",
+            "start": 9.34,
+            "end": 9.64,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 9.64,
+        "end": 10.48,
+        "text": "备孕阶段",
+        "tokens": [
+          50847,
+          1787,
+          229,
+          8052,
+          243,
+          10034,
+          114,
+          28427,
+          50890
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08892945409978478,
+        "compression_ratio": 1.1754385964912282,
+        "no_speech_prob": 2.3268754978378325e-11,
+        "words": [
+          {
+            "word": "备",
+            "start": 9.64,
+            "end": 9.96,
+            "probability": 0.8994140625
+          },
+          {
+            "word": "孕",
+            "start": 9.96,
+            "end": 10.14,
+            "probability": 0.9921875
+          },
+          {
+            "word": "阶",
+            "start": 10.14,
+            "end": 10.3,
+            "probability": 0.994140625
+          },
+          {
+            "word": "段",
+            "start": 10.3,
+            "end": 10.48,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 10.48,
+        "end": 12.16,
+        "text": "关注抗氧化营养",
+        "tokens": [
+          50890,
+          28053,
+          26432,
+          7235,
+          245,
+          6610,
+          100,
+          23756,
+          10674,
+          98,
+          2347,
+          119,
+          50974
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08892945409978478,
+        "compression_ratio": 1.1754385964912282,
+        "no_speech_prob": 2.3268754978378325e-11,
+        "words": [
+          {
+            "word": "关",
+            "start": 10.48,
+            "end": 10.9,
+            "probability": 0.9755859375
+          },
+          {
+            "word": "注",
+            "start": 10.9,
+            "end": 11.1,
+            "probability": 1.0
+          },
+          {
+            "word": "抗",
+            "start": 11.1,
+            "end": 11.36,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "氧",
+            "start": 11.36,
+            "end": 11.54,
+            "probability": 0.994140625
+          },
+          {
+            "word": "化",
+            "start": 11.54,
+            "end": 11.7,
+            "probability": 1.0
+          },
+          {
+            "word": "营",
+            "start": 11.7,
+            "end": 11.94,
+            "probability": 0.998046875
+          },
+          {
+            "word": "养",
+            "start": 11.94,
+            "end": 12.16,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 12.16,
+        "end": 14.86,
+        "text": "以及需要日常营养补充的人群",
+        "tokens": [
+          50974,
+          40282,
+          35748,
+          6890,
+          11279,
+          10674,
+          98,
+          2347,
+          119,
+          9890,
+          98,
+          2347,
+          227,
+          29979,
+          7248,
+          97,
+          51109
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.08892945409978478,
+        "compression_ratio": 1.1754385964912282,
+        "no_speech_prob": 2.3268754978378325e-11,
+        "words": [
+          {
+            "word": "以及",
+            "start": 12.16,
+            "end": 12.66,
+            "probability": 0.99609375
+          },
+          {
+            "word": "需要",
+            "start": 12.66,
+            "end": 13.02,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "日",
+            "start": 13.02,
+            "end": 13.28,
+            "probability": 1.0
+          },
+          {
+            "word": "常",
+            "start": 13.28,
+            "end": 13.48,
+            "probability": 1.0
+          },
+          {
+            "word": "营",
+            "start": 13.48,
+            "end": 13.72,
+            "probability": 1.0
+          },
+          {
+            "word": "养",
+            "start": 13.72,
+            "end": 13.9,
+            "probability": 1.0
+          },
+          {
+            "word": "补",
+            "start": 13.9,
+            "end": 14.14,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "充",
+            "start": 14.14,
+            "end": 14.32,
+            "probability": 1.0
+          },
+          {
+            "word": "的人",
+            "start": 14.32,
+            "end": 14.5,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "群",
+            "start": 14.5,
+            "end": 14.86,
+            "probability": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "09-s09-combination.wav",
+    "text": "最大的十种健康食品中联合使用时要把药品治疗和营养补充分开说明顾客使用弹索罗兴或非耐熊胺时如需同时补充番茄红素应先确认适用性和相互作用使用前列康或普勒胺时不宣传见效快或预防反复搭配护肤营养品时也不承诺美白抗皱或替代防晒所有联合使用均建议先咨询药室",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.3,
+        "text": "最大的十种健康食品中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          25155,
+          30246,
+          5975,
+          50482
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.34,
+            "probability": 0.939453125
+          },
+          {
+            "word": "大的",
+            "start": 0.34,
+            "end": 0.68,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "十",
+            "start": 0.68,
+            "end": 0.92,
+            "probability": 0.56982421875
+          },
+          {
+            "word": "种",
+            "start": 0.92,
+            "end": 1.2,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "健",
+            "start": 1.2,
+            "end": 1.4,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.4,
+            "end": 1.66,
+            "probability": 1.0
+          },
+          {
+            "word": "食",
+            "start": 1.66,
+            "end": 1.92,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "品",
+            "start": 1.92,
+            "end": 2.12,
+            "probability": 1.0
+          },
+          {
+            "word": "中",
+            "start": 2.12,
+            "end": 2.3,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.3,
+        "end": 3.76,
+        "text": "联合使用时",
+        "tokens": [
+          50482,
+          8171,
+          242,
+          14245,
+          22982,
+          9254,
+          15729,
+          50555
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "联",
+            "start": 2.3,
+            "end": 3.0,
+            "probability": 0.978515625
+          },
+          {
+            "word": "合",
+            "start": 3.0,
+            "end": 3.18,
+            "probability": 1.0
+          },
+          {
+            "word": "使",
+            "start": 3.18,
+            "end": 3.38,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "用",
+            "start": 3.38,
+            "end": 3.56,
+            "probability": 1.0
+          },
+          {
+            "word": "时",
+            "start": 3.56,
+            "end": 3.76,
+            "probability": 0.99853515625
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 3.76,
+        "end": 5.96,
+        "text": "要把药品治疗和营养补充",
+        "tokens": [
+          50555,
+          4275,
+          16075,
+          31409,
+          107,
+          30246,
+          30118,
+          18140,
+          245,
+          12565,
+          10674,
+          98,
+          2347,
+          119,
+          9890,
+          98,
+          2347,
+          227,
+          50662
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "要",
+            "start": 3.76,
+            "end": 4.18,
+            "probability": 0.7822265625
+          },
+          {
+            "word": "把",
+            "start": 4.18,
+            "end": 4.34,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "药",
+            "start": 4.34,
+            "end": 4.56,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "品",
+            "start": 4.56,
+            "end": 4.72,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "治",
+            "start": 4.72,
+            "end": 4.9,
+            "probability": 0.998046875
+          },
+          {
+            "word": "疗",
+            "start": 4.9,
+            "end": 5.04,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "和",
+            "start": 5.04,
+            "end": 5.2,
+            "probability": 1.0
+          },
+          {
+            "word": "营",
+            "start": 5.2,
+            "end": 5.42,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "养",
+            "start": 5.42,
+            "end": 5.58,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "补",
+            "start": 5.58,
+            "end": 5.76,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "充",
+            "start": 5.76,
+            "end": 5.96,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 5.96,
+        "end": 6.82,
+        "text": "分开说明",
+        "tokens": [
+          50662,
+          6627,
+          18937,
+          8090,
+          11100,
+          50708
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "分",
+            "start": 5.96,
+            "end": 6.22,
+            "probability": 0.8623046875
+          },
+          {
+            "word": "开",
+            "start": 6.22,
+            "end": 6.44,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "说",
+            "start": 6.44,
+            "end": 6.6,
+            "probability": 1.0
+          },
+          {
+            "word": "明",
+            "start": 6.6,
+            "end": 6.82,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 6.82,
+        "end": 9.82,
+        "text": "顾客使用弹索罗兴或非耐熊胺时",
+        "tokens": [
+          50708,
+          10178,
+          122,
+          32316,
+          22982,
+          9254,
+          5702,
+          117,
+          7732,
+          95,
+          16469,
+          245,
+          2347,
+          112,
+          19780,
+          12107,
+          4450,
+          238,
+          21805,
+          232,
+          19095,
+          118,
+          15729,
+          50857
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "顾",
+            "start": 6.82,
+            "end": 7.34,
+            "probability": 0.978515625
+          },
+          {
+            "word": "客",
+            "start": 7.34,
+            "end": 7.54,
+            "probability": 1.0
+          },
+          {
+            "word": "使",
+            "start": 7.54,
+            "end": 7.76,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "用",
+            "start": 7.76,
+            "end": 7.94,
+            "probability": 1.0
+          },
+          {
+            "word": "弹",
+            "start": 7.94,
+            "end": 8.14,
+            "probability": 0.67431640625
+          },
+          {
+            "word": "索",
+            "start": 8.14,
+            "end": 8.34,
+            "probability": 0.9130859375
+          },
+          {
+            "word": "罗",
+            "start": 8.34,
+            "end": 8.5,
+            "probability": 0.9658203125
+          },
+          {
+            "word": "兴",
+            "start": 8.5,
+            "end": 8.68,
+            "probability": 0.62158203125
+          },
+          {
+            "word": "或",
+            "start": 8.68,
+            "end": 8.92,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "非",
+            "start": 8.92,
+            "end": 9.1,
+            "probability": 0.91455078125
+          },
+          {
+            "word": "耐",
+            "start": 9.1,
+            "end": 9.28,
+            "probability": 0.68994140625
+          },
+          {
+            "word": "熊",
+            "start": 9.28,
+            "end": 9.46,
+            "probability": 0.8984375
+          },
+          {
+            "word": "胺",
+            "start": 9.46,
+            "end": 9.6,
+            "probability": 0.9345703125
+          },
+          {
+            "word": "时",
+            "start": 9.6,
+            "end": 9.82,
+            "probability": 0.9375
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 9.82,
+        "end": 11.86,
+        "text": "如需同时补充番茄红素",
+        "tokens": [
+          50857,
+          8238,
+          32535,
+          13089,
+          15729,
+          9890,
+          98,
+          2347,
+          227,
+          33118,
+          27395,
+          226,
+          16853,
+          95,
+          37204,
+          50960
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "如",
+            "start": 9.82,
+            "end": 10.18,
+            "probability": 0.97412109375
+          },
+          {
+            "word": "需",
+            "start": 10.18,
+            "end": 10.34,
+            "probability": 0.94677734375
+          },
+          {
+            "word": "同",
+            "start": 10.34,
+            "end": 10.52,
+            "probability": 1.0
+          },
+          {
+            "word": "时",
+            "start": 10.52,
+            "end": 10.74,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "补",
+            "start": 10.74,
+            "end": 10.94,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "充",
+            "start": 10.94,
+            "end": 11.1,
+            "probability": 1.0
+          },
+          {
+            "word": "番",
+            "start": 11.1,
+            "end": 11.28,
+            "probability": 0.9189453125
+          },
+          {
+            "word": "茄",
+            "start": 11.28,
+            "end": 11.48,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "红",
+            "start": 11.48,
+            "end": 11.68,
+            "probability": 0.99462890625
+          },
+          {
+            "word": "素",
+            "start": 11.68,
+            "end": 11.86,
+            "probability": 0.98974609375
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 11.86,
+        "end": 14.54,
+        "text": "应先确认适用性和相互作用",
+        "tokens": [
+          50960,
+          44297,
+          10108,
+          38114,
+          106,
+          7422,
+          97,
+          2215,
+          224,
+          9254,
+          21686,
+          12565,
+          15106,
+          1369,
+          240,
+          11914,
+          9254,
+          51094
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "应",
+            "start": 11.86,
+            "end": 12.26,
+            "probability": 0.99462890625
+          },
+          {
+            "word": "先",
+            "start": 12.26,
+            "end": 12.46,
+            "probability": 0.998046875
+          },
+          {
+            "word": "确",
+            "start": 12.46,
+            "end": 12.68,
+            "probability": 1.0
+          },
+          {
+            "word": "认",
+            "start": 12.68,
+            "end": 12.86,
+            "probability": 1.0
+          },
+          {
+            "word": "适",
+            "start": 12.86,
+            "end": 13.16,
+            "probability": 0.9873046875
+          },
+          {
+            "word": "用",
+            "start": 13.16,
+            "end": 13.32,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "性",
+            "start": 13.32,
+            "end": 13.48,
+            "probability": 1.0
+          },
+          {
+            "word": "和",
+            "start": 13.48,
+            "end": 13.82,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "相",
+            "start": 13.82,
+            "end": 14.0,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "互",
+            "start": 14.0,
+            "end": 14.22,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "作",
+            "start": 14.22,
+            "end": 14.36,
+            "probability": 1.0
+          },
+          {
+            "word": "用",
+            "start": 14.36,
+            "end": 14.54,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 0,
+        "start": 14.54,
+        "end": 16.86,
+        "text": "使用前列康或普勒胺时",
+        "tokens": [
+          51094,
+          22982,
+          9254,
+          8945,
+          43338,
+          6346,
+          115,
+          19780,
+          29993,
+          7978,
+          240,
+          19095,
+          118,
+          15729,
+          51211
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "使",
+            "start": 14.54,
+            "end": 15.22,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "用",
+            "start": 15.22,
+            "end": 15.38,
+            "probability": 1.0
+          },
+          {
+            "word": "前",
+            "start": 15.38,
+            "end": 15.56,
+            "probability": 0.73681640625
+          },
+          {
+            "word": "列",
+            "start": 15.56,
+            "end": 15.7,
+            "probability": 0.97265625
+          },
+          {
+            "word": "康",
+            "start": 15.7,
+            "end": 15.88,
+            "probability": 0.9462890625
+          },
+          {
+            "word": "或",
+            "start": 15.88,
+            "end": 16.18,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "普",
+            "start": 16.18,
+            "end": 16.38,
+            "probability": 0.97900390625
+          },
+          {
+            "word": "勒",
+            "start": 16.38,
+            "end": 16.5,
+            "probability": 0.97607421875
+          },
+          {
+            "word": "胺",
+            "start": 16.5,
+            "end": 16.64,
+            "probability": 0.8642578125
+          },
+          {
+            "word": "时",
+            "start": 16.64,
+            "end": 16.86,
+            "probability": 0.998046875
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "seek": 0,
+        "start": 16.86,
+        "end": 19.28,
+        "text": "不宣传见效快或预防反复",
+        "tokens": [
+          51211,
+          1960,
+          2415,
+          96,
+          7384,
+          254,
+          23813,
+          43076,
+          10251,
+          19780,
+          12501,
+          226,
+          35863,
+          22138,
+          1787,
+          235,
+          51339
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "不",
+            "start": 16.86,
+            "end": 17.32,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "宣",
+            "start": 17.32,
+            "end": 17.52,
+            "probability": 1.0
+          },
+          {
+            "word": "传",
+            "start": 17.52,
+            "end": 17.7,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "见",
+            "start": 17.7,
+            "end": 17.78,
+            "probability": 0.66552734375
+          },
+          {
+            "word": "效",
+            "start": 17.78,
+            "end": 17.96,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "快",
+            "start": 17.96,
+            "end": 18.18,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "或",
+            "start": 18.18,
+            "end": 18.48,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "预",
+            "start": 18.48,
+            "end": 18.68,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "防",
+            "start": 18.68,
+            "end": 18.84,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "反",
+            "start": 18.84,
+            "end": 19.02,
+            "probability": 0.998046875
+          },
+          {
+            "word": "复",
+            "start": 19.02,
+            "end": 19.28,
+            "probability": 0.99853515625
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "seek": 0,
+        "start": 19.28,
+        "end": 20.94,
+        "text": "搭配护肤营养品时",
+        "tokens": [
+          51339,
+          22220,
+          255,
+          38846,
+          7235,
+          97,
+          14356,
+          97,
+          10674,
+          98,
+          2347,
+          119,
+          30246,
+          15729,
+          51413
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "搭",
+            "start": 19.28,
+            "end": 19.82,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "配",
+            "start": 19.82,
+            "end": 19.98,
+            "probability": 1.0
+          },
+          {
+            "word": "护",
+            "start": 19.98,
+            "end": 20.14,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "肤",
+            "start": 20.14,
+            "end": 20.26,
+            "probability": 0.9931640625
+          },
+          {
+            "word": "营",
+            "start": 20.26,
+            "end": 20.44,
+            "probability": 0.998046875
+          },
+          {
+            "word": "养",
+            "start": 20.44,
+            "end": 20.56,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "品",
+            "start": 20.56,
+            "end": 20.68,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "时",
+            "start": 20.68,
+            "end": 20.94,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "seek": 0,
+        "start": 20.94,
+        "end": 23.44,
+        "text": "也不承诺美白抗皱或替代防晒",
+        "tokens": [
+          51413,
+          6404,
+          1960,
+          3416,
+          123,
+          5233,
+          118,
+          9175,
+          13558,
+          7235,
+          245,
+          1514,
+          109,
+          19780,
+          9531,
+          123,
+          19105,
+          35863,
+          5094,
+          240,
+          51536
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "也",
+            "start": 20.94,
+            "end": 21.26,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "不",
+            "start": 21.26,
+            "end": 21.4,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "承",
+            "start": 21.4,
+            "end": 21.52,
+            "probability": 1.0
+          },
+          {
+            "word": "诺",
+            "start": 21.52,
+            "end": 21.66,
+            "probability": 0.9931640625
+          },
+          {
+            "word": "美",
+            "start": 21.66,
+            "end": 21.82,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "白",
+            "start": 21.82,
+            "end": 21.98,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "抗",
+            "start": 21.98,
+            "end": 22.16,
+            "probability": 0.998046875
+          },
+          {
+            "word": "皱",
+            "start": 22.16,
+            "end": 22.34,
+            "probability": 0.76025390625
+          },
+          {
+            "word": "或",
+            "start": 22.34,
+            "end": 22.62,
+            "probability": 0.998046875
+          },
+          {
+            "word": "替",
+            "start": 22.62,
+            "end": 22.82,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "代",
+            "start": 22.82,
+            "end": 22.98,
+            "probability": 0.99365234375
+          },
+          {
+            "word": "防",
+            "start": 22.98,
+            "end": 23.2,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "晒",
+            "start": 23.2,
+            "end": 23.44,
+            "probability": 0.9951171875
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "seek": 0,
+        "start": 23.44,
+        "end": 26.36,
+        "text": "所有联合使用均建议先咨询药室",
+        "tokens": [
+          51536,
+          39300,
+          8171,
+          242,
+          14245,
+          22982,
+          9254,
+          14872,
+          229,
+          34157,
+          7422,
+          106,
+          10108,
+          8975,
+          101,
+          5233,
+          95,
+          31409,
+          107,
+          2415,
+          97,
+          51683
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10612694258542404,
+        "compression_ratio": 1.3071428571428572,
+        "no_speech_prob": 2.5769905306893826e-11,
+        "words": [
+          {
+            "word": "所有",
+            "start": 23.44,
+            "end": 24.08,
+            "probability": 0.998046875
+          },
+          {
+            "word": "联",
+            "start": 24.08,
+            "end": 24.3,
+            "probability": 1.0
+          },
+          {
+            "word": "合",
+            "start": 24.3,
+            "end": 24.44,
+            "probability": 1.0
+          },
+          {
+            "word": "使",
+            "start": 24.44,
+            "end": 24.6,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "用",
+            "start": 24.6,
+            "end": 24.74,
+            "probability": 1.0
+          },
+          {
+            "word": "均",
+            "start": 24.74,
+            "end": 25.0,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "建",
+            "start": 25.0,
+            "end": 25.18,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "议",
+            "start": 25.18,
+            "end": 25.38,
+            "probability": 0.998046875
+          },
+          {
+            "word": "先",
+            "start": 25.38,
+            "end": 25.6,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "咨",
+            "start": 25.6,
+            "end": 25.86,
+            "probability": 0.994140625
+          },
+          {
+            "word": "询",
+            "start": 25.86,
+            "end": 26.06,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "药",
+            "start": 26.06,
+            "end": 26.24,
+            "probability": 0.931640625
+          },
+          {
+            "word": "室",
+            "start": 26.24,
+            "end": 26.36,
+            "probability": 0.65625
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "10-s10-summary.wav",
+    "text": "最大的十种健康食品中最后回顾四个板块核心功效以包装标签为准成分科普单独表述产品特点关注产地条件果肉提取和软胶囊形态事宜人群查看说明书联合使用前咨询要事",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.28,
+        "text": "最大的十种健康食品中",
+        "tokens": [
+          50365,
+          8661,
+          39156,
+          20145,
+          39810,
+          44201,
+          6346,
+          115,
+          25155,
+          30246,
+          5975,
+          50481
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 0.0,
+            "end": 0.36,
+            "probability": 0.96240234375
+          },
+          {
+            "word": "大的",
+            "start": 0.36,
+            "end": 0.68,
+            "probability": 0.9951171875
+          },
+          {
+            "word": "十",
+            "start": 0.68,
+            "end": 1.02,
+            "probability": 0.609375
+          },
+          {
+            "word": "种",
+            "start": 1.02,
+            "end": 1.3,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "健",
+            "start": 1.3,
+            "end": 1.52,
+            "probability": 1.0
+          },
+          {
+            "word": "康",
+            "start": 1.52,
+            "end": 1.72,
+            "probability": 1.0
+          },
+          {
+            "word": "食",
+            "start": 1.72,
+            "end": 1.92,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "品",
+            "start": 1.92,
+            "end": 2.1,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "中",
+            "start": 2.1,
+            "end": 2.28,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 2.28,
+        "end": 4.14,
+        "text": "最后回顾四个板块",
+        "tokens": [
+          50481,
+          8661,
+          13547,
+          8350,
+          10178,
+          122,
+          19425,
+          7549,
+          43664,
+          47734,
+          50573
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "最",
+            "start": 2.28,
+            "end": 2.84,
+            "probability": 0.88330078125
+          },
+          {
+            "word": "后",
+            "start": 2.84,
+            "end": 3.02,
+            "probability": 1.0
+          },
+          {
+            "word": "回",
+            "start": 3.02,
+            "end": 3.22,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "顾",
+            "start": 3.22,
+            "end": 3.44,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "四",
+            "start": 3.44,
+            "end": 3.62,
+            "probability": 0.99267578125
+          },
+          {
+            "word": "个",
+            "start": 3.62,
+            "end": 3.76,
+            "probability": 1.0
+          },
+          {
+            "word": "板",
+            "start": 3.76,
+            "end": 3.94,
+            "probability": 0.99072265625
+          },
+          {
+            "word": "块",
+            "start": 3.94,
+            "end": 4.14,
+            "probability": 0.99755859375
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 4.14,
+        "end": 6.9,
+        "text": "核心功效以包装标签为准",
+        "tokens": [
+          50573,
+          8987,
+          116,
+          7945,
+          32311,
+          43076,
+          3588,
+          23305,
+          8083,
+          227,
+          162,
+          3921,
+          7973,
+          122,
+          13992,
+          6336,
+          228,
+          50709
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "核",
+            "start": 4.14,
+            "end": 4.76,
+            "probability": 0.99609375
+          },
+          {
+            "word": "心",
+            "start": 4.76,
+            "end": 4.92,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "功",
+            "start": 4.92,
+            "end": 5.12,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "效",
+            "start": 5.12,
+            "end": 5.34,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "以",
+            "start": 5.34,
+            "end": 5.76,
+            "probability": 0.98779296875
+          },
+          {
+            "word": "包",
+            "start": 5.76,
+            "end": 5.96,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "装",
+            "start": 5.96,
+            "end": 6.16,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "标",
+            "start": 6.16,
+            "end": 6.36,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "签",
+            "start": 6.36,
+            "end": 6.54,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "为",
+            "start": 6.54,
+            "end": 6.7,
+            "probability": 1.0
+          },
+          {
+            "word": "准",
+            "start": 6.7,
+            "end": 6.9,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 6.9,
+        "end": 8.8,
+        "text": "成分科普单独表述",
+        "tokens": [
+          50709,
+          11336,
+          6627,
+          42091,
+          29993,
+          47446,
+          18637,
+          105,
+          17571,
+          3316,
+          108,
+          50805
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "成",
+            "start": 6.9,
+            "end": 7.34,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "分",
+            "start": 7.34,
+            "end": 7.56,
+            "probability": 0.912109375
+          },
+          {
+            "word": "科",
+            "start": 7.56,
+            "end": 7.78,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "普",
+            "start": 7.78,
+            "end": 8.0,
+            "probability": 0.99658203125
+          },
+          {
+            "word": "单",
+            "start": 8.0,
+            "end": 8.18,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "独",
+            "start": 8.18,
+            "end": 8.36,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "表",
+            "start": 8.36,
+            "end": 8.52,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "述",
+            "start": 8.52,
+            "end": 8.8,
+            "probability": 0.9990234375
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 8.8,
+        "end": 11.06,
+        "text": "产品特点关注产地条件",
+        "tokens": [
+          50805,
+          1369,
+          100,
+          30246,
+          17682,
+          12579,
+          28053,
+          26432,
+          1369,
+          100,
+          10928,
+          48837,
+          20485,
+          50921
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "产",
+            "start": 8.8,
+            "end": 9.34,
+            "probability": 0.9970703125
+          },
+          {
+            "word": "品",
+            "start": 9.34,
+            "end": 9.52,
+            "probability": 1.0
+          },
+          {
+            "word": "特",
+            "start": 9.52,
+            "end": 9.68,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "点",
+            "start": 9.68,
+            "end": 9.88,
+            "probability": 0.994140625
+          },
+          {
+            "word": "关",
+            "start": 9.88,
+            "end": 10.1,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "注",
+            "start": 10.1,
+            "end": 10.28,
+            "probability": 1.0
+          },
+          {
+            "word": "产",
+            "start": 10.28,
+            "end": 10.52,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "地",
+            "start": 10.52,
+            "end": 10.66,
+            "probability": 0.9248046875
+          },
+          {
+            "word": "条",
+            "start": 10.66,
+            "end": 10.84,
+            "probability": 1.0
+          },
+          {
+            "word": "件",
+            "start": 10.84,
+            "end": 11.06,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 0,
+        "start": 11.06,
+        "end": 13.78,
+        "text": "果肉提取和软胶囊形态",
+        "tokens": [
+          50921,
+          9319,
+          31980,
+          20949,
+          29436,
+          12565,
+          17819,
+          107,
+          19095,
+          114,
+          3919,
+          232,
+          30900,
+          3757,
+          223,
+          51046
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "果",
+            "start": 11.06,
+            "end": 11.48,
+            "probability": 0.5
+          },
+          {
+            "word": "肉",
+            "start": 11.48,
+            "end": 11.74,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "提",
+            "start": 11.74,
+            "end": 11.88,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "取",
+            "start": 11.88,
+            "end": 12.1,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "和",
+            "start": 12.1,
+            "end": 12.46,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "软",
+            "start": 12.46,
+            "end": 12.68,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "胶",
+            "start": 12.68,
+            "end": 12.84,
+            "probability": 0.99853515625
+          },
+          {
+            "word": "囊",
+            "start": 12.84,
+            "end": 13.02,
+            "probability": 0.998046875
+          },
+          {
+            "word": "形",
+            "start": 13.02,
+            "end": 13.2,
+            "probability": 0.98876953125
+          },
+          {
+            "word": "态",
+            "start": 13.2,
+            "end": 13.78,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 0,
+        "start": 13.78,
+        "end": 15.54,
+        "text": "事宜人群查看说明书",
+        "tokens": [
+          51046,
+          6973,
+          2415,
+          250,
+          4035,
+          7248,
+          97,
+          42623,
+          4200,
+          8090,
+          11100,
+          2930,
+          99,
+          51152
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "事",
+            "start": 13.78,
+            "end": 13.98,
+            "probability": 0.384765625
+          },
+          {
+            "word": "宜",
+            "start": 13.98,
+            "end": 14.16,
+            "probability": 0.99560546875
+          },
+          {
+            "word": "人",
+            "start": 14.16,
+            "end": 14.32,
+            "probability": 1.0
+          },
+          {
+            "word": "群",
+            "start": 14.32,
+            "end": 14.52,
+            "probability": 1.0
+          },
+          {
+            "word": "查",
+            "start": 14.52,
+            "end": 14.72,
+            "probability": 0.99462890625
+          },
+          {
+            "word": "看",
+            "start": 14.72,
+            "end": 14.92,
+            "probability": 0.99755859375
+          },
+          {
+            "word": "说",
+            "start": 14.92,
+            "end": 15.06,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "明",
+            "start": 15.06,
+            "end": 15.22,
+            "probability": 1.0
+          },
+          {
+            "word": "书",
+            "start": 15.22,
+            "end": 15.54,
+            "probability": 1.0
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 0,
+        "start": 15.54,
+        "end": 17.5,
+        "text": "联合使用前咨询要事",
+        "tokens": [
+          51152,
+          8171,
+          242,
+          14245,
+          22982,
+          9254,
+          8945,
+          8975,
+          101,
+          5233,
+          95,
+          4275,
+          6973,
+          51242
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.10860206399645124,
+        "compression_ratio": 1.1306532663316582,
+        "no_speech_prob": 2.2472768437808988e-11,
+        "words": [
+          {
+            "word": "联",
+            "start": 15.54,
+            "end": 15.98,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "合",
+            "start": 15.98,
+            "end": 16.18,
+            "probability": 1.0
+          },
+          {
+            "word": "使",
+            "start": 16.18,
+            "end": 16.36,
+            "probability": 0.9990234375
+          },
+          {
+            "word": "用",
+            "start": 16.36,
+            "end": 16.52,
+            "probability": 1.0
+          },
+          {
+            "word": "前",
+            "start": 16.52,
+            "end": 16.72,
+            "probability": 0.77490234375
+          },
+          {
+            "word": "咨",
+            "start": 16.72,
+            "end": 17.04,
+            "probability": 0.9638671875
+          },
+          {
+            "word": "询",
+            "start": 17.04,
+            "end": 17.22,
+            "probability": 0.99951171875
+          },
+          {
+            "word": "要",
+            "start": 17.22,
+            "end": 17.36,
+            "probability": 0.8505859375
+          },
+          {
+            "word": "事",
+            "start": 17.36,
+            "end": 17.5,
+            "probability": 0.4619140625
+          }
+        ]
+      }
+    ]
+  }
+]

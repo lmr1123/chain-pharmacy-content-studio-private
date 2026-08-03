@@ -1,0 +1,29 @@
+{
+  "id": "asset.mechanism.medical-human-body-v1",
+  "name_zh": "蓝色半透明真实医学人体 v1",
+  "version": "1.0.0",
+  "status": "visual-rework-required",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "asset_type": "scientific-educational-raster",
+  "source_type": "ai-generated-original",
+  "generator": "built-in image_gen",
+  "files": {
+    "source": "medical-human-body-v1-source.png",
+    "alpha_master": "medical-human-body-v1.png",
+    "thumbnail": "thumbnail.png"
+  },
+  "dimensions": {
+    "alpha_master": [520, 939]
+  },
+  "prompt_summary": "正面全身成年人体，真实 3D 医学扫描质感，蓝青色半透明身体，隐约可见肌肉、骨骼标志、血管与呼吸系统；洋红纯色键背景，无文字、Logo、水印和额外物体。",
+  "reference_policy": "参考帧只用于主体类别、正面比例和蓝色医学扫描质感；生成全新图像，不含参考视频像素。",
+  "qa": {
+    "alpha": true,
+    "transparent_corners": true,
+    "edge_review": "passed",
+    "chroma_fringe": "not_detected",
+    "full_body": true,
+    "hands_feet_complete": true
+  },
+  "restriction": "用户已明确否决其用于本风热组装镜头：解剖细节过高且静态感强；不得再用于 component.mechanism.wind-heat-assembly-v1"
+}

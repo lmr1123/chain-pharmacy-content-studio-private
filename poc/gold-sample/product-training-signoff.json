@@ -1,0 +1,84 @@
+{
+  "template": "product-training",
+  "approvedScriptVersion": "template-signoff-2026-07-29",
+  "brand": {
+    "name": "内部商品培训",
+    "badge": "模板签样"
+  },
+  "product": {
+    "displayName": "辅酶 Q10",
+    "genericName": "通用包装示意",
+    "specification": "规格字段可替换",
+    "packshot": "/product-training-assets/generic-coq10-packshot-v1.png",
+    "badges": [
+      "商品字段独立",
+      "包装原图可替换",
+      "审核版本可追溯"
+    ]
+  },
+  "efficacy": {
+    "title": "核心功效",
+    "headline": "促进能量生成",
+    "mechanism": [
+      "关键物质",
+      "能量通路",
+      "组织支持"
+    ],
+    "note": "正式功效表述以内部审核稿为准"
+  },
+  "features": [
+    {
+      "number": "01",
+      "title": "工艺证据",
+      "description": "工艺资料与批准版本"
+    },
+    {
+      "number": "02",
+      "title": "原料证据",
+      "description": "来源、批次与检测资料"
+    },
+    {
+      "number": "03",
+      "title": "医疗资料",
+      "description": "文献、说明书与内部审核"
+    }
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 4.7,
+      "text": "下面用一款辅酶Q10通用包装，演示商品培训模板",
+      "ttsText": "下面用一款辅酶Q十通用包装，演示商品培训模板"
+    },
+    {
+      "start": 4.7,
+      "end": 9.4,
+      "text": "商品名称、规格和核心卖点，都可以独立替换"
+    },
+    {
+      "start": 9.4,
+      "end": 14.5,
+      "text": "核心功效页采用标题、机制要点和证据卡分层呈现"
+    },
+    {
+      "start": 14.5,
+      "end": 19.4,
+      "text": "重点信息随旁白逐项出现，既清楚，也便于讲解"
+    },
+    {
+      "start": 19.4,
+      "end": 24.6,
+      "text": "产品特点页支持工艺、原料和医疗资料三类证据"
+    },
+    {
+      "start": 24.6,
+      "end": 30,
+      "ttsEnd": 29.7,
+      "text": "所有文案、图片来源和审核状态，都由结构化字段统一管理"
+    }
+  ],
+  "disclaimer": {
+    "internalOnly": true,
+    "text": "模板签样｜通用包装示意｜正式内容以内部审核稿为准"
+  }
+}

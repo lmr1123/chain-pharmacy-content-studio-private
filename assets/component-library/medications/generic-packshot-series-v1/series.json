@@ -1,0 +1,24 @@
+{
+  "id": "series.medication.generic-packshot-v1",
+  "name_zh": "无品牌药品包装示意系列 v1",
+  "version": "1.0.0",
+  "status": "technical-qa-passed",
+  "style_pack_ids": [
+    "style-pack.reference-medical-tech-v1",
+    "style-pack.reference-product-blue-v1"
+  ],
+  "series_style_id": "generic-medication-packshot-v1",
+  "purpose": "PoC/预览用无品牌剂型示意。正式商品包装不走本系列，由业务提供授权图。",
+  "role_contracts": [
+    { "role_id": "generic_packshot", "name_zh": "无品牌包装示意" }
+  ],
+  "members": [
+    "granule-package-v1",
+    "capsule-carton-v1"
+  ],
+  "restriction": "生产环境真品包装必须使用 series.medication.company-authorized-v1 或业务投喂的 company_authorized 资产；本系列仅示意。",
+  "external_fill": {
+    "preferred_channel": "C",
+    "note": "真包装 gap 使用通道 A awaiting-business-asset，不扩展本系列替代真品"
+  }
+}

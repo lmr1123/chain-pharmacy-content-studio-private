@@ -1,0 +1,1770 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/gmi6ps",
+    "id": "gmi6ps",
+    "slide": 3,
+    "layoutId": "d560fd2e-2110-47b6-90c3-e804a09e5ce4",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "d560fd2e-2110-47b6-90c3-e804a09e5ce4",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4bmtojit",
+      "id": "1",
+      "name": "header-shadow-line",
+      "bbox": [
+        0,
+        69,
+        1280,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E8D4",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jadcfe1o",
+      "id": "2",
+      "name": "header-green-line",
+      "bbox": [
+        95,
+        69,
+        1185,
+        4
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i94bm903",
+      "id": "3",
+      "name": "page-number-block",
+      "bbox": [
+        30,
+        0,
+        70,
+        83
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h8vud4ji",
+      "id": "4",
+      "name": "page-number",
+      "bbox": [
+        22,
+        19,
+        86,
+        48
+      ],
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#FFFFFF",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 28,
+              "color": "#FFFFFF",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w72tkzix",
+      "id": "5",
+      "name": "page-title",
+      "bbox": [
+        110,
+        16,
+        740,
+        48
+      ],
+      "geometry": "rect",
+      "text": "联合推荐话术",
+      "textPreview": "联合推荐话术",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "联合推荐话术"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "联合推荐话术",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "联合推荐话术",
+              "fontSize": 30,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6tcbu1c",
+      "id": "6",
+      "name": "brand-wordmark",
+      "bbox": [
+        1080,
+        18,
+        165,
+        42
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#45A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#45A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 18,
+              "color": "#45A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u5kbip0r",
+      "id": "7",
+      "name": "internal-notice",
+      "bbox": [
+        1080,
+        688,
+        170,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅供内部学习",
+      "textPreview": "仅供内部学习",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅供内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅供内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111111",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅供内部学习",
+              "fontSize": 14,
+              "color": "#111111",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/94bu94j6",
+      "id": "8",
+      "name": "combination-head-0-surface",
+      "bbox": [
+        28,
+        96,
+        150,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/832tgzi1",
+      "id": "9",
+      "name": "combination-head-0-text",
+      "bbox": [
+        36,
+        104,
+        134,
+        42
+      ],
+      "geometry": "rect",
+      "text": "应用场景（适宜人群）",
+      "textPreview": "应用场景（适宜人群）",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "应用场景（适宜"
+          },
+          {
+            "index": 2,
+            "text": "人群）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "应用场景（适宜人群）",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "应用场景（适宜人群）",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/elgb2xs3",
+      "id": "10",
+      "name": "combination-head-1-surface",
+      "bbox": [
+        178,
+        96,
+        175,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fmpcv2to",
+      "id": "11",
+      "name": "combination-head-1-text",
+      "bbox": [
+        186,
+        104,
+        159,
+        42
+      ],
+      "geometry": "rect",
+      "text": "联合推荐",
+      "textPreview": "联合推荐",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "联合推荐"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "联合推荐",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "联合推荐",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0nyt47a9",
+      "id": "12",
+      "name": "combination-head-2-surface",
+      "bbox": [
+        353,
+        96,
+        230,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1o7uxcbe",
+      "id": "13",
+      "name": "combination-head-2-text",
+      "bbox": [
+        361,
+        104,
+        214,
+        42
+      ],
+      "geometry": "rect",
+      "text": "联合商品图",
+      "textPreview": "联合商品图",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "联合商品图"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "联合商品图",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "联合商品图",
+              "fontSize": 17,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxwbyxcr",
+      "id": "14",
+      "name": "combination-head-3-surface",
+      "bbox": [
+        583,
+        96,
+        200,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ry5sr2tc",
+      "id": "15",
+      "name": "combination-head-3-text",
+      "bbox": [
+        591,
+        104,
+        184,
+        42
+      ],
+      "geometry": "rect",
+      "text": "本品图",
+      "textPreview": "本品图",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "本品图"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本品图",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本品图",
+              "fontSize": 17,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/szet0nax",
+      "id": "16",
+      "name": "combination-head-4-surface",
+      "bbox": [
+        783,
+        96,
+        465,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dk7utsbi",
+      "id": "17",
+      "name": "combination-head-4-text",
+      "bbox": [
+        791,
+        104,
+        449,
+        42
+      ],
+      "geometry": "rect",
+      "text": "销售话术",
+      "textPreview": "销售话术",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "销售话术"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "销售话术",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "销售话术",
+              "fontSize": 17,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itwbudcv",
+      "id": "18",
+      "name": "combination-scenario-0-surface",
+      "bbox": [
+        28,
+        154,
+        150,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#F1F1F1",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3u5snitg",
+      "id": "19",
+      "name": "combination-scenario-0-text",
+      "bbox": [
+        36,
+        162,
+        134,
+        247
+      ],
+      "geometry": "rect",
+      "text": "备孕/男性生殖健康、前列腺日常养护",
+      "textPreview": "备孕/男性生殖健康、前列腺日常养护",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备孕/男性生殖健"
+          },
+          {
+            "index": 2,
+            "text": "康、前列腺日常"
+          },
+          {
+            "index": 3,
+            "text": "养护"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备孕/男性生殖健康、前列腺日常养护",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备孕/男性生殖健康、前列腺日常养护",
+              "fontSize": 15,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mh0fu5w",
+      "id": "20",
+      "name": "combination-name-0-surface",
+      "bbox": [
+        178,
+        154,
+        175,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#F1F1F1",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ml8z6pob",
+      "id": "21",
+      "name": "combination-name-0-text",
+      "bbox": [
+        186,
+        162,
+        159,
+        247
+      ],
+      "geometry": "rect",
+      "text": "番茄红素 + 锌/硒营养补充",
+      "textPreview": "番茄红素 + 锌/硒营养补充",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "番茄红素 +"
+          },
+          {
+            "index": 2,
+            "text": "锌/硒营养补充"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "番茄红素 + 锌/硒营养补充",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "番茄红素 + 锌/硒营养补充",
+              "fontSize": 15,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9ojihkn2",
+      "id": "22",
+      "name": "combination-partner-surface-0",
+      "bbox": [
+        353,
+        154,
+        230,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#F1F1F1",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8nah8fmh",
+      "id": "23",
+      "name": "partner-slot-0-surface",
+      "bbox": [
+        373,
+        210.5,
+        190,
+        150
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7FAF4",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vq10ju5s",
+      "id": "24",
+      "name": "partner-slot-0-label",
+      "bbox": [
+        383,
+        260.5,
+        170,
+        50
+      ],
+      "geometry": "rect",
+      "text": "锌/硒营养补充\n包装图待接入",
+      "textPreview": "锌/硒营养补充 | 包装图待接入",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "锌/硒营养补充"
+          },
+          {
+            "index": 2,
+            "text": "包装图待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "锌/硒营养补充",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "锌/硒营养补充",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "包装图待接入",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "包装图待接入",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/upszap4n",
+      "id": "25",
+      "name": "combination-talk-0-surface",
+      "bbox": [
+        783,
+        154,
+        465,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#F1F1F1",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hsjil4ny",
+      "id": "26",
+      "name": "combination-talk-0-text",
+      "bbox": [
+        791,
+        162,
+        449,
+        247
+      ],
+      "geometry": "rect",
+      "text": "备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿意带走。",
+      "textPreview": "备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿意带走。",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提"
+          },
+          {
+            "index": 2,
+            "text": "高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，"
+          },
+          {
+            "index": 3,
+            "text": "一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿"
+          },
+          {
+            "index": 4,
+            "text": "意带走。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿意带走。",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备孕和男性健康，光补一边不够。番茄红素侧重前列腺保护和提高精子活力，锌、硒是生殖营养里的基础搭档。两样一起推荐，一个护腺活力，一个补关键微量元素，顾客更容易听懂、也更愿意带走。",
+              "fontSize": 15,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wrahczmd",
+      "id": "27",
+      "name": "combination-scenario-1-surface",
+      "bbox": [
+        28,
+        417,
+        150,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9E7BE",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/buxg7a5o",
+      "id": "28",
+      "name": "combination-scenario-1-text",
+      "bbox": [
+        36,
+        425,
+        134,
+        247
+      ],
+      "geometry": "rect",
+      "text": "抗氧化、抗衰老、爱美/体虚易累",
+      "textPreview": "抗氧化、抗衰老、爱美/体虚易累",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "抗氧化、抗衰老"
+          },
+          {
+            "index": 2,
+            "text": "、爱美/体虚易累"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "抗氧化、抗衰老、爱美/体虚易累",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "抗氧化、抗衰老、爱美/体虚易累",
+              "fontSize": 15,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/atoze5o3",
+      "id": "29",
+      "name": "combination-name-1-surface",
+      "bbox": [
+        178,
+        417,
+        175,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9E7BE",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gzmx8bm1",
+      "id": "30",
+      "name": "combination-name-1-text",
+      "bbox": [
+        186,
+        425,
+        159,
+        247
+      ],
+      "geometry": "rect",
+      "text": "番茄红素 + 维生素E软胶囊",
+      "textPreview": "番茄红素 + 维生素E软胶囊",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "番茄红素 +"
+          },
+          {
+            "index": 2,
+            "text": "维生素E软胶囊"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "番茄红素 + 维生素E软胶囊",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "番茄红素 + 维生素E软胶囊",
+              "fontSize": 15,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/10vehw3m",
+      "id": "31",
+      "name": "combination-partner-surface-1",
+      "bbox": [
+        353,
+        417,
+        230,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9E7BE",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ex4f614v",
+      "id": "32",
+      "name": "partner-slot-1-surface",
+      "bbox": [
+        373,
+        473.5,
+        190,
+        150
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7FAF4",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fydwf6lg",
+      "id": "33",
+      "name": "partner-slot-1-label",
+      "bbox": [
+        383,
+        523.5,
+        170,
+        50
+      ],
+      "geometry": "rect",
+      "text": "维生素E软胶囊\n包装图待接入",
+      "textPreview": "维生素E软胶囊 | 包装图待接入",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "维生素E软胶囊"
+          },
+          {
+            "index": 2,
+            "text": "包装图待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "维生素E软胶囊",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "维生素E软胶囊",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "包装图待接入",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "包装图待接入",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sv2d4rm5",
+      "id": "34",
+      "name": "combination-talk-1-surface",
+      "bbox": [
+        783,
+        417,
+        465,
+        263
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9E7BE",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twbedw3a",
+      "id": "35",
+      "name": "combination-talk-1-text",
+      "bbox": [
+        791,
+        425,
+        449,
+        247
+      ],
+      "geometry": "rect",
+      "text": "爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。",
+      "textPreview": "爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强"
+          },
+          {
+            "index": 2,
+            "text": "（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。"
+          },
+          {
+            "index": 3,
+            "text": "两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "爱美和抗衰老，顾客最怕“吃了没感觉”。番茄红素抗氧化能力强（科普口径约为维E的100倍），维E是经典脂溶性抗氧化搭档。两样协同，讲清“抗自由基+日常养护”，比单推一瓶更有说服力。",
+              "fontSize": 15,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6tkv2h4z",
+      "id": "36",
+      "name": "combination-primary-merge-surface",
+      "bbox": [
+        583,
+        154,
+        200,
+        526
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9E7BE",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 1
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rutwbmlk",
+      "id": "37",
+      "name": "combination-primary-divider",
+      "bbox": [
+        583,
+        154,
+        3,
+        526
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cr6xgv29",
+      "id": "38",
+      "name": "combination-plus",
+      "bbox": [
+        591,
+        389,
+        40,
+        56
+      ],
+      "geometry": "rect",
+      "text": "+",
+      "textPreview": "+",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "fontSize": 40,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "+"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "+",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "+",
+              "fontSize": 40,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xsfepg3u",
+      "id": "39",
+      "name": "combination-primary-product-surface",
+      "bbox": [
+        628,
+        277,
+        130,
+        280
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9EEF4",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9c7uh8j6",
+      "id": "40",
+      "name": "combination-primary-product-label",
+      "bbox": [
+        638,
+        392,
+        110,
+        50
+      ],
+      "geometry": "rect",
+      "text": "福尔番茄红素\n包装图待接入",
+      "textPreview": "福尔番茄红素 | 包装图待接入",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "福尔番茄红"
+          },
+          {
+            "index": 2,
+            "text": "素"
+          },
+          {
+            "index": 3,
+            "text": "包装图待接"
+          },
+          {
+            "index": 4,
+            "text": "入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "福尔番茄红素",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "福尔番茄红素",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "包装图待接入",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "包装图待接入",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

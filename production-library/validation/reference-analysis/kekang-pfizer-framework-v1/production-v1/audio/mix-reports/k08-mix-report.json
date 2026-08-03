@@ -1,0 +1,51 @@
+{
+  "target_lufs": -16.0,
+  "true_peak_limit_dbtp": -1.0,
+  "measured": {
+    "raw": "ET:-23 LUFS    M: -60.1 S: -21.8     I: -16.0 LUFS       LRA:   3.9 LU  FTPK: -47.1 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.099979   TARGET:-23 LUFS    M: -60.2 S: -21.8     I: -16.0 LUFS       LRA:   4.5 LU  FTPK: -49.3 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.199979   TARGET:-23 LUFS    M: -60.0 S: -22.2     I: -16.0 LUFS       LRA:   5.8 LU  FTPK: -48.0 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.299979   TARGET:-23 LUFS    M: -59.8 S: -23.1     I: -16.0 LUFS       LRA:   5.9 LU  FTPK: -46.8 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.399979   TARGET:-23 LUFS    M: -59.8 S: -24.4     I: -16.0 LUFS       LRA:   5.9 LU  FTPK: -47.5 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.499979   TARGET:-23 LUFS    M: -59.7 S: -24.9     I: -16.0 LUFS       LRA:   5.9 LU  FTPK: -48.3 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.599979   TARGET:-23 LUFS    M: -59.7 S: -26.4     I: -16.0 LUFS       LRA:   6.3 LU  FTPK: -49.0 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.699979   TARGET:-23 LUFS    M: -60.0 S: -27.1     I: -16.0 LUFS       LRA:   7.2 LU  FTPK: -47.7 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.799979   TARGET:-23 LUFS    M: -60.7 S: -28.7     I: -16.0 LUFS       LRA:   8.5 LU  FTPK: -49.6 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] t: 7.899979   TARGET:-23 LUFS    M: -62.2 S: -51.1     I: -16.0 LUFS       LRA:   8.5 LU  FTPK: -58.9 dBFS  TPK:  -2.3 dBFS\n[Parsed_ebur128_0 @ 0xc36c40900] Summary:\n\n  Integrated loudness:\n    I:         -16.0 LUFS\n    Threshold: -28.2 LUFS\n\n  Loudness range:\n    LRA:         8.5 LU\n    Threshold: -37.7 LUFS\n    LRA low:   -24.4 LUFS\n    LRA high:  -15.9 LUFS\n\n  True peak:\n    Peak:       -2.3 dBFS\n[out#0/null @ 0xc36c40180] video:0KiB audio:741KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nsize=N/A time=00:00:07.90 bitrate=N/A speed= 307x elapsed=0:00:00.02    \n",
+    "integrated_lufs": -16.0,
+    "true_peak_db": -2.3
+  },
+  "playback_duration": 7.908,
+  "motion_beats": {
+    "env_start": 0.0,
+    "title_hero_start": 0.12,
+    "orbit_lines_start": 1.253,
+    "path_a_start": 3.161,
+    "label_a_start": 3.281,
+    "path_b_start": 4.115,
+    "label_b_start": 4.235,
+    "focus_a_start": 5.428,
+    "focus_b_start": 6.158,
+    "completion_start": 6.858,
+    "speech_end": 5.308,
+    "end": 7.908
+  },
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 1.253,
+      "text": "从灵芝主体"
+    },
+    {
+      "start": 1.253,
+      "end": 3.161,
+      "text": "可以认识两类成分"
+    },
+    {
+      "start": 3.161,
+      "end": 4.115,
+      "text": "灵芝多糖"
+    },
+    {
+      "start": 4.115,
+      "end": 5.308,
+      "text": "和灵芝三萜"
+    }
+  ],
+  "files": {
+    "narration": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/reference-analysis/kekang-pfizer-framework-v1/production-v1/audio/narration/k08-narration-v5-smooth.wav",
+    "sfx_bus": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/reference-analysis/kekang-pfizer-framework-v1/production-v1/audio/sfx/k08-sfx-bus.wav",
+    "mix": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/reference-analysis/kekang-pfizer-framework-v1/production-v1/audio/k08-mix-final.wav"
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "template_id": "template.disease-health-shenke-blue-v1",
+  "template_type": "pptx-courseware",
+  "style_pack_id": "style-pack.shenke-medical-blue-v1",
+  "theme_id": "theme.disease.acute-uri",
+  "status": "validation-draft-v2",
+  "source": {
+    "type": "shenke-training-screenshots",
+    "path": "~/Downloads/呼吸系统疾病健康知识培训.png",
+    "note": "版式锁定参课截图；插图为交付级重绘；商品包装为命名坑位，业务替换授权原图"
+  },
+  "asset_policy": {
+    "illustrations": "assets/* 重绘医学/卡通图，可换同风格授权图",
+    "packshots": "assets/placeholders/pack-*.png 命名坑位；勿伪造品牌包装",
+    "logo": "assets/logo-shenke.png 参课品牌标识"
+  },
+  "meta": {
+    "series": "呼吸系统系列",
+    "topic": "急性上呼吸道感染",
+    "brand": "大参林医药集团",
+    "sub_brand": "参课 SHENKE",
+    "audience": "门店健康顾问 / 店员内部培训",
+    "internal_notice": "仅限于内部学习 · 用药须遵医嘱与说明书",
+    "presenter_name": "宿凌",
+    "presenter_title": "博士 · 教授",
+    "presenter_sub": "药事管理学 · 教研室副主任 · 硕士生导师"
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "scene_type": "cover_branded",
+      "title": "急性上呼吸道感染",
+      "subtitle": "呼吸系统系列"
+    },
+    {
+      "id": "agenda",
+      "scene_type": "agenda",
+      "title": "目录",
+      "items": [
+        { "num": "01", "label": "疾病概览" },
+        { "num": "02", "label": "临床表现" },
+        { "num": "03", "label": "检查方法" },
+        { "num": "04", "label": "治疗用药" },
+        { "num": "05", "label": "专业关怀" }
+      ]
+    },
+    {
+      "id": "overview",
+      "scene_type": "definition_etiology",
+      "section_num": "01",
+      "section_title": "疾病概览",
+      "badge": "急性上呼吸道感染",
+      "definition_parts": [
+        { "text": "鼻腔、咽或喉部急性炎症", "emphasize": true },
+        { "text": "的概称，是呼吸道最常见的一种传染疾病。\n", "emphasize": false },
+        { "text": "本病全年皆可发病，", "emphasize": false },
+        { "text": "冬春季节多发", "emphasize": true },
+        { "text": "，多为散发，但常在气候突变时流行。", "emphasize": false }
+      ],
+      "etiology_title": "病因",
+      "etiology_parts": [
+        { "text": "大约70%是由", "emphasize": false },
+        { "text": "病毒", "emphasize": true },
+        { "text": "引起，少数由细菌所致。还因淋雨、受凉、气候改变、过度劳累等导致呼吸道防御功能下降，病原体繁殖而诱发本病。", "emphasize": false }
+      ]
+    },
+    {
+      "id": "clinical",
+      "scene_type": "clinical_blocks",
+      "section_num": "02",
+      "section_title": "临床表现",
+      "blocks": [
+        {
+          "title": "普通感冒",
+          "body": "常见疾病起病，应注意询问有无打喷嚏、鼻塞、流水样鼻涕等鼻咽部卡他症状，有无咽痛、咽痒、声哑等。一般无明显畏寒、高热等全身症状。"
+        },
+        {
+          "title": "病毒性咽炎、喉炎",
+          "body": "患者有咽喉部发痒和烧灼感，注意询问有无发热，有无声音嘶哑、讲话困难、咳嗽时疼痛等。"
+        },
+        {
+          "title": "疱疹性咽峡炎",
+          "body": "患者有明显的咽痛、发热。"
+        }
+      ],
+      "warning": {
+        "label": "询问诱因",
+        "body": "有无受凉、淋雨、过度劳累等诱发因素。"
+      }
+    },
+    {
+      "id": "exam",
+      "scene_type": "exam_two_column",
+      "section_num": "03",
+      "section_title": "检查方法",
+      "left_bullets": [
+        "鼻腔粘膜及咽部充血；",
+        "可有扁桃体肿大、充血，甚至化脓；有时咽部、扁桃体表面可有灰白色疱疹及浅表溃疡；",
+        "病毒感染，实验室检查白细胞正常或偏低；细菌感染，则白细胞升高。"
+      ],
+      "pathogens": [
+        {
+          "label": "病毒",
+          "body": "鼻病毒、呼吸道合胞病毒、冠状病毒、柯萨奇病毒和腺病毒；"
+        },
+        {
+          "label": "细菌",
+          "body": "A族溶血性链球菌、肺炎链球菌、流感嗜血杆菌、葡萄球菌、酿脓链球菌、卡他莫拉菌；"
+        },
+        {
+          "label": "其他",
+          "body": "肺炎支原体、衣原体"
+        }
+      ]
+    },
+    {
+      "id": "tx_general",
+      "scene_type": "treatment_illustration",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "tag": "一般治疗",
+      "images": ["tx-general-exam.png", "tx-general-rest.png"],
+      "body": "饮食清淡，营养均衡，增加维生素和微量元素的摄取。多饮开水，注意通便，注意休息，保持室内合适的温度和湿度。如有发热，还应注意退热。"
+    },
+    {
+      "id": "tx_systemic",
+      "scene_type": "treatment_illustration",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "tag": "全身用药",
+      "images": ["tx-systemic-penicillin.png"],
+      "images_layout": "single_wide",
+      "body_parts": [
+        { "text": "反复上呼吸道感染急性期应以", "emphasize": false },
+        { "text": "抗感染治疗", "emphasize": true },
+        { "text": "为主。细菌感染者应使用青霉素类如", "emphasize": false },
+        { "text": "阿莫西林", "emphasize": true },
+        { "text": "等抗菌药物。病毒感染者酌情使用抗病毒药物。", "emphasize": false }
+      ]
+    },
+    {
+      "id": "tx_local",
+      "scene_type": "treatment_illustration",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "tag": "局部用药",
+      "images": ["tx-local-spray.png", "tx-local-nebulize.png", "tx-local-ear.png"],
+      "images_layout": "triple",
+      "body": "鼻塞严重者可短期使用减充血剂或医用高渗海水，伴有过敏的局部用抗组胺和糖皮质激素喷鼻。咽痛可用局部雾化药物。耳痛或耳流脓局部治疗可采用1%酚甘油滴耳剂，3%双氧水清洗加局部采用非耳毒性抗菌药物滴耳剂等。"
+    },
+    {
+      "id": "tx_symptom_table",
+      "scene_type": "two_col_table",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "headers": ["临床症状", "对症用药"],
+      "rows": [
+        ["流鼻涕，打喷嚏", "氯雷他定"],
+        ["鼻塞", "盐酸伪麻黄碱"],
+        ["发热，头痛", "精氨酸布洛芬颗粒、对乙酰氨基酚、复方氨酚烷胺胶囊"],
+        ["咳嗽", "右美沙芬、氨溴索"],
+        ["咽喉及扁桃体红肿、疼痛", "冬凌草糖浆、利咽解毒颗粒、清咽滴丸"],
+        ["病毒感染", "抗病毒口服液、奥司他韦（1岁以下慎用）"],
+        ["细菌感染", "阿莫西林（3个月以下慎用）、头孢拉定、罗红霉素"],
+        ["免疫力低下", "复合维生素、维生素C"]
+      ],
+      "emphasize_in_rows": {
+        "2": ["复方氨酚烷胺胶囊"],
+        "5": ["奥司他韦"],
+        "6": ["阿莫西林"]
+      },
+      "packshot_slots": [
+        { "label": "复方氨酚烷胺胶囊", "file": "pack-复方氨酚烷胺胶囊.png" },
+        { "label": "冬凌草糖浆", "file": "pack-冬凌草糖浆.png" },
+        { "label": "磷酸奥司他韦颗粒", "file": "pack-磷酸奥司他韦颗粒.png" },
+        { "label": "阿莫西林胶囊", "file": "pack-阿莫西林胶囊.png" }
+      ]
+    },
+    {
+      "id": "precautions_1",
+      "scene_type": "drug_precautions_table",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "headers": ["药品", "注意事项"],
+      "rows": [
+        {
+          "drug": "阿莫西林\n胶囊",
+          "notes": [
+            { "text": "对青霉素过敏及皮肤试验阳性患者禁用", "risk": true },
+            { "text": "孕妇、哺乳期妇女慎用", "risk": false }
+          ]
+        },
+        {
+          "drug": "头孢拉定\n胶囊",
+          "notes": [
+            { "text": "对头孢菌素过敏者及有青霉素过敏性休克者禁用", "risk": false },
+            { "text": "孕妇、哺乳期妇女慎用，儿童慎用", "risk": true }
+          ]
+        },
+        {
+          "drug": "罗红霉素\n胶囊",
+          "notes": [
+            { "text": "对本品、红霉素或其他大环内酯类药物过敏者禁用", "risk": false },
+            { "text": "肝功能不全者禁用，肾功能不全者慎用", "risk": true },
+            { "text": "孕妇及哺乳期妇女慎用", "risk": false }
+          ]
+        },
+        {
+          "drug": "抗病毒口\n服液",
+          "notes": [
+            { "text": "孕妇、哺乳期妇女禁用", "risk": true },
+            { "text": "脾胃虚寒泄泻者慎服", "risk": true }
+          ]
+        },
+        {
+          "drug": "奥司他韦",
+          "notes": [{ "text": "1岁以下儿童慎用", "risk": true }]
+        }
+      ]
+    },
+    {
+      "id": "precautions_2",
+      "scene_type": "drug_precautions_table",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "headers": ["药品", "注意事项"],
+      "rows": [
+        {
+          "drug": "氯雷他定",
+          "notes": [
+            { "text": "不推荐6岁以下、6岁以上但体重≤30公斤的儿童使用", "risk": true },
+            { "text": "妊娠期及哺乳期妇女慎用", "risk": false },
+            { "text": "肝功能不全的患者在医生指导下使用", "risk": false }
+          ]
+        },
+        {
+          "drug": "盐酸伪\n麻黄碱",
+          "notes": [
+            { "text": "严重肝肾功能不全者禁用，肝、肾功能不全者慎用", "risk": true },
+            { "text": "用药不超过7天，症状未缓解，请咨询医师或药师", "risk": true },
+            { "text": "不能同时服用成份相似的其他抗感冒药", "risk": false },
+            { "text": "服用本品期间不得饮酒或含有酒精的饮料", "risk": true },
+            { "text": "心脏病、高血压、甲状腺疾病、糖尿病等患者应在医师指导下使用", "risk": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "precautions_3",
+      "scene_type": "drug_precautions_dual",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "headers": ["药品", "对乙酰氨基酚", "布洛芬颗粒"],
+      "left_notes": [
+        { "text": "严重肝肾功能不全者禁用，过敏者禁用", "risk": false },
+        { "text": "对阿司匹林过敏者慎用，肝肾功能不全者慎用，孕妇及哺乳期妇女慎用", "risk": false },
+        { "text": "应尽量避免合并使用含有对乙酰氨基酚或其他解热镇痛药的药品", "risk": true },
+        { "text": "口服一日最大量不超过2克", "risk": true },
+        { "text": "用于解热连续使用不超过3天，用于止痛不超过5天", "risk": true },
+        { "text": "服用期间不得饮酒或含有酒精的饮料", "risk": true }
+      ],
+      "right_notes": [
+        { "text": "消化性溃疡患者、重度血液异常患者、重度肝脏病患者、重度肾脏病患者、重度心功能不全患者、重度高血压患者禁用，对成分有过敏既往史的患者禁用，对其他非甾体抗炎药过敏者禁用，阿司匹林哮喘或有既往史的患者禁用，孕妇及哺乳期妇女禁用", "risk": true },
+        { "text": "老年人和儿童（6个月以下）慎重用药，尽可能将用量控制在所需的最小限度内", "risk": true },
+        { "text": "如出现胃肠道出血或溃疡、胸痛、气短、无力、言语含糊等情况，应停药并咨询医师", "risk": false }
+      ]
+    },
+    {
+      "id": "precautions_4",
+      "scene_type": "drug_precautions_table",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "headers": ["药品", "注意事项"],
+      "rows": [
+        {
+          "drug": "右美沙芬",
+          "notes": [
+            { "text": "妊娠3个月内妇女，有精神病史者及哺乳期妇女禁用", "risk": true },
+            { "text": "肝肾功能不全者禁用", "risk": true },
+            { "text": "2周岁以下儿童使用时请咨询医师", "risk": true },
+            { "text": "不得与单胺氧化酶抑制剂及抗抑郁药并用", "risk": true },
+            { "text": "用药不得超过7天，症状未缓解应向医师或药师咨询", "risk": true },
+            { "text": "服药期间不得驾驶机、车、船，从事高空作业、机械作业及操作精密仪器", "risk": false }
+          ]
+        },
+        {
+          "drug": "氨溴索",
+          "notes": [
+            { "text": "孕妇、哺乳期妇女慎用", "risk": false },
+            { "text": "6岁以下儿童应在医师指导下使用", "risk": true },
+            { "text": "肝肾功能不全者应在医师指导下使用", "risk": false },
+            { "text": "应避免与中枢镇咳药（如右美沙芬）同时使用，以免稀化的痰液堵塞气道", "risk": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "precautions_5",
+      "scene_type": "drug_precautions_table",
+      "section_num": "04",
+      "section_title": "治疗用药",
+      "headers": ["药品", "注意事项"],
+      "rows": [
+        {
+          "drug": "利咽解毒\n颗粒",
+          "notes": [
+            { "text": "声嘶、咽痛初起，兼见恶寒发热、鼻流清涕等外感风寒者不适用", "risk": true },
+            { "text": "有高血压、心脏病、肝病、糖尿病、肾病等慢性病严重者应在医师指导下服用", "risk": false },
+            { "text": "儿童、孕妇、哺乳期妇女、年老体弱、脾虚便溏者应在医师指导下服用", "risk": false },
+            { "text": "扁桃体有化脓或发热体温超过38.5℃的患者应医院就诊", "risk": true },
+            { "text": "服药3天症状无缓解，应去医院就诊", "risk": false }
+          ]
+        },
+        {
+          "drug": "清咽滴丸",
+          "notes": [
+            { "text": "孕妇慎用", "risk": false },
+            { "text": "不宜在服药期间同时服用温补性中成药", "risk": false },
+            { "text": "按照用法用量服用，儿童应在医师指导下服用", "risk": false },
+            { "text": "服药3天后症状无改善，或出现其他症状，应医院就诊", "risk": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "care_lifestyle",
+      "scene_type": "care_three_cards",
+      "section_num": "05",
+      "section_title": "专业关怀",
+      "banner_parts": [
+        { "text": "急性期须积极采取抗感染治疗", "emphasize": true },
+        { "text": "，以免耽误病情，病情稳定后注意增强和改善自身免疫功能的，减少再次感染的机率。", "emphasize": false }
+      ],
+      "cards": [
+        {
+          "parts": [
+            { "text": "饮食清淡，营养均衡、多休息、", "emphasize": false },
+            { "text": "多饮水", "emphasize": true },
+            { "text": "、男士戒烟，女士避免接触二手烟", "emphasize": false }
+          ]
+        },
+        {
+          "parts": [
+            { "text": "生活环境保持整洁", "emphasize": false },
+            { "text": "通风", "emphasize": true },
+            { "text": "，尽量避免去人群聚集的场所，减少与病原体的接触", "emphasize": false }
+          ]
+        },
+        {
+          "parts": [
+            { "text": "经常锻炼，增强体质，", "emphasize": false },
+            { "text": "提高自身免疫力", "emphasize": true }
+          ]
+        }
+      ],
+      "images": ["care-drink.png", "care-no-crowd.png", "care-exercise.png"]
+    },
+    {
+      "id": "care_special",
+      "scene_type": "care_special",
+      "section_num": "05",
+      "section_title": "专业关怀",
+      "cards": [
+        {
+          "parts": [
+            { "text": "儿童、老人可以常规接种", "emphasize": false },
+            { "text": "流感疫苗", "emphasize": true },
+            { "text": "，同时并合用其他的预防手段", "emphasize": false }
+          ]
+        },
+        {
+          "parts": [
+            { "text": "1岁以下幼儿慎用感冒药；孕妇、哺乳期妇女慎用感冒药", "emphasize": true },
+            { "text": "，以免影响胎儿婴儿", "emphasize": false }
+          ]
+        },
+        {
+          "parts": [
+            { "text": "具有一定的传染性，提醒患者密切接触的家人注意隔离防护，", "emphasize": false },
+            { "text": "避免交叉感染", "emphasize": true }
+          ]
+        }
+      ],
+      "images": ["care-vaccine.png", "care-special-pop.png", "care-ventilate.png"]
+    },
+    {
+      "id": "outro",
+      "scene_type": "outro",
+      "title": "专业服务\n助力健康",
+      "name": "宿凌",
+      "title_line": "博士 副教授",
+      "sub_line": "药事管理学教研室副主任 硕士生导师"
+    },
+    {
+      "id": "summary_sheet",
+      "scene_type": "one_page_summary",
+      "header": "呼吸系统课程  急性上呼吸道感染",
+      "series_label": "健康顾问专业力系列",
+      "overview": "急性上呼吸道感染是鼻腔、咽或喉部急性炎症的概称，是呼吸道最常见的一种传染疾病。",
+      "clinical": [
+        "1、普通感冒：打喷嚏、鼻塞、流水样鼻涕等鼻咽部卡他症状，有无咽痛、咽痒、声哑等。",
+        "2、病毒性咽炎、喉炎：患者有咽喉部发痒和烧灼感，声音嘶哑，讲话困难，咳嗽时疼痛等。",
+        "3、疱疹性咽峡炎：患者有明显的咽痛、发热。"
+      ],
+      "med_table": {
+        "headers": ["类别", "功能", "具体用药"],
+        "rows": [
+          ["主药", "消炎杀菌", "阿莫西林、头孢拉定、罗红霉素"],
+          ["辅药", "缓解症状", "冬凌草糖浆、利咽解毒颗粒、清咽滴丸"],
+          ["关联用药", "增强体质", "复合维生素、维生素C"]
+        ]
+      },
+      "care": [
+        "1. 注意隔离防护，避免交叉感染。",
+        "2. 1岁以下幼儿慎用感冒药；孕妇、哺乳期妇女慎用感冒药，以免影响胎儿婴儿。",
+        "3. 经常锻炼，增强体质，提高自身免疫力。",
+        "4. 饮食清淡，营养均衡，多休息、多饮水。",
+        "5.生活环境保持整洁通风"
+      ]
+    }
+  ],
+  "reuse": {
+    "how": [
+      "换病：复制 content JSON，改 meta.topic / definition / clinical / tables / care",
+      "版式锁定参课截图 chrome（scene_type 与页布局勿改）",
+      "插图：替换 assets/ 下重绘图（同文件名）或改 slides[].images",
+      "商品：替换 assets/placeholders/pack-*.png 为授权包装图（保持文件名）",
+      "再跑 node build-editable.mjs 生成新 PPTX"
+    ],
+    "do_not": [
+      "不要另起一套与截图不同的 UI",
+      "不要用整页截图当唯一可编辑金样",
+      "不要编造未审核的药品禁忌",
+      "未授权包装图不得作为 settled 资产",
+      "不要 AI 伪造真实品牌包装外观"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "other-model-k03-k13-remake-attempt-v1",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "render:k03": "node src/render.mjs k03",
+    "render:k13": "node src/render.mjs k13"
+  }
+}

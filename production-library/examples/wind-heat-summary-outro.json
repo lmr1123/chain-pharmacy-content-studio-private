@@ -1,0 +1,39 @@
+{
+  "project_id": "health.wind-heat.summary-outro.v1",
+  "template_id": "template.health-reference-tech-v1",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "content_lock": "approved-script",
+  "status": "technical-qa-passed",
+  "scenes": [
+    {
+      "scene_type": "advice_list_tail",
+      "component_ids": [
+        "component.card.advice-row",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": ["effect.background.four-way-current-v1"]
+    },
+    {
+      "scene_type": "summary",
+      "component_ids": [
+        "component.summary.matrix-v1",
+        "component.subtitle.reference-bottom"
+      ],
+      "effect_ids": [
+        "effect.background.four-way-current-v1",
+        "effect.summary.panel-reveal-v1",
+        "effect.summary.top-current-arrow-v1"
+      ]
+    },
+    {
+      "scene_type": "training_brand_outro",
+      "component_ids": ["component.outro.training-brand-v1"],
+      "effect_ids": ["effect.outro.handwritten-light-v1"],
+      "restriction": "当前只使用明确标注的临时重绘 Logo 占位；不得从参考帧裁切 Logo"
+    }
+  ],
+  "technical_qa_output": "production-library/validation/video/reference-summary-outro-replica.mp4",
+  "qa_evidence": "out/reference-summary-outro-qa/final",
+  "restriction": "等待用户视觉签样前不得将新增组件升级为 production-validated"
+}

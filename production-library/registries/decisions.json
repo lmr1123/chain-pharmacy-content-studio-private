@@ -1,0 +1,127 @@
+{
+  "registry_type": "decision",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "decision.gold-sample-first",
+      "name_zh": "金样完整成片优先于元件囤积",
+      "status": "locked",
+      "tags": ["金样", "框架", "风格", "主线", "防偏离"],
+      "decision": "交付验收以完整、高质量、统一风格、培训结构清晰的视频/课件为准，不以元件库规模为准。推进顺序锁定为：①选定或复刻完整参考成金样并签样；②从金样抽出培训框架与 style_pack；③同风格延伸主题（AI/装配换审核内容，仅补本课语义所需图）；④需要另一种培训结构时再复刻第二份完整金样，不得空想框架。禁止以预囤通用元素/series 覆盖率为主进度。资产 registry、外补、gap 仅服务金样已声明槽位。真包装/Logo/证据由业务提供，禁止仿品牌包装。冲突时本决策优先于资产规划类文档。",
+      "source": "tasks/lessons.md",
+      "related_lesson_id": "lesson.gold-sample-not-asset-stockpile",
+      "decided_at": "2026-07-30"
+    },
+    {
+      "id": "decision.faithful-first",
+      "name_zh": "首阶段忠实复刻优先",
+      "status": "locked",
+      "tags": ["复刻", "验收", "参考片"],
+      "decision": "公司现行参考视频是首阶段唯一视觉验收基线；升级设计必须在忠实复刻通过后另行签样。",
+      "source": "docs/reference-style-component-system.md"
+    },
+    {
+      "id": "decision.style-pack-lock",
+      "name_zh": "单项目风格包锁定",
+      "status": "locked",
+      "tags": ["风格", "一致性", "装配"],
+      "decision": "每个视频或课件只绑定一个主 style_pack_id；只能使用该风格包声明兼容的资产子风格。",
+      "source": "production-library/assembly-protocol.md"
+    },
+    {
+      "id": "decision.reference-pixels-forbidden",
+      "name_zh": "参考像素不得进入生产资产",
+      "status": "locked",
+      "tags": ["素材", "版权", "重新制作"],
+      "decision": "参考截图只用于测量、风格和语义对标；正式素材必须重新绘制、生成或由公司提供授权原图。",
+      "source": "assets/component-library/README.md"
+    },
+    {
+      "id": "decision.deterministic-composition",
+      "name_zh": "受约束的确定性装配",
+      "status": "locked",
+      "tags": ["模板", "组合", "随机"],
+      "decision": "AI 选择场景配方和素材槽位；品牌母版、主风格、角色身份与信息层级不得随机变化。",
+      "source": "docs/reference-style-component-system.md"
+    },
+    {
+      "id": "decision.shared-content-separate-renderers",
+      "name_zh": "内容共用、渲染器分离",
+      "status": "locked",
+      "tags": ["Scene JSON", "视频", "PPTX", "PDF", "导出"],
+      "decision": "视频、PPTX 和 PDF 共用审核内容、页面类型、素材引用与风格包；视频时间轴、PPTX 原生对象布局和 PDF 静态输出由独立适配器实现，不以视频截图代替可编辑 PPTX。",
+      "source": "poc/courseware-export/README.md"
+    },
+    {
+      "id": "decision.courseware-preserve-source-layout-on-overflow",
+      "name_zh": "商品课件超量内容复制原版式续页",
+      "status": "locked",
+      "tags": ["PPTX", "原版式", "自动续页", "封面锁定", "01页", "02页"],
+      "decision": "公司封面不得重建；01 页必须保留商品介绍、核心卖点和适宜人群，02 页必须保留产品图片展示。模块超出单页容量时复制对应原页面形成续页，不压缩到不可读，也不切换另一种布局。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "decision.courseware-missing-content-remains-editable-blank",
+      "name_zh": "课件缺失内容保留可编辑空槽位",
+      "status": "locked",
+      "tags": ["文本导入", "Word", "PPTX", "空字段", "防幻觉"],
+      "decision": "文本或 Word 未提供、无法判断或低置信度的商品内容不得自动补写；对应字段保持空字符串或空数组，PPTX 中保留原栏目、文本框和图片框，供用户继续补充。无法归类的原文进入待确认清单。",
+      "source": "tasks/lessons.md"
+    },
+    {
+      "id": "decision.asset-series-first",
+      "name_zh": "主题素材按系列优先沉淀",
+      "status": "locked",
+      "tags": ["素材系列", "可复用", "可组合", "持续沉淀", "生产级"],
+      "decision": "同类主题新增素材必须先查询并扩展现有 asset_series_id，共享风格令牌、构图槽位、提示词变量和动画契约；不得为每条视频另建近似但不兼容的一次性素材。系列方向可由用户确认，但每个新成员仍需独立视觉、技术、来源与医学审核。",
+      "source": "assets/component-library/mechanisms/reference-medical-tech-series-v1/README.md"
+    },
+    {
+      "id": "decision.script-intent-scene-recipe-composition",
+      "name_zh": "审核脚本意图驱动场景配方装配",
+      "status": "locked",
+      "tags": ["审核脚本", "自由组合", "场景配方", "业务傻瓜式", "风格一致"],
+      "decision": "新培训主题按审核脚本的语义顺序选择场景配方，允许省略、重复和重排场景，不要求套固定页序；风格包、组件约束、资产系列与运动语法保持锁定，低置信度章节进入人工选择而非逐镜从零定制。",
+      "source": "production-library/script-assembly-protocol.md"
+    },
+    {
+      "id": "decision.semantic-block-voice-speed-gate",
+      "name_zh": "语义段旁白与最大语速门禁",
+      "status": "locked",
+      "tags": ["旁白", "语速", "语义段", "短语", "批量生产", "连读", "停顿"],
+      "decision": "正式旁白按完整语义段一次 TTS 连读生成，禁止逐 cue 独立合成再硬拼接。默认整体 atempo≈1.16×、上限 1.18×；句间只用逗号自然衔接，不做固定静音槽。LEAD_IN/LEAD_OUT 仅作极短垫（约 0.06s/0.10s）。字幕按字数比例切时间轴，不按旧参考窗硬贴。短提示/序号设最小可听时长；放不下则延长镜头，禁止为贴旧时码暴力压缩。实现：scripts/generate_cloned_product_all_narration.py（v5-smooth）。",
+      "source": "scripts/generate_cloned_product_all_narration.py",
+      "related_lesson_ids": [
+        "lesson.semantic-block-tts",
+        "lesson.voice-continuous-segment-smooth"
+      ]
+    },
+    {
+      "id": "decision-style-background-is-global-track",
+      "name_zh": "风格背景动效属于全片级轨道",
+      "status": "locked",
+      "tags": ["背景动效", "光电", "全片轨道", "风格一致", "切点QA"],
+      "decision": "同一风格包的环境光电、粒子和背景运动由全片轨道统一承载；除明确片尾或转场外不得随章节时有时无，场景只能调节强度，不能移除或换运动语法。",
+      "source": "production-library/production-quality-gates.md"
+    },
+    {
+      "id": "decision.jianying-draft-as-personal-editing-surface-v1",
+      "name_zh": "个人内部视频精修使用剪映草稿",
+      "status": "locked",
+      "tags": ["剪映", "VectCutAPI", "个人内部", "生成后精修", "撤销", "素材替换"],
+      "decision": "固定路径为：审核内容＋结构化模板配置 → Revideo／素材生成 → VectCutAPI 生成剪映多轨草稿 → 剪映微调 → 保存剪映草稿模板版本。剪映修改不自动反写正式模板；仅将审核确认且可复用的改动映射回结构化配置并发布正式模板新版本。",
+      "source": "docs/jianying-draft-template-workflow.md",
+      "decided_at": "2026-07-30"
+    },
+    {
+      "id": "decision.revideo-editor-observation-before-next-iteration-v1",
+      "name_zh": "Revideo 业务编辑器先使用观察再继续迭代",
+      "status": "locked",
+      "tags": ["Revideo", "业务编辑器", "使用观察", "暂停扩展", "最小迭代"],
+      "decision": "保留 Revideo 原编辑器内的轻量业务图层插件，用于已声明模板图层的直接调整、当前项目 MP4/PPTX 导出和另存候选版本；剪映继续承担单条视频的节奏、字幕、音频和后加效果精修。从 2026-07-31 起暂停预先扩展编辑器功能，先在真实业务任务中使用；只有重复出现且明显阻塞交付的问题才进入下一轮最小迭代。",
+      "source": "docs/revideo-business-editor-usage.md",
+      "decided_at": "2026-07-31",
+      "related_decision_id": "decision.jianying-draft-as-personal-editing-surface-v1"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "product-training-opening",
+  "title": "辅酶Q10",
+  "range": {
+    "start": 0,
+    "end": 20.38,
+    "duration": 19.014
+  },
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/product-training-audio/qwen-cloned-product-training-opening-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；自然语速铺轨，禁止超1.18×暴力加速",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "min_tempo": 0.95,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "在快节奏的现代生活中，心脏长期面临压力与消耗，其核心动力源于心肌细胞的能量代谢，辅酶Q10是存在于每个细胞，尤其是心脏中的关键物质，它直接参与细胞能量的合成，随着年龄增长、身体透支等原因，人体自身合成的辅酶Q10会减少。",
+          "raw_duration": 21.862,
+          "used_duration": 18.854,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 17.241,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "在快节奏的现代生活中，心脏长期面临压力与消耗，其核心动力源于心肌细胞的能量代谢，辅酶Q10是存在于每个细胞，尤其是心脏中的关键物质，它直接参与细胞能量的合成，随着年龄增长、身体透支等原因，人体自身合成的辅酶Q10会减少。"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "officeWorking": "/product-training-opening-characters/office-reference-flat-v1.png",
+    "officeTired": "/product-training-opening-characters/office-reference-flat-eyes-closed-v1.png",
+    "heart": "/product-training-opening-characters/heart-reference-flat-v2.png",
+    "ageYoung": "/product-training-opening-characters/age-reference-young-v2.png",
+    "ageSenior": "/product-training-opening-characters/age-reference-senior-v2.png",
+    "ageElder": "/product-training-opening-characters/age-reference-elder-v2.png",
+    "ageElderGlasses": "/product-training-opening-characters/age-reference-elder-glasses-v2.png"
+  },
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 1.908,
+      "text": "在快节奏的现代生活中"
+    },
+    {
+      "start": 1.908,
+      "end": 3.942,
+      "text": "心脏长期面临压力与消耗"
+    },
+    {
+      "start": 3.942,
+      "end": 6.899,
+      "text": "其核心动力源于心肌细胞的能量代谢"
+    },
+    {
+      "start": 6.899,
+      "end": 9.302,
+      "text": "辅酶Q10是存在于每个细胞"
+    },
+    {
+      "start": 9.302,
+      "end": 11.336,
+      "text": "尤其是心脏中的关键物质"
+    },
+    {
+      "start": 11.336,
+      "end": 13.554,
+      "text": "它直接参与细胞能量的合成"
+    },
+    {
+      "start": 13.554,
+      "end": 16.142,
+      "text": "随着年龄增长、身体透支等原因"
+    },
+    {
+      "start": 16.142,
+      "end": 18.914,
+      "text": "人体自身合成的辅酶Q10会减少"
+    }
+  ],
+  "playback_duration": 19.014
+}

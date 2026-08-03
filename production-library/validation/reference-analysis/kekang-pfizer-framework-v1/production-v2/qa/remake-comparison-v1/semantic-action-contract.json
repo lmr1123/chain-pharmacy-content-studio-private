@@ -1,0 +1,189 @@
+{
+  "contract_version": "1.0",
+  "project_id": "kekang-pfizer-framework-v1",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "integrated_lufs_target": -16,
+    "integrated_lufs_tolerance": 1,
+    "true_peak_max_db": -1
+  },
+  "global_rules": [
+    "One persistent teaching world per segment; do not rebuild a slide for each sentence.",
+    "Every narration verb must cause a visible semantic state change.",
+    "Previous result must remain visible or become the input of the next action.",
+    "No global chapter chrome, MEDICAL/EVIDENCE chip, focus-description paragraph, or progress bar.",
+    "Subtitles support the image; they must not become the primary explanation.",
+    "Do not fabricate product packaging, logos, patents, absorption claims, or efficacy evidence."
+  ],
+  "segments": [
+    {
+      "id": "K03",
+      "name": "失眠状态",
+      "target_duration_seconds": 11.733,
+      "audio_file": "audio/k03-mix-final.wav",
+      "primary_asset": "poc/gold-sample/public/kekang-remake-v1/k03-sleep-wide.png",
+      "daytime_asset": "poc/gold-sample/public/kekang-remake-v1/k03-day-fatigue-v2.png",
+      "persistent_objects": ["bedroom", "woman", "window", "clock", "subtitle"],
+      "states": [
+        {
+          "id": "K03-S01",
+          "time": [0.06, 2.799],
+          "narration": "失眠常见的表现，包括入睡困难。",
+          "verb": "难以入睡",
+          "start_state": "夜晚卧室，人物清醒躺在床上，时钟可见。",
+          "action": "完整卧室从夜色中建立；人物眼部出现一次克制红色提示环；时钟指针推进。",
+          "end_state": "观众明确知道人物仍清醒且时间正在流逝。",
+          "reject_if": "只让人物图片淡入、上下移动或显示‘入睡困难’文字。"
+        },
+        {
+          "id": "K03-S02",
+          "time": [2.799, 6.633],
+          "narration": "夜里可能反复醒来、早醒，醒后难以再次入睡。",
+          "verb": "反复醒来／早醒",
+          "start_state": "沿用 S01 的同一卧室和时钟，不得换页。",
+          "action": "时钟持续走动；沿被褥区域绘制时间路径，1:00、3:00、5:00 按顺序出现；每个节点出现都与时钟推进同步。",
+          "end_state": "三个夜间时间节点同时留在画面，形成一夜多次醒来的历史。",
+          "reject_if": "三个时间词只是横排标签，或三个点同时一次性出现。"
+        },
+        {
+          "id": "K03-S03",
+          "time": [6.633, 10.468],
+          "narration": "到了第二天，也容易感到疲倦，影响精神状态。",
+          "verb": "从夜晚累积为次日疲倦",
+          "start_state": "夜色、时间路径和清醒人物均来自 S02。",
+          "action": "夜色逐渐减弱、窗外晨光增强；夜间人物交叉切换为同一女性坐起扶额的白天状态；时间节点降权但保留。",
+          "end_state": "同一女性在白天坐起仍显疲倦，夜间历史隐约可见，疲倦成为人物动作而非抽象标签。",
+          "reject_if": "切回一张人物卡，或只把‘次日疲倦’作为底部标签显示。"
+        },
+        {
+          "id": "K03-HOLD",
+          "time": [10.468, 11.733],
+          "action": "保持最终状态，字幕结束后至少留有 0.6 秒视觉余量；不得截断音频尾音。"
+        }
+      ]
+    },
+    {
+      "id": "K13",
+      "name": "双重提取工艺",
+      "target_duration_seconds": 11.4,
+      "audio_file": "audio/k13-mix-final.wav",
+      "primary_asset": "poc/gold-sample/public/kekang-lingzhi/v3/ganoderma-hero-v3.png",
+      "persistent_objects": ["ganoderma raw material", "first vessel", "transfer pipe", "second vessel", "subtitle"],
+      "states": [
+        {
+          "id": "K13-S01",
+          "time": [0.06, 2.818],
+          "narration": "第二项产品特点，是双重提取工艺。",
+          "verb": "原料进入第一次提取",
+          "start_state": "空的工艺空间。",
+          "action": "灵芝原料、第一提取罐和连接管路依次建立；原料颗粒沿路径实际进入第一罐；罐内液体和气泡开始变化。",
+          "end_state": "原料已处于第一次提取中，而不是停留在节点外。",
+          "reject_if": "灵芝图和‘第一次提取’仅作为两个标签出现，或圆点只沿折线移动。"
+        },
+        {
+          "id": "K13-S02",
+          "time": [2.818, 6.611],
+          "narration": "原料经过第一次提取后，再进入第二次浓缩提取。",
+          "verb": "提取物转移并浓缩",
+          "start_state": "第一罐内已有提取液和颗粒，沿用 S01。",
+          "action": "第二罐和管路建立；第一罐液体降权，提取物沿管路进入第二罐；第二罐液位、颜色和气泡发生可见变化。",
+          "end_state": "材料已从第一提取状态转为第二浓缩状态，两罐同时保留以证明先后关系。",
+          "reject_if": "仅让‘第二次浓缩’标签亮起，材料状态没有变化。"
+        },
+        {
+          "id": "K13-S03",
+          "time": [6.611, 10.232],
+          "narration": "经过两次提取，原料逐步浓缩，最终形成胶囊。",
+          "verb": "浓缩完成并形成胶囊",
+          "start_state": "第二罐内为浓缩进行中的材料。",
+          "action": "第二罐液位收缩、颜色加深，形成稳定输出；无品牌胶囊示意依次出现。",
+          "end_state": "两次材料变化和胶囊结果同时可见；右上角只保留弱化的‘模板示例’。",
+          "reject_if": "出现整改说明、制作解释、证据门禁、资料为准，或虚构专利、吸收率、包装和品牌标识。"
+        },
+        {
+          "id": "K13-HOLD",
+          "time": [10.232, 11.4],
+          "action": "保持最终工艺全景和胶囊结果，不截断旁白尾音。"
+        }
+      ]
+    },
+    {
+      "id": "K16",
+      "name": "三组联合用药商品展示",
+      "target_duration_seconds": 18.826,
+      "audio_file": "audio/k16-mix-final.wav",
+      "asset_policy": "product-image-led-two-large-packshot-slots-no-watermarked-crops-no-fabricated-packaging",
+      "context_illustration_assets": ["poc/gold-sample/public/kekang-lingzhi/v3/audience-insomnia-v3.png", "poc/gold-sample/public/kekang-lingzhi/v3/joint-liver-v3.png", "poc/gold-sample/public/kekang-lingzhi/v3/audience-low-immune-v3.png"],
+      "packshot_slots": {"left_product_image": "business-authorized-asset-required", "right_lingzhi_example": "poc/gold-sample/public/kekang-lingzhi/packshot.png"},
+      "persistent_objects": ["green product showcase stage", "current combination title", "left product image slot", "right product image slot", "center plus", "small context illustration", "subtitle"],
+      "states": [
+        {
+          "id": "K16-S01",
+          "time": [0.06, 2.526],
+          "narration": "如果晚上睡不着、夜里容易醒，",
+          "verb": "建立谷维素片组合标题",
+          "start_state": "空的绿色商品展示舞台。",
+          "action": "‘谷维素片＋灵芝胶囊’直接作为当前主标题进入；夜间清醒人物只在左上角小型情境提示中出现。",
+          "end_state": "观众已知道当前要讲的两个商品名称，插画不占主展示区。"
+        },
+        {
+          "id": "K16-S02",
+          "time": [2.526, 5.697],
+          "narration": "可以了解谷维素片和灵芝胶囊这组搭配。",
+          "verb": "谷维素片与灵芝胶囊汇合",
+          "start_state": "沿用当前组合主标题与左上角情境提示。",
+          "action": "谷维素片大图槽从左侧进入，灵芝胶囊大图从右侧进入；中间加号与连线展开，两个商品名固定在各自图下方。",
+          "end_state": "谷维素片与灵芝胶囊两张大图和名称成为画面主体。"
+        },
+        {
+          "id": "K16-S03",
+          "time": [5.697, 7.459],
+          "narration": "需要关注肝脏健康时，",
+          "verb": "切换到护肝片组合标题",
+          "start_state": "上一组商品向左右飞出。",
+          "action": "主标题直接切换为‘护肝片＋灵芝胶囊’，小型情境提示替换为人物与肝脏位置插画；不显示方案编号。",
+          "end_state": "观众已知道当前组合名称，主商品区等待进入。"
+        },
+        {
+          "id": "K16-S04",
+          "time": [7.459, 10.453],
+          "narration": "可以了解护肝片和灵芝胶囊这组搭配。",
+          "verb": "护肝片与灵芝胶囊汇合",
+          "start_state": "沿用护肝片＋灵芝胶囊主标题。",
+          "action": "护肝片大图槽与灵芝胶囊大图从两侧进入，中间加号与连线展开。",
+          "end_state": "护肝片与灵芝胶囊两张大图和名称成为画面主体。"
+        },
+        {
+          "id": "K16-S05",
+          "time": [10.453, 13.8],
+          "narration": "如果平时容易反复不舒服、抵抗力比较弱，",
+          "verb": "切换到转移因子组合标题",
+          "start_state": "上一组商品向左右飞出。",
+          "action": "主标题直接切换为‘转移因子口服溶液＋灵芝胶囊’，小型情境提示替换为反复不适人物；不显示方案编号。",
+          "end_state": "长组合名称清楚可读，主商品区等待进入。"
+        },
+        {
+          "id": "K16-S06",
+          "time": [13.8, 17.676],
+          "narration": "可以了解转移因子口服溶液和灵芝胶囊这组搭配。",
+          "verb": "转移因子口服溶液与灵芝胶囊汇合",
+          "start_state": "沿用转移因子口服溶液＋灵芝胶囊主标题。",
+          "action": "转移因子口服溶液大图槽与灵芝胶囊大图从两侧进入，中间加号与连线展开。",
+          "end_state": "两张大图与完整商品名成为画面主体，右上角只保留弱化的‘模板示例’。",
+          "reject_if": "出现方案 01／02／03 导航、让插画占据主画面、裁切带水印课件包装、仿造包装、剂量、机制、疗效、销售话术、审核门禁或资料为准。"
+        },
+        {
+          "id": "K16-HOLD",
+          "time": [17.676, 18.826],
+          "action": "保持第三组两张商品大图、加号和完整组合名称，不截断旁白尾音。"
+        }
+      ]
+    }
+  ]
+}

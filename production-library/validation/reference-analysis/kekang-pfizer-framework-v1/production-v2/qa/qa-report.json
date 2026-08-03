@@ -1,0 +1,67 @@
+{
+  "project_id": "validation.kekang-green-gold-sample-v1",
+  "phase": "B-microshot-structure-animatic-v2",
+  "artifact": "renders/kekang-green-microshot-animatic-v2.mp4",
+  "status": "structure-animatic-technical-qa-passed",
+  "chapter_is_not_page": true,
+  "microshot_count": 58,
+  "contract_duration_seconds": 186.8,
+  "render_duration_seconds": 193.333333,
+  "duration_window": [
+    175,
+    215
+  ],
+  "duration_gate": "passed",
+  "technical_qa": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "full_decode": "passed",
+    "black_frame_detection": "passed",
+    "audio_mode": "silence-structure-only"
+  },
+  "qa_frames_per_microshot": [
+    "entry",
+    "performance",
+    "exit"
+  ],
+  "contact_sheets": [
+    "K01-contact.png",
+    "K02-contact.png",
+    "K03-contact.png",
+    "K04-contact.png",
+    "K05-contact.png",
+    "K06-contact.png",
+    "K07-contact.png",
+    "K08-contact.png",
+    "K09-contact.png",
+    "K10-contact.png",
+    "K11-contact.png",
+    "K12-contact.png",
+    "K13-contact.png",
+    "K14-contact.png",
+    "K15-contact.png",
+    "K16-contact.png",
+    "K17-contact.png",
+    "K18-contact.png"
+  ],
+  "production_ready_microshots": [
+    "K08-S01",
+    "K08-S02",
+    "K08-S03"
+  ],
+  "blocked_microshots": 55,
+  "source": {
+    "handoff": "handoff-v2/",
+    "tsx": "poc/gold-sample/src/kekang-pfizer-v2-animatic-project.tsx",
+    "timeline": "handoff-v2/microshot-timeline.json"
+  },
+  "notes": [
+    "Replaces rejected chapter-page animatic in production-v1.",
+    "Each of 58 microshots uses recipe-specific layered motion with entry/performance/exit.",
+    "No formal medical narration; K08 READY only; packshots are empty slots.",
+    "Render duration slightly above contract sum due to phase easing overhead; within 175-215s target window."
+  ]
+}

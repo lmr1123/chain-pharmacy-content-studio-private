@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>穿心莲内酯滴丸 · 疾病场景课件 金样预览</title>
+<link rel="stylesheet" href="../../shared/preview.css" />
+<style>
+  :root {
+    --accent: #1f7a4c;
+    --orange2: #52c41a;
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumb">
+      <a href="../../index.html">金样案例汇总</a>
+      · 穿心莲内酯滴丸 · 疾病场景 PPT
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="badge">PPT 金样 · settled · 已签样</div>
+        <h1>穿心莲内酯滴丸 · 疾病辨证与商品场景课件</h1>
+        <p class="sub">
+          正式 settled PPTX 金样（template.dashenlin-disease-product-scenario-v1）。
+          十八页：疾病辨证、商品知识与销售场景可编辑模板。
+        </p>
+        <div class="meta">
+          <span class="chip">PPT · 18 页</span>
+          <span class="chip">可编辑</span>
+          <span class="chip">user-approved</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="media/deck.pptx" download>下载可编辑 PPTX</a>
+        <a class="btn secondary" href="../../../../../templates/settled/disease-product-scenario-v1/manifest.json">manifest</a>
+      </div>
+    </header>
+
+    <section class="block" id="sec-pptx">
+      <div class="block-head">
+        <h2><span class="idx">1</span>PPT 完整截图</h2>
+        <span class="hint">18 页 · 点击放大</span>
+      </div>
+      <div class="ppt-grid" id="pptGrid"></div>
+    </section>
+
+    <footer class="notes">
+      权威产物：<code>templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx</code>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="close">关闭</button>
+    <img id="lightboxImg" alt="PPT 页" />
+  </div>
+
+  <script>
+  (function () {
+    const labels = [
+      "封面", "商品介绍", "产品图片", "辨证总览", "证型展开",
+      "核心卖点", "证据页", "适宜人群", "用法用量", "注意事项",
+      "联合方案", "销售场景1", "销售场景2", "话术要点", "对比表",
+      "总结", "问答", "封底"
+    ];
+    const slides = [];
+    for (let i = 1; i <= 18; i++) {
+      const n = String(i).padStart(2, "0");
+      slides.push({
+        title: `第 ${i} 页`,
+        note: labels[i - 1] || "",
+        src: `media/slides/slide-${n}.png`
+      });
+    }
+    const grid = document.getElementById("pptGrid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    slides.forEach((sl) => {
+      const a = document.createElement("a");
+      a.className = "tile";
+      a.href = sl.src;
+      a.innerHTML = `<img src="${sl.src}" alt="${sl.title}" loading="lazy" /><div class="cap"><strong>${sl.title}</strong>${sl.note || ""}</div>`;
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        lightboxImg.src = sl.src;
+        lightboxImg.alt = sl.title;
+        lightbox.classList.add("open");
+      });
+      grid.appendChild(a);
+    });
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.classList.contains("close")) {
+        lightbox.classList.remove("open");
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") lightbox.classList.remove("open");
+    });
+  })();
+  </script>
+</body>
+</html>

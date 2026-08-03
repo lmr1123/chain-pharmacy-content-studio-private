@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "id": "wind-heat-gold-sample",
+    "title": "风热证",
+    "series": "学中医 · 懂养生",
+    "purpose": "reference-replica-validation",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "theme": "medical-tech-dark",
+    "sourcePolicy": "reviewed-narration-locked"
+  },
+  "chapters": [
+    "认识风热证",
+    "典型表现",
+    "调理思路",
+    "快速总结"
+  ],
+  "scenes": [
+    {
+      "id": "s01",
+      "template": "tech-title",
+      "chapter": "认识风热证",
+      "narration": "学中医，懂养生。今天一起认识常见的风热证。",
+      "screenCopy": {
+        "eyebrow": "学中医 · 懂养生",
+        "title": "风热证",
+        "sub": "认识表现 · 理解机制 · 掌握要点"
+      },
+      "assets": {
+        "background": "assets/medical-tech-background.png"
+      },
+      "motion": "hud-reveal"
+    },
+    {
+      "id": "s02",
+      "template": "presenter-symptom-hook",
+      "chapter": "认识风热证",
+      "narration": "当你出现喉咙肿痛、咳嗽痰黄、鼻涕黄稠，同时身体发热、口渴心烦，这些表现往往会一起出现。",
+      "screenCopy": {
+        "title": "身体发出的信号",
+        "tags": [
+          "喉咙肿痛",
+          "咳嗽痰黄",
+          "鼻涕黄稠",
+          "身体发热",
+          "口渴心烦"
+        ]
+      },
+      "assets": {
+        "presenter": "assets/pharmacist-neutral.png",
+        "presenterTalking": "assets/pharmacist-talking.png",
+        "illustration": "assets/symptom-triptych.png"
+      },
+      "motion": "presenter-and-tags"
+    },
+    {
+      "id": "s03",
+      "template": "mechanism-flow",
+      "chapter": "认识风热证",
+      "narration": "简单来说，风热证可以理解为风邪与热邪共同影响身体。体表不适，肺气宣降受到影响，于是咽喉、呼吸和全身感觉都会发出信号。",
+      "screenCopy": {
+        "title": "风 + 热，共同影响身体",
+        "nodes": [
+          "风邪",
+          "热邪",
+          "体表不适",
+          "肺气不畅",
+          "症状出现"
+        ]
+      },
+      "assets": {
+        "body": "assets/mechanism-body.png"
+      },
+      "motion": "energy-flow"
+    },
+    {
+      "id": "s04",
+      "template": "three-signal-cards",
+      "chapter": "典型表现",
+      "narration": "记住三个典型信号。第一，发热口渴，嘴巴发干，心里烦躁。第二，喉咙肿痛，咳嗽，痰色偏黄，鼻涕黄稠。第三，舌色偏红，舌苔微黄，也可能伴随大便干结。",
+      "screenCopy": {
+        "title": "三个典型信号",
+        "cards": [
+          {
+            "number": "01",
+            "heading": "全身表现",
+            "body": "发热 · 口渴 · 口干 · 心烦"
+          },
+          {
+            "number": "02",
+            "heading": "咽喉呼吸",
+            "body": "咽痛 · 咳嗽 · 痰黄 · 鼻涕黄稠"
+          },
+          {
+            "number": "03",
+            "heading": "观察信号",
+            "body": "舌红 · 苔微黄 · 大便干结"
+          }
+        ]
+      },
+      "assets": {
+        "illustrations": "assets/symptom-triptych.png"
+      },
+      "motion": "sequential-cards"
+    },
+    {
+      "id": "s05",
+      "template": "botanical-cards",
+      "chapter": "调理思路",
+      "narration": "调理思路的核心是疏风清热。日常可关注桑叶、菊花、薄荷等常见食材，并保持饮食清淡、适量补水和充分休息。",
+      "screenCopy": {
+        "title": "核心思路：疏风清热",
+        "items": [
+          {
+            "heading": "桑叶",
+            "sub": "清润"
+          },
+          {
+            "heading": "菊花",
+            "sub": "清爽"
+          },
+          {
+            "heading": "薄荷",
+            "sub": "舒畅"
+          }
+        ],
+        "note": "清淡饮食 · 适量补水 · 充分休息"
+      },
+      "assets": {
+        "botanicals": "assets/botanical-triptych.png",
+        "presenter": "assets/pharmacist-pointing.png",
+        "presenterTalking": "assets/pharmacist-pointing-talking.png"
+      },
+      "motion": "botanical-focus"
+    },
+    {
+      "id": "s06",
+      "template": "four-point-summary",
+      "chapter": "快速总结",
+      "narration": "最后快速总结：病因看风与热；表现看发热、口渴、咽痛和痰黄；调理抓住疏风清热；生活上注意清淡、补水和通风。具体情况请按公司审核内容和专业指导执行。",
+      "screenCopy": {
+        "title": "风热证 · 快速总结",
+        "items": [
+          {
+            "heading": "病因",
+            "body": "风 + 热"
+          },
+          {
+            "heading": "表现",
+            "body": "发热 · 口渴 · 咽痛 · 痰黄"
+          },
+          {
+            "heading": "调理",
+            "body": "疏风清热"
+          },
+          {
+            "heading": "生活",
+            "body": "清淡 · 补水 · 通风"
+          }
+        ],
+        "footer": "内部培训演示 · 具体内容以审核稿为准"
+      },
+      "assets": {
+        "presenter": "assets/pharmacist-neutral.png",
+        "presenterTalking": "assets/pharmacist-talking.png"
+      },
+      "motion": "summary-lockup"
+    }
+  ]
+}
+

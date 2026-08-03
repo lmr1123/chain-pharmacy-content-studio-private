@@ -1,0 +1,14 @@
+{
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "generator": "OpenAI built-in image generation",
+  "background_removal": "/Users/liminrong/.codex/skills/.system/imagegen/scripts/remove_chroma_key.py",
+  "common_constraints": ["no text", "no logo", "no branded packaging", "no watermark", "flat #ff00ff chroma-key background"],
+  "assets": [
+    {"id": "asset.illustration.tomato-prostate", "file": "assets/generated/tomato-prostate.png", "role": "tomato to prostate ingredient-science visual", "alpha_gate": "passed"},
+    {"id": "asset.illustration.antioxidant", "file": "assets/generated/antioxidant.png", "role": "tomato to protective antioxidant shield", "alpha_gate": "passed"},
+    {"id": "asset.illustration.immunity", "file": "assets/generated/immunity.png", "role": "tomato to immune-cell ingredient-science visual", "alpha_gate": "passed"},
+    {"id": "asset.illustration.xinjiang-field", "file": "assets/generated/xinjiang-tomato-field.png", "role": "Xinjiang-style tomato growing conditions", "alpha_gate": "passed"},
+    {"id": "asset.illustration.extraction-softgel", "file": "assets/generated/extraction-softgel.png", "role": "tomato extraction and softgel sequence", "alpha_gate": "passed"},
+    {"id": "asset.illustration.audience", "file": "assets/generated/audience.png", "role": "four business-provided audience contexts", "alpha_gate": "passed"}
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "library_id": "chain-pharmacy-content-production-library",
+  "version": "1.0.0",
+  "root_policy": {
+    "primary_decision_ids": ["decision.gold-sample-first", "decision.style-pack-lock", "decision.reference-pixels-forbidden"],
+    "gold_sample_before_asset_stockpile": true,
+    "search_before_create": true,
+    "register_after_approval": true,
+    "one_style_pack_per_project": true,
+    "reference_pixels_forbidden_in_production_assets": true,
+    "approved_script_text_locked_by_default": true,
+    "business_provides_packshots": true
+  },
+  "registries": [
+    "production-library/registries/styles.json",
+    "production-library/registries/templates.json",
+    "production-library/registries/themes.json",
+    "production-library/registries/components.json",
+    "production-library/registries/effects.json",
+    "production-library/registries/voices.json",
+    "production-library/registries/scene-recipes.json",
+    "production-library/registries/decisions.json",
+    "production-library/registries/lessons.json"
+  ],
+  "asset_registries": [
+    "assets/component-library/symptoms/registry.json",
+    "assets/component-library/herbs/registry.json",
+    "assets/component-library/medications/registry.json",
+    "assets/component-library/mechanisms/registry.json"
+  ],
+  "entrypoints": {
+    "project_brief": "docs/project-brief.md",
+    "assembly_protocol": "production-library/assembly-protocol.md",
+    "script_assembly_protocol": "production-library/script-assembly-protocol.md",
+    "business_word_input_contract": "production-library/business-video-word-input-contract.md",
+    "production_quality_gates": "production-library/production-quality-gates.md",
+    "visual_spec": "docs/courseware-visual-spec-1080p.md",
+    "component_asset_policy": "assets/component-library/README.md",
+    "human_lesson_log": "tasks/lessons.md",
+    "decisions_registry": "production-library/registries/decisions.json",
+    "lessons_registry": "production-library/registries/lessons.json",
+    "editor_route_decision": "docs/open-source-editor-core-evaluation.md",
+    "revideo_business_editor_usage": "docs/revideo-business-editor-usage.md",
+    "jianying_draft_workflow": "docs/jianying-draft-template-workflow.md",
+    "jianying_draft_builder": "scripts/build_wind_heat_full_jianying_template.py",
+    "jianying_draft_validator": "scripts/validate_wind_heat_full_jianying_template.py",
+    "query_tool": "scripts/query_production_library.py",
+    "project_skill": "skills/pharmacy-template-replication/SKILL.md",
+    "settled_templates": "production-library/templates/settled",
+    "template_validation": "production-library/validation"
+  }
+}

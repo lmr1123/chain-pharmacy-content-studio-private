@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>辅酶 Q10 · 商品培训视频 金样预览</title>
+<link rel="stylesheet" href="../../shared/preview.css" />
+<style>
+  :root {
+    --accent: #2b6cb0;
+    --orange2: #63b3ed;
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumb">
+      <a href="../../index.html">金样案例汇总</a>
+      · 辅酶 Q10 · 商品培训视频
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="badge">视频金样 · settled · 已签样</div>
+        <h1>辅酶 Q10 · 商品培训视频</h1>
+        <p class="sub">
+          正式 settled 视频金样（template.product-training-faithful-v1）。
+          156s 完整复刻终版；大参林品牌壳扩展已确认可沉淀。
+        </p>
+        <div class="meta">
+          <span class="chip">视频 · ~156s · 1920×1080</span>
+          <span class="chip">商品培训</span>
+          <span class="chip">user-approved</span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn editor" id="btnOpenEditor" href="http://127.0.0.1:9001/" target="_blank" rel="noopener noreferrer" title="需本机已启动：cd poc/gold-sample && npm run start:q10-editable">打开视频编辑器</a>
+        <a class="btn" href="media/film.mp4" download>下载金样视频</a>
+        <a class="btn secondary" href="../../../../video/review-q10-dashenlin.html">大参林扩展审片</a>
+      </div>
+    </header>
+
+    <section class="block" id="sec-chapters">
+      <div class="block-head">
+        <h2><span class="idx">1</span>章节跳转</h2>
+        <span class="hint">点选跳到对应时点并播放</span>
+      </div>
+      <div class="scene-tabs" id="tabs"></div>
+    </section>
+
+    <section class="block" id="sec-video" style="padding:0;overflow:hidden;">
+      <div class="block-head" style="padding:14px 14px 0;">
+        <h2><span class="idx">2</span>视频播放</h2>
+        <span class="hint">canonical · product-training-reference-full-script-system-v3-final-exact.mp4</span>
+      </div>
+      <div class="player-card" style="border:0;border-radius:0;box-shadow:none;">
+        <div class="stage">
+          <video id="video" playsinline preload="metadata" poster="media/cover-product.png" src="media/film.mp4"></video>
+          <div class="caption-bar" id="caption"></div>
+        </div>
+        <div class="controls">
+          <button type="button" class="primary" id="btnPlay">播放</button>
+          <button type="button" id="btnRestart">从头</button>
+          <input class="seek" id="seek" type="range" min="0" max="156" step="0.05" value="0" />
+          <div class="clock" id="clock">0.00 / 156.17s</div>
+          <div class="scene-label" id="sceneLabel">当前章节：—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-thumbs">
+      <div class="block-head">
+        <h2><span class="idx">3</span>关键画面一览</h2>
+        <span class="hint">章节静帧 · 点击跳转</span>
+      </div>
+      <div class="thumb-grid" id="strip"></div>
+    </section>
+
+    <section class="block" id="sec-pptx">
+      <div class="block-head">
+        <h2><span class="idx">4</span>关键帧放大</h2>
+        <span class="hint">与章节静帧同源（本案例为纯视频金样；PPT 见「绿色商品培训」与「疾病场景」）</span>
+      </div>
+      <div class="ppt-grid" id="pptGrid"></div>
+    </section>
+
+    <footer class="notes">
+      权威产物：<code>templates/settled/product-video-faithful-v1/…final-exact.mp4</code>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="close">关闭</button>
+    <img id="lightboxImg" alt="关键帧" />
+  </div>
+
+  <script>
+  window.GOLD_CASE = {
+    id: "product-q10-video-gold",
+    title: "辅酶 Q10 · 商品培训视频",
+    duration: 156.17,
+    editorUrl: "http://127.0.0.1:9001/",
+    editorLabel: "打开视频编辑器",
+    editorHint: "业务图层编辑 · 画面属性面板 · editable:q10:*（需本机已启动 npm run start:q10-editable）",
+    scenes: [
+      { id: "opening", start: 0, end: 17.7, label: "开场" },
+      { id: "brand", start: 17.7, end: 30.0, label: "品牌总览" },
+      { id: "core", start: 30.0, end: 57.1, label: "核心功效" },
+      { id: "efficacy", start: 57.1, end: 87.0, label: "功效展开" },
+      { id: "features", start: 87.0, end: 114.7, label: "产品特点" },
+      { id: "audience", start: 114.7, end: 124.3, label: "适宜人群" },
+      { id: "combo", start: 124.3, end: 151.1, label: "联合用药" },
+      { id: "summary", start: 151.1, end: 156.17, label: "总结" }
+    ],
+    thumbs: [
+      { t: 1, title: "开场", note: "片头", src: "media/thumbs/opening.jpg" },
+      { t: 18, title: "品牌", note: "总览", src: "media/thumbs/brand.jpg" },
+      { t: 30, title: "核心", note: "功效主段", src: "media/thumbs/core.jpg" },
+      { t: 57, title: "功效", note: "展开", src: "media/thumbs/efficacy.jpg" },
+      { t: 87, title: "特点", note: "卖点", src: "media/thumbs/features.jpg" },
+      { t: 115, title: "人群", note: "适宜", src: "media/thumbs/audience.jpg" },
+      { t: 124, title: "联合", note: "用药", src: "media/thumbs/combo.jpg" },
+      { t: 151, title: "总结", note: "收尾", src: "media/thumbs/summary.jpg" }
+    ],
+    slides: [
+      { title: "开场", note: "1s", src: "media/thumbs/opening.jpg" },
+      { title: "品牌总览", note: "18s", src: "media/thumbs/brand.jpg" },
+      { title: "核心功效", note: "30s", src: "media/thumbs/core.jpg" },
+      { title: "功效展开", note: "57s", src: "media/thumbs/efficacy.jpg" },
+      { title: "产品特点", note: "87s", src: "media/thumbs/features.jpg" },
+      { title: "适宜人群", note: "115s", src: "media/thumbs/audience.jpg" },
+      { title: "联合用药", note: "124s", src: "media/thumbs/combo.jpg" },
+      { title: "总结", note: "151s", src: "media/thumbs/summary.jpg" }
+    ],
+    captions: []
+  };
+  </script>
+  <script src="../../shared/preview.js"></script>
+</body>
+</html>

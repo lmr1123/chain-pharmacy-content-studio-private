@@ -1,0 +1,81 @@
+{
+  "project_id": "validation.kekang-green-gold-sample-v1",
+  "theme_id": "theme.product.kekang-lingzhi-capsule",
+  "scene_id": "K08",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "style_pack_status": "validation-candidate-not-registered",
+  "voice_id": "voice.reference-pharmacist-qwen-v1",
+  "status": "candidate-in-production",
+  "narration_full": "从灵芝主体，可以认识两类成分：灵芝多糖和灵芝三萜。",
+  "screen_title": "从灵芝主体，认识两类成分",
+  "completion_text": "两条知识路径由同一灵芝主体展开",
+  "boundary_text": "名称来自内部课件 · 局部运动语法验证 · 非医学审核结论",
+  "cues": [
+    {
+      "start": 0.06,
+      "end": 1.253,
+      "text": "从灵芝主体"
+    },
+    {
+      "start": 1.253,
+      "end": 3.161,
+      "text": "可以认识两类成分"
+    },
+    {
+      "start": 3.161,
+      "end": 4.115,
+      "text": "灵芝多糖"
+    },
+    {
+      "start": 4.115,
+      "end": 5.308,
+      "text": "和灵芝三萜"
+    }
+  ],
+  "playback_duration": 7.908,
+  "audio": {
+    "source": "voice.reference-pharmacist-qwen-v1",
+    "file": "/kekang-k08-av/k08-mix-final.wav",
+    "narration_file": "/kekang-k08-av/k08-narration-v5-smooth.wav",
+    "disclosure": "大参林药师克隆音色；完整语义段连读；默认 1.16×，上限 1.18×",
+    "pace_policy": {
+      "max_tempo": 1.18,
+      "default_tempo": 1.16,
+      "lead_in": 0.06,
+      "lead_out": 0.1,
+      "mode": "full-segment-continuous",
+      "version": "v5-smooth",
+      "max_observed_tempo": 1.16,
+      "reports": [
+        {
+          "text": "从灵芝主体，可以认识两类成分，灵芝多糖，和灵芝三萜。",
+          "raw_duration": 6.08,
+          "used_duration": 5.248,
+          "tempo": 1.16,
+          "default_tempo": 1.16,
+          "preferred_slot": null,
+          "min_audible": 4.075,
+          "policy": "default-brisk-1.16",
+          "gate": "ok",
+          "index": 0,
+          "mode": "full-segment-continuous",
+          "joined_text": "从灵芝主体，可以认识两类成分，灵芝多糖，和灵芝三萜。"
+        }
+      ]
+    }
+  },
+  "motion_beats": {
+    "env_start": 0.0,
+    "title_hero_start": 0.12,
+    "orbit_lines_start": 1.253,
+    "path_a_start": 3.161,
+    "label_a_start": 3.281,
+    "path_b_start": 4.115,
+    "label_b_start": 4.235,
+    "focus_a_start": 5.428,
+    "focus_b_start": 6.158,
+    "completion_start": 6.858,
+    "speech_end": 5.308,
+    "end": 7.908
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "product-training.q10-symptom-triptych",
+  "category": "symptoms",
+  "style_id": "q10-reference-faithful-v1",
+  "version": "1.0.0",
+  "status": "technical-qa-passed",
+  "subjects": ["疲劳乏力", "心慌气短", "胸闷心悸"],
+  "files": {
+    "master_chroma": "master/q10-symptom-triptych-v1-chroma.png",
+    "prompt": "prompts/q10-symptom-triptych-v1.md"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "reference_role": "症状语义、圆形构图和扁平插画画风参考",
+    "reference_video_pixels_used": false
+  },
+  "review": {
+    "visual": "pending-user-signoff",
+    "medical": "pending-internal-review"
+  }
+}

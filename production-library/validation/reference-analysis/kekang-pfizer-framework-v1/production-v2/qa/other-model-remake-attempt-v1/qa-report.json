@@ -1,0 +1,118 @@
+{
+  "status": "goal-misunderstood-paused",
+  "status_zh": "目标理解错误·已暂停·不作独立重做完成",
+  "user_correction": "用户要的是按他方方案真正独立重做并对比，不是同素材同版式再渲；等用户重给方案后再做。见 CONTEXT_HANDOFF.md 与 tasks/lessons.md",
+  "contract": "remake-comparison-v1/OTHER_MODEL_K03_K13_REMAKE_CONTRACT.md",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "attempt_id": "other-model-remake-attempt-v1",
+  "model_self_approved": false,
+  "gold_sample_pass": false,
+  "user_approved": false,
+  "production_validated": false,
+  "generated_at": "2026-08-01",
+  "audio": {
+    "k03": {
+      "source": "remake-comparison-v1/audio/k03-mix-final.wav",
+      "md5": "74977cca48ffc148f99efebf6508bb73",
+      "re_tts": false,
+      "duration_seconds": 11.618,
+      "integrated_lufs_measured": -15.9,
+      "integrated_lufs_target": -16.0,
+      "integrated_lufs_tolerance": 1.0
+    },
+    "k13": {
+      "source": "remake-comparison-v1/audio/k13-mix-final.wav",
+      "md5": "4ef3e1f4b93b761f87f63c97cda718ea",
+      "re_tts": false,
+      "duration_seconds": 12.623,
+      "integrated_lufs_measured": -16.0,
+      "integrated_lufs_target": -16.0,
+      "integrated_lufs_tolerance": 1.0
+    }
+  },
+  "renders": {
+    "k03": {
+      "file": "k03-remake.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "duration_seconds": 11.733,
+      "nb_frames": 352,
+      "not_shorter_than_audio": true
+    },
+    "k13": {
+      "file": "k13-remake.mp4",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "duration_seconds": 12.667,
+      "nb_frames": 380,
+      "not_shorter_than_audio": true
+    }
+  },
+  "gates": {
+    "A_k03_before_k13": {
+      "passed_model_side": true,
+      "note": "S01/S02/S03 entry-performance-exit can describe 入睡困难 → 多次夜醒 → 次日疲倦; human must still review"
+    },
+    "B_k13": {
+      "passed_model_side": true,
+      "note": "Material enters vessel A, transfers to B with liquid change, concentrate then capsules then evidence; human must still review"
+    }
+  },
+  "rework_rounds": {
+    "k03": 1,
+    "k13": 1,
+    "max_allowed": 2
+  },
+  "frames": {
+    "k03_contact": "frames/k03-contact.png",
+    "k13_contact": "frames/k13-contact.png",
+    "k03_semantic": [
+      "frames/K03-S01-entry.png",
+      "frames/K03-S01-performance.png",
+      "frames/K03-S01-exit.png",
+      "frames/K03-S02-entry.png",
+      "frames/K03-S02-performance.png",
+      "frames/K03-S02-exit.png",
+      "frames/K03-S03-entry.png",
+      "frames/K03-S03-performance.png",
+      "frames/K03-S03-exit.png"
+    ],
+    "k13_semantic": [
+      "frames/K13-S01-entry.png",
+      "frames/K13-S01-performance.png",
+      "frames/K13-S01-exit.png",
+      "frames/K13-S02-entry.png",
+      "frames/K13-S02-performance.png",
+      "frames/K13-S02-exit.png",
+      "frames/K13-S03-entry.png",
+      "frames/K13-S03-performance.png",
+      "frames/K13-S03-exit.png"
+    ]
+  },
+  "prohibitions_checked": {
+    "no_production_v2_global_chrome": true,
+    "no_slide_per_sentence": true,
+    "no_dot_line_as_process_only": true,
+    "no_fade_only_performance": true,
+    "no_fabricated_brand_patent_efficacy": true,
+    "no_re_tts": true,
+    "no_overwrite_remake_comparison_v1": true,
+    "no_full_course_extension": true
+  },
+  "source_project": {
+    "root": "other-model-remake-attempt-v1/src",
+    "k03_scene": "src/k03-scene.tsx",
+    "k13_scene": "src/k13-scene.tsx",
+    "render_entry": "src/render.mjs",
+    "bridge_projects": [
+      "poc/gold-sample/src/other-model-k03-project.tsx",
+      "poc/gold-sample/src/other-model-k13-project.tsx"
+    ]
+  }
+}

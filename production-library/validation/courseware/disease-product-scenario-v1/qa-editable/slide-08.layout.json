@@ -1,0 +1,1558 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/r6rpc8",
+    "id": "r6rpc8",
+    "slide": 8,
+    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkjil4zi",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        28,
+        0,
+        76,
+        84
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yh8jq90r",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        25,
+        17,
+        82,
+        47
+      ],
+      "geometry": "rect",
+      "text": "1.5",
+      "textPreview": "1.5",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1.5"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1.5",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#FFFFFF",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1.5",
+              "fontSize": 30,
+              "color": "#FFFFFF",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zih0jehc",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "疾病篇——风热证的证候细分（常见）",
+      "textPreview": "疾病篇——风热证的证候细分（常见）",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "疾病篇——风热证的证候细分（常见）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "疾病篇——风热证的证候细分（常见）",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "疾病篇——风热证的证候细分（常见）",
+              "fontSize": 28,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfqhozi1",
+      "id": "4",
+      "name": "chrome-green-rule",
+      "bbox": [
+        104,
+        70,
+        1140,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xgzih4z6",
+      "id": "5",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        150,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 15,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ad8zmp0v",
+      "id": "6",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1075,
+        685,
+        170,
+        24
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111111",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 14,
+              "color": "#111111",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/beh0fuhg",
+      "id": "7",
+      "name": "subtype-1-surface",
+      "bbox": [
+        70,
+        110,
+        550,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ob6hkfip",
+      "id": "8",
+      "name": "subtype-1-accent",
+      "bbox": [
+        70,
+        110,
+        6,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pczidkza",
+      "id": "9",
+      "name": "subtype-1-title",
+      "bbox": [
+        88,
+        120,
+        514,
+        44
+      ],
+      "geometry": "rect",
+      "text": "01. 风热感冒（表热轻症）",
+      "textPreview": "01. 风热感冒（表热轻症）",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#009900",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01. 风热感冒（表热轻症）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01. 风热感冒（表热轻症）",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#009900",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01. 风热感冒（表热轻症）",
+              "fontSize": 25,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/58zmxgju",
+      "id": "10",
+      "name": "subtype-1-rule",
+      "bbox": [
+        88,
+        166,
+        514,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47qlobi9",
+      "id": "11",
+      "name": "subtype-1-clinical",
+      "bbox": [
+        88,
+        186,
+        245,
+        135
+      ],
+      "geometry": "rect",
+      "text": "临床表现：发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。",
+      "textPreview": "临床表现：发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "临床表现："
+          },
+          {
+            "index": 2,
+            "text": "发热、微恶风、咽痛"
+          },
+          {
+            "index": 3,
+            "text": "、黄涕、薄黄苔、脉"
+          },
+          {
+            "index": 4,
+            "text": "浮数。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "临床表现：发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "临床表现：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/36x4v61o",
+      "id": "12",
+      "name": "subtype-1-column-rule",
+      "bbox": [
+        344,
+        186,
+        1,
+        135
+      ],
+      "geometry": "rect",
+      "fillColor": "#D5E5E7",
+      "lineColor": "#D5E5E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i5o3m103",
+      "id": "13",
+      "name": "subtype-1-treatment",
+      "bbox": [
+        362,
+        186,
+        240,
+        135
+      ],
+      "geometry": "rect",
+      "text": "治则与方药：辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。",
+      "textPreview": "治则与方药：辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "治则与方药："
+          },
+          {
+            "index": 2,
+            "text": "辛凉解表。方用银翘"
+          },
+          {
+            "index": 3,
+            "text": "散、桑菊饮；中成药"
+          },
+          {
+            "index": 4,
+            "text": "可选维C银翘片、银"
+          },
+          {
+            "index": 5,
+            "text": "翘解毒片。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "治则与方药：辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "治则与方药：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4fmtwjy",
+      "id": "14",
+      "name": "subtype-2-surface",
+      "bbox": [
+        660,
+        110,
+        550,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g36lkrid",
+      "id": "15",
+      "name": "subtype-2-accent",
+      "bbox": [
+        660,
+        110,
+        6,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v2xkr61s",
+      "id": "16",
+      "name": "subtype-2-title",
+      "bbox": [
+        678,
+        120,
+        514,
+        44
+      ],
+      "geometry": "rect",
+      "text": "02. 风热犯肺（咳嗽为主）",
+      "textPreview": "02. 风热犯肺（咳嗽为主）",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#009900",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02. 风热犯肺（咳嗽为主）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02. 风热犯肺（咳嗽为主）",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#009900",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02. 风热犯肺（咳嗽为主）",
+              "fontSize": 25,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1o3i107",
+      "id": "17",
+      "name": "subtype-2-rule",
+      "bbox": [
+        678,
+        166,
+        514,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgf2pwjm",
+      "id": "18",
+      "name": "subtype-2-clinical",
+      "bbox": [
+        678,
+        186,
+        245,
+        135
+      ],
+      "geometry": "rect",
+      "text": "临床表现：咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。",
+      "textPreview": "临床表现：咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "临床表现："
+          },
+          {
+            "index": 2,
+            "text": "咳嗽频作、咳痰黏稠"
+          },
+          {
+            "index": 3,
+            "text": "、咽痛、胸闷，或伴"
+          },
+          {
+            "index": 4,
+            "text": "鼻流黄涕。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "临床表现：咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "临床表现：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fmlgri1",
+      "id": "19",
+      "name": "subtype-2-column-rule",
+      "bbox": [
+        934,
+        186,
+        1,
+        135
+      ],
+      "geometry": "rect",
+      "fillColor": "#D5E5E7",
+      "lineColor": "#D5E5E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kjqlwrqx",
+      "id": "20",
+      "name": "subtype-2-treatment",
+      "bbox": [
+        952,
+        186,
+        240,
+        135
+      ],
+      "geometry": "rect",
+      "text": "治则与方药：疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。",
+      "textPreview": "治则与方药：疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "治则与方药："
+          },
+          {
+            "index": 2,
+            "text": "疏风清热、宣肺止咳"
+          },
+          {
+            "index": 3,
+            "text": "。方用桑菊饮；中成"
+          },
+          {
+            "index": 4,
+            "text": "药如急支糖浆、川贝"
+          },
+          {
+            "index": 5,
+            "text": "枇杷膏。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "治则与方药：疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "治则与方药：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkzm5wri",
+      "id": "21",
+      "name": "subtype-3-surface",
+      "bbox": [
+        70,
+        380,
+        550,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yh83uhsr",
+      "id": "22",
+      "name": "subtype-3-accent",
+      "bbox": [
+        70,
+        380,
+        6,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zih43m9c",
+      "id": "23",
+      "name": "subtype-3-title",
+      "bbox": [
+        88,
+        390,
+        514,
+        44
+      ],
+      "geometry": "rect",
+      "text": "03. 风热上攻（头面热象偏重）",
+      "textPreview": "03. 风热上攻（头面热象偏重）",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#009900",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03. 风热上攻（头面热象偏重）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03. 风热上攻（头面热象偏重）",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#009900",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03. 风热上攻（头面热象偏重）",
+              "fontSize": 25,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvqlsra1",
+      "id": "24",
+      "name": "subtype-3-rule",
+      "bbox": [
+        88,
+        436,
+        514,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xgzm1wrm",
+      "id": "25",
+      "name": "subtype-3-clinical",
+      "bbox": [
+        88,
+        456,
+        245,
+        135
+      ],
+      "geometry": "rect",
+      "text": "临床表现：头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。",
+      "textPreview": "临床表现：头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "临床表现："
+          },
+          {
+            "index": 2,
+            "text": "头痛剧烈、面红目赤"
+          },
+          {
+            "index": 3,
+            "text": "、咽喉肿痛、口舌生"
+          },
+          {
+            "index": 4,
+            "text": "疮，或牙龈肿痛。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "临床表现：头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "临床表现：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qt83qhsv",
+      "id": "26",
+      "name": "subtype-3-column-rule",
+      "bbox": [
+        344,
+        456,
+        1,
+        135
+      ],
+      "geometry": "rect",
+      "fillColor": "#D5E5E7",
+      "lineColor": "#D5E5E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/buhkzm9g",
+      "id": "27",
+      "name": "subtype-3-treatment",
+      "bbox": [
+        362,
+        456,
+        240,
+        135
+      ],
+      "geometry": "rect",
+      "text": "治则与方药：疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。",
+      "textPreview": "治则与方药：疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "治则与方药："
+          },
+          {
+            "index": 2,
+            "text": "疏风清热、清利头目"
+          },
+          {
+            "index": 3,
+            "text": "；可选黄连上清片、"
+          },
+          {
+            "index": 4,
+            "text": "板蓝根颗粒、穿心莲"
+          },
+          {
+            "index": 5,
+            "text": "内酯滴丸。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "治则与方药：疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "治则与方药：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wral4bq5",
+      "id": "28",
+      "name": "subtype-4-surface",
+      "bbox": [
+        660,
+        380,
+        550,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8E0CF",
+      "lineWidth": 1
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hc3mdgrq",
+      "id": "29",
+      "name": "subtype-4-accent",
+      "bbox": [
+        660,
+        380,
+        6,
+        230
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r65o3ats",
+      "id": "30",
+      "name": "subtype-4-title",
+      "bbox": [
+        678,
+        390,
+        514,
+        44
+      ],
+      "geometry": "rect",
+      "text": "04. 风热夹湿（夏季多见）",
+      "textPreview": "04. 风热夹湿（夏季多见）",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#009900",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04. 风热夹湿（夏季多见）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04. 风热夹湿（夏季多见）",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#009900",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04. 风热夹湿（夏季多见）",
+              "fontSize": 25,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6lw7a5s7",
+      "id": "31",
+      "name": "subtype-4-rule",
+      "bbox": [
+        678,
+        436,
+        514,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#CDE9DE",
+      "lineColor": "#CDE9DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8n65kby",
+      "id": "32",
+      "name": "subtype-4-clinical",
+      "bbox": [
+        678,
+        456,
+        245,
+        135
+      ],
+      "geometry": "rect",
+      "text": "临床表现：发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。",
+      "textPreview": "临床表现：发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "临床表现："
+          },
+          {
+            "index": 2,
+            "text": "发热、头昏沉、胸闷"
+          },
+          {
+            "index": 3,
+            "text": "、肢体困重、舌苔黄"
+          },
+          {
+            "index": 4,
+            "text": "腻，多在夏季暑湿时"
+          },
+          {
+            "index": 5,
+            "text": "发生。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "临床表现：发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "临床表现：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s7epcfad",
+      "id": "33",
+      "name": "subtype-4-column-rule",
+      "bbox": [
+        934,
+        456,
+        1,
+        135
+      ],
+      "geometry": "rect",
+      "fillColor": "#D5E5E7",
+      "lineColor": "#D5E5E7",
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fa5o7ut4",
+      "id": "34",
+      "name": "subtype-4-treatment",
+      "bbox": [
+        952,
+        456,
+        240,
+        135
+      ],
+      "geometry": "rect",
+      "text": "治则与方药：疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。",
+      "textPreview": "治则与方药：疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#303741",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "治则与方药："
+          },
+          {
+            "index": 2,
+            "text": "疏风清热，兼化湿和"
+          },
+          {
+            "index": 3,
+            "text": "中。方用新加香薷饮"
+          },
+          {
+            "index": 4,
+            "text": "；中成药可选甘露消"
+          },
+          {
+            "index": 5,
+            "text": "毒丹。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "治则与方药：疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#303741",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "治则与方药：",
+              "fontSize": 23,
+              "color": "#303741",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。",
+              "fontSize": 23,
+              "color": "#303741",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,66 @@
+{
+  "version": "2.0",
+  "scope": ["K03", "K13", "K16"],
+  "role": "formal-gold-sample-tuning",
+  "style_pack_id": "style-pack.kekang-pfizer-green-candidate-v1",
+  "renders": {
+    "K03": {
+      "file": "k03-after.mp4",
+      "duration_seconds": 11.733333,
+      "resolution": "1920x1080",
+      "fps": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "black_frames_detected": false,
+      "semantic_states": ["夜间清醒", "反复夜醒", "天亮", "白天坐起仍疲倦"]
+    },
+    "K13": {
+      "file": "k13-after.mp4",
+      "duration_seconds": 11.4,
+      "resolution": "1920x1080",
+      "fps": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "black_frames_detected": false,
+      "integrated_lufs": -16.0,
+      "true_peak_db": -1.6,
+      "semantic_states": ["灵芝原料", "第一次提取", "第二次浓缩", "胶囊形成"]
+    },
+    "K16": {
+      "file": "k16-after.mp4",
+      "duration_seconds": 18.766667,
+      "resolution": "1920x1080",
+      "fps": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "black_frames_detected": false,
+      "integrated_lufs": -16.9,
+      "true_peak_db": -1.2,
+      "semantic_states": ["谷维素片＋灵芝胶囊商品大图组合", "护肝片＋灵芝胶囊商品大图组合", "转移因子口服溶液＋灵芝胶囊商品大图组合"],
+      "context_illustration_assets": ["poc/gold-sample/public/kekang-lingzhi/v3/audience-insomnia-v3.png", "poc/gold-sample/public/kekang-lingzhi/v3/joint-liver-v3.png", "poc/gold-sample/public/kekang-lingzhi/v3/audience-low-immune-v3.png"],
+      "packshot_slots": {"left": "business-authorized-product-image-required", "right_example": "poc/gold-sample/public/kekang-lingzhi/packshot.png"},
+      "packshot_policy": "product-image-led; no crop from watermarked references and no fabricated packaging"
+    }
+  },
+  "screen_text_audit": {
+    "required": ["模板示例"],
+    "forbidden": ["整改示例", "不是两个节点", "证据通过后用于正式培训", "工艺证据通过后使用", "应与公司批准的证据资料一致", "组合逻辑 · 待审核", "全部方案审核后使用", "商品 A", "商品 B", "方案 01", "方案 02", "方案 03", "第一套方案", "第二套方案", "第三套方案", "接下来展示对应的商品组合", "组成这一方向的联合方案", "可将谷维素片", "可将护肝片", "可将转移因子", "失眠场景", "肝功能异常场景", "免疫力低下场景", "☾", "盾"],
+    "result": "passed"
+  },
+  "asr": {
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "K03": "audio/asr-v2/k03-mix-final.txt",
+    "K13": "audio/asr-v2/k13-mix-final.txt",
+    "K16_raw": "audio/asr-v2/k16-mix-final.txt",
+    "K16_domain_prompted": "audio/asr-v2/k16-mix-final-domain.txt",
+    "K16_terms": ["谷维素片", "灵芝胶囊", "护肝片", "转移因子口服溶液"],
+    "result": "passed; K16 raw transcript preserved and domain-prompted transcript used for terminology gate"
+  },
+  "handoff_validation": {
+    "chapter_count": 18,
+    "microshot_count": 58,
+    "formal_voice_microshot_coverage": 58,
+    "error_count": 0,
+    "warning_count": 8
+  }
+}

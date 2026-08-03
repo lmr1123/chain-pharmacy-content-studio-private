@@ -1,0 +1,162 @@
+{
+  "project_id": "health.wind-heat.editable-v2",
+  "template_id": "template.health-reference-tech-v1",
+  "style_pack_id": "style-pack.reference-medical-tech-v1",
+  "contract": "poc/gold-sample/src/wind-heat-production-contract.ts",
+  "audit_scope": "presenter size/anchor/mouth rig and voice identity/tempo/loudness/continuity",
+  "scenes": [
+    {
+      "scene": 1,
+      "id": "reference-native-intro",
+      "old": {
+        "presenter": null,
+        "audio": "qwen-cloned-reference-28s.wav at volume 0.0001; rendered track is effectively silent"
+      },
+      "target": {
+        "presenter": null,
+        "audio": "intentional silence only; narration lead-in belongs to the assembled timeline and uses VOICE_PROFILE"
+      }
+    },
+    {
+      "scene": 2,
+      "id": "reference-character-body",
+      "old": {
+        "presenter": [
+          "palm image 720x1600 in 500x980 container at [-650,12]",
+          "open-arms image 750x1550; later moved to [0,80]"
+        ],
+        "anchor": "hard-coded mouth pixels palm [37,-181], open-arms [33,-131]",
+        "mouth": "fixed 140ms loop from 4.56s to scene end, including pauses",
+        "audio": "legacy per-cue TTS; -13.8 LUFS, true peak -0.4 dBFS mono source"
+      },
+      "target": {
+        "presenter": "PRESENTER_RIG palm sideLeft then openArms heroCenter; intrinsic aspect ratio preserved",
+        "anchor": "pose metadata only",
+        "mouth": "voice-activity/phoneme timing; closed after 80ms silence and on final frame",
+        "audio": "VOICE_PROFILE; semantic blocks and loudness remaster required"
+      }
+    },
+    {
+      "scene": 3,
+      "id": "reference-mechanism-gap",
+      "old": {
+        "presenter": [
+          "open-arms 880x1820 at [0,300]",
+          "megaphone 600x1250 at [660,150]",
+          "point 560x1160 at [-690,170]"
+        ],
+        "anchor": "inline normalized values",
+        "mouth": "all three pose mouth groups advance together every 140ms for almost the full scene",
+        "audio": "semantic blocks; tempo 0.976x; -16.1 LUFS"
+      },
+      "target": {
+        "presenter": "one active PRESENTER_RIG pose per shot using placement presets",
+        "anchor": "pose metadata only",
+        "mouth": "only the visible pose is driven; pauses and final frame are closed",
+        "audio": "VOICE_PROFILE, tempo within 1.00x-1.18x"
+      }
+    },
+    {
+      "scene": 4,
+      "id": "reference-typical-symptoms",
+      "old": {
+        "presenter": [
+          "point 650x1510 at [0,275]",
+          "point 600x1394 at [-690,96]",
+          "megaphone 760x1548 at [660,80]"
+        ],
+        "anchor": "local MOUTH_RIG copy",
+        "mouth": "all pose groups advance together every 140ms until 26.1s",
+        "audio": "per-cue rebuilt track; tempo 1.082x; -15.8 LUFS"
+      },
+      "target": {
+        "presenter": "PRESENTER_RIG hero/side presets with one consistent effective height per preset",
+        "anchor": "shared pose metadata only",
+        "mouth": "visible pose only, aligned to narration activity",
+        "audio": "VOICE_PROFILE semantic blocks; preserve short-phrase minimum durations"
+      }
+    },
+    {
+      "scene": 5,
+      "id": "reference-treatment",
+      "old": {
+        "presenter": [
+          "megaphone 770x1568 at [650,80]",
+          "point 600x1394 at [-660,84]"
+        ],
+        "anchor": "local MOUTH_RIG copy",
+        "mouth": "animated only at 0-6.4s and 29.32s-end; incorrectly closed during spoken herb section",
+        "audio": "per-cue rebuilt track; tempo 1.18x; -15.8 LUFS"
+      },
+      "target": {
+        "presenter": "PRESENTER_RIG sideRight/sideLeft",
+        "anchor": "shared pose metadata only",
+        "mouth": "all audible speech drives the visible pose; silence is closed",
+        "audio": "VOICE_PROFILE; 1.18x is a hard ceiling, not a default fit target"
+      }
+    },
+    {
+      "scene": 6,
+      "id": "reference-medication-advice",
+      "old": {
+        "presenter": [
+          "point 600x1394 at [-650,82]",
+          "open-arms 850x1757 at [0,278]"
+        ],
+        "anchor": "local MOUTH_RIG copy",
+        "mouth": "animated only until 11.437s although narration continues to 41.1s",
+        "audio": "semantic blocks; tempo 1.020x; -16.3 LUFS"
+      },
+      "target": {
+        "presenter": "PRESENTER_RIG sideLeft then heroCenter",
+        "anchor": "shared pose metadata only",
+        "mouth": "all audible presenter shots are driven; non-presenter advice shots remain closed/hidden",
+        "audio": "VOICE_PROFILE"
+      }
+    },
+    {
+      "scene": 7,
+      "id": "reference-summary-outro",
+      "old": {
+        "presenter": null,
+        "audio": "semantic blocks; tempo 1.095x; -15.8 LUFS; speech ends at 24.54s inside a 28s scene"
+      },
+      "target": {
+        "presenter": null,
+        "audio": "VOICE_PROFILE; trailing silence is explicit and declicked"
+      }
+    }
+  ],
+  "acceptance_thresholds": {
+    "presenter": {
+      "aspect_ratio_error_percent_max": 0.5,
+      "placement_anchor_error_px_max": 4,
+      "effective_height_delta_within_same_preset_percent_max": 2,
+      "foot_baseline_error_px_max": 4,
+      "mouth_anchor_error_px_max": 3,
+      "mouth_closed_after_silence_ms": 80,
+      "mouth_final_frame": "closed",
+      "visual_qa": "400% face crop for one closed and one open frame per pose"
+    },
+    "audio": {
+      "integrated_lufs_target": -16,
+      "integrated_lufs_tolerance_lu": 0.5,
+      "scene_to_scene_loudness_delta_lu_max": 1,
+      "true_peak_dbfs_max": -1,
+      "tempo_min": 1,
+      "tempo_default": 1.16,
+      "tempo_max": 1.18,
+      "crossfade_ms": 35,
+      "boundary_click_peak_delta_db_max": 6,
+      "source_sample_rate_hz": 24000,
+      "render_sample_rate_hz": 48000,
+      "asr_text_match_percent_min": 98
+    },
+    "subtitle": {
+      "audio_sync_error_ms_max": 100,
+      "font_size_px": 52,
+      "max_lines": 2,
+      "safe_bottom_y_px": 435
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "artifact": "../kekang-lingzhi-v7-production-signoff.mp4",
+  "status": "technical-qa-passed-awaiting-user-signoff",
+  "role": "production-standard excerpt for full-course visual and motion signoff",
+  "duration_seconds": 36.5,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1095,
+    "pixel_format": "yuv420p",
+    "color": "bt709",
+    "full_decode": "passed",
+    "continuous_black_frames": "none detected"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "integrated_loudness_lufs": -16.0,
+    "loudness_range_lu": 2.0,
+    "true_peak_dbfs": -2.7,
+    "voice_profile": "voice.reference-pharmacist-qwen-v1",
+    "tempo_max": 1.16
+  },
+  "content": {
+    "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
+    "presenter_component": "component.presenter.product-trainer-v1",
+    "illustration_style": "pharmacy-health-cartoon-v1",
+    "structure": [
+      "digital presenter opening question",
+      "three adult audience states on one stage",
+      "semantic-timed card focus and glow",
+      "three product directions consolidated"
+    ],
+    "sales_script_language": false
+  },
+  "qa": {
+    "subtitle_safe_area": "passed after moving the three audience cards upward",
+    "presenter_mouth_states": "visually sampled at speaking and ending frames",
+    "motion_evidence_frames_seconds": [
+      4.2,
+      6.2,
+      10.5,
+      14.5,
+      18.5,
+      23.2,
+      28.5,
+      33.5
+    ],
+    "asr_review": {
+      "model": "large-v3-turbo with domain prompt",
+      "lcs_ratio": 0.9648,
+      "note": "ASR homophones such as 三萜/三贴 and 课件/客舰 were manually identified; approved script and subtitles remain authoritative."
+    },
+    "contact_sheet": "contact-sheet.png"
+  },
+  "sha256": "98eb44cce12ba6ede4c60d4f5d290f77b7045c8fc43347bd74502ba02da905fa",
+  "constraints": [
+    "This is a validation candidate and does not replace a settled canonical artifact before user approval.",
+    "The current packshot remains a courseware candidate pending the business-authorized high-resolution original."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "registry_type": "asset-series",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "asset-series.mechanism.reference-medical-tech-v1",
+      "name_zh": "蓝青医学机理可视化系列 v1",
+      "status": "user-approved",
+      "style_pack_id": "style-pack.reference-medical-tech-v1",
+      "series_style_id": "medical-mechanism-cyan-volumetric-v1",
+      "tags": [
+        "医学机理",
+        "人体",
+        "器官",
+        "症状聚焦",
+        "解剖剖面",
+        "体积邪气",
+        "可复用",
+        "可组合"
+      ],
+      "roles": [
+        "whole_body_front",
+        "organ_torso",
+        "symptom_focus_front",
+        "anatomy_cross_section",
+        "pathogen_field",
+        "process_path"
+      ],
+      "members": [
+        "asset.mechanism.wind-heat-dynamic-v1"
+      ],
+      "component_ids": [
+        "component.mechanism.wind-heat-assembly-v1",
+        "component.mechanism.surface-lung-panel-v1"
+      ],
+      "effect_ids": [
+        "effect.mechanism.pathogen-assembly-v1",
+        "effect.mechanism.wind-heat-internal-motion-v1",
+        "effect.mechanism.volumetric-pathogen-field-v1"
+      ],
+      "source": "assets/component-library/mechanisms/reference-medical-tech-series-v1/series.json",
+      "restriction": "系列风格与扩展方式已获用户确认；未来新增成员必须逐项完成视觉、技术、来源和医学审核，不能自动继承 user-approved 状态"
+    }
+  ]
+}

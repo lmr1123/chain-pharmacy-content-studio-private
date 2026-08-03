@@ -1,0 +1,33 @@
+{
+  "id": "product-training.q10-audience-v1",
+  "category": "product-training-audience",
+  "style_id": "q10-reference-faithful-v1",
+  "version": "1.0.0",
+  "status": "technical-qa-passed",
+  "subjects": [
+    "心血管不适人群",
+    "长期服用他汀后肌肉不适人群",
+    "备孕男女"
+  ],
+  "files": {
+    "muscle": [
+      "master/muscle-fatigue-v1.png",
+      "master/muscle-pain-v1.png"
+    ],
+    "fertility": [
+      "master/preconception-couple-v1.png",
+      "master/pregnancy-consult-v1.png"
+    ],
+    "prompt": "prompts/q10-audience-v1.md"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "reference_role": "参考片只用于人物题材、双图布局和课程插画风格对标",
+    "reference_video_pixels_used": false
+  },
+  "review": {
+    "visual": "pending-user-signoff",
+    "medical": "pending-internal-review",
+    "dynamic_qa": "production-library/validation/video/product-training-audience-qa/"
+  }
+}

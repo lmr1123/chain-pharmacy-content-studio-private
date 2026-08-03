@@ -1,0 +1,11 @@
+Reference source:
+/Users/liminrong/Downloads/商品课件1/Attachments/
+
+The five PNG files are user-provided internal courseware screenshots.
+They are used for layout measurement, manual transcription, color matching,
+and information-density comparison only.
+
+No full-page screenshot and no crop from a screenshot is embedded in the
+generated PPTX or PDF. Product images, logos, partner packs, and illustrations
+remain labeled editable asset slots until approved high-resolution originals
+are supplied.

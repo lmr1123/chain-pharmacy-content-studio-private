@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "id": "wind-heat-30s-visual-approval",
+    "title": "风热证 · 30 秒视觉签样",
+    "purpose": "intro-and-presenter-approval",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "theme": "medical-tech-dark",
+    "sourcePolicy": "reviewed-narration-locked"
+  },
+  "scenes": [
+    {
+      "id": "r01",
+      "template": "tech-title",
+      "narration": "学中医，懂养生。先用三十秒，认识常见的风热证。",
+      "screenCopy": {
+        "eyebrow": "学中医 · 懂养生",
+        "title": "风热证",
+        "sub": "30 秒视觉签样 · 片头与卡通药师"
+      }
+    },
+    {
+      "id": "r02",
+      "template": "expressive-presenter",
+      "narration": "当身体出现喉咙肿痛、咳嗽痰黄、口渴发热时，可以先留意这些信号。风与热共同影响身体，往往还会伴随鼻涕黄稠、咽部不适和心里烦躁。记住三个关键词：发热、咽喉不适、痰色偏黄。具体内容，以公司药师和合规审核稿为准。",
+      "screenCopy": {
+        "title": "身体发出的信号",
+        "eyebrow": "TYPICAL SIGNALS",
+        "lead": "先看三个关键词",
+        "cards": [
+          {
+            "heading": "发热",
+            "body": "体温与体感变化"
+          },
+          {
+            "heading": "咽喉不适",
+            "body": "肿痛、干燥或刺激感"
+          },
+          {
+            "heading": "痰色偏黄",
+            "body": "结合其他表现观察"
+          }
+        ],
+        "footer": "内部视觉签样 · 正式内容以公司审核稿为准"
+      },
+      "characterStates": [
+        "neutral",
+        "talking",
+        "blink",
+        "concerned",
+        "pointing",
+        "pointing-talking"
+      ]
+    }
+  ]
+}

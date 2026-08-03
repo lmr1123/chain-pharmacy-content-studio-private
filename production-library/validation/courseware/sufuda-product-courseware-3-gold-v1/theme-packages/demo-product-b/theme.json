@@ -1,0 +1,168 @@
+{
+  "theme_id": "theme.demo-product-b-structure-v1",
+  "slug": "demo-product-b-courseware-v1",
+  "style_pack_id": "style-pack.sufuda-pearl-silk-orange-v1",
+  "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1",
+  "product": {
+    "brand_name": "示例宁®",
+    "generic_name": "演示用占位成分",
+    "display_name": "示例宁® 演示用占位成分"
+  },
+  "title": "示例宁®演示用占位成分 · 结构验证主题（非医学终稿）",
+  "required_business_assets": ["logo", "packGroup"],
+  "assets": {
+    "logo": "TODO",
+    "packGroup": "TODO"
+  },
+  "pages": [
+    {
+      "id": "cover",
+      "elements": {
+        "title": "示例宁® 演示用占位成分",
+        "tagline": "结构验证主题 · 非真实药品宣传",
+        "check1": "框架可复用",
+        "check2": "文案可替换",
+        "check3": "包装待授权"
+      }
+    },
+    {
+      "id": "flu",
+      "elements": {
+        "card1_title": "培训结构可复用",
+        "card1_body": "同风格换主题\n只改审核内容",
+        "card2_t1": "内容模型驱动",
+        "card2_t2": "元素可编辑",
+        "card2_t3": "多端同源",
+        "card3_num": "12页",
+        "card3_body": "PPTX 与视频\n共用 content-model",
+        "footer": "演示主题：不构成医学或销售主张"
+      }
+    },
+    {
+      "id": "benefit_1",
+      "chapter": "一、三大结构能力",
+      "nav": ["内容模型", "可编辑导出", "主题复刻"],
+      "elements": {
+        "chapter": "一、三大结构能力",
+        "nav1": "内容模型",
+        "nav2": "可编辑导出",
+        "nav3": "主题复刻",
+        "bubble_text": "稳定ID\n可替换",
+        "badge_jia_label": "文",
+        "badge_yi_label": "图"
+      }
+    },
+    {
+      "id": "benefit_2",
+      "elements": {
+        "chapter": "一、三大结构能力",
+        "nav1": "内容模型",
+        "nav2": "可编辑导出",
+        "nav3": "主题复刻",
+        "dose1": "① 一次建模",
+        "drug_a": "content-model",
+        "dose24": "MP4 + PPTX 同源",
+        "mech_left": "业务改字换图，\n不改底层框架",
+        "drug_b": "硬编码文案",
+        "mech_right": "主题绑定代码\n无法批量复用"
+      }
+    },
+    {
+      "id": "benefit_3",
+      "elements": {
+        "chapter": "一、三大结构能力",
+        "patient_label": "业务侧维护审核稿",
+        "family_label": "制作侧复用风格壳"
+      }
+    },
+    {
+      "id": "feature_1",
+      "chapter": "二、交付形态",
+      "nav": ["可编辑 PPTX", "视频金样", "编辑器微调"],
+      "elements": {
+        "chapter": "二、交付形态",
+        "nav1": "可编辑 PPTX",
+        "nav2": "视频金样",
+        "nav3": "编辑器微调",
+        "label_left": "原生对象",
+        "label_right": "非整页位图"
+      }
+    },
+    {
+      "id": "feature_2",
+      "elements": {
+        "tab_bubble": "文字可改\n图可换",
+        "granule_label": "槽位替换 · 授权图进包",
+        "strawberry": "克隆音色",
+        "dose_20": "文案槽\n审核导入",
+        "dose_40": "图片槽\n业务授权"
+      }
+    },
+    {
+      "id": "feature_3",
+      "elements": {
+        "row1": "风格包锁定：珍珠白丝绸 + 橙藏青层级",
+        "row2": "136+ 稳定元素 ID",
+        "row3": "主题包 schema 驱动装配",
+        "row4": "gap-report 列出待授权资产"
+      }
+    },
+    {
+      "id": "audience",
+      "chapter": "三、适用场景",
+      "elements": {
+        "chapter": "三、适用场景",
+        "age": "结构",
+        "age_body": "同页型商品培训\n可套壳复用",
+        "headline": "适用于结构相近的商品知识内训课件批量生产验证",
+        "elder_label": "门店培训",
+        "child_label": "新品导入",
+        "chronic_label": "联合用药说明"
+      }
+    },
+    {
+      "id": "combo_1",
+      "chapter": "三、协作方式",
+      "nav": ["业务提供审核稿+授权图", "制作侧套壳导出"],
+      "elements": {
+        "chapter": "三、协作方式",
+        "nav1": "业务提供审核稿+授权图",
+        "nav2": "制作侧套壳导出",
+        "note": "业务不填坐标；系统映射到已验收页型"
+      }
+    },
+    {
+      "id": "combo_2",
+      "elements": {
+        "note": "医学结论只来自审核稿；本 demo 无真实功效主张"
+      }
+    },
+    {
+      "id": "summary",
+      "elements": {
+        "eyebrow": "敲重点",
+        "chapter": "总结",
+        "col_h1": "内容模型",
+        "col_h2": "可编辑",
+        "col_h3": "主题复刻",
+        "col_h4": "合规边界",
+        "e1": "单一 JSON 源",
+        "e2": "稳定 layer_id",
+        "e3": "MP4/PPTX 同源",
+        "f1": "编辑器改字换图\n导出当前作品",
+        "f2": "PPTX 原生对象\n非整页截图",
+        "f3": "克隆音色可选\n语速门禁保留",
+        "a1": "theme.json 驱动\n复制框架\n合并文案与槽位\n输出 gap-report",
+        "c1": "◇ 真包装/Logo 业务授权\n◇ 医学文案须审核\n◇ 演示主题不晋升 settled"
+      }
+    }
+  ],
+  "captions": [
+    "本课为结构验证主题，不是真实药品宣传。",
+    "内容模型驱动页面文字与图片槽位。",
+    "业务可在编辑器中改字换图并导出课件。",
+    "换主题时复制框架，替换审核文案与授权资产。",
+    "医学结论只来自审核稿，演示内容不构成功效主张。"
+  ],
+  "notes": "结构验证专用。禁止当作真实商品培训成片对外使用。"
+}

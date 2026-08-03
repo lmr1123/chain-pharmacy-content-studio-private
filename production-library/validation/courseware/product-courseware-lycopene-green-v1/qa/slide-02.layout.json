@@ -1,0 +1,2145 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/9999k2",
+    "id": "9999k2",
+    "slide": 2,
+    "layoutId": "d560fd2e-2110-47b6-90c3-e804a09e5ce4",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "d560fd2e-2110-47b6-90c3-e804a09e5ce4",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a27089e-7cbb-49d5-8ed7-92e5126a7669",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l0nqhgzm",
+      "id": "1",
+      "name": "header-shadow-line",
+      "bbox": [
+        0,
+        69,
+        1280,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E8D4",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yxw761gv",
+      "id": "2",
+      "name": "header-green-line",
+      "bbox": [
+        95,
+        69,
+        1185,
+        4
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jy58f6hg",
+      "id": "3",
+      "name": "page-number-block",
+      "bbox": [
+        30,
+        0,
+        70,
+        83
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/snepcbyx",
+      "id": "4",
+      "name": "page-number",
+      "bbox": [
+        22,
+        19,
+        86,
+        48
+      ],
+      "geometry": "rect",
+      "text": "01",
+      "textPreview": "01",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#FFFFFF",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01",
+              "fontSize": 28,
+              "color": "#FFFFFF",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/to7qlgfi",
+      "id": "5",
+      "name": "page-title",
+      "bbox": [
+        110,
+        16,
+        740,
+        48
+      ],
+      "geometry": "rect",
+      "text": "商品介绍、核心卖点、适宜人群",
+      "textPreview": "商品介绍、核心卖点、适宜人群",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "商品介绍、核心卖点、适宜人群"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "商品介绍、核心卖点、适宜人群",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "商品介绍、核心卖点、适宜人群",
+              "fontSize": 30,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61w7a1g7",
+      "id": "6",
+      "name": "brand-wordmark",
+      "bbox": [
+        1080,
+        18,
+        165,
+        42
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#45A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#45A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 18,
+              "color": "#45A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7m58j6xc",
+      "id": "7",
+      "name": "internal-notice",
+      "bbox": [
+        1080,
+        688,
+        170,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅供内部学习",
+      "textPreview": "仅供内部学习",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅供内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅供内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111111",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅供内部学习",
+              "fontSize": 14,
+              "color": "#111111",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/grypgvy9",
+      "id": "8",
+      "name": "primary-packshot-surface",
+      "bbox": [
+        145,
+        82,
+        205,
+        270
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9EEF4",
+      "lineColor": "#8ABFC8",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hs7qp0fu",
+      "id": "9",
+      "name": "primary-packshot-label",
+      "bbox": [
+        155,
+        192,
+        185,
+        50
+      ],
+      "geometry": "rect",
+      "text": "商品包装高清图\n待接入",
+      "textPreview": "商品包装高清图 | 待接入",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#315C62",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "商品包装高清图"
+          },
+          {
+            "index": 2,
+            "text": "待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "商品包装高清图",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "商品包装高清图",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "待接入",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#315C62",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "待接入",
+              "fontSize": 16,
+              "color": "#315C62",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/10fqx4nm",
+      "id": "10",
+      "name": "product-name",
+      "bbox": [
+        110,
+        360,
+        280,
+        42
+      ],
+      "geometry": "rect",
+      "text": "福尔番茄红素软胶囊",
+      "textPreview": "福尔番茄红素软胶囊",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "福尔番茄红素软胶囊"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "福尔番茄红素软胶囊",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "福尔番茄红素软胶囊",
+              "fontSize": 20,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0z6poz61",
+      "id": "11",
+      "name": "product-table-head-0-surface",
+      "bbox": [
+        38,
+        420,
+        120,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fyx8vu5g",
+      "id": "12",
+      "name": "product-table-head-0-text",
+      "bbox": [
+        46,
+        428,
+        104,
+        32
+      ],
+      "geometry": "rect",
+      "text": "编码",
+      "textPreview": "编码",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "编码"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "编码",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "编码",
+              "fontSize": 19,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/exo7mpov",
+      "id": "13",
+      "name": "product-table-head-1-surface",
+      "bbox": [
+        158,
+        420,
+        82,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pozq14ni",
+      "id": "14",
+      "name": "product-table-head-1-text",
+      "bbox": [
+        166,
+        428,
+        66,
+        32
+      ],
+      "geometry": "rect",
+      "text": "主推",
+      "textPreview": "主推",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "主推"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "主推",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "主推",
+              "fontSize": 19,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/onqpszmx",
+      "id": "15",
+      "name": "product-table-head-2-surface",
+      "bbox": [
+        240,
+        420,
+        153,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nmx8zu5c",
+      "id": "16",
+      "name": "product-table-head-2-text",
+      "bbox": [
+        248,
+        428,
+        137,
+        32
+      ],
+      "geometry": "rect",
+      "text": "规格",
+      "textPreview": "规格",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "规格"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "规格",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "规格",
+              "fontSize": 19,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2lo7q9or",
+      "id": "17",
+      "name": "product-table-head-3-surface",
+      "bbox": [
+        393,
+        420,
+        112,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5svqpkne",
+      "id": "18",
+      "name": "product-table-head-3-text",
+      "bbox": [
+        401,
+        428,
+        96,
+        32
+      ],
+      "geometry": "rect",
+      "text": "零售价",
+      "textPreview": "零售价",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "零售价"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "零售价",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "零售价",
+              "fontSize": 19,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4rmpgf6t",
+      "id": "19",
+      "name": "product-table-value-0-surface",
+      "bbox": [
+        38,
+        468,
+        120,
+        56
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gnahsjil",
+      "id": "20",
+      "name": "product-table-value-0-text",
+      "bbox": [
+        46,
+        476,
+        104,
+        40
+      ],
+      "geometry": "rect",
+      "text": "待确认",
+      "textPreview": "待确认",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "待确认"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "待确认",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "待确认",
+              "fontSize": 16,
+              "color": "#111111",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hojyl4z6",
+      "id": "21",
+      "name": "product-table-value-1-surface",
+      "bbox": [
+        158,
+        468,
+        82,
+        56
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ul8zq90v",
+      "id": "22",
+      "name": "product-table-value-1-text",
+      "bbox": [
+        166,
+        476,
+        66,
+        40
+      ],
+      "geometry": "rect",
+      "text": "A",
+      "textPreview": "A",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vm1gjehg",
+      "id": "23",
+      "name": "product-table-value-2-surface",
+      "bbox": [
+        240,
+        468,
+        153,
+        56
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4rahwjix",
+      "id": "24",
+      "name": "product-table-value-2-text",
+      "bbox": [
+        248,
+        476,
+        137,
+        40
+      ],
+      "geometry": "rect",
+      "text": "待确认",
+      "textPreview": "待确认",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "待确认"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "待确认",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "待确认",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5cjipozi",
+      "id": "25",
+      "name": "product-table-value-3-surface",
+      "bbox": [
+        393,
+        468,
+        112,
+        56
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#111111",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ipszu90r",
+      "id": "26",
+      "name": "product-table-value-3-text",
+      "bbox": [
+        401,
+        476,
+        96,
+        40
+      ],
+      "geometry": "rect",
+      "text": "待确认",
+      "textPreview": "待确认",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "待确认"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "待确认",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#111111",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "待确认",
+              "fontSize": 19,
+              "color": "#111111",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3q1gnehc",
+      "id": "27",
+      "name": "selling-point-highlight",
+      "bbox": [
+        38,
+        544,
+        467,
+        120
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFF200",
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sfuh03it",
+      "id": "28",
+      "name": "selling-point",
+      "bbox": [
+        48,
+        565,
+        445,
+        80
+      ],
+      "geometry": "rect",
+      "text": "一句话卖点：新疆番茄精华，1粒≈5个新鲜大番茄",
+      "textPreview": "一句话卖点：新疆番茄精华，1粒≈5个新鲜大番茄",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一句话卖点：新疆番茄精华，1粒≈5个新鲜大番"
+          },
+          {
+            "index": 2,
+            "text": "茄"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一句话卖点：新疆番茄精华，1粒≈5个新鲜大番茄",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一句话卖点：新疆番茄精华，1粒≈5个新鲜大番茄",
+              "fontSize": 20,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dg3itoze",
+      "id": "29",
+      "name": "section-title-0",
+      "bbox": [
+        525,
+        102,
+        170,
+        34
+      ],
+      "geometry": "rect",
+      "text": "一、商品介绍：",
+      "textPreview": "一、商品介绍：",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一、商品介绍："
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一、商品介绍：",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一、商品介绍：",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/na5kj21w",
+      "id": "30",
+      "name": "section-0-item-0",
+      "bbox": [
+        525,
+        141,
+        710,
+        37
+      ],
+      "geometry": "rect",
+      "text": "1、主要成分：番茄红素（浓缩番茄精华）",
+      "textPreview": "1、主要成分：番茄红素（浓缩番茄精华）",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1、主要成分：番茄红素（浓缩番茄精华）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1、主要成分：番茄红素（浓缩番茄精华）",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1、主要成分：番茄红素（浓缩番茄精华）",
+              "fontSize": 16,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/29wjqxkb",
+      "id": "31",
+      "name": "section-0-item-1",
+      "bbox": [
+        525,
+        178,
+        710,
+        37
+      ],
+      "geometry": "rect",
+      "text": "2、功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力",
+      "textPreview": "2、功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2、功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2、功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2、功能定位（以标签为准）：保护前列腺、提高精子活力；抗氧化、延缓衰老；增强免疫力",
+              "fontSize": 16,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcn2lsjm",
+      "id": "32",
+      "name": "section-0-item-2",
+      "bbox": [
+        525,
+        215,
+        710,
+        37
+      ],
+      "geometry": "rect",
+      "text": "3、用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服",
+      "textPreview": "3、用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3、用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3、用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3、用法用量：每日1次，每次1～2粒；建议固定随餐服用，避免漏服",
+              "fontSize": 16,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obe1s721",
+      "id": "33",
+      "name": "section-0-item-3",
+      "bbox": [
+        525,
+        252,
+        710,
+        37
+      ],
+      "geometry": "rect",
+      "text": "4、不适宜人群：少年儿童、孕妇、乳母",
+      "textPreview": "4、不适宜人群：少年儿童、孕妇、乳母",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4、不适宜人群：少年儿童、孕妇、乳母"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4、不适宜人群：少年儿童、孕妇、乳母",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "4、不适宜人群：少年儿童、孕妇、乳母",
+              "fontSize": 16,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f65kfi1k",
+      "id": "34",
+      "name": "section-title-1",
+      "bbox": [
+        525,
+        289,
+        170,
+        34
+      ],
+      "geometry": "rect",
+      "text": "二、核心卖点：",
+      "textPreview": "二、核心卖点：",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "二、核心卖点："
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "二、核心卖点：",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "二、核心卖点：",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/elwjmdkz",
+      "id": "35",
+      "name": "section-1-item-0",
+      "bbox": [
+        525,
+        328,
+        710,
+        60
+      ],
+      "geometry": "rect",
+      "text": "1、三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；增强免疫力。",
+      "textPreview": "1、三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；增强免疫力。",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1、三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；"
+          },
+          {
+            "index": 2,
+            "text": "增强免疫力。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1、三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；增强免疫力。",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1、三大功效可讲：保护前列腺、提高精子活力；抗氧化延缓衰老（科普口径约为维E的100倍）；增强免疫力。",
+              "fontSize": 16,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/18n2hsjq",
+      "id": "36",
+      "name": "section-1-item-1",
+      "bbox": [
+        525,
+        388,
+        710,
+        60
+      ],
+      "geometry": "rect",
+      "text": "2、产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。",
+      "textPreview": "2、产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2、产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2、产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2、产地好·原料优·含量高：新疆优质产区；番茄肉提炼；1粒≈5个新鲜大番茄，一天只需1～2粒。",
+              "fontSize": 16,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/07e1on25",
+      "id": "37",
+      "name": "section-1-item-2",
+      "bbox": [
+        525,
+        448,
+        710,
+        60
+      ],
+      "geometry": "rect",
+      "text": "3、场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。",
+      "textPreview": "3、场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3、场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3、场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3、场景好推：前列腺关注、备孕男女、爱美抗衰、身体虚弱——话术清晰，联推空间大。",
+              "fontSize": 16,
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j2pkrm1o",
+      "id": "38",
+      "name": "section-title-2",
+      "bbox": [
+        525,
+        508,
+        170,
+        34
+      ],
+      "geometry": "rect",
+      "text": "三、适宜人群：",
+      "textPreview": "三、适宜人群：",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "三、适宜人群："
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "三、适宜人群：",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "三、适宜人群：",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yhg3yhkj",
+      "id": "39",
+      "name": "section-2-item-0",
+      "bbox": [
+        525,
+        547,
+        710,
+        32
+      ],
+      "geometry": "rect",
+      "text": "1、前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；",
+      "textPreview": "1、前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1、前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1、前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1、前列腺关注/患病人群（明显不适须就医，营养补充不替代诊疗）；",
+              "fontSize": 15,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6pwnm1gn",
+      "id": "40",
+      "name": "section-2-item-1",
+      "bbox": [
+        525,
+        579,
+        710,
+        32
+      ],
+      "geometry": "rect",
+      "text": "2、备孕男士和女士；",
+      "textPreview": "2、备孕男士和女士；",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2、备孕男士和女士；"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2、备孕男士和女士；",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2、备孕男士和女士；",
+              "fontSize": 15,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7q5of6x8",
+      "id": "41",
+      "name": "section-2-item-2",
+      "bbox": [
+        525,
+        611,
+        710,
+        32
+      ],
+      "geometry": "rect",
+      "text": "3、爱美、关注抗衰老人士；",
+      "textPreview": "3、爱美、关注抗衰老人士；",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3、爱美、关注抗衰老人士；"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3、爱美、关注抗衰老人士；",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3、爱美、关注抗衰老人士；",
+              "fontSize": 15,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sry5obyt",
+      "id": "42",
+      "name": "section-2-item-3",
+      "bbox": [
+        525,
+        643,
+        710,
+        32
+      ],
+      "geometry": "rect",
+      "text": "4、身体虚弱、需提升免疫力人群。",
+      "textPreview": "4、身体虚弱、需提升免疫力人群。",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111111",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4、身体虚弱、需提升免疫力人群。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4、身体虚弱、需提升免疫力人群。",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111111",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "4、身体虚弱、需提升免疫力人群。",
+              "fontSize": 15,
+              "color": "#111111",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
