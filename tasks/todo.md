@@ -36,7 +36,7 @@
 | **PPT · 制作机绿线** | ✅ 绿色单品真 PPTX + 2 行联合用药 |
 | **PPT · 业务机 WorkBuddy 真人绿线** | ✅ pull + 重贴系统提示 + 三步真出 PPT |
 | **视频金样包 · 风热 + Q10** | ✅ 2026-08-03 补齐为可用金样（见下） |
-| **视频 · 业务换主题绿线** | ✅ `scripts/generate_business_video.py`（规划包必达；TTS+MP4 冒烟通过） |
+| **视频 · 业务换主题绿线** | ✅ 商品视频 **full 分段重渲**（文案+屏显+包装槽+旁白）；「示例舒心片」全片约 170s 冒烟通过 |
 
 ### 视频金样包（2026-08-03 完成）
 
@@ -119,14 +119,14 @@ PPT 绿线已证明：业务只聊内容 → 代理锁模板 → generator 出�
 - [ ] 系统提示：视频课型必须读 `manifest.voice`；禁止系统 TTS；无授权包装写 gap  
 - [ ] 业务机缺 Qwen3/MLX 时：明确不假装已出 MP4  
 
-#### V1 · 换主题出片绿线（已完成 MVP）
-- [x] CLI：`scripts/generate_business_video.py`（docx / sections-json）  
-- [x] 规划包必达：content + storyboard.html + gap-report + DELIVERY  
-- [x] `--with-tts --with-mp4`：克隆药师声叠金样画面壳 → 真 MP4  
-- [x] 冒烟：商品「示例舒心片」+ 健康「示例风燥证」均 ok  
-- [x] WorkBuddy 系统提示补视频绿线命令  
-- [ ] 后续增强：分段重渲换包装（非本 MVP）  
-- [ ] 课件3 theme-replicate 业务胶水（PPTX 线另开）  
+#### V1 · 换主题出片绿线
+- [x] CLI：`scripts/generate_business_video.py`  
+- [x] **商品 full**：数据驱动屏显/商品名/包装槽 + 分段 TTS + 8 段重渲拼接  
+- [x] 冒烟：`示例舒心片` 全片 MP4（method=`segment-rerender-content-visual-audio`）  
+- [x] 工程：`product-training-content.ts` + 各 segment 读 `data.product_name` / `data.screen`  
+- [x] WorkBuddy 系统提示改为 full 口径（不是只换声音）  
+- [ ] 健康科普 full 分段重渲（暂 plan / audio-shell）  
+- [ ] 课件3 theme-replicate 业务胶水  
 
 #### V2 · 语音与环境
 - [x] D2：风热/Q10 `voice/` 已齐；课件3 sufuda pack 已有  

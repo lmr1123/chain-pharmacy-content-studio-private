@@ -11,8 +11,12 @@ import {
   ProductColumnBadge,
 } from './components/product-training-dashenlin-chrome';
 import {applyEditablePatches} from './editor/apply-editable-patches';
+import {productName, screenOf} from './product-training-content';
 
 const OPENING_DURATION = 19;
+const PRODUCT = productName(data as any);
+const SCREEN = screenOf(data as any);
+const METER_LABEL = SCREEN.meter_label || PRODUCT;
 
 type Cue = {start: number; end: number; text: string};
 const FONT = 'PingFang SC, Microsoft YaHei, sans-serif';
@@ -99,7 +103,7 @@ export const productTrainingOpeningScene = makeScene2D('product-training-opening
       <Rect ref={openingPattern} size={[1920, 1080]}><Pattern /></Rect>
       <Audio src={data.audio.file} play />
       <Rect key={'editable:q10:opening:product-badge'} position={[-820, -475]} size={[230, 72]} radius={28} fill={'#ff7b46'}>
-        <Txt key={'editable:q10:opening:product-badge:text'} text={'辅酶Q10'} fontFamily={FONT} fontSize={42} fontWeight={850} fill={'#ffffff'} />
+        <Txt key={'editable:q10:opening:product-badge:text'} text={PRODUCT} fontFamily={FONT} fontSize={42} fontWeight={850} fill={'#ffffff'} />
       </Rect>
       <Rect ref={officeBackdrop} position={[0, 0]}><OfficeBackdrop /></Rect>
       <Img key={'editable:q10:opening:office-working'} ref={officeWorking} src={data.assets.officeWorking} position={[0, 45]} size={[1480, 987]} opacity={0} scale={0.72} />
@@ -112,7 +116,7 @@ export const productTrainingOpeningScene = makeScene2D('product-training-opening
         <Circle position={[-240, 190]} size={24} fill={'#ff9800'} />
         <Circle position={[190, 230]} size={30} fill={'#ff9800'} />
         <Rect key={'editable:q10:opening:callout'} ref={callout} position={[590, 105]} size={[390, 90]} radius={20} fill={'rgba(255,255,255,0.45)'} opacity={0}>
-          <Txt key={'editable:q10:opening:callout:text'} text={'辅酶Q10'} fontFamily={FONT} fontSize={48} fontWeight={850} fill={'#ffffff'} />
+          <Txt key={'editable:q10:opening:callout:text'} text={PRODUCT} fontFamily={FONT} fontSize={48} fontWeight={850} fill={'#ffffff'} />
         </Rect>
         <Line points={[[250, 170], [390, 15], [520, 15]]} stroke={'#ffffff'} lineWidth={8} />
       </Rect>
@@ -122,7 +126,7 @@ export const productTrainingOpeningScene = makeScene2D('product-training-opening
         <Img key={'editable:q10:opening:age-senior'} ref={ageSenior} src={data.assets.ageSenior} size={[470, 705]} opacity={0} />
         <Img key={'editable:q10:opening:age-elder'} ref={ageElder} src={data.assets.ageElder} size={[470, 705]} opacity={0} />
         <Img key={'editable:q10:opening:age-elder-glasses'} ref={ageElderGlasses} src={data.assets.ageElderGlasses} size={[470, 705]} opacity={0} />
-        <Meter x={600} label={'辅酶Q10'} color={'#39c65e'} fillRef={q10Fill} />
+        <Meter x={600} label={METER_LABEL} color={'#39c65e'} fillRef={q10Fill} />
         <Txt position={[-730, 135]} text={'↑'} fontFamily={FONT} fontSize={100} fontWeight={900} fill={'#ffe343'} />
         <Txt position={[730, 150]} text={'↓'} fontFamily={FONT} fontSize={100} fontWeight={900} fill={'#ffe343'} />
       </Rect>
@@ -135,7 +139,7 @@ export const productTrainingOpeningScene = makeScene2D('product-training-opening
       <Rect key={'editable:q10:opening:brand'}>
         <DashenlinBrandMark position={[-800, -468]} />
       </Rect>
-      <ProductColumnBadge text={'辅酶Q10'} position={[-520, -472]} />
+      <ProductColumnBadge text={PRODUCT} position={[-520, -472]} />
       <DashenlinInternalNotice />
     </>,
   );

@@ -17,6 +17,13 @@ import {
 } from '@revideo/core';
 
 import data from '../product-training-brand-overview.json';
+import {productName, screenOf} from './product-training-content';
+
+const PRODUCT = productName(data as any);
+const SCREEN = screenOf(data as any);
+const BRAND_LABELS = SCREEN.labels || ['90粒大包装', '原研工艺', '海外原料'];
+const EFFICACY_TITLE = SCREEN.efficacy_title || '两大核心功效';
+const PACK_BADGE = SCREEN.pack_badge || '重新制作包装示意';
 import {
   DashenlinBrandHeader,
   DashenlinInternalNotice,
@@ -89,14 +96,14 @@ export const productTrainingBrandOverviewScene = makeScene2D('product-training-b
       >
         <Txt
           key={'editable:q10:brand:product-badge:text'}
-          text={'重新制作包装示意'}
+          text={PACK_BADGE}
           fontFamily={FONT}
           fontSize={27}
           fontWeight={750}
           fill={'#b64043'}
         />
       </Rect>
-      {['90粒大包装', '原研工艺', '海外原料'].map((text, index) => (
+      {BRAND_LABELS.slice(0, 3).map((text, index) => (
         <Rect
           key={`editable:q10:brand:label:${index}`}
           ref={labels[index]}
@@ -129,7 +136,7 @@ export const productTrainingBrandOverviewScene = makeScene2D('product-training-b
         key={'editable:q10:brand:transition-title'}
         ref={transitionTitle}
         position={[0, -100]}
-        text={'两大核心功效'}
+        text={EFFICACY_TITLE}
         fontFamily={FONT}
         fontSize={86}
         fontWeight={900}

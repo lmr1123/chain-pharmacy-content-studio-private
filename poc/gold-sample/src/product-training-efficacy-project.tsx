@@ -18,6 +18,14 @@ import {
 } from '@revideo/core';
 
 import data from '../product-training-efficacy.json';
+import {screenOf} from './product-training-content';
+
+const SCREEN = screenOf(data as any);
+const EFFICACY_TITLE = SCREEN.efficacy_title || '两大核心功效';
+const EFFICACY_SECTIONS = SCREEN.efficacy_sections || [
+  '1.促进能量生成',
+  '2.抗氧化，减少组织细胞损伤',
+];
 import {
   DashenlinBrandMark,
   DashenlinInternalNotice,
@@ -69,7 +77,7 @@ export const productTrainingEfficacyScene = makeScene2D('product-training-effica
         key={'editable:q10:efficacy:title'}
         ref={mainTitle}
         position={[0, -445]}
-        text={'两大核心功效'}
+        text={EFFICACY_TITLE}
         fontFamily={FONT}
         fontSize={88}
         fontWeight={900}
@@ -83,7 +91,7 @@ export const productTrainingEfficacyScene = makeScene2D('product-training-effica
         key={'editable:q10:efficacy:section'}
         ref={sectionTitle}
         position={[0, -325]}
-        text={'1.促进能量生成'}
+        text={EFFICACY_SECTIONS[0]}
         fontFamily={FONT}
         fontSize={56}
         fontWeight={900}
@@ -209,7 +217,7 @@ export const productTrainingEfficacyScene = makeScene2D('product-training-effica
     yield* waitFor(4.00);
 
     yield* hidePage(energyCards);
-    sectionTitle().text('2.抗氧化，减少组织细胞损伤');
+    sectionTitle().text(EFFICACY_SECTIONS[1] || '2.抗氧化，减少组织细胞损伤');
     yield* sectionTitle().scale(1.06, 0.10, easeOutCubic);
     yield* sectionTitle().scale(1, 0.10, easeOutCubic);
     yield* waitFor(1.14);

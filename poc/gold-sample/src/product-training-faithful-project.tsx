@@ -20,6 +20,11 @@ import {
 } from '@revideo/core';
 
 import data from '../product-training-faithful.json';
+import {productName, screenOf} from './product-training-content';
+
+const PRODUCT = productName(data as any);
+const SCREEN = screenOf(data as any);
+const PACK_BADGE = SCREEN.pack_badge || '重新制作包装示意';
 import {
   DashenlinInternalNotice,
   ProductColumnBadge,
@@ -148,7 +153,7 @@ function addBackground(view: View2D) {
 function addFixedChrome(view: View2D) {
   view.add(
     <>
-      <ProductColumnBadge text={'辅酶Q10'} />
+      <ProductColumnBadge text={PRODUCT} />
       <DashenlinInternalNotice />
     </>,
   );
@@ -534,7 +539,7 @@ export const productTrainingFaithfulScene = makeScene2D('product-training-faithf
           <Txt
             key={'editable:q10:faithful:symptom-lead'}
             position={[295, -315]}
-            text={'缺乏辅酶 Q10 可能引发'}
+            text={`缺乏${PRODUCT} 可能引发`}
             fontFamily={FONT}
             fontSize={38}
             fontWeight={650}
@@ -616,7 +621,7 @@ export const productTrainingFaithfulScene = makeScene2D('product-training-faithf
         <RelationNode
           ref={relationCenter}
           position={[-230, 35]}
-          text={'辅酶 Q10'}
+          text={PRODUCT}
           size={[330, 128]}
           fill={'#ef5350'}
         />
@@ -688,7 +693,7 @@ export const productTrainingFaithfulScene = makeScene2D('product-training-faithf
         ))}
         <Img
           key={'editable:q10:faithful:product'} ref={product}
-          src={asset('q10-reference-approx-v1.png')}
+          src={(data as any).assets?.product || asset('q10-reference-approx-v1.png')}
           position={[-30, 15]}
           size={[1280, 721]}
           scale={0}
@@ -705,7 +710,7 @@ export const productTrainingFaithfulScene = makeScene2D('product-training-faithf
           opacity={0}
         >
           <Txt
-            text={'重新制作包装示意'}
+            text={PACK_BADGE}
             fontFamily={FONT}
             fontSize={27}
             fontWeight={750}

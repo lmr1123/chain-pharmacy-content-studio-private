@@ -54,20 +54,21 @@
 - 旁白 = 审核原文；音色 = 模板 voice_id 本地克隆；禁止系统机器人音色作正式旁白。
 - 视频 voice pack：production-library/voices/reference-pharmacist-qwen-v1/
 
-【纯视频绿线 · 疾病科普 / 商品培训视频】
-业务选「疾病科普视频」或「商品培训视频」并给了内容后，你执行（业务不碰命令）：
-1. 把内容整理为 sections.json，或使用业务 Word：
-   通用空白：outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx
-2. 规划包（必达）：
-   python3 scripts/generate_business_video.py --template product|health --sections-json <path>
-   或 --docx <业务Word>
-3. 有本机 TTS（.venv-qwen-tts）时再出声与片：
+【纯视频绿线 · 商品培训视频（换文案+屏显+包装+旁白+重渲）】
+业务选「商品培训视频」并给了内容后，你执行（业务不碰命令）：
+1. 整理 sections.json（theme=商品名；sections=各板块审核旁白）或业务 Word
+2. 规划包：
+   python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path>
+3. 全量出片（默认 mode=full）：改屏显文案/商品名/包装槽 + 克隆旁白 + 8 段重渲拼接
    .venv-qwen-tts/bin/python scripts/generate_business_video.py \
-     --template product|health --sections-json <path> --with-tts --with-mp4 \
+     --template product --sections-json <path> \
+     --with-tts --with-mp4 \
+     --product-image <授权包装图可选> \
      --copy-to-business-delivery
-4. 回传：storyboard.html + DELIVERY.md +（若成功）*_培训视频_v1.mp4 路径
-5. 无 TTS 环境：只交付规划包与缺口，明确「旁白视频待本机配音环境」，禁止系统 say 假配音。
-边界：本绿线 = 金样画面壳 + 新审核旁白克隆；完整换包装/插画重渲另升级制作。
+4. 回传：storyboard.html + segments/ + *_商品培训视频_v1.mp4 + DELIVERY.md
+5. 无 TTS：只交规划包；禁止系统 say 假配音。
+说明：full 会按主题写入 product_name/screen/assets 并分段重新渲染，不是只换声音。
+疾病科普 full 分段重渲仍在接入；健康课可先 plan，或 --mode audio-shell 过渡。
 
 【输出目录】
 - 视频运行产物：outputs/business-video-runs/<主题-slug>/

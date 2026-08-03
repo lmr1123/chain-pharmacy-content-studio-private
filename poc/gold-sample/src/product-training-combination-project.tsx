@@ -18,6 +18,15 @@ import {
 } from '@revideo/core';
 
 import data from '../product-training-combination.json';
+import {productName, screenOf} from './product-training-content';
+
+const PRODUCT = productName(data as any);
+const SCREEN = screenOf(data as any);
+const COMBO_SECTIONS = SCREEN.combo_sections || [
+  `1、复方丹参滴丸＋${PRODUCT}`,
+  `2、他汀＋${PRODUCT}`,
+];
+const PACK_BADGE = SCREEN.pack_badge || '重新制作包装示意';
 import {
   DashenlinBrandMark,
   DashenlinInternalNotice,
@@ -92,14 +101,14 @@ export const productTrainingCombinationScene = makeScene2D('product-training-com
       <Audio src={data.audio.file} play />
       <DashenlinBrandMark />
       <Txt key={'editable:q10:combo:title'} ref={mainTitle} position={[0, -445]} text={'联合用药'} fontFamily={FONT} fontSize={88} fontWeight={900} fill={'#ffffff'} stroke={'#273441'} lineWidth={6} />
-      <Txt key={'editable:q10:combo:section'} ref={sectionTitle} position={[0, -325]} text={'1、复方丹参滴丸＋辅酶Q10'} fontFamily={FONT} fontSize={53} fontWeight={900} fill={'#c95c49'} stroke={'#ffffff'} lineWidth={4} />
+      <Txt key={'editable:q10:combo:section'} ref={sectionTitle} position={[0, -325]} text={COMBO_SECTIONS[0]} fontFamily={FONT} fontSize={53} fontWeight={900} fill={'#c95c49'} stroke={'#ffffff'} lineWidth={4} />
       <Rect ref={danshen} position={[-470, 90]} opacity={0} scale={0.2}><DanshenPack /></Rect>
       <Rect ref={statin} position={[-470, 90]} opacity={0} scale={0.2}><StatinPack /></Rect>
       <Txt ref={plus} position={[0, 85]} text={'＋'} fontFamily={FONT} fontSize={125} fontWeight={900} fill={'#ffe24d'} stroke={'#ffffff'} lineWidth={6} opacity={0} scale={0.2} />
       <Img key={'editable:q10:combo:product'} ref={product} src={data.assets.product} position={[450, 80]} size={[720, 405]} opacity={0} scale={0.2} />
       <Txt ref={partnerFlash} position={[-470, 90]} text={'✦'} fontFamily={FONT} fontSize={230} fontWeight={900} fill={'#ffffff'} shadowColor={'#ffffff'} shadowBlur={36} opacity={0} scale={0.2} />
       <Rect position={[450, 330]} size={[320, 52]} radius={26} fill={'rgba(255,255,255,0.94)'} stroke={'#cb484c'} lineWidth={3}>
-        <Txt text={'重新制作包装示意'} fontFamily={FONT} fontSize={26} fontWeight={750} fill={'#b53f43'} />
+        <Txt text={PACK_BADGE} fontFamily={FONT} fontSize={26} fontWeight={750} fill={'#b53f43'} />
       </Rect>
       <Txt
         key={'editable:q10:combo:subtitle'}
@@ -131,7 +140,7 @@ export const productTrainingCombinationScene = makeScene2D('product-training-com
       partnerFlash().opacity(1, 0.10),
       partnerFlash().scale(0.86, 0.14, easeOutBack),
     );
-    sectionTitle().text('2、他汀＋辅酶Q10');
+    sectionTitle().text(COMBO_SECTIONS[1] || `2、他汀＋${PRODUCT}`);
     yield* all(
       statin().opacity(1, 0.12),
       statin().scale(1, 0.38, easeOutBack),

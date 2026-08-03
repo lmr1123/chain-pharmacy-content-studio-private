@@ -18,6 +18,15 @@ import {
 } from '@revideo/core';
 
 import data from '../product-training-features.json';
+import {productName, screenOf} from './product-training-content';
+
+const PRODUCT = productName(data as any);
+const SCREEN = screenOf(data as any);
+const FEATURE_SECTIONS = SCREEN.feature_sections || [
+  '1、原研工艺，锁住活性',
+  '2、海外原料，提升品质',
+  '3、医疗背书',
+];
 import {
   DashenlinBrandMark,
   DashenlinInternalNotice,
@@ -189,7 +198,7 @@ export const productTrainingFeaturesScene = makeScene2D('product-training-featur
       <Audio src={data.audio.file} play />
       <DashenlinBrandMark />
       <Txt key={'editable:q10:features:title'} ref={mainTitle} position={[0, -445]} text={'产品特点'} fontFamily={FONT} fontSize={88} fontWeight={900} fill={'#ffffff'} stroke={'#273441'} lineWidth={6} />
-      <Txt key={'editable:q10:features:section'} ref={sectionTitle} position={[0, -325]} text={'1、原研工艺，锁住活性'} fontFamily={FONT} fontSize={54} fontWeight={900} fill={'#c95c49'} stroke={'#ffffff'} lineWidth={4} />
+      <Txt key={'editable:q10:features:section'} ref={sectionTitle} position={[0, -325]} text={FEATURE_SECTIONS[0]} fontFamily={FONT} fontSize={54} fontWeight={900} fill={'#c95c49'} stroke={'#ffffff'} lineWidth={4} />
       <Rect key={'editable:q10:features:doc'} ref={doc} position={[-500, 90]} opacity={0} scale={0.08}><DocumentCard /></Rect>
       <Rect key={'editable:q10:features:lock'} ref={lock} position={[0, 90]} opacity={0} scale={0.08}><LockArtwork /></Rect>
       <Rect key={'editable:q10:features:capsule'} ref={capsule} position={[500, 90]} opacity={0} scale={0.08}><CapsuleArtwork /></Rect>
@@ -234,12 +243,12 @@ export const productTrainingFeaturesScene = makeScene2D('product-training-featur
       lock().opacity(0, 0.16),
       capsule().opacity(0, 0.16),
     );
-    sectionTitle().text('2、海外原料，提升品质');
+    sectionTitle().text(FEATURE_SECTIONS[1] || '2、海外原料，提升品质');
     yield* pop(rawPanel);
     yield* waitFor(7.18);
 
     yield* all(rawPanel().opacity(0, 0.16), rawPanel().scale(0.82, 0.18, easeInCubic));
-    sectionTitle().text('3、医疗背书');
+    sectionTitle().text(FEATURE_SECTIONS[2] || '3、医疗背书');
     yield* all(
       medicalPanel().opacity(1, 0.1),
       medicalPanel().scale(1, 0.36, easeOutBack),

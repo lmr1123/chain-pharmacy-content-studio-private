@@ -1,32 +1,29 @@
 #!/usr/bin/env python3
-"""业务视频绿线：内容 → 交付包 → 可选克隆旁白 → MP4（金样画面 + 新旁白）。
+"""业务视频绿线：内容 → 交付包 → 换文案/屏显/包装 → 克隆旁白 → 分段重渲 MP4。
 
 用法示例：
 
-  # 仅规划包（无 TTS，必达）
+  # 仅规划包（无 TTS）
   python3 scripts/generate_business_video.py \\
-    --template product-video-faithful-v1 \\
-    --docx outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx
+    --template product --sections-json path/to/sections.json
 
-  # 规划 + 克隆旁白 + 叠轨成片（需 .venv-qwen-tts）
+  # 商品培训视频全量（文案+画面槽位+包装图+旁白+分段重渲）
   .venv-qwen-tts/bin/python scripts/generate_business_video.py \\
-    --template product-video-faithful-v1 \\
-    --sections-json path/to/sections.json \\
-    --with-tts --with-mp4
+    --template product --sections-json path/to/sections.json \\
+    --with-tts --with-mp4 \\
+    --product-image path/to/pack.png
 
-sections.json 格式：
+  # 旧：仅叠旁白到金样壳（不推荐，仅兼容）
+  ... --mode audio-shell --with-tts --with-mp4
+
+sections.json：
   {
-    "theme": "商品名或病名",
+    "theme": "商品名",
     "sections": [
       {"title": "开场", "narration": "审核旁白……"},
-      {"title": "功效", "narration": ["句1", "句2"]}
+      {"title": "核心功效", "narration": "……"}
     ]
   }
-
-边界（诚实）：
-- 画面默认复用 settled 金样时间轴（结构壳），旁白/字幕驱动用新审核文案克隆声。
-- 完整逐镜换包装/插画重渲仍走分段 Revideo 工程，不在本绿线强承诺。
-- 无 TTS 环境时仍交付 content + 分镜 + gap，不假装已出 MP4。
 """
 
 from __future__ import annotations
@@ -612,7 +609,19 @@ def main() -> int:
     ap.add_argument(
         "--with-mp4",
         action="store_true",
-        help="将克隆旁白叠到金样画面导出 MP4（隐含需要 TTS）",
+        help="导出 MP4：product 默认分段重渲；audio-shell 模式为叠金样壳",
+    )
+    ap.add_argument(
+        "--mode",
+        choices=["full", "plan", "audio-shell"],
+        default="full",
+        help="full=换文案/画面槽位/包装+重渲(商品)；plan=仅规划；audio-shell=旧叠声壳",
+    )
+    ap.add_argument(
+        "--product-image",
+        type=Path,
+        default=None,
+        help="授权包装图（png/jpg），写入画面 product 槽位",
     )
     ap.add_argument(
         "--copy-to-business-delivery",
@@ -624,6 +633,9 @@ def main() -> int:
     slug_key, meta = resolve_template(args.template)
     if args.with_mp4 and not args.with_tts:
         args.with_tts = True
+    if args.mode == "plan":
+        args.with_tts = False
+        args.with_mp4 = False
 
     if args.docx:
         asset_root = ROOT / "tmp" / "business-video-assets" / slugify(args.docx.stem)
@@ -687,72 +699,136 @@ def main() -> int:
     )
 
     tts_status: dict[str, Any] = {"ok": False}
-    if args.with_tts:
-        py = detect_tts_python()
-        if not py:
-            tts_status = {
-                "ok": False,
-                "error": "未找到可用 Qwen3-TTS 环境（期望 .venv-qwen-tts）",
-            }
-        else:
-            try:
-                audio_dir = out_dir / "audio" / "sections"
-                audio_dir.mkdir(parents=True, exist_ok=True)
-                section_reports = []
-                wavs: list[Path] = []
-                for i, sec in enumerate(content["sections"], 1):
-                    wav = audio_dir / f"{i:02d}-{slugify(sec['title'])[:40]}.wav"
-                    print(f"[tts] {i}/{len(content['sections'])} {sec['title']} …")
-                    rep = generate_section_tts(
-                        text=sec["narration"],
-                        out_wav=wav,
-                        voice=voice_meta,
-                        py=py,
-                    )
-                    rep["title"] = sec["title"]
-                    section_reports.append(rep)
-                    wavs.append(wav)
-                full = out_dir / "audio" / "full-narration.wav"
-                full_dur = concat_wavs(wavs, full)
-                tts_status = {
-                    "ok": True,
-                    "python": str(py),
-                    "full_narration": str(full),
-                    "full_duration_s": round(full_dur, 3),
-                    "sections": section_reports,
-                }
-                write_json(out_dir / "audio" / "tts-report.json", tts_status)
-            except Exception as e:
-                tts_status = {"ok": False, "error": str(e)}
-    status["tts"] = tts_status
-
     mp4_status: dict[str, Any] = {"ok": False}
-    if args.with_mp4:
-        if not tts_status.get("ok"):
-            mp4_status = {
-                "ok": False,
-                "error": "需要成功的 --with-tts 才能叠轨 MP4",
+    full_status: dict[str, Any] | None = None
+
+    # --- product full content+visual+audio re-render ---
+    use_full = (
+        args.mode == "full"
+        and slug_key == "product-video-faithful-v1"
+        and (args.with_tts or args.with_mp4)
+    )
+    if use_full:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from business_video_product_full import run_product_full  # type: ignore
+
+        try:
+            full_status = run_product_full(
+                content=content,
+                out_dir=out_dir,
+                voice_pack_dir=meta["voice_pack"],
+                with_tts=bool(args.with_tts),
+                with_render=bool(args.with_mp4),
+                product_image=args.product_image.resolve()
+                if args.product_image
+                else None,
+            )
+            tts_status = {
+                "ok": bool(full_status.get("ok")) and bool(args.with_tts),
+                "mode": "full-segment-clone",
+                "segments": (full_status or {}).get("segments"),
+                "error": full_status.get("error") if full_status else None,
             }
-        else:
-            try:
-                gold = meta["gold_mp4"]
-                # prefer friendly name; fall back to alias files in settled
-                if not gold.exists():
-                    alts = list(meta["settled"].glob("*.mp4"))
-                    gold = next(
-                        (p for p in alts if "可编辑" not in p.name),
-                        alts[0] if alts else gold,
+            mp4 = (full_status or {}).get("mp4") or {}
+            mp4_status = {
+                "ok": bool(mp4.get("ok")),
+                "path": mp4.get("path"),
+                "method": "segment-rerender-content-visual-audio",
+                "error": mp4.get("error") or full_status.get("error"),
+            }
+        except Exception as e:
+            tts_status = {"ok": False, "error": str(e)}
+            mp4_status = {"ok": False, "error": str(e)}
+            full_status = {"ok": False, "error": str(e)}
+    elif args.mode == "full" and slug_key == "health-video-reference-tech-v1" and (
+        args.with_tts or args.with_mp4
+    ):
+        # Health full re-render not yet segmented the same way; fall back with clear note
+        tts_status = {
+            "ok": False,
+            "error": (
+                "健康科普 full 分段重渲仍在接入；"
+                "请暂用 --mode audio-shell，或仅 --mode plan 出分镜包"
+            ),
+        }
+        if args.mode == "full":
+            # still allow audio-shell if user wants mp4
+            pass
+
+    # --- legacy audio-shell path (or health fallback) ---
+    if args.mode == "audio-shell" or (
+        slug_key == "health-video-reference-tech-v1"
+        and args.with_tts
+        and not tts_status.get("ok")
+        and args.mode != "plan"
+    ):
+        if args.with_tts:
+            py = detect_tts_python()
+            if not py:
+                tts_status = {
+                    "ok": False,
+                    "error": "未找到可用 Qwen3-TTS 环境（期望 .venv-qwen-tts）",
+                }
+            else:
+                try:
+                    audio_dir = out_dir / "audio" / "sections"
+                    audio_dir.mkdir(parents=True, exist_ok=True)
+                    section_reports = []
+                    wavs: list[Path] = []
+                    for i, sec in enumerate(content["sections"], 1):
+                        wav = audio_dir / f"{i:02d}-{slugify(sec['title'])[:40]}.wav"
+                        print(f"[tts] {i}/{len(content['sections'])} {sec['title']} …")
+                        rep = generate_section_tts(
+                            text=sec["narration"],
+                            out_wav=wav,
+                            voice=voice_meta,
+                            py=py,
+                        )
+                        rep["title"] = sec["title"]
+                        section_reports.append(rep)
+                        wavs.append(wav)
+                    full = out_dir / "audio" / "full-narration.wav"
+                    full_dur = concat_wavs(wavs, full)
+                    tts_status = {
+                        "ok": True,
+                        "python": str(py),
+                        "full_narration": str(full),
+                        "full_duration_s": round(full_dur, 3),
+                        "sections": section_reports,
+                        "mode": "audio-shell",
+                    }
+                    write_json(out_dir / "audio" / "tts-report.json", tts_status)
+                except Exception as e:
+                    tts_status = {"ok": False, "error": str(e)}
+        if args.with_mp4:
+            if not tts_status.get("ok"):
+                mp4_status = {
+                    "ok": False,
+                    "error": "需要成功的 --with-tts 才能叠轨 MP4",
+                }
+            else:
+                try:
+                    gold = meta["gold_mp4"]
+                    if not gold.exists():
+                        alts = list(meta["settled"].glob("*.mp4"))
+                        gold = next(
+                            (p for p in alts if "可编辑" not in p.name),
+                            alts[0] if alts else gold,
+                        )
+                    out_mp4 = out_dir / f"{slugify(theme)}_培训视频_v1.mp4"
+                    mux = mux_audio_on_gold(
+                        gold_mp4=gold,
+                        narration_wav=Path(tts_status["full_narration"]),
+                        out_mp4=out_mp4,
                     )
-                out_mp4 = out_dir / f"{slugify(theme)}_培训视频_v1.mp4"
-                mux = mux_audio_on_gold(
-                    gold_mp4=gold,
-                    narration_wav=Path(tts_status["full_narration"]),
-                    out_mp4=out_mp4,
-                )
-                mp4_status = {"ok": True, **mux}
-            except Exception as e:
-                mp4_status = {"ok": False, "error": str(e)}
+                    mp4_status = {"ok": True, **mux, "method": "audio-shell"}
+                except Exception as e:
+                    mp4_status = {"ok": False, "error": str(e)}
+
+    status["tts"] = tts_status
     status["mp4"] = mp4_status
+    if full_status is not None:
+        status["full"] = full_status
 
     write_json(out_dir / "run-status.json", status)
     write_delivery_md(
@@ -783,11 +859,14 @@ def main() -> int:
         "out_dir": str(out_dir),
         "theme": theme,
         "template": slug_key,
+        "mode": args.mode,
+        "method": mp4_status.get("method") or tts_status.get("mode"),
         "sections": len(content["sections"]),
         "tts": tts_status.get("ok"),
         "mp4": mp4_status.get("ok"),
         "mp4_path": mp4_status.get("path"),
         "storyboard": str(out_dir / "storyboard.html"),
+        "error": tts_status.get("error") or mp4_status.get("error"),
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if summary["ok"] else 2

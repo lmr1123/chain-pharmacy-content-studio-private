@@ -73,10 +73,10 @@ GUIDES: dict[str, dict] = {
             "请按金样整理后生成培训视频。"
         ),
         "agent_commands": [
-            "# 规划包（必达）",
-            "python3 scripts/generate_business_video.py --template product --docx <业务Word或改用 --sections-json>",
-            "# 克隆旁白 + MP4（需 .venv-qwen-tts）",
-            ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4 --copy-to-business-delivery",
+            "# 规划包",
+            "python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path>",
+            "# 全量：换文案/屏显/包装槽 + 克隆旁白 + 分段重渲 MP4（需 .venv-qwen-tts）",
+            ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4 --product-image <包装图可选> --copy-to-business-delivery",
         ],
         "filled_source": "outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx",
         "blank_source": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
