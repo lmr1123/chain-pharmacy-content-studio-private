@@ -25,7 +25,11 @@ PKG_NAME = "药店培训内容工厂-业务包"
 PKG = OUT_ROOT / PKG_NAME
 
 sys.path.insert(0, str(REPO / "scripts"))
-from business_guided_portal import build_guided_portal_html, write_upload_folder_readme  # noqa: E402
+from business_guided_portal import (  # noqa: E402
+    build_guided_portal_html,
+    extract_docx_paragraphs,
+    write_upload_folder_readme,
+)
 
 
 ONE_PAGE = """# 一页怎么用（内部培训课件 / 视频）
@@ -216,9 +220,24 @@ QUALITY_NOTICE = """# 交付质量说明（内部培训 · 上市公司标准）
 """
 
 
-def shelf_html(templates: list[dict]) -> str:
+def load_fill_examples(templates: list[dict]) -> dict[str, list[str]]:
+    """Extract inline example text from each settled 填写参考 docx."""
+    examples: dict[str, list[str]] = {}
+    for t in templates:
+        slug = t["slug"]
+        path = SETTLED / slug / "业务提交_填写参考.docx"
+        paras = extract_docx_paragraphs(path)
+        if not paras:
+            raise SystemExit(f"missing or empty fill example for {slug}: {path}")
+        examples[slug] = paras
+    return examples
+
+
+def shelf_html(templates: list[dict], examples: dict[str, list[str]]) -> str:
     """Shelf page reuses the same simplified portal with relative paths fixed."""
-    html = build_guided_portal_html(templates, pack_date=date.today().isoformat())
+    html = build_guided_portal_html(
+        templates, examples=examples, pack_date=date.today().isoformat()
+    )
     # JS builds paths as "01_模板货架/media/..." — rewrite for this subfolder.
     html = html.replace("01_模板货架/media/", "media/")
     html = html.replace("02_空白Word/", "../02_空白Word/")
@@ -333,14 +352,18 @@ def main() -> None:
             encoding="utf-8",
         )
 
-    (shelf / "index.html").write_text(shelf_html(templates), encoding="utf-8")
+    examples = load_fill_examples(templates)
+
+    (shelf / "index.html").write_text(shelf_html(templates, examples), encoding="utf-8")
     (shelf / "catalog.json").write_text(
         json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
-    # Open-source style guided entry (primary)
+    # Guided entry (primary): templates + inline fill examples
     (PKG / "index.html").write_text(
-        build_guided_portal_html(templates, pack_date=date.today().isoformat()),
+        build_guided_portal_html(
+            templates, examples=examples, pack_date=date.today().isoformat()
+        ),
         encoding="utf-8",
     )
 
@@ -357,9 +380,9 @@ def main() -> None:
         "示例口令见 `04_WorkBuddy口令卡.md`。\n\n"
         "| 业务会点开的 | 说明 |\n"
         "|--------------|------|\n"
-        "| **`index.html`** | 仅两块：模板预览选择 · 填报真实示例 |\n"
-        "| `03_填写参考/` | 示例 docx（页面可下载） |\n"
-        "| `02_空白Word/` | 可选空白模板 |\n\n"
+        "| **`index.html`** | 仅两块：模板预览选择 · **内容示例直接展示** |\n"
+        "| `03_填写参考/` | 源 docx（页面已内嵌正文，无需下载） |\n"
+        "| `02_空白Word/` | 代理侧可选 |\n\n"
         f"生成日期：{date.today().isoformat()}\n",
         encoding="utf-8",
     )

@@ -2,22 +2,119 @@
 """Business guided portal — minimal two blocks only.
 
 1) Template preview & select (4 compact cards per row; key frames large when selected)
-2) Real fill examples (copy / download)
+2) Real fill examples shown inline for the selected template (no download)
 
-Primary workflow is conversational with WorkBuddy after install; the page only helps
-pick a template and reference real examples.
+Primary workflow is conversational with WorkBuddy after install.
 """
 
 from __future__ import annotations
 
+import html
 import json
 from datetime import date
 from pathlib import Path
 
 
-def build_guided_portal_html(templates: list[dict], *, pack_date: str | None = None) -> str:
+def extract_docx_paragraphs(path: Path, *, max_paras: int = 80) -> list[str]:
+    """Plain paragraphs from a business filled-example docx."""
+    try:
+        from docx import Document
+    except ImportError as exc:
+        raise SystemExit("python-docx required to embed fill examples") from exc
+    if not path.is_file():
+        return []
+    doc = Document(str(path))
+    out: list[str] = []
+    for p in doc.paragraphs:
+        t = (p.text or "").strip()
+        if not t:
+            continue
+        out.append(t)
+        if len(out) >= max_paras:
+            break
+    return out
+
+
+def _is_heading_line(text: str) -> bool:
+    if len(text) > 28:
+        return False
+    if text.endswith(("。", "；", "!", "？", "?", "…")):
+        return False
+    # section-like titles
+    if text.endswith(("：", ":")) and len(text) <= 20:
+        return True
+    if text in {
+        "商品介绍",
+        "核心卖点",
+        "适宜人群",
+        "联合用药话术",
+        "注意事项",
+        "课程小结",
+        "什么是风热证",
+        "典型表现",
+        "调理思路",
+        "日常注意事项",
+        "问题引入",
+        "基本概念与典型表现",
+        "商品基础信息",
+        "核心知识",
+        "适宜人群与联合方案",
+        "为什么要了解辅酶 Q10",
+        "一、疾病篇",
+        "二、商品介绍",
+        "课程基本信息",
+    }:
+        return True
+    # short title without period
+    return len(text) <= 16 and "｜" not in text and "。" not in text
+
+
+def paragraphs_to_html_blocks(paragraphs: list[str]) -> str:
+    """Render example paras as safe HTML (headings + body)."""
+    parts: list[str] = []
+    for i, raw in enumerate(paragraphs):
+        t = html.escape(raw)
+        is_disclaimer = any(
+            k in raw
+            for k in (
+                "填写参考",
+                "真实已填",
+                "样本",
+                "仅用于",
+                "不代表",
+                "审核终稿",
+                "演示占位",
+            )
+        )
+        if i == 0 or is_disclaimer:
+            parts.append(f'<p class="ex-note">{t}</p>')
+        elif _is_heading_line(raw):
+            parts.append(f"<h4>{t}</h4>")
+        else:
+            parts.append(f"<p>{t}</p>")
+    return "\n".join(parts) if parts else '<p class="ex-note">暂无填写示例正文。</p>'
+
+
+def build_guided_portal_html(
+    templates: list[dict],
+    *,
+    examples: dict[str, list[str]] | None = None,
+    pack_date: str | None = None,
+) -> str:
     pack_date = pack_date or date.today().isoformat()
-    catalog_js = json.dumps(templates, ensure_ascii=False)
+    examples = examples or {}
+
+    # Enrich catalog for JS: paragraphs + pre-rendered HTML
+    enriched: list[dict] = []
+    for t in templates:
+        slug = t["slug"]
+        paras = examples.get(slug) or []
+        item = dict(t)
+        item["example_paragraphs"] = paras
+        item["example_html"] = paragraphs_to_html_blocks(paras)
+        enriched.append(item)
+
+    catalog_js = json.dumps(enriched, ensure_ascii=False)
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -103,7 +200,6 @@ section.block h2 .n {{
 }}
 section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px; }}
 
-/* 4 per row, compact */
 .grid {{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -147,7 +243,6 @@ section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px
   text-overflow: ellipsis;
 }}
 
-/* large key frames when selected */
 .preview-pane {{
   display: none;
   margin-top: 14px;
@@ -218,25 +313,54 @@ section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px
 .cmdbox.show {{ display: block; }}
 .toast {{ font-size: 12px; color: var(--ok); margin-top: 6px; min-height: 1.2em; }}
 
-/* examples */
-.ex-list {{ display: flex; flex-direction: column; gap: 8px; }}
-.ex-row {{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 12px;
-  padding: 10px 12px;
+/* inline example body */
+.ex-empty {{
+  padding: 28px 16px;
+  text-align: center;
+  color: var(--dim);
+  font-size: 13px;
+  background: #fafbfc;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+}}
+.ex-head {{
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 8px; margin-bottom: 10px;
+}}
+.ex-head strong {{ font-size: 14px; }}
+.ex-head span {{ font-size: 12px; color: var(--dim); }}
+.ex-body {{
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #fafbfc;
+  padding: 14px 16px 16px;
+  max-height: 520px;
+  overflow: auto;
 }}
-.ex-row .name {{ font-size: 13px; font-weight: 700; flex: 1 1 180px; }}
-.ex-row .tag {{
-  font-size: 11px;
+.ex-body h4 {{
+  font-size: 13px;
+  font-weight: 800;
+  margin: 14px 0 6px;
+  color: #0f172a;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}}
+.ex-body h4:first-child {{ margin-top: 0; }}
+.ex-body p {{
+  font-size: 13px;
+  color: #334155;
+  margin: 0 0 8px;
+  white-space: pre-wrap;
+}}
+.ex-body .ex-note {{
+  font-size: 12px;
   color: var(--dim);
-  flex: 1 1 160px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
 }}
-.ex-row .btns {{ display: flex; flex-wrap: wrap; gap: 6px; }}
 
 footer {{
   margin-top: 8px;
@@ -250,7 +374,7 @@ footer {{
 <div class="shell">
   <header>
     <h1>内部培训课件 · 选模板</h1>
-    <p class="sub">商品 / 疾病内部培训课件与视频。页面只做两件事：选模板、看真实示例。内容在 WorkBuddy 对话里说即可。</p>
+    <p class="sub">商品 / 疾病内部培训课件与视频。页面只做两件事：选模板、看对应内容示例。内容在 WorkBuddy 对话里说即可。</p>
     <div class="how">
       <div>
         <b>① 安装</b>
@@ -270,7 +394,7 @@ footer {{
 
   <section class="block" id="sec-templates">
     <h2><span class="n">1</span> 模板预览与选择</h2>
-    <p class="hint">一行 4 个；点卡片看<strong>关键页面截图</strong>（大图）。选好后复制口令回 WorkBuddy 即可。</p>
+    <p class="hint">一行 4 个；点卡片看<strong>关键页面截图</strong>（大图）。选好后下方会展示该模板的<strong>内容示例</strong>。</p>
     <div class="grid" id="template-grid"></div>
 
     <div class="preview-pane" id="preview-pane">
@@ -281,7 +405,7 @@ footer {{
       <div class="keys" id="sel-keys"></div>
       <div class="actions">
         <button type="button" class="btn ok" id="btn-use">选用此模板 · 复制口令</button>
-        <a class="btn" id="btn-blank" href="#" download>下载空白 Word（可选）</a>
+        <button type="button" class="btn" id="btn-copy-ex">复制内容示例</button>
       </div>
       <div class="cmdbox" id="cmdbox"></div>
       <p class="toast" id="toast"></p>
@@ -290,11 +414,20 @@ footer {{
 
   <section class="block" id="sec-examples">
     <h2><span class="n">2</span> 填报真实示例</h2>
-    <p class="hint">只示范结构和写法，可下载对照。医学与包装以贵司审核稿为准，不要直接当新项目终稿。</p>
-    <div class="ex-list" id="ex-list"></div>
+    <p class="hint">随上方所选模板展示对应填写内容（结构示范）。医学与包装以贵司审核稿为准，不要照搬示例当新项目终稿。</p>
+    <div id="ex-panel">
+      <div class="ex-empty" id="ex-empty">请先在上方点选一个模板，这里会展示该课型的内容示例。</div>
+      <div id="ex-content" class="hidden">
+        <div class="ex-head">
+          <strong id="ex-title">—</strong>
+          <span>仅示范怎么写 · 可复制</span>
+        </div>
+        <div class="ex-body" id="ex-body"></div>
+      </div>
+    </div>
   </section>
 
-  <footer>内部培训 · {pack_date} · 预览来自已签样金样</footer>
+  <footer>内部培训 · {pack_date} · 预览来自已签样金样 · 示例正文来自各模板填写参考</footer>
 </div>
 
 <script>
@@ -306,12 +439,6 @@ function mediaCover(slug) {{
 }}
 function mediaKey(slug, i) {{
   return "01_模板货架/media/" + slug + "/key-" + String(i).padStart(2, "0") + ".png";
-}}
-function blankHref(slug) {{
-  return "02_空白Word/" + slug + "/业务提交_空白模板.docx";
-}}
-function refHref(slug) {{
-  return "03_填写参考/" + slug + "/业务提交_填写参考.docx";
 }}
 
 function buildCmd(t) {{
@@ -341,6 +468,22 @@ function renderGrid() {{
   }});
 }}
 
+function showExample(t) {{
+  const empty = document.getElementById("ex-empty");
+  const content = document.getElementById("ex-content");
+  if (!t) {{
+    empty.style.display = "block";
+    content.classList.add("hidden");
+    content.style.display = "none";
+    return;
+  }}
+  empty.style.display = "none";
+  content.classList.remove("hidden");
+  content.style.display = "block";
+  document.getElementById("ex-title").textContent = t.name_zh + " · 内容示例";
+  document.getElementById("ex-body").innerHTML = t.example_html || "<p class=\\"ex-note\\">暂无示例</p>";
+}}
+
 function selectTemplate(t) {{
   selected = t;
   try {{
@@ -365,29 +508,11 @@ function selectTemplate(t) {{
     keys.appendChild(fig);
   }});
 
-  document.getElementById("btn-blank").href = blankHref(t.slug);
   const box = document.getElementById("cmdbox");
   box.textContent = buildCmd(t);
   box.classList.add("show");
   document.getElementById("toast").textContent = "";
-  pane.scrollIntoView({{ behavior: "smooth", block: "nearest" }});
-}}
-
-function renderExamples() {{
-  const list = document.getElementById("ex-list");
-  list.innerHTML = "";
-  TEMPLATES.forEach(t => {{
-    const row = document.createElement("div");
-    row.className = "ex-row";
-    row.innerHTML =
-      '<div class="name">' + t.name_zh + "</div>" +
-      '<div class="tag">' + (t.one_liner || "") + "</div>" +
-      '<div class="btns">' +
-      '<a class="btn primary" href="' + refHref(t.slug) + '" download>下载填写示例</a>' +
-      '<a class="btn" href="' + blankHref(t.slug) + '" download>空白模板</a>' +
-      "</div>";
-    list.appendChild(row);
-  }});
+  showExample(t);
 }}
 
 document.getElementById("btn-use").addEventListener("click", async () => {{
@@ -398,9 +523,21 @@ document.getElementById("btn-use").addEventListener("click", async () => {{
   try {{
     await navigator.clipboard.writeText(text);
     document.getElementById("toast").textContent =
-      "已复制。回到 WorkBuddy 粘贴，把【商品名或病名】和要点改成你的内容即可。";
+      "已复制口令。回到 WorkBuddy 粘贴，把【商品名或病名】和要点改成你的内容即可。";
   }} catch (e) {{
     document.getElementById("toast").textContent = "请手动选中下方口令复制。";
+  }}
+}});
+
+document.getElementById("btn-copy-ex").addEventListener("click", async () => {{
+  if (!selected) return;
+  const paras = selected.example_paragraphs || [];
+  const text = paras.join("\\n");
+  try {{
+    await navigator.clipboard.writeText(text);
+    document.getElementById("toast").textContent = "内容示例已复制到剪贴板。";
+  }} catch (e) {{
+    document.getElementById("toast").textContent = "复制失败，请在下方示例区手动选择复制。";
   }}
 }});
 
@@ -414,8 +551,8 @@ try {{
 }} catch (e) {{}}
 
 renderGrid();
-renderExamples();
 if (selected) selectTemplate(selected);
+else showExample(null);
 </script>
 </body>
 </html>
@@ -423,7 +560,6 @@ if (selected) selectTemplate(selected);
 
 
 def write_upload_folder_readme(path: Path) -> None:
-    """Kept for optional offline drop-box; not part of the simplified portal UX."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         """# 可选 · 文件投递箱
@@ -437,4 +573,4 @@ def write_upload_folder_readme(path: Path) -> None:
 
 
 if __name__ == "__main__":
-    print("business_guided_portal: import build_guided_portal_html")
+    print("business_guided_portal: import build_guided_portal_html / extract_docx_paragraphs")
