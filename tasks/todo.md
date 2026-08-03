@@ -15,10 +15,11 @@
 - [x] E1 一键打包档 A：`scripts/build_business_tier_a_package.py` → `药店培训内容工厂-业务包.zip`
 
 ### P1
-- [ ] B3 联合用药 2 条 → 2 行自适应回归
+- [x] B3 联合用药 2 条 → 2 行自适应回归（content_driven_rules + 测试）
 - [ ] B4 扩展页（总结总表）页型检索规则 + 一例
-- [ ] C1 视频分镜预览 HTML 标准输出一例
-- [ ] C2 缺口清单统一 schema
+- [x] C1 视频分镜预览标准输出（MD 模板+示例；HTML 可视化可选）
+- [x] C2 缺口清单统一 schema（business-gap-list-v1）
+- [x] 业务包可上手：本课型怎么填、验收清单、初稿示例、填写参考纠错、一键 refresh
 - [ ] D2 风热 / Q10 / 课件4 本地 voice pack 资产收尾（manifest.voice 已绑）
 - [ ] D3 代理强制读取 voice_id
 

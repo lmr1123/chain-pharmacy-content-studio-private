@@ -490,10 +490,10 @@ WorkBuddy：
 
 | ID | 项 | 验收 | 状态 |
 |----|----|------|------|
-| B3 | 联合用药/列表自适应回归样例（2 条 → 2 行） | 自动或半自动检查 | 待做 |
+| B3 | 联合用药/列表自适应回归样例（2 条 → 2 行） | 自动或半自动检查 | **已完成** `scripts/content_driven_rules.py` + `test_content_driven_rules.py` |
 | B4 | 扩展页（总结总表）页型检索规则 | 有文档 + 一例 | 待做 |
-| C1 | 视频分镜预览 HTML 标准输出格式 | 一主题一例 | 待做 |
-| C2 | 缺口清单 schema（包装/插画/待确认字段） | 统一 CSV/MD | 待做 |
+| C1 | 视频分镜预览 HTML 标准输出格式 | 一主题一例 | **部分完成** MD 标准模板 + 示例（HTML 可视化可后补） |
+| C2 | 缺口清单 schema（包装/插画/待确认字段） | 统一 CSV/MD | **已完成** `business-gap-list-v1` |
 | D2 | 风热 / Q10 / 课件4 补齐 voice pack 与 manifest.voice | 换文案可克隆试听 | **部分完成**：manifest.voice 已绑；本地 pack 目录仍待补齐 prompt 资产 |
 | D3 | WorkBuddy 强制读取 voice_id | 日志可查 | 待做 |
 
@@ -512,12 +512,12 @@ WorkBuddy：
 |------|------|
 | 2026-08-03 | 初版：货架预览、内容驱动框架、视频/语音包、WorkBuddy 分层与 backlog |
 | 2026-08-03 | **P0 落地（上市公司交付标准）**：六模板 `preview/` 真实金样帧；档 A 业务包 zip（货架+Word+口令+质量说明）；`workbuddy-system-prompt.md`；manifest.preview + 视频类 manifest.voice；刷新命令见下 |
+| 2026-08-03 | **业务可上手**：每课型「本课型怎么填」；填写参考纠错（商品不再错挂风热样本）；初稿/缺口/分镜标准模板+示例；业务验收清单；内容驱动规则回归；一键 `scripts/refresh_business_delivery.py` |
 
-**刷新业务包（制作侧）：**
+**刷新业务包（制作侧 · 推荐一键）：**
 
 ```bash
-python3 scripts/sync_settled_template_previews.py
-python3 scripts/build_business_tier_a_package.py
+python3 scripts/refresh_business_delivery.py
 # → outputs/业务使用资料包/药店培训内容工厂-业务包.zip
 ```
 

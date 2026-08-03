@@ -69,6 +69,46 @@ ONE_PAGE = """# 一页怎么用（业务）
 ## 成片放哪里
 
 确认后的 PPTX / MP4 请放在 `05_交付物放这里/`，或按项目单独建文件夹归档。
+
+## 你先会收到什么（不是直接成片）
+
+见 `06_你将收到的初稿长什么样/`：  
+内容初稿示例、缺口清单示例、视频分镜预览示例。  
+**只有你确认后**，WorkBuddy 才出可编辑 PPTX / 培训视频。
+
+## 推荐起步（第一次用）
+
+1. 货架选 **「绿色单品 PPT」** 或 **「商品培训视频」**（状态为「已签样 · 可换主题量产」）  
+2. 打开 `02_空白Word/…/本课型怎么填.md` 看推荐板块  
+3. 填空白 Word → 口令卡交给 WorkBuddy  
+"""
+
+ACCEPTANCE = """# 业务验收清单（你点头后再成片）
+
+把本页当核对表。WorkBuddy 交初稿时，你按项勾选。
+
+## 必过
+
+- [ ] 课型中文名与货架一致  
+- [ ] 章节/模块与你 Word 一致；**没有的节没有被硬凑出来**  
+- [ ] 联合用药/列表：**条数 = 你写的条数**（例如 2 组只有 2 行，没有空白第三行）  
+- [ ] 医学/功效/价格/竞品：要么是你的审核稿，要么明确标「待确认」——没有瞎编  
+- [ ] 包装/Logo：有授权图或「待补」槽位——**没有假包装**  
+- [ ] 视频：说明使用的克隆语音包/voice_id；**不是系统机器人音色**  
+- [ ] 你已书面确认「可以出成片」之后，才出现终稿 PPTX/MP4  
+
+## 可选
+
+- [ ] 分镜/初稿里的屏显短句你已过目  
+- [ ] 缺口清单里的图你已安排补传或接受槽位上线  
+
+## 不通过时怎么回
+
+直接回复 WorkBuddy，例如：
+
+- 「联合用药我只交了 2 组，请删掉第三空行后重出初稿」  
+- 「第 2 节功效改成附件审核稿原文，再出」  
+- 「包装下周才有，先槽位出初稿，成片等我补图」  
 """
 
 COMMAND_CARD = """# WorkBuddy 口令卡（业务复制）
@@ -453,9 +493,39 @@ def main() -> None:
     (PKG / "00_一页怎么用.md").write_text(ONE_PAGE, encoding="utf-8")
     (PKG / "框架填写说明.md").write_text(FRAMEWORK_GUIDE, encoding="utf-8")
     (PKG / "交付质量说明.md").write_text(QUALITY_NOTICE, encoding="utf-8")
+    (PKG / "业务验收清单.md").write_text(ACCEPTANCE, encoding="utf-8")
     (PKG / "04_WorkBuddy口令卡.md").write_text(COMMAND_CARD, encoding="utf-8")
     (PKG / "05_交付物放这里").mkdir()
     (PKG / "05_交付物放这里" / ".gitkeep").write_text("", encoding="utf-8")
+
+    # What business will receive before final film
+    delivery_examples = REPO / "production-library/templates/business-delivery"
+    examples_dest = PKG / "06_你将收到的初稿长什么样"
+    examples_dest.mkdir()
+    for name in (
+        "内容初稿模板.md",
+        "缺口清单模板.md",
+        "分镜预览模板.md",
+    ):
+        src = delivery_examples / name
+        if src.is_file():
+            copy_file(src, examples_dest / name)
+    ex_dir = delivery_examples / "examples"
+    if ex_dir.is_dir():
+        for src in ex_dir.glob("*.md"):
+            copy_file(src, examples_dest / "示例" / src.name)
+    (examples_dest / "说明.md").write_text(
+        "# 你将收到的初稿长什么样\n\n"
+        "WorkBuddy **不会**一上来丢终稿 PPTX/MP4。\n\n"
+        "| 文件 | 何时 |\n"
+        "|------|------|\n"
+        "| 内容初稿 | 所有 PPT/课件 |\n"
+        "| 缺口清单 | 每次 |\n"
+        "| 分镜预览 | 视频类 |\n\n"
+        "`示例/` 里是结构示范（含「联合用药只 2 行」），不是真实医学终稿。\n"
+        "你确认后，成片进 `05_交付物放这里/`。\n",
+        encoding="utf-8",
+    )
 
     shelf = PKG / "01_模板货架"
     words = PKG / "02_空白Word"
@@ -486,11 +556,17 @@ def main() -> None:
         copy_file(blank, words / slug / "业务提交_空白模板.docx")
         copy_file(filled, refs / slug / "业务提交_填写参考.docx")
 
+        guide = SETTLED / slug / "本课型怎么填.md"
+        if guide.is_file():
+            copy_file(guide, words / slug / "本课型怎么填.md")
+            copy_file(guide, refs / slug / "本课型怎么填.md")
+
         # Per-template short readme next to Word
         (words / slug / "README.txt").write_text(
             f"课型：{t['name_zh']}\n"
             f"说明：{t.get('one_liner', '')}\n"
             f"状态：{t.get('status_label', '')}\n"
+            f"先读：本课型怎么填.md\n"
             f"规则：没有的章节整段删除；列表有几条写几条；不要空行凑满。\n"
             f"提交后请使用口令卡交给 WorkBuddy，先出初稿再成片。\n",
             encoding="utf-8",
@@ -505,14 +581,17 @@ def main() -> None:
     (PKG / "README.md").write_text(
         "# 药店培训内容工厂 · 业务包（档 A）\n\n"
         "本包可直接发给一线业务，**无需**安装开发环境。\n\n"
+        "**从这里开始：** 双击 `01_模板货架/index.html` → 读 `00_一页怎么用.md`。\n\n"
         "| 目录/文件 | 用途 |\n"
         "|-----------|------|\n"
         "| `00_一页怎么用.md` | 4 步总览 |\n"
         "| `01_模板货架/index.html` | **双击打开**看模板效果 |\n"
-        "| `02_空白Word/` | 按课型下载空白模板 |\n"
-        "| `03_填写参考/` | 仅示范格式 |\n"
+        "| `02_空白Word/` | 空白模板 + **本课型怎么填** |\n"
+        "| `03_填写参考/` | 仅示范格式（勿当医学终稿） |\n"
         "| `04_WorkBuddy口令卡.md` | 复制给 WorkBuddy |\n"
         "| `05_交付物放这里/` | 成片归档 |\n"
+        "| `06_你将收到的初稿长什么样/` | 初稿/缺口/分镜长什么样 |\n"
+        "| `业务验收清单.md` | 你点头前的核对表 |\n"
         "| `框架填写说明.md` | 可删节 / 有几条写几条 |\n"
         "| `交付质量说明.md` | 上市公司交付硬标准 |\n\n"
         f"生成日期：{date.today().isoformat()}\n",

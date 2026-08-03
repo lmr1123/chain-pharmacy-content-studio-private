@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "business-gap-list-v1",
+  "title": "业务交付缺口清单",
+  "type": "object",
+  "required": ["schema", "theme", "template_id", "missing_fields", "missing_assets", "pending_confirmations", "policy"],
+  "properties": {
+    "schema": { "const": "business-gap-list-v1" },
+    "theme": { "type": "string" },
+    "template_id": { "type": "string" },
+    "missing_fields": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "业务未提供或无法从 Word 解析的字段"
+    },
+    "missing_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "note"],
+        "properties": {
+          "role": { "type": "string", "description": "如 本品包装 / Logo / 联合商品包装" },
+          "note": { "type": "string" },
+          "slot": { "type": "string" }
+        }
+      }
+    },
+    "pending_confirmations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "医学/价格/竞品等须业务点头的表述"
+    },
+    "policy": {
+      "type": "object",
+      "required": ["no_fake_packaging", "no_invented_medical_claims", "forbid_system_tts_for_final_narration"],
+      "properties": {
+        "no_fake_packaging": { "type": "boolean" },
+        "no_invented_medical_claims": { "type": "boolean" },
+        "forbid_system_tts_for_final_narration": { "type": "boolean" }
+      }
+    }
+  }
+}

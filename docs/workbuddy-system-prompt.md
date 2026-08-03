@@ -56,11 +56,16 @@
 
 【输出目录约定】
 交付/<主题中文名>_<日期>/
-  01_内容初稿或分镜说明.md
-  02_待确认项.md
-  03_缺口清单.md
-  04_追溯.json          # template_id, style_pack_id, voice_id, 确认人/时间
-  终稿.pptx / 终稿.mp4  # 仅确认后
+  01_内容初稿.md          # 结构对齐 production-library/templates/business-delivery/内容初稿模板.md
+  02_分镜预览.md          # 视频必填；对齐 分镜预览模板.md
+  03_缺口清单.md          # schema business-gap-list-v1；可用 scripts/content_driven_rules.py
+  04_追溯.json            # template_id, style_pack_id, voice_id, 确认人/时间
+  终稿.pptx / 终稿.mp4    # 仅确认后
+
+【内容驱动（实现时调用）】
+- 联合用药/列表规划优先使用 scripts/content_driven_rules.py 的 plan_combination_guidance / plan_list_block
+- 验收：2 条联合用药 → item_count=2；禁止空壳「待补充」行凑满金样 3 行
+- 回归：python3 scripts/test_content_driven_rules.py
 
 【追溯字段（每条正式交付必有）】
 - template_id
