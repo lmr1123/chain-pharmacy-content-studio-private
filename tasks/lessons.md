@@ -1,22 +1,22 @@
 # Lessons
 
-## 2026-08-03 晚（视频换主题绿线 MVP）
+## 2026-08-03 晚（视频必须换内容/文字/画面）
+
+### 用户纠正
+
+- 只换声音没用；必须按主题换内容、屏显文字和画面槽位。
 
 ### 落地
 
-- CLI：`scripts/generate_business_video.py`
-- 路径：sections-json / docx → content + storyboard + gap → 可选 Qwen3 克隆 → ffmpeg 叠金样画面 → MP4
-- TTS 用 `.venv-qwen-tts`；系统 python 负责规划包（避免 docx 依赖绑死 TTS venv）
-- 冒烟：非金样主题名「示例舒心片」「示例风燥证」真出 MP4
+- 商品视频数据驱动：`product_name` / `screen` / `assets.product`
+- full：分段 TTS → 写 JSON → 8 段重渲 → concat（`business_video_product_full.py`）
+- 旧叠声壳降为 `--mode audio-shell`
+- 冒烟：示例舒心片全片 ~170s，method=`segment-rerender-content-visual-audio`
+- 渲染 outDir 须在 workspace 内；ffmpeg 固定 homebrew 路径
 
-### 边界（必守）
+### 下一刀
 
-- **MVP = 金样画面时间轴壳 + 新旁白**，不是完整换包装像素重渲；对业务可交付试看/内训，换真包装仍要升级制作。
-- 无 TTS 时只交规划包，禁止系统 `say` 假配音。
-
-### 下一增强
-
-- 分段 Revideo 重渲；课件3 theme 一键。
+- 健康科普 full；更多插画按板块替换。
 
 ---
 
