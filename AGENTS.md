@@ -30,8 +30,17 @@ If a plan conflicts with the above, stop and realign.
    `scripts/sync_settled_template_business_words.py`. Store all exploratory renders, rejected
    variants, comparisons, and QA only under `production-library/validation/`; never mix them
    in a shared `out` or `output` directory.
+8. **UI / layout / small object icons (on demand):** when a gold-sample slot needs
+   arrows, bullets, checks, dividers, or simple medical object marks and nothing
+   approved exists in `component-library`, match and fetch from
+   [Koboyo Icons](https://koboyo.com/icons) into local
+   `assets/_intake/open_source/koboyo/svg/` (gitignored; see `SOURCE.md` +
+   `license.txt`). Do **not** commit bulk SVG or mirror the full library. Do **not**
+   replace multi-color scene illustrations (symptoms, advice scenes, presenters).
+   Digits 1–n prefer text typesetting. Promote to master only after recolor/rasterize
+   and sign-off.
 
-## Business + WorkBuddy default entry (no unzip)
+## Business + WorkBuddy self-serve (no unzip, no maker-for-normal)
 
 Business opens WorkBuddy and says:
 
@@ -39,10 +48,15 @@ Business opens WorkBuddy and says:
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-Agent must: install/update repo (`scripts/workbuddy_bootstrap_for_business.py`), open the
-guided portal, then walk **preview → Word fill → submit → draft → final**.
-See `docs/workbuddy-install-and-guide.md` and `docs/workbuddy-system-prompt.md`.
-Do **not** tell business to unzip a zip as the default path.
+**Locked model:** business provides content in chat; **WorkBuddy on the business machine**
+produces PPT / product video / health video. Do **not** bounce normal settled work to
+「请找制作」or require the engineer to run renders.
+
+Agent must: `git pull` + `scripts/workbuddy_bootstrap_for_business.py`, open the portal,
+then on content: lock template → organize → **run generators / `generate_business_video.py --mode full`**.
+Video: full segment re-render (product 8 / health 7); never default `audio-shell`.
+See `docs/workbuddy-install-and-guide.md`, `docs/workbuddy-system-prompt.md`,
+`docs/workbuddy-video-first-check.md`. Do **not** tell business to unzip zip as default.
 
 ## Product PPT courseware: guide business in four steps
 

@@ -30,21 +30,21 @@ GUIDES: dict[str, dict] = {
             "总结",
         ],
         "tips": [
-            "金样可用：`风热证_疾病科普视频_金样_v1.mp4`（对照）与 `…_可编辑金样_v2.mp4`（生产基线）。",
+            "**业务自助：** 在 WorkBuddy 对话里说病名+要点即可出片，不必找制作代跑。",
+            "金样对照：`风热证_疾病科普视频_金样_v1.mp4`；换病种走 full 分段重渲（屏显/病名/旁白随主题换）。",
             "每个自然板块 = 可直接讲解的审核正文；有几章写几章，不需要的整段删。",
-            "旁白必须是药师/合规已审表述；正式成片用模板 voice/ 克隆药师声，禁止系统朗读。",
-            "片尾 Logo 等授权图缺则记缺口，禁止假包装。",
+            "旁白须药师/合规已审；正式成片用模板克隆药师声，禁止系统朗读。",
         ],
         "chat_example": (
-            "我要用【疾病科普视频】模板，主题是【病名】。\n"
-            "内容围绕：典型症状…、病因机理…、治疗与用药建议…。\n"
-            "请按金样整理后生成培训视频。"
+            "我要用【疾病科普视频】模板，主题是【病名，如感冒】。\n"
+            "内容围绕：开场、基础认知、病因机理、典型症状、调理建议、用药建议、总结…。\n"
+            "请整理后直接生成培训视频（画面随主题换，不要只换声音）。"
         ),
         "agent_commands": [
-            "# 规划包（必达）",
-            "python3 scripts/generate_business_video.py --template health --docx <业务Word或改用 --sections-json>",
-            "# 克隆旁白 + MP4（需 .venv-qwen-tts）",
+            "# 业务机 WorkBuddy 执行（默认 full；禁止 audio-shell）",
             ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template health --sections-json <path> --with-tts --with-mp4 --copy-to-business-delivery",
+            "# 仅规划（无 TTS 时）",
+            "python3 scripts/generate_business_video.py --template health --mode plan --sections-json <path>",
         ],
         "filled_source": "outputs/video-training-natural-import/风热证健康知识视频培训_真实已填样本.docx",
         "blank_source": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",
@@ -62,21 +62,21 @@ GUIDES: dict[str, dict] = {
             "总结",
         ],
         "tips": [
-            "金样可用：`辅酶Q10_商品培训视频_金样_v1.mp4`（约 156s）。",
+            "**业务自助：** 在 WorkBuddy 对话里说商品名+要点即可出片，不必找制作代跑。",
+            "金样对照：`辅酶Q10_商品培训视频_金样_v1.mp4`；换商品走 full 分段重渲。",
             "一份内容一个商品；板块可删可重排。",
-            "包装图用授权原图；无图则说明缺口，禁止仿包装。",
-            "正式旁白 = 审核原文 + 模板 voice/ 克隆。",
+            "包装图用授权原图；无图则说明缺口，禁止仿包装。正式旁白 = 审核原文 + 模板克隆声。",
         ],
         "chat_example": (
             "我要用【商品培训视频】模板，商品是【商品名】。\n"
             "内容围绕：核心功效…、产品特点…、适宜人群…、联合用药 2 组…。\n"
-            "请按金样整理后生成培训视频。"
+            "请整理后直接生成培训视频（画面随主题换，不要只换声音）。"
         ),
         "agent_commands": [
-            "# 规划包",
-            "python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path>",
-            "# 全量：换文案/屏显/包装槽 + 克隆旁白 + 分段重渲 MP4（需 .venv-qwen-tts）",
+            "# 业务机 WorkBuddy 执行（默认 full）",
             ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4 --product-image <包装图可选> --copy-to-business-delivery",
+            "# 仅规划（无 TTS 时）",
+            "python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path>",
         ],
         "filled_source": "outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx",
         "blank_source": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",

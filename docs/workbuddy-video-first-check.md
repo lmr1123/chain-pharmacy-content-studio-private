@@ -1,9 +1,9 @@
 # 业务机 WorkBuddy · 视频课件首次自检清单
 
-**用途：** 第一次在业务机用本项目生成 **商品培训视频** 前，代理（或你）用下面 **5 条命令** 确认环境。  
-**PPT 出片** 不强制本清单；出 **商品培训视频 full 重渲** 必须过。
+**用途：** 业务在 WorkBuddy **自己出视频**前，由**代理在业务机执行**下面命令确认环境（不要让业务敲命令）。  
+**PPT 出片** 不强制；**商品培训视频 / 疾病科普视频 full 重渲** 必须过。
 
-仓库根目录以下记为 `$REPO`（常见 `~/Documents/chain-pharmacy-content-studio` 或 `~/Projects/chain-pharmacy-content-studio`）。
+仓库根目录 `$REPO`（常见 `~/Documents/chain-pharmacy-content-studio`）。
 
 ---
 
@@ -140,21 +140,22 @@ outputs/business-video-runs/wb-health-first-check/*_疾病科普视频_v1.mp4
 
 ---
 
-## 自检通过后 · 业务怎么用
+## 自检通过后 · 业务怎么用（自助）
 
-1. 业务说安装句 / 已装则直接说课型。  
-2. 商品视频示例：
+业务只说话，代理出片：
 
 ```text
-我要用【商品培训视频】，商品是【真实商品名】。
-内容围绕：……。有包装图则附件。请生成培训视频。
+我要用【商品培训视频】，商品是【真实商品名】。内容……请生成培训视频。
 ```
 
-3. 代理内部用 full 命令（与 ⑤ 相同，换真实 sections / 可选 `--product-image`）。  
-4. 成片路径回传业务；引导页仍可用于选模板与看示例。
+```text
+我要用【疾病科普视频】，主题是【病名】。内容……请生成培训视频。
+```
 
-PPT 仍走既有绿色单品 / 参课蓝 generator，不走本清单 ⑤。
+代理：整理 sections → `--mode full --with-tts --with-mp4` → 回传 MP4 路径。  
+禁止说「找制作」「只能换声」「full 未接入」。
 
+PPT 仍走既有 generator，不走本清单 ⑤。
 ---
 
 ## 关联

@@ -29,8 +29,8 @@ CATALOG: list[dict] = [
         "outputs": ["MP4 培训视频"],
         "category": "疾病科普",
         "production_ready": True,
-        "status_label": "已签样金样 · 可参考换主题",
-        "status_note": "金样 v1 视觉对照 + v2 可编辑生产基线已齐；换病种须审核旁白与授权 Logo，讲解声走模板克隆语音包。",
+        "status_label": "已签样金样 · 业务可换主题出片",
+        "status_note": "业务在 WorkBuddy 说病名+审核要点即可 full 重渲（换屏显/旁白/7段画面）；讲解声走模板克隆语音包。",
         "cover_src": GS / "wind-heat-video-gold-v1/web/media/cover-product.jpg",
         "keys": [
             (GS / "wind-heat-video-gold-v1/web/media/thumbs/cover.jpg", "开场"),
@@ -58,8 +58,8 @@ CATALOG: list[dict] = [
         "outputs": ["MP4 培训视频"],
         "category": "商品培训",
         "production_ready": True,
-        "status_label": "已签样金样 · 可参考换主题",
-        "status_note": "金样包已齐（友好命名/voice/场景清单）；换商品须提供审核旁白与授权包装图，讲解声走模板克隆语音包。",
+        "status_label": "已签样金样 · 业务可换主题出片",
+        "status_note": "业务在 WorkBuddy 说商品名+审核要点即可 full 重渲（换屏显/包装槽/旁白/8段画面）；有授权包装图可附上。",
         "cover_src": GS / "product-q10-video-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "product-q10-video-gold-v1/web/media/thumbs/opening.jpg", "开场"),
