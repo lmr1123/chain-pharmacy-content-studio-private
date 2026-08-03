@@ -1,107 +1,78 @@
 # 业务 WorkBuddy 傻瓜交付 · 持续迭代
 
 > **总案**：`docs/business-workbuddy-foolproof-delivery.md`  
-> **新会话先读**：本文件「交接快照」→ `docs/workbuddy-install-and-guide.md` → system prompt  
-> 协作模型锁定：**业务 + WorkBuddy**（业务不装 Node、不解压 zip；代理安装并出片）
+> **新会话先读**：本文件「交接快照」→ `docs/workbuddy-install-and-guide.md` → `docs/workbuddy-system-prompt.md`  
+> **协作模型**：业务 + WorkBuddy · 对话出片（非四步 Word 上传）
 
 ---
 
-## 交接快照（2026-08-03 · 引导页极简）
+## 交接快照（2026-08-03 · 压缩上下文从这里接）
 
-### 本轮
-
-- [x] 业务引导页砍到 **2 块**：① 模板预览选择（一行 4 卡片 + 关键页大图）② 填报真实示例（下载）
-- [x] 主路径改为对话：安装 → 选模板 → 聊天说要点 → 初稿确认 → 出片
-- [x] 同步 install / system-prompt / 一页怎么用 / 口令卡；`refresh` 业务包
-
-### 业务真实路径
-
-```text
-请安装 …git，然后指引我使用
-→ 网页选模板
-→ 「整理可可康灵芝…你先整理符合内容再生成ppt」
-→ 确认初稿 → PPT
-```
-
-### 下一优先
-
-- 业务机 pull 后肉眼过一遍 index.html
-- 可选：对话直出绿色 PPT 的 WorkBuddy 端到端（可可康示例）
-
----
-
-## 交接快照（2026-08-03 晚 · 下一会话从这里接）
-
-### 仓库与入口（已落地）
+### 仓库
 
 | 项 | 状态 |
 |----|------|
 | GitHub | **Public** · https://github.com/lmr1123/chain-pharmacy-content-studio |
-| 默认分支 | `main` |
+| 分支 | `main` · HEAD 约 `4aea9ab`（三步指引去内部话术） |
 | 业务首句 | `请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用` |
-| 安装脚本 | `scripts/workbuddy_bootstrap_for_business.py`（clone/pull + 打开引导页；失败自动试 ghproxy 等） |
-| 引导协议 | `docs/workbuddy-install-and-guide.md` |
-| 系统提示 | `docs/workbuddy-system-prompt.md`（须粘贴到业务机 WorkBuddy） |
-| 引导页 | 仓库内 `outputs/业务使用资料包/药店培训内容工厂-业务包/index.html` |
-| 刷新业务包 | `python3 scripts/refresh_business_delivery.py` |
-| **settled 货架** | **7** 套（含 `disease-health-shenke-blue-v1` 参课蓝） |
+| bootstrap | `scripts/workbuddy_bootstrap_for_business.py`（clone/pull + 开引导页 + **三步开场白**） |
+| 引导页 | `outputs/业务使用资料包/药店培训内容工厂-业务包/index.html` |
+| 刷新包 | `python3 scripts/refresh_business_delivery.py` |
+| settled | **7** 套（含参课蓝 `disease-health-shenke-blue-v1`） |
 
-### 业务路径（默认）
+### 业务路径（对外只讲三步 · 已锁定）
 
 ```text
-WorkBuddy 安装句
-  → clone/pull（国内可镜像回退）
-  → 开源式四步：预览选模板 → Word 填报 → 上传/附件 → 审初稿 → 成片
+① 看模板（引导页：一行 4 卡片 + 关键页大图预览 + 选用）
+② 输入培训内容（聊天示例：
+   整理可可康灵芝胶囊商品，主要是围绕宁心安神助睡眠、提升免疫力、
+   保肝护肝抗衰老3个方面来完善，你先整理符合内容再生成ppt）
+③ 下载与修改（可下载 PPT 修改，或指令批量修改：
+   「第二页卖点改成…」「批量把联合用药改成 2 条」）
 ```
 
-- **禁止**再把「请先解压 zip」写成默认话术；zip 仅离线备用。  
-- 国内：**权限 OK**，直连 GitHub 常不稳；bootstrap 已多源回退；仍失败可 zip 备用或 Gitee 镜像（未建）。
+**禁止对业务说**：解压 zip、先出初稿再确认、四步 Word/上传区。  
+（内部仍可先整理再出片，写进 system prompt 执行侧即可。）
 
-### 本会话已完成（2026-08-03 晚 · 续交付）
+### 引导页（业务可见 · 仅两块）
 
-- [x] **参课蓝金样并入业务交付主线**
-  - settled：`production-library/templates/settled/disease-health-shenke-blue-v1/`
-  - 注册：`templates.json` + `styles.json`（`style-pack.shenke-medical-blue-v1`）
-  - 货架：`sync_settled_template_previews.py` CATALOG + 档 A 包 7 模板
-  - 文档：总案课型表 / 系统提示 / 安装引导 / 口令卡
-  - 生成器：`generator/` 自管 `npm install` + `node build-editable.mjs`（18 页 PPTX 已冒烟）
-- [x] **绿线真出片（制作机）**
-  - 绿色单品 generator：`poc/courseware-export/work/build-product-courseware.mjs` → 5 页 PPTX
-  - 内容驱动 2 行联合用药：`outputs/业务使用资料包/绿线验收_绿色单品PPT_两行联合用药_2026-08-03.pptx`
-    （slide3 仅 `combination-name-0/1`，无第三行）
-  - 冒烟脚本：`poc/courseware-export/work/build-product-courseware-smoke-2combo.mjs`
-- [x] `python3 scripts/refresh_business_delivery.py` 通过（7 模板 · 内容驱动回归）
+1. **模板预览与选择** — 4 列紧凑卡片；点开关键页大图；复制口令  
+2. **填报真实示例** — **页面内展示**对应课型 `业务提交_填写参考.docx` 正文（不下载）
 
-### 未完成 / 下一会话优先建议
+源码：`scripts/business_guided_portal.py` · 打包：`scripts/build_business_tier_a_package.py`
 
-1. **业务机 WorkBuddy 绿线**（安装句 → 选模板 → 真附件 Word → 初稿确认 → 出片）— 制作机已证明 generator；业务机仍需一次真人路径  
-2. **D2** 风热 / Q10 / 课件4 本地 `voice/` pack 资产（prompt.wav 等）收尾  
-3. **D3** 代理日志强制 `voice_id`  
-4. **B4** 扩展页（总结总表）页型检索 + 一例  
-5. **E2** 对外授权/NOTICE（Public 后更急）  
-6. **可选** Gitee 镜像（国内更稳）— 需账号/同步策略，用户确认后再做  
-7. **可选** 参课蓝「换病」第二主题 content JSON + 再出一份 PPTX（证明换病量产）
+### 本会话已完成（累计）
 
-### 本地脏区 / 勿混线
+- [x] 参课蓝 settled + 注册 + 货架第 7 套 + 生成器冒烟（18 页）  
+- [x] 制作机绿线：绿色单品真 PPTX + 2 行联合用药验收件  
+- [x] 引导页极简（2 块）+ 示例内嵌展示  
+- [x] 安装后指引改为 **三步**，并去掉内部话术  
+- [x] 文档/系统提示/bootstrap/业务包已同步并 push  
 
-- 未跟踪探索（**非本线**）：`product-courseware-kekang-lingzhi-green-v1/`、`product-courseware-yuyou-green-v1/`、`poc/courseware-export/*yuyou*`  
-- `.workbuddy/` 本地态，勿提交  
-- validation 下 png/pptx 多被 gitignore；业务看预览靠 **settled/preview** 与档 A 包 media
+### 未完成 / 下一会话优先
+
+1. **业务机 WorkBuddy 真人绿线**（pull → 安装句 → 三步 → 可可康类对话真出 PPT）  
+   - 注意：业务机系统提示若是旧粘贴版，须重贴 `docs/workbuddy-system-prompt.md`  
+2. **对话直出闭环增强**（可选）：聊天要点 → 自动填 content/green JSON → 调 generator → 回传 PPT 路径  
+3. **D2** 风热 / Q10 / 课件4 本地 `voice/` pack 资产收尾  
+4. **D3** 代理强制 `voice_id`  
+5. **B4** 扩展页（总结总表）页型检索 + 一例  
+6. **E2** NOTICE / 授权说明（Public 后）  
+7. **可选** 参课蓝换病第二主题；Gitee 镜像  
+
+### 勿混线
+
+- 未跟踪探索：`product-courseware-kekang-lingzhi-green-v1/`、`yuyou*`（非本线）  
+- `.workbuddy/` 已 gitignore  
 
 ### 关键命令
 
 ```bash
-cd ~/Projects/chain-pharmacy-content-studio   # 或业务机 clone 路径
+cd ~/Projects/chain-pharmacy-content-studio
+git pull --ff-only
 python3 scripts/workbuddy_bootstrap_for_business.py
 python3 scripts/refresh_business_delivery.py
 python3 scripts/test_content_driven_rules.py
-
-# 参课蓝重建
-cd production-library/templates/settled/disease-health-shenke-blue-v1/generator
-npm install && node build-editable.mjs content/急性上呼吸道感染.content.json
-
-# 绿色单品 2 行联合用药冒烟
-cd poc/courseware-export/work && node build-product-courseware-smoke-2combo.mjs
 ```
 
 ---
@@ -119,39 +90,32 @@ cd poc/courseware-export/work && node build-product-courseware-smoke-2combo.mjs
 - [x] **业务默认入口 = WorkBuddy 安装句**（`workbuddy-install-and-guide.md` + bootstrap）
 - [x] **仓库 Public** + 国内镜像回退
 - [x] **参课蓝 settled + 货架第 7 套**（`disease-health-shenke-blue-v1`）
+- [x] **引导页极简 + 三步对外指引**（无 zip/初稿确认话术）
 
 ### P1
 - [x] B3 联合用药 2 条 → 2 行自适应回归（content_driven_rules + 测试）
 - [ ] B4 扩展页（总结总表）页型检索规则 + 一例
 - [x] C1 视频分镜预览标准输出（MD 模板+示例；HTML 可视化可选）
 - [x] C2 缺口清单统一 schema（business-gap-list-v1）
-- [x] 业务包可上手：本课型怎么填、验收清单、初稿示例、填写参考纠错、一键 refresh
+- [x] 业务包可上手 + 一键 refresh
 - [ ] D2 风热 / Q10 / 课件4 本地 voice pack 资产收尾（manifest.voice 已绑）
 - [ ] D3 代理强制读取 voice_id
-- [x] **端到端绿线（制作机）**：绿色单品 generator 真出 PPTX + 2 行联合用药验收件  
-- [ ] **端到端绿线（业务机 WorkBuddy）**：安装句 → 真人路径完整走通
+- [x] **端到端绿线（制作机）**：绿色单品 generator 真出 PPTX + 2 行联合用药  
+- [ ] **端到端绿线（业务机 WorkBuddy）**：三步真人路径完整走通  
 
 ### P2
 - [ ] A4 可选 online 货架
 - [ ] E2 开源/语音包授权说明（Public 后优先）
 - [ ] E3 制作侧编辑器手册（非业务默认）
 - [ ] 可选 Gitee 镜像同步
+- [ ] 可选：对话要点 → generator 自动填参出片流水线
 
 ## Review
 
-- 方案：`docs/business-workbuddy-foolproof-delivery.md`
-- **2026-08-03 P0 交付（业务可发）：**
-  - 刷新：`python3 scripts/refresh_business_delivery.py`
-  - 包：`outputs/业务使用资料包/药店培训内容工厂-业务包/`（+ zip 备用）
-  - 质量：预览帧来自已签样金样；禁止系统 TTS / 假包装；内容驱动 2→2 行有测试
-- **2026-08-03 入口改版：**
-  - 业务不需要解压；WorkBuddy 安装公开仓并四步引导
-  - 国内网络：权限无阻、链路不稳；bootstrap 多源 clone
-- **2026-08-03 晚 · 参课蓝 + 绿线：**
-  - 第 7 套 settled：疾病健康知识培训 PPT（参课蓝）；货架/口令/系统提示已同步
-  - 制作机绿线：`绿线验收_绿色单品PPT_两行联合用药_2026-08-03.pptx`（5 页 · 联合用药仅 2 行）
-  - 参课蓝：`npm install && node build-editable.mjs` → 18 页可编辑金样
-- **下一会话优先：** 业务机 WorkBuddy 真人绿线 → D2/D3 → B4 / E2 / 参课蓝换病样例
+- **2026-08-03 交付主线已可发（制作侧）**：Public 仓 + 安装句 + 7 模板货架 + 参课蓝 + 绿线 PPT 冒烟  
+- **UX 定稿**：业务页两块；代理对业务只念三步；内部仍内容驱动 / 先整理再出片 / 禁假包装与系统 TTS  
+- **下一刀**：业务机真人绿线验证 +（可选）对话→PPT 自动化  
+- 提交链：`3955429` 参课蓝 → `dd2e544`/`f0b12eb` 引导页 → `bf2191e`/`4aea9ab` 三步指引
 
 ---
 
