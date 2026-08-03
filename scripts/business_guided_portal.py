@@ -377,17 +377,16 @@ footer {{
     <p class="sub">商品 / 疾病内部培训课件与视频。页面只做两件事：选模板、看对应内容示例。内容在 WorkBuddy 对话里说即可。</p>
     <div class="how">
       <div>
-        <b>① 安装</b>
-        在 WorkBuddy 输入：<br />
-        <code>请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用</code>
+        <b>① 看模板</b>
+        本页一行四个卡片，点开看关键页预览，再点「选用」
       </div>
       <div>
-        <b>② 选模板</b>
-        在本页点一个课型，看关键页截图，点「选用」
+        <b>② 输入培训内容</b>
+        回 WorkBuddy 说主题+要点，例如：整理可可康灵芝胶囊…你先整理符合内容再生成ppt
       </div>
       <div>
-        <b>③ 说内容 → 出片</b>
-        回 WorkBuddy 描述商品/疾病要点；它先出内容初稿，你确认后再生成 PPT / 视频
+        <b>③ 下载 PPT 或改稿</b>
+        确认后下载成片；要改直接说改哪里或批量修改指令
       </div>
     </div>
   </header>

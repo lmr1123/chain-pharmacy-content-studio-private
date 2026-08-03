@@ -19,7 +19,7 @@
 
 **一句话目标：**
 
-> **业务 + WorkBuddy** 协作交付：业务在 WorkBuddy **一句话安装仓库**，再按开源式「预览选模板 → 填 Word → 提交 → 审初稿 → 拿成片」；  
+> **业务 + WorkBuddy** 协作交付：业务在 WorkBuddy **一句话安装仓库**，再按 **三步**「看模板 → 输入培训内容 → 下载 PPT 或改稿」；  
 > WorkBuddy 负责安装/更新、引导、套 settled、内容驱动、克隆声、出 PPTX/MP4；  
 > **业务不需要自己解压 zip**；**正常路径不经制作手工**；制作仅异常返修。禁止系统机器人音色与假包装。
 
@@ -35,9 +35,9 @@
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-2. WorkBuddy 装好后会**指引你**完成四步：  
-   **预览选模板 → 按 Word 填报 → 上传/发附件 → 审初稿后收成片**  
-3. 确认初稿后再让它出可编辑 PPTX / 培训视频。
+2. WorkBuddy 装好后会**指引你**完成三步：  
+   **看模板 → 输入培训内容 → 下载 PPT 或改稿**  
+3. 内容先出初稿，确认后再出可编辑 PPTX / 培训视频。
 
 详细：`docs/business-ready-use-today.md` · `docs/workbuddy-install-and-guide.md`
 

@@ -13,10 +13,10 @@
 WorkBuddy 会：
 
 1. **安装/更新**本仓库（`git clone` 或 `git pull`）  
-2. 打开业务引导页，按开源式四步陪你做：  
-   **预览选模板 → 按 Word 填报 → 上传/发附件 → 审初稿 → 收成片**
+2. 打开引导页，按 **三步** 陪你做：  
+   **看模板 → 输入培训内容 → 下载 PPT 或改稿**
 
-业务**不需要**自己解压 zip、装 Node、起端口。
+业务**不需要**自己解压 zip、装 Node、起端口、先填完整 Word。
 
 详细协议：
 
@@ -54,7 +54,7 @@ python3 scripts/refresh_business_delivery.py
 
 | 文档 | 说明 |
 |------|------|
-| [`docs/workbuddy-install-and-guide.md`](docs/workbuddy-install-and-guide.md) | **默认**：安装句 + 四步引导 |
+| [`docs/workbuddy-install-and-guide.md`](docs/workbuddy-install-and-guide.md) | **默认**：安装句 + 三步引导 |
 | [`docs/workbuddy-system-prompt.md`](docs/workbuddy-system-prompt.md) | 代理系统提示词 |
 | [`docs/business-workbuddy-foolproof-delivery.md`](docs/business-workbuddy-foolproof-delivery.md) | 业务 WorkBuddy 傻瓜交付总案 |
 | [`production-library/templates/settled/`](production-library/templates/settled/) | 已签样正式模板 |
