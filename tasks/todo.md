@@ -4154,3 +4154,19 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - **QA 中修复的 2 处**：目录页页脚左行压在深色建筑图上不可读 → `addFooter` 加 `opts.left` 开关，目录页仅留右侧页码；outro 12 个椭圆 transparency 74 渲染成波点墙 → 调 88 变隐约肌理。
 - **遗留说明**：outro 讲者卡「博士 副教授」字样来自 content JSON 的 `title_line` 字段（与封面 meta「博士·教授」不一致），因 content 一字未动约束保留原样，业务侧如要统一改 JSON 即可。
 - **待办**：用户确认 v3 后执行第 6 项沉淀。
+
+---
+
+## 2026-08-04 课件3(速福达)+课件4(番茄) 企业级视觉/动效优化 v2 · 分支 feat/courseware34-visual-motion-v2
+
+计划全文：~/.claude/plans/reactive-sparking-zebra.md。用户拍板：番茄成片 PIL→Revideo 迁移 / 布局精修+动效重构 / 插画重生成统一风格 / 交付视频v2+QA对照（settled 不动、PPTX 不同步）。
+
+- [ ] 阶段0 基线提交 + 番茄共享层抽取(src/motion/*) + 速福达基线片
+- [ ] 阶段1 番茄 film 骨架(layout.ts/film/*/render-film) → 签样门禁1(S04帧+S05微镜头)
+- [ ] 阶段2 editor-bg 双轨 Revideo 化 + 编辑器导出引擎切换(CW4_EXPORT_ENGINE)
+- [ ] 阶段3 番茄15页动效全量(S07推镜头/S10序贯/S11级联+溢出/S05红叉淡出) → 签样门禁2
+- [ ] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)
+- [ ] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance)
+- [ ] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明)
+
+### review（完成后补）

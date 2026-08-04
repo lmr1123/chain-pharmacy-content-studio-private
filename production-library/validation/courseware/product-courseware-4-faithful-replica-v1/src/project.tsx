@@ -6,7 +6,7 @@
  * - **每页独立 makeScene2D**，避免非首页 opacity=0 导致插件点选失效
  * - 长文：width + textWrap
  */
-import {Audio, Img, Rect, Txt, makeScene2D} from '@revideo/2d';
+import {Audio, Img, Rect, makeScene2D} from '@revideo/2d';
 import {
   all,
   easeInCubic,
@@ -19,392 +19,36 @@ import {
 
 import {K, T, assetSrc, scenes, type Scene} from './content';
 import {applyEditablePatches} from './editor/apply-editable-patches';
+import {
+  BODY,
+  BROWN,
+  INK,
+  LABEL,
+  LIME,
+  MUTED,
+  SILK,
+  WHITE,
+  box,
+  nodeOf,
+  popIn,
+  pulseArrowX,
+  softPulseScale,
+} from './motion/primitives';
+import {
+  CaptionLayer,
+  captionSegments,
+  captionText,
+  playCaptions,
+} from './motion/captions';
+import {CTxt, EImg, EditableChapter, YellowLabel, bgSrc} from './ui';
 
 /**
  * 动效语法对齐辅酶Q10 / 礼风热证业务编辑器：
  * - 节点用 opacity+scale 入场（easeOutBack）
  * - 强调循环用 loop + 位移（箭头沿指向方向）
  * - 与 applyEditablePatches / 字幕并行 yield* all(...)
- * 成片 PIL 多帧与编辑器 Revideo 动效双轨并存；编辑器 scrub 可播。
+ * 成片 Revideo film 工程与编辑器 Revideo 动效共享 src/motion 单源；编辑器 scrub 可播。
  */
-
-const FONT =
-  'HarmonyOS Sans SC, Source Han Sans SC, PingFang SC, Microsoft YaHei, sans-serif';
-const SILK = '#cecbc4';
-const INK = '#1a1a1a';
-/** 底栏讲解字幕：对标参考近黑字（禁止白字） */
-const CAPTION = '#111111';
-const RED = '#c43c2c';
-const RED_OUTLINE = '#ba3034';
-const WHITE = '#ffffff';
-const YELLOW = '#ffe33c';
-const BROWN = '#a05040';
-const LABEL = '#9a3c2e';
-const BODY = '#8a3a28';
-const LIME = '#e9f200';
-const MUTED = '#555555';
-
-/** 8 向描边偏移（黄字红边 / 黑字白边） */
-const OUTLINE_8: [number, number][] = [
-  [-1, -1],
-  [1, -1],
-  [-1, 1],
-  [1, 1],
-  [0, -1],
-  [0, 1],
-  [-1, 0],
-  [1, 0],
-];
-
-/** PIL top-left (x,y,w,h) → Revideo center position */
-function box(x: number, y: number, w: number, h: number) {
-  return {
-    position: [x + w / 2 - 960, y + h / 2 - 540] as [number, number],
-    width: w,
-    height: h,
-  };
-}
-
-function bgSrc(pageId: string) {
-  return `/stills-editor-bg/${pageId}.png`;
-}
-
-/** Editable text with wrap (default wrap on when width set) */
-function ETxt({
-  page,
-  role,
-  text,
-  x,
-  y,
-  w,
-  h,
-  fontSize,
-  fill,
-  fontWeight = 700,
-  align = 'left',
-}: {
-  page: string;
-  role: string;
-  text: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  fontSize: number;
-  fill: string;
-  fontWeight?: number;
-  align?: 'left' | 'center' | 'right';
-}) {
-  const b = box(x, y, w, h);
-  return (
-    <Txt
-      key={K(page, role)}
-      text={text}
-      fontFamily={FONT}
-      fontSize={fontSize}
-      fontWeight={fontWeight}
-      fill={fill}
-      position={b.position}
-      width={w}
-      height={h}
-      textAlign={align}
-      textWrap={true}
-      // top-left-ish content in the box
-      offset={[-1, -1]}
-      // offset makes position = top-left of node in some engines; if offset unsupported, position stays center
-    />
-  );
-}
-
-/**
- * Prefer center-anchored text with width+wrap (more reliable in Revideo).
- * position is center of the layout box.
- */
-function CTxt({
-  page,
-  role,
-  text,
-  x,
-  y,
-  w,
-  h,
-  fontSize,
-  fill,
-  fontWeight = 700,
-  align = 'left',
-}: {
-  page: string;
-  role: string;
-  text: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  fontSize: number;
-  fill: string;
-  fontWeight?: number;
-  align?: 'left' | 'center' | 'right';
-}) {
-  const b = box(x, y, w, h);
-  return (
-    <Txt
-      key={K(page, role)}
-      text={text}
-      fontFamily={FONT}
-      fontSize={fontSize}
-      fontWeight={fontWeight}
-      fill={fill}
-      position={b.position}
-      width={w}
-      textAlign={align}
-      textWrap={true}
-    />
-  );
-}
-
-/** Editable image. (cx,cy)=center in 1920×1080; size = display box. */
-function EImg({
-  page,
-  role,
-  src,
-  cx,
-  cy,
-  size,
-  w,
-  h,
-  opacity = 1,
-  scale = 1,
-}: {
-  page: string;
-  role: string;
-  src: string;
-  cx: number;
-  cy: number;
-  size?: number;
-  w?: number;
-  h?: number;
-  opacity?: number;
-  scale?: number;
-}) {
-  const ww = w ?? size ?? 200;
-  const hh = h ?? size ?? 200;
-  return (
-    <Img
-      key={K(page, role)}
-      src={src}
-      position={[cx - 960, cy - 540]}
-      size={[ww, hh]}
-      opacity={opacity}
-      scale={scale}
-    />
-  );
-}
-
-/** Revideo node by editable key（动效用） */
-function nodeOf(view: any, page: string, role: string) {
-  return view.findKey(K(page, role));
-}
-
-function* popIn(node: any, dur = 0.36) {
-  if (!node) return;
-  yield* all(
-    node.opacity(1, Math.min(0.14, dur * 0.4), easeOutCubic),
-    node.scale(1, dur, easeOutBack),
-  );
-}
-
-/** 红箭头：沿指向方向（+x）脉冲，对齐培训金样「强调循环」 */
-function* pulseArrowX(node: any, baseX: number, seconds: number, amp = 14) {
-  if (!node || seconds <= 0.05) return;
-  const period = 0.58;
-  const n = Math.max(1, Math.floor(seconds / period));
-  yield* loop(n, function* () {
-    yield* node.position.x(baseX + amp, period * 0.48, easeOutCubic);
-    yield* node.position.x(baseX, period * 0.52, easeOutCubic);
-  });
-  const left = seconds - n * period;
-  if (left > 0.02) yield* waitFor(left);
-}
-
-function* softPulseScale(node: any, seconds: number, amount = 0.04) {
-  if (!node || seconds <= 0.05) return;
-  const period = 0.9;
-  const n = Math.max(1, Math.floor(seconds / period));
-  yield* loop(n, function* () {
-    yield* node.scale(1 + amount, period * 0.5, easeOutCubic);
-    yield* node.scale(1, period * 0.5, easeOutCubic);
-  });
-  const left = seconds - n * period;
-  if (left > 0.02) yield* waitFor(left);
-}
-
-function EditableChapter({page, text, y = 40}: {page: string; text: string; y?: number}) {
-  // PIL chapter_title: x=(1920-tw)/2 → visual center at canvas x=960 → Revideo x=0
-  const cy = y + 44 - 540;
-  return (
-    <>
-      {[
-        [-4, -4],
-        [4, -4],
-        [-4, 4],
-        [4, 4],
-        [0, 4],
-        [-3, 0],
-        [3, 0],
-      ].map(([dx, dy], i) => (
-        <Txt
-          key={`out-${page}-${i}`}
-          text={text}
-          fontFamily={FONT}
-          fontSize={88}
-          fontWeight={900}
-          fill={RED_OUTLINE}
-          position={[dx, cy + dy]}
-          textAlign="center"
-        />
-      ))}
-      <Txt
-        key={K(page, 'chapter')}
-        text={text}
-        fontFamily={FONT}
-        fontSize={88}
-        fontWeight={900}
-        fill={YELLOW}
-        position={[0, cy]}
-        textAlign="center"
-      />
-    </>
-  );
-}
-
-/** 黄字 + 红描边（适宜人群标签等，对标参考） */
-function YellowLabel({
-  page,
-  role,
-  text,
-  cx,
-  y,
-  w = 320,
-  fontSize = 42,
-}: {
-  page: string;
-  role: string;
-  text: string;
-  cx: number;
-  y: number;
-  w?: number;
-  fontSize?: number;
-}) {
-  const pos: [number, number] = [cx - 960, y + fontSize / 2 - 540];
-  const scale = 3;
-  return (
-    <>
-      {OUTLINE_8.flatMap(([dx, dy], i) =>
-        Array.from({length: scale}, (_, s) => (
-          <Txt
-            key={`yl-out-${page}-${role}-${i}-${s}`}
-            text={text}
-            fontFamily={FONT}
-            fontSize={fontSize}
-            fontWeight={900}
-            fill={RED_OUTLINE}
-            position={[pos[0] + dx * (s + 1), pos[1] + dy * (s + 1)]}
-            textAlign="center"
-            width={w}
-          />
-        )),
-      )}
-      <Txt
-        key={K(page, role)}
-        text={text}
-        fontFamily={FONT}
-        fontSize={fontSize}
-        fontWeight={900}
-        fill={YELLOW}
-        position={pos}
-        textAlign="center"
-        width={w}
-      />
-    </>
-  );
-}
-
-/** 底栏讲解字幕：黑字 + 白描边（对标参考，禁止白字） */
-function CaptionLayer({page, text}: {page: string; text: string}) {
-  const pos: [number, number] = [0, 988 + 28 - 540];
-  const scale = 3;
-  return (
-    <>
-      {OUTLINE_8.flatMap(([dx, dy], i) =>
-        Array.from({length: scale}, (_, s) => (
-          <Txt
-            key={`cap-out-${page}-${i}-${s}`}
-            text={text}
-            fontFamily={FONT}
-            fontSize={56}
-            fontWeight={700}
-            fill={WHITE}
-            position={[pos[0] + dx * (s + 1), pos[1] + dy * (s + 1)]}
-            textAlign="center"
-            width={1700}
-            textWrap={true}
-          />
-        )),
-      )}
-      <Txt
-        key={`caption-${page}`}
-        text={text}
-        fontFamily={FONT}
-        fontSize={56}
-        fontWeight={700}
-        fill={CAPTION}
-        position={pos}
-        textAlign="center"
-        width={1700}
-        textWrap={true}
-      />
-    </>
-  );
-}
-
-/** Centered horizontal chain centers (match PIL paste_chain_centered). */
-function chainCxs(sizes: number[], gap = 48): number[] {
-  if (!sizes.length) return [];
-  const layout = sizes.map((s, i) => s); // caller passes layout widths
-  const total = layout.reduce((a, b) => a + b, 0) + gap * (layout.length - 1);
-  let x = (1920 - total) / 2;
-  return layout.map(w => {
-    const cx = x + w / 2;
-    x += w + gap;
-    return cx;
-  });
-}
-
-function captionText(sc: Scene): string {
-  const subs = sc.subtitles || [];
-  if (subs.length) return subs[0].text || '';
-  return '';
-}
-
-function captionSegments(sc: Scene): {dur: number; text: string}[] {
-  const start = Number(sc.start);
-  const end = Number(sc.end);
-  const raw = sc.subtitles || [];
-  if (!raw.length) {
-    return [{dur: Math.max(0.1, end - start), text: ''}];
-  }
-  const segs: {dur: number; text: string}[] = [];
-  for (let i = 0; i < raw.length; i++) {
-    const t0 = i === 0 ? start : Math.max(start, Number(raw[i].t));
-    const t1 =
-      i + 1 < raw.length ? Math.min(end, Number(raw[i + 1].t)) : end;
-    segs.push({
-      dur: Math.max(0.05, t1 - t0),
-      text: raw[i].text || '',
-    });
-  }
-  return segs;
-}
 
 function SceneLayers({sc}: {sc: Scene}) {
   const page = sc.id;
@@ -1095,26 +739,6 @@ function SceneLayers({sc}: {sc: Scene}) {
   }
 
   return <Rect size={[1920, 1080]}>{layers}</Rect>;
-}
-
-function* playCaptions(view: any, sc: Scene) {
-  const segs = captionSegments(sc);
-  // 主字幕 + 白描边层同步换字
-  const keys = [
-    `caption-${sc.id}`,
-    ...OUTLINE_8.flatMap((_, i) =>
-      [0, 1, 2].map(s => `cap-out-${sc.id}-${i}-${s}`),
-    ),
-  ];
-  for (const seg of segs) {
-    for (const key of keys) {
-      const node = view.findKey(key);
-      if (node && typeof node.text === 'function') {
-        node.text(seg.text || '');
-      }
-    }
-    yield* waitFor(seg.dur);
-  }
 }
 
 /** 业务编辑器内可播放动效（对齐 Q10 / 礼风热证） */
