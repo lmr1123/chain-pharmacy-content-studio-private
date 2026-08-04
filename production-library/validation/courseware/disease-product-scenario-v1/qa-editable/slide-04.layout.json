@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/otodlk",
-    "id": "otodlk",
+    "aid": "sl/zti2ph",
+    "id": "zti2ph",
     "slide": 4,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/d03a9wru",
+      "aid": "sh/98nm9gry",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qxsby1s3",
+      "aid": "sh/m5wnels7",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "1.1",
       "textPreview": "1.1",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "1.1",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "1.1",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/byls7m9o",
+      "aid": "sh/n654769s",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "疾病篇——风热证的定义",
       "textPreview": "疾病篇——风热证的定义",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "疾病篇——风热证的定义",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "疾病篇——风热证的定义",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0nut4ba5",
+      "aid": "sh/wby5kvap",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/lo3adgrq",
+      "aid": "sh/xc76d0ru",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a9gnilsj",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/y1cb21sf",
-      "id": "6",
+      "aid": "sh/vap4bq94",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/z2lsb690",
-      "id": "7",
+      "aid": "sh/cfu58ra5",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "04 / 18",
+      "textPreview": "04 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dg3m1wrq",
+      "id": "9",
       "name": "definition-surface",
       "bbox": [
         90,
@@ -358,39 +443,39 @@
         1100,
         180
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gra9s7a1",
-      "id": "8",
+      "aid": "sh/dwbuh4ja",
+      "id": "10",
       "name": "definition-accent",
       "bbox": [
-        90,
         100,
-        6,
-        180
+        114,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1sja1crm",
-      "id": "9",
+      "aid": "sh/sv2t8zip",
+      "id": "11",
       "name": "definition-title",
       "bbox": [
-        108,
         114,
-        1068,
+        112,
+        1060,
         38
       ],
       "geometry": "rect",
@@ -398,11 +483,13 @@
       "textPreview": "什么是风热证？",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -425,7 +512,7 @@
           "text": "什么是风热证？",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "bold": true,
             "alignment": "left"
           },
@@ -434,7 +521,7 @@
               "index": 1,
               "text": "什么是风热证？",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -445,34 +532,34 @@
       "lineWidth": 0
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tormd8v2",
-      "id": "10",
+      "aid": "sh/rutcfu14",
+      "id": "12",
       "name": "definition-divider",
       "bbox": [
-        108,
+        114,
         158,
-        1064,
+        1056,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/snilk3uh",
-      "id": "11",
+      "aid": "sh/qtkb6p0j",
+      "id": "13",
       "name": "definition-body",
       "bbox": [
-        108,
+        114,
         170,
-        1064,
+        1056,
         96
       ],
       "geometry": "rect",
@@ -482,7 +569,7 @@
       "resolvedTextStyle": {
         "fontSize": 26,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -514,7 +601,7 @@
           "text": "指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。",
           "resolvedTextStyle": {
             "fontSize": 26,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -522,14 +609,14 @@
               "index": 1,
               "text": "指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到",
               "fontSize": 26,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "“热风”侵袭",
               "fontSize": 26,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -537,14 +624,14 @@
               "index": 3,
               "text": "，引发",
               "fontSize": 26,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 4,
               "text": "发热、咽痛、口干",
               "fontSize": 26,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -552,7 +639,7 @@
               "index": 5,
               "text": "等一系列“热”性症状，是中医外感表证中常见的证型之一。",
               "fontSize": 26,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -562,11 +649,11 @@
       "lineWidth": 0
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/7m94bidw",
-      "id": "12",
+      "aid": "sh/10vul4jm",
+      "id": "14",
       "name": "cause-surface",
       "bbox": [
         90,
@@ -574,39 +661,39 @@
         520,
         280
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 13,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/6l03idcr",
-      "id": "13",
+      "aid": "sh/0zmdczi1",
+      "id": "15",
       "name": "cause-accent",
       "bbox": [
-        90,
-        300,
-        6,
-        280
+        100,
+        314,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hcbmhsve",
-      "id": "14",
+      "aid": "sh/fydcju1g",
+      "id": "16",
       "name": "cause-title",
       "bbox": [
-        108,
-        314,
-        488,
+        114,
+        312,
+        480,
         38
       ],
       "geometry": "rect",
@@ -614,11 +701,13 @@
       "textPreview": "核心病因：内外合邪，热邪入侵",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -641,7 +730,7 @@
           "text": "核心病因：内外合邪，热邪入侵",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "bold": true,
             "alignment": "left"
           },
@@ -650,7 +739,7 @@
               "index": 1,
               "text": "核心病因：内外合邪，热邪入侵",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -661,34 +750,34 @@
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gb25onut",
-      "id": "15",
+      "aid": "sh/exkbap0v",
+      "id": "17",
       "name": "cause-divider",
       "bbox": [
-        108,
+        114,
         358,
-        484,
+        476,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fat4fid8",
-      "id": "16",
+      "aid": "sh/povupoji",
+      "id": "18",
       "name": "cause-body",
       "bbox": [
-        108,
+        114,
         370,
-        484,
+        476,
         196
       ],
       "geometry": "rect",
@@ -698,7 +787,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -708,7 +797,7 @@
         }
       },
       "textLayout": {
-        "lineCount": 7,
+        "lineCount": 6,
         "lines": [
           {
             "index": 1,
@@ -732,11 +821,7 @@
           },
           {
             "index": 6,
-            "text": "之品，或情志不畅化火，致体内“火气”过旺"
-          },
-          {
-            "index": 7,
-            "text": "。"
+            "text": "之品，或情志不畅化火，致体内“火气”过旺。"
           }
         ]
       },
@@ -746,7 +831,7 @@
           "text": "外感风邪：多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -754,7 +839,7 @@
               "index": 1,
               "text": "外感风邪：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -762,7 +847,7 @@
               "index": 2,
               "text": "多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -773,7 +858,7 @@
           "text": "内生积热：过食辛辣、油腻、温补之品，或情志不畅化火，致体内“火气”过旺。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -781,7 +866,7 @@
               "index": 1,
               "text": "内生积热：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -789,14 +874,14 @@
               "index": 2,
               "text": "过食",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 3,
               "text": "辛辣、油腻、温补",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -804,7 +889,7 @@
               "index": 4,
               "text": "之品，或情志不畅化火，致体内“火气”过旺。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -814,11 +899,11 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/u9k3mdcn",
-      "id": "17",
+      "aid": "sh/onmdgjix",
+      "id": "19",
       "name": "pathogenesis-surface",
       "bbox": [
         650,
@@ -826,39 +911,39 @@
         540,
         280
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 18,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pgbmlsva",
-      "id": "18",
+      "aid": "sh/8je5s7ul",
+      "id": "20",
       "name": "pathogenesis-accent",
       "bbox": [
-        650,
-        300,
-        6,
-        280
+        660,
+        314,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/of25snup",
-      "id": "19",
+      "aid": "sh/9kn61cvq",
+      "id": "21",
       "name": "pathogenesis-title",
       "bbox": [
-        668,
-        314,
-        508,
+        674,
+        312,
+        500,
         38
       ],
       "geometry": "rect",
@@ -866,11 +951,13 @@
       "textPreview": "关键病机：正邪交争，肺卫失和",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -893,7 +980,7 @@
           "text": "关键病机：正邪交争，肺卫失和",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "bold": true,
             "alignment": "left"
           },
@@ -902,7 +989,7 @@
               "index": 1,
               "text": "关键病机：正邪交争，肺卫失和",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -913,34 +1000,34 @@
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8vux4v6d",
-      "id": "20",
+      "aid": "sh/mhwn6hcf",
+      "id": "22",
       "name": "pathogenesis-divider",
       "bbox": [
-        668,
+        674,
         358,
-        504,
+        496,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9w3yd0ni",
-      "id": "21",
+      "aid": "sh/7i5ozmd0",
+      "id": "23",
       "name": "pathogenesis-body",
       "bbox": [
-        668,
+        674,
         370,
-        504,
+        496,
         196
       ],
       "geometry": "rect",
@@ -950,7 +1037,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -998,7 +1085,7 @@
           "text": "正邪相争：风热犯表，卫阳被遏，正邪交争于肌表则发热。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1006,7 +1093,7 @@
               "index": 1,
               "text": "正邪相争：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1014,7 +1101,7 @@
               "index": 2,
               "text": "风热犯表，卫阳被遏，正邪交争于肌表则发热。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1025,7 +1112,7 @@
           "text": "津伤肺逆：热邪易灼伤津液，故见口干、口渴；肺失宣肃，气逆于上，则引发咳嗽、咽喉肿痛。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1033,7 +1120,7 @@
               "index": 1,
               "text": "津伤肺逆：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1041,14 +1128,14 @@
               "index": 2,
               "text": "热邪易灼伤津液，故见",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 3,
               "text": "口干、口渴",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1056,14 +1143,14 @@
               "index": 4,
               "text": "；肺失宣肃，气逆于上，则引发",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 5,
               "text": "咳嗽、咽喉肿痛",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1071,7 +1158,7 @@
               "index": 6,
               "text": "。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1081,16 +1168,50 @@
       "lineWidth": 0
     },
     {
-      "order": 22,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/mtcf25o7",
-      "id": "22",
-      "name": "definition-summary",
+      "aid": "sh/w7y5wruh",
+      "id": "24",
+      "name": "definition-summary-surface",
       "bbox": [
         90,
         600,
         1100,
+        55
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h8765wb2",
+      "id": "25",
+      "name": "definition-summary-accent",
+      "bbox": [
+        98,
+        610,
+        4,
+        35
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ulwnuhcb",
+      "id": "26",
+      "name": "definition-summary",
+      "bbox": [
+        114,
+        600,
+        1062,
         55
       ],
       "geometry": "rect",
@@ -1098,11 +1219,13 @@
       "textPreview": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。",
       "resolvedFontSize": 21,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#FFFFFF",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1125,7 +1248,7 @@
           "text": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#FFFFFF",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -1134,7 +1257,7 @@
               "index": 1,
               "text": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。",
               "fontSize": 21,
-              "color": "#FFFFFF",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -1142,7 +1265,6 @@
           "marginLeft": 0
         }
       ],
-      "fillColor": "#009900",
       "lineWidth": 0
     }
   ],

@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/r6rpc8",
-    "id": "r6rpc8",
+    "aid": "sl/gwc629",
+    "id": "gwc629",
     "slide": 8,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/lkjil4zi",
+      "aid": "sh/4rexcbq5",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/yh8jq90r",
+      "aid": "sh/3q5w369k",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "1.5",
       "textPreview": "1.5",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "1.5",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "1.5",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/zih0jehc",
+      "aid": "sh/2pwfalsf",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "疾病篇——风热证的证候细分（常见）",
       "textPreview": "疾病篇——风热证的证候细分（常见）",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "疾病篇——风热证的证候细分（常见）",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "疾病篇——风热证的证候细分（常见）",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cfqhozi1",
+      "aid": "sh/dg7y90r2",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xgzih4z6",
+      "aid": "sh/cfexgvqh",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/re5w7q9w",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ad8zmp0v",
-      "id": "6",
+      "aid": "sh/qdwfel8b",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/beh0fuhg",
-      "id": "7",
+      "aid": "sh/1k7yd0ry",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "08 / 18",
+      "textPreview": "08 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "08 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "08 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "08 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0jyxkvqd",
+      "id": "9",
       "name": "subtype-1-surface",
       "bbox": [
         70,
@@ -360,15 +445,15 @@
       ],
       "geometry": "rect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ob6hkfip",
-      "id": "8",
+      "aid": "sh/m9o3qhcv",
+      "id": "10",
       "name": "subtype-1-accent",
       "bbox": [
         70,
@@ -381,11 +466,11 @@
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pczidkza",
-      "id": "9",
+      "aid": "sh/naxkjmt0",
+      "id": "11",
       "name": "subtype-1-title",
       "bbox": [
         88,
@@ -445,11 +530,11 @@
       "lineWidth": 0
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/58zmxgju",
-      "id": "10",
+      "aid": "sh/8b6lsrul",
+      "id": "12",
       "name": "subtype-1-rule",
       "bbox": [
         88,
@@ -463,11 +548,11 @@
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/47qlobi9",
-      "id": "11",
+      "aid": "sh/9cfmlwb6",
+      "id": "13",
       "name": "subtype-1-clinical",
       "bbox": [
         88,
@@ -482,7 +567,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -518,7 +603,7 @@
           "text": "临床表现：发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -526,7 +611,7 @@
               "index": 1,
               "text": "临床表现：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -534,7 +619,7 @@
               "index": 2,
               "text": "发热、微恶风、咽痛、黄涕、薄黄苔、脉浮数。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -544,11 +629,11 @@
       "lineWidth": 0
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/36x4v61o",
-      "id": "12",
+      "aid": "sh/ad83u1cr",
+      "id": "14",
       "name": "subtype-1-column-rule",
       "bbox": [
         344,
@@ -562,11 +647,11 @@
       "lineWidth": 0
     },
     {
-      "order": 13,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/i5o3m103",
-      "id": "13",
+      "aid": "sh/veh4n6tc",
+      "id": "15",
       "name": "subtype-1-treatment",
       "bbox": [
         362,
@@ -581,7 +666,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -621,7 +706,7 @@
           "text": "治则与方药：辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -629,7 +714,7 @@
               "index": 1,
               "text": "治则与方药：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -637,7 +722,7 @@
               "index": 2,
               "text": "辛凉解表。方用银翘散、桑菊饮；中成药可选维C银翘片、银翘解毒片。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -647,11 +732,11 @@
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/h4fmtwjy",
-      "id": "14",
+      "aid": "sh/wfqlwbux",
+      "id": "16",
       "name": "subtype-2-surface",
       "bbox": [
         660,
@@ -661,15 +746,15 @@
       ],
       "geometry": "rect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 15,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/g36lkrid",
-      "id": "15",
+      "aid": "sh/xgzmpgbi",
+      "id": "17",
       "name": "subtype-2-accent",
       "bbox": [
         660,
@@ -682,11 +767,11 @@
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/v2xkr61s",
-      "id": "16",
+      "aid": "sh/qh43ixcn",
+      "id": "18",
       "name": "subtype-2-title",
       "bbox": [
         678,
@@ -746,11 +831,11 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/u1o3i107",
-      "id": "17",
+      "aid": "sh/bidkb2t8",
+      "id": "19",
       "name": "subtype-2-rule",
       "bbox": [
         678,
@@ -764,11 +849,11 @@
       "lineWidth": 0
     },
     {
-      "order": 18,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tgf2pwjm",
-      "id": "18",
+      "aid": "sh/fm90jy90",
+      "id": "20",
       "name": "subtype-2-clinical",
       "bbox": [
         678,
@@ -783,7 +868,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -819,7 +904,7 @@
           "text": "临床表现：咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -827,7 +912,7 @@
               "index": 1,
               "text": "临床表现：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -835,7 +920,7 @@
               "index": 2,
               "text": "咳嗽频作、咳痰黏稠、咽痛、胸闷，或伴鼻流黄涕。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -845,11 +930,11 @@
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8fmlgri1",
-      "id": "19",
+      "aid": "sh/el0zqdsf",
+      "id": "21",
       "name": "subtype-2-column-rule",
       "bbox": [
         934,
@@ -863,11 +948,11 @@
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/kjqlwrqx",
-      "id": "20",
+      "aid": "sh/1obil8rq",
+      "id": "22",
       "name": "subtype-2-treatment",
       "bbox": [
         952,
@@ -882,7 +967,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -922,7 +1007,7 @@
           "text": "治则与方药：疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -930,7 +1015,7 @@
               "index": 1,
               "text": "治则与方药：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -938,7 +1023,7 @@
               "index": 2,
               "text": "疏风清热、宣肺止咳。方用桑菊饮；中成药如急支糖浆、川贝枇杷膏。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -948,11 +1033,11 @@
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/lkzm5wri",
-      "id": "21",
+      "aid": "sh/gn2hs3a5",
+      "id": "23",
       "name": "subtype-3-surface",
       "bbox": [
         70,
@@ -962,15 +1047,15 @@
       ],
       "geometry": "rect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 22,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/yh83uhsr",
-      "id": "22",
+      "aid": "sh/ri90fy9o",
+      "id": "24",
       "name": "subtype-3-accent",
       "bbox": [
         70,
@@ -983,11 +1068,11 @@
       "lineWidth": 0
     },
     {
-      "order": 23,
+      "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/zih43m9c",
-      "id": "23",
+      "aid": "sh/6h0zmts3",
+      "id": "25",
       "name": "subtype-3-title",
       "bbox": [
         88,
@@ -1047,11 +1132,11 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cvqlsra1",
-      "id": "24",
+      "aid": "sh/tkrih8ru",
+      "id": "26",
       "name": "subtype-3-rule",
       "bbox": [
         88,
@@ -1065,11 +1150,11 @@
       "lineWidth": 0
     },
     {
-      "order": 25,
+      "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xgzm1wrm",
-      "id": "25",
+      "aid": "sh/sjiho3a9",
+      "id": "27",
       "name": "subtype-3-clinical",
       "bbox": [
         88,
@@ -1084,7 +1169,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1120,7 +1205,7 @@
           "text": "临床表现：头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1128,7 +1213,7 @@
               "index": 1,
               "text": "临床表现：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1136,7 +1221,7 @@
               "index": 2,
               "text": "头痛剧烈、面红目赤、咽喉肿痛、口舌生疮，或牙龈肿痛。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1146,11 +1231,11 @@
       "lineWidth": 0
     },
     {
-      "order": 26,
+      "order": 28,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qt83qhsv",
-      "id": "26",
+      "aid": "sh/bed0ri9s",
+      "id": "28",
       "name": "subtype-3-column-rule",
       "bbox": [
         344,
@@ -1164,11 +1249,11 @@
       "lineWidth": 0
     },
     {
-      "order": 27,
+      "order": 29,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/buhkzm9g",
-      "id": "27",
+      "aid": "sh/qdkjyxsn",
+      "id": "29",
       "name": "subtype-3-treatment",
       "bbox": [
         362,
@@ -1183,7 +1268,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1223,7 +1308,7 @@
           "text": "治则与方药：疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1231,7 +1316,7 @@
               "index": 1,
               "text": "治则与方药：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1239,7 +1324,7 @@
               "index": 2,
               "text": "疏风清热、清利头目；可选黄连上清片、板蓝根颗粒、穿心莲内酯滴丸。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1249,11 +1334,11 @@
       "lineWidth": 0
     },
     {
-      "order": 28,
+      "order": 30,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wral4bq5",
-      "id": "28",
+      "aid": "sh/onu5wvmt",
+      "id": "30",
       "name": "subtype-4-surface",
       "bbox": [
         660,
@@ -1263,15 +1348,15 @@
       ],
       "geometry": "rect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 29,
+      "order": 31,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hc3mdgrq",
-      "id": "29",
+      "aid": "sh/9o36503e",
+      "id": "31",
       "name": "subtype-4-accent",
       "bbox": [
         660,
@@ -1284,11 +1369,11 @@
       "lineWidth": 0
     },
     {
-      "order": 30,
+      "order": 32,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/r65o3ats",
-      "id": "30",
+      "aid": "sh/mlcnul4n",
+      "id": "32",
       "name": "subtype-4-title",
       "bbox": [
         678,
@@ -1348,11 +1433,11 @@
       "lineWidth": 0
     },
     {
-      "order": 31,
+      "order": 33,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/6lw7a5s7",
-      "id": "31",
+      "aid": "sh/nmlo3ql8",
+      "id": "33",
       "name": "subtype-4-rule",
       "bbox": [
         678,
@@ -1366,11 +1451,11 @@
       "lineWidth": 0
     },
     {
-      "order": 32,
+      "order": 34,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/t8n65kby",
-      "id": "32",
+      "aid": "sh/wbep0vmp",
+      "id": "34",
       "name": "subtype-4-clinical",
       "bbox": [
         678,
@@ -1385,7 +1470,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1425,7 +1510,7 @@
           "text": "临床表现：发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1433,7 +1518,7 @@
               "index": 1,
               "text": "临床表现：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1441,7 +1526,7 @@
               "index": 2,
               "text": "发热、头昏沉、胸闷、肢体困重、舌苔黄腻，多在夏季暑湿时发生。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1451,11 +1536,11 @@
       "lineWidth": 0
     },
     {
-      "order": 33,
+      "order": 35,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/s7epcfad",
-      "id": "33",
+      "aid": "sh/xcn6903a",
+      "id": "35",
       "name": "subtype-4-column-rule",
       "bbox": [
         934,
@@ -1469,11 +1554,11 @@
       "lineWidth": 0
     },
     {
-      "order": 34,
+      "order": 36,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fa5o7ut4",
-      "id": "34",
+      "aid": "sh/apc7y54j",
+      "id": "36",
       "name": "subtype-4-treatment",
       "bbox": [
         952,
@@ -1488,7 +1573,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1528,7 +1613,7 @@
           "text": "治则与方药：疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1536,7 +1621,7 @@
               "index": 1,
               "text": "治则与方药：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1544,7 +1629,7 @@
               "index": 2,
               "text": "疏风清热，兼化湿和中。方用新加香薷饮；中成药可选甘露消毒丹。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],

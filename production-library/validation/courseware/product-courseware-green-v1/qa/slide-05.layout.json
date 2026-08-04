@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/b69vgb",
-    "id": "b69vgb",
+    "aid": "sl/py4eyz",
+    "id": "py4eyz",
     "slide": 5,
-    "layoutId": "21f33919-5985-41bc-9ed9-2e88c0e3296d",
+    "layoutId": "665c03eb-4d41-4fb9-8d35-eb0e0060b4f5",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
+    "masterLayoutId": "2f914038-c184-4320-bbfc-57bd977c40f7",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "21f33919-5985-41bc-9ed9-2e88c0e3296d",
+      "id": "665c03eb-4d41-4fb9-8d35-eb0e0060b4f5",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
+      "parentLayoutId": "2f914038-c184-4320-bbfc-57bd977c40f7",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "63e000a7-5552-4650-ab00-9a2a7d553bcf",
+      "id": "2f914038-c184-4320-bbfc-57bd977c40f7",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,75 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gr6xg7ah",
+      "aid": "sh/325gnih4",
       "id": "1",
-      "name": "header-shadow-line",
+      "name": "page-number-block",
       "bbox": [
-        0,
-        69,
-        1280,
-        3
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#D9E8D4",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fqxw729w",
+      "aid": "sh/o3ehgnyp",
       "id": "2",
-      "name": "header-green-line",
-      "bbox": [
-        95,
-        69,
-        1185,
-        4
-      ],
-      "geometry": "rect",
-      "fillColor": "#009900",
-      "lineWidth": 0
-    },
-    {
-      "order": 3,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/epofexsb",
-      "id": "3",
-      "name": "page-number-block",
-      "bbox": [
-        30,
-        0,
-        70,
-        83
-      ],
-      "geometry": "rect",
-      "fillColor": "#009900",
-      "lineWidth": 0
-    },
-    {
-      "order": 4,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/pgzydwry",
-      "id": "4",
       "name": "page-number",
       "bbox": [
-        22,
-        19,
-        86,
-        48
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "04",
       "textPreview": "04",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -154,16 +123,18 @@
           "index": 1,
           "text": "04",
           "resolvedTextStyle": {
-            "fontSize": 28,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "04",
-              "fontSize": 28,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -173,28 +144,30 @@
       "lineWidth": 0
     },
     {
-      "order": 5,
+      "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/of6xkrad",
-      "id": "5",
+      "aid": "sh/p4nyp8za",
+      "id": "3",
       "name": "page-title",
       "bbox": [
-        110,
-        16,
-        740,
-        48
+        114,
+        14,
+        900,
+        50
       ],
       "geometry": "rect",
       "text": "注意事项",
       "textPreview": "注意事项",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -216,8 +189,8 @@
           "index": 1,
           "text": "注意事项",
           "resolvedTextStyle": {
-            "fontSize": 30,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -225,8 +198,8 @@
             {
               "index": 1,
               "text": "注意事项",
-              "fontSize": 30,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -237,24 +210,58 @@
       "lineWidth": 0
     },
     {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/edczatgn",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fylgjyh8",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
       "order": 6,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nexgbm98",
+      "aid": "sh/gzehc3yt",
       "id": "6",
       "name": "brand-wordmark",
       "bbox": [
         1080,
         18,
-        165,
-        42
+        164,
+        40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 18,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 18,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#45A817",
         "bold": true,
@@ -280,7 +287,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 18,
+            "fontSize": 14,
             "color": "#45A817",
             "bold": true,
             "alignment": "right"
@@ -289,7 +296,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 18,
+              "fontSize": 14,
               "color": "#45A817",
               "bold": true,
               "alignment": "right"
@@ -304,23 +311,23 @@
       "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/2dofihsn",
+      "aid": "sh/10nyl8ze",
       "id": "7",
       "name": "internal-notice",
       "bbox": [
-        1080,
+        1010,
         688,
-        170,
+        160,
         22
       ],
       "geometry": "rect",
       "text": "仅供内部学习",
       "textPreview": "仅供内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -343,16 +350,16 @@
           "index": 1,
           "text": "仅供内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅供内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -365,8 +372,69 @@
       "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xkzyhwra",
+      "aid": "sh/y9gzmxgr",
       "id": "8",
+      "name": "page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "05 / 05",
+      "textPreview": "05 / 05",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05 / 05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05 / 05",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05 / 05",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zup0v2hc",
+      "id": "9",
       "name": "precautions-label",
       "bbox": [
         58,
@@ -374,16 +442,18 @@
         130,
         38
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "text": "注意事项：",
       "textPreview": "注意事项：",
-      "resolvedFontSize": 22,
+      "resolvedFontSize": 20,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "anchor": 2,
+        "fontSize": 20,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -405,7 +475,7 @@
           "index": 1,
           "text": "注意事项：",
           "resolvedTextStyle": {
-            "fontSize": 22,
+            "fontSize": 20,
             "color": "#FFFFFF",
             "bold": true,
             "alignment": "center"
@@ -414,7 +484,7 @@
             {
               "index": 1,
               "text": "注意事项：",
-              "fontSize": 22,
+              "fontSize": 20,
               "color": "#FFFFFF",
               "bold": true,
               "alignment": "center"
@@ -423,15 +493,15 @@
           "marginLeft": 0
         }
       ],
-      "fillColor": "#009900",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cjqxorap",
-      "id": "9",
+      "aid": "sh/bixcr658",
+      "id": "10",
       "name": "precaution-item-0",
       "bbox": [
         58,
@@ -442,12 +512,14 @@
       "geometry": "rect",
       "text": "1、服药时饮食宜清淡。",
       "textPreview": "1、服药时饮食宜清淡。",
-      "resolvedFontSize": 20,
+      "resolvedFontSize": 19,
       "resolvedTextStyle": {
-        "fontSize": 20,
+        "anchor": 2,
+        "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -469,16 +541,16 @@
           "index": 1,
           "text": "1、服药时饮食宜清淡。",
           "resolvedTextStyle": {
-            "fontSize": 20,
-            "color": "#111111",
+            "fontSize": 19,
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
               "text": "1、服药时饮食宜清淡。",
-              "fontSize": 20,
-              "color": "#111111",
+              "fontSize": 19,
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -488,11 +560,11 @@
       "lineWidth": 0
     },
     {
-      "order": 10,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/y58n6983",
-      "id": "10",
+      "aid": "sh/ahovy14n",
+      "id": "11",
       "name": "precaution-item-1",
       "bbox": [
         58,
@@ -503,12 +575,14 @@
       "geometry": "rect",
       "text": "2、服用本药时，不宜同时服滋补性中成药。",
       "textPreview": "2、服用本药时，不宜同时服滋补性中成药。",
-      "resolvedFontSize": 20,
+      "resolvedFontSize": 19,
       "resolvedTextStyle": {
-        "fontSize": 20,
+        "anchor": 2,
+        "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -530,16 +604,16 @@
           "index": 1,
           "text": "2、服用本药时，不宜同时服滋补性中成药。",
           "resolvedTextStyle": {
-            "fontSize": 20,
-            "color": "#111111",
+            "fontSize": 19,
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
               "text": "2、服用本药时，不宜同时服滋补性中成药。",
-              "fontSize": 20,
-              "color": "#111111",
+              "fontSize": 19,
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -549,11 +623,11 @@
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/j6hofepo",
-      "id": "11",
+      "aid": "sh/xkfutgne",
+      "id": "12",
       "name": "precaution-item-2",
       "bbox": [
         58,
@@ -564,12 +638,14 @@
       "geometry": "rect",
       "text": "3、脾虚大便溏者慎服。",
       "textPreview": "3、脾虚大便溏者慎服。",
-      "resolvedFontSize": 20,
+      "resolvedFontSize": 19,
       "resolvedTextStyle": {
-        "fontSize": 20,
+        "anchor": 2,
+        "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -591,81 +667,16 @@
           "index": 1,
           "text": "3、脾虚大便溏者慎服。",
           "resolvedTextStyle": {
-            "fontSize": 20,
-            "color": "#111111",
+            "fontSize": 19,
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
               "text": "3、脾虚大便溏者慎服。",
-              "fontSize": 20,
-              "color": "#111111",
-              "alignment": "left"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 12,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/k7q58jq9",
-      "id": "12",
-      "name": "precaution-item-3",
-      "bbox": [
-        58,
-        380,
-        565,
-        105
-      ],
-      "geometry": "rect",
-      "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
-      "textPreview": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
-      "resolvedFontSize": 20,
-      "resolvedTextStyle": {
-        "fontSize": 20,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 2,
-        "lines": [
-          {
-            "index": 1,
-            "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，"
-          },
-          {
-            "index": 2,
-            "text": "并去医院就诊。"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
-          "resolvedTextStyle": {
-            "fontSize": 20,
-            "color": "#111111",
-            "alignment": "left"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
-              "fontSize": 20,
-              "color": "#111111",
+              "fontSize": 19,
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -678,24 +689,26 @@
       "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/lsz6ho7u",
+      "aid": "sh/cj6d0bmt",
       "id": "13",
-      "name": "precaution-item-4",
+      "name": "precaution-item-3",
       "bbox": [
         58,
-        485,
+        380,
         565,
         105
       ],
       "geometry": "rect",
-      "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
-      "textPreview": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
-      "resolvedFontSize": 20,
+      "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
+      "textPreview": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
+      "resolvedFontSize": 19,
       "resolvedTextStyle": {
-        "fontSize": 20,
+        "anchor": 2,
+        "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -708,29 +721,29 @@
         "lines": [
           {
             "index": 1,
-            "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变"
+            "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并"
           },
           {
             "index": 2,
-            "text": "时禁止使用。"
+            "text": "去医院就诊。"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
+          "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
           "resolvedTextStyle": {
-            "fontSize": 20,
-            "color": "#111111",
+            "fontSize": 19,
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
-              "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
-              "fontSize": 20,
-              "color": "#111111",
+              "text": "4、服用3天后，症状无改善，或出现其他严重症状时应停药，并去医院就诊。",
+              "fontSize": 19,
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -743,43 +756,129 @@
       "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/6t87at8z",
+      "aid": "sh/z6hcvq5k",
       "id": "14",
-      "name": "precaution-card-0",
+      "name": "precaution-item-4",
       "bbox": [
-        670,
-        105,
-        267,
-        264.5
+        58,
+        485,
+        565,
+        105
       ],
       "geometry": "rect",
-      "fillColor": "#F5FBEC",
-      "lineColor": "#009900",
-      "lineWidth": 3
+      "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
+      "textPreview": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁"
+          },
+          {
+            "index": 2,
+            "text": "止使用。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5、对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。",
+              "fontSize": 19,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
     },
     {
       "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/7uhojepk",
+      "aid": "sh/y58v2l4z",
       "id": "15",
+      "name": "precaution-card-0",
+      "bbox": [
+        670,
+        105,
+        265,
+        262.5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l8zuxgna",
+      "id": "16",
+      "name": "precaution-card-accent-0",
+      "bbox": [
+        680,
+        121,
+        4,
+        24
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k7qd4vmp",
+      "id": "17",
       "name": "precaution-card-title-0",
       "bbox": [
-        690,
-        127,
-        227,
+        694,
+        119,
+        225,
         38
       ],
       "geometry": "rect",
-      "text": "！ 饮食宜清淡",
-      "textPreview": "！ 饮食宜清淡",
-      "resolvedFontSize": 22,
+      "text": "饮食宜清淡",
+      "textPreview": "饮食宜清淡",
+      "resolvedFontSize": 20,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "anchor": 2,
+        "fontSize": 20,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#066A2F",
         "bold": true,
-        "alignment": "center",
+        "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -792,28 +891,28 @@
         "lines": [
           {
             "index": 1,
-            "text": "！ 饮食宜清淡"
+            "text": "饮食宜清淡"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "！ 饮食宜清淡",
+          "text": "饮食宜清淡",
           "resolvedTextStyle": {
-            "fontSize": 22,
-            "color": "#111111",
+            "fontSize": 20,
+            "color": "#066A2F",
             "bold": true,
-            "alignment": "center"
+            "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
-              "text": "！ 饮食宜清淡",
-              "fontSize": 22,
-              "color": "#111111",
+              "text": "饮食宜清淡",
+              "fontSize": 20,
+              "color": "#066A2F",
               "bold": true,
-              "alignment": "center"
+              "alignment": "left"
             }
           ],
           "marginLeft": 0
@@ -822,46 +921,48 @@
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8vapcjq5",
-      "id": "16",
+      "aid": "sh/7ahczq5g",
+      "id": "18",
       "name": "precaution-asset-0-surface",
       "bbox": [
-        705,
-        181,
-        197,
-        159.5
+        698,
+        169,
+        209,
+        176.5
       ],
-      "geometry": "rect",
-      "fillColor": "#DDF6E9",
-      "lineColor": "#8ABFC8",
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/twj6lo7q",
-      "id": "17",
+      "aid": "sh/m98v6l4v",
+      "id": "19",
       "name": "precaution-asset-0-label",
       "bbox": [
-        715,
-        235.75,
-        177,
+        708,
+        232.25,
+        189,
         50
       ],
       "geometry": "rect",
       "text": "原创插图槽位\n饮食宜清淡",
       "textPreview": "原创插图槽位 | 饮食宜清淡",
-      "resolvedFontSize": 16,
+      "resolvedFontSize": 15,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "anchor": 2,
+        "fontSize": 15,
         "typeface": "+mn-lt",
-        "color": "#315C62",
+        "color": "#5A6B61",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -887,8 +988,8 @@
           "index": 1,
           "text": "原创插图槽位",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -896,8 +997,8 @@
             {
               "index": 1,
               "text": "原创插图槽位",
-              "fontSize": 16,
-              "color": "#315C62",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }
@@ -908,8 +1009,8 @@
           "index": 2,
           "text": "饮食宜清淡",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -917,90 +1018,8 @@
             {
               "index": 1,
               "text": "饮食宜清淡",
-              "fontSize": 16,
-              "color": "#315C62",
-              "bold": true,
-              "alignment": "center"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 18,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/mxonyp8v",
-      "id": "18",
-      "name": "precaution-card-1",
-      "bbox": [
-        943,
-        105,
-        267,
-        264.5
-      ],
-      "geometry": "rect",
-      "fillColor": "#F5FBEC",
-      "lineColor": "#009900",
-      "lineWidth": 3
-    },
-    {
-      "order": 19,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/nyxo7upg",
-      "id": "19",
-      "name": "precaution-card-title-1",
-      "bbox": [
-        963,
-        127,
-        227,
-        38
-      ],
-      "geometry": "rect",
-      "text": "！ 滋补性中成药",
-      "textPreview": "！ 滋补性中成药",
-      "resolvedFontSize": 22,
-      "resolvedTextStyle": {
-        "fontSize": 22,
-        "typeface": "+mn-lt",
-        "color": "#111111",
-        "bold": true,
-        "alignment": "center",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "！ 滋补性中成药"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "！ 滋补性中成药",
-          "resolvedTextStyle": {
-            "fontSize": 22,
-            "color": "#111111",
-            "bold": true,
-            "alignment": "center"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "！ 滋补性中成药",
-              "fontSize": 22,
-              "color": "#111111",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }
@@ -1014,43 +1033,146 @@
       "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ritkfq58",
+      "aid": "sh/i5cfypo3",
       "id": "20",
-      "name": "precaution-asset-1-surface",
+      "name": "precaution-card-1",
       "bbox": [
-        978,
-        181,
-        197,
-        159.5
+        945,
+        105,
+        265,
+        262.5
       ],
-      "geometry": "rect",
-      "fillColor": "#FFF4DB",
-      "lineColor": "#8ABFC8",
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
       "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qhk36lon",
+      "aid": "sh/j6lg7upo",
       "id": "21",
+      "name": "precaution-card-accent-1",
+      "bbox": [
+        955,
+        121,
+        4,
+        24
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47ux0z69",
+      "id": "22",
+      "name": "precaution-card-title-1",
+      "bbox": [
+        969,
+        119,
+        225,
+        38
+      ],
+      "geometry": "rect",
+      "text": "滋补性中成药",
+      "textPreview": "滋补性中成药",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "滋补性中成药"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "滋补性中成药",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "滋补性中成药",
+              "fontSize": 20,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/583y947u",
+      "id": "23",
+      "name": "precaution-asset-1-surface",
+      "bbox": [
+        973,
+        169,
+        209,
+        176.5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF3C4",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1sfupo7",
+      "id": "24",
       "name": "precaution-asset-1-label",
       "bbox": [
-        988,
-        235.75,
-        177,
+        983,
+        232.25,
+        189,
         50
       ],
       "geometry": "rect",
       "text": "原创插图槽位\n滋补性中成药",
       "textPreview": "原创插图槽位 | 滋补性中成药",
-      "resolvedFontSize": 16,
+      "resolvedFontSize": 15,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "anchor": 2,
+        "fontSize": 15,
         "typeface": "+mn-lt",
-        "color": "#315C62",
+        "color": "#5A6B61",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1076,8 +1198,8 @@
           "index": 1,
           "text": "原创插图槽位",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -1085,8 +1207,8 @@
             {
               "index": 1,
               "text": "原创插图槽位",
-              "fontSize": 16,
-              "color": "#315C62",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }
@@ -1097,8 +1219,8 @@
           "index": 2,
           "text": "滋补性中成药",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -1106,8 +1228,8 @@
             {
               "index": 1,
               "text": "滋补性中成药",
-              "fontSize": 16,
-              "color": "#315C62",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }
@@ -1118,46 +1240,65 @@
       "lineWidth": 0
     },
     {
-      "order": 22,
+      "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/d4v2h0ne",
-      "id": "22",
+      "aid": "sh/v21g3ups",
+      "id": "25",
       "name": "precaution-card-2",
       "bbox": [
         670,
-        375.5,
-        267,
-        264.5
+        377.5,
+        265,
+        262.5
       ],
-      "geometry": "rect",
-      "fillColor": "#F5FBEC",
-      "lineColor": "#009900",
-      "lineWidth": 3
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
     },
     {
-      "order": 23,
+      "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/c32l8v6t",
-      "id": "23",
+      "aid": "sh/w3axwf6x",
+      "id": "26",
+      "name": "precaution-card-accent-2",
+      "bbox": [
+        680,
+        393.5,
+        4,
+        24
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h43y5k7i",
+      "id": "27",
       "name": "precaution-card-title-2",
       "bbox": [
-        690,
-        397.5,
-        227,
+        694,
+        391.5,
+        225,
         38
       ],
       "geometry": "rect",
-      "text": "！ 及时就诊",
-      "textPreview": "！ 及时就诊",
-      "resolvedFontSize": 22,
+      "text": "及时就诊",
+      "textPreview": "及时就诊",
+      "resolvedFontSize": 20,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "anchor": 2,
+        "fontSize": 20,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#066A2F",
         "bold": true,
-        "alignment": "center",
+        "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1170,28 +1311,28 @@
         "lines": [
           {
             "index": 1,
-            "text": "！ 及时就诊"
+            "text": "及时就诊"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "！ 及时就诊",
+          "text": "及时就诊",
           "resolvedTextStyle": {
-            "fontSize": 22,
-            "color": "#111111",
+            "fontSize": 20,
+            "color": "#066A2F",
             "bold": true,
-            "alignment": "center"
+            "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
-              "text": "！ 及时就诊",
-              "fontSize": 22,
-              "color": "#111111",
+              "text": "及时就诊",
+              "fontSize": 20,
+              "color": "#066A2F",
               "bold": true,
-              "alignment": "center"
+              "alignment": "left"
             }
           ],
           "marginLeft": 0
@@ -1200,46 +1341,48 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 28,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/3etkb65c",
-      "id": "24",
+      "aid": "sh/exwf69ob",
+      "id": "28",
       "name": "precaution-asset-2-surface",
       "bbox": [
-        705,
-        451.5,
-        197,
-        159.5
+        698,
+        441.5,
+        209,
+        176.5
       ],
-      "geometry": "rect",
-      "fillColor": "#DDF6E9",
-      "lineColor": "#8ABFC8",
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 25,
+      "order": 29,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/2dk32lor",
-      "id": "25",
+      "aid": "sh/fy5gfe5w",
+      "id": "29",
       "name": "precaution-asset-2-label",
       "bbox": [
-        715,
-        506.25,
-        177,
+        708,
+        504.75,
+        189,
         50
       ],
       "geometry": "rect",
       "text": "原创插图槽位\n及时就诊",
       "textPreview": "原创插图槽位 | 及时就诊",
-      "resolvedFontSize": 16,
+      "resolvedFontSize": 15,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "anchor": 2,
+        "fontSize": 15,
         "typeface": "+mn-lt",
-        "color": "#315C62",
+        "color": "#5A6B61",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1265,8 +1408,8 @@
           "index": 1,
           "text": "原创插图槽位",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -1274,8 +1417,8 @@
             {
               "index": 1,
               "text": "原创插图槽位",
-              "fontSize": 16,
-              "color": "#315C62",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }
@@ -1286,8 +1429,8 @@
           "index": 2,
           "text": "及时就诊",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -1295,8 +1438,8 @@
             {
               "index": 1,
               "text": "及时就诊",
-              "fontSize": 16,
-              "color": "#315C62",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }
@@ -1307,46 +1450,65 @@
       "lineWidth": 0
     },
     {
-      "order": 26,
+      "order": 30,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pgb2dgn2",
-      "id": "26",
+      "aid": "sh/ps7i587y",
+      "id": "30",
       "name": "precaution-card-3",
       "bbox": [
-        943,
-        375.5,
-        267,
-        264.5
+        945,
+        377.5,
+        265,
+        262.5
       ],
-      "geometry": "rect",
-      "fillColor": "#F5FBEC",
-      "lineColor": "#009900",
-      "lineWidth": 3
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
     },
     {
-      "order": 27,
+      "order": 31,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/4f2l4b6h",
-      "id": "27",
+      "aid": "sh/ory1w3qd",
+      "id": "31",
+      "name": "precaution-card-accent-3",
+      "bbox": [
+        955,
+        393.5,
+        4,
+        24
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nqp03y9s",
+      "id": "32",
       "name": "precaution-card-title-3",
       "bbox": [
-        963,
-        397.5,
-        227,
+        969,
+        391.5,
+        225,
         38
       ],
       "geometry": "rect",
-      "text": "！ 过敏慎用",
-      "textPreview": "！ 过敏慎用",
-      "resolvedFontSize": 22,
+      "text": "过敏慎用",
+      "textPreview": "过敏慎用",
+      "resolvedFontSize": 20,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "anchor": 2,
+        "fontSize": 20,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#066A2F",
         "bold": true,
-        "alignment": "center",
+        "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1359,28 +1521,28 @@
         "lines": [
           {
             "index": 1,
-            "text": "！ 过敏慎用"
+            "text": "过敏慎用"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "！ 过敏慎用",
+          "text": "过敏慎用",
           "resolvedTextStyle": {
-            "fontSize": 22,
-            "color": "#111111",
+            "fontSize": 20,
+            "color": "#066A2F",
             "bold": true,
-            "alignment": "center"
+            "alignment": "left"
           },
           "runs": [
             {
               "index": 1,
-              "text": "！ 过敏慎用",
-              "fontSize": 22,
-              "color": "#111111",
+              "text": "过敏慎用",
+              "fontSize": 20,
+              "color": "#066A2F",
               "bold": true,
-              "alignment": "center"
+              "alignment": "left"
             }
           ],
           "marginLeft": 0
@@ -1389,46 +1551,48 @@
       "lineWidth": 0
     },
     {
-      "order": 28,
+      "order": 33,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nad4na5g",
-      "id": "28",
+      "aid": "sh/2pgjud8n",
+      "id": "33",
       "name": "precaution-asset-3-surface",
       "bbox": [
-        978,
-        451.5,
-        197,
-        159.5
+        973,
+        441.5,
+        209,
+        176.5
       ],
-      "geometry": "rect",
-      "fillColor": "#FFF4DB",
-      "lineColor": "#8ABFC8",
+      "geometry": "roundRect",
+      "fillColor": "#FFF3C4",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 29,
+      "order": 34,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/m943e5ov",
-      "id": "29",
+      "aid": "sh/1o7i18r2",
+      "id": "34",
       "name": "precaution-asset-3-label",
       "bbox": [
-        988,
-        506.25,
-        177,
+        983,
+        504.75,
+        189,
         50
       ],
       "geometry": "rect",
       "text": "原创插图槽位\n过敏慎用",
       "textPreview": "原创插图槽位 | 过敏慎用",
-      "resolvedFontSize": 16,
+      "resolvedFontSize": 15,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "anchor": 2,
+        "fontSize": 15,
         "typeface": "+mn-lt",
-        "color": "#315C62",
+        "color": "#5A6B61",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1454,8 +1618,8 @@
           "index": 1,
           "text": "原创插图槽位",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -1463,8 +1627,8 @@
             {
               "index": 1,
               "text": "原创插图槽位",
-              "fontSize": 16,
-              "color": "#315C62",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }
@@ -1475,8 +1639,8 @@
           "index": 2,
           "text": "过敏慎用",
           "resolvedTextStyle": {
-            "fontSize": 16,
-            "color": "#315C62",
+            "fontSize": 15,
+            "color": "#5A6B61",
             "bold": true,
             "alignment": "center"
           },
@@ -1484,8 +1648,8 @@
             {
               "index": 1,
               "text": "过敏慎用",
-              "fontSize": 16,
-              "color": "#315C62",
+              "fontSize": 15,
+              "color": "#5A6B61",
               "bold": true,
               "alignment": "center"
             }

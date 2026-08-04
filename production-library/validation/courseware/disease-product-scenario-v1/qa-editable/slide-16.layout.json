@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/7a76xw",
-    "id": "7a76xw",
+    "aid": "sl/ly5a18",
+    "id": "ly5a18",
     "slide": 16,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/y1snihkv",
+      "aid": "sh/elo7m9sn",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/l436dwjm",
+      "aid": "sh/18zqhoby",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "4.1",
       "textPreview": "4.1",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "4.1",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "4.1",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/03u5kri1",
+      "aid": "sh/0nqpojad",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "关怀篇——日常生活叮嘱",
       "textPreview": "关怀篇——日常生活叮嘱",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "关怀篇——日常生活叮嘱",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "关怀篇——日常生活叮嘱",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/n6lof61c",
+      "aid": "sh/rix8betw",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/m5cnm10r",
+      "aid": "sh/qho7i9sb",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dkfqd4b2",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9836hgji",
-      "id": "6",
+      "aid": "sh/sj6pkjah",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3edo7ut0",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "16 / 18",
+      "textPreview": "16 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "16 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "16 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "16 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/lgralk32",
-      "id": "7",
+      "aid": "im/r29c32xk",
+      "id": "9",
       "bbox": [
         70,
         130,
@@ -361,17 +446,17 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "d5f94d45-e327-4959-b8a9-866ef150a05b",
+        "assetId": "f036ec65-6d91-49c2-a4dd-9d752a6c2548",
         "contentType": "image/png",
-        "byteLength": 108543
+        "byteLength": 106347
       }
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/mh0repkn",
-      "id": "8",
+      "aid": "im/zqlo7ud8",
+      "id": "10",
       "bbox": [
         335,
         130,
@@ -382,23 +467,40 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "89364239-d87b-49cf-8ba3-02ce0f64ba84",
+        "assetId": "3b1287f7-9db5-49a2-91d7-a4ebaa06bc1b",
         "contentType": "image/png",
-        "byteLength": 92591
+        "byteLength": 87208
       }
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/298naxkn",
-      "id": "9",
-      "name": "care-food-good",
+      "aid": "sh/1s7ixony",
+      "id": "11",
+      "name": "care-food-good-surface",
       "bbox": [
         70,
         350,
         245,
         190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#ECFFF4",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u5gzm9on",
+      "id": "12",
+      "name": "care-food-good",
+      "bbox": [
+        84,
+        360,
+        217,
+        170
       ],
       "geometry": "rect",
       "text": "✓ 饮食之宜 · 清热生津\n日常多喝水，可饮菊花茶、绿豆汤，适当食用梨、西瓜、苦瓜等寒凉性蔬果。",
@@ -407,7 +509,7 @@
       "resolvedTextStyle": {
         "fontSize": 17,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -417,7 +519,7 @@
         }
       },
       "textLayout": {
-        "lineCount": 4,
+        "lineCount": 5,
         "lines": [
           {
             "index": 1,
@@ -425,15 +527,19 @@
           },
           {
             "index": 2,
-            "text": "日常多喝水，可饮菊花茶、绿"
+            "text": "日常多喝水，可饮菊花茶"
           },
           {
             "index": 3,
-            "text": "豆汤，适当食用梨、西瓜、苦"
+            "text": "、绿豆汤，适当食用梨、"
           },
           {
             "index": 4,
-            "text": "瓜等寒凉性蔬果。"
+            "text": "西瓜、苦瓜等寒凉性蔬果"
+          },
+          {
+            "index": 5,
+            "text": "。"
           }
         ]
       },
@@ -443,7 +549,7 @@
           "text": "✓ 饮食之宜 · 清热生津",
           "resolvedTextStyle": {
             "fontSize": 17,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -451,7 +557,7 @@
               "index": 1,
               "text": "✓ 饮食之宜 · 清热生津",
               "fontSize": 17,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -463,7 +569,7 @@
           "text": "日常多喝水，可饮菊花茶、绿豆汤，适当食用梨、西瓜、苦瓜等寒凉性蔬果。",
           "resolvedTextStyle": {
             "fontSize": 17,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -471,28 +577,44 @@
               "index": 1,
               "text": "日常多喝水，可饮菊花茶、绿豆汤，适当食用梨、西瓜、苦瓜等寒凉性蔬果。",
               "fontSize": 17,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
           "marginLeft": 0
         }
       ],
-      "fillColor": "#ECFFF4",
       "lineWidth": 0
     },
     {
-      "order": 10,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8r6h0jih",
-      "id": "10",
-      "name": "care-food-bad",
+      "aid": "sh/f6p0ve58",
+      "id": "13",
+      "name": "care-food-bad-surface",
       "bbox": [
         335,
         350,
         245,
         190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF1F1",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s3yhkz6h",
+      "id": "14",
+      "name": "care-food-bad",
+      "bbox": [
+        349,
+        360,
+        217,
+        170
       ],
       "geometry": "rect",
       "text": "✕ 饮食之忌 · 避热动火\n避免辛辣刺激、油腻煎炸食物，同时慎食羊肉、人参、桂圆等温补食材。",
@@ -501,7 +623,7 @@
       "resolvedTextStyle": {
         "fontSize": 17,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -519,15 +641,15 @@
           },
           {
             "index": 2,
-            "text": "避免辛辣刺激、油腻煎炸食物"
+            "text": "避免辛辣刺激、油腻煎炸"
           },
           {
             "index": 3,
-            "text": "，同时慎食羊肉、人参、桂圆"
+            "text": "食物，同时慎食羊肉、人"
           },
           {
             "index": 4,
-            "text": "等温补食材。"
+            "text": "参、桂圆等温补食材。"
           }
         ]
       },
@@ -537,7 +659,7 @@
           "text": "✕ 饮食之忌 · 避热动火",
           "resolvedTextStyle": {
             "fontSize": 17,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -545,7 +667,7 @@
               "index": 1,
               "text": "✕ 饮食之忌 · 避热动火",
               "fontSize": 17,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -557,7 +679,7 @@
           "text": "避免辛辣刺激、油腻煎炸食物，同时慎食羊肉、人参、桂圆等温补食材。",
           "resolvedTextStyle": {
             "fontSize": 17,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -565,22 +687,21 @@
               "index": 1,
               "text": "避免辛辣刺激、油腻煎炸食物，同时慎食羊肉、人参、桂圆等温补食材。",
               "fontSize": 17,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
           "marginLeft": 0
         }
       ],
-      "fillColor": "#FFF1F1",
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9sfy9oj2",
-      "id": "11",
+      "aid": "sh/t47it4n2",
+      "id": "15",
       "name": "care-rest-surface",
       "bbox": [
         650,
@@ -588,39 +709,39 @@
         550,
         145
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 12,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/mpozyt0b",
-      "id": "12",
+      "aid": "sh/61wzy9ob",
+      "id": "16",
       "name": "care-rest-accent",
       "bbox": [
-        650,
-        120,
-        6,
-        145
+        660,
+        134,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 13,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nqxg7e1w",
-      "id": "13",
+      "aid": "sh/7250ru5w",
+      "id": "17",
       "name": "care-rest-title",
       "bbox": [
-        668,
-        134,
-        518,
+        674,
+        132,
+        510,
         38
       ],
       "geometry": "rect",
@@ -628,11 +749,13 @@
       "textPreview": "保证充足休息，养足精神",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#009900",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -655,7 +778,7 @@
           "text": "保证充足休息，养足精神",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#009900",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -664,7 +787,7 @@
               "index": 1,
               "text": "保证充足休息，养足精神",
               "fontSize": 23,
-              "color": "#009900",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -675,34 +798,34 @@
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wvqh43it",
-      "id": "14",
+      "aid": "sh/czi1w36l",
+      "id": "18",
       "name": "care-rest-divider",
       "bbox": [
-        668,
+        674,
         178,
-        514,
+        506,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hwzyd8jy",
-      "id": "15",
+      "aid": "sh/d0ri58n6",
+      "id": "19",
       "name": "care-rest-body",
       "bbox": [
-        668,
+        674,
         190,
-        514,
+        506,
         61
       ],
       "geometry": "rect",
@@ -712,7 +835,7 @@
       "resolvedTextStyle": {
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -744,7 +867,7 @@
           "text": "建议保证7–8小时高质量睡眠，避免熬夜，让脏腑功能在夜间充分休养，促进津液恢复。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -752,14 +875,14 @@
               "index": 1,
               "text": "建议保证",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "7–8小时高质量睡眠",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -767,7 +890,7 @@
               "index": 3,
               "text": "，避免熬夜，让脏腑功能在夜间充分休养，促进津液恢复。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -777,11 +900,11 @@
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/utoz2t0n",
-      "id": "16",
+      "aid": "sh/lgnip8fa",
+      "id": "20",
       "name": "care-air-surface",
       "bbox": [
         650,
@@ -789,39 +912,39 @@
         550,
         145
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 17,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/vuxgby18",
-      "id": "17",
+      "aid": "sh/kfehg3yp",
+      "id": "21",
       "name": "care-air-accent",
       "bbox": [
-        650,
-        285,
-        6,
-        145
+        660,
+        299,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 18,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/czmxszi9",
-      "id": "18",
+      "aid": "sh/ze50nyxk",
+      "id": "22",
       "name": "care-air-title",
       "bbox": [
-        668,
-        299,
-        518,
+        674,
+        297,
+        510,
         38
       ],
       "geometry": "rect",
@@ -829,11 +952,13 @@
       "textPreview": "保持室内通风，空气清新",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#009900",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -856,7 +981,7 @@
           "text": "保持室内通风，空气清新",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#009900",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -865,7 +990,7 @@
               "index": 1,
               "text": "保持室内通风，空气清新",
               "fontSize": 23,
-              "color": "#009900",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -876,34 +1001,34 @@
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/d0vy14ju",
-      "id": "19",
+      "aid": "sh/ydwzetgz",
+      "id": "23",
       "name": "care-air-divider",
       "bbox": [
-        668,
+        674,
         343,
-        514,
+        506,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/dgnep0bi",
-      "id": "20",
+      "aid": "sh/xcnilofe",
+      "id": "24",
       "name": "care-air-body",
       "bbox": [
-        668,
+        674,
         355,
-        514,
+        506,
         61
       ],
       "geometry": "rect",
@@ -913,7 +1038,7 @@
       "resolvedTextStyle": {
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -941,7 +1066,7 @@
           "text": "每日开窗通风2–3次，每次30分钟。新鲜空气有助于驱散室内浊气，保持呼吸道通畅。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -949,14 +1074,14 @@
               "index": 1,
               "text": "每日开窗通风",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "2–3次，每次30分钟",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -964,7 +1089,7 @@
               "index": 3,
               "text": "。新鲜空气有助于驱散室内浊气，保持呼吸道通畅。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -974,11 +1099,11 @@
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/svexwvud",
-      "id": "21",
+      "aid": "sh/crehcjyt",
+      "id": "25",
       "name": "care-voice-surface",
       "bbox": [
         650,
@@ -986,39 +1111,39 @@
         550,
         145
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 22,
+      "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ru5wnqts",
-      "id": "22",
+      "aid": "sh/bq50jex8",
+      "id": "26",
       "name": "care-voice-accent",
       "bbox": [
-        650,
-        450,
-        6,
-        145
+        660,
+        464,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 23,
+      "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qtwfulc7",
-      "id": "23",
+      "aid": "sh/apcza9gn",
+      "id": "27",
       "name": "care-voice-title",
       "bbox": [
-        668,
-        464,
-        518,
+        674,
+        462,
+        510,
         38
       ],
       "geometry": "rect",
@@ -1026,11 +1151,13 @@
       "textPreview": "减少过度用嗓，静养咽喉",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#009900",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1053,7 +1180,7 @@
           "text": "减少过度用嗓，静养咽喉",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#009900",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -1062,7 +1189,7 @@
               "index": 1,
               "text": "减少过度用嗓，静养咽喉",
               "fontSize": 23,
-              "color": "#009900",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -1073,34 +1200,34 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 28,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1k7et0bu",
-      "id": "24",
+      "aid": "sh/po3yh4f2",
+      "id": "28",
       "name": "care-voice-divider",
       "bbox": [
-        668,
+        674,
         508,
-        514,
+        506,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 25,
+      "order": 29,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0jex0fu9",
-      "id": "25",
+      "aid": "sh/onuh8jyx",
+      "id": "29",
       "name": "care-voice-body",
       "bbox": [
-        668,
+        674,
         520,
-        514,
+        506,
         61
       ],
       "geometry": "rect",
@@ -1110,7 +1237,7 @@
       "resolvedTextStyle": {
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1142,7 +1269,7 @@
           "text": "尽量少说话，避免大声喊叫或长时间交谈，让咽喉、声带充分休息，减少外界刺激。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1150,7 +1277,7 @@
               "index": 1,
               "text": "尽量少说话",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1158,7 +1285,7 @@
               "index": 2,
               "text": "，避免大声喊叫或长时间交谈，让咽喉、声带充分休息，减少外界刺激。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],

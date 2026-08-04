@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/okd203",
-    "id": "okd203",
+    "aid": "sl/dcfjl4",
+    "id": "dcfjl4",
     "slide": 7,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pgbupojq",
+      "aid": "sh/dofa94z2",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/2d0vetkz",
+      "aid": "sh/q1oryp0r",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "1.4",
       "textPreview": "1.4",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "1.4",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "1.4",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/3e9cny1k",
+      "aid": "sh/rmxs7uhw",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "疾病篇——风热证的治疗：辨证用药总原则",
       "textPreview": "疾病篇——风热证的治疗：辨证用药总原则",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "疾病篇——风热证的治疗：辨证用药总原则",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "疾病篇——风热证的治疗：辨证用药总原则",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gbidcj2t",
+      "aid": "sh/4z69wzil",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hcruloje",
+      "aid": "sh/50fa54z6",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixorup0f",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/up0va9k3",
-      "id": "6",
+      "aid": "sh/3yxs3uh0",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fa9cje1o",
-      "id": "7",
+      "aid": "sh/gvm9sfi9",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "07 / 18",
+      "textPreview": "07 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "07 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "07 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "07 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwva1kju",
+      "id": "9",
       "name": "principle-1-surface",
       "bbox": [
         70,
@@ -358,39 +443,39 @@
         350,
         380
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/snyd8z2x",
-      "id": "8",
+      "aid": "sh/5k765gjy",
+      "id": "10",
       "name": "principle-1-accent",
       "bbox": [
-        70,
-        140,
-        6,
-        380
+        80,
+        154,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/to7uh4ji",
-      "id": "9",
+      "aid": "sh/4jypwbid",
+      "id": "11",
       "name": "principle-1-title",
       "bbox": [
-        88,
-        154,
-        318,
+        94,
+        152,
+        310,
         38
       ],
       "geometry": "rect",
@@ -398,11 +483,13 @@
       "textPreview": "01. 禁用辛温，勿助热",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#009900",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -425,7 +512,7 @@
           "text": "01. 禁用辛温，勿助热",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#009900",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -434,7 +521,7 @@
               "index": 1,
               "text": "01. 禁用辛温，勿助热",
               "fontSize": 23,
-              "color": "#009900",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -445,34 +532,34 @@
       "lineWidth": 0
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tgnytc36",
-      "id": "10",
+      "aid": "sh/3i5o361s",
+      "id": "12",
       "name": "principle-1-divider",
       "bbox": [
-        88,
+        94,
         198,
-        314,
+        306,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8vex072l",
-      "id": "11",
+      "aid": "sh/ihwnu1k7",
+      "id": "13",
       "name": "principle-1-body",
       "bbox": [
-        88,
+        94,
         210,
-        314,
+        306,
         296
       ],
       "geometry": "rect",
@@ -482,7 +569,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -538,7 +625,7 @@
           "text": "核心原则：风热证为“阳热”之证，绝对禁用麻黄、桂枝等辛温发汗药。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -546,7 +633,7 @@
               "index": 1,
               "text": "核心原则：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -554,7 +641,7 @@
               "index": 2,
               "text": "风热证为“阳热”之证，",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
@@ -569,7 +656,7 @@
               "index": 4,
               "text": "麻黄、桂枝等辛温发汗药。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -580,7 +667,7 @@
           "text": "机理警示：温药入体如同“火上浇油”，会加重内热，灼伤津液，导致病情由表入里。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -588,7 +675,7 @@
               "index": 1,
               "text": "机理警示：",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -596,14 +683,14 @@
               "index": 2,
               "text": "温药入体如同",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 3,
               "text": "“火上浇油”",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -611,7 +698,7 @@
               "index": 4,
               "text": "，会加重内热，灼伤津液，导致病情由表入里。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -621,11 +708,11 @@
       "lineWidth": 0
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/7u5gr2l0",
-      "id": "12",
+      "aid": "sh/hgn61wjm",
+      "id": "14",
       "name": "principle-2-surface",
       "bbox": [
         465,
@@ -633,39 +720,39 @@
         350,
         380
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 13,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/6tcfyxkf",
-      "id": "13",
+      "aid": "sh/gfe5sr2h",
+      "id": "15",
       "name": "principle-2-accent",
       "bbox": [
-        465,
-        140,
-        6,
-        380
+        475,
+        154,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ls3yps3u",
-      "id": "14",
+      "aid": "sh/ve5ozm1w",
+      "id": "16",
       "name": "principle-2-title",
       "bbox": [
-        483,
-        154,
-        318,
+        489,
+        152,
+        310,
         38
       ],
       "geometry": "rect",
@@ -673,11 +760,13 @@
       "textPreview": "02. 分清主次，随证施方",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#009900",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -700,7 +789,7 @@
           "text": "02. 分清主次，随证施方",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#009900",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -709,7 +798,7 @@
               "index": 1,
               "text": "02. 分清主次，随证施方",
               "fontSize": 23,
-              "color": "#009900",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -720,34 +809,34 @@
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/kruxwn29",
-      "id": "15",
+      "aid": "sh/utwnq1kb",
+      "id": "17",
       "name": "principle-2-divider",
       "bbox": [
-        483,
+        489,
         198,
-        314,
+        306,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/jqlwnilo",
-      "id": "16",
+      "aid": "sh/tsn6xwjq",
+      "id": "18",
       "name": "principle-2-body",
       "bbox": [
-        483,
+        489,
         210,
-        314,
+        306,
         296
       ],
       "geometry": "rect",
@@ -757,7 +846,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -813,7 +902,7 @@
           "text": "根据病程阶段与兼症针对性加减药物，不拘泥于一方一药。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -821,7 +910,7 @@
               "index": 1,
               "text": "根据病程阶段与兼症针对性加减药物，不拘泥于一方一药。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -832,7 +921,7 @@
           "text": "表热轻症单用辛凉解表；肺热偏重佐以清热化痰；咽喉肿痛则重加板蓝根、桔梗等解毒利咽之品。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -840,7 +929,7 @@
               "index": 1,
               "text": "表热轻症",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -848,14 +937,14 @@
               "index": 2,
               "text": "单用辛凉解表；",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 3,
               "text": "肺热偏重",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -863,14 +952,14 @@
               "index": 4,
               "text": "佐以清热化痰；",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 5,
               "text": "咽喉肿痛",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -878,7 +967,7 @@
               "index": 6,
               "text": "则重加板蓝根、桔梗等解毒利咽之品。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -888,11 +977,11 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ypcfux4j",
-      "id": "17",
+      "aid": "sh/8re5or25",
+      "id": "19",
       "name": "principle-3-surface",
       "bbox": [
         860,
@@ -900,39 +989,39 @@
         350,
         380
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 18,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xo3els3y",
-      "id": "18",
+      "aid": "sh/kvyp4ra1",
+      "id": "20",
       "name": "principle-3-accent",
       "bbox": [
-        860,
-        140,
-        6,
-        380
+        870,
+        154,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cnuxsnmd",
-      "id": "19",
+      "aid": "sh/lwr6dwrm",
+      "id": "21",
       "name": "principle-3-title",
       "bbox": [
-        878,
-        154,
-        318,
+        884,
+        152,
+        310,
         38
       ],
       "geometry": "rect",
@@ -940,11 +1029,13 @@
       "textPreview": "03. 兼顾兼证，不可偏颇",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#009900",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -967,7 +1058,7 @@
           "text": "03. 兼顾兼证，不可偏颇",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#009900",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -976,7 +1067,7 @@
               "index": 1,
               "text": "03. 兼顾兼证，不可偏颇",
               "fontSize": 23,
-              "color": "#009900",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -987,34 +1078,34 @@
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/o7ex8nu9",
-      "id": "20",
+      "aid": "sh/ytg72hsv",
+      "id": "22",
       "name": "principle-3-divider",
       "bbox": [
-        878,
+        884,
         198,
-        314,
+        306,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/p87y1sbu",
-      "id": "21",
+      "aid": "sh/zupobm9g",
+      "id": "23",
       "name": "principle-3-body",
       "bbox": [
-        878,
+        884,
         210,
-        314,
+        306,
         296
       ],
       "geometry": "rect",
@@ -1024,7 +1115,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1076,7 +1167,7 @@
           "text": "临床多见风热夹湿等兼证，治疗时切忌只清热而不顾湿邪。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1084,14 +1175,14 @@
               "index": 1,
               "text": "临床多见",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "风热夹湿",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1099,7 +1190,7 @@
               "index": 3,
               "text": "等兼证，治疗时切忌只清热而不顾湿邪。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1110,7 +1201,7 @@
           "text": "在辛凉清热基础上，需酌情配伍藿香、佩兰、薏苡仁等化湿药物，使热得清解、湿得化除。",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1118,14 +1209,14 @@
               "index": 1,
               "text": "在辛凉清热基础上，需酌情配伍",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "藿香、佩兰、薏苡仁",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             },
@@ -1133,7 +1224,7 @@
               "index": 3,
               "text": "等化湿药物，使热得清解、湿得化除。",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1143,16 +1234,50 @@
       "lineWidth": 0
     },
     {
-      "order": 22,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/25wf6dc3",
-      "id": "22",
-      "name": "principle-summary",
+      "aid": "sh/c7y5gra5",
+      "id": "24",
+      "name": "principle-summary-surface",
       "bbox": [
         70,
         570,
         1140,
+        58
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x8769cra",
+      "id": "25",
+      "name": "principle-summary-accent",
+      "bbox": [
+        78,
+        580,
+        4,
+        38
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a5gnehsz",
+      "id": "26",
+      "name": "principle-summary",
+      "bbox": [
+        94,
+        570,
+        1102,
         58
       ],
       "geometry": "rect",
@@ -1160,10 +1285,12 @@
       "textPreview": "总结：风热证治疗核心在于“辛凉解表、清热解毒”，同时严守禁忌，辨明主次兼证。",
       "resolvedFontSize": 21,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1186,7 +1313,7 @@
           "text": "总结：风热证治疗核心在于“辛凉解表、清热解毒”，同时严守禁忌，辨明主次兼证。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -1194,7 +1321,7 @@
               "index": 1,
               "text": "总结：",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -1202,14 +1329,14 @@
               "index": 2,
               "text": "风热证治疗核心在于",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#1F2A24",
               "alignment": "left"
             },
             {
               "index": 3,
               "text": "“辛凉解表、清热解毒”",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -1217,14 +1344,13 @@
               "index": 4,
               "text": "，同时严守禁忌，辨明主次兼证。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
           "marginLeft": 0
         }
       ],
-      "fillColor": "#E8F2F1",
       "lineWidth": 0
     }
   ],

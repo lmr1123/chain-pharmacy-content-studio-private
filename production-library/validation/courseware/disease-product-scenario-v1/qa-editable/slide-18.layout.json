@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/q31l49",
-    "id": "q31l49",
+    "aid": "sl/24cvtb",
+    "id": "24cvtb",
     "slide": 18,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cb6t4vuh",
+      "aid": "sh/hwb258bq",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/radcbqtw",
+      "aid": "sh/utkjatcz",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "5.2",
       "textPreview": "5.2",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "5.2",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "5.2",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/q94b2lcb",
+      "aid": "sh/vutk3ytk",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "权重篇——白云山安宫＋宏济堂安宫",
       "textPreview": "权重篇——白云山安宫＋宏济堂安宫",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "权重篇——白云山安宫＋宏济堂安宫",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "权重篇——白云山安宫＋宏济堂安宫",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/10fuhkby",
+      "aid": "sh/4jm1g3uh",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0z6t8fud",
+      "aid": "sh/5kv298b2",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ix4jedcb",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/zexcfat8",
-      "id": "6",
+      "aid": "sh/3ydk7itw",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/edob65cn",
-      "id": "7",
+      "aid": "sh/snmlknad",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "18 / 18",
+      "textPreview": "18 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "18 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "18 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "18 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dof2dsby",
+      "id": "9",
       "name": "compare-dim-surface",
       "bbox": [
         40,
@@ -359,33 +444,35 @@
         66
       ],
       "geometry": "rect",
-      "fillColor": "#3B8E25",
-      "lineColor": "#333333",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/h4va5gbu",
-      "id": "8",
+      "aid": "sh/5w361wrm",
+      "id": "10",
       "name": "compare-dim-text",
       "bbox": [
-        46,
-        106,
-        138,
-        54
+        48,
+        100,
+        134,
+        66
       ],
       "geometry": "rect",
       "text": "对比维度",
       "textPreview": "对比维度",
       "resolvedFontSize": 18,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 18,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -428,11 +515,11 @@
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gjmtwbu9",
-      "id": "9",
+      "aid": "sh/4vu5srq1",
+      "id": "11",
       "name": "compare-product-a-surface",
       "bbox": [
         190,
@@ -441,33 +528,35 @@
         66
       ],
       "geometry": "rect",
-      "fillColor": "#3B8E25",
-      "lineColor": "#333333",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/exc76twj",
-      "id": "10",
+      "aid": "sh/3ul4zm9g",
+      "id": "12",
       "name": "compare-product-a-text",
       "bbox": [
-        196,
-        106,
-        443,
-        54
+        198,
+        100,
+        439,
+        66
       ],
       "geometry": "rect",
       "text": "安宫牛黄丸（白云山中一）\n8202533（人工体培）",
       "textPreview": "安宫牛黄丸（白云山中一） | 8202533（人工体培）",
       "resolvedFontSize": 17,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 17,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -535,11 +624,11 @@
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fy5ozyd4",
-      "id": "11",
+      "aid": "sh/itcnqh8v",
+      "id": "13",
       "name": "compare-product-b-surface",
       "bbox": [
         645,
@@ -548,33 +637,35 @@
         66
       ],
       "geometry": "rect",
-      "fillColor": "#3B8E25",
-      "lineColor": "#333333",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0zep83up",
-      "id": "12",
+      "aid": "sh/dkn65wri",
+      "id": "14",
       "name": "compare-product-b-text",
       "bbox": [
-        651,
-        106,
-        573,
-        54
+        653,
+        100,
+        569,
+        66
       ],
       "geometry": "rect",
       "text": "安宫牛黄丸（宏济堂）1185781（单天然）、\n1185783（人工体培）2373089（单天然包金衣）",
       "textPreview": "安宫牛黄丸（宏济堂）1185781（单天然）、 | 1185783（人工体培）2373089（单天然包金衣）",
       "resolvedFontSize": 16,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 16,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -642,11 +733,11 @@
       "lineWidth": 0
     },
     {
-      "order": 13,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/10n61ova",
-      "id": "13",
+      "aid": "sh/sje5wrqx",
+      "id": "15",
       "name": "compare-image-label-surface",
       "bbox": [
         40,
@@ -655,33 +746,35 @@
         100
       ],
       "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#333333",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 14,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/21w7atcf",
-      "id": "14",
+      "aid": "sh/ry5o3m9c",
+      "id": "16",
       "name": "compare-image-label-text",
       "bbox": [
-        46,
-        172,
-        138,
-        88
+        48,
+        166,
+        134,
+        100
       ],
       "geometry": "rect",
       "text": "产品图片",
       "textPreview": "产品图片",
       "resolvedFontSize": 16,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 16,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -704,7 +797,7 @@
           "text": "产品图片",
           "resolvedTextStyle": {
             "fontSize": 16,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -713,7 +806,7 @@
               "index": 1,
               "text": "产品图片",
               "fontSize": 16,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -724,11 +817,11 @@
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 17,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/4jihov6x",
-      "id": "15",
+      "aid": "im/tkzyl4vu",
+      "id": "17",
       "bbox": [
         275,
         178,
@@ -739,17 +832,17 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "e930de6f-d5af-48d3-a084-102f08937900",
+        "assetId": "72f516cc-0585-4698-9f61-49841eeaff51",
         "contentType": "image/png",
-        "byteLength": 31783
+        "byteLength": 27738
       }
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/ji90vqps",
-      "id": "16",
+      "aid": "im/yd8fmpw7",
+      "id": "18",
       "bbox": [
         690,
         178,
@@ -760,17 +853,17 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "f75813ba-b5d0-42e2-bdc4-9d1512d89c12",
+        "assetId": "d75b2f98-623c-464e-bb93-386319bc9113",
         "contentType": "image/png",
-        "byteLength": 68029
+        "byteLength": 59819
       }
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/p4n658v6",
-      "id": "17",
+      "aid": "sh/8na5k7qt",
+      "id": "19",
       "name": "compare-selling-label-surface",
       "bbox": [
         40,
@@ -779,33 +872,35 @@
         170
       ],
       "geometry": "rect",
-      "fillColor": "#C7E7B7",
-      "lineColor": "#333333",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 18,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/a5g7edcr",
-      "id": "18",
+      "aid": "sh/kjyxwr2l",
+      "id": "20",
       "name": "compare-selling-label-text",
       "bbox": [
-        46,
-        272,
-        138,
-        158
+        48,
+        266,
+        134,
+        170
       ],
       "geometry": "rect",
       "text": "核心卖点",
       "textPreview": "核心卖点",
       "resolvedFontSize": 18,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 18,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -828,7 +923,7 @@
           "text": "核心卖点",
           "resolvedTextStyle": {
             "fontSize": 18,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -837,7 +932,7 @@
               "index": 1,
               "text": "核心卖点",
               "fontSize": 18,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -848,11 +943,11 @@
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/b6po7idc",
-      "id": "19",
+      "aid": "sh/lk7epw36",
+      "id": "21",
       "name": "compare-selling-a-surface",
       "bbox": [
         190,
@@ -861,32 +956,34 @@
         170
       ],
       "geometry": "rect",
-      "fillColor": "#C7E7B7",
-      "lineColor": "#333333",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 20,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/7upovit4",
-      "id": "20",
+      "aid": "sh/yhwvu1kv",
+      "id": "22",
       "name": "compare-selling-a-text",
       "bbox": [
-        196,
-        272,
-        443,
-        158
+        198,
+        266,
+        439,
+        170
       ],
       "geometry": "rect",
       "text": "1. 药材道地：胆红素含量是国家标准2倍；\n2. 古法手工：166年老手艺纯手工制丸；\n3. 广药白云山品牌，质量保证。",
       "textPreview": "1. 药材道地：胆红素含量是国家标准2倍； | 2. 古法手工：166年老手艺纯手工制丸； | 3. 广药白云山品牌，质量保证。",
       "resolvedFontSize": 21,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -917,7 +1014,7 @@
           "text": "1. 药材道地：胆红素含量是国家标准2倍；",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -925,14 +1022,14 @@
               "index": 1,
               "text": "1. ",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "药材道地：",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -940,7 +1037,7 @@
               "index": 3,
               "text": "胆红素含量是国家标准2倍；",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -951,7 +1048,7 @@
           "text": "2. 古法手工：166年老手艺纯手工制丸；",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -959,14 +1056,14 @@
               "index": 1,
               "text": "2. ",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "古法手工：",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -974,7 +1071,7 @@
               "index": 3,
               "text": "166年老手艺纯手工制丸；",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -985,7 +1082,7 @@
           "text": "3. 广药白云山品牌，质量保证。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -993,14 +1090,14 @@
               "index": 1,
               "text": "3. ",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "广药白云山品牌",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -1008,7 +1105,7 @@
               "index": 3,
               "text": "，质量保证。",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -1018,11 +1115,11 @@
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/mtgn2dsz",
-      "id": "21",
+      "aid": "sh/jipwn6lg",
+      "id": "23",
       "name": "compare-selling-b-surface",
       "bbox": [
         645,
@@ -1031,32 +1128,34 @@
         170
       ],
       "geometry": "rect",
-      "fillColor": "#C7E7B7",
-      "lineColor": "#333333",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 22,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9w76xsba",
-      "id": "22",
+      "aid": "sh/8nyx0b2x",
+      "id": "24",
       "name": "compare-selling-b-text",
       "bbox": [
-        651,
-        272,
-        573,
-        158
+        653,
+        266,
+        569,
+        170
       ],
       "geometry": "rect",
       "text": "1. 系出名门，与北京同仁同宗同源，百年老号；\n2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全；\n3. 优质优价，性价比高。",
       "textPreview": "1. 系出名门，与北京同仁同宗同源，百年老号； | 2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全； | 3. 优质优价，性价比高。",
       "resolvedFontSize": 21,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1091,7 +1190,7 @@
           "text": "1. 系出名门，与北京同仁同宗同源，百年老号；",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -1099,14 +1198,14 @@
               "index": 1,
               "text": "1. ",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "系出名门",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -1114,7 +1213,7 @@
               "index": 3,
               "text": "，与北京同仁同宗同源，百年老号；",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -1125,7 +1224,7 @@
           "text": "2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全；",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -1133,14 +1232,14 @@
               "index": 1,
               "text": "2. ",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "道地选材",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -1148,7 +1247,7 @@
               "index": 3,
               "text": "，自研国家一类新药麝香酮，急救效果更快更安全；",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -1159,7 +1258,7 @@
           "text": "3. 优质优价，性价比高。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -1167,14 +1266,14 @@
               "index": 1,
               "text": "3. ",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             },
             {
               "index": 2,
               "text": "优质优价",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             },
@@ -1182,7 +1281,7 @@
               "index": 3,
               "text": "，性价比高。",
               "fontSize": 21,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -1192,11 +1291,11 @@
       "lineWidth": 0
     },
     {
-      "order": 23,
+      "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8vy54nap",
-      "id": "23",
+      "aid": "sh/to7etg3i",
+      "id": "25",
       "name": "compare-audience-label-surface",
       "bbox": [
         40,
@@ -1205,33 +1304,35 @@
         85
       ],
       "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#333333",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 24,
+      "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/z6poryt8",
-      "id": "24",
+      "aid": "sh/6lgfy1kr",
+      "id": "26",
       "name": "compare-audience-label-text",
       "bbox": [
-        46,
-        442,
-        138,
-        73
+        48,
+        436,
+        134,
+        85
       ],
       "geometry": "rect",
       "text": "适宜人群",
       "textPreview": "适宜人群",
       "resolvedFontSize": 18,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 18,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1254,7 +1355,7 @@
           "text": "适宜人群",
           "resolvedTextStyle": {
             "fontSize": 18,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -1263,7 +1364,7 @@
               "index": 1,
               "text": "适宜人群",
               "fontSize": 18,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1274,11 +1375,11 @@
       "lineWidth": 0
     },
     {
-      "order": 25,
+      "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/y5gnytsn",
-      "id": "25",
+      "aid": "sh/7mpwr6lc",
+      "id": "27",
       "name": "compare-audience-surface",
       "bbox": [
         190,
@@ -1287,32 +1388,34 @@
         85
       ],
       "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#333333",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 26,
+      "order": 28,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/l876t8be",
-      "id": "26",
+      "aid": "sh/gbix4b2t",
+      "id": "28",
       "name": "compare-audience-text",
       "bbox": [
-        196,
-        442,
-        1028,
-        73
+        198,
+        436,
+        1024,
+        85
       ],
       "geometry": "rect",
       "text": "1. 高血压、中风病史等心脑血管高风险人群家庭备用；\n2. 用于中风（热闭证）及高热神昏的急救。",
       "textPreview": "1. 高血压、中风病史等心脑血管高风险人群家庭备用； | 2. 用于中风（热闭证）及高热神昏的急救。",
       "resolvedFontSize": 19,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1339,7 +1442,7 @@
           "text": "1. 高血压、中风病史等心脑血管高风险人群家庭备用；",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -1347,7 +1450,7 @@
               "index": 1,
               "text": "1. 高血压、中风病史等心脑血管高风险人群家庭备用；",
               "fontSize": 19,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -1358,7 +1461,7 @@
           "text": "2. 用于中风（热闭证）及高热神昏的急救。",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#111111",
+            "color": "#1F2A24",
             "alignment": "left"
           },
           "runs": [
@@ -1366,7 +1469,7 @@
               "index": 1,
               "text": "2. 用于中风（热闭证）及高热神昏的急救。",
               "fontSize": 19,
-              "color": "#111111",
+              "color": "#1F2A24",
               "alignment": "left"
             }
           ],
@@ -1376,11 +1479,11 @@
       "lineWidth": 0
     },
     {
-      "order": 27,
+      "order": 29,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/k7y503at",
-      "id": "27",
+      "aid": "sh/hcrexg3e",
+      "id": "29",
       "name": "compare-combo-label-surface",
       "bbox": [
         40,
@@ -1389,33 +1492,35 @@
         150
       ],
       "geometry": "rect",
-      "fillColor": "#C7E7B7",
-      "lineColor": "#333333",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 28,
+      "order": 30,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/b254nytc",
-      "id": "28",
+      "aid": "sh/r6t0na5w",
+      "id": "30",
       "name": "compare-combo-label-text",
       "bbox": [
-        46,
-        527,
-        138,
-        138
+        48,
+        521,
+        134,
+        150
       ],
       "geometry": "rect",
       "text": "联合用药",
       "textPreview": "联合用药",
       "resolvedFontSize": 18,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 18,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1438,7 +1543,7 @@
           "text": "联合用药",
           "resolvedTextStyle": {
             "fontSize": 18,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -1447,7 +1552,7 @@
               "index": 1,
               "text": "联合用药",
               "fontSize": 18,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1458,11 +1563,11 @@
       "lineWidth": 0
     },
     {
-      "order": 29,
+      "order": 31,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/a1wnutsr",
-      "id": "29",
+      "aid": "sh/q5kzup4b",
+      "id": "31",
       "name": "compare-combo-surface",
       "bbox": [
         190,
@@ -1471,32 +1576,34 @@
         150
       ],
       "geometry": "rect",
-      "fillColor": "#C7E7B7",
-      "lineColor": "#333333",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 30,
+      "order": 32,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gvat8vmd",
-      "id": "30",
+      "aid": "sh/d8vipknm",
+      "id": "32",
       "name": "compare-combo-text",
       "bbox": [
-        196,
-        527,
-        1028,
-        138
+        198,
+        521,
+        1024,
+        150
       ],
       "geometry": "rect",
       "text": "1. 针对三高人群：按内部审核话术说明节气前备用逻辑；\n2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导；\n3. 小儿高热：必须严格按内部审核和专业人员指导使用。\n严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。",
       "textPreview": "1. 针对三高人群：按内部审核话术说明节气前备用逻辑； | 2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导； | 3. 小儿高热：必须严格按内部审核和专业人员指导使用。 | 严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。",
       "resolvedFontSize": 18,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 18,
         "typeface": "+mn-lt",
         "color": "#E60012",
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,

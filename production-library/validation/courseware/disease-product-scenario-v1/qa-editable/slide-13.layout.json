@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/xysxxe",
-    "id": "xysxxe",
+    "aid": "sl/mcaor9",
+    "id": "mcaor9",
     "slide": 13,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/bmpgvepg",
+      "aid": "sh/tcnqxcf6",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wnyx4jq1",
+      "aid": "sh/69w7mxwf",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "3.2",
       "textPreview": "3.2",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "3.2",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "3.2",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xo7yxo7m",
+      "aid": "sh/7a58v2x0",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
       "textPreview": "场景篇——什么时候推荐穿心莲内酯滴丸",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ypgz6t8r",
+      "aid": "sh/gze9sreh",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/jqpgzypc",
+      "aid": "sh/107q1wf2",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/exwrqhwr",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/kryh83qx",
-      "id": "6",
+      "aid": "sh/fy58zmxc",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/lc7y187i",
-      "id": "7",
+      "aid": "sh/o3y9wret",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "13 / 18",
+      "textPreview": "13 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "13 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "13 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "13 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p47q5wfe",
+      "id": "9",
       "name": "consultation-thesis",
       "bbox": [
         70,
@@ -365,7 +450,7 @@
       "resolvedTextStyle": {
         "fontSize": 25,
         "typeface": "+mn-lt",
-        "color": "#009900",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
         "insets": {
@@ -390,7 +475,7 @@
           "text": "实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐",
           "resolvedTextStyle": {
             "fontSize": 25,
-            "color": "#009900",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -399,7 +484,7 @@
               "index": 1,
               "text": "实战销售话术：以“望闻问切”辨顾客，以专业方案做推荐",
               "fontSize": 25,
-              "color": "#009900",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -410,11 +495,11 @@
       "lineWidth": 0
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/etcfup8n",
-      "id": "8",
+      "aid": "sh/9k7658bi",
+      "id": "10",
       "name": "consultation-rule",
       "bbox": [
         90,
@@ -428,11 +513,11 @@
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fulgnup8",
-      "id": "9",
+      "aid": "sh/8jypc3ux",
+      "id": "11",
       "name": "consultation-1-surface",
       "bbox": [
         70,
@@ -440,39 +525,39 @@
         260,
         320
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ju98zmts",
-      "id": "10",
+      "aid": "sh/7ipojytc",
+      "id": "12",
       "name": "consultation-1-accent",
       "bbox": [
-        70,
-        245,
-        6,
-        320
+        80,
+        259,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/yt07qhsn",
-      "id": "11",
+      "aid": "sh/mhw7atcr",
+      "id": "13",
       "name": "consultation-1-title",
       "bbox": [
-        88,
-        259,
-        228,
+        94,
+        257,
+        220,
         38
       ],
       "geometry": "rect",
@@ -480,11 +565,13 @@
       "textPreview": "望 · 观气色辨需求",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -507,7 +594,7 @@
           "text": "望 · 观气色辨需求",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "bold": true,
             "alignment": "left"
           },
@@ -516,7 +603,7 @@
               "index": 1,
               "text": "望 · 观气色辨需求",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -527,34 +614,34 @@
       "lineWidth": 0
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/5grq1wby",
-      "id": "12",
+      "aid": "sh/h87q9sbe",
+      "id": "14",
       "name": "consultation-1-divider",
       "bbox": [
-        88,
+        94,
         303,
-        224,
+        216,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 13,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/kfipsrad",
-      "id": "13",
+      "aid": "sh/w7ypgnu9",
+      "id": "15",
       "name": "consultation-1-body",
       "bbox": [
-        88,
+        94,
         315,
-        224,
+        216,
         236
       ],
       "geometry": "rect",
@@ -564,7 +651,7 @@
       "resolvedTextStyle": {
         "fontSize": 20,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -604,7 +691,7 @@
           "text": "观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。",
           "resolvedTextStyle": {
             "fontSize": 20,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -612,7 +699,7 @@
               "index": 1,
               "text": "观察顾客神态、面色与精神状态，初步判断体质倾向，找准沟通切入点，建立专业第一印象。",
               "fontSize": 20,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -622,11 +709,11 @@
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/bq9ovmtw",
-      "id": "14",
+      "aid": "sh/v6p87ito",
+      "id": "16",
       "name": "consultation-2-surface",
       "bbox": [
         360,
@@ -634,39 +721,39 @@
         260,
         320
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 15,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/apg7mhsb",
-      "id": "15",
+      "aid": "sh/u5g7edc3",
+      "id": "17",
       "name": "consultation-2-accent",
       "bbox": [
-        360,
-        245,
-        6,
-        320
+        370,
+        259,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xsrqxcb2",
-      "id": "16",
+      "aid": "sh/xcn6doba",
+      "id": "18",
       "name": "consultation-2-title",
       "bbox": [
-        378,
-        259,
-        228,
+        384,
+        257,
+        220,
         38
       ],
       "geometry": "rect",
@@ -674,11 +761,13 @@
       "textPreview": "闻 · 听诉求知痛点",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -701,7 +790,7 @@
           "text": "闻 · 听诉求知痛点",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "bold": true,
             "alignment": "left"
           },
@@ -710,7 +799,7 @@
               "index": 1,
               "text": "闻 · 听诉求知痛点",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -721,34 +810,34 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wripo7ah",
-      "id": "17",
+      "aid": "sh/cbep4jup",
+      "id": "19",
       "name": "consultation-2-divider",
       "bbox": [
-        378,
+        384,
         303,
-        224,
+        216,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 18,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nmpor2t0",
-      "id": "18",
+      "aid": "sh/ovypkj2l",
+      "id": "20",
       "name": "consultation-2-body",
       "bbox": [
-        378,
+        384,
         315,
-        224,
+        216,
         236
       ],
       "geometry": "rect",
@@ -758,7 +847,7 @@
       "resolvedTextStyle": {
         "fontSize": 20,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -798,7 +887,7 @@
           "text": "耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。",
           "resolvedTextStyle": {
             "fontSize": 20,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -806,7 +895,7 @@
               "index": 1,
               "text": "耐心倾听顾客描述身体不适与核心诉求，从话语中捕捉深层痛点，为后续辨证推荐提供依据。",
               "fontSize": 20,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -816,11 +905,11 @@
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/mlg7ixsf",
-      "id": "19",
+      "aid": "sh/pwrqtoj6",
+      "id": "21",
       "name": "consultation-3-surface",
       "bbox": [
         650,
@@ -828,39 +917,39 @@
         260,
         320
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 20,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qxw7axc7",
-      "id": "20",
+      "aid": "sh/2tg7itkf",
+      "id": "22",
       "name": "consultation-3-accent",
       "bbox": [
-        650,
-        245,
-        6,
-        320
+        660,
+        259,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ri5832ds",
-      "id": "21",
+      "aid": "sh/3upore10",
+      "id": "23",
       "name": "consultation-3-title",
       "bbox": [
-        668,
-        259,
-        228,
+        674,
+        257,
+        220,
         38
       ],
       "geometry": "rect",
@@ -868,11 +957,13 @@
       "textPreview": "问 · 询细节定方案",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -895,7 +986,7 @@
           "text": "问 · 询细节定方案",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "bold": true,
             "alignment": "left"
           },
@@ -904,7 +995,7 @@
               "index": 1,
               "text": "问 · 询细节定方案",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -915,34 +1006,34 @@
       "lineWidth": 0
     },
     {
-      "order": 22,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cjy9c7ud",
-      "id": "22",
+      "aid": "sh/czipo32x",
+      "id": "24",
       "name": "consultation-3-divider",
       "bbox": [
-        668,
+        674,
         303,
-        224,
+        216,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 23,
+      "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/dk7q5cvi",
-      "id": "23",
+      "aid": "sh/d0rqx8j2",
+      "id": "25",
       "name": "consultation-3-body",
       "bbox": [
-        668,
+        674,
         315,
-        224,
+        216,
         236
       ],
       "geometry": "rect",
@@ -952,7 +1043,7 @@
       "resolvedTextStyle": {
         "fontSize": 20,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -974,11 +1065,11 @@
           },
           {
             "index": 3,
-            "text": "，层层递进厘清“证型”"
+            "text": "，层层递进厘清“证型"
           },
           {
             "index": 4,
-            "text": "，让方案更科学。"
+            "text": "”，让方案更科学。"
           }
         ]
       },
@@ -988,7 +1079,7 @@
           "text": "针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。",
           "resolvedTextStyle": {
             "fontSize": 20,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -996,7 +1087,7 @@
               "index": 1,
               "text": "针对性询问饮食、作息、既往病史等细节，层层递进厘清“证型”，让方案更科学。",
               "fontSize": 20,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -1006,11 +1097,11 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/elgrexc3",
-      "id": "24",
+      "aid": "sh/qx07mtkr",
+      "id": "26",
       "name": "consultation-4-surface",
       "bbox": [
         940,
@@ -1018,39 +1109,39 @@
         260,
         320
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#B8E0CF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 1
     },
     {
-      "order": 25,
+      "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/zmp872do",
-      "id": "25",
+      "aid": "sh/by98vy1c",
+      "id": "27",
       "name": "consultation-4-accent",
       "bbox": [
-        940,
-        245,
-        6,
-        320
+        950,
+        259,
+        4,
+        26
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 26,
+      "order": 28,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/0ny9g7u9",
-      "id": "26",
+      "aid": "sh/0n2ps32t",
+      "id": "28",
       "name": "consultation-4-title",
       "bbox": [
-        958,
-        259,
-        228,
+        964,
+        257,
+        220,
         38
       ],
       "geometry": "rect",
@@ -1058,11 +1149,13 @@
       "textPreview": "切 · 据关键做推荐",
       "resolvedFontSize": 23,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1085,7 +1178,7 @@
           "text": "切 · 据关键做推荐",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#303741",
+            "color": "#33413A",
             "bold": true,
             "alignment": "left"
           },
@@ -1094,7 +1187,7 @@
               "index": 1,
               "text": "切 · 据关键做推荐",
               "fontSize": 23,
-              "color": "#303741",
+              "color": "#33413A",
               "bold": true,
               "alignment": "left"
             }
@@ -1105,34 +1198,34 @@
       "lineWidth": 0
     },
     {
-      "order": 27,
+      "order": 29,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1o7q9cvu",
-      "id": "27",
+      "aid": "sh/lobq18je",
+      "id": "29",
       "name": "consultation-4-divider",
       "bbox": [
-        958,
+        964,
         303,
-        224,
+        216,
         1
       ],
       "geometry": "rect",
-      "fillColor": "#CDE9DE",
-      "lineColor": "#CDE9DE",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 28,
+      "order": 30,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/mpgrihcf",
-      "id": "28",
+      "aid": "sh/vidsr2lg",
+      "id": "30",
       "name": "consultation-4-body",
       "bbox": [
-        958,
+        964,
         315,
-        224,
+        216,
         236
       ],
       "geometry": "rect",
@@ -1142,7 +1235,7 @@
       "resolvedTextStyle": {
         "fontSize": 20,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1178,7 +1271,7 @@
           "text": "结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。",
           "resolvedTextStyle": {
             "fontSize": 20,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1186,7 +1279,7 @@
               "index": 1,
               "text": "结合辨证结果，紧扣顾客核心需求，精准匹配产品与服务，用专业术语解读益处。",
               "fontSize": 20,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],

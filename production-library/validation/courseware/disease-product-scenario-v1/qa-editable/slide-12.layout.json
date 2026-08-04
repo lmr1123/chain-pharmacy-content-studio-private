@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/wbluo1",
-    "id": "wbluo1",
+    "aid": "sl/2z5ski",
+    "id": "2z5ski",
     "slide": 12,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/cfm5kfmt",
+      "aid": "sh/upk3ih4n",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/bed4bal8",
+      "aid": "sh/hsb2dwne",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "3.1",
       "textPreview": "3.1",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "3.1",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "3.1",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qd4nip4n",
+      "aid": "sh/gr2lkrmt",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
       "textPreview": "场景篇——什么时候推荐穿心莲内酯滴丸",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pcvm9k32",
+      "aid": "sh/3udkf65k",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/obm5gfmh",
+      "aid": "sh/2tk3m14z",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pwvmhwna",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/3at47alc",
-      "id": "6",
+      "aid": "sh/4vmlobm5",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/29kne54r",
-      "id": "7",
+      "aid": "sh/jy9k3250",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "12 / 18",
+      "textPreview": "12 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "12 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "12 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "12 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ix03ax4f",
+      "id": "9",
       "name": "scenario-product-name",
       "bbox": [
         70,
@@ -410,11 +495,11 @@
       "lineWidth": 0
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/0ri1gv65",
-      "id": "8",
+      "aid": "im/zadkrmx8",
+      "id": "10",
       "bbox": [
         70,
         195,
@@ -425,17 +510,17 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "4270d540-9f98-412d-8946-c28912e8013a",
+        "assetId": "10708e3e-0531-4eb9-9889-25dabcea0c73",
         "contentType": "image/png",
-        "byteLength": 137786
+        "byteLength": 135238
       }
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/1sri907q",
-      "id": "9",
+      "aid": "im/yp4jyhgn",
+      "id": "11",
       "bbox": [
         455,
         140,
@@ -446,17 +531,17 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "5ab8744e-9867-4157-a054-c6635ef79f47",
+        "assetId": "a5c85754-0bd5-4db9-8155-cd15071a19ca",
         "contentType": "image/png",
         "byteLength": 24826
       }
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/hsvepsvq",
-      "id": "10",
+      "aid": "im/lcv2twfe",
+      "id": "12",
       "bbox": [
         490,
         315,
@@ -467,17 +552,17 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "d84af84d-8f12-4db4-a050-cd7b74af9304",
+        "assetId": "7a762729-867c-4d95-ac8b-18c3b9e550b3",
         "contentType": "image/png",
         "byteLength": 37713
       }
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/grmdgnel",
-      "id": "11",
+      "aid": "im/kbm10ryt",
+      "id": "13",
       "bbox": [
         430,
         505,
@@ -488,22 +573,39 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "57e66e8c-455d-488a-98e4-7051e79bafab",
+        "assetId": "56984ef8-9306-48e6-a6db-a4f1b0eee527",
         "contentType": "image/png",
         "byteLength": 45724
       }
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gjqx4nqt",
-      "id": "12",
-      "name": "audience-label-child",
+      "aid": "sh/srypkz2l",
+      "id": "14",
+      "name": "audience-label-child-surface",
       "bbox": [
         355,
         225,
         76,
+        48
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ts76tkjq",
+      "id": "15",
+      "name": "audience-label-child",
+      "bbox": [
+        369,
+        225,
+        48,
         48
       ],
       "geometry": "rect",
@@ -511,11 +613,13 @@
       "textPreview": "儿童",
       "resolvedFontSize": 25,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 25,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -524,11 +628,15 @@
         }
       },
       "textLayout": {
-        "lineCount": 1,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "儿童"
+            "text": "儿"
+          },
+          {
+            "index": 2,
+            "text": "童"
           }
         ]
       },
@@ -555,15 +663,14 @@
           "marginLeft": 0
         }
       ],
-      "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 13,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1kzexsre",
-      "id": "13",
+      "aid": "sh/6pg7ipkf",
+      "id": "16",
       "name": "audience-arrow-child-1",
       "bbox": [
         600,
@@ -578,7 +685,7 @@
       "resolvedTextStyle": {
         "fontSize": 42,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -603,7 +710,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 42,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -612,7 +719,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 42,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -623,11 +730,11 @@
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/6d8vyd8r",
-      "id": "14",
+      "aid": "sh/rqporu10",
+      "id": "17",
       "name": "audience-child-scene",
       "bbox": [
         700,
@@ -642,7 +749,7 @@
       "resolvedTextStyle": {
         "fontSize": 23,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -667,7 +774,7 @@
           "text": "学校感冒交叉感染",
           "resolvedTextStyle": {
             "fontSize": 23,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -676,7 +783,7 @@
               "index": 1,
               "text": "学校感冒交叉感染",
               "fontSize": 23,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -687,11 +794,11 @@
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/rehwri9c",
-      "id": "15",
+      "aid": "sh/8ve58v21",
+      "id": "18",
       "name": "audience-arrow-child-2",
       "bbox": [
         915,
@@ -706,7 +813,7 @@
       "resolvedTextStyle": {
         "fontSize": 42,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -731,7 +838,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 42,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -740,7 +847,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 42,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -751,11 +858,11 @@
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/sfqd0nqx",
-      "id": "16",
+      "aid": "sh/9wn6h0jm",
+      "id": "19",
       "name": "audience-child-need",
       "bbox": [
         995,
@@ -815,16 +922,33 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tgzetsr2",
-      "id": "17",
-      "name": "audience-label-adult",
+      "aid": "sh/pgveps7e",
+      "id": "20",
+      "name": "audience-label-adult-surface",
       "bbox": [
         395,
         368,
         104,
+        48
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofmdwnqt",
+      "id": "21",
+      "name": "audience-label-adult",
+      "bbox": [
+        409,
+        368,
+        76,
         48
       ],
       "geometry": "rect",
@@ -832,11 +956,13 @@
       "textPreview": "中青年",
       "resolvedFontSize": 25,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 25,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -845,11 +971,15 @@
         }
       },
       "textLayout": {
-        "lineCount": 1,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "中青年"
+            "text": "中青"
+          },
+          {
+            "index": 2,
+            "text": "年"
           }
         ]
       },
@@ -876,15 +1006,14 @@
           "marginLeft": 0
         }
       ],
-      "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 18,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/q9sfah8v",
-      "id": "18",
+      "aid": "sh/3edwnip8",
+      "id": "22",
       "name": "audience-arrow-adult-1",
       "bbox": [
         625,
@@ -899,7 +1028,7 @@
       "resolvedTextStyle": {
         "fontSize": 42,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -924,7 +1053,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 42,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -933,7 +1062,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 42,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -944,11 +1073,11 @@
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ba1w3m9g",
-      "id": "19",
+      "aid": "sh/2d4vud8n",
+      "id": "23",
       "name": "audience-adult-person-1",
       "bbox": [
         710,
@@ -963,7 +1092,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -988,7 +1117,7 @@
           "text": "办公室白领",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -997,7 +1126,7 @@
               "index": 1,
               "text": "办公室白领",
               "fontSize": 22,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1008,11 +1137,11 @@
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nudcveps",
-      "id": "20",
+      "aid": "sh/dkvetc7a",
+      "id": "24",
       "name": "audience-arrow-adult-1",
       "bbox": [
         865,
@@ -1027,7 +1156,7 @@
       "resolvedTextStyle": {
         "fontSize": 38,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1052,7 +1181,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 38,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -1061,7 +1190,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 38,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -1072,11 +1201,11 @@
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/mtkb29o7",
-      "id": "21",
+      "aid": "sh/cjmd07qp",
+      "id": "25",
       "name": "audience-adult-need-1",
       "bbox": [
         935,
@@ -1136,11 +1265,11 @@
       "lineWidth": 0
     },
     {
-      "order": 22,
+      "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9wvux47y",
-      "id": "22",
+      "aid": "sh/bidwr2p4",
+      "id": "26",
       "name": "audience-adult-person-2",
       "bbox": [
         710,
@@ -1155,7 +1284,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1180,7 +1309,7 @@
           "text": "商旅人士",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -1189,7 +1318,7 @@
               "index": 1,
               "text": "商旅人士",
               "fontSize": 22,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1200,11 +1329,11 @@
       "lineWidth": 0
     },
     {
-      "order": 23,
+      "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8vmt4z6d",
-      "id": "23",
+      "aid": "sh/qh4vyx8j",
+      "id": "27",
       "name": "audience-arrow-adult-2",
       "bbox": [
         865,
@@ -1219,7 +1348,7 @@
       "resolvedTextStyle": {
         "fontSize": 38,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1244,7 +1373,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 38,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -1253,7 +1382,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 38,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -1264,11 +1393,11 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 28,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/vydczep4",
-      "id": "24",
+      "aid": "sh/l8fexc7m",
+      "id": "28",
       "name": "audience-adult-need-2",
       "bbox": [
         935,
@@ -1328,11 +1457,11 @@
       "lineWidth": 0
     },
     {
-      "order": 25,
+      "order": 29,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ux4b69oj",
-      "id": "25",
+      "aid": "sh/076d47q1",
+      "id": "29",
       "name": "audience-adult-person-3",
       "bbox": [
         710,
@@ -1347,7 +1476,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1372,7 +1501,7 @@
           "text": "老师",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -1381,7 +1510,7 @@
               "index": 1,
               "text": "老师",
               "fontSize": 22,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1392,11 +1521,11 @@
       "lineWidth": 0
     },
     {
-      "order": 26,
+      "order": 30,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hkvu1o7u",
-      "id": "26",
+      "aid": "sh/itgby9oj",
+      "id": "30",
       "name": "audience-arrow-adult-3",
       "bbox": [
         865,
@@ -1411,7 +1540,7 @@
       "resolvedTextStyle": {
         "fontSize": 38,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1436,7 +1565,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 38,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -1445,7 +1574,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 38,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -1456,11 +1585,11 @@
       "lineWidth": 0
     },
     {
-      "order": 27,
+      "order": 31,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wjmt8j6p",
-      "id": "27",
+      "aid": "sh/ju9sre5o",
+      "id": "31",
       "name": "audience-adult-need-3",
       "bbox": [
         935,
@@ -1520,11 +1649,11 @@
       "lineWidth": 0
     },
     {
-      "order": 28,
+      "order": 32,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/jmxc3yp0",
-      "id": "28",
+      "aid": "sh/4fit0j69",
+      "id": "32",
       "name": "audience-adult-person-4",
       "bbox": [
         710,
@@ -1539,7 +1668,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1564,7 +1693,7 @@
           "text": "全职妈妈",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -1573,7 +1702,7 @@
               "index": 1,
               "text": "全职妈妈",
               "fontSize": 22,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1584,11 +1713,11 @@
       "lineWidth": 0
     },
     {
-      "order": 29,
+      "order": 33,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/il4batof",
-      "id": "29",
+      "aid": "sh/5gratonu",
+      "id": "33",
       "name": "audience-arrow-adult-4",
       "bbox": [
         865,
@@ -1603,7 +1732,7 @@
       "resolvedTextStyle": {
         "fontSize": 38,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1628,7 +1757,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 38,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -1637,7 +1766,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 38,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -1648,11 +1777,11 @@
       "lineWidth": 0
     },
     {
-      "order": 30,
+      "order": 34,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gr6t03mt",
-      "id": "30",
+      "aid": "sh/6h0b2tof",
+      "id": "34",
       "name": "audience-adult-need-4",
       "bbox": [
         935,
@@ -1712,16 +1841,33 @@
       "lineWidth": 0
     },
     {
-      "order": 31,
+      "order": 35,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/1sfat83e",
-      "id": "31",
-      "name": "audience-label-senior",
+      "aid": "sh/ri9sve50",
+      "id": "35",
+      "name": "audience-label-senior-surface",
       "bbox": [
         355,
         550,
         76,
+        48
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sjit4j6l",
+      "id": "36",
+      "name": "audience-label-senior",
+      "bbox": [
+        369,
+        550,
+        48,
         48
       ],
       "geometry": "rect",
@@ -1729,11 +1875,13 @@
       "textPreview": "老年",
       "resolvedFontSize": 25,
       "resolvedTextStyle": {
+        "anchor": 2,
         "fontSize": 25,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -1742,11 +1890,15 @@
         }
       },
       "textLayout": {
-        "lineCount": 1,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "老年"
+            "text": "老"
+          },
+          {
+            "index": 2,
+            "text": "年"
           }
         ]
       },
@@ -1773,15 +1925,14 @@
           "marginLeft": 0
         }
       ],
-      "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 32,
+      "order": 37,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/epobyt4n",
-      "id": "32",
+      "aid": "sh/tkraxon6",
+      "id": "37",
       "name": "audience-arrow-senior-1",
       "bbox": [
         600,
@@ -1796,7 +1947,7 @@
       "resolvedTextStyle": {
         "fontSize": 42,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1821,7 +1972,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 42,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -1830,7 +1981,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 42,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -1841,11 +1992,11 @@
       "lineWidth": 0
     },
     {
-      "order": 33,
+      "order": 38,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/fqxsry58",
-      "id": "33",
+      "aid": "sh/elkb6tob",
+      "id": "38",
       "name": "audience-senior-scene",
       "bbox": [
         705,
@@ -1860,7 +2011,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1889,7 +2040,7 @@
           "text": "秋冬呼吸",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -1898,7 +2049,7 @@
               "index": 1,
               "text": "秋冬呼吸",
               "fontSize": 22,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1910,7 +2061,7 @@
           "text": "疾病高发",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#111111",
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "center"
           },
@@ -1919,7 +2070,7 @@
               "index": 1,
               "text": "疾病高发",
               "fontSize": 22,
-              "color": "#111111",
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "center"
             }
@@ -1930,11 +2081,11 @@
       "lineWidth": 0
     },
     {
-      "order": 34,
+      "order": 39,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/sn6twjmh",
-      "id": "34",
+      "aid": "sh/fmtszy5w",
+      "id": "39",
       "name": "audience-arrow-senior-2",
       "bbox": [
         865,
@@ -1949,7 +2100,7 @@
       "resolvedTextStyle": {
         "fontSize": 38,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#43A817",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1974,7 +2125,7 @@
           "text": "→",
           "resolvedTextStyle": {
             "fontSize": 38,
-            "color": "#CB69B4",
+            "color": "#43A817",
             "bold": true,
             "alignment": "center"
           },
@@ -1983,7 +2134,7 @@
               "index": 1,
               "text": "→",
               "fontSize": 38,
-              "color": "#CB69B4",
+              "color": "#43A817",
               "bold": true,
               "alignment": "center"
             }
@@ -1994,11 +2145,11 @@
       "lineWidth": 0
     },
     {
-      "order": 35,
+      "order": 40,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tofapon2",
-      "id": "35",
+      "aid": "sh/n2psjyx0",
+      "id": "40",
       "name": "audience-senior-need",
       "bbox": [
         935,

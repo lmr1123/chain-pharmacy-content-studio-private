@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/eet5yo",
-    "id": "eet5yo",
+    "aid": "sl/7dnzj2",
+    "id": "7dnzj2",
     "slide": 9,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/t8rexkzq",
+      "aid": "sh/zexgj2dg",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/650fm50z",
+      "aid": "sh/kzqxc7e1",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "2.1",
       "textPreview": "2.1",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "2.1",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "2.1",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/769wvahk",
+      "aid": "sh/l0zylcvm",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "商品篇——穿心莲内酯滴丸的产品信息",
       "textPreview": "商品篇——穿心莲内酯滴丸的产品信息",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "商品篇——穿心莲内酯滴丸的产品信息",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "商品篇——穿心莲内酯滴丸的产品信息",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/gv2xszi1",
+      "aid": "sh/m18fehwr",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hwbe14zm",
+      "aid": "sh/72hgnmdc",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83qxgrex",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/u9kfqp0v",
-      "id": "6",
+      "aid": "sh/94zypwvi",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/254f2dwn",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "09 / 18",
+      "textPreview": "09 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "09 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "09 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "09 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
       "kind": "image",
       "scope": "slide",
-      "aid": "im/ixobmpw7",
-      "id": "7",
+      "aid": "im/6dgfy9sf",
+      "id": "9",
       "bbox": [
         50,
         220,
@@ -361,17 +446,17 @@
       "contentType": "image/png",
       "imageFit": "contain",
       "asset": {
-        "assetId": "6c7abd96-7c9c-4c76-b23b-eb62681a1c02",
+        "assetId": "2690f65b-3f05-4307-93ad-478a71abc686",
         "contentType": "image/png",
         "byteLength": 130348
       }
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/czydwvix",
-      "id": "8",
+      "aid": "sh/zyl8jytc",
+      "id": "10",
       "name": "product-info-outline",
       "bbox": [
         360,
@@ -379,17 +464,17 @@
         835,
         440
       ],
-      "geometry": "rect",
+      "geometry": "roundRect",
       "fillColor": "#FFFFFF",
-      "lineColor": "#009900",
-      "lineWidth": 4
+      "lineColor": "#066A2F",
+      "lineWidth": 1.5
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/x07ep0ji",
-      "id": "9",
+      "aid": "sh/yxc7atsr",
+      "id": "11",
       "name": "product-info-label-1",
       "bbox": [
         400,
@@ -404,7 +489,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
         "insets": {
@@ -429,7 +514,7 @@
           "text": "【成  份】",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#303741",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -438,7 +523,7 @@
               "index": 1,
               "text": "【成  份】",
               "fontSize": 22,
-              "color": "#303741",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -449,11 +534,11 @@
       "lineWidth": 0
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/t4vm5wve",
-      "id": "10",
+      "aid": "sh/l03ql8b2",
+      "id": "12",
       "name": "product-info-value-1",
       "bbox": [
         565,
@@ -468,7 +553,7 @@
       "resolvedTextStyle": {
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -482,11 +567,11 @@
         "lines": [
           {
             "index": 1,
-            "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜"
+            "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包"
           },
           {
             "index": 2,
-            "text": "包衣预混剂。"
+            "text": "衣预混剂。"
           }
         ]
       },
@@ -496,7 +581,7 @@
           "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -504,7 +589,7 @@
               "index": 1,
               "text": "穿心莲内酯（纯度高达97%以上）；辅料为聚乙二醇、薄膜包衣预混剂。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -514,11 +599,11 @@
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/s3m5cbe9",
-      "id": "11",
+      "aid": "sh/kzupc3ah",
+      "id": "13",
       "name": "product-info-label-2",
       "bbox": [
         400,
@@ -533,7 +618,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
         "insets": {
@@ -558,7 +643,7 @@
           "text": "【性  状】",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#303741",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -567,7 +652,7 @@
               "index": 1,
               "text": "【性  状】",
               "fontSize": 22,
-              "color": "#303741",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -578,11 +663,11 @@
       "lineWidth": 0
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/72d436xo",
-      "id": "12",
+      "aid": "sh/bu1ofyt0",
+      "id": "14",
       "name": "product-info-value-2",
       "bbox": [
         565,
@@ -597,7 +682,7 @@
       "resolvedTextStyle": {
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -621,7 +706,7 @@
           "text": "本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -629,7 +714,7 @@
               "index": 1,
               "text": "本品为黄色的包衣滴丸，除去包衣后显类白色；味苦。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -639,11 +724,11 @@
       "lineWidth": 0
     },
     {
-      "order": 13,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/614na1w3",
-      "id": "13",
+      "aid": "sh/a9s76tsf",
+      "id": "15",
       "name": "product-info-label-3",
       "bbox": [
         400,
@@ -658,7 +743,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
         "insets": {
@@ -683,7 +768,7 @@
           "text": "【功能主治】",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#303741",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -692,7 +777,7 @@
               "index": 1,
               "text": "【功能主治】",
               "fontSize": 22,
-              "color": "#303741",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -703,11 +788,11 @@
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/hsfm9gvq",
-      "id": "14",
+      "aid": "sh/xw36hob6",
+      "id": "16",
       "name": "product-info-value-3",
       "bbox": [
         565,
@@ -733,15 +818,11 @@
         }
       },
       "textLayout": {
-        "lineCount": 2,
+        "lineCount": 1,
         "lines": [
           {
             "index": 1,
-            "text": "清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛"
-          },
-          {
-            "index": 2,
-            "text": "。"
+            "text": "清热解毒，抗菌消炎。用于上呼吸道感染风热证所致的咽痛。"
           }
         ]
       },
@@ -771,11 +852,11 @@
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/grm5gbe5",
-      "id": "15",
+      "aid": "sh/cvup83al",
+      "id": "17",
       "name": "product-info-label-4",
       "bbox": [
         400,
@@ -790,7 +871,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
         "insets": {
@@ -815,7 +896,7 @@
           "text": "【规  格】",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#303741",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -824,7 +905,7 @@
               "index": 1,
               "text": "【规  格】",
               "fontSize": 22,
-              "color": "#303741",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -835,11 +916,11 @@
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/f6d476dk",
-      "id": "16",
+      "aid": "sh/n61obet4",
+      "id": "18",
       "name": "product-info-value-4",
       "bbox": [
         565,
@@ -854,7 +935,7 @@
       "resolvedTextStyle": {
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -878,7 +959,7 @@
           "text": "每袋含穿心莲内酯0.15g。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -886,7 +967,7 @@
               "index": 1,
               "text": "每袋含穿心莲内酯0.15g。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],
@@ -896,11 +977,11 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/u54ne1wz",
-      "id": "17",
+      "aid": "sh/25s729sj",
+      "id": "19",
       "name": "product-info-label-5",
       "bbox": [
         400,
@@ -915,7 +996,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
         "insets": {
@@ -940,7 +1021,7 @@
           "text": "【用量用法】",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#303741",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -949,7 +1030,7 @@
               "index": 1,
               "text": "【用量用法】",
               "fontSize": 22,
-              "color": "#303741",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -960,11 +1041,11 @@
       "lineWidth": 0
     },
     {
-      "order": 18,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pwfmdgvm",
-      "id": "18",
+      "aid": "sh/q187e9wb",
+      "id": "20",
       "name": "product-info-value-5",
       "bbox": [
         565,
@@ -1024,11 +1105,11 @@
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/4v65kve1",
-      "id": "19",
+      "aid": "sh/r2h8nedw",
+      "id": "21",
       "name": "product-info-label-6",
       "bbox": [
         400,
@@ -1043,7 +1124,7 @@
       "resolvedTextStyle": {
         "fontSize": 22,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "left",
         "insets": {
@@ -1068,7 +1149,7 @@
           "text": "【禁  忌】",
           "resolvedTextStyle": {
             "fontSize": 22,
-            "color": "#303741",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "left"
           },
@@ -1077,7 +1158,7 @@
               "index": 1,
               "text": "【禁  忌】",
               "fontSize": 22,
-              "color": "#303741",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "left"
             }
@@ -1088,11 +1169,11 @@
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ozepgzmd",
-      "id": "20",
+      "aid": "sh/s3qpgjeh",
+      "id": "22",
       "name": "product-info-value-6",
       "bbox": [
         565,
@@ -1107,7 +1188,7 @@
       "resolvedTextStyle": {
         "fontSize": 21,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1131,7 +1212,7 @@
           "text": "对本品过敏者禁用。",
           "resolvedTextStyle": {
             "fontSize": 21,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "left"
           },
           "runs": [
@@ -1139,7 +1220,7 @@
               "index": 1,
               "text": "对本品过敏者禁用。",
               "fontSize": 21,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "left"
             }
           ],

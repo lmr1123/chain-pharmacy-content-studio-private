@@ -5,7 +5,7 @@
   "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
   "canonical_artifact": "金银花露_商品培训课件_复刻验证.pptx",
   "canonical_confirmed_by": "user",
-  "canonical_confirmed_at": "2026-07-30",
+  "canonical_confirmed_at": "2026-08-04",
   "generator": "poc/courseware-export/work/build-product-courseware.mjs",
   "structured_input": "poc/courseware-export/product-courseware-green.json",
   "business_input": {
@@ -23,7 +23,7 @@
     "3-review-content-draft",
     "4-generate-pptx-after-draft-approval"
   ],
-  "notes": "五页绿色商品培训原版式可编辑模板。标准用法见 业务使用流程.md：先选模板→交资料(可残缺)→审初稿→确认后再出PPT。联合用药页：联合商品图按行独立 + 本品图纵向合并。字体统一微软雅黑。被否决的三页品牌升级签样只保留在 validation。",
+  "notes": "五页绿色商品培训可编辑模板（2026-08-04 视觉升级 v2：token GREEN_DEEP/MINT/PALE/INK/MUTED/LINE、圆角 chrome、表头深绿、微软雅黑字体注入；与穿心莲 courseware2 视觉体系对齐）。标准用法见 业务使用流程.md。联合用药页：联合商品图按行独立 + 本品图纵向合并。前后对比与迭代产物见 validation/upgrade-v2。",
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [

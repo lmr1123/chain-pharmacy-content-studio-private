@@ -9,42 +9,63 @@ const workDir = path.dirname(currentFile);
 const projectDir = path.resolve(workDir, "..");
 const repoDir = path.resolve(projectDir, "../..");
 const dataPath = path.join(projectDir, "product-courseware-green.json");
-const outputPptx = path.join(
-  repoDir,
-  "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
-);
-const qaDir = path.join(
-  repoDir,
-  "production-library/validation/courseware/product-courseware-green-v1/qa",
-);
+// --out / --qa：默认 settled；升级迭代改道 validation，避免误覆盖已签样金样。
+function cliValue(flag) {
+  const index = process.argv.indexOf(flag);
+  return index >= 0 && process.argv[index + 1] ? path.resolve(process.argv[index + 1]) : null;
+}
+const outputPptx =
+  cliValue("--out") ??
+  path.join(
+    repoDir,
+    "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+  );
+const qaDir =
+  cliValue("--qa") ??
+  path.join(
+    repoDir,
+    "production-library/validation/courseware/product-courseware-green-v1/qa",
+  );
 
 const data = JSON.parse(await fs.readFile(dataPath, "utf8"));
+const TOTAL_PAGES = data.pages.length;
 
 const W = 1280;
 const H = 720;
 // 企业内训 PPT 统一微软雅黑；导出后再 postprocess 注入 OOXML typeface
 const FONT = "Microsoft YaHei";
-const GREEN = data.brand.primary;
-const GREEN_2 = data.brand.secondary;
-const PALE = data.brand.pale;
-const LIGHT = "#F1F1F1";
+// 品牌绿色阶（与穿心莲 courseware2 视觉升级 token 对齐）
+const GREEN = data.brand.primary; // 主色 #009900
+const GREEN_DEEP = "#066A2F"; // 标题/重强调/表头
+const GREEN_2 = data.brand.secondary; // #45A817
+const MINT = "#E9F7EE"; // 卡片/总结条浅底
+const PALE = "#F4FAF5"; // 斑马纹/更浅底
+// 中性色阶
+const INK = "#1F2A24"; // 正文
+const MUTED = "#5A6B61"; // 辅助说明
+const LINE = "#D9E9DF"; // 细分隔线/边框
+// 语义色
+const RED = "#E60012"; // 仅禁忌/警示/卖点红字
+const BLUE = "#176A91"; // 封面建筑区保留
+const SOFT_YELLOW = "#FFF3C4"; // 卖点高亮（替代刺眼 #FFF200）
 const WHITE = "#FFFFFF";
-const BLACK = "#111111";
-const RED = "#E60012";
-const YELLOW = "#FFF200";
-const BLUE = "#176A91";
+const BLACK = INK;
+const LIGHT = PALE; // 兼容旧斑马命名
 
 const presentation = Presentation.create({
   slideSize: { width: W, height: H },
 });
 
-function rect(slide, name, x, y, width, height, fill, line = "none", lineWidth = 0) {
+function rect(slide, name, x, y, width, height, fill, line = "none", lineWidth = 0, opts = {}) {
+  const { radius = 0, shadow } = opts;
   return slide.shapes.add({
-    geometry: "rect",
+    geometry: radius > 0 ? "roundRect" : "rect",
     name,
     position: { left: x, top: y, width, height },
     fill,
     line: { style: "solid", fill: line, width: lineWidth },
+    ...(radius > 0 ? { borderRadius: radius } : {}),
+    ...(shadow ? { shadow } : {}),
   });
 }
 
@@ -71,17 +92,20 @@ function text(
     color = BLACK,
     bold = false,
     align = "left",
+    vAlign,
     fill = "none",
     line = "none",
     lineWidth = 0,
+    radius = 0,
   } = {},
 ) {
   const shape = slide.shapes.add({
-    geometry: "textbox",
+    geometry: radius > 0 ? "roundRect" : "textbox",
     name,
     position: { left: x, top: y, width, height },
     fill,
     line: { style: "solid", fill: line, width: lineWidth },
+    ...(radius > 0 ? { borderRadius: radius } : {}),
   });
   shape.text = value;
   shape.text.style = {
@@ -90,6 +114,7 @@ function text(
     color,
     bold,
     alignment: align,
+    ...(vAlign ? { verticalAlignment: vAlign } : {}),
   };
   return shape;
 }
@@ -108,21 +133,18 @@ function cell(
     size = 17,
     bold = false,
     align = "center",
-    line = WHITE,
+    line = LINE,
     lineWidth = 1,
   } = {},
 ) {
   rect(slide, `${name}-surface`, x, y, width, height, fill, line, lineWidth);
-  return text(
-    slide,
-    `${name}-text`,
-    value,
-    x + 8,
-    y + 8,
-    width - 16,
-    height - 16,
-    { size, color, bold, align },
-  );
+  return text(slide, `${name}-text`, value, x + 8, y, width - 16, height, {
+    size,
+    color,
+    bold,
+    align,
+    vAlign: "middle",
+  });
 }
 
 function addNotes(slide, reference) {
@@ -132,47 +154,83 @@ function addNotes(slide, reference) {
   slide.speakerNotes.setVisible(true);
 }
 
-function addBrand(slide, x = 1080, y = 18) {
-  text(slide, "brand-wordmark", "大参林 dashenlin", x, y, 165, 42, {
-    size: 18,
-    color: GREEN_2,
-    bold: true,
+function addFooter(slide, { showIndex = false } = {}) {
+  const pageNo = presentation.slides.items.length;
+  text(slide, "internal-notice", data.brand.internal_notice, 1010, 688, 160, 22, {
+    size: 12,
+    color: MUTED,
     align: "right",
   });
-}
-
-function addFooter(slide) {
-  text(slide, "internal-notice", data.brand.internal_notice, 1080, 688, 170, 22, {
-    size: 14,
-    align: "right",
-  });
+  if (showIndex) {
+    text(
+      slide,
+      "page-index",
+      `${String(pageNo).padStart(2, "0")} / ${String(TOTAL_PAGES).padStart(2, "0")}`,
+      1180,
+      688,
+      64,
+      22,
+      { size: 12, color: MUTED, align: "right" },
+    );
+  }
 }
 
 function addPageChrome(slide, page) {
   slide.background.fill = WHITE;
-  rect(slide, "header-shadow-line", 0, 69, W, 3, "#D9E8D4");
-  rect(slide, "header-green-line", 95, 69, W - 95, 4, GREEN);
-  rect(slide, "page-number-block", 30, 0, 70, 83, GREEN);
-  text(slide, "page-number", page.page_number, 22, 19, 86, 48, {
-    size: 28,
-    color: WHITE,
-    align: "center",
-  });
-  text(slide, "page-title", page.title, 110, 16, 740, 48, {
-    size: 30,
+  if (page.page_number) {
+    rect(slide, "page-number-block", 32, 18, 64, 42, GREEN_DEEP, "none", 0, { radius: 10 });
+    text(slide, "page-number", page.page_number, 32, 18, 64, 42, {
+      size: 21,
+      color: WHITE,
+      bold: true,
+      align: "center",
+      vAlign: "middle",
+    });
+  }
+  text(slide, "page-title", page.title, 114, 14, 900, 50, {
+    size: 27,
+    color: INK,
     bold: true,
+    vAlign: "middle",
   });
-  addBrand(slide);
-  addFooter(slide);
+  rect(slide, "chrome-hairline", 32, 73, 1216, 1, LINE);
+  rect(slide, "chrome-rule-accent", 114, 70, 72, 5, GREEN, "none", 0, { radius: 2 });
+  text(slide, "brand-wordmark", data.brand.display_name || "大参林 dashenlin", 1080, 18, 164, 40, {
+    size: 14,
+    color: GREEN_2,
+    bold: true,
+    align: "right",
+  });
+  addFooter(slide, { showIndex: true });
 }
 
-function assetSlot(slide, name, label, x, y, width, height, fill = "#D9EEF4") {
-  rect(slide, `${name}-surface`, x, y, width, height, fill, "#8ABFC8", 1);
+function assetSlot(slide, name, label, x, y, width, height, fill = MINT) {
+  rect(slide, `${name}-surface`, x, y, width, height, fill, LINE, 1, { radius: 10 });
   text(slide, `${name}-label`, label, x + 10, y + height / 2 - 25, width - 20, 50, {
-    size: 16,
-    color: "#315C62",
+    size: 15,
+    color: MUTED,
     bold: true,
     align: "center",
+    vAlign: "middle",
+  });
+}
+
+/** 薄荷底 + 绿左条 callout（总结条/卖点条） */
+function callout(slide, name, value, x, y, width, height, options = {}) {
+  const { fill, color = WHITE, size = 18, bold = true } = options;
+  const mintMode = fill === undefined;
+  const surface = mintMode ? MINT : fill;
+  const textColor = mintMode ? INK : color;
+  rect(slide, `${name}-surface`, x, y, width, height, surface, "none", 0, { radius: 10 });
+  if (mintMode) {
+    rect(slide, `${name}-accent`, x + 8, y + 10, 4, height - 20, GREEN, "none", 0, { radius: 2 });
+  }
+  const insetX = mintMode ? 24 : 14;
+  text(slide, name, value, x + insetX, y, width - insetX - 14, height, {
+    size,
+    color: textColor,
+    bold,
+    vAlign: "middle",
   });
 }
 
@@ -223,9 +281,11 @@ function addCover(page) {
     color: WHITE,
     bold: true,
     align: "center",
-    fill: "#00775C",
+    fill: GREEN_DEEP,
+    radius: 8,
+    vAlign: "middle",
   });
-  addFooter(slide);
+  addFooter(slide, { showIndex: true });
   addNotes(slide, page.reference);
 }
 
@@ -233,12 +293,13 @@ function addOverview(page) {
   const slide = presentation.slides.add();
   addPageChrome(slide, page);
 
-  assetSlot(slide, "primary-packshot", "商品包装高清图\n待接入", 145, 82, 205, 270);
+  assetSlot(slide, "primary-packshot", "商品包装高清图\n待接入", 145, 92, 205, 260);
   text(slide, "product-name", page.product.display_name, 130, 365, 240, 34, {
-    size: 23,
+    size: 22,
     color: RED,
     bold: true,
     align: "center",
+    vAlign: "middle",
   });
 
   const tableX = 38;
@@ -248,9 +309,11 @@ function addOverview(page) {
   let cursorX = tableX;
   headers.forEach((header, index) => {
     cell(slide, `product-table-head-${index}`, header, cursorX, tableY, widths[index], 48, {
-      size: 19,
+      fill: GREEN_DEEP,
+      color: WHITE,
+      size: 18,
       bold: true,
-      line: BLACK,
+      line: LINE,
     });
     cursorX += widths[index];
   });
@@ -269,21 +332,20 @@ function addOverview(page) {
       tableY + 48,
       widths[index],
       56,
-      { size: index === 0 ? 16 : 19, line: BLACK },
+      { size: index === 0 ? 16 : 19, fill: index % 2 === 0 ? WHITE : PALE, line: LINE },
     );
     cursorX += widths[index];
   });
 
-  rect(slide, "selling-point-highlight", 38, 544, 467, 120, YELLOW);
-  text(
+  callout(
     slide,
     "selling-point",
     `一句话卖点：${page.product.one_line_selling_point}`,
-    48,
-    573,
-    445,
-    70,
-    { size: 21, bold: true },
+    38,
+    544,
+    467,
+    120,
+    { fill: SOFT_YELLOW, color: INK, size: 20, bold: true },
   );
 
   const sectionX = 525;
@@ -299,7 +361,15 @@ function addOverview(page) {
       y,
       170,
       34,
-      { size: 21, color: WHITE, bold: true, align: "center", fill: GREEN },
+      {
+        size: 20,
+        color: WHITE,
+        bold: true,
+        align: "center",
+        fill: GREEN_DEEP,
+        radius: 8,
+        vAlign: "middle",
+      },
     );
     y += 39;
     section.items.forEach((item, itemIndex) => {
@@ -312,7 +382,12 @@ function addOverview(page) {
         y,
         sectionW,
         itemHeight,
-        { size: sectionIndex === 1 ? 17 : 18, bold: sectionIndex === 1 },
+        {
+          size: sectionIndex === 1 ? 17 : 18,
+          color: INK,
+          bold: sectionIndex === 1,
+          vAlign: "middle",
+        },
       );
       y += itemHeight;
     });
@@ -357,11 +432,11 @@ function addCombination(page) {
   let cx = x;
   headers.forEach((header, index) => {
     cell(slide, `combination-head-${index}`, header, cx, y, widths[index], headerH, {
-      fill: GREEN,
+      fill: GREEN_DEEP,
       color: WHITE,
-      size: index <= 1 ? 16 : 17,
+      size: index <= 1 ? 15 : 16,
       bold: true,
-      line: WHITE,
+      line: LINE,
     });
     cx += widths[index];
   });
@@ -376,7 +451,7 @@ function addCombination(page) {
   let cy = bodyTop;
   page.rows.forEach((row, rowIndex) => {
     const h = rowHeights[rowIndex];
-    const fill = rowIndex % 2 === 1 ? PALE : LIGHT;
+    const fill = rowIndex % 2 === 1 ? PALE : WHITE;
     const talkSize = (row.talk_track || "").length > 95 ? 14 : 15;
 
     cell(slide, `combination-scenario-${rowIndex}`, row.scenario, x, cy, widths[0], h, {
@@ -384,6 +459,7 @@ function addCombination(page) {
       size: 15,
       bold: true,
       align: "left",
+      line: LINE,
     });
     cell(
       slide,
@@ -393,7 +469,7 @@ function addCombination(page) {
       cy,
       widths[1],
       h,
-      { fill, size: 15, bold: true, align: "left" },
+      { fill, size: 15, bold: true, align: "left", line: LINE },
     );
 
     // 每行：联合商品图（独立列）
@@ -405,7 +481,7 @@ function addCombination(page) {
       widths[2],
       h,
       fill,
-      WHITE,
+      LINE,
       1,
     );
     const partnerSlotH = Math.min(h - 28, 150);
@@ -417,7 +493,7 @@ function addCombination(page) {
       cy + (h - partnerSlotH) / 2,
       widths[2] - 40,
       partnerSlotH,
-      "#F7FAF4",
+      MINT,
     );
 
     // 行分隔线仍画在本品列背景上（合并列本体在循环外绘制）
@@ -429,7 +505,7 @@ function addCombination(page) {
       cy,
       widths[4],
       h,
-      { fill, size: talkSize, align: "left" },
+      { fill, size: talkSize, align: "left", line: LINE },
     );
     cy += h;
   });
@@ -443,8 +519,8 @@ function addCombination(page) {
     bodyTop,
     widths[3],
     bodyH,
-    PALE,
-    WHITE,
+    MINT,
+    LINE,
     1,
   );
   // 左侧细竖线分隔，强调「每行搭档 + 共用本品」
@@ -458,7 +534,7 @@ function addCombination(page) {
     bodyTop + bodyH / 2 - 28,
     40,
     56,
-    { size: 40, color: RED, bold: true, align: "center" },
+    { size: 40, color: RED, bold: true, align: "center", vAlign: "middle" },
   );
 
   const primarySlotW = 130;
@@ -471,7 +547,7 @@ function addCombination(page) {
     bodyTop + (bodyH - primarySlotH) / 2,
     primarySlotW,
     primarySlotH,
-    "#D9EEF4",
+    WHITE,
   );
 
   addNotes(slide, page.reference);
@@ -488,11 +564,11 @@ function addBenchmark(page) {
   let cx = x;
   page.columns.forEach((header, index) => {
     cell(slide, `benchmark-head-${index}`, header, cx, y, widths[index], rowHeights[0], {
-      fill: GREEN,
+      fill: GREEN_DEEP,
       color: WHITE,
       size: 18,
       bold: true,
-      line: BLACK,
+      line: LINE,
     });
     cx += widths[index];
   });
@@ -500,13 +576,15 @@ function addBenchmark(page) {
   let cy = y + rowHeights[0];
   page.rows.forEach((row, rowIndex) => {
     const h = rowHeights[rowIndex + 1];
+    const zebra = rowIndex % 2 === 1 ? PALE : WHITE;
     cell(slide, `benchmark-label-${rowIndex}`, row.label, x, cy, widths[0], h, {
+      fill: MINT,
       bold: true,
-      size: 18,
-      line: BLACK,
+      size: 17,
+      line: LINE,
     });
     if (row.label === "产品展示") {
-      rect(slide, "benchmark-product-left-cell", x + widths[0], cy, widths[1], h, WHITE, BLACK, 1);
+      rect(slide, "benchmark-product-left-cell", x + widths[0], cy, widths[1], h, WHITE, LINE, 1);
       rect(
         slide,
         "benchmark-product-right-cell",
@@ -515,7 +593,7 @@ function addBenchmark(page) {
         widths[2],
         h,
         WHITE,
-        BLACK,
+        LINE,
         1,
       );
       assetSlot(
@@ -535,7 +613,7 @@ function addBenchmark(page) {
         cy + 18,
         140,
         h - 36,
-        "#E9F1E8",
+        PALE,
       );
     } else if (row.merge) {
       cell(
@@ -546,7 +624,12 @@ function addBenchmark(page) {
         cy,
         widths[1] + widths[2],
         h,
-        { size: 18, bold: row.label === "共有优势", line: BLACK },
+        {
+          fill: zebra,
+          size: 17,
+          bold: row.label === "共有优势",
+          line: LINE,
+        },
       );
     } else {
       cell(
@@ -558,10 +641,11 @@ function addBenchmark(page) {
         widths[1],
         h,
         {
-          size: 18,
+          fill: zebra,
+          size: 17,
           color: row.label === "卖点差异" ? RED : BLACK,
           bold: row.label === "卖点差异",
-          line: BLACK,
+          line: LINE,
         },
       );
       cell(
@@ -572,7 +656,7 @@ function addBenchmark(page) {
         cy,
         widths[2],
         h,
-        { size: 18, line: BLACK },
+        { fill: zebra, size: 17, line: LINE },
       );
     }
     cy += h;
@@ -585,17 +669,21 @@ function addPrecautions(page) {
   addPageChrome(slide, page);
 
   text(slide, "precautions-label", "注意事项：", 58, 126, 130, 38, {
-    size: 22,
+    size: 20,
     color: WHITE,
     bold: true,
     align: "center",
-    fill: GREEN,
+    fill: GREEN_DEEP,
+    radius: 8,
+    vAlign: "middle",
   });
   let y = 185;
   page.items.forEach((item, index) => {
     const h = index === 3 || index === 4 ? 105 : 65;
     text(slide, `precaution-item-${index}`, `${index + 1}、${item}`, 58, y, 565, h, {
-      size: 20,
+      size: 19,
+      color: INK,
+      vAlign: "middle",
     });
     y += h;
   });
@@ -604,7 +692,7 @@ function addPrecautions(page) {
   const gridY = 105;
   const gridW = 540;
   const gridH = 535;
-  const gap = 6;
+  const gap = 10;
   const cellW = (gridW - gap) / 2;
   const cellH = (gridH - gap) / 2;
   page.illustration_slots.forEach((slot, index) => {
@@ -612,21 +700,25 @@ function addPrecautions(page) {
     const row = Math.floor(index / 2);
     const sx = gridX + col * (cellW + gap);
     const sy = gridY + row * (cellH + gap);
-    rect(slide, `precaution-card-${index}`, sx, sy, cellW, cellH, "#F5FBEC", GREEN, 3);
-    text(slide, `precaution-card-title-${index}`, `！ ${slot.title}`, sx + 20, sy + 22, cellW - 40, 38, {
-      size: 22,
+    rect(slide, `precaution-card-${index}`, sx, sy, cellW, cellH, MINT, LINE, 1, { radius: 12 });
+    rect(slide, `precaution-card-accent-${index}`, sx + 10, sy + 16, 4, 24, GREEN, "none", 0, {
+      radius: 2,
+    });
+    text(slide, `precaution-card-title-${index}`, slot.title, sx + 24, sy + 14, cellW - 40, 38, {
+      size: 20,
+      color: GREEN_DEEP,
       bold: true,
-      align: "center",
+      vAlign: "middle",
     });
     assetSlot(
       slide,
       `precaution-asset-${index}`,
       `原创插图槽位\n${slot.title}`,
-      sx + 35,
-      sy + 76,
-      cellW - 70,
-      cellH - 105,
-      index % 2 === 0 ? "#DDF6E9" : "#FFF4DB",
+      sx + 28,
+      sy + 64,
+      cellW - 56,
+      cellH - 86,
+      index % 2 === 0 ? WHITE : SOFT_YELLOW,
     );
   });
   addNotes(slide, page.reference);
@@ -692,6 +784,7 @@ console.log(JSON.stringify({
   pptx: outputPptx,
   slides: presentation.slides.items.length,
   qaDir,
+  visual_tokens: "courseware2-upgrade-v2 (GREEN_DEEP/MINT/PALE/INK/MUTED/LINE)",
   combination_layout: "partner-per-row + primary-merged-column",
   postprocess: post.stdout.trim(),
 }, null, 2));

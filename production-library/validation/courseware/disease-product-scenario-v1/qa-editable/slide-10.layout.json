@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/088lx2",
-    "id": "088lx2",
+    "aid": "sl/1jc9yh",
+    "id": "1jc9yh",
     "slide": 10,
-    "layoutId": "947d6a96-e62f-4306-a792-fa383c300bc9",
+    "layoutId": "1c031eef-4be0-4383-9e6e-1314f0004b38",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+    "masterLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "947d6a96-e62f-4306-a792-fa383c300bc9",
+      "id": "1c031eef-4be0-4383-9e6e-1314f0004b38",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "parentLayoutId": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "bdcd76d7-4d67-4a26-b482-5d03a65551e8",
+      "id": "d2799139-5dd4-4b5f-b57f-9eb615d29ede",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,41 +64,44 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wvmp47ux",
+      "aid": "sh/47etsr2l",
       "id": "1",
       "name": "chrome-left-number",
       "bbox": [
-        28,
-        0,
-        76,
-        84
+        32,
+        18,
+        64,
+        42
       ],
-      "geometry": "rect",
-      "fillColor": "#009900",
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/vudobmtc",
+      "aid": "sh/365cj610",
       "id": "2",
       "name": "chrome-page-number",
       "bbox": [
-        25,
-        17,
-        82,
-        47
+        32,
+        18,
+        64,
+        42
       ],
       "geometry": "rect",
       "text": "2.2",
       "textPreview": "2.2",
-      "resolvedFontSize": 30,
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 30,
+        "anchor": 2,
+        "fontSize": 21,
         "typeface": "+mn-lt",
         "color": "#FFFFFF",
+        "bold": true,
         "alignment": "center",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -120,16 +123,18 @@
           "index": 1,
           "text": "2.2",
           "resolvedTextStyle": {
-            "fontSize": 30,
+            "fontSize": 21,
             "color": "#FFFFFF",
+            "bold": true,
             "alignment": "center"
           },
           "runs": [
             {
               "index": 1,
               "text": "2.2",
-              "fontSize": 30,
+              "fontSize": 21,
               "color": "#FFFFFF",
+              "bold": true,
               "alignment": "center"
             }
           ],
@@ -142,7 +147,7 @@
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ut472hcr",
+      "aid": "sh/i5wbq1kf",
       "id": "3",
       "name": "chrome-title",
       "bbox": [
@@ -154,13 +159,15 @@
       "geometry": "rect",
       "text": "商品篇——穿心莲内酯滴丸的产品优势",
       "textPreview": "商品篇——穿心莲内酯滴丸的产品优势",
-      "resolvedFontSize": 28,
+      "resolvedFontSize": 27,
       "resolvedTextStyle": {
-        "fontSize": 28,
+        "anchor": 2,
+        "fontSize": 27,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#1F2A24",
         "bold": true,
         "alignment": "left",
+        "verticalAlignment": "middle",
         "insets": {
           "top": 4.8,
           "right": 9.6,
@@ -182,8 +189,8 @@
           "index": 1,
           "text": "商品篇——穿心莲内酯滴丸的产品优势",
           "resolvedTextStyle": {
-            "fontSize": 28,
-            "color": "#111111",
+            "fontSize": 27,
+            "color": "#1F2A24",
             "bold": true,
             "alignment": "left"
           },
@@ -191,8 +198,8 @@
             {
               "index": 1,
               "text": "商品篇——穿心莲内酯滴丸的产品优势",
-              "fontSize": 28,
-              "color": "#111111",
+              "fontSize": 27,
+              "color": "#1F2A24",
               "bold": true,
               "alignment": "left"
             }
@@ -206,39 +213,56 @@
       "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9sv69cb6",
+      "aid": "sh/h4nuhwju",
       "id": "4",
-      "name": "chrome-green-rule",
+      "name": "chrome-hairline",
       "bbox": [
-        104,
-        70,
-        1140,
-        3
+        32,
+        73,
+        1216,
+        1
       ],
       "geometry": "rect",
-      "fillColor": "#009900",
-      "lineColor": "#009900",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8rmp07ul",
+      "aid": "sh/g3etor2p",
       "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v25cfm14",
+      "id": "6",
       "name": "chrome-brand",
       "bbox": [
         1080,
         18,
-        150,
+        164,
         40
       ],
       "geometry": "rect",
       "text": "大参林 dashenlin",
       "textPreview": "大参林 dashenlin",
-      "resolvedFontSize": 15,
+      "resolvedFontSize": 14,
       "resolvedTextStyle": {
-        "fontSize": 15,
+        "fontSize": 14,
         "typeface": "+mn-lt",
         "color": "#43A817",
         "bold": true,
@@ -264,7 +288,7 @@
           "index": 1,
           "text": "大参林 dashenlin",
           "resolvedTextStyle": {
-            "fontSize": 15,
+            "fontSize": 14,
             "color": "#43A817",
             "bold": true,
             "alignment": "right"
@@ -273,7 +297,7 @@
             {
               "index": 1,
               "text": "大参林 dashenlin",
-              "fontSize": 15,
+              "fontSize": 14,
               "color": "#43A817",
               "bold": true,
               "alignment": "right"
@@ -285,26 +309,26 @@
       "lineWidth": 0
     },
     {
-      "order": 6,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/n6do72tg",
-      "id": "6",
+      "aid": "sh/u1wbmhkj",
+      "id": "7",
       "name": "chrome-internal-notice",
       "bbox": [
-        1075,
-        685,
-        170,
-        24
+        1010,
+        688,
+        160,
+        22
       ],
       "geometry": "rect",
       "text": "仅限于内部学习",
       "textPreview": "仅限于内部学习",
-      "resolvedFontSize": 14,
+      "resolvedFontSize": 12,
       "resolvedTextStyle": {
-        "fontSize": 14,
+        "fontSize": 12,
         "typeface": "+mn-lt",
-        "color": "#111111",
+        "color": "#5A6B61",
         "alignment": "right",
         "insets": {
           "top": 4.8,
@@ -327,16 +351,16 @@
           "index": 1,
           "text": "仅限于内部学习",
           "resolvedTextStyle": {
-            "fontSize": 14,
-            "color": "#111111",
+            "fontSize": 12,
+            "color": "#5A6B61",
             "alignment": "right"
           },
           "runs": [
             {
               "index": 1,
               "text": "仅限于内部学习",
-              "fontSize": 14,
-              "color": "#111111",
+              "fontSize": 12,
+              "color": "#5A6B61",
               "alignment": "right"
             }
           ],
@@ -346,11 +370,72 @@
       "lineWidth": 0
     },
     {
-      "order": 7,
+      "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/m547yxcv",
-      "id": "7",
+      "aid": "sh/t0nutcjy",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "10 / 18",
+      "textPreview": "10 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8zutk72d",
+      "id": "9",
       "name": "advantage-core",
       "bbox": [
         535,
@@ -359,15 +444,15 @@
         150
       ],
       "geometry": "ellipse",
-      "fillColor": "#CB69B4",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
-      "order": 8,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/tozqlwbq",
-      "id": "8",
+      "aid": "sh/mh4ja9k7",
+      "id": "10",
       "name": "advantage-core-text",
       "bbox": [
         555,
@@ -452,29 +537,29 @@
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/sn6pcru5",
-      "id": "9",
+      "aid": "sh/nidk3e1s",
+      "id": "11",
       "name": "advantage-axis",
       "bbox": [
         220,
         365,
         830,
-        3
+        2
       ],
       "geometry": "rect",
-      "fillColor": "#DDDDDD",
-      "lineColor": "#DDDDDD",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
       "lineWidth": 0
     },
     {
-      "order": 10,
+      "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/adgne98j",
-      "id": "10",
+      "aid": "sh/oj61cj2d",
+      "id": "12",
       "name": "advantage-node-1",
       "bbox": [
         130,
@@ -483,15 +568,15 @@
         72
       ],
       "geometry": "ellipse",
-      "fillColor": "#FF4D86",
+      "fillColor": "#066A2F",
       "lineWidth": 0
     },
     {
-      "order": 11,
+      "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/vepo7epo",
-      "id": "11",
+      "aid": "sh/9kf254jy",
+      "id": "13",
       "name": "advantage-node-label-1",
       "bbox": [
         130,
@@ -551,11 +636,11 @@
       "lineWidth": 0
     },
     {
-      "order": 12,
+      "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/wfy5gjq9",
-      "id": "12",
+      "aid": "sh/ed4j6pkb",
+      "id": "14",
       "name": "advantage-heading-1",
       "bbox": [
         65,
@@ -570,7 +655,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -595,7 +680,7 @@
           "text": "抑制核转录因子表达",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#CB69B4",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "center"
           },
@@ -604,7 +689,7 @@
               "index": 1,
               "text": "抑制核转录因子表达",
               "fontSize": 19,
-              "color": "#CB69B4",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "center"
             }
@@ -615,11 +700,11 @@
       "lineWidth": 0
     },
     {
-      "order": 13,
+      "order": 15,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/xg769o7u",
-      "id": "13",
+      "aid": "sh/zedkzu1w",
+      "id": "15",
       "name": "advantage-body-1",
       "bbox": [
         65,
@@ -634,7 +719,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "center",
         "insets": {
           "top": 4.8,
@@ -666,7 +751,7 @@
           "text": "提高机体防御能力",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -674,7 +759,7 @@
               "index": 1,
               "text": "提高机体防御能力",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],
@@ -685,7 +770,7 @@
           "text": "减轻细菌或病毒感染带来的不适症状",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -693,7 +778,7 @@
               "index": 1,
               "text": "减轻细菌或病毒感染带来的不适症状",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],
@@ -703,11 +788,11 @@
       "lineWidth": 0
     },
     {
-      "order": 14,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/m9wnap87",
-      "id": "14",
+      "aid": "sh/0fm18z21",
+      "id": "16",
       "name": "advantage-node-2",
       "bbox": [
         400,
@@ -716,15 +801,15 @@
         72
       ],
       "geometry": "ellipse",
-      "fillColor": "#45B4D4",
+      "fillColor": "#009900",
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 17,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/nap43u9s",
-      "id": "15",
+      "aid": "sh/1gv214jm",
+      "id": "17",
       "name": "advantage-node-label-2",
       "bbox": [
         400,
@@ -784,11 +869,11 @@
       "lineWidth": 0
     },
     {
-      "order": 16,
+      "order": 18,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/8by5czqd",
-      "id": "16",
+      "aid": "sh/qpkj2pkz",
+      "id": "18",
       "name": "advantage-heading-2",
       "bbox": [
         335,
@@ -803,7 +888,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -828,7 +913,7 @@
           "text": "百分百纯植物提取",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#CB69B4",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "center"
           },
@@ -837,7 +922,7 @@
               "index": 1,
               "text": "百分百纯植物提取",
               "fontSize": 19,
-              "color": "#CB69B4",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "center"
             }
@@ -848,11 +933,11 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9c7m547y",
-      "id": "17",
+      "aid": "sh/rqt0vu1k",
+      "id": "19",
       "name": "advantage-body-2",
       "bbox": [
         335,
@@ -867,7 +952,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "center",
         "insets": {
           "top": 4.8,
@@ -903,7 +988,7 @@
           "text": "单体制剂、植物化学药",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -911,7 +996,7 @@
               "index": 1,
               "text": "单体制剂、植物化学药",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],
@@ -922,7 +1007,7 @@
           "text": "机理确切可控，降低联合用药风险",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -930,7 +1015,7 @@
               "index": 1,
               "text": "机理确切可控，降低联合用药风险",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],
@@ -940,11 +1025,11 @@
       "lineWidth": 0
     },
     {
-      "order": 18,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/650nmt8b",
-      "id": "18",
+      "aid": "sh/vu9g3qhc",
+      "id": "20",
       "name": "advantage-node-3",
       "bbox": [
         680,
@@ -953,15 +1038,15 @@
         72
       ],
       "geometry": "ellipse",
-      "fillColor": "#45BEC9",
+      "fillColor": "#2E9E5B",
       "lineWidth": 0
     },
     {
-      "order": 19,
+      "order": 21,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/769ofypw",
-      "id": "19",
+      "aid": "sh/ut0zul0r",
+      "id": "21",
       "name": "advantage-node-label-3",
       "bbox": [
         680,
@@ -1021,11 +1106,11 @@
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/3q1k7qpo",
-      "id": "20",
+      "aid": "sh/hwry5gzi",
+      "id": "22",
       "name": "advantage-heading-3",
       "bbox": [
         615,
@@ -1040,7 +1125,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1065,7 +1150,7 @@
           "text": "穿心莲内酯纯度97%",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#CB69B4",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "center"
           },
@@ -1074,7 +1159,7 @@
               "index": 1,
               "text": "穿心莲内酯纯度97%",
               "fontSize": 19,
-              "color": "#CB69B4",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "center"
             }
@@ -1085,11 +1170,11 @@
       "lineWidth": 0
     },
     {
-      "order": 21,
+      "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/2psjelo3",
-      "id": "21",
+      "aid": "sh/gvihwvix",
+      "id": "23",
       "name": "advantage-body-3",
       "bbox": [
         615,
@@ -1104,7 +1189,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "center",
         "insets": {
           "top": 4.8,
@@ -1132,7 +1217,7 @@
           "text": "质量稳定，载药量高",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -1140,7 +1225,7 @@
               "index": 1,
               "text": "质量稳定，载药量高",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],
@@ -1151,7 +1236,7 @@
           "text": "疗效好",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -1159,7 +1244,7 @@
               "index": 1,
               "text": "疗效好",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],
@@ -1169,11 +1254,11 @@
       "lineWidth": 0
     },
     {
-      "order": 22,
+      "order": 24,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pc3290ne",
-      "id": "22",
+      "aid": "sh/3i9g7qho",
+      "id": "24",
       "name": "advantage-node-4",
       "bbox": [
         960,
@@ -1182,15 +1267,15 @@
         72
       ],
       "geometry": "ellipse",
-      "fillColor": "#42C3A7",
+      "fillColor": "#43A817",
       "lineWidth": 0
     },
     {
-      "order": 23,
+      "order": 25,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/orulgv6t",
-      "id": "23",
+      "aid": "sh/2h0zyl03",
+      "id": "25",
       "name": "advantage-node-label-4",
       "bbox": [
         960,
@@ -1250,11 +1335,11 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 26,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/belkbq5k",
-      "id": "24",
+      "aid": "sh/pkby90ze",
+      "id": "26",
       "name": "advantage-heading-4",
       "bbox": [
         895,
@@ -1269,7 +1354,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#CB69B4",
+        "color": "#066A2F",
         "bold": true,
         "alignment": "center",
         "insets": {
@@ -1298,7 +1383,7 @@
           "text": "滴丸剂型固体分散技术",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#CB69B4",
+            "color": "#066A2F",
             "bold": true,
             "alignment": "center"
           },
@@ -1307,7 +1392,7 @@
               "index": 1,
               "text": "滴丸剂型固体分散技术",
               "fontSize": 19,
-              "color": "#CB69B4",
+              "color": "#066A2F",
               "bold": true,
               "alignment": "center"
             }
@@ -1318,11 +1403,11 @@
       "lineWidth": 0
     },
     {
-      "order": 25,
+      "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/qdc3iloz",
-      "id": "25",
+      "aid": "sh/4jih0vit",
+      "id": "27",
       "name": "advantage-body-4",
       "bbox": [
         895,
@@ -1337,7 +1422,7 @@
       "resolvedTextStyle": {
         "fontSize": 19,
         "typeface": "+mn-lt",
-        "color": "#303741",
+        "color": "#33413A",
         "alignment": "center",
         "insets": {
           "top": 4.8,
@@ -1365,7 +1450,7 @@
           "text": "溶散时间短",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -1373,7 +1458,7 @@
               "index": 1,
               "text": "溶散时间短",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],
@@ -1384,7 +1469,7 @@
           "text": "快速吸收，起效迅速",
           "resolvedTextStyle": {
             "fontSize": 19,
-            "color": "#303741",
+            "color": "#33413A",
             "alignment": "center"
           },
           "runs": [
@@ -1392,7 +1477,7 @@
               "index": 1,
               "text": "快速吸收，起效迅速",
               "fontSize": 19,
-              "color": "#303741",
+              "color": "#33413A",
               "alignment": "center"
             }
           ],

@@ -5,7 +5,7 @@
   "style_pack_id": "style-pack.dashenlin-courseware-green-v1",
   "canonical_artifact": "穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
   "canonical_confirmed_by": "user",
-  "canonical_confirmed_at": "2026-07-30",
+  "canonical_confirmed_at": "2026-08-04",
   "generator": "poc/courseware-export/courseware2-work/build-courseware2-editable.mjs",
   "structured_input": "poc/courseware-export/courseware2-work/courseware2-template.json",
   "business_input": {
@@ -16,7 +16,7 @@
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "validation_root": "production-library/validation/courseware/disease-product-scenario-v1",
-  "notes": "十八页疾病辨证、商品知识与销售场景可编辑模板；PDF 高保真基线和检查导出属于 validation。",
+  "notes": "十八页疾病辨证、商品知识与销售场景可编辑模板（2026-08-04 视觉升级 v2：token GREEN_DEEP/MINT/PALE/INK/MUTED/LINE、圆角 chrome/card/callout、微软雅黑字体补丁 patch-pptx-font.py）。PDF 高保真基线与 upgrade-v2 前后对比见 validation。",
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [
