@@ -1,0 +1,1340 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/68asaw",
+    "id": "68asaw",
+    "slide": 14,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wz2pkzqh",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vy98ru9w",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "3.3",
+      "textPreview": "3.3",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3.3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3.3",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3.3",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ux07ip8b",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+      "textPreview": "场景篇——什么时候推荐穿心莲内酯滴丸",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "场景篇——什么时候推荐穿心莲内酯滴丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9wrqpkrq",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8vipgfq5",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7u9ona90",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mt07e58f",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lsr6lkru",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "14 / 18",
+      "textPreview": "14 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "14 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "14 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "14 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/krypcfq9",
+      "id": "9",
+      "name": "scenario1-title",
+      "bbox": [
+        80,
+        90,
+        600,
+        45
+      ],
+      "geometry": "rect",
+      "text": "场景1：顾客主诉“喉咙痛”",
+      "textPreview": "场景1：顾客主诉“喉咙痛”",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "场景1：顾客主诉“喉咙痛”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "场景1：顾客主诉“喉咙痛”",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "场景1：顾客主诉“喉咙痛”",
+              "fontSize": 25,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/50ral0bm",
+      "id": "10",
+      "bbox": [
+        80,
+        175,
+        330,
+        340
+      ],
+      "alt": "顾客咽痛人物照片，裁自源 PDF",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "118a86f6-6a77-4acc-88f5-1900924562c5",
+        "contentType": "image/png",
+        "byteLength": 184885
+      }
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2pkbu9k",
+      "id": "11",
+      "name": "scenario1-communication-surface",
+      "bbox": [
+        455,
+        175,
+        230,
+        340
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03y14za5",
+      "id": "12",
+      "name": "scenario1-communication-accent",
+      "bbox": [
+        465,
+        189,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1o72d4rq",
+      "id": "13",
+      "name": "scenario1-communication-title",
+      "bbox": [
+        479,
+        187,
+        190,
+        38
+      ],
+      "geometry": "rect",
+      "text": "辨证沟通",
+      "textPreview": "辨证沟通",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "辨证沟通"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "辨证沟通",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "辨证沟通",
+              "fontSize": 23,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxwjyps3",
+      "id": "14",
+      "name": "scenario1-communication-divider",
+      "bbox": [
+        479,
+        233,
+        186,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ry5k7u9o",
+      "id": "15",
+      "name": "scenario1-communication-body",
+      "bbox": [
+        479,
+        245,
+        186,
+        256
+      ],
+      "geometry": "rect",
+      "text": "通过关键提问“是否觉得身上热”，快速判断顾客属于风热型咽喉肿痛，而非风寒。这是精准推荐用药的第一步。",
+      "textPreview": "通过关键提问“是否觉得身上热”，快速判断顾客属于风热型咽喉肿痛，而非风寒。这是精准推荐用药的第一步。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 8,
+        "lines": [
+          {
+            "index": 1,
+            "text": "通过关键提问“是"
+          },
+          {
+            "index": 2,
+            "text": "否觉得身上热”，"
+          },
+          {
+            "index": 3,
+            "text": "快速判断顾客属"
+          },
+          {
+            "index": 4,
+            "text": "于"
+          },
+          {
+            "index": 5,
+            "text": "风热型咽喉肿痛"
+          },
+          {
+            "index": 6,
+            "text": "，而非风寒"
+          },
+          {
+            "index": 7,
+            "text": "。这是精准推荐"
+          },
+          {
+            "index": 8,
+            "text": "用药的第一步。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "通过关键提问“是否觉得身上热”，快速判断顾客属于风热型咽喉肿痛，而非风寒。这是精准推荐用药的第一步。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "通过关键提问“是否觉得身上热”，快速判断顾客属于",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "风热型咽喉肿痛",
+              "fontSize": 22,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "而非风寒",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "。这是精准推荐用药的第一步。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/czy10za9",
+      "id": "16",
+      "name": "scenario1-product-surface",
+      "bbox": [
+        710,
+        175,
+        230,
+        340
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d07294re",
+      "id": "17",
+      "name": "scenario1-product-accent",
+      "bbox": [
+        720,
+        189,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2twjupsr",
+      "id": "18",
+      "name": "scenario1-product-title",
+      "bbox": [
+        734,
+        187,
+        190,
+        38
+      ],
+      "geometry": "rect",
+      "text": "核心用药",
+      "textPreview": "核心用药",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心用药"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心用药",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心用药",
+              "fontSize": 23,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3u5k3a9c",
+      "id": "19",
+      "name": "scenario1-product-divider",
+      "bbox": [
+        734,
+        233,
+        186,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72h8fmls",
+      "id": "20",
+      "name": "scenario1-product-body",
+      "bbox": [
+        734,
+        245,
+        186,
+        256
+      ],
+      "geometry": "rect",
+      "text": "主推穿心莲内酯滴丸，其核心成分穿心莲内酯清热解毒、抗菌消炎。重点强调滴丸剂型吸收快、见效迅速。",
+      "textPreview": "主推穿心莲内酯滴丸，其核心成分穿心莲内酯清热解毒、抗菌消炎。重点强调滴丸剂型吸收快、见效迅速。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 10,
+        "lines": [
+          {
+            "index": 1,
+            "text": "主推"
+          },
+          {
+            "index": 2,
+            "text": "穿心莲内酯滴丸"
+          },
+          {
+            "index": 3,
+            "text": "，其核心成分穿"
+          },
+          {
+            "index": 4,
+            "text": "心莲内酯"
+          },
+          {
+            "index": 5,
+            "text": "清热解毒、抗菌"
+          },
+          {
+            "index": 6,
+            "text": "消炎"
+          },
+          {
+            "index": 7,
+            "text": "。重点强调滴丸"
+          },
+          {
+            "index": 8,
+            "text": "剂型"
+          },
+          {
+            "index": 9,
+            "text": "吸收快、见效迅"
+          },
+          {
+            "index": 10,
+            "text": "速。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "主推穿心莲内酯滴丸，其核心成分穿心莲内酯清热解毒、抗菌消炎。重点强调滴丸剂型吸收快、见效迅速。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "主推",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "穿心莲内酯滴丸",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，其核心成分穿心莲内酯",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "清热解毒、抗菌消炎",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "。重点强调滴丸剂型",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 6,
+              "text": "吸收快、见效迅速",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 7,
+              "text": "。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m187mh4n",
+      "id": "21",
+      "name": "scenario1-service-surface",
+      "bbox": [
+        965,
+        175,
+        230,
+        340
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9ojqhw3y",
+      "id": "22",
+      "name": "scenario1-service-accent",
+      "bbox": [
+        975,
+        189,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8napormd",
+      "id": "23",
+      "name": "scenario1-service-title",
+      "bbox": [
+        989,
+        187,
+        190,
+        38
+      ],
+      "geometry": "rect",
+      "text": "关联服务",
+      "textPreview": "关联服务",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "关联服务"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "关联服务",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "关联服务",
+              "fontSize": 23,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vq18jml4",
+      "id": "24",
+      "name": "scenario1-service-divider",
+      "bbox": [
+        989,
+        233,
+        186,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ups7q14j",
+      "id": "25",
+      "name": "scenario1-service-body",
+      "bbox": [
+        989,
+        245,
+        186,
+        256
+      ],
+      "geometry": "rect",
+      "text": "关联推荐熊胆薄荷含片，内服＋外用双管齐下。同时给予多饮温水、忌辛辣刺激等饮食建议。",
+      "textPreview": "关联推荐熊胆薄荷含片，内服＋外用双管齐下。同时给予多饮温水、忌辛辣刺激等饮食建议。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "关联推荐"
+          },
+          {
+            "index": 2,
+            "text": "熊胆薄荷含片，"
+          },
+          {
+            "index": 3,
+            "text": "内服＋外用"
+          },
+          {
+            "index": 4,
+            "text": "双管齐下。同时"
+          },
+          {
+            "index": 5,
+            "text": "给予多饮温水、"
+          },
+          {
+            "index": 6,
+            "text": "忌辛辣刺激等饮"
+          },
+          {
+            "index": 7,
+            "text": "食建议。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "关联推荐熊胆薄荷含片，内服＋外用双管齐下。同时给予多饮温水、忌辛辣刺激等饮食建议。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "关联推荐",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "熊胆薄荷含片",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "内服＋外用",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "双管齐下。同时给予多饮温水、忌辛辣刺激等饮食建议。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hsjqlw3a",
+      "id": "26",
+      "name": "scenario1-summary-surface",
+      "bbox": [
+        455,
+        555,
+        740,
+        55
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gra9srmp",
+      "id": "27",
+      "name": "scenario1-summary",
+      "bbox": [
+        469,
+        555,
+        712,
+        55
+      ],
+      "geometry": "rect",
+      "text": "服务要点：辨证精准是前提，剂型优势是卖点，关联用药是增值，健康叮嘱是保障。",
+      "textPreview": "服务要点：辨证精准是前提，剂型优势是卖点，关联用药是增值，健康叮嘱是保障。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "服务要点：辨证精准是前提，剂型优势是卖点，关联用药是增值，健康叮嘱是"
+          },
+          {
+            "index": 2,
+            "text": "保障。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "服务要点：辨证精准是前提，剂型优势是卖点，关联用药是增值，健康叮嘱是保障。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#33413A",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "服务要点：辨证精准是前提，剂型优势是卖点，关联用药是增值，健康叮嘱是保障。",
+              "fontSize": 20,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

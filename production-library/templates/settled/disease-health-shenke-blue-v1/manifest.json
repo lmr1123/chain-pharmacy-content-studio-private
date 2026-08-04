@@ -4,9 +4,10 @@
   "status": "user-approved",
   "category_zh": "健康培训",
   "style_pack_id": "style-pack.shenke-medical-blue-v1",
-  "canonical_artifact": "急性上呼吸道感染_疾病健康知识培训_可编辑金样_v2.pptx",
+  "canonical_artifact": "急性上呼吸道感染_疾病健康知识培训_可编辑金样_v3.pptx",
   "canonical_confirmed_by": "user",
-  "canonical_confirmed_at": "2026-08-03",
+  "canonical_confirmed_at": "2026-08-04",
+  "previous_canonical": "急性上呼吸道感染_疾病健康知识培训_可编辑金样_v2.pptx",
   "generator": "generator/build-editable.mjs",
   "structured_input": "generator/content/急性上呼吸道感染.content.json",
   "business_input": {
@@ -17,7 +18,7 @@
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "validation_root": "production-library/validation/courseware/disease-uri-shenke-blue-v1",
-  "notes": "参课蓝风格疾病健康知识培训可编辑金样。版式锁定参课 chrome；插图为重绘；商品包装为命名坑位；末页为 16:9 内居中竖版一页通（手机可截图转发）。换病改 JSON 后 node generator/build-editable.mjs。",
+  "notes": "参课蓝风格疾病健康知识培训可编辑金样。版式锁定参课 chrome；插图为重绘；商品包装为命名坑位；末页为 16:9 内居中竖版一页通（手机可截图转发）。换病改 JSON 后 node generator/build-editable.mjs。v3（2026-08-04 签样）为参课蓝全面精修版：企业级封面/目录/结束页、统一页眉页脚页码、logo 零裁切、包装坑位原生胶囊图标无 emoji、卡片轻投影；v2 金样文件保留未覆盖。",
   "supported_scene_types": [
     "cover_branded",
     "agenda",

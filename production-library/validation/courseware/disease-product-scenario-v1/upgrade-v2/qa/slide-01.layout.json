@@ -1,0 +1,83 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/erd8sg",
+    "id": "erd8sg",
+    "slide": 1,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    }
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/w7ipgbmx",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "公司锁定封面，来自源 PDF 第 1 张课件画面",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "dad5ae02-c151-4771-b681-d27c8f348128",
+        "contentType": "image/png",
+        "byteLength": 826809
+      }
+    }
+  ],
+  "composeRuns": []
+}

@@ -16,6 +16,7 @@
 | HyperFrames | 本机已安装版本 0.6.46 | 未找到明确许可证；暂不接入 | 只有补齐许可证和维护性验证后再评估 |
 | Qwen3-TTS 0.6B Base | `third_party/Qwen3-TTS` | Apache-2.0；本地复用 | 参考旁白零样本声音克隆 |
 | MLX Audio | `third_party/mlx-audio` | MIT；本地复用 | Apple Silicon 本地 TTS 推理与音频生成 |
+| **Koboyo Icons** | 在线 https://koboyo.com/icons；Git 仅 `assets/_intake/open_source/koboyo/{SOURCE.md,license.txt,manifest.json}`；本机 `svg/` 已 gitignore | 官方许可：商用免费、无需署名；禁止整库再分发/做成竞品图标库 | **按需**匹配小图标与排版符号；改色栅格后可晋升 master；**不**替代多色场景插画；**不**把 SVG 包提交进仓库 |
 
 ## 为什么不以 Remotion 作为当前核心
 
@@ -45,3 +46,4 @@ Remotion 技术成熟，但对较大规模营利性企业存在商业许可边�
 - AI 生成插图必须记录来源、提示词、模型和人工确认状态。
 - 参考视频的 Logo、角色和原声仅用于公司内部复刻验证；对外使用需再次确认权利边界。
 - 任何许可证不清楚的本机项目默认不进入可分发产物。
+- Koboyo：成片只引用已晋升的 master 路径（或本机临时 SVG）；禁止提交 `svg/` 缓存、禁止把全库打进业务包或 Public 可选下载功能；许可变更时以 `license.txt` 抓取日 + 官网再核为准。

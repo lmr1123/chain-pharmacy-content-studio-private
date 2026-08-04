@@ -784,3 +784,16 @@
 - 标准四步：选模板 → 交资料(可残缺) → 审初稿 → 确认后出PPT。
 - 不要跳过初稿直接成片；联合用药行数随内容，不硬凑；本品图合并列+搭档图分行。
 - 文档：`production-library/templates/settled/product-courseware-green-v1/业务使用流程.md`
+
+## pptxgenjs shadow 对象必须每次新建（2026-08-04）
+
+pptxgenjs 3.12 会**原地改写**传入的 `shadow` 选项对象：blur/offset ×12700、angle ×60000、opacity ×100000。
+把 shadow 定义成共享常量（如 `const CARD_SHADOW = {...}` 多处复用）时，第二次使用起数值爆炸
+（blurRad 达 11 亿 EMU），PowerPoint 能容忍，**LibreOffice 直接崩溃**（Unspecified Application Error，PDF 不落盘，无错误细节）。
+
+**Why**：bug 表现在渲染端而非生成端，且只有部分页面崩（取决于崩坏投影落在哪些形状上），极易误判为图片/字体问题。
+
+**How to apply**：
+- pptxgenjs 的 shadow 一律用工厂函数 `const cardShadow = () => ({...})`，每次调用返回新对象；同理警惕其他被原地改写的选项对象。
+- LibreOffice 转换崩溃时按「页面二分 → 单页形状级二分（剥 spTree 子元素重打包）」定位，比猜 XML 快。
+- 验证转换是否成功要看 PDF 是否落盘，不能只看 stdout 的 "convert ... using filter" 行（崩溃前也会打印）。

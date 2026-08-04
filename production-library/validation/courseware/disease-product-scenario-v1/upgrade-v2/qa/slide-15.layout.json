@@ -1,0 +1,1268 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/j22683",
+    "id": "j22683",
+    "slide": 15,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5czi98be",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i9ojytcn",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "3.4",
+      "textPreview": "3.4",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3.4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3.4",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3.4",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jax07yt8",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+      "textPreview": "场景篇——什么时候推荐穿心莲内酯滴丸",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "场景篇——什么时候推荐穿心莲内酯滴丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "场景篇——什么时候推荐穿心莲内酯滴丸",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sfq14nup",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgzidsba",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qd8j2dcz",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/reh0bitk",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03a18na1",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "15 / 18",
+      "textPreview": "15 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "15 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "15 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "15 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14jihsbm",
+      "id": "9",
+      "name": "scenario2-title",
+      "bbox": [
+        80,
+        90,
+        750,
+        45
+      ],
+      "geometry": "rect",
+      "text": "场景2：顾客主诉“感冒了，发烧，有黄痰”",
+      "textPreview": "场景2：顾客主诉“感冒了，发烧，有黄痰”",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "场景2：顾客主诉“感冒了，发烧，有黄痰”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "场景2：顾客主诉“感冒了，发烧，有黄痰”",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "场景2：顾客主诉“感冒了，发烧，有黄痰”",
+              "fontSize": 25,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgzylg7a",
+      "id": "10",
+      "name": "scenario2-diagnosis-surface",
+      "bbox": [
+        80,
+        170,
+        340,
+        360
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfqxcbqp",
+      "id": "11",
+      "name": "scenario2-diagnosis-accent",
+      "bbox": [
+        90,
+        184,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fehgj6p4",
+      "id": "12",
+      "name": "scenario2-diagnosis-title",
+      "bbox": [
+        104,
+        182,
+        300,
+        38
+      ],
+      "geometry": "rect",
+      "text": "01 症状辨析",
+      "textPreview": "01 症状辨析",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01 症状辨析"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01 症状辨析",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01 症状辨析",
+              "fontSize": 23,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ud8fa18j",
+      "id": "13",
+      "name": "scenario2-diagnosis-divider",
+      "bbox": [
+        104,
+        228,
+        296,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkzyp076",
+      "id": "14",
+      "name": "scenario2-diagnosis-body",
+      "bbox": [
+        104,
+        240,
+        296,
+        276
+      ],
+      "geometry": "rect",
+      "text": "顾客表现为发烧38℃以上、自觉身热不恶寒、咳嗽伴黄痰。这是典型的风热感冒症状，核心病机为风热之邪犯表，肺气失和，体内有热毒积聚。",
+      "textPreview": "顾客表现为发烧38℃以上、自觉身热不恶寒、咳嗽伴黄痰。这是典型的风热感冒症状，核心病机为风热之邪犯表，肺气失和，体内有热毒积聚。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 6,
+        "lines": [
+          {
+            "index": 1,
+            "text": "顾客表现为发烧38℃以上"
+          },
+          {
+            "index": 2,
+            "text": "、自觉身热不恶寒、咳嗽伴"
+          },
+          {
+            "index": 3,
+            "text": "黄痰。这是典型的风热感冒"
+          },
+          {
+            "index": 4,
+            "text": "症状，核心病机为风热之邪"
+          },
+          {
+            "index": 5,
+            "text": "犯表，肺气失和，体内有热"
+          },
+          {
+            "index": 6,
+            "text": "毒积聚。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "顾客表现为发烧38℃以上、自觉身热不恶寒、咳嗽伴黄痰。这是典型的风热感冒症状，核心病机为风热之邪犯表，肺气失和，体内有热毒积聚。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "顾客表现为",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "发烧38℃以上",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "、自觉身热不恶寒、咳嗽伴黄痰。这是典型的",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "风热感冒",
+              "fontSize": 23,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "症状，核心病机为风热之邪犯表，肺气失和，体内有热毒积聚。",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4jqxgvql",
+      "id": "15",
+      "name": "scenario2-core-surface",
+      "bbox": [
+        470,
+        170,
+        340,
+        360
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ihgnqp0",
+      "id": "16",
+      "name": "scenario2-core-accent",
+      "bbox": [
+        480,
+        184,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2h8fel8v",
+      "id": "17",
+      "name": "scenario2-core-title",
+      "bbox": [
+        494,
+        182,
+        300,
+        38
+      ],
+      "geometry": "rect",
+      "text": "02 核心推荐方案",
+      "textPreview": "02 核心推荐方案",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02 核心推荐方案"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02 核心推荐方案",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02 核心推荐方案",
+              "fontSize": 23,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5ofydw72",
+      "id": "18",
+      "name": "scenario2-core-divider",
+      "bbox": [
+        494,
+        228,
+        296,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kn6x4rqh",
+      "id": "19",
+      "name": "scenario2-core-body",
+      "bbox": [
+        494,
+        240,
+        296,
+        276
+      ],
+      "geometry": "rect",
+      "text": "推荐穿心莲内酯滴丸。它能直接清除体内热毒，从根源上解决发热、咽痛、咳黄痰等风热感冒症状；药力集中、起效快。",
+      "textPreview": "推荐穿心莲内酯滴丸。它能直接清除体内热毒，从根源上解决发热、咽痛、咳黄痰等风热感冒症状；药力集中、起效快。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "推荐穿心莲内酯滴丸"
+          },
+          {
+            "index": 2,
+            "text": "。它能直接清除体内热毒，"
+          },
+          {
+            "index": 3,
+            "text": "从根源上解决发热、咽痛、"
+          },
+          {
+            "index": 4,
+            "text": "咳黄痰等风热感冒症状；"
+          },
+          {
+            "index": 5,
+            "text": "药力集中、起效快。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "推荐穿心莲内酯滴丸。它能直接清除体内热毒，从根源上解决发热、咽痛、咳黄痰等风热感冒症状；药力集中、起效快。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "推荐",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "穿心莲内酯滴丸",
+              "fontSize": 23,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "。它能直接清除体内热毒，从根源上解决发热、咽痛、咳黄痰等风热感冒症状；",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "药力集中、起效快",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "。",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/craxkryd",
+      "id": "20",
+      "name": "scenario2-combo-surface",
+      "bbox": [
+        860,
+        170,
+        340,
+        360
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xsjytwfy",
+      "id": "21",
+      "name": "scenario2-combo-accent",
+      "bbox": [
+        870,
+        184,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a58fi1g7",
+      "id": "22",
+      "name": "scenario2-combo-title",
+      "bbox": [
+        884,
+        182,
+        300,
+        38
+      ],
+      "geometry": "rect",
+      "text": "03 联合用药解惑",
+      "textPreview": "03 联合用药解惑",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03 联合用药解惑"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03 联合用药解惑",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03 联合用药解惑",
+              "fontSize": 23,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6hgr6hs",
+      "id": "23",
+      "name": "scenario2-combo-divider",
+      "bbox": [
+        884,
+        228,
+        296,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kvahoby9",
+      "id": "24",
+      "name": "scenario2-combo-body",
+      "bbox": [
+        884,
+        240,
+        296,
+        276
+      ],
+      "geometry": "rect",
+      "text": "若顾客家中有复方氨酚烷胺片，可说明：西药缓解咳嗽、流涕等症状是“治标”；穿心莲清除热毒是“治本”，二者联用。",
+      "textPreview": "若顾客家中有复方氨酚烷胺片，可说明：西药缓解咳嗽、流涕等症状是“治标”；穿心莲清除热毒是“治本”，二者联用。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "若顾客家中有复方氨酚烷胺"
+          },
+          {
+            "index": 2,
+            "text": "片，可说明：西药缓解咳嗽"
+          },
+          {
+            "index": 3,
+            "text": "、流涕等症状是“治标”"
+          },
+          {
+            "index": 4,
+            "text": "；穿心莲清除热毒是“治本”"
+          },
+          {
+            "index": 5,
+            "text": "，二者联用。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "若顾客家中有复方氨酚烷胺片，可说明：西药缓解咳嗽、流涕等症状是“治标”；穿心莲清除热毒是“治本”，二者联用。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "若顾客家中有复方氨酚烷胺片，可说明：西药缓解咳嗽、流涕等症状是",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "“治标”",
+              "fontSize": 23,
+              "color": "#FF8A00",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "；穿心莲清除热毒是",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "“治本”",
+              "fontSize": 23,
+              "color": "#009900",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "，二者联用。",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lwjyxgfu",
+      "id": "25",
+      "name": "scenario2-talktrack-surface",
+      "bbox": [
+        80,
+        570,
+        1120,
+        65
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ytsfm1gj",
+      "id": "26",
+      "name": "scenario2-talktrack",
+      "bbox": [
+        94,
+        570,
+        1092,
+        65
+      ],
+      "geometry": "rect",
+      "text": "关键话术：“您这是风热感冒，穿心莲内酯滴丸清除热毒是治本，复方氨酚烷胺片缓解症状是治标，一个治标一个治本，一起用效果更好。”",
+      "textPreview": "关键话术：“您这是风热感冒，穿心莲内酯滴丸清除热毒是治本，复方氨酚烷胺片缓解症状是治标，一个治标一个治本，一起用效果更好。”",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "关键话术：“您这是风热感冒，穿心莲内酯滴丸清除热毒是治本，复方氨酚烷胺片缓解症状是治标，一个治标一个治本，一"
+          },
+          {
+            "index": 2,
+            "text": "起用效果更好。”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "关键话术：“您这是风热感冒，穿心莲内酯滴丸清除热毒是治本，复方氨酚烷胺片缓解症状是治标，一个治标一个治本，一起用效果更好。”",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "关键话术：“您这是风热感冒，穿心莲内酯滴丸清除热毒是治本，复方氨酚烷胺片缓解症状是治标，一个治标一个治本，一起用效果更好。”",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

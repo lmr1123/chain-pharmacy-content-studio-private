@@ -20,7 +20,7 @@ const contentPath =
 const data = JSON.parse(fs.readFileSync(contentPath, "utf8"));
 const assetsDir = path.join(__dirname, "assets");
 const placeholdersDir = path.join(assetsDir, "placeholders");
-const outName = `${data.meta.topic}_疾病健康知识培训_可编辑金样_v2.pptx`;
+const outName = `${data.meta.topic}_疾病健康知识培训_可编辑金样_v3.pptx`;
 const OUT = path.join(__dirname, outName);
 
 // —— 参课色（从截图采样，不另起 UI）——
@@ -45,7 +45,17 @@ const C = {
   purple: "6B5B95",
   slotBg: "EAF2FA",
   slotBorder: "5A9BD5",
+  footerLine: "D8E2EE",
+  chipBg: "E3EEF8",
 };
+
+// logo-shenke*.png 为 360×110（≈3.273:1），全站按此比例摆放，禁止拉伸/裁切
+const LOGO_AR = 360 / 110;
+function logoW(h) { return h * LOGO_AR; }
+
+// 柔和卡片投影（全站统一）
+// 注意：pptxgenjs 会原地改写 shadow 对象（blur/angle/opacity 重复换算），必须每次返回新对象
+const cardShadow = () => ({ type: "outer", color: "1A2B4A", blur: 7, offset: 2, angle: 90, opacity: 0.14 });
 
 // 字阶：门店培训投影可读（偏大、偏密，避免稀拉拉）
 const FONT = "Microsoft YaHei";
@@ -190,13 +200,14 @@ function emphasizeTextRuns(text, keywords = [], baseSize = T.table) {
   return runs.length ? runs : [{ text: src, options: { color: C.body, fontSize: baseSize, fontFace: FONT } }];
 }
 
-/** 图片槽：白底+细边，保证重绘图有统一画框 */
+/** 图片槽：白底+细边+轻投影，保证重绘图有统一画框 */
 function addImageFrame(slide, imgPath, x, y, w, h, opts = {}) {
   slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
     x, y, w, h,
     fill: { color: C.white },
     line: { color: opts.border || C.line, width: 0.75 },
     rectRadius: 0.06,
+    shadow: cardShadow(),
   });
   if (imgPath) {
     const pad = opts.pad ?? 0.06;
@@ -214,7 +225,7 @@ function addImageFrame(slide, imgPath, x, y, w, h, opts = {}) {
 /**
  * 商品包装坑位
  * - 授权实拍：放 assets/packshots/真实文件名.png（非 pack- 前缀）
- * - 否则：形状「产品位」卡（品名可编辑），不伪造品牌包装
+ * - 否则：形状「产品位」卡（品名可编辑 + 原生胶囊图标，不用 emoji），不伪造品牌包装
  */
 function addPackshotSlot(slide, label, x, y, w, h, fileHint) {
   // 实拍优先：packshots/ 目录或非 pack- 前缀
@@ -233,6 +244,7 @@ function addPackshotSlot(slide, label, x, y, w, h, fileHint) {
     fill: { color: C.white },
     line: { color: C.cardBorder, width: 1.1 },
     rectRadius: 0.06,
+    shadow: cardShadow(),
   });
   slide.addShape(pres.shapes.RECTANGLE, {
     x, y, w, h: 0.07,
@@ -257,31 +269,71 @@ function addPackshotSlot(slide, label, x, y, w, h, fileHint) {
     return;
   }
 
-  // 产品位（设计感占位，非灰默认框）
+  // 产品位（设计感占位，非灰默认框）：虚线槽 + 原生胶囊图标 + 品名/提示分层不压线
+  const compact = h < 1.0; // 一页通小坑位
+  const labelH = compact ? 0.26 : 0.3;
+  const hintH = compact ? 0.16 : 0.2;
+  const slotTop = y + 0.13;
+  const slotBottom = y + h - labelH - hintH - 0.06;
   slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-    x: x + 0.18, y: y + 0.22, w: w - 0.36, h: h - 0.55,
+    x: x + 0.16, y: slotTop, w: w - 0.32, h: slotBottom - slotTop,
     fill: { color: "F0F6FC" },
     line: { color: C.slotBorder, width: 1, dashType: "dash" },
     rectRadius: 0.05,
   });
-  slide.addText("📦", {
-    x: x, y: y + h * 0.28, w: w, h: 0.35,
-    fontFace: FONT, fontSize: 18, align: "center", margin: 0,
+
+  // 原生形状胶囊图标：旋转的圆角矩形，左半蓝右半白
+  const capW = compact ? 0.42 : 0.56;
+  const capH = compact ? 0.18 : 0.24;
+  const capX = x + w / 2 - capW / 2;
+  const capY = slotTop + (slotBottom - slotTop) / 2 - capH / 2;
+  slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+    x: capX, y: capY, w: capW, h: capH,
+    fill: { color: C.white },
+    line: { color: C.blueBadge, width: 1.25 },
+    rectRadius: capH / 2,
+    rotate: 330,
   });
+  slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+    x: capX, y: capY, w: capW / 2, h: capH,
+    fill: { color: C.blueBadge },
+    rectRadius: capH / 2,
+    rotate: 330,
+  });
+
   slide.addText(label, {
-    x: x + 0.08, y: y + h - 0.48, w: w - 0.16, h: 0.28,
-    fontFace: FONT, fontSize: 13, bold: true, color: C.ink,
-    align: "center", margin: 0,
+    x: x + 0.06, y: y + h - labelH - hintH - 0.03, w: w - 0.12, h: labelH,
+    fontFace: FONT, fontSize: compact ? 10.5 : 13, bold: true, color: C.ink,
+    align: "center", valign: "middle", margin: 0,
   });
   slide.addText("授权包装图替换位", {
-    x: x + 0.08, y: y + h - 0.24, w: w - 0.16, h: 0.18,
-    fontFace: FONT, fontSize: 9, color: C.muted,
-    align: "center", margin: 0,
+    x: x + 0.06, y: y + h - hintH - 0.03, w: w - 0.12, h: hintH,
+    fontFace: FONT, fontSize: compact ? 7.5 : 9, color: C.muted,
+    align: "center", valign: "middle", margin: 0,
   });
 }
 
-/** 参课内容页 chrome：蓝方章 + 章节名 + 右上角 Logo */
-function addShenkeChrome(slide, num, title) {
+/** 页脚：集团·参课·系列 + 内部学习提示 + 页码（全站统一；opts.left=false 时省略左侧品牌行，用于深色底图页） */
+function addFooter(slide, pageIdx, opts = {}) {
+  const total = data.slides.length;
+  slide.addShape(pres.shapes.RECTANGLE, {
+    x: 0.45, y: 7.12, w: W - 0.9, h: 0.012,
+    fill: { color: C.footerLine },
+  });
+  if (opts.left !== false) {
+    slide.addText(`${data.meta.brand || "大参林医药集团"}  ·  参课  ·  ${data.meta.series || ""}`, {
+      x: 0.45, y: 7.17, w: 7.5, h: 0.24,
+      fontFace: FONT, fontSize: 9.5, color: C.muted, margin: 0, valign: "middle",
+    });
+  }
+  slide.addText(`仅限内部学习  ·  ${pageIdx} / ${total}`, {
+    x: 8.9, y: 7.17, w: 3.99, h: 0.24,
+    fontFace: FONT, fontSize: 9.5, color: C.muted, align: "right", margin: 0, valign: "middle",
+  });
+}
+
+/** 参课内容页 chrome：蓝方章 + 章节名 + 右上角 Logo + 页脚 */
+function addShenkeChrome(slide, num, title, pageIdx) {
   slide.background = { color: C.bg };
 
   slide.addShape(pres.shapes.RECTANGLE, {
@@ -289,11 +341,18 @@ function addShenkeChrome(slide, num, title) {
     fill: { color: C.white },
     line: { color: C.line, width: 0.5 },
   });
-
-  // 蓝方章号（直角，对齐截图）
+  // 页眉底部深蓝细条，加强结构
   slide.addShape(pres.shapes.RECTANGLE, {
+    x: 0, y: 0.92, w: W, h: 0.035,
+    fill: { color: C.blueDeep },
+  });
+
+  // 蓝方章号（微圆角 + 投影）
+  slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
     x: 0.4, y: 0.2, w: 0.68, h: 0.52,
     fill: { color: C.blueBadge },
+    rectRadius: 0.05,
+    shadow: cardShadow(),
   });
   slide.addText(String(num).padStart(2, "0"), {
     x: 0.4, y: 0.2, w: 0.68, h: 0.52,
@@ -308,13 +367,15 @@ function addShenkeChrome(slide, num, title) {
 
   const logo = asset("logo-shenke.png");
   if (logo) {
-    slide.addImage({ path: logo, x: 11.5, y: 0.16, w: 1.55, h: 0.58 });
+    const lh = 0.5;
+    slide.addImage({ path: logo, x: 12.85 - logoW(lh), y: 0.23, w: logoW(lh), h: lh });
   } else {
     slide.addText("参课 SHENKE", {
       x: 10.7, y: 0.3, w: 2.3, h: 0.35,
       fontFace: FONT, fontSize: 12, color: C.blue, align: "right", margin: 0,
     });
   }
+  if (pageIdx) addFooter(slide, pageIdx);
 }
 
 /** 角标标签：一般治疗 / 全身用药 / 局部用药（L 形在字外） */
@@ -402,74 +463,98 @@ const pres = new pptxgen();
 pres.defineLayout({ name: "HD", width: W, height: H });
 pres.layout = "HD";
 pres.author = "chain-pharmacy-content-studio";
-pres.title = `${data.meta.topic} · 疾病健康知识培训（可编辑金样 v2）`;
+pres.title = `${data.meta.topic} · 疾病健康知识培训（可编辑金样 v3）`;
 pres.subject = data.template_id;
 
-for (const s of data.slides) {
+for (const [pageNo, s] of data.slides.entries()) {
+  const pageIdx = pageNo + 1;
   const slide = pres.addSlide();
   const st = s.scene_type;
 
   // ========== COVER ==========
   if (st === "cover_branded") {
     slide.background = { color: C.navyDeep };
+    // 上部主色带
     slide.addShape(pres.shapes.RECTANGLE, {
-      x: 0, y: 0, w: W, h: 4.4, fill: { color: "0B4A9C" },
+      x: 0, y: 0, w: W, h: 4.55, fill: { color: C.navy },
     });
-    // 建筑感竖条
-    for (let i = 0; i < 10; i++) {
+    // 建筑感竖条（更少更宽，透明度分层）
+    for (let i = 0; i < 7; i++) {
       slide.addShape(pres.shapes.RECTANGLE, {
-        x: 0.5 + i * 1.3, y: 0.2, w: 0.75, h: 3.7,
-        fill: { color: "1A6BC4", transparency: 50 + (i % 3) * 10 },
+        x: 0.65 + i * 1.85, y: 0, w: 1.05, h: 3.1 + (i % 3) * 0.55,
+        fill: { color: "1A6BC4", transparency: 62 + (i % 3) * 8 },
       });
     }
+    // 弧边：浅蓝新月 + 白色主弧
     slide.addShape(pres.shapes.OVAL, {
-      x: -2.2, y: 3.5, w: 18.5, h: 5.6,
+      x: -2.4, y: 3.28, w: 18.9, h: 5.9,
+      fill: { color: "4A90D9", transparency: 35 },
+    });
+    slide.addShape(pres.shapes.OVAL, {
+      x: -2.2, y: 3.62, w: 18.5, h: 5.9,
       fill: { color: C.white },
     });
-    // 标题框
-    slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 1.5, y: 1.45, w: 10.3, h: 3.45,
-      fill: { color: "0A3A7A", transparency: 30 },
-      line: { color: "5BA3E0", width: 1.5 },
-      rectRadius: 0.08,
-    });
 
+    // 白色版 logo（完整比例）+ 集团名
     const logoC = asset("logo-shenke-cover.png") || asset("logo-shenke.png");
     if (logoC) {
-      slide.addImage({ path: logoC, x: 1.9, y: 1.65, w: 2.5, h: 0.72 });
+      const lh = 0.6;
+      slide.addImage({ path: logoC, x: 0.7, y: 0.5, w: logoW(lh), h: lh });
     }
     slide.addText(data.meta.brand || "大参林医药集团", {
-      x: 4.8, y: 1.82, w: 6.5, h: 0.4,
-      fontFace: FONT, fontSize: 15, color: "D0E6FF", align: "center", margin: 0,
+      x: 8.9, y: 0.62, w: 3.75, h: 0.38,
+      fontFace: FONT, fontSize: 14, color: "C9DFF5", align: "right", margin: 0,
     });
 
+    // 顶部小标签
+    slide.addText("健康知识培训课程  ·  HEALTH TRAINING", {
+      x: 1.5, y: 1.78, w: 10.33, h: 0.32,
+      fontFace: FONT, fontSize: 12, color: "9CC4E8", align: "center",
+      charSpacing: 3, margin: 0,
+    });
+    // 主标题
     slide.addText(s.title, {
-      x: 1.8, y: 2.55, w: 9.7, h: 1.2,
-      fontFace: FONT, fontSize: T.coverTitle, bold: true, color: C.white,
+      x: 1.2, y: 2.18, w: 10.93, h: 1.15,
+      fontFace: FONT, fontSize: 50, bold: true, color: C.white,
       align: "center", valign: "middle", margin: 0,
     });
+    // 副标题白 pill（跨弧边设计）
+    slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+      x: 5.07, y: 3.5, w: 3.2, h: 0.64,
+      fill: { color: C.white },
+      rectRadius: 0.32,
+      shadow: cardShadow(),
+    });
     slide.addText(s.subtitle || data.meta.series, {
-      x: 1.8, y: 3.9, w: 9.7, h: 0.55,
-      fontFace: FONT, fontSize: T.coverSub, bold: true, color: C.navyDeep,
-      align: "center", margin: 0,
+      x: 5.07, y: 3.5, w: 3.2, h: 0.64,
+      fontFace: FONT, fontSize: 22, bold: true, color: C.navyDeep,
+      align: "center", valign: "middle", margin: 0,
     });
 
-    // 讲者信息条（可编辑，无真人）
+    // 底部白区：左内训提示，右讲者信息卡
+    slide.addText(data.meta.internal_notice || "仅限内部学习", {
+      x: 0.7, y: 6.88, w: 5.5, h: 0.3,
+      fontFace: FONT, fontSize: 10, color: C.muted, margin: 0,
+    });
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 8.5, y: 6.3, w: 4.5, h: 0.95,
-      fill: { color: C.white },
-      rectRadius: 0.04,
+      x: 8.35, y: 5.72, w: 4.55, h: 1.28,
+      fill: { color: "F0F6FC" },
+      line: { color: C.line, width: 0.75 },
+      rectRadius: 0.05,
     });
     slide.addShape(pres.shapes.RECTANGLE, {
-      x: 8.5, y: 6.3, w: 0.16, h: 0.95, fill: { color: C.blue },
+      x: 8.35, y: 5.72, w: 0.14, h: 1.28, fill: { color: C.blue },
     });
-    slide.addText(data.meta.presenter_title || "", {
-      x: 8.85, y: 6.35, w: 4.0, h: 0.4,
-      fontFace: FONT, fontSize: 14, bold: true, color: C.ink, margin: 0,
+    slide.addText([
+      { text: (data.meta.presenter_name || "") + "　", options: { bold: true, fontSize: 15, color: C.ink } },
+      { text: data.meta.presenter_title || "", options: { fontSize: 12.5, color: C.body } },
+    ], {
+      x: 8.72, y: 5.9, w: 4.05, h: 0.4,
+      fontFace: FONT, margin: 0, valign: "middle",
     });
     slide.addText(data.meta.presenter_sub || "", {
-      x: 8.85, y: 6.75, w: 4.0, h: 0.4,
-      fontFace: FONT, fontSize: 12, color: C.muted, margin: 0,
+      x: 8.72, y: 6.34, w: 4.05, h: 0.4,
+      fontFace: FONT, fontSize: 11.5, color: C.muted, margin: 0, valign: "middle",
     });
     continue;
   }
@@ -488,50 +573,79 @@ for (const s of data.slides) {
         x: 0, y: 0, w: 6.2, h: H, fill: { color: "D6E6F5" },
       });
     }
+    // 图右深蓝竖线分隔
     slide.addShape(pres.shapes.RECTANGLE, {
-      x: 5.7, y: 0, w: 7.7, h: H, fill: { color: C.white },
+      x: 6.2, y: 0, w: 0.045, h: H, fill: { color: C.blueDeep },
+    });
+    slide.addShape(pres.shapes.RECTANGLE, {
+      x: 6.24, y: 0, w: W - 6.24, h: H, fill: { color: C.white },
     });
     const logo = asset("logo-shenke.png");
-    if (logo) slide.addImage({ path: logo, x: 11.45, y: 0.28, w: 1.55, h: 0.55 });
+    if (logo) {
+      const lh = 0.5;
+      slide.addImage({ path: logo, x: 12.75 - logoW(lh), y: 0.3, w: logoW(lh), h: lh });
+    }
 
     slide.addText(s.title, {
-      x: 6.9, y: 0.95, w: 5.4, h: 0.7,
+      x: 6.9, y: 0.98, w: 5.4, h: 0.68,
       fontFace: FONT, fontSize: 38, bold: true, color: C.blueDeep,
       align: "center", margin: 0,
     });
+    slide.addText("CONTENTS", {
+      x: 6.9, y: 1.66, w: 5.4, h: 0.3,
+      fontFace: FONT, fontSize: 12, color: C.muted,
+      align: "center", charSpacing: 4, margin: 0,
+    });
 
     (s.items || []).forEach((it, i) => {
-      const y = 1.9 + i * 0.95;
+      const y = 2.12 + i * 0.94;
+      // 白卡 + 投影
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-        x: 7.05, y, w: 5.0, h: 0.8,
-        fill: { color: i % 2 === 0 ? "F0F5FB" : "E8F0F8" },
+        x: 7.0, y, w: 5.15, h: 0.78,
+        fill: { color: C.white },
+        line: { color: C.line, width: 1 },
+        rectRadius: 0.06,
+        shadow: cardShadow(),
+      });
+      // 编号深蓝块
+      slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+        x: 7.0, y, w: 0.78, h: 0.78,
+        fill: { color: C.blueDeep },
         rectRadius: 0.06,
       });
-      slide.addText([
-        { text: `${it.num}  `, options: { color: C.blue, bold: true, fontSize: 22 } },
-        { text: it.label, options: { color: C.ink, bold: true, fontSize: 22 } },
-      ], {
-        x: 7.3, y, w: 4.5, h: 0.8,
-        fontFace: FONT, valign: "middle", margin: 0,
+      slide.addShape(pres.shapes.RECTANGLE, {
+        x: 7.39, y, w: 0.39, h: 0.78,
+        fill: { color: C.blueDeep },
+      });
+      slide.addText(it.num, {
+        x: 7.0, y, w: 0.78, h: 0.78,
+        fontFace: FONT, fontSize: 20, bold: true, color: C.white,
+        align: "center", valign: "middle", margin: 0,
+      });
+      slide.addText(it.label, {
+        x: 8.05, y, w: 3.95, h: 0.78,
+        fontFace: FONT, fontSize: 20, bold: true, color: C.ink,
+        valign: "middle", margin: 0,
       });
     });
+    addFooter(slide, pageIdx, { left: false }); // 左半幅为深色建筑图，省略左侧品牌行
     continue;
   }
 
   // ========== DEFINITION + ETIOLOGY ==========
   if (st === "definition_etiology") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
-    // 病名徽章
+    // 病名徽章：深蓝实心 pill
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.45, y: 1.12, w: 4.6, h: 0.55,
-      fill: { color: "E3EEF8" },
-      line: { color: C.blueLine, width: 1.5 },
-      rectRadius: 0.04,
+      x: 0.45, y: 1.14, w: 4.6, h: 0.56,
+      fill: { color: C.blueDeep },
+      rectRadius: 0.06,
+      shadow: cardShadow(),
     });
     slide.addText(s.badge, {
-      x: 0.45, y: 1.12, w: 4.6, h: 0.55,
-      fontFace: FONT, fontSize: T.badge, bold: true, color: C.ink,
+      x: 0.45, y: 1.14, w: 4.6, h: 0.56,
+      fontFace: FONT, fontSize: T.badge, bold: true, color: C.white,
       align: "center", valign: "middle", margin: 0,
     });
 
@@ -540,34 +654,36 @@ for (const s of data.slides) {
     const defW = illus ? 7.9 : 12.4;
 
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.45, y: 1.85, w: defW, h: 2.35,
+      x: 0.45, y: 1.9, w: defW, h: 2.35,
       fill: { color: C.white },
       line: { color: C.quoteBorder, width: 1.75 },
       rectRadius: 0.06,
+      shadow: cardShadow(),
     });
     slide.addText("“", {
-      x: 0.6, y: 1.95, w: 0.55, h: 0.55,
+      x: 0.6, y: 2.0, w: 0.55, h: 0.55,
       fontFace: FONT, fontSize: 40, bold: true, color: C.quoteBorder, margin: 0,
     });
     slide.addText(partsToRuns(s.definition_parts, T.body), {
-      x: 1.2, y: 2.05, w: defW - 1.0, h: 1.95,
+      x: 1.2, y: 2.1, w: defW - 1.0, h: 1.95,
       fontFace: FONT, fontSize: T.body, color: C.body, valign: "middle",
     });
 
     if (illus) {
-      addImageFrame(slide, illus, 8.55, 1.85, 4.3, 2.35, { pad: 0.08 });
+      addImageFrame(slide, illus, 8.55, 1.9, 4.3, 2.35, { pad: 0.08 });
     }
 
     // 病因
-    addTitleChip(slide, s.etiology_title || "病因", 0.45, 4.4, 2.4);
+    addTitleChip(slide, s.etiology_title || "病因", 0.45, 4.5, 2.4);
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.45, y: 4.95, w: 12.4, h: 2.15,
+      x: 0.45, y: 5.05, w: 12.4, h: 1.95,
       fill: { color: C.white },
       line: { color: C.line, width: 1 },
       rectRadius: 0.05,
+      shadow: cardShadow(),
     });
     slide.addText(partsToRuns(s.etiology_parts, T.body), {
-      x: 0.7, y: 5.1, w: 11.9, h: 1.85,
+      x: 0.7, y: 5.2, w: 11.9, h: 1.65,
       fontFace: FONT, fontSize: T.body, color: C.body, valign: "middle",
     });
     continue;
@@ -575,14 +691,14 @@ for (const s of data.slides) {
 
   // ========== CLINICAL ==========
   if (st === "clinical_blocks") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     const blocks = s.blocks || [];
     // 左栏三卡等高：底色标题条 + 正文；短文垂直居中，避免压到底栏
-    const gap = 0.1;
+    const gap = 0.12;
     const n = Math.max(blocks.length, 1);
-    const startY = 1.12;
-    const endY = 6.12; // 提示条上方
+    const startY = 1.14;
+    const endY = 6.0; // 提示条上方
     const blockH = (endY - startY - gap * (n - 1)) / n;
     let y = startY;
     blocks.forEach((b) => {
@@ -591,10 +707,11 @@ for (const s of data.slides) {
         fill: { color: C.white },
         line: { color: C.cardBorder, width: 1 },
         rectRadius: 0.06,
+        shadow: cardShadow(),
       });
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
         x: 0.4, y, w: 7.7, h: 0.42,
-        fill: { color: "E3EEF8" },
+        fill: { color: C.chipBg },
         rectRadius: 0.06,
       });
       slide.addShape(pres.shapes.RECTANGLE, {
@@ -623,19 +740,20 @@ for (const s of data.slides) {
     // 右栏插图（止于提示条上方，不压字）
     const throat = asset("clinical-throat-anatomy.png");
     const oral = asset("clinical-oral.png");
-    if (throat) addImageFrame(slide, throat, 8.3, 1.12, 4.55, 2.4);
-    if (oral) addImageFrame(slide, oral, 8.3, 3.65, 4.55, 2.4);
+    if (throat) addImageFrame(slide, throat, 8.3, 1.14, 4.55, 2.36);
+    if (oral) addImageFrame(slide, oral, 8.3, 3.62, 4.55, 2.36);
 
     // 询问诱因：整宽提示条（去掉无逻辑悬浮小图标）
     if (s.warning) {
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-        x: 0.4, y: 6.25, w: 12.5, h: 0.95,
+        x: 0.4, y: 6.14, w: 12.5, h: 0.88,
         fill: { color: "FFF8E8" },
         line: { color: "F0D090", width: 1.25 },
         rectRadius: 0.05,
+        shadow: cardShadow(),
       });
       slide.addShape(pres.shapes.RECTANGLE, {
-        x: 0.4, y: 6.25, w: 0.12, h: 0.95,
+        x: 0.4, y: 6.14, w: 0.12, h: 0.88,
         fill: { color: "E8A317" },
       });
       slide.addText([
@@ -648,7 +766,7 @@ for (const s of data.slides) {
           options: { color: C.body, fontSize: T.bodySm },
         },
       ], {
-        x: 0.7, y: 6.32, w: 12.0, h: 0.8,
+        x: 0.7, y: 6.2, w: 12.0, h: 0.76,
         fontFace: FONT, valign: "middle", margin: 0,
       });
     }
@@ -657,16 +775,17 @@ for (const s of data.slides) {
 
   // ========== EXAM ==========
   if (st === "exam_two_column") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     // 左：体征说明卡
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.4, y: 1.12, w: 6.2, h: 3.25,
+      x: 0.4, y: 1.14, w: 6.2, h: 3.2,
       fill: { color: C.white },
       line: { color: C.cardBorder, width: 1 },
       rectRadius: 0.06,
+      shadow: cardShadow(),
     });
-    addTitleChip(slide, "体格 / 实验室检查", 0.55, 1.25, 4.2);
+    addTitleChip(slide, "体格 / 实验室检查", 0.55, 1.28, 4.2);
     const leftRuns = (s.left_bullets || []).map((t, i, arr) => ({
       text: t,
       options: {
@@ -684,16 +803,17 @@ for (const s of data.slides) {
     });
 
     const tonsils = asset("exam-tonsils.png");
-    if (tonsils) addImageFrame(slide, tonsils, 0.4, 4.5, 6.2, 2.6);
+    if (tonsils) addImageFrame(slide, tonsils, 0.4, 4.5, 6.2, 2.5);
 
     // 右：病原分型
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 6.85, y: 1.12, w: 6.05, h: 5.98,
+      x: 6.85, y: 1.14, w: 6.05, h: 5.86,
       fill: { color: C.white },
       line: { color: C.cardBorder, width: 1 },
       rectRadius: 0.06,
+      shadow: cardShadow(),
     });
-    addTitleChip(slide, "常见病原体", 7.0, 1.25, 3.6);
+    addTitleChip(slide, "常见病原体", 7.0, 1.28, 3.6);
     const virus = asset("exam-virus-cartoon.png");
     if (virus) {
       slide.addImage({
@@ -707,7 +827,12 @@ for (const s of data.slides) {
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
         x: 7.05, y: py, w: 5.65, h: 1.15,
         fill: { color: "F4F8FC" },
+        line: { color: "DCE8F4", width: 0.75 },
         rectRadius: 0.05,
+      });
+      slide.addShape(pres.shapes.RECTANGLE, {
+        x: 7.05, y: py + 0.18, w: 0.06, h: 0.79,
+        fill: { color: C.blueLine },
       });
       slide.addText([
         { text: p.label + "\n", options: { bold: true, color: C.blueDeep, fontSize: T.h3 } },
@@ -723,7 +848,7 @@ for (const s of data.slides) {
 
   // ========== TREATMENT ILLUSTRATION ==========
   if (st === "treatment_illustration") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
     addCornerTag(slide, s.tag || "");
 
     const images = s.images || [];
@@ -747,14 +872,14 @@ for (const s of data.slides) {
       });
     }
 
-    if (s.body_parts) addDashedBodyBox(slide, s.body_parts, 5.0, 2.1);
-    else if (s.body) addDashedBodyBox(slide, s.body, 5.0, 2.1);
+    if (s.body_parts) addDashedBodyBox(slide, s.body_parts, 4.95, 2.05);
+    else if (s.body) addDashedBodyBox(slide, s.body, 4.95, 2.05);
     continue;
   }
 
   // ========== TWO COL TABLE + PACKSHOT SLOTS ==========
   if (st === "two_col_table") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     const headers = s.headers || ["临床症状", "对症用药"];
     const empMap = s.emphasize_in_rows || {};
@@ -765,7 +890,7 @@ for (const s of data.slides) {
     const tableW = 8.55;
     const col0W = 2.75;
     const col1W = tableW - col0W;
-    const bodyH = 5.95;
+    const bodyH = 5.9;
     const dataRowH = (bodyH - headH) / Math.max(rows.length, 1);
 
     // 外框
@@ -846,7 +971,7 @@ for (const s of data.slides) {
 
   // ========== DRUG PRECAUTIONS TABLE ==========
   if (st === "drug_precautions_table") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     const headers = s.headers || ["药品", "注意事项"];
     const headH = 0.5;
@@ -856,8 +981,8 @@ for (const s of data.slides) {
     const col0W = 2.35;
     const rows = s.rows || [];
     const n = Math.max(rows.length, 1);
-    // 底边距：保证不超出 7.5" 画布
-    const maxBottom = 7.2;
+    // 底边距：保证不超出页脚上方
+    const maxBottom = 7.05;
     const bodyH = maxBottom - (tableY + headH);
     // 行少时略疏、行多时压入可用高度（绝不撑出页面）
     const preferred =
@@ -932,7 +1057,7 @@ for (const s of data.slides) {
 
   // ========== DUAL DRUG COLUMNS ==========
   if (st === "drug_precautions_dual") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     const headers = s.headers || ["药品", "药A", "药B"];
     const hx = [0.45, 1.85, 7.55];
@@ -948,15 +1073,15 @@ for (const s of data.slides) {
       });
     });
     slide.addShape(pres.shapes.RECTANGLE, {
-      x: 0.45, y: 1.7, w: 12.45, h: 5.35,
+      x: 0.45, y: 1.7, w: 12.45, h: 5.28,
       fill: { color: C.white },
       line: { color: C.line, width: 0.75 },
     });
     slide.addShape(pres.shapes.RECTANGLE, {
-      x: 1.85, y: 1.7, w: 0.02, h: 5.35, fill: { color: C.line },
+      x: 1.85, y: 1.7, w: 0.02, h: 5.28, fill: { color: C.line },
     });
     slide.addShape(pres.shapes.RECTANGLE, {
-      x: 7.55, y: 1.7, w: 0.02, h: 5.35, fill: { color: C.line },
+      x: 7.55, y: 1.7, w: 0.02, h: 5.28, fill: { color: C.line },
     });
     slide.addText("注意\n事项", {
       x: 0.5, y: 3.5, w: 1.3, h: 1.2,
@@ -979,7 +1104,7 @@ for (const s of data.slides) {
 
   // ========== CARE THREE CARDS ==========
   if (st === "care_three_cards") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     // 横幅收紧 + 字加大
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
@@ -997,28 +1122,34 @@ for (const s of data.slides) {
     (s.cards || []).forEach((card, i) => {
       const x = 0.4 + i * 4.25;
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-        x, y: 2.35, w: 4.1, h: 4.75,
+        x, y: 2.35, w: 4.1, h: 4.62,
         fill: { color: C.white },
         line: { color: C.cardBorder, width: 1.25 },
         rectRadius: 0.08,
+        shadow: cardShadow(),
       });
       const imgName = (s.images || [])[i];
       const p = asset(imgName);
       if (p) {
+        slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+          x: x + 0.18, y: 2.53, w: 3.74, h: 2.62,
+          fill: { color: "F7FAFD" },
+          rectRadius: 0.05,
+        });
         slide.addImage({
           path: p,
-          x: x + 0.3, y: 2.55, w: 3.5, h: 2.55,
-          sizing: { type: "contain", w: 3.5, h: 2.55 },
+          x: x + 0.3, y: 2.58, w: 3.5, h: 2.52,
+          sizing: { type: "contain", w: 3.5, h: 2.52 },
         });
       }
       slide.addShape(pres.shapes.RECTANGLE, {
-        x: x + 0.25, y: 5.2, w: 3.6, h: 0.04,
-        fill: { color: "E3EEF8" },
+        x: x + 0.25, y: 5.28, w: 3.6, h: 0.03,
+        fill: { color: C.chipBg },
       });
       slide.addText(
         partsToRuns(card.parts || [{ text: card.body || "", emphasize: false }], T.bodySm),
         {
-          x: x + 0.28, y: 5.35, w: 3.55, h: 1.55,
+          x: x + 0.28, y: 5.42, w: 3.55, h: 1.42,
           fontFace: FONT, fontSize: T.bodySm, color: C.body, valign: "top",
         },
       );
@@ -1028,16 +1159,17 @@ for (const s of data.slides) {
 
   // ========== CARE SPECIAL ==========
   if (st === "care_special") {
-    addShenkeChrome(slide, s.section_num, s.section_title);
+    addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     // 三列整卡：上文下图，密度更高
     (s.cards || []).forEach((card, i) => {
       const x = 0.4 + i * 4.25;
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-        x, y: 1.15, w: 4.1, h: 5.95,
+        x, y: 1.15, w: 4.1, h: 5.85,
         fill: { color: C.white },
         line: { color: C.cardBorder, width: 1.5 },
         rectRadius: 0.08,
+        shadow: cardShadow(),
       });
       // 标题色条
       slide.addShape(pres.shapes.RECTANGLE, {
@@ -1063,50 +1195,63 @@ for (const s of data.slides) {
 
   // ========== OUTRO ==========
   if (st === "outro") {
-    slide.background = { color: "0A4A9C" };
+    slide.background = { color: C.navy };
     for (let i = 0; i < 12; i++) {
       slide.addShape(pres.shapes.OVAL, {
         x: 0.3 + (i % 6) * 2.1, y: 0.4 + Math.floor(i / 6) * 3.2,
         w: 1.8, h: 1.2,
-        fill: { color: "1A6BC4", transparency: 70 },
+        fill: { color: "1A6BC4", transparency: 88 },
       });
     }
-    slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 2.7, y: 1.55, w: 7.9, h: 3.5,
-      fill: { color: "0B5AB5", transparency: 18 },
-      line: { color: "5EC8F0", width: 3 },
-      rectRadius: 0.1,
+    // 底部白弧，与封面呼应
+    slide.addShape(pres.shapes.OVAL, {
+      x: -2.4, y: 5.95, w: 18.9, h: 4.6,
+      fill: { color: "4A90D9", transparency: 35 },
+    });
+    slide.addShape(pres.shapes.OVAL, {
+      x: -2.2, y: 6.28, w: 18.5, h: 4.6,
+      fill: { color: C.white },
     });
 
-    const logo = asset("logo-shenke.png");
-    if (logo) slide.addImage({ path: logo, x: 11.45, y: 0.28, w: 1.55, h: 0.55 });
+    const logo = asset("logo-shenke-cover.png") || asset("logo-shenke.png");
+    if (logo) {
+      const lh = 0.5;
+      slide.addImage({ path: logo, x: 12.75 - logoW(lh), y: 0.3, w: logoW(lh), h: lh });
+    }
 
     slide.addText(s.title || "专业服务\n助力健康", {
-      x: 2.9, y: 1.95, w: 7.5, h: 2.7,
+      x: 1.9, y: 2.0, w: 9.5, h: 2.3,
       fontFace: FONT, fontSize: 46, bold: true, color: C.white,
       align: "center", valign: "middle", margin: 0,
     });
-
+    // 标题下短 accent 条
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 8.4, y: 5.85, w: 4.6, h: 1.3,
-      fill: { color: C.white },
+      x: 6.17, y: 4.62, w: 1.0, h: 0.07,
+      fill: { color: "7FB6E8" },
+      rectRadius: 0.035,
+    });
+
+    // 讲者信息卡（白区上，与封面同款）
+    slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+      x: 8.35, y: 5.82, w: 4.55, h: 1.28,
+      fill: { color: "F0F6FC" },
+      line: { color: C.line, width: 0.75 },
       rectRadius: 0.05,
     });
     slide.addShape(pres.shapes.RECTANGLE, {
-      x: 8.4, y: 5.85, w: 4.6, h: 0.4, fill: { color: C.blue },
+      x: 8.35, y: 5.82, w: 0.14, h: 1.28, fill: { color: C.blue },
     });
     slide.addText(s.name || data.meta.presenter_name || "", {
-      x: 8.4, y: 5.85, w: 4.6, h: 0.4,
-      fontFace: FONT, fontSize: 15, bold: true, color: C.white,
-      align: "center", valign: "middle", margin: 0,
+      x: 8.72, y: 5.94, w: 4.05, h: 0.36,
+      fontFace: FONT, fontSize: 14, bold: true, color: C.ink, margin: 0, valign: "middle",
     });
     slide.addText(s.title_line || "", {
-      x: 8.6, y: 6.35, w: 4.25, h: 0.32,
-      fontFace: FONT, fontSize: 14, bold: true, color: C.ink, margin: 0,
+      x: 8.72, y: 6.32, w: 4.05, h: 0.3,
+      fontFace: FONT, fontSize: 12, bold: true, color: C.body, margin: 0, valign: "middle",
     });
     slide.addText(s.sub_line || "", {
-      x: 8.6, y: 6.7, w: 4.25, h: 0.35,
-      fontFace: FONT, fontSize: 12, color: C.muted, margin: 0,
+      x: 8.72, y: 6.64, w: 4.05, h: 0.3,
+      fontFace: FONT, fontSize: 11.5, color: C.muted, margin: 0, valign: "middle",
     });
     continue;
   }
@@ -1124,7 +1269,7 @@ for (const s of data.slides) {
 
     // 外阴影感（底层略偏）
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: px + 0.06, y: py + 0.06, w: pw, h: ph,
+      x: px + 0.05, y: py + 0.06, w: pw, h: ph,
       fill: { color: "C5D0DE" },
       rectRadius: 0.06,
     });
@@ -1132,7 +1277,7 @@ for (const s of data.slides) {
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
       x: px, y: py, w: pw, h: ph,
       fill: { color: C.white },
-      line: { color: C.blueDeep, width: 2.5 },
+      line: { color: C.blueDeep, width: 1.75 },
       rectRadius: 0.05,
     });
 
@@ -1145,12 +1290,12 @@ for (const s of data.slides) {
     const seriesLogo = asset("summary-series-logo.png");
     if (seriesLogo) {
       slide.addImage({
-        path: seriesLogo, x: ix, y: iy, w: 0.9, h: 0.32,
-        sizing: { type: "contain", w: 0.9, h: 0.32 },
+        path: seriesLogo, x: ix, y: iy, w: 1.06, h: 0.31,
+        sizing: { type: "contain", w: 1.06, h: 0.31 },
       });
     }
     slide.addText(s.series_label || "健康顾问专业力系列", {
-      x: ix + 0.95, y: iy, w: iw - 1.0, h: 0.32,
+      x: ix + 1.12, y: iy, w: iw - 1.15, h: 0.32,
       fontFace: FONT, fontSize: 11, color: C.muted, valign: "middle", margin: 0,
     });
     iy += 0.42;
@@ -1308,7 +1453,7 @@ for (const s of data.slides) {
   }
 
   // fallback
-  addShenkeChrome(slide, s.section_num || "00", s.section_title || s.id || "页面");
+  addShenkeChrome(slide, s.section_num || "00", s.section_title || s.id || "页面", pageIdx);
   slide.addText("未识别 scene_type: " + st, {
     x: 1, y: 3, w: 10, h: 1,
     fontFace: FONT, fontSize: 16, color: C.red,

@@ -1,0 +1,1403 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/d6oyro",
+    "id": "d6oyro",
+    "slide": 5,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/94fex076",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1ofml8f",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "1.2",
+      "textPreview": "1.2",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1.2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1.2",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1.2",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n2xwvqp0",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "疾病篇——风热证的典型症状",
+      "textPreview": "疾病篇——风热证的典型症状",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "疾病篇——风热证的典型症状"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "疾病篇——风热证的典型症状",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "疾病篇——风热证的典型症状",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0zmdkvq9",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/10fet07u",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ex4vil8j",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zydwrqp4",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kvqxwfqt",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "05 / 18",
+      "textPreview": "05 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8rm9kfmt",
+      "id": "9",
+      "bbox": [
+        70,
+        112,
+        320,
+        185
+      ],
+      "alt": "咽喉红肿疼痛图片",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "d7639d30-5a41-4fc5-a34d-86fe253b5738",
+        "contentType": "image/png",
+        "byteLength": 166319
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tkza50vy",
+      "id": "10",
+      "name": "symptom-image-1-frame",
+      "bbox": [
+        70,
+        112,
+        320,
+        185
+      ],
+      "geometry": "rect",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/nyhk3i1s",
+      "id": "11",
+      "bbox": [
+        445,
+        112,
+        320,
+        185
+      ],
+      "alt": "流黄鼻涕图片",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "d3be1c6d-f10b-48a2-ba6d-15705b59d780",
+        "contentType": "image/png",
+        "byteLength": 126419
+      }
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ryhs3qd8",
+      "id": "12",
+      "name": "symptom-image-2-frame",
+      "bbox": [
+        445,
+        112,
+        320,
+        185
+      ],
+      "geometry": "rect",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/p0z25sjy",
+      "id": "13",
+      "bbox": [
+        820,
+        112,
+        320,
+        185
+      ],
+      "alt": "黄色黏痰图片",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "2f8ab4c8-ae7f-4a90-9a88-95f3449eadcd",
+        "contentType": "image/png",
+        "byteLength": 160414
+      }
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5wza10v2",
+      "id": "14",
+      "name": "symptom-image-3-frame",
+      "bbox": [
+        820,
+        112,
+        320,
+        185
+      ],
+      "geometry": "rect",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vq98vuh",
+      "id": "15",
+      "name": "symptom-throat-surface",
+      "bbox": [
+        70,
+        308,
+        320,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/juhszqdw",
+      "id": "16",
+      "name": "symptom-throat-accent",
+      "bbox": [
+        80,
+        322,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/it8r6lcb",
+      "id": "17",
+      "name": "symptom-throat-title",
+      "bbox": [
+        94,
+        320,
+        280,
+        38
+      ],
+      "geometry": "rect",
+      "text": "咽喉红肿疼痛",
+      "textPreview": "咽喉红肿疼痛",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "咽喉红肿疼痛"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "咽喉红肿疼痛",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "咽喉红肿疼痛",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ps3adkv6",
+      "id": "18",
+      "name": "symptom-throat-divider",
+      "bbox": [
+        94,
+        366,
+        276,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oratkful",
+      "id": "19",
+      "name": "symptom-throat-body",
+      "bbox": [
+        94,
+        378,
+        276,
+        106
+      ],
+      "geometry": "rect",
+      "text": "最典型的特征之一，咽喉黏膜充血明显，吞咽时痛感加剧，是风热之邪侵犯肺卫的直接表现。",
+      "textPreview": "最典型的特征之一，咽喉黏膜充血明显，吞咽时痛感加剧，是风热之邪侵犯肺卫的直接表现。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "最典型的特征之一，"
+          },
+          {
+            "index": 2,
+            "text": "咽喉黏膜充血明显"
+          },
+          {
+            "index": 3,
+            "text": "，吞咽时痛感加剧，是风热之邪"
+          },
+          {
+            "index": 4,
+            "text": "侵犯肺卫的直接表现。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "最典型的特征之一，咽喉黏膜充血明显，吞咽时痛感加剧，是风热之邪侵犯肺卫的直接表现。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "最典型的特征之一，",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "咽喉黏膜充血明显",
+              "fontSize": 18,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，吞咽时痛感加剧，是风热之邪侵犯肺卫的直接表现。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/872lwn69",
+      "id": "20",
+      "name": "symptom-nose-surface",
+      "bbox": [
+        445,
+        308,
+        320,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98bm5snu",
+      "id": "21",
+      "name": "symptom-nose-accent",
+      "bbox": [
+        455,
+        322,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m5k3udo3",
+      "id": "22",
+      "name": "symptom-nose-title",
+      "bbox": [
+        469,
+        320,
+        280,
+        38
+      ],
+      "geometry": "rect",
+      "text": "流黄稠涕，咳黄黏痰",
+      "textPreview": "流黄稠涕，咳黄黏痰",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "流黄稠涕，咳黄黏痰"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "流黄稠涕，咳黄黏痰",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "流黄稠涕，咳黄黏痰",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6t43ipo",
+      "id": "23",
+      "name": "symptom-nose-divider",
+      "bbox": [
+        469,
+        366,
+        276,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/032lsn6x",
+      "id": "24",
+      "name": "symptom-nose-body",
+      "bbox": [
+        469,
+        378,
+        276,
+        106
+      ],
+      "geometry": "rect",
+      "text": "鼻腔与呼吸道分泌物颜色发黄且质地黏稠，是热邪煎灼津液所致，与风寒证清稀分泌物形成鲜明对比。",
+      "textPreview": "鼻腔与呼吸道分泌物颜色发黄且质地黏稠，是热邪煎灼津液所致，与风寒证清稀分泌物形成鲜明对比。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "鼻腔与呼吸道分泌物颜色"
+          },
+          {
+            "index": 2,
+            "text": "发黄且质地黏稠"
+          },
+          {
+            "index": 3,
+            "text": "，是热邪煎灼津液所致，与风寒"
+          },
+          {
+            "index": 4,
+            "text": "证清稀分泌物形成鲜明对比。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "鼻腔与呼吸道分泌物颜色发黄且质地黏稠，是热邪煎灼津液所致，与风寒证清稀分泌物形成鲜明对比。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "鼻腔与呼吸道分泌物颜色",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "发黄且质地黏稠",
+              "fontSize": 18,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，是热邪煎灼津液所致，与风寒证清稀分泌物形成鲜明对比。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l4bm1s7i",
+      "id": "25",
+      "name": "symptom-fever-surface",
+      "bbox": [
+        820,
+        308,
+        320,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y103qdo7",
+      "id": "26",
+      "name": "symptom-fever-accent",
+      "bbox": [
+        830,
+        322,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2tkzipc",
+      "id": "27",
+      "name": "symptom-fever-title",
+      "bbox": [
+        844,
+        320,
+        280,
+        38
+      ],
+      "geometry": "rect",
+      "text": "发热重，微恶风",
+      "textPreview": "发热重，微恶风",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "发热重，微恶风"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "发热重，微恶风",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "发热重，微恶风",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfilo361",
+      "id": "28",
+      "name": "symptom-fever-divider",
+      "bbox": [
+        844,
+        366,
+        276,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgr2x87m",
+      "id": "29",
+      "name": "symptom-fever-body",
+      "bbox": [
+        844,
+        378,
+        276,
+        106
+      ],
+      "geometry": "rect",
+      "text": "患者自觉身体发烫，体温较高，但怕冷感觉不明显，仅稍有怕风，是风热证在体温上的核心表现。",
+      "textPreview": "患者自觉身体发烫，体温较高，但怕冷感觉不明显，仅稍有怕风，是风热证在体温上的核心表现。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "患者自觉身体发烫，体温较高"
+          },
+          {
+            "index": 2,
+            "text": "，但怕冷感觉不明显，仅稍有怕"
+          },
+          {
+            "index": 3,
+            "text": "风，是风热证在体温上的核心表"
+          },
+          {
+            "index": 4,
+            "text": "现。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "患者自觉身体发烫，体温较高，但怕冷感觉不明显，仅稍有怕风，是风热证在体温上的核心表现。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "患者自觉身体",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "发烫，体温较高",
+              "fontSize": 18,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，但怕冷感觉不明显，仅稍有怕风，是风热证在体温上的核心表现。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fap47y98",
+      "id": "30",
+      "name": "symptom-thirst-surface",
+      "bbox": [
+        70,
+        520,
+        350,
+        92
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e9gnet8n",
+      "id": "31",
+      "name": "symptom-thirst",
+      "bbox": [
+        84,
+        530,
+        322,
+        72
+      ],
+      "geometry": "rect",
+      "text": "口干口渴，喜冷饮\n热邪耗伤津液，导致口渴，且偏好凉水。",
+      "textPreview": "口干口渴，喜冷饮 | 热邪耗伤津液，导致口渴，且偏好凉水。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "口干口渴，喜冷饮"
+          },
+          {
+            "index": 2,
+            "text": "热邪耗伤津液，导致口渴，且偏好凉"
+          },
+          {
+            "index": 3,
+            "text": "水。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "口干口渴，喜冷饮",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "口干口渴，喜冷饮",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "热邪耗伤津液，导致口渴，且偏好凉水。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "热邪耗伤津液，导致口渴，且偏好凉水。",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1crm98re",
+      "id": "32",
+      "name": "symptom-tongue-surface",
+      "bbox": [
+        455,
+        520,
+        350,
+        92
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbi5g3qt",
+      "id": "33",
+      "name": "symptom-tongue",
+      "bbox": [
+        469,
+        530,
+        322,
+        72
+      ],
+      "geometry": "rect",
+      "text": "舌尖红，苔薄黄\n舌尖红为热象；薄黄苔提示病邪尚在表浅。",
+      "textPreview": "舌尖红，苔薄黄 | 舌尖红为热象；薄黄苔提示病邪尚在表浅。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "舌尖红，苔薄黄"
+          },
+          {
+            "index": 2,
+            "text": "舌尖红为热象；薄黄苔提示病邪尚在"
+          },
+          {
+            "index": 3,
+            "text": "表浅。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "舌尖红，苔薄黄",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "舌尖红，苔薄黄",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "舌尖红为热象；薄黄苔提示病邪尚在表浅。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "舌尖红为热象；薄黄苔提示病邪尚在表浅。",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/czm9gzux",
+      "id": "34",
+      "bbox": [
+        845,
+        505,
+        210,
+        120
+      ],
+      "alt": "源 PDF 中的舌象图片",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "d4420943-f7d2-40e4-86f5-cfc4042c4f35",
+        "contentType": "image/png",
+        "byteLength": 56585
+      }
+    }
+  ],
+  "composeRuns": []
+}

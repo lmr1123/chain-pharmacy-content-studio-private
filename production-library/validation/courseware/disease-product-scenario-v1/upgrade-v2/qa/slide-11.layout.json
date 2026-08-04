@@ -1,0 +1,1285 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/fp5hup",
+    "id": "fp5hup",
+    "slide": 11,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/07ud4vut",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zmlcvqt8",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "2.3",
+      "textPreview": "2.3",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2.3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2.3",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2.3",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/elcv2lcn",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "商品篇——穿心莲内酯滴丸的核心优势总结",
+      "textPreview": "商品篇——穿心莲内酯滴丸的核心优势总结",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "商品篇——穿心莲内酯滴丸的核心优势总结"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "商品篇——穿心莲内酯滴丸的核心优势总结",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "商品篇——穿心莲内酯滴丸的核心优势总结",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9cnu10bq",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obed8va5",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nalczatk",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m9cv65sz",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xgnu5kbm",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "11 / 18",
+      "textPreview": "11 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "11 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "11 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "11 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/psz6lsj6",
+      "id": "9",
+      "bbox": [
+        500,
+        210,
+        280,
+        260
+      ],
+      "alt": "穿心莲内酯滴丸包装，裁自源 PDF",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "36d4fae3-1edb-4588-9ac9-e10f92dbf7e0",
+        "contentType": "image/png",
+        "byteLength": 144553
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/atkjat4z",
+      "id": "10",
+      "name": "dosage-advantage-surface",
+      "bbox": [
+        60,
+        130,
+        400,
+        230
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vut0jy5k",
+      "id": "11",
+      "name": "dosage-advantage-accent",
+      "bbox": [
+        70,
+        144,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wf21c3m5",
+      "id": "12",
+      "name": "dosage-advantage-title",
+      "bbox": [
+        84,
+        142,
+        360,
+        38
+      ],
+      "geometry": "rect",
+      "text": "剂型优势",
+      "textPreview": "剂型优势",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "剂型优势"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "剂型优势",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "剂型优势",
+              "fontSize": 26,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgbil8nq",
+      "id": "13",
+      "name": "dosage-advantage-divider",
+      "bbox": [
+        84,
+        188,
+        356,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ihkjet4b",
+      "id": "14",
+      "name": "dosage-advantage-body",
+      "bbox": [
+        84,
+        200,
+        356,
+        146
+      ],
+      "geometry": "rect",
+      "text": "• 全国独家：全国唯一穿心莲内酯滴丸剂型\n• 起效更快：5–10分钟内全部崩解\n• 易携带：独立包装，方便携带",
+      "textPreview": "• 全国独家：全国唯一穿心莲内酯滴丸剂型 | • 起效更快：5–10分钟内全部崩解 | • 易携带：独立包装，方便携带",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• 全国独家："
+          },
+          {
+            "index": 2,
+            "text": "全国唯一穿心莲内酯滴丸剂型"
+          },
+          {
+            "index": 3,
+            "text": "• 起效更快：5–10分钟内全部崩解"
+          },
+          {
+            "index": 4,
+            "text": "• 易携带：独立包装，方便携带"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• 全国独家：全国唯一穿心莲内酯滴丸剂型",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "全国独家：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "全国唯一穿心莲内酯滴丸剂型",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "• 起效更快：5–10分钟内全部崩解",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "起效更快：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "5–10分钟内全部崩解",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "• 易携带：独立包装，方便携带",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "易携带：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "独立包装，方便携带",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jit0ny5g",
+      "id": "15",
+      "name": "process-advantage-surface",
+      "bbox": [
+        60,
+        390,
+        440,
+        220
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4jm1g3m1",
+      "id": "16",
+      "name": "process-advantage-accent",
+      "bbox": [
+        70,
+        404,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5kvip8nm",
+      "id": "17",
+      "name": "process-advantage-title",
+      "bbox": [
+        84,
+        402,
+        400,
+        38
+      ],
+      "geometry": "rect",
+      "text": "工艺优势",
+      "textPreview": "工艺优势",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "工艺优势"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "工艺优势",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "工艺优势",
+              "fontSize": 26,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yl0z294r",
+      "id": "18",
+      "name": "process-advantage-divider",
+      "bbox": [
+        84,
+        448,
+        396,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zm90be5c",
+      "id": "19",
+      "name": "process-advantage-body",
+      "bbox": [
+        84,
+        460,
+        396,
+        136
+      ],
+      "geometry": "rect",
+      "text": "• 纯度高：穿心莲内酯纯度高达97%\n• 稳定性强：高速滴丸机，含量均匀度高\n• 安全保证：0糖0添加，纯中药制剂",
+      "textPreview": "• 纯度高：穿心莲内酯纯度高达97% | • 稳定性强：高速滴丸机，含量均匀度高 | • 安全保证：0糖0添加，纯中药制剂",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• 纯度高：穿心莲内酯纯度高达97%"
+          },
+          {
+            "index": 2,
+            "text": "• 稳定性强："
+          },
+          {
+            "index": 3,
+            "text": "高速滴丸机，含量均匀度高"
+          },
+          {
+            "index": 4,
+            "text": "• 安全保证：0糖0添加，纯中药制剂"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• 纯度高：穿心莲内酯纯度高达97%",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "纯度高：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "穿心莲内酯纯度高达97%",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "• 稳定性强：高速滴丸机，含量均匀度高",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "稳定性强：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "高速滴丸机，含量均匀度高",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "• 安全保证：0糖0添加，纯中药制剂",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "安全保证：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "0糖0添加，纯中药制剂",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3elon6hs",
+      "id": "20",
+      "name": "formula-advantage-surface",
+      "bbox": [
+        810,
+        220,
+        430,
+        300
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2tc7u1gn",
+      "id": "21",
+      "name": "formula-advantage-accent",
+      "bbox": [
+        820,
+        234,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pgn6pgzy",
+      "id": "22",
+      "name": "formula-advantage-title",
+      "bbox": [
+        834,
+        232,
+        390,
+        38
+      ],
+      "geometry": "rect",
+      "text": "组方优势",
+      "textPreview": "组方优势",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#066A2F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "组方优势"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "组方优势",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#066A2F",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "组方优势",
+              "fontSize": 26,
+              "color": "#066A2F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fepwbyd",
+      "id": "23",
+      "name": "formula-advantage-divider",
+      "bbox": [
+        834,
+        278,
+        386,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fqloj6hw",
+      "id": "24",
+      "name": "formula-advantage-body",
+      "bbox": [
+        834,
+        290,
+        386,
+        216
+      ],
+      "geometry": "rect",
+      "text": "• 植物单体制剂：经典老药，植物单体制剂\n• 功能全面：清热解毒＋抗菌消炎\n• 疗效显著：治疗感冒、流感、咽痛总有效率95%",
+      "textPreview": "• 植物单体制剂：经典老药，植物单体制剂 | • 功能全面：清热解毒＋抗菌消炎 | • 疗效显著：治疗感冒、流感、咽痛总有效率95%",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• 植物单体制剂："
+          },
+          {
+            "index": 2,
+            "text": "经典老药，植物单体制剂"
+          },
+          {
+            "index": 3,
+            "text": "• 功能全面：清热解毒＋抗菌消炎"
+          },
+          {
+            "index": 4,
+            "text": "• 疗效显著："
+          },
+          {
+            "index": 5,
+            "text": "治疗感冒、流感、咽痛总有效率95%"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• 植物单体制剂：经典老药，植物单体制剂",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "植物单体制剂：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "经典老药，植物单体制剂",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "• 功能全面：清热解毒＋抗菌消炎",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "功能全面：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "清热解毒＋抗菌消炎",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "• 疗效显著：治疗感冒、流感、咽痛总有效率95%",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• ",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "疗效显著：",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "治疗感冒、流感、咽痛总有效率95%",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

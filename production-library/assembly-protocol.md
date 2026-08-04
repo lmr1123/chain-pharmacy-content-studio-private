@@ -132,3 +132,17 @@
 3. 组件只引用稳定资产 ID，不直接硬编码一次性文件路径。
 4. 新成员独立完成视觉、技术、来源和医学审核，不能继承其他成员状态。
 5. 通过后更新系列 `members`，使后续视频、PPTX 和 PDF 均可检索和组合。
+
+### 8.1 小图标 / 排版符号（Koboyo 按需源头）
+
+金样复刻与换主题装配时，若槽位需要**箭头、分行点、分隔线、勾叉、提示徽标、简单物件符号**（药/心/肺/听诊器等），且 `component-library` 尚无已签样资产：
+
+1. **源头在线**：在 https://koboyo.com/icons 按语义匹配 slug（不预囤 7 万库、不提交 SVG 包）。
+2. **本机按需落盘（不进 Git）**：仅下载本次要用的 SVG →
+   `assets/_intake/open_source/koboyo/svg/layout|health/`（路径已在根目录 `.gitignore`）。
+   仓库内只保留 `SOURCE.md` / `license.txt` / 空 `manifest.json`。
+3. **适配后晋升**：改 `currentColor` 为风格包品牌色 → 需要时栅格化为透明 PNG →
+   `candidates` 签样 → `master` + 注册表；成片模板只引用本地已固化路径，禁止运行时热链官网。
+4. **边界**：不替代多色场景插画（症状格、注意事项场景、药师角色）；纯序号 1/2/3 优先文本排版；禁止整库镜像或做成「用户可选可下全库」功能。
+
+流程全文：`assets/_intake/open_source/koboyo/SOURCE.md`。

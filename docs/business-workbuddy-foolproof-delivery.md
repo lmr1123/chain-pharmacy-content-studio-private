@@ -370,6 +370,20 @@ WorkBuddy：**voice_id 只从模板 manifest 读取**，禁止回退系统 TTS�
 - 人声仅限**公司内部培训授权**范围；开源对外时须脱敏或换企业自有授权包。  
 - 参考原声直接贴片仅用于复刻验证，须标注；**新主题必须用克隆生成**。
 
+### 6.5.1 小图标 / 排版符号（制作与代理 · Koboyo 按需）
+
+| 角色 | 做什么 | 不做什么 |
+|------|--------|----------|
+| **业务** | 只交审核文案 + 授权包装/证据 | 不自己找图标站、不交网图当正式符号 |
+| **WorkBuddy / 制作** | 槽位缺小图标时，在 https://koboyo.com/icons **按需匹配**；本机临时落盘 `svg/`（gitignore） | 不整库镜像、不把 SVG 包提交 Git；不用手绘图标替代多色场景插画 |
+| **成片** | 只引用已晋升 master / 本机已改色路径 | 不运行时热链 koboyo.com |
+
+- **适用**：箭头、分行点、分隔线、勾叉、info/warning 徽标、简单物件（药/心/肺等）。  
+- **不适用**：症状格、注意事项场景、药师角色等已签样彩色插画（仍走 `component-library` 系列）。  
+- **序号 1/2/3**：优先文本排版；可用圆底 shape + 数字。  
+- **仓库内**：仅 `SOURCE.md` + `license.txt` + 空 `manifest.json`；流程见 `assets/_intake/open_source/koboyo/SOURCE.md`。  
+- **业务包**：不附图标库；货架与 Word 不要求业务选图标。
+
 ### 6.6 验收
 
 - [ ] 视频类 settled 均有可用 voice pack 或明确继承的 voice_id  
@@ -535,6 +549,8 @@ clone/pull + scripts/workbuddy_bootstrap_for_business.py → 打开引导页 →
 |------|------|
 | 2026-08-03 | 初版：货架预览、内容驱动框架、视频/语音包、WorkBuddy 分层与 backlog |
 | 2026-08-03 | **P0 落地（上市公司交付标准）**：六模板 `preview/` 真实金样帧；档 A 业务包 zip（货架+Word+口令+质量说明）；`workbuddy-system-prompt.md`；manifest.preview + 视频类 manifest.voice；刷新命令见下 |
+| 2026-08-03 | **小图标按需源头**：Koboyo Icons 写入金样复刻/装配协议与业务交付（§6.5.1）；业务不找图标，代理/制作按需获取 |
+| 2026-08-03 | **Koboyo 不囤库**：删除预下载 SVG；`svg/` gitignore；Git 只留说明与许可，后续按需再拉 |
 | 2026-08-03 | **业务可上手**：每课型「本课型怎么填」；填写参考纠错（商品不再错挂风热样本）；初稿/缺口/分镜标准模板+示例；业务验收清单；内容驱动规则回归；一键 `scripts/refresh_business_delivery.py` |
 | 2026-08-03 | **默认入口改为 WorkBuddy 安装句**：业务不需解压；`workbuddy_bootstrap_for_business.py` + `workbuddy-install-and-guide.md`；开源式四步由代理陪做 |
 

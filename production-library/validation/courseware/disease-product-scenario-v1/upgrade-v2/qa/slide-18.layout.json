@@ -1,0 +1,1717 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/bac3s9",
+    "id": "bac3s9",
+    "slide": 18,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqlo7yts",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4ru503ax",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "5.2",
+      "textPreview": "5.2",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5.2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5.2",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5.2",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5sn698bi",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "权重篇——白云山安宫＋宏济堂安宫",
+      "textPreview": "权重篇——白云山安宫＋宏济堂安宫",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "权重篇——白云山安宫＋宏济堂安宫"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "权重篇——白云山安宫＋宏济堂安宫",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "权重篇——白云山安宫＋宏济堂安宫",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1cnutsv",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v2l43etg",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w3u5wja1",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h43m5obm",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/exwn6dsf",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "18 / 18",
+      "textPreview": "18 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "18 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "18 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "18 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fy5ofitk",
+      "id": "9",
+      "name": "compare-dim-surface",
+      "bbox": [
+        40,
+        100,
+        150,
+        66
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/76x0vepo",
+      "id": "10",
+      "name": "compare-dim-text",
+      "bbox": [
+        48,
+        100,
+        134,
+        66
+      ],
+      "geometry": "rect",
+      "text": "对比维度",
+      "textPreview": "对比维度",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "对比维度"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "对比维度",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "对比维度",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65ojm9o3",
+      "id": "11",
+      "name": "compare-product-a-surface",
+      "bbox": [
+        190,
+        100,
+        455,
+        66
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8f2xo7u",
+      "id": "12",
+      "name": "compare-product-a-text",
+      "bbox": [
+        198,
+        100,
+        439,
+        66
+      ],
+      "geometry": "rect",
+      "text": "安宫牛黄丸（白云山中一）\n8202533（人工体培）",
+      "textPreview": "安宫牛黄丸（白云山中一） | 8202533（人工体培）",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "安宫牛黄丸（白云山中一）"
+          },
+          {
+            "index": 2,
+            "text": "8202533（人工体培）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "安宫牛黄丸（白云山中一）",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "安宫牛黄丸（白云山中一）",
+              "fontSize": 17,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "8202533（人工体培）",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "8202533（人工体培）",
+              "fontSize": 17,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s761oj69",
+      "id": "13",
+      "name": "compare-product-b-surface",
+      "bbox": [
+        645,
+        100,
+        585,
+        66
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/faxkzepk",
+      "id": "14",
+      "name": "compare-product-b-text",
+      "bbox": [
+        653,
+        100,
+        569,
+        66
+      ],
+      "geometry": "rect",
+      "text": "安宫牛黄丸（宏济堂）1185781（单天然）、\n1185783（人工体培）2373089（单天然包金衣）",
+      "textPreview": "安宫牛黄丸（宏济堂）1185781（单天然）、 | 1185783（人工体培）2373089（单天然包金衣）",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "安宫牛黄丸（宏济堂）1185781（单天然）、"
+          },
+          {
+            "index": 2,
+            "text": "1185783（人工体培）2373089（单天然包金衣）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "安宫牛黄丸（宏济堂）1185781（单天然）、",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "安宫牛黄丸（宏济堂）1185781（单天然）、",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "1185783（人工体培）2373089（单天然包金衣）",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1185783（人工体培）2373089（单天然包金衣）",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9ojq9of",
+      "id": "15",
+      "name": "compare-image-label-surface",
+      "bbox": [
+        40,
+        166,
+        150,
+        100
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcz21o7q",
+      "id": "16",
+      "name": "compare-image-label-text",
+      "bbox": [
+        48,
+        166,
+        134,
+        100
+      ],
+      "geometry": "rect",
+      "text": "产品图片",
+      "textPreview": "产品图片",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "产品图片"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "产品图片",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "产品图片",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zut4rexg",
+      "id": "17",
+      "bbox": [
+        275,
+        178,
+        260,
+        75
+      ],
+      "alt": "白云山中一安宫产品图，裁自源 PDF",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "b5f5d8c0-5570-49d6-91de-8f62283cad23",
+        "contentType": "image/png",
+        "byteLength": 27738
+      }
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ojmlojex",
+      "id": "18",
+      "bbox": [
+        690,
+        178,
+        485,
+        75
+      ],
+      "alt": "宏济堂安宫产品图，裁自源 PDF",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "e6eee483-70c5-40d8-bd58-d7f1e5e0159d",
+        "contentType": "image/png",
+        "byteLength": 59819
+      }
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2d8jutob",
+      "id": "19",
+      "name": "compare-selling-label-surface",
+      "bbox": [
+        40,
+        266,
+        150,
+        170
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ets3mx8j",
+      "id": "20",
+      "name": "compare-selling-label-text",
+      "bbox": [
+        48,
+        266,
+        134,
+        170
+      ],
+      "geometry": "rect",
+      "text": "核心卖点",
+      "textPreview": "核心卖点",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心卖点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心卖点",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心卖点",
+              "fontSize": 18,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zu14v294",
+      "id": "21",
+      "name": "compare-selling-a-surface",
+      "bbox": [
+        190,
+        266,
+        455,
+        170
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0va5o7qp",
+      "id": "22",
+      "name": "compare-selling-a-text",
+      "bbox": [
+        198,
+        266,
+        439,
+        170
+      ],
+      "geometry": "rect",
+      "text": "1. 药材道地：胆红素含量是国家标准2倍；\n2. 古法手工：166年老手艺纯手工制丸；\n3. 广药白云山品牌，质量保证。",
+      "textPreview": "1. 药材道地：胆红素含量是国家标准2倍； | 2. 古法手工：166年老手艺纯手工制丸； | 3. 广药白云山品牌，质量保证。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. 药材道地：胆红素含量是国家标准2倍；"
+          },
+          {
+            "index": 2,
+            "text": "2. 古法手工：166年老手艺纯手工制丸；"
+          },
+          {
+            "index": 3,
+            "text": "3. 广药白云山品牌，质量保证。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. 药材道地：胆红素含量是国家标准2倍；",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. ",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "药材道地：",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "胆红素含量是国家标准2倍；",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. 古法手工：166年老手艺纯手工制丸；",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. ",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "古法手工：",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "166年老手艺纯手工制丸；",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. 广药白云山品牌，质量保证。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. ",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "广药白云山品牌",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，质量保证。",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1w3mxcra",
+      "id": "23",
+      "name": "compare-selling-b-surface",
+      "bbox": [
+        645,
+        266,
+        585,
+        170
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q5s3id8n",
+      "id": "24",
+      "name": "compare-selling-b-text",
+      "bbox": [
+        653,
+        266,
+        569,
+        170
+      ],
+      "geometry": "rect",
+      "text": "1. 系出名门，与北京同仁同宗同源，百年老号；\n2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全；\n3. 优质优价，性价比高。",
+      "textPreview": "1. 系出名门，与北京同仁同宗同源，百年老号； | 2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全； | 3. 优质优价，性价比高。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. 系出名门，与北京同仁同宗同源，百年老号；"
+          },
+          {
+            "index": 2,
+            "text": "2. 道地选材"
+          },
+          {
+            "index": 3,
+            "text": "，自研国家一类新药麝香酮，急救效果更快更安全；"
+          },
+          {
+            "index": 4,
+            "text": "3. 优质优价，性价比高。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. 系出名门，与北京同仁同宗同源，百年老号；",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. ",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "系出名门",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，与北京同仁同宗同源，百年老号；",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. 道地选材，自研国家一类新药麝香酮，急救效果更快更安全；",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. ",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "道地选材",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，自研国家一类新药麝香酮，急救效果更快更安全；",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. 优质优价，性价比高。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. ",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "优质优价",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，性价比高。",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r614ri9s",
+      "id": "25",
+      "name": "compare-audience-label-surface",
+      "bbox": [
+        40,
+        436,
+        150,
+        85
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c7alknqd",
+      "id": "26",
+      "name": "compare-audience-label-text",
+      "bbox": [
+        48,
+        436,
+        134,
+        85
+      ],
+      "geometry": "rect",
+      "text": "适宜人群",
+      "textPreview": "适宜人群",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "适宜人群"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "适宜人群",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "适宜人群",
+              "fontSize": 18,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dsjmtsry",
+      "id": "27",
+      "name": "compare-audience-surface",
+      "bbox": [
+        190,
+        436,
+        1040,
+        85
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1cnuh8r",
+      "id": "28",
+      "name": "compare-audience-text",
+      "bbox": [
+        198,
+        436,
+        1024,
+        85
+      ],
+      "geometry": "rect",
+      "text": "1. 高血压、中风病史等心脑血管高风险人群家庭备用；\n2. 用于中风（热闭证）及高热神昏的急救。",
+      "textPreview": "1. 高血压、中风病史等心脑血管高风险人群家庭备用； | 2. 用于中风（热闭证）及高热神昏的急救。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. 高血压、中风病史等心脑血管高风险人群家庭备用；"
+          },
+          {
+            "index": 2,
+            "text": "2. 用于中风（热闭证）及高热神昏的急救。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. 高血压、中风病史等心脑血管高风险人群家庭备用；",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. 高血压、中风病史等心脑血管高风险人群家庭备用；",
+              "fontSize": 19,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. 用于中风（热闭证）及高热神昏的急救。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. 用于中风（热闭证）及高热神昏的急救。",
+              "fontSize": 19,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v2l43m9c",
+      "id": "29",
+      "name": "compare-combo-label-surface",
+      "bbox": [
+        40,
+        521,
+        150,
+        150
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5w76tgbe",
+      "id": "30",
+      "name": "compare-combo-label-text",
+      "bbox": [
+        48,
+        521,
+        134,
+        150
+      ],
+      "geometry": "rect",
+      "text": "联合用药",
+      "textPreview": "联合用药",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "联合用药"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "联合用药",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "联合用药",
+              "fontSize": 18,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kvyp0bat",
+      "id": "31",
+      "name": "compare-combo-surface",
+      "bbox": [
+        190,
+        521,
+        1040,
+        150
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ju5or6t8",
+      "id": "32",
+      "name": "compare-combo-text",
+      "bbox": [
+        198,
+        521,
+        1024,
+        150
+      ],
+      "geometry": "rect",
+      "text": "1. 针对三高人群：按内部审核话术说明节气前备用逻辑；\n2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导；\n3. 小儿高热：必须严格按内部审核和专业人员指导使用。\n严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。",
+      "textPreview": "1. 针对三高人群：按内部审核话术说明节气前备用逻辑； | 2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导； | 3. 小儿高热：必须严格按内部审核和专业人员指导使用。 | 严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. 针对三高人群：按内部审核话术说明节气前备用逻辑；"
+          },
+          {
+            "index": 2,
+            "text": "2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导；"
+          },
+          {
+            "index": 3,
+            "text": "3. 小儿高热：必须严格按内部审核和专业人员指导使用。"
+          },
+          {
+            "index": 4,
+            "text": "严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. 针对三高人群：按内部审核话术说明节气前备用逻辑；",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#E60012",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. 针对三高人群：按内部审核话术说明节气前备用逻辑；",
+              "fontSize": 18,
+              "color": "#E60012",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导；",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#E60012",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. 针对急救：出现疑似急症应立即呼叫急救并遵循专业人员指导；",
+              "fontSize": 18,
+              "color": "#E60012",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. 小儿高热：必须严格按内部审核和专业人员指导使用。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#E60012",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. 小儿高热：必须严格按内部审核和专业人员指导使用。",
+              "fontSize": 18,
+              "color": "#E60012",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#E60012",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "严格辨证：仅用于“热闭”，绝对禁用于“寒闭”和“脱证”。",
+              "fontSize": 18,
+              "color": "#E60012",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -88,7 +88,7 @@ CATALOG: list[dict] = [
         "category": "商品培训",
         "production_ready": True,
         "status_label": "已签样 · 可换主题量产",
-        "status_note": "联合用药有几条排几行，禁止空白凑行。",
+        "status_note": "视觉升级 v2（2026-08-04）：统一绿色 token、圆角 chrome、微软雅黑。联合用药有几条排几行，禁止空白凑行。",
         "cover_src": GS / "jinyinhualu-pptx-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "jinyinhualu-pptx-gold-v1/web/media/slides/slide-01.png", "封面/介绍"),
@@ -113,7 +113,7 @@ CATALOG: list[dict] = [
         "category": "商品培训",
         "production_ready": True,
         "status_label": "已签样 · 可换主题量产",
-        "status_note": "章节可按内容增减；无资料的模块可整节省略。",
+        "status_note": "视觉升级 v2（2026-08-04）：与绿色单品统一 token/圆角/字体。章节可按内容增减；无资料的模块可整节省略。",
         "cover_src": GS / "chuanxinlian-pptx-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "chuanxinlian-pptx-gold-v1/web/media/slides/slide-01.png", "封面"),
@@ -278,7 +278,7 @@ CATALOG: list[dict] = [
         "category": "健康培训",
         "production_ready": True,
         "status_label": "已签样 · 可换病种量产",
-        "status_note": "版式锁定参课蓝；换病改 content JSON 后重建。包装须授权原图；医学表述须业务复核。",
+        "status_note": "金样 v3（2026-08-04 签样）：参课蓝全面精修（企业级封面/目录/结束页、统一页眉页脚、logo 零裁切、无 emoji 包装坑）。换病改 content JSON 后重建；包装须授权原图；医学表述须业务复核。",
         "cover_src": GS / "uri-shenke-health-pptx-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "uri-shenke-health-pptx-gold-v1/web/media/slides/slide-02.png", "疾病概览"),

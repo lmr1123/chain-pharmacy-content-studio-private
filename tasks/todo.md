@@ -4115,3 +4115,42 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - [x] 急性上呼吸道感染 18 页 PPTX 复刻（无真人遮挡，补全病原等）
 - 产物：`production-library/validation/courseware/disease-uri-acute-upper-respiratory-v1/`
 - 数字人方案见同目录 README（M5 优先 HeyGen/DH_live，非 5090 实时）
+
+---
+
+# 急性上呼吸道感染金样 PPTX · v3 参课蓝全面精修（2026-08-04）
+
+> 基线：settled v2 金样（已签样，不覆盖）。方向用户已拍板：参课蓝全面精修 + 升级生成器。
+> 计划文件：~/.claude/plans/snoopy-wandering-meadow.md
+> 工作区：`production-library/validation/courseware/disease-uri-shenke-blue-v1/`
+
+## 计划
+
+- [x] 1. Chrome 系统重做：页眉徽章/标题、logo 透明底完整摆放修裁切、统一页脚（集团·参课·系列+页码+仅限内部学习）
+  - 验证：渲染 logo 无裁切、页脚各页一致
+- [x] 2. 封面/目录/结束页重做：企业级封面、目录条目卡、outro 呼应封面
+  - 验证：三页与 v2 并排对照
+- [x] 3. 13 种 scene_type 内容页精修：definition_etiology 消空版、表格统一、占位符去 emoji 改原生药盒、卡片留白
+  - 验证：逐页无溢出无压线
+- [x] 4. 一页通重排：去 emoji、卡通图完整、分区间距
+  - 验证：整页无裁切无重叠
+- [x] 5. 构建+字体后处理+QA：v3 pptx → postprocess → soffice 逐页渲染 qa-v3/ → 全尺寸复核 → v2/v3 对照
+  - 验证：18 页渲染齐全、QA 清单全过、原生可编辑
+- [x] 6. 用户确认后沉淀 settled v3（另存新版本，manifest 指 v3 保留 v2，preview 更新）
+
+## 沉淀记录（2026-08-04 用户确认签样）
+
+- `settled/disease-health-shenke-blue-v1/` 另存 `…_v3.pptx`（根目录 canonical + generator 构建产物各一），v2 两处的文件均保留未动。
+- `generator/build-editable.mjs` 已同步 v3 版（含 cardShadow 工厂修复）；settled 内实测重建 18 页通过。
+- `manifest.json`：canonical_artifact → v3，confirmed_at 2026-08-04，新增 previous_canonical → v2；notes 补 v3 变更摘要。
+- `preview/` cover + key-01..05 全部换成 v3 渲染帧（1467×825 与旧规格一致）。
+- README 主交付行指向 v3。
+
+## Review（2026-08-04）
+
+- **产出**：`急性上呼吸道感染_疾病健康知识培训_可编辑金样_v3.pptx`（18 页，已注入微软雅黑 typeface），渲染证据 `qa-v3/after/slide-01..18.jpg` + PDF，v2/v3 对照 `qa-v3/compare/compare-{01,02,03,09,17,18}.jpg`（上 v2 下 v3）。
+- **关键故障与根因**：v3 初版 pptx 让 LibreOffice 转换直接崩（Unspecified Application Error，PDF 不落盘）。形状级二分定位到第 16/18 页的卡片投影——pptxgenjs 3.12 **会原地改写传入的 shadow 对象**（blur/offset ×12700、angle ×60000、opacity ×100000），共享常量 `CARD_SHADOW` 从第二次使用起数值爆炸（blurRad 11 亿）。修复：改为 `cardShadow()` 工厂函数，14 处调用点全部换用。
+- **QA 清单**：18 页全渲 ✓；logo 零裁切（页眉/封面/目录/结束页均完整）✓；零 emoji（生成器与 content JSON 双向 grep + 目检，包装坑位改原生胶囊图标）✓；零整页贴图（18/18 页均含原生文本，插图仅为配图）✓；「禁用」红字规则保持 ✓；红色强调为 v2 继承设计未动 ✓。
+- **QA 中修复的 2 处**：目录页页脚左行压在深色建筑图上不可读 → `addFooter` 加 `opts.left` 开关，目录页仅留右侧页码；outro 12 个椭圆 transparency 74 渲染成波点墙 → 调 88 变隐约肌理。
+- **遗留说明**：outro 讲者卡「博士 副教授」字样来自 content JSON 的 `title_line` 字段（与封面 meta「博士·教授」不一致），因 content 一字未动约束保留原样，业务侧如要统一改 JSON 即可。
+- **待办**：用户确认 v3 后执行第 6 项沉淀。

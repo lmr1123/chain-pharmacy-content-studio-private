@@ -76,6 +76,9 @@ poc/**/out/
 *.pem
 credentials.json
 
+# --- on-demand icon cache (Koboyo etc.): never bulk-commit SVG dumps ---
+assets/_intake/open_source/koboyo/svg/
+
 # --- local agent / WorkBuddy session state ---
 .workbuddy/
 

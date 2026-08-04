@@ -68,6 +68,21 @@ Create a new item only when no registered component can express the requirement 
 - For speech, generate complete semantic blocks and perform ASR, crossfade, declick, and loudness QA.
 - For effects, expose timing, dimensions, color, and intensity as parameters.
 - For layouts, centralize editable X/Y, size, spacing, and type-scale values.
+- **For small icons / layout marks** (arrows, chevrons, bullets/dots, separators,
+  check/cross, info/warning badges, simple objects like pill/heart/stethoscope):
+  treat [Koboyo Icons](https://koboyo.com/icons) as the **on-demand source**, not a
+  pre-stockpile. Workflow:
+  1. Search the site for a matching slug (layout marks and health objects both OK).
+  2. Download only the needed SVG(s) to the **local** path
+     `assets/_intake/open_source/koboyo/svg/<layout|health>/` (gitignored — do not
+     `git add` bulk SVG). Full library mirror is forbidden (license + size).
+  3. Recolor `currentColor` to the style pack brand color; rasterize to PNG when
+     PPTX/Revideo needs bitmaps; candidates → master after visual check.
+     Only approved masters belong in Git under `component-library`.
+  4. Do **not** use Koboyo to replace multi-color scene masters (symptoms, advice
+     illustrations, pharmacist presenters). Sequence numbers 1–n: prefer text +
+     circle shape, not forced digit icons.
+  Details: `assets/_intake/open_source/koboyo/SOURCE.md`.
 
 After approval, add a stable ID, tags, status, compatible style pack, source path, and editable parameters to the applicable registry.
 

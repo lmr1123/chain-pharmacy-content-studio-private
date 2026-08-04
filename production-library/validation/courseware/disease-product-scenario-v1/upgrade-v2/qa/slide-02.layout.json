@@ -1,0 +1,1275 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/8fzrxb",
+    "id": "8fzrxb",
+    "slide": 2,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e5wnupwr",
+      "id": "1",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "精准辨证是中医临床的基石",
+      "textPreview": "精准辨证是中医临床的基石",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "精准辨证是中医临床的基石"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "精准辨证是中医临床的基石",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "精准辨证是中医临床的基石",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1snmp4vi",
+      "id": "2",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7e5wzex",
+      "id": "3",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3u54rudo",
+      "id": "4",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2twnypw3",
+      "id": "5",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pw7mt4vu",
+      "id": "6",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "02 / 18",
+      "textPreview": "02 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ovy50ze9",
+      "id": "7",
+      "name": "opening-thesis-surface",
+      "bbox": [
+        90,
+        112,
+        1100,
+        110
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jyl4fax4",
+      "id": "8",
+      "name": "opening-thesis-accent",
+      "bbox": [
+        98,
+        122,
+        4,
+        90
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixc3m5wz",
+      "id": "9",
+      "name": "opening-thesis",
+      "bbox": [
+        114,
+        122,
+        1062,
+        90
+      ],
+      "geometry": "rect",
+      "text": "辨证论治是中医的灵魂，而精准辨证则是临床疗效的根本保障。唯有在纷繁复杂的症状中\n抓住证候本质，才能实现理、法、方、药的一脉贯通。",
+      "textPreview": "辨证论治是中医的灵魂，而精准辨证则是临床疗效的根本保障。唯有在纷繁复杂的症状中 | 抓住证候本质，才能实现理、法、方、药的一脉贯通。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "辨证论治是中医的灵魂，而精准辨证则是临床疗效的根本保障。唯有在纷繁复杂的症状中"
+          },
+          {
+            "index": 2,
+            "text": "抓住证候本质，才能实现理、法、方、药的一脉贯通。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "辨证论治是中医的灵魂，而精准辨证则是临床疗效的根本保障。唯有在纷繁复杂的症状中",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "辨证论治",
+              "fontSize": 22,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "是中医的灵魂，而",
+              "fontSize": 22,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "精准辨证",
+              "fontSize": 22,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "则是临床疗效的根本保障。唯有在纷繁复杂的症状中",
+              "fontSize": 22,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "抓住证候本质，才能实现理、法、方、药的一脉贯通。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "抓住证候本质，才能实现",
+              "fontSize": 22,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "理、法、方、药",
+              "fontSize": 22,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "的一脉贯通。",
+              "fontSize": 22,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4rm9gna9",
+      "id": "10",
+      "name": "opening-focus-surface",
+      "bbox": [
+        90,
+        238,
+        340,
+        250
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5svqpsbe",
+      "id": "11",
+      "name": "opening-focus-accent",
+      "bbox": [
+        100,
+        252,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ipkreds3",
+      "id": "12",
+      "name": "opening-focus-title",
+      "bbox": [
+        114,
+        250,
+        300,
+        38
+      ],
+      "geometry": "rect",
+      "text": "聚焦核心：风热证",
+      "textPreview": "聚焦核心：风热证",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "聚焦核心：风热证"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "聚焦核心：风热证",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "聚焦核心：风热证",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqd8nito",
+      "id": "13",
+      "name": "opening-focus-divider",
+      "bbox": [
+        114,
+        296,
+        296,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/svm9kna5",
+      "id": "14",
+      "name": "opening-focus-body",
+      "bbox": [
+        114,
+        308,
+        296,
+        166
+      ],
+      "geometry": "rect",
+      "text": "深入剖析风热证的核心临床表现，从发热、咽痛、舌象等维度，提炼其最具代表性的辨证要点。",
+      "textPreview": "深入剖析风热证的核心临床表现，从发热、咽痛、舌象等维度，提炼其最具代表性的辨证要点。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "深入剖析风热证的核心临床表"
+          },
+          {
+            "index": 2,
+            "text": "现，从发热、咽痛、舌象"
+          },
+          {
+            "index": 3,
+            "text": "等维度，提炼其最具代表性的"
+          },
+          {
+            "index": 4,
+            "text": "辨证要点。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "深入剖析风热证的核心临床表现，从发热、咽痛、舌象等维度，提炼其最具代表性的辨证要点。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "深入剖析风热证的核心临床表现，从",
+              "fontSize": 21,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "发热、咽痛、舌象",
+              "fontSize": 21,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "等维度，提炼其最具代表性的辨证要点。",
+              "fontSize": 21,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twvqtsrq",
+      "id": "15",
+      "name": "opening-compare-surface",
+      "bbox": [
+        470,
+        238,
+        340,
+        250
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6t4rixsz",
+      "id": "16",
+      "name": "opening-compare-accent",
+      "bbox": [
+        480,
+        252,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rud8r2tk",
+      "id": "17",
+      "name": "opening-compare-title",
+      "bbox": [
+        494,
+        250,
+        300,
+        38
+      ],
+      "geometry": "rect",
+      "text": "关键鉴别：异于风寒",
+      "textPreview": "关键鉴别：异于风寒",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "关键鉴别：异于风寒"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "关键鉴别：异于风寒",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "关键鉴别：异于风寒",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8z2p83a1",
+      "id": "18",
+      "name": "opening-compare-divider",
+      "bbox": [
+        494,
+        296,
+        296,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/90bqh8b6",
+      "id": "19",
+      "name": "opening-compare-body",
+      "bbox": [
+        494,
+        308,
+        296,
+        166
+      ],
+      "geometry": "rect",
+      "text": "对比风热与风寒证在寒热轻重、口渴与否、鼻涕性质的关键差异，厘清易混淆症状，避免辨证失误。",
+      "textPreview": "对比风热与风寒证在寒热轻重、口渴与否、鼻涕性质的关键差异，厘清易混淆症状，避免辨证失误。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "对比风热与风寒证在"
+          },
+          {
+            "index": 2,
+            "text": "寒热轻重、口渴与否、鼻涕性"
+          },
+          {
+            "index": 3,
+            "text": "质"
+          },
+          {
+            "index": 4,
+            "text": "的关键差异，厘清易混淆症状"
+          },
+          {
+            "index": 5,
+            "text": "，避免辨证失误。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "对比风热与风寒证在寒热轻重、口渴与否、鼻涕性质的关键差异，厘清易混淆症状，避免辨证失误。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "对比风热与风寒证在",
+              "fontSize": 21,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "寒热轻重、口渴与否、鼻涕性质",
+              "fontSize": 21,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "的关键差异，厘清易混淆症状，避免辨证失误。",
+              "fontSize": 21,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9w36l43a",
+      "id": "20",
+      "name": "opening-apply-surface",
+      "bbox": [
+        850,
+        238,
+        340,
+        250
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ovu5cz2p",
+      "id": "21",
+      "name": "opening-apply-accent",
+      "bbox": [
+        860,
+        252,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nulojul4",
+      "id": "22",
+      "name": "opening-apply-title",
+      "bbox": [
+        874,
+        250,
+        300,
+        38
+      ],
+      "geometry": "rect",
+      "text": "知行合一：分型用药",
+      "textPreview": "知行合一：分型用药",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "知行合一：分型用药"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "知行合一：分型用药",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "知行合一：分型用药",
+              "fontSize": 22,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mtsnapkj",
+      "id": "23",
+      "name": "opening-apply-divider",
+      "bbox": [
+        874,
+        296,
+        296,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xk36p436",
+      "id": "24",
+      "name": "opening-apply-body",
+      "bbox": [
+        874,
+        308,
+        296,
+        166
+      ],
+      "geometry": "rect",
+      "text": "细化风热证的不同分型，结合经典方剂，讲解如何根据具体兼证灵活化裁，将辨证结果转化为精准用药方案。",
+      "textPreview": "细化风热证的不同分型，结合经典方剂，讲解如何根据具体兼证灵活化裁，将辨证结果转化为精准用药方案。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "细化风热证的不同分型"
+          },
+          {
+            "index": 2,
+            "text": "，结合经典方剂，讲解如何根"
+          },
+          {
+            "index": 3,
+            "text": "据具体兼证灵活化裁，将辨证"
+          },
+          {
+            "index": 4,
+            "text": "结果转化为精准用药方案。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "细化风热证的不同分型，结合经典方剂，讲解如何根据具体兼证灵活化裁，将辨证结果转化为精准用药方案。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "细化风热证的不同",
+              "fontSize": 21,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "分型",
+              "fontSize": 21,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，结合经典方剂，讲解如何根据具体兼证灵活化裁，将辨证结果转化为",
+              "fontSize": 21,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "精准用药方案",
+              "fontSize": 21,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "。",
+              "fontSize": 21,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wjupgz2l",
+      "id": "25",
+      "name": "opening-conclusion-surface",
+      "bbox": [
+        90,
+        548,
+        1100,
+        60
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bilonulg",
+      "id": "26",
+      "name": "opening-conclusion-accent",
+      "bbox": [
+        98,
+        558,
+        4,
+        40
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ahc7epkv",
+      "id": "27",
+      "name": "opening-conclusion",
+      "bbox": [
+        114,
+        548,
+        1062,
+        60
+      ],
+      "geometry": "rect",
+      "text": "愿诸位练就一双辨证的“慧眼”，于细微处见真章，在临床中精准识证、果敢用药。",
+      "textPreview": "愿诸位练就一双辨证的“慧眼”，于细微处见真章，在临床中精准识证、果敢用药。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "愿诸位练就一双辨证的“慧眼”，于细微处见真章，在临床中精准识证、果敢用药。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "愿诸位练就一双辨证的“慧眼”，于细微处见真章，在临床中精准识证、果敢用药。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "愿诸位练就一双辨证的",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "“慧眼”",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，于细微处见真章，在临床中",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "精准识证、果敢用药",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "。",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -9,7 +9,10 @@
 
 主线见 `decision.gold-sample-first` / `docs/project-brief.md` §1.1：完整金样优先，本目录不为囤货而囤货；新增图须服务已签样框架槽位。  
 业务「主题」与视觉「系列」不是同一对象；`external_reference_only` 不得进入 `master`。  
-原料暂存：`assets/_intake/`（真包装由业务投入 `company_authorized/`）。
+原料暂存：`assets/_intake/`（真包装由业务投入 `company_authorized/`）。  
+小图标/排版符号按需源头：在线 [Koboyo Icons](https://koboyo.com/icons)；仓库只留
+`assets/_intake/open_source/koboyo/{SOURCE.md,license.txt,manifest.json}`；本机
+`svg/` 缓存 gitignore。禁止整库镜像/提交 SVG 包；不替代本目录多色场景系列。
 
 可持续增长的同类视觉资产必须额外绑定稳定 `series_id`。系列文件统一定义色板、
 材质、构图槽位、提示词变量、动画契约和扩展门槛；新增业务主题优先向现有系列补成员，

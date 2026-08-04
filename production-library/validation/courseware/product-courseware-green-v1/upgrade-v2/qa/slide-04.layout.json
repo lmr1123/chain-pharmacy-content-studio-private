@@ -1,0 +1,1877 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/8q6vy5",
+    "id": "8q6vy5",
+    "slide": 4,
+    "layoutId": "4ce90dde-cf06-461e-92a8-d23738749c4b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ff094c56-5808-48c6-b5b8-e8ee1267faff",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4ce90dde-cf06-461e-92a8-d23738749c4b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ff094c56-5808-48c6-b5b8-e8ee1267faff",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ff094c56-5808-48c6-b5b8-e8ee1267faff",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d83etozm",
+      "id": "1",
+      "name": "page-number-block",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q5cfy9gv",
+      "id": "2",
+      "name": "page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "03",
+      "textPreview": "03",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6lwrehg",
+      "id": "3",
+      "name": "page-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "品种对标",
+      "textPreview": "品种对标",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "品种对标"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "品种对标",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "品种对标",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/43adwzy5",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p43ep4za",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2hsvu9gz",
+      "id": "6",
+      "name": "brand-wordmark",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#45A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#45A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#45A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/321wnuhk",
+      "id": "7",
+      "name": "internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅供内部学习",
+      "textPreview": "仅供内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅供内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅供内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅供内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfadszyt",
+      "id": "8",
+      "name": "page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "04 / 05",
+      "textPreview": "04 / 05",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04 / 05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04 / 05",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04 / 05",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgjel4ze",
+      "id": "9",
+      "name": "benchmark-head-0-surface",
+      "bbox": [
+        45,
+        105,
+        180,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hsruhsbq",
+      "id": "10",
+      "name": "benchmark-head-0-text",
+      "bbox": [
+        53,
+        105,
+        164,
+        62
+      ],
+      "geometry": "rect",
+      "text": "对比维度",
+      "textPreview": "对比维度",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "对比维度"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "对比维度",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "对比维度",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w7ydo7a5",
+      "id": "11",
+      "name": "benchmark-head-1-surface",
+      "bbox": [
+        225,
+        105,
+        530,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6pcf2tk",
+      "id": "12",
+      "name": "benchmark-head-1-text",
+      "bbox": [
+        233,
+        105,
+        514,
+        62
+      ],
+      "geometry": "rect",
+      "text": "金银花露（可可康）",
+      "textPreview": "金银花露（可可康）",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "金银花露（可可康）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "金银花露（可可康）",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "金银花露（可可康）",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u5gbmxcf",
+      "id": "13",
+      "name": "benchmark-head-2-surface",
+      "bbox": [
+        755,
+        105,
+        490,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/947udsbu",
+      "id": "14",
+      "name": "benchmark-head-2-text",
+      "bbox": [
+        763,
+        105,
+        474,
+        62
+      ],
+      "geometry": "rect",
+      "text": "金银花露（小葵花露-葵花药业）",
+      "textPreview": "金银花露（小葵花露-葵花药业）",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "金银花露（小葵花露-葵花药业）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "金银花露（小葵花露-葵花药业）",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "金银花露（小葵花露-葵花药业）",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83ytknu9",
+      "id": "15",
+      "name": "benchmark-label-0-surface",
+      "bbox": [
+        45,
+        167,
+        180,
+        190
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72pcbito",
+      "id": "16",
+      "name": "benchmark-label-0-text",
+      "bbox": [
+        53,
+        167,
+        164,
+        190
+      ],
+      "geometry": "rect",
+      "text": "产品展示",
+      "textPreview": "产品展示",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "产品展示"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "产品展示",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "产品展示",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1gbidc3",
+      "id": "17",
+      "name": "benchmark-product-left-cell",
+      "bbox": [
+        225,
+        167,
+        530,
+        190
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l0nu98bi",
+      "id": "18",
+      "name": "benchmark-product-right-cell",
+      "bbox": [
+        755,
+        167,
+        490,
+        190
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzetgnux",
+      "id": "19",
+      "name": "benchmark-primary-packshot-surface",
+      "bbox": [
+        420,
+        185,
+        140,
+        154
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cjidwn2t",
+      "id": "20",
+      "name": "benchmark-primary-packshot-label",
+      "bbox": [
+        430,
+        237,
+        120,
+        50
+      ],
+      "geometry": "rect",
+      "text": "可可康包装图\n待接入",
+      "textPreview": "可可康包装图 | 待接入",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "可可康包装图"
+          },
+          {
+            "index": 2,
+            "text": "待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "可可康包装图",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "可可康包装图",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "待接入",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "待接入",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dkrupsje",
+      "id": "21",
+      "name": "benchmark-competitor-packshot-surface",
+      "bbox": [
+        930,
+        185,
+        140,
+        154
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qh0vudk3",
+      "id": "22",
+      "name": "benchmark-competitor-packshot-label",
+      "bbox": [
+        940,
+        237,
+        120,
+        50
+      ],
+      "geometry": "rect",
+      "text": "竞品包装图\n待接入",
+      "textPreview": "竞品包装图 | 待接入",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "竞品包装图"
+          },
+          {
+            "index": 2,
+            "text": "待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "竞品包装图",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "竞品包装图",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "待接入",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "待接入",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bi9cni18",
+      "id": "23",
+      "name": "benchmark-label-1-surface",
+      "bbox": [
+        45,
+        357,
+        180,
+        72
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofits32x",
+      "id": "24",
+      "name": "benchmark-label-1-text",
+      "bbox": [
+        53,
+        357,
+        164,
+        72
+      ],
+      "geometry": "rect",
+      "text": "功效主治",
+      "textPreview": "功效主治",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "功效主治"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "功效主治",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "功效主治",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pgrul8ji",
+      "id": "25",
+      "name": "benchmark-merged-1-surface",
+      "bbox": [
+        225,
+        357,
+        1020,
+        72
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2dgbqdkr",
+      "id": "26",
+      "name": "benchmark-merged-1-text",
+      "bbox": [
+        233,
+        357,
+        1004,
+        72
+      ],
+      "geometry": "rect",
+      "text": "清热解毒。用于小儿痱毒，暑热口渴",
+      "textPreview": "清热解毒。用于小儿痱毒，暑热口渴",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "清热解毒。用于小儿痱毒，暑热口渴"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "清热解毒。用于小儿痱毒，暑热口渴",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "清热解毒。用于小儿痱毒，暑热口渴",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3epcjy1c",
+      "id": "27",
+      "name": "benchmark-label-2-surface",
+      "bbox": [
+        45,
+        429,
+        180,
+        72
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8b2d4721",
+      "id": "28",
+      "name": "benchmark-label-2-text",
+      "bbox": [
+        53,
+        429,
+        164,
+        72
+      ],
+      "geometry": "rect",
+      "text": "共有优势",
+      "textPreview": "共有优势",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "共有优势"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "共有优势",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "共有优势",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9cbuxcjm",
+      "id": "29",
+      "name": "benchmark-merged-2-surface",
+      "bbox": [
+        225,
+        429,
+        1020,
+        72
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6xgn6lo",
+      "id": "30",
+      "name": "benchmark-merged-2-text",
+      "bbox": [
+        233,
+        429,
+        1004,
+        72
+      ],
+      "geometry": "rect",
+      "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
+      "textPreview": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "清甜好喝不抗拒，防漏瓶盖不浪费，宝宝自己就能喝",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i5ofu143",
+      "id": "31",
+      "name": "benchmark-label-3-surface",
+      "bbox": [
+        45,
+        501,
+        180,
+        72
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/58fypg3u",
+      "id": "32",
+      "name": "benchmark-label-3-text",
+      "bbox": [
+        53,
+        501,
+        164,
+        72
+      ],
+      "geometry": "rect",
+      "text": "零售价",
+      "textPreview": "零售价",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "零售价"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "零售价",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "零售价",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k76xwbm9",
+      "id": "33",
+      "name": "benchmark-left-3-surface",
+      "bbox": [
+        225,
+        501,
+        530,
+        72
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7axgr6l0",
+      "id": "34",
+      "name": "benchmark-left-3-text",
+      "bbox": [
+        233,
+        501,
+        514,
+        72
+      ],
+      "geometry": "rect",
+      "text": "9.9元（265ml）",
+      "textPreview": "9.9元（265ml）",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "9.9元（265ml）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "9.9元（265ml）",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "9.9元（265ml）",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/69ofy14f",
+      "id": "35",
+      "name": "benchmark-right-3-surface",
+      "bbox": [
+        755,
+        501,
+        490,
+        72
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tcfytg36",
+      "id": "36",
+      "name": "benchmark-right-3-text",
+      "bbox": [
+        763,
+        501,
+        474,
+        72
+      ],
+      "geometry": "rect",
+      "text": "13.3元（250ml）",
+      "textPreview": "13.3元（250ml）",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "13.3元（250ml）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "13.3元（250ml）",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "13.3元（250ml）",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sb6x0bml",
+      "id": "37",
+      "name": "benchmark-label-4-surface",
+      "bbox": [
+        45,
+        573,
+        180,
+        90
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nedwfmlg",
+      "id": "38",
+      "name": "benchmark-label-4-text",
+      "bbox": [
+        53,
+        573,
+        164,
+        90
+      ],
+      "geometry": "rect",
+      "text": "卖点差异",
+      "textPreview": "卖点差异",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "卖点差异"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "卖点差异",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "卖点差异",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mdkfmh4b",
+      "id": "39",
+      "name": "benchmark-left-4-surface",
+      "bbox": [
+        225,
+        573,
+        530,
+        90
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ehof2hcr",
+      "id": "40",
+      "name": "benchmark-left-4-text",
+      "bbox": [
+        233,
+        573,
+        514,
+        90
+      ],
+      "geometry": "rect",
+      "text": "性价比高\n毛利率高",
+      "textPreview": "性价比高 | 毛利率高",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "性价比高"
+          },
+          {
+            "index": 2,
+            "text": "毛利率高"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "性价比高",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "性价比高",
+              "fontSize": 17,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "毛利率高",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "毛利率高",
+              "fontSize": 17,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zixgbmtc",
+      "id": "41",
+      "name": "benchmark-right-4-surface",
+      "bbox": [
+        755,
+        573,
+        490,
+        90
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0jqx4rux",
+      "id": "42",
+      "name": "benchmark-right-4-text",
+      "bbox": [
+        763,
+        573,
+        474,
+        90
+      ],
+      "geometry": "rect",
+      "text": "/",
+      "textPreview": "/",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "/"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "/",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "/",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

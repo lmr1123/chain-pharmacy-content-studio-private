@@ -9,7 +9,7 @@
 | --- | --- | --- | --- |
 | `company_authorized/` | A | **业务** | 真包装、Logo、说明书、证据；制作只整理不替代生成 |
 | `licensed/` | B | 采购/制作 | 已购商用包 + 同目录 `license.txt` |
-| `open_source/` | B | 制作 | 开源矢量/图标 + 许可证副本 |
+| `open_source/` | B | 制作 | 开源矢量/图标 + 许可证副本。**Koboyo**：`open_source/koboyo/` 仓库只留 `SOURCE.md` + `license.txt` + 空 `manifest.json`；在线 https://koboyo.com/icons 按需匹配；本机 `svg/` 缓存已 gitignore，**禁止整库镜像/提交** |
 | `reference_only/` | C | 制作研究 | 结构参考；**禁止**晋升 master 像素 |
 
 ## 晋升路径

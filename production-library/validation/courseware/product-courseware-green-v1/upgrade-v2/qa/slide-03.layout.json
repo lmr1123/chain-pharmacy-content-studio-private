@@ -1,0 +1,2248 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/217bb6",
+    "id": "217bb6",
+    "slide": 3,
+    "layoutId": "4ce90dde-cf06-461e-92a8-d23738749c4b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "ff094c56-5808-48c6-b5b8-e8ee1267faff",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "4ce90dde-cf06-461e-92a8-d23738749c4b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "ff094c56-5808-48c6-b5b8-e8ee1267faff",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ff094c56-5808-48c6-b5b8-e8ee1267faff",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/id4vupwb",
+      "id": "1",
+      "name": "page-number-block",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5gfe5kf2",
+      "id": "2",
+      "name": "page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kf6dwzeh",
+      "id": "3",
+      "name": "page-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "联合用药话术",
+      "textPreview": "联合用药话术",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "联合用药话术"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "联合用药话术",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "联合用药话术",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vqdwzax0",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ap4vq5wf",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xcve1kf6",
+      "id": "6",
+      "name": "brand-wordmark",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#45A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#45A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#45A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbmdsfel",
+      "id": "7",
+      "name": "internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅供内部学习",
+      "textPreview": "仅供内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅供内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅供内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅供内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f6hwbex4",
+      "id": "8",
+      "name": "page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "03 / 05",
+      "textPreview": "03 / 05",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03 / 05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03 / 05",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03 / 05",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ul8f29wj",
+      "id": "9",
+      "name": "combination-head-0-surface",
+      "bbox": [
+        28,
+        96,
+        150,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wripkrep",
+      "id": "10",
+      "name": "combination-head-0-text",
+      "bbox": [
+        36,
+        96,
+        134,
+        58
+      ],
+      "geometry": "rect",
+      "text": "应用场景（适宜人群）",
+      "textPreview": "应用场景（适宜人群）",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "应用场景（适宜"
+          },
+          {
+            "index": 2,
+            "text": "人群）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "应用场景（适宜人群）",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "应用场景（适宜人群）",
+              "fontSize": 15,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xsr6dwfa",
+      "id": "11",
+      "name": "combination-head-1-surface",
+      "bbox": [
+        178,
+        96,
+        175,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/apgnihwj",
+      "id": "12",
+      "name": "combination-head-1-text",
+      "bbox": [
+        186,
+        96,
+        159,
+        58
+      ],
+      "geometry": "rect",
+      "text": "联合用药",
+      "textPreview": "联合用药",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "联合用药"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "联合用药",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "联合用药",
+              "fontSize": 15,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq9obmx4",
+      "id": "13",
+      "name": "combination-head-2-surface",
+      "bbox": [
+        353,
+        96,
+        230,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ony5g7ed",
+      "id": "14",
+      "name": "combination-head-2-text",
+      "bbox": [
+        361,
+        96,
+        214,
+        58
+      ],
+      "geometry": "rect",
+      "text": "联合商品图",
+      "textPreview": "联合商品图",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "联合商品图"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "联合商品图",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "联合商品图",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9o769cfy",
+      "id": "15",
+      "name": "combination-head-3-surface",
+      "bbox": [
+        583,
+        96,
+        200,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1gnexwn",
+      "id": "16",
+      "name": "combination-head-3-text",
+      "bbox": [
+        591,
+        96,
+        184,
+        58
+      ],
+      "geometry": "rect",
+      "text": "本品图",
+      "textPreview": "本品图",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "本品图"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本品图",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本品图",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nmpo72xs",
+      "id": "17",
+      "name": "combination-head-4-surface",
+      "bbox": [
+        783,
+        96,
+        465,
+        58
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0zy5c7yh",
+      "id": "18",
+      "name": "combination-head-4-text",
+      "bbox": [
+        791,
+        96,
+        449,
+        58
+      ],
+      "geometry": "rect",
+      "text": "销售话术",
+      "textPreview": "销售话术",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "销售话术"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "销售话术",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "销售话术",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/10765sf2",
+      "id": "19",
+      "name": "combination-scenario-0-surface",
+      "bbox": [
+        28,
+        154,
+        150,
+        176
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1gzm9o7q",
+      "id": "20",
+      "name": "combination-scenario-0-text",
+      "bbox": [
+        36,
+        154,
+        134,
+        176
+      ],
+      "geometry": "rect",
+      "text": "风热感冒引起的咽喉肿痛",
+      "textPreview": "风热感冒引起的咽喉肿痛",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风热感冒引起的"
+          },
+          {
+            "index": 2,
+            "text": "咽喉肿痛"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风热感冒引起的咽喉肿痛",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风热感冒引起的咽喉肿痛",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfql0jq5",
+      "id": "21",
+      "name": "combination-name-0-surface",
+      "bbox": [
+        178,
+        154,
+        175,
+        176
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fux47epk",
+      "id": "22",
+      "name": "combination-name-0-text",
+      "bbox": [
+        186,
+        154,
+        159,
+        176
+      ],
+      "geometry": "rect",
+      "text": "金银花露 + 小儿咽扁颗粒",
+      "textPreview": "金银花露 + 小儿咽扁颗粒",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "金银花露 +"
+          },
+          {
+            "index": 2,
+            "text": "小儿咽扁颗粒"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "金银花露 + 小儿咽扁颗粒",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "金银花露 + 小儿咽扁颗粒",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/eto3et8z",
+      "id": "23",
+      "name": "combination-partner-surface-0",
+      "bbox": [
+        353,
+        154,
+        230,
+        176
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsfm5o7u",
+      "id": "24",
+      "name": "partner-slot-0-surface",
+      "bbox": [
+        373,
+        168,
+        190,
+        148
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sr6lcjq9",
+      "id": "25",
+      "name": "partner-slot-0-label",
+      "bbox": [
+        383,
+        217,
+        170,
+        50
+      ],
+      "geometry": "rect",
+      "text": "小儿咽扁颗粒（康乐仔）\n包装图待接入",
+      "textPreview": "小儿咽扁颗粒（康乐仔） | 包装图待接入",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "小儿咽扁颗粒（康乐仔"
+          },
+          {
+            "index": 2,
+            "text": "）"
+          },
+          {
+            "index": 3,
+            "text": "包装图待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "小儿咽扁颗粒（康乐仔）",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "小儿咽扁颗粒（康乐仔）",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "包装图待接入",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "包装图待接入",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rqx43epo",
+      "id": "26",
+      "name": "combination-talk-0-surface",
+      "bbox": [
+        783,
+        154,
+        465,
+        176
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6po3a983",
+      "id": "27",
+      "name": "combination-talk-0-text",
+      "bbox": [
+        791,
+        154,
+        449,
+        176
+      ],
+      "geometry": "rect",
+      "text": "小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。",
+      "textPreview": "小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅"
+          },
+          {
+            "index": 2,
+            "text": "助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "小儿咽扁颗粒直击咽喉炎症，消肿止痛；金银花露清解内热，辅助降火。二者联用，内外兼治，加速缓解咽喉肿痛、暑热烦躁。",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dojmh87y",
+      "id": "28",
+      "name": "combination-scenario-1-surface",
+      "bbox": [
+        28,
+        330,
+        150,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cna583qd",
+      "id": "29",
+      "name": "combination-scenario-1-text",
+      "bbox": [
+        36,
+        330,
+        134,
+        175
+      ],
+      "geometry": "rect",
+      "text": "风热感冒引起的发热、鼻塞流涕",
+      "textPreview": "风热感冒引起的发热、鼻塞流涕",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风热感冒引起的"
+          },
+          {
+            "index": 2,
+            "text": "发热、鼻塞流涕"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风热感冒引起的发热、鼻塞流涕",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风热感冒引起的发热、鼻塞流涕",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ah0rmlkj",
+      "id": "30",
+      "name": "combination-name-1-surface",
+      "bbox": [
+        178,
+        330,
+        175,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bitsv614",
+      "id": "31",
+      "name": "combination-name-1-text",
+      "bbox": [
+        186,
+        330,
+        159,
+        175
+      ],
+      "geometry": "rect",
+      "text": "金银花露 + 小儿氨酚黄那敏颗粒",
+      "textPreview": "金银花露 + 小儿氨酚黄那敏颗粒",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "金银花露 +"
+          },
+          {
+            "index": 2,
+            "text": "小儿氨酚黄那敏颗粒"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "金银花露 + 小儿氨酚黄那敏颗粒",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "金银花露 + 小儿氨酚黄那敏颗粒",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wj29ob2p",
+      "id": "32",
+      "name": "combination-partner-surface-1",
+      "bbox": [
+        353,
+        330,
+        230,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xkbahgja",
+      "id": "33",
+      "name": "partner-slot-1-surface",
+      "bbox": [
+        373,
+        344,
+        190,
+        147
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mt0ri1kn",
+      "id": "34",
+      "name": "partner-slot-1-label",
+      "bbox": [
+        383,
+        392.5,
+        170,
+        50
+      ],
+      "geometry": "rect",
+      "text": "小儿氨酚黄那敏颗粒（康乐仔）\n包装图待接入",
+      "textPreview": "小儿氨酚黄那敏颗粒（康乐仔） | 包装图待接入",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "小儿氨酚黄那敏颗粒（"
+          },
+          {
+            "index": 2,
+            "text": "康乐仔）"
+          },
+          {
+            "index": 3,
+            "text": "包装图待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "小儿氨酚黄那敏颗粒（康乐仔）",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "小儿氨酚黄那敏颗粒（康乐仔）",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "包装图待接入",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "包装图待接入",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ne9sr618",
+      "id": "35",
+      "name": "combination-talk-1-surface",
+      "bbox": [
+        783,
+        330,
+        465,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofi9kb2d",
+      "id": "36",
+      "name": "combination-talk-1-text",
+      "bbox": [
+        791,
+        330,
+        449,
+        175
+      ],
+      "geometry": "rect",
+      "text": "小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症状，一个清解内热，快速缓解不适。",
+      "textPreview": "小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症状，一个清解内热，快速缓解不适。",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止"
+          },
+          {
+            "index": 2,
+            "text": "咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症"
+          },
+          {
+            "index": 3,
+            "text": "状，一个清解内热，快速缓解不适。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症状，一个清解内热，快速缓解不适。",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "小儿氨酚黄那敏颗粒用于缓解感冒症状，帮助退热、通鼻塞、止咳；金银花露清热解毒、利咽消肿。二者搭配，一个缓解外在症状，一个清解内热，快速缓解不适。",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gratgjy",
+      "id": "37",
+      "name": "combination-scenario-2-surface",
+      "bbox": [
+        28,
+        505,
+        150,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/69kbu5kr",
+      "id": "38",
+      "name": "combination-scenario-2-text",
+      "bbox": [
+        36,
+        505,
+        134,
+        175
+      ],
+      "geometry": "rect",
+      "text": "风热/肺热引起的咳嗽",
+      "textPreview": "风热/肺热引起的咳嗽",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风热/肺热引起的"
+          },
+          {
+            "index": 2,
+            "text": "咳嗽"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风热/肺热引起的咳嗽",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风热/肺热引起的咳嗽",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7adsna1c",
+      "id": "39",
+      "name": "combination-name-2-surface",
+      "bbox": [
+        178,
+        505,
+        175,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r29oj25s",
+      "id": "40",
+      "name": "combination-name-2-text",
+      "bbox": [
+        186,
+        505,
+        159,
+        175
+      ],
+      "geometry": "rect",
+      "text": "金银花露 + 氨溴特罗口服溶液",
+      "textPreview": "金银花露 + 氨溴特罗口服溶液",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "金银花露 +"
+          },
+          {
+            "index": 2,
+            "text": "氨溴特罗口服溶液"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "金银花露 + 氨溴特罗口服溶液",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "金银花露 + 氨溴特罗口服溶液",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q107qxo7",
+      "id": "41",
+      "name": "combination-partner-surface-2",
+      "bbox": [
+        353,
+        505,
+        230,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d4b6lcny",
+      "id": "42",
+      "name": "partner-slot-2-surface",
+      "bbox": [
+        373,
+        519,
+        190,
+        147
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s3ips76d",
+      "id": "43",
+      "name": "partner-slot-2-label",
+      "bbox": [
+        383,
+        567.5,
+        170,
+        50
+      ],
+      "geometry": "rect",
+      "text": "氨溴特罗口服溶液（康乐仔）\n包装图待接入",
+      "textPreview": "氨溴特罗口服溶液（康乐仔） | 包装图待接入",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "氨溴特罗口服溶液（康"
+          },
+          {
+            "index": 2,
+            "text": "乐仔）"
+          },
+          {
+            "index": 3,
+            "text": "包装图待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "氨溴特罗口服溶液（康乐仔）",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "氨溴特罗口服溶液（康乐仔）",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "包装图待接入",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "包装图待接入",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 44,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3e9ofi5g",
+      "id": "44",
+      "name": "combination-talk-2-surface",
+      "bbox": [
+        783,
+        505,
+        465,
+        175
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 45,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/id0nmxob",
+      "id": "45",
+      "name": "combination-talk-2-text",
+      "bbox": [
+        791,
+        505,
+        449,
+        175
+      ],
+      "geometry": "rect",
+      "text": "肺炎光排痰不够，还需清肺热。氨溴特罗化痰止咳，金银花露清肺消炎；两个搭着用，炎症消得快，咳喘好得快。",
+      "textPreview": "肺炎光排痰不够，还需清肺热。氨溴特罗化痰止咳，金银花露清肺消炎；两个搭着用，炎症消得快，咳喘好得快。",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "肺炎光排痰不够，还需清肺热。氨溴特罗化痰止咳，金银花露清"
+          },
+          {
+            "index": 2,
+            "text": "肺消炎；两个搭着用，炎症消得快，咳喘好得快。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "肺炎光排痰不够，还需清肺热。氨溴特罗化痰止咳，金银花露清肺消炎；两个搭着用，炎症消得快，咳喘好得快。",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#1F2A24",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "肺炎光排痰不够，还需清肺热。氨溴特罗化痰止咳，金银花露清肺消炎；两个搭着用，炎症消得快，咳喘好得快。",
+              "fontSize": 15,
+              "color": "#1F2A24",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 46,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5gr6hsnm",
+      "id": "46",
+      "name": "combination-primary-merge-surface",
+      "bbox": [
+        583,
+        154,
+        200,
+        526
+      ],
+      "geometry": "rect",
+      "fillColor": "#E9F7EE",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 47,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fi5on61",
+      "id": "47",
+      "name": "combination-primary-divider",
+      "bbox": [
+        583,
+        154,
+        3,
+        526
+      ],
+      "geometry": "rect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 48,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/natorm50",
+      "id": "48",
+      "name": "combination-plus",
+      "bbox": [
+        591,
+        389,
+        40,
+        56
+      ],
+      "geometry": "rect",
+      "text": "+",
+      "textPreview": "+",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "+"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "+",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "+",
+              "fontSize": 40,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 49,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/29k7yh4f",
+      "id": "49",
+      "name": "combination-primary-product-surface",
+      "bbox": [
+        628,
+        277,
+        130,
+        280
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 50,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kfelsjmx",
+      "id": "50",
+      "name": "combination-primary-product-label",
+      "bbox": [
+        638,
+        392,
+        110,
+        50
+      ],
+      "geometry": "rect",
+      "text": "金银花露\n包装图待接入",
+      "textPreview": "金银花露 | 包装图待接入",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "金银花露"
+          },
+          {
+            "index": 2,
+            "text": "包装图待接入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "金银花露",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "金银花露",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "包装图待接入",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#5A6B61",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "包装图待接入",
+              "fontSize": 15,
+              "color": "#5A6B61",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

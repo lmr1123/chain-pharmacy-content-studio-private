@@ -1,0 +1,1272 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/bzfx4l",
+    "id": "bzfx4l",
+    "slide": 4,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cby1s7ah",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bapkj29w",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "1.1",
+      "textPreview": "1.1",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1.1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1.1",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1.1",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q9gjqxsb",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "疾病篇——风热证的定义",
+      "textPreview": "疾病篇——风热证的定义",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "疾病篇——风热证的定义"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "疾病篇——风热证的定义",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "疾病篇——风热证的定义",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p87ihsrq",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7y1ona5",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/36p0fi90",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/25gjmxsf",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/94b2twra",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "04 / 18",
+      "textPreview": "04 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83i10rap",
+      "id": "9",
+      "name": "definition-surface",
+      "bbox": [
+        90,
+        100,
+        1100,
+        180
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ip8vydcn",
+      "id": "10",
+      "name": "definition-accent",
+      "bbox": [
+        100,
+        114,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jq1writ8",
+      "id": "11",
+      "name": "definition-title",
+      "bbox": [
+        114,
+        112,
+        1060,
+        38
+      ],
+      "geometry": "rect",
+      "text": "什么是风热证？",
+      "textPreview": "什么是风热证？",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "什么是风热证？"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "什么是风热证？",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "什么是风热证？",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/krad0nut",
+      "id": "12",
+      "name": "definition-divider",
+      "bbox": [
+        114,
+        158,
+        1056,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5sjetsbe",
+      "id": "13",
+      "name": "definition-body",
+      "bbox": [
+        114,
+        170,
+        1056,
+        96
+      ],
+      "geometry": "rect",
+      "text": "指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。",
+      "textPreview": "指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体"
+          },
+          {
+            "index": 2,
+            "text": "受到“热风”侵袭，引发发热、咽痛、口干"
+          },
+          {
+            "index": 3,
+            "text": "等一系列“热”性症状，是中医外感表证中常见的证型之一。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到",
+              "fontSize": 26,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "“热风”侵袭",
+              "fontSize": 26,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "，引发",
+              "fontSize": 26,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "发热、咽痛、口干",
+              "fontSize": 26,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "等一系列“热”性症状，是中医外感表证中常见的证型之一。",
+              "fontSize": 26,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al8vudcr",
+      "id": "14",
+      "name": "cause-surface",
+      "bbox": [
+        90,
+        300,
+        520,
+        280
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vmhwnitw",
+      "id": "15",
+      "name": "cause-accent",
+      "bbox": [
+        100,
+        314,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wnqdw3uh",
+      "id": "16",
+      "name": "cause-title",
+      "bbox": [
+        114,
+        312,
+        480,
+        38
+      ],
+      "geometry": "rect",
+      "text": "核心病因：内外合邪，热邪入侵",
+      "textPreview": "核心病因：内外合邪，热邪入侵",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心病因：内外合邪，热邪入侵"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心病因：内外合邪，热邪入侵",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心病因：内外合邪，热邪入侵",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xozep8b2",
+      "id": "17",
+      "name": "cause-divider",
+      "bbox": [
+        114,
+        358,
+        476,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uhsf6xcv",
+      "id": "18",
+      "name": "cause-body",
+      "bbox": [
+        114,
+        370,
+        476,
+        196
+      ],
+      "geometry": "rect",
+      "text": "外感风邪：多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。\n\n内生积热：过食辛辣、油腻、温补之品，或情志不畅化火，致体内“火气”过旺。",
+      "textPreview": "外感风邪：多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。 |  | 内生积热：过食辛辣、油腻、温补之品，或情志不畅化火，致体内“火气”过旺。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 6,
+        "lines": [
+          {
+            "index": 1,
+            "text": "外感风邪："
+          },
+          {
+            "index": 2,
+            "text": "多发于春季或气温骤升时节，风热之邪从口"
+          },
+          {
+            "index": 3,
+            "text": "鼻、皮毛而入，侵犯肌表。"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "内生积热：过食辛辣、油腻、温补"
+          },
+          {
+            "index": 6,
+            "text": "之品，或情志不畅化火，致体内“火气”过旺。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "外感风邪：多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "外感风邪：",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "多发于春季或气温骤升时节，风热之邪从口鼻、皮毛而入，侵犯肌表。",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "内生积热：过食辛辣、油腻、温补之品，或情志不畅化火，致体内“火气”过旺。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "内生积热：",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "过食",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "辛辣、油腻、温补",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "之品，或情志不畅化火，致体内“火气”过旺。",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/filwz2tg",
+      "id": "19",
+      "name": "pathogenesis-surface",
+      "bbox": [
+        650,
+        300,
+        540,
+        280
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b2dsruts",
+      "id": "20",
+      "name": "pathogenesis-accent",
+      "bbox": [
+        660,
+        314,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q14byps7",
+      "id": "21",
+      "name": "pathogenesis-title",
+      "bbox": [
+        674,
+        312,
+        500,
+        38
+      ],
+      "geometry": "rect",
+      "text": "关键病机：正邪交争，肺卫失和",
+      "textPreview": "关键病机：正邪交争，肺卫失和",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "关键病机：正邪交争，肺卫失和"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "关键病机：正邪交争，肺卫失和",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "关键病机：正邪交争，肺卫失和",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dovut4ry",
+      "id": "22",
+      "name": "pathogenesis-divider",
+      "bbox": [
+        674,
+        358,
+        496,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3mt0zad",
+      "id": "23",
+      "name": "pathogenesis-body",
+      "bbox": [
+        674,
+        370,
+        496,
+        196
+      ],
+      "geometry": "rect",
+      "text": "正邪相争：风热犯表，卫阳被遏，正邪交争于肌表则发热。\n\n津伤肺逆：热邪易灼伤津液，故见口干、口渴；肺失宣肃，气逆于上，则引发咳嗽、咽喉肿痛。",
+      "textPreview": "正邪相争：风热犯表，卫阳被遏，正邪交争于肌表则发热。 |  | 津伤肺逆：热邪易灼伤津液，故见口干、口渴；肺失宣肃，气逆于上，则引发咳嗽、咽喉肿痛。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "正邪相争："
+          },
+          {
+            "index": 2,
+            "text": "风热犯表，卫阳被遏，正邪交争于肌表则发热"
+          },
+          {
+            "index": 3,
+            "text": "。"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "津伤肺逆：热邪易灼伤津液，故见口干、口渴"
+          },
+          {
+            "index": 6,
+            "text": "；肺失宣肃，气逆于上，则引发"
+          },
+          {
+            "index": 7,
+            "text": "咳嗽、咽喉肿痛。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "正邪相争：风热犯表，卫阳被遏，正邪交争于肌表则发热。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "正邪相争：",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "风热犯表，卫阳被遏，正邪交争于肌表则发热。",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "津伤肺逆：热邪易灼伤津液，故见口干、口渴；肺失宣肃，气逆于上，则引发咳嗽、咽喉肿痛。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "津伤肺逆：",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "热邪易灼伤津液，故见",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 3,
+              "text": "口干、口渴",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 4,
+              "text": "；肺失宣肃，气逆于上，则引发",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            },
+            {
+              "index": 5,
+              "text": "咳嗽、咽喉肿痛",
+              "fontSize": 23,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 6,
+              "text": "。",
+              "fontSize": 23,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqdcve9o",
+      "id": "24",
+      "name": "definition-summary-surface",
+      "bbox": [
+        90,
+        600,
+        1100,
+        55
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E9F7EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yp4b29sj",
+      "id": "25",
+      "name": "definition-summary-accent",
+      "bbox": [
+        98,
+        610,
+        4,
+        35
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lsfux4ru",
+      "id": "26",
+      "name": "definition-summary",
+      "bbox": [
+        114,
+        600,
+        1062,
+        55
+      ],
+      "geometry": "rect",
+      "text": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。",
+      "textPreview": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "总结：风热证以“发热重、恶寒轻、咽痛、口渴、苔薄黄”为主要辨证要点。",
+              "fontSize": 21,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

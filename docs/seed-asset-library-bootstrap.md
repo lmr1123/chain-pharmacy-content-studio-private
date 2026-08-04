@@ -179,6 +179,7 @@ D. 项目临时层
 | AE Medical Explainer Toolkit | 工具包 | 角色动作粒度、背景换色 | 未授权原件进生产 |
 | Lottie Medical / Conditions packs | 微动效 | 图标呼吸/脉冲节奏 | 画风未适配直接混用 |
 | Servier SMART / BioGDP / SciDraw | 医学矢量 | 解剖正确性、机制表达 | 风格未统一时硬贴进卡通片 |
+| **Koboyo Icons**（https://koboyo.com/icons） | 手绘 SVG 图标源头 | 排版符号与小物件一致性（按需匹配获取） | 整库镜像/提交 SVG 包；替代场景插画；对外做成可选可下全库；成片热链官网 |
 | 公司参考培训视频 | 内部样片 | 母版、节奏、章节语法 | 参考像素与未授权 Logo/原声外发 |
 
 每次外部拆解应产出一张 **「拆解卡」**（见 §7），而不是下载一堆文件塞进 `assets/`。
@@ -192,8 +193,12 @@ D. 项目临时层
 教学插画（症状、机理、人群、草本示意）
   → in_house_generated / in_house_authored，且绑定 series_id
 
-图标 / 微动效
-  → 自研优先；licensed 次之；Lottie 等需重绘或适配 series_style 后入库
+图标 / 排版符号 / 微物件（箭头、分行点、勾叉、分隔线、简单医疗物件等）
+  → **按需源头** [Koboyo Icons](https://koboyo.com/icons)（商用免费、无需署名）
+  → Git 只提交：`assets/_intake/open_source/koboyo/{SOURCE.md,license.txt,manifest.json}`
+  → 本机临时：`svg/`（gitignore）仅当次下载；禁止整库镜像/提交
+  → 改色/栅格化后经 candidates → master；不替代多色场景系列插画
+  → 序号 1–n 优先文本排版；Lottie 等需重绘或适配 series_style 后入库
 
 代码与引擎
   → 见 docs/local-open-source-reuse-audit.md（与像素资产分轨管理）

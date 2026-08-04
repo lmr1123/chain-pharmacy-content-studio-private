@@ -1,0 +1,2516 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/rdlzbx",
+    "id": "rdlzbx",
+    "slide": 17,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kb65cjyp",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jax4jeh4",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "5.1",
+      "textPreview": "5.1",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5.1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5.1",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5.1",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y9o3a9gj",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "权重篇——广誉远安宫牛黄丸",
+      "textPreview": "权重篇——广誉远安宫牛黄丸",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "权重篇——广誉远安宫牛黄丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "权重篇——广誉远安宫牛黄丸",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "权重篇——广誉远安宫牛黄丸",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgzmpof6",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fq5gjyl",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7eh4nyhg",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6d8netgv",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkvmd4z2",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "17 / 18",
+      "textPreview": "17 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "17 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "17 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "17 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/pwj6dsfa",
+      "id": "9",
+      "bbox": [
+        45,
+        120,
+        465,
+        285
+      ],
+      "alt": "广誉远安宫牛黄丸包装与商品图，裁自源 PDF",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "a979ab14-cd0b-44a6-a717-42435ccbee84",
+        "contentType": "image/png",
+        "byteLength": 168437
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e50fito3",
+      "id": "10",
+      "name": "weighted-code-h-surface",
+      "bbox": [
+        45,
+        425,
+        90,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f69grepo",
+      "id": "11",
+      "name": "weighted-code-h-text",
+      "bbox": [
+        53,
+        425,
+        74,
+        48
+      ],
+      "geometry": "rect",
+      "text": "编码",
+      "textPreview": "编码",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "编码"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "编码",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "编码",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7ihkj69",
+      "id": "12",
+      "name": "weighted-priority-h-surface",
+      "bbox": [
+        135,
+        425,
+        90,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/18bydo7u",
+      "id": "13",
+      "name": "weighted-priority-h-text",
+      "bbox": [
+        143,
+        425,
+        74,
+        48
+      ],
+      "geometry": "rect",
+      "text": "主推",
+      "textPreview": "主推",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "主推"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "主推",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "主推",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/29kzmtoz",
+      "id": "14",
+      "name": "weighted-spec-h-surface",
+      "bbox": [
+        225,
+        425,
+        160,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3atgfypk",
+      "id": "15",
+      "name": "weighted-spec-h-text",
+      "bbox": [
+        233,
+        425,
+        144,
+        48
+      ],
+      "geometry": "rect",
+      "text": "规格",
+      "textPreview": "规格",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "规格"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "规格",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "规格",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ob2ho365",
+      "id": "16",
+      "name": "weighted-price-h-surface",
+      "bbox": [
+        385,
+        425,
+        125,
+        48
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcbyh87q",
+      "id": "17",
+      "name": "weighted-price-h-text",
+      "bbox": [
+        393,
+        425,
+        109,
+        48
+      ],
+      "geometry": "rect",
+      "text": "零售价",
+      "textPreview": "零售价",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "零售价"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "零售价",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "零售价",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxkzqdob",
+      "id": "18",
+      "name": "weighted-code-surface",
+      "bbox": [
+        45,
+        473,
+        90,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bytgjipw",
+      "id": "19",
+      "name": "weighted-code-text",
+      "bbox": [
+        53,
+        473,
+        74,
+        62
+      ],
+      "geometry": "rect",
+      "text": "2205770",
+      "textPreview": "2205770",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "22057"
+          },
+          {
+            "index": 2,
+            "text": "70"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2205770",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2205770",
+              "fontSize": 17,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n2dg7il4",
+      "id": "20",
+      "name": "weighted-priority-surface",
+      "bbox": [
+        135,
+        473,
+        90,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m14fed4j",
+      "id": "21",
+      "name": "weighted-priority-text",
+      "bbox": [
+        143,
+        473,
+        74,
+        62
+      ],
+      "geometry": "rect",
+      "text": "A",
+      "textPreview": "A",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A",
+              "fontSize": 19,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/94vy983u",
+      "id": "22",
+      "name": "weighted-spec-surface",
+      "bbox": [
+        225,
+        473,
+        160,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83mxgnm9",
+      "id": "23",
+      "name": "weighted-spec-text",
+      "bbox": [
+        233,
+        473,
+        144,
+        62
+      ],
+      "geometry": "rect",
+      "text": "3克/丸\n（双天然）",
+      "textPreview": "3克/丸 | （双天然）",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3克/丸"
+          },
+          {
+            "index": 2,
+            "text": "（双天然）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3克/丸",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3克/丸",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "（双天然）",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "（双天然）",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zetw3yls",
+      "id": "24",
+      "name": "weighted-price-surface",
+      "bbox": [
+        385,
+        473,
+        125,
+        62
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ydkfat47",
+      "id": "25",
+      "name": "weighted-price-text",
+      "bbox": [
+        393,
+        473,
+        109,
+        62
+      ],
+      "geometry": "rect",
+      "text": "880",
+      "textPreview": "880",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "880"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "880",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "880",
+              "fontSize": 19,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l0ve583y",
+      "id": "26",
+      "name": "weighted-slogan-surface",
+      "bbox": [
+        45,
+        555,
+        465,
+        75
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4FAF5",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0zmxc3md",
+      "id": "27",
+      "name": "weighted-slogan",
+      "bbox": [
+        59,
+        565,
+        437,
+        55
+      ],
+      "geometry": "rect",
+      "text": "一句话卖点（员工宣传语）：\n安宫鼻祖，胆红素含量高于同品",
+      "textPreview": "一句话卖点（员工宣传语）： | 安宫鼻祖，胆红素含量高于同品",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一句话卖点（员工宣传语）："
+          },
+          {
+            "index": 2,
+            "text": "安宫鼻祖，胆红素含量高于同品"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一句话卖点（员工宣传语）：",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一句话卖点（员工宣传语）：",
+              "fontSize": 17,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "安宫鼻祖，胆红素含量高于同品",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "安宫鼻祖，胆红素含量高于同品",
+              "fontSize": 17,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/batwzylw",
+      "id": "28",
+      "name": "weighted-selling-points-surface",
+      "bbox": [
+        550,
+        100,
+        660,
+        175
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q9kf6t4b",
+      "id": "29",
+      "name": "weighted-selling-points-accent",
+      "bbox": [
+        560,
+        114,
+        4,
+        26
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfydgz29",
+      "id": "30",
+      "name": "weighted-selling-points-title",
+      "bbox": [
+        574,
+        112,
+        620,
+        38
+      ],
+      "geometry": "rect",
+      "text": "一、核心卖点",
+      "textPreview": "一、核心卖点",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一、核心卖点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一、核心卖点",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一、核心卖点",
+              "fontSize": 25,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1gru9kje",
+      "id": "31",
+      "name": "weighted-selling-points-divider",
+      "bbox": [
+        574,
+        158,
+        616,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/edgvepk3",
+      "id": "32",
+      "name": "weighted-selling-points-body",
+      "bbox": [
+        574,
+        170,
+        616,
+        91
+      ],
+      "geometry": "rect",
+      "text": "广誉远安宫被誉为安宫鼻祖。广誉远是较早规模化炮制安宫牛黄丸的厂家，早在光绪11年（1885年）开始规模化炮制；2014年获得“国家级非物质文化遗产”荣誉。",
+      "textPreview": "广誉远安宫被誉为安宫鼻祖。广誉远是较早规模化炮制安宫牛黄丸的厂家，早在光绪11年（1885年）开始规模化炮制；2014年获得“国家级非物质文化遗产”荣誉。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "广誉远安宫被誉为安宫鼻祖。广誉远是较早规模化炮制安宫牛黄丸的厂家，"
+          },
+          {
+            "index": 2,
+            "text": "早在光绪11年（1885年）开始规模化炮制；2014年获得“国家级非物质文化"
+          },
+          {
+            "index": 3,
+            "text": "遗产”荣誉。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "广誉远安宫被誉为安宫鼻祖。广誉远是较早规模化炮制安宫牛黄丸的厂家，早在光绪11年（1885年）开始规模化炮制；2014年获得“国家级非物质文化遗产”荣誉。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "广誉远安宫被誉为安宫鼻祖。广誉远是较早规模化炮制安宫牛黄丸的厂家，早在光绪11年（1885年）开始规模化炮制；2014年获得“国家级非物质文化遗产”荣誉。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fepc7u1o",
+      "id": "33",
+      "name": "bilirubin-h1-surface",
+      "bbox": [
+        585,
+        295,
+        260,
+        44
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ojidkz25",
+      "id": "34",
+      "name": "bilirubin-h1-text",
+      "bbox": [
+        593,
+        295,
+        244,
+        44
+      ],
+      "geometry": "rect",
+      "text": "品种",
+      "textPreview": "品种",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "品种"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "品种",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "品种",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkrud4jq",
+      "id": "35",
+      "name": "bilirubin-h2-surface",
+      "bbox": [
+        845,
+        295,
+        120,
+        44
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2h0vipkz",
+      "id": "36",
+      "name": "bilirubin-h2-text",
+      "bbox": [
+        853,
+        295,
+        104,
+        44
+      ],
+      "geometry": "rect",
+      "text": "牛黄",
+      "textPreview": "牛黄",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "牛黄"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "牛黄",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "牛黄",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3i9cbu1k",
+      "id": "37",
+      "name": "bilirubin-h3-surface",
+      "bbox": [
+        965,
+        295,
+        210,
+        44
+      ],
+      "geometry": "rect",
+      "fillColor": "#066A2F",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4net8f21",
+      "id": "38",
+      "name": "bilirubin-h3-text",
+      "bbox": [
+        973,
+        295,
+        194,
+        44
+      ],
+      "geometry": "rect",
+      "text": "胆红素含量",
+      "textPreview": "胆红素含量",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "胆红素含量"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "胆红素含量",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "胆红素含量",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5o7u10jm",
+      "id": "39",
+      "name": "bilirubin-1-1-surface",
+      "bbox": [
+        585,
+        339,
+        260,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4jmh0jq",
+      "id": "40",
+      "name": "bilirubin-1-1-text",
+      "bbox": [
+        593,
+        339,
+        244,
+        38
+      ],
+      "geometry": "rect",
+      "text": "安宫牛黄丸（广誉远）",
+      "textPreview": "安宫牛黄丸（广誉远）",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "安宫牛黄丸（广誉远）"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "安宫牛黄丸（广誉远）",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "安宫牛黄丸（广誉远）",
+              "fontSize": 16,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3ql8f25",
+      "id": "41",
+      "name": "bilirubin-1-2-surface",
+      "bbox": [
+        845,
+        339,
+        120,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b2h4fa1k",
+      "id": "42",
+      "name": "bilirubin-1-2-text",
+      "bbox": [
+        853,
+        339,
+        104,
+        38
+      ],
+      "geometry": "rect",
+      "text": "天然",
+      "textPreview": "天然",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "天然"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "天然",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "天然",
+              "fontSize": 16,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a18365kz",
+      "id": "43",
+      "name": "bilirubin-1-3-surface",
+      "bbox": [
+        965,
+        339,
+        210,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 44,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pgzmd0ju",
+      "id": "44",
+      "name": "bilirubin-1-3-text",
+      "bbox": [
+        973,
+        339,
+        194,
+        38
+      ],
+      "geometry": "rect",
+      "text": "46.6mg/丸",
+      "textPreview": "46.6mg/丸",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#E60012",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "46.6mg/丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "46.6mg/丸",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#E60012",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "46.6mg/丸",
+              "fontSize": 16,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 45,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofql4v29",
+      "id": "45",
+      "name": "bilirubin-2-1-surface",
+      "bbox": [
+        585,
+        377,
+        260,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 46,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/neh4bq1o",
+      "id": "46",
+      "name": "bilirubin-2-1-text",
+      "bbox": [
+        593,
+        377,
+        244,
+        38
+      ],
+      "geometry": "rect",
+      "text": "北京同仁堂安宫",
+      "textPreview": "北京同仁堂安宫",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "北京同仁堂安宫"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "北京同仁堂安宫",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "北京同仁堂安宫",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 47,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2d832lk3",
+      "id": "47",
+      "name": "bilirubin-2-2-surface",
+      "bbox": [
+        845,
+        377,
+        120,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 48,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cfm9g3i",
+      "id": "48",
+      "name": "bilirubin-2-2-text",
+      "bbox": [
+        853,
+        377,
+        104,
+        38
+      ],
+      "geometry": "rect",
+      "text": "天然",
+      "textPreview": "天然",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "天然"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "天然",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "天然",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 49,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0b6l0v2x",
+      "id": "49",
+      "name": "bilirubin-2-3-surface",
+      "bbox": [
+        965,
+        377,
+        210,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4FAF5",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 50,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qh4jah0v",
+      "id": "50",
+      "name": "bilirubin-2-3-text",
+      "bbox": [
+        973,
+        377,
+        194,
+        38
+      ],
+      "geometry": "rect",
+      "text": "40.1mg/丸",
+      "textPreview": "40.1mg/丸",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "40.1mg/丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "40.1mg/丸",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "40.1mg/丸",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 51,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rid03mhg",
+      "id": "51",
+      "name": "bilirubin-3-1-surface",
+      "bbox": [
+        585,
+        415,
+        260,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 52,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sjm1cri1",
+      "id": "52",
+      "name": "bilirubin-3-1-text",
+      "bbox": [
+        593,
+        415,
+        244,
+        38
+      ],
+      "geometry": "rect",
+      "text": "安宫国家标准",
+      "textPreview": "安宫国家标准",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "安宫国家标准"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "安宫国家标准",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "安宫国家标准",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 53,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dkv25wzm",
+      "id": "53",
+      "name": "bilirubin-3-2-surface",
+      "bbox": [
+        845,
+        415,
+        120,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 54,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idkj6h0z",
+      "id": "54",
+      "name": "bilirubin-3-2-text",
+      "bbox": [
+        853,
+        415,
+        104,
+        38
+      ],
+      "geometry": "rect",
+      "text": "天然",
+      "textPreview": "天然",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "天然"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "天然",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "天然",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 55,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ed0zm14",
+      "id": "55",
+      "name": "bilirubin-3-3-surface",
+      "bbox": [
+        965,
+        415,
+        210,
+        38
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 56,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fm18rip",
+      "id": "56",
+      "name": "bilirubin-3-3-text",
+      "bbox": [
+        973,
+        415,
+        194,
+        38
+      ],
+      "geometry": "rect",
+      "text": "≥18.5mg/丸",
+      "textPreview": "≥18.5mg/丸",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "≥18.5mg/丸"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "≥18.5mg/丸",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#1F2A24",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "≥18.5mg/丸",
+              "fontSize": 16,
+              "color": "#1F2A24",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 57,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5gvi1cza",
+      "id": "57",
+      "name": "weighted-indications",
+      "bbox": [
+        550,
+        470,
+        660,
+        160
+      ],
+      "geometry": "rect",
+      "text": "二、适应症：\n1. 中风或脑梗塞后遗症患者；2. 癫痫、惊厥、昏迷患者；3. 心血管疾病患者；4. 神经衰弱或失眠患者；5. 儿童高热惊厥；6. 严重感染性疾病伴高热神昏者。",
+      "textPreview": "二、适应症： | 1. 中风或脑梗塞后遗症患者；2. 癫痫、惊厥、昏迷患者；3. 心血管疾病患者；4. 神经衰弱或失眠患者；5. 儿童高热惊厥；6. 严重感染性疾病伴高热神昏者。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "二、适应症："
+          },
+          {
+            "index": 2,
+            "text": "1. 中风或脑梗塞后遗症患者；2. 癫痫、惊厥、昏迷患者；3. 心血管疾病患者；4."
+          },
+          {
+            "index": 3,
+            "text": "神经衰弱或失眠患者；5. 儿童高热惊厥；6. 严重感染性疾病伴高热神昏者。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "二、适应症：",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "二、适应症：",
+              "fontSize": 18,
+              "color": "#E60012",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "1. 中风或脑梗塞后遗症患者；2. 癫痫、惊厥、昏迷患者；3. 心血管疾病患者；4. 神经衰弱或失眠患者；5. 儿童高热惊厥；6. 严重感染性疾病伴高热神昏者。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. 中风或脑梗塞后遗症患者；2. 癫痫、惊厥、昏迷患者；3. 心血管疾病患者；4. 神经衰弱或失眠患者；5. 儿童高热惊厥；6. 严重感染性疾病伴高热神昏者。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

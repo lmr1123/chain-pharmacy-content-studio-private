@@ -1,0 +1,21 @@
+{
+  "source": "https://koboyo.com/icons",
+  "license": "https://koboyo.com/icons/license",
+  "fetched": "2026-08-03",
+  "status": "on_demand_cache",
+  "workflow": "Source of truth is https://koboyo.com/icons — search/match at production time, download only what is needed into svg/<role>/ (gitignored local cache). Promote approved PNG masters into component-library if needed for ship.",
+  "note": "Local SVG cache is intentionally empty in git. Digits 1-9 prefer text typesetting. Do not mirror the full library.",
+  "categories": {
+    "layout": {
+      "count": 0,
+      "path": "svg/layout",
+      "slugs": []
+    },
+    "health": {
+      "count": 0,
+      "path": "svg/health",
+      "slugs": []
+    }
+  },
+  "total": 0
+}

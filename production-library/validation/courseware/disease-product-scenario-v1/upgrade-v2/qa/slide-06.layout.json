@@ -1,0 +1,1806 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/hi16xa",
+    "id": "hi16xa",
+    "slide": 6,
+    "layoutId": "8595776b-8207-4d00-8b79-f63455187eec",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "8595776b-8207-4d00-8b79-f63455187eec",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "73f8ac18-b1a2-4b8f-8b3c-a8a2f112648e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqtonedo",
+      "id": "1",
+      "name": "chrome-left-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#066A2F",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kr2pwjut",
+      "id": "2",
+      "name": "chrome-page-number",
+      "bbox": [
+        32,
+        18,
+        64,
+        42
+      ],
+      "geometry": "rect",
+      "text": "1.3",
+      "textPreview": "1.3",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1.3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1.3",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1.3",
+              "fontSize": 21,
+              "color": "#FFFFFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lsb6pobe",
+      "id": "3",
+      "name": "chrome-title",
+      "bbox": [
+        114,
+        14,
+        900,
+        50
+      ],
+      "geometry": "rect",
+      "text": "疾病篇——风热证的鉴别",
+      "textPreview": "疾病篇——风热证的鉴别",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "疾病篇——风热证的鉴别"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "疾病篇——风热证的鉴别",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "疾病篇——风热证的鉴别",
+              "fontSize": 27,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al07q9cr",
+      "id": "4",
+      "name": "chrome-hairline",
+      "bbox": [
+        32,
+        73,
+        1216,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E9DF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bmtojedc",
+      "id": "5",
+      "name": "chrome-rule-accent",
+      "bbox": [
+        114,
+        70,
+        72,
+        5
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#009900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wn2psjux",
+      "id": "6",
+      "name": "chrome-brand",
+      "bbox": [
+        1080,
+        18,
+        164,
+        40
+      ],
+      "geometry": "rect",
+      "text": "大参林 dashenlin",
+      "textPreview": "大参林 dashenlin",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#43A817",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大参林 dashenlin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大参林 dashenlin",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#43A817",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "大参林 dashenlin",
+              "fontSize": 14,
+              "color": "#43A817",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xob6lovi",
+      "id": "7",
+      "name": "chrome-internal-notice",
+      "bbox": [
+        1010,
+        688,
+        160,
+        22
+      ],
+      "geometry": "rect",
+      "text": "仅限于内部学习",
+      "textPreview": "仅限于内部学习",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仅限于内部学习"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仅限于内部学习",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仅限于内部学习",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mh07mpcv",
+      "id": "8",
+      "name": "chrome-page-index",
+      "bbox": [
+        1180,
+        688,
+        64,
+        22
+      ],
+      "geometry": "rect",
+      "text": "06 / 18",
+      "textPreview": "06 / 18",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5A6B61",
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "06 / 18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "06 / 18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5A6B61",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "06 / 18",
+              "fontSize": 12,
+              "color": "#5A6B61",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ni9ofudg",
+      "id": "9",
+      "name": "风热证 · 热象显著-surface",
+      "bbox": [
+        70,
+        105,
+        550,
+        360
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fm9sbup4",
+      "id": "10",
+      "name": "风热证 · 热象显著-header",
+      "bbox": [
+        71,
+        106,
+        548,
+        67
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D9F8EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ul0b2p8j",
+      "id": "11",
+      "name": "风热证 · 热象显著-header-square",
+      "bbox": [
+        71,
+        140,
+        548,
+        33
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9F8EE",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/horud47a",
+      "id": "12",
+      "name": "风热证 · 热象显著-title",
+      "bbox": [
+        100,
+        120,
+        490,
+        44
+      ],
+      "geometry": "rect",
+      "text": "风热证 · 热象显著",
+      "textPreview": "风热证 · 热象显著",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风热证 · 热象显著"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风热证 · 热象显著",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风热证 · 热象显著",
+              "fontSize": 26,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gnit4zqp",
+      "id": "13",
+      "name": "风热证 · 热象显著-left",
+      "bbox": [
+        92,
+        205,
+        240,
+        185
+      ],
+      "geometry": "rect",
+      "text": "01 寒热汗出\n发热重，恶寒轻；有汗出，体表疏松。\n\n02 鼻痰色泽\n流黄稠涕，咳痰黄黏，里热灼津。",
+      "textPreview": "01 寒热汗出 | 发热重，恶寒轻；有汗出，体表疏松。 |  | 02 鼻痰色泽 | 流黄稠涕，咳痰黄黏，里热灼津。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01 寒热汗出"
+          },
+          {
+            "index": 2,
+            "text": "发热重，恶寒轻；有汗"
+          },
+          {
+            "index": 3,
+            "text": "出，体表疏松。"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "02 鼻痰色泽"
+          },
+          {
+            "index": 6,
+            "text": "流黄稠涕，咳痰黄黏，"
+          },
+          {
+            "index": 7,
+            "text": "里热灼津。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01 寒热汗出",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01 寒热汗出",
+              "fontSize": 22,
+              "color": "#00B98F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "发热重，恶寒轻；有汗出，体表疏松。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "发热重，恶寒轻；有汗出，体表疏松。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "02 鼻痰色泽",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02 鼻痰色泽",
+              "fontSize": 22,
+              "color": "#00B98F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "流黄稠涕，咳痰黄黏，里热灼津。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "流黄稠涕，咳痰黄黏，里热灼津。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3a9cfupg",
+      "id": "14",
+      "name": "风热证 · 热象显著-middle-rule",
+      "bbox": [
+        344,
+        205,
+        1,
+        185
+      ],
+      "geometry": "rect",
+      "fillColor": "#C8DDE3",
+      "lineColor": "#C8DDE3",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2p0b698v",
+      "id": "15",
+      "name": "风热证 · 热象显著-right",
+      "bbox": [
+        365,
+        205,
+        230,
+        185
+      ],
+      "geometry": "rect",
+      "text": "03 咽喉症状\n咽喉红肿疼痛，热邪上攻。\n\n04 口渴喜饮\n口干渴明显，偏好冷饮。",
+      "textPreview": "03 咽喉症状 | 咽喉红肿疼痛，热邪上攻。 |  | 04 口渴喜饮 | 口干渴明显，偏好冷饮。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03 咽喉症状"
+          },
+          {
+            "index": 2,
+            "text": "咽喉红肿疼痛，热邪"
+          },
+          {
+            "index": 3,
+            "text": "上攻。"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "04 口渴喜饮"
+          },
+          {
+            "index": 6,
+            "text": "口干渴明显，偏好冷"
+          },
+          {
+            "index": 7,
+            "text": "饮。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03 咽喉症状",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03 咽喉症状",
+              "fontSize": 22,
+              "color": "#00B98F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "咽喉红肿疼痛，热邪上攻。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "咽喉红肿疼痛，热邪上攻。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "04 口渴喜饮",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04 口渴喜饮",
+              "fontSize": 22,
+              "color": "#00B98F",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "口干渴明显，偏好冷饮。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "口干渴明显，偏好冷饮。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcbuh476",
+      "id": "16",
+      "name": "风热证 · 热象显著-bottom",
+      "bbox": [
+        92,
+        390,
+        500,
+        65
+      ],
+      "geometry": "rect",
+      "text": "05 舌脉特征  舌红、苔薄黄，脉浮数。",
+      "textPreview": "05 舌脉特征  舌红、苔薄黄，脉浮数。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05 舌脉特征  舌红、苔薄黄，脉浮数。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05 舌脉特征  舌红、苔薄黄，脉浮数。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05 舌脉特征",
+              "fontSize": 22,
+              "color": "#00B98F",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "  舌红、苔薄黄，脉浮数。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4b2t8zq1",
+      "id": "17",
+      "name": "风寒证 · 寒象突出-surface",
+      "bbox": [
+        660,
+        105,
+        550,
+        360
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E9DF",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jeps3a9w",
+      "id": "18",
+      "name": "风寒证 · 寒象突出-header",
+      "bbox": [
+        661,
+        106,
+        548,
+        67
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#E8EEF6",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itgbu58r",
+      "id": "19",
+      "name": "风寒证 · 寒象突出-header-square",
+      "bbox": [
+        661,
+        140,
+        548,
+        33
+      ],
+      "geometry": "rect",
+      "fillColor": "#E8EEF6",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m94v2dsz",
+      "id": "20",
+      "name": "风寒证 · 寒象突出-title",
+      "bbox": [
+        690,
+        120,
+        490,
+        44
+      ],
+      "geometry": "rect",
+      "text": "风寒证 · 寒象突出",
+      "textPreview": "风寒证 · 寒象突出",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "风寒证 · 寒象突出"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "风寒证 · 寒象突出",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "风寒证 · 寒象突出",
+              "fontSize": 26,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nadwbi9k",
+      "id": "21",
+      "name": "风寒证 · 寒象突出-left",
+      "bbox": [
+        682,
+        205,
+        240,
+        185
+      ],
+      "geometry": "rect",
+      "text": "01 寒热汗出\n恶寒重，发热轻；无汗出，寒束肌表。\n\n02 鼻痰色泽\n流清稀涕，咳痰白稀，寒邪未化热。",
+      "textPreview": "01 寒热汗出 | 恶寒重，发热轻；无汗出，寒束肌表。 |  | 02 鼻痰色泽 | 流清稀涕，咳痰白稀，寒邪未化热。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01 寒热汗出"
+          },
+          {
+            "index": 2,
+            "text": "恶寒重，发热轻；无汗"
+          },
+          {
+            "index": 3,
+            "text": "出，寒束肌表。"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "02 鼻痰色泽"
+          },
+          {
+            "index": 6,
+            "text": "流清稀涕，咳痰白稀，"
+          },
+          {
+            "index": 7,
+            "text": "寒邪未化热。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01 寒热汗出",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01 寒热汗出",
+              "fontSize": 22,
+              "color": "#2F8AFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "恶寒重，发热轻；无汗出，寒束肌表。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "恶寒重，发热轻；无汗出，寒束肌表。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "02 鼻痰色泽",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02 鼻痰色泽",
+              "fontSize": 22,
+              "color": "#2F8AFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "流清稀涕，咳痰白稀，寒邪未化热。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "流清稀涕，咳痰白稀，寒邪未化热。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ob6d4na5",
+      "id": "22",
+      "name": "风寒证 · 寒象突出-middle-rule",
+      "bbox": [
+        934,
+        205,
+        1,
+        185
+      ],
+      "geometry": "rect",
+      "fillColor": "#C8DDE3",
+      "lineColor": "#C8DDE3",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9cfedsrq",
+      "id": "23",
+      "name": "风寒证 · 寒象突出-right",
+      "bbox": [
+        955,
+        205,
+        230,
+        185
+      ],
+      "geometry": "rect",
+      "text": "03 咽喉症状\n咽喉发痒，不红不痛，寒邪客于咽喉。\n\n04 口渴情况\n口不渴或喜热饮，体内无明显热邪。",
+      "textPreview": "03 咽喉症状 | 咽喉发痒，不红不痛，寒邪客于咽喉。 |  | 04 口渴情况 | 口不渴或喜热饮，体内无明显热邪。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03 咽喉症状"
+          },
+          {
+            "index": 2,
+            "text": "咽喉发痒，不红不痛"
+          },
+          {
+            "index": 3,
+            "text": "，寒邪客于咽喉。"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "04 口渴情况"
+          },
+          {
+            "index": 6,
+            "text": "口不渴或喜热饮，体"
+          },
+          {
+            "index": 7,
+            "text": "内无明显热邪。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03 咽喉症状",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03 咽喉症状",
+              "fontSize": 22,
+              "color": "#2F8AFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "咽喉发痒，不红不痛，寒邪客于咽喉。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "咽喉发痒，不红不痛，寒邪客于咽喉。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "04 口渴情况",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04 口渴情况",
+              "fontSize": 22,
+              "color": "#2F8AFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "口不渴或喜热饮，体内无明显热邪。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "口不渴或喜热饮，体内无明显热邪。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e54vyts3",
+      "id": "24",
+      "name": "风寒证 · 寒象突出-bottom",
+      "bbox": [
+        682,
+        390,
+        500,
+        65
+      ],
+      "geometry": "rect",
+      "text": "05 舌脉特征  舌淡、苔薄白，脉浮紧。",
+      "textPreview": "05 舌脉特征  舌淡、苔薄白，脉浮紧。",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05 舌脉特征  舌淡、苔薄白，脉浮紧。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05 舌脉特征  舌淡、苔薄白，脉浮紧。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05 舌脉特征",
+              "fontSize": 22,
+              "color": "#2F8AFF",
+              "bold": true,
+              "alignment": "left"
+            },
+            {
+              "index": 2,
+              "text": "  舌淡、苔薄白，脉浮紧。",
+              "fontSize": 22,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z6dw7y9o",
+      "id": "25",
+      "name": "memory-1-surface",
+      "bbox": [
+        70,
+        500,
+        350,
+        95
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#DBFAEF",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/07md03a9",
+      "id": "26",
+      "name": "memory-1",
+      "bbox": [
+        84,
+        510,
+        322,
+        75
+      ],
+      "geometry": "rect",
+      "text": "辨证核心口诀\n热重寒轻是风热，寒重热轻是风寒；有汗无汗要分清。",
+      "textPreview": "辨证核心口诀 | 热重寒轻是风热，寒重热轻是风寒；有汗无汗要分清。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "辨证核心口诀"
+          },
+          {
+            "index": 2,
+            "text": "热重寒轻是风热，寒重热轻是风寒；"
+          },
+          {
+            "index": 3,
+            "text": "有汗无汗要分清。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "辨证核心口诀",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "辨证核心口诀",
+              "fontSize": 18,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "热重寒轻是风热，寒重热轻是风寒；有汗无汗要分清。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "热重寒轻是风热，寒重热轻是风寒；有汗无汗要分清。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/18ve98re",
+      "id": "27",
+      "name": "memory-2-surface",
+      "bbox": [
+        465,
+        500,
+        350,
+        95
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#DBFAEF",
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qhkvutsr",
+      "id": "28",
+      "name": "memory-2",
+      "bbox": [
+        479,
+        510,
+        322,
+        75
+      ],
+      "geometry": "rect",
+      "text": "分泌物色诊口诀\n黄浊黄痰是风热，清涕白痰属风寒；红肿热痛辨咽喉。",
+      "textPreview": "分泌物色诊口诀 | 黄浊黄痰是风热，清涕白痰属风寒；红肿热痛辨咽喉。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "分泌物色诊口诀"
+          },
+          {
+            "index": 2,
+            "text": "黄浊黄痰是风热，清涕白痰属风寒；"
+          },
+          {
+            "index": 3,
+            "text": "红肿热痛辨咽喉。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "分泌物色诊口诀",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "分泌物色诊口诀",
+              "fontSize": 18,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "黄浊黄痰是风热，清涕白痰属风寒；红肿热痛辨咽喉。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "黄浊黄痰是风热，清涕白痰属风寒；红肿热痛辨咽喉。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ritw3y9c",
+      "id": "29",
+      "name": "memory-3-surface",
+      "bbox": [
+        860,
+        500,
+        350,
+        95
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#DBFAEF",
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twjy9wbu",
+      "id": "30",
+      "name": "memory-3",
+      "bbox": [
+        874,
+        510,
+        322,
+        75
+      ],
+      "geometry": "rect",
+      "text": "津液喜恶口诀\n口渴喜凉为风热，口不渴属风寒；喜热饮者寒象真。",
+      "textPreview": "津液喜恶口诀 | 口渴喜凉为风热，口不渴属风寒；喜热饮者寒象真。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#33413A",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "津液喜恶口诀"
+          },
+          {
+            "index": 2,
+            "text": "口渴喜凉为风热，口不渴属风寒；喜"
+          },
+          {
+            "index": 3,
+            "text": "热饮者寒象真。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "津液喜恶口诀",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "津液喜恶口诀",
+              "fontSize": 18,
+              "color": "#33413A",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "口渴喜凉为风热，口不渴属风寒；喜热饮者寒象真。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#33413A",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "口渴喜凉为风热，口不渴属风寒；喜热饮者寒象真。",
+              "fontSize": 18,
+              "color": "#33413A",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/svahgrup",
+      "id": "31",
+      "name": "change-note",
+      "bbox": [
+        70,
+        620,
+        1140,
+        42
+      ],
+      "geometry": "roundRect",
+      "text": "病情演变：清涕转黄涕，应紧扣当前主症及时调整治法，不拘泥于初期寒象。",
+      "textPreview": "病情演变：清涕转黄涕，应紧扣当前主症及时调整治法，不拘泥于初期寒象。",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1F2A24",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "病情演变：清涕转黄涕，应紧扣当前主症及时调整治法，不拘泥于初期寒象。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "病情演变：清涕转黄涕，应紧扣当前主症及时调整治法，不拘泥于初期寒象。",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1F2A24",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "病情演变：清涕转黄涕，应紧扣当前主症及时调整治法，不拘泥于初期寒象。",
+              "fontSize": 20,
+              "color": "#1F2A24",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#FFF3C4",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
