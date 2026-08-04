@@ -20,6 +20,12 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 GOLD = ROOT / "poc/gold-sample"
+sys.path.insert(0, str(ROOT / "scripts"))
+from content_driven_rules import (  # noqa: E402
+    extract_list_items,
+    plan_list_block,
+    segment_has_content,
+)
 
 SEGMENTS: list[dict[str, str]] = [
     {"id": "intro", "json": "health-training-intro.json", "label": "开场"},
@@ -75,7 +81,8 @@ def prepare_workspace(run_dir: Path) -> Path:
 def map_sections_to_segments(
     sections: list[dict[str, Any]], disease: str
 ) -> dict[str, dict[str, Any]]:
-    """Map business sections onto the 7 gold health segment slots."""
+    """Map business sections onto health slots. Missing slots stay absent (omit)."""
+    del disease
     by_label: dict[str, dict[str, Any]] = {}
     remaining = list(sections)
 
@@ -97,53 +104,19 @@ def map_sections_to_segments(
     ]
     for sid, kws in order_keywords:
         hit = take(kws)
-        if hit:
+        if hit and segment_has_content(hit):
             by_label[sid] = hit
 
-    leftovers = remaining
-    li = 0
+    leftovers = [s for s in remaining if segment_has_content(s)]
     for seg in SEGMENTS:
         sid = seg["id"]
         if sid in by_label:
             continue
-        if li < len(leftovers):
-            by_label[sid] = leftovers[li]
-            li += 1
-        elif sections:
-            by_label[sid] = sections[min(len(sections) - 1, len(by_label))]
-        else:
-            by_label[sid] = {
-                "title": seg["label"],
-                "narration": f"本段介绍{disease}相关培训要点。",
-            }
+        if leftovers:
+            by_label[sid] = leftovers.pop(0)
     return by_label
 
 
-def _bullets(text: str, n: int, defaults: list[str], max_len: int = 22) -> list[str]:
-    # Prefer numbered / semicolon splits; fall back to顿号/逗号 for chip lists
-    parts = re.split(r"[\n；;]|[0-9]+[、.．]", text or "")
-    parts = [p.strip(" ，,。.") for p in parts if len(p.strip()) >= 2]
-    if len(parts) < n:
-        fine = re.split(r"[、，,/\s]+", text or "")
-        fine = [p.strip(" 。.") for p in fine if 2 <= len(p.strip()) <= max_len + 4]
-        # drop leading glue like "感冒常见"
-        cleaned: list[str] = []
-        for p in fine:
-            p2 = re.sub(r"^(常见|主要|包括|可见)", "", p).strip()
-            if len(p2) >= 2:
-                cleaned.append(p2[:max_len])
-        if len(cleaned) >= len(parts):
-            parts = cleaned
-    out: list[str] = []
-    for i in range(n):
-        if i < len(parts) and parts[i]:
-            t = parts[i]
-            if len(t) > max_len:
-                t = t[:max_len]
-            out.append(t)
-        else:
-            out.append(defaults[i] if i < len(defaults) else f"要点{i+1}")
-    return out
 
 
 def extract_screen_fields(
@@ -168,18 +141,19 @@ def extract_screen_fields(
     screen["equation_right"] = eq_right
     screen["equation_result"] = eq_result
 
-    # character symptom chips from character narration
+    # character symptom chips — N items, never pad to gold 6
     char_nar = str((mapped.get("character") or {}).get("narration") or "")
-    chips = _bullets(
-        char_nar,
-        6,
-        screen.get("character_cards")
-        or ["典型表现一", "典型表现二", "典型表现三", "典型表现四", "典型表现五", "典型表现六"],
-        max_len=8,
-    )
+    chips = extract_list_items(char_nar, max_items=6, max_len=8)
     screen["character_cards"] = chips
+    screen["list_plans"] = {
+        "character_cards": plan_list_block(
+            module_id="character_cards",
+            title="典型表现",
+            items=chips,
+            gold_example_count=6,
+        )
+    }
 
-    # core treatment phrase from symptoms / treatment
     treat_nar = str((mapped.get("treatment") or {}).get("narration") or "")
     sym_nar = str((mapped.get("symptoms") or {}).get("narration") or "")
     core = screen.get("core_treatment") or "辨证调理"
@@ -198,7 +172,6 @@ def extract_screen_fields(
     screen["core_treatment"] = core
     screen["treatment_principle"] = core
 
-    # core body lines from symptoms / treatment (replace wind-heat defaults)
     body_src = sym_nar or treat_nar
     body_parts = [
         p.strip(" ，,。.")
@@ -211,12 +184,11 @@ def extract_screen_fields(
             screen["core_body_2"] = body_parts[1][:22]
         if len(body_parts) > 2:
             screen["core_body_3"] = body_parts[2][:22]
-    else:
+    elif "symptoms" in mapped or "treatment" in mapped:
         screen["core_body_1"] = f"围绕{disease}进行辨证讲解"
         screen["core_body_2"] = "识别典型表现与调理思路"
         screen["core_body_3"] = "注意禁忌，及时就医"
 
-    # treatment lines
     treat_parts = [
         p.strip(" ，,。.")
         for p in re.split(r"[。！？；;\n]", treat_nar)
@@ -227,31 +199,34 @@ def extract_screen_fields(
         if len(treat_parts) > 1:
             screen["treatment_line_2"] = treat_parts[1][:32]
 
-    # advice rows from medication
+    # advice rows — N only
     med_nar = str((mapped.get("medication") or {}).get("narration") or "")
-    advice_lines = _bullets(
-        med_nar,
-        4,
-        [a.get("body", "") for a in screen.get("advice_items") or []]
-        or ["保持通风", "多喝温水", "饮食清淡", "注意休息"],
-        max_len=28,
-    )
+    advice_lines = extract_list_items(med_nar, max_items=6, max_len=28)
     base_advice = screen.get("advice_items") or []
     new_advice = []
     for i, line in enumerate(advice_lines):
-        item = deepcopy(base_advice[i]) if i < len(base_advice) else {
-            "title": f"{i+1}. 要点",
-            "body": line,
-            "image": "ventilation-v1.png",
-            "transparent": True,
-        }
+        item = (
+            deepcopy(base_advice[i])
+            if i < len(base_advice)
+            else {
+                "title": f"{i+1}. 要点",
+                "body": line,
+                "image": "ventilation-v1.png",
+                "transparent": True,
+            }
+        )
         item["body"] = line
         if not item.get("title"):
             item["title"] = f"{i+1}. 要点"
         new_advice.append(item)
     screen["advice_items"] = new_advice
+    screen["list_plans"]["advice_items"] = plan_list_block(
+        module_id="advice_items",
+        title="生活建议",
+        items=advice_lines,
+        gold_example_count=4,
+    )
 
-    # summary matrix cells
     def short_block(sid: str, fallback: str) -> str:
         sec = mapped.get(sid) or {}
         text = str(sec.get("narration") or "")
@@ -259,19 +234,30 @@ def extract_screen_fields(
         parts = [p.strip() for p in parts if 2 <= len(p.strip()) <= 40]
         return (parts[0] if parts else fallback)[:40]
 
-    screen["summary_items"] = [
-        {"title": "病因", "body": short_block("mechanism", f"{disease}相关病因")},
-        {"title": "症状", "body": short_block("symptoms", "注意典型表现")},
-        {"title": "调理", "body": short_block("treatment", core)},
-        {"title": "禁忌", "body": short_block("medication", "遵医嘱，忌擅自用药")},
-    ]
+    # summary matrix only for included content modules
+    summary_items: list[dict[str, str]] = []
+    if "mechanism" in mapped:
+        summary_items.append(
+            {"title": "病因", "body": short_block("mechanism", f"{disease}相关病因")}
+        )
+    if "symptoms" in mapped:
+        summary_items.append(
+            {"title": "症状", "body": short_block("symptoms", "注意典型表现")}
+        )
+    if "treatment" in mapped:
+        summary_items.append({"title": "调理", "body": short_block("treatment", core)})
+    if "medication" in mapped:
+        summary_items.append(
+            {"title": "禁忌", "body": short_block("medication", "遵医嘱，忌擅自用药")}
+        )
+    if not summary_items:
+        summary_items = [{"title": "要点", "body": f"{disease}培训小结"}]
+    screen["summary_items"] = summary_items
 
-    # symptom group labels: try pull 3 short phrases
-    sym_bits = _bullets(sym_nar, 3, ["表现一", "表现二", "表现三"], max_len=14)
+    sym_bits = extract_list_items(sym_nar, max_items=3, max_len=14)
     groups = screen.get("symptom_groups") or []
     for i, g in enumerate(groups):
         if i < len(sym_bits) and isinstance(g, dict):
-            # keep structure/images; update first summary line for on-screen feel
             lines = list(g.get("summaryLines") or ["", ""])
             lines[0] = sym_bits[i]
             if len(lines) < 2:
@@ -279,9 +265,9 @@ def extract_screen_fields(
             g["summaryLines"] = lines[:2]
             if g.get("items") and len(g["items"]) > 0:
                 g["items"][0]["label"] = sym_bits[i][:8]
+    # if fewer symptom labels than gold groups, keep group shells but labels only updated
     screen["symptom_groups"] = groups
 
-    # herbs: only accept short pure herb-like tokens (avoid "核心是…")
     known_herbs = re.findall(
         r"(桑叶|菊花|薄荷|生姜|葱白|金银花|连翘|板蓝根|甘草|陈皮|半夏|黄芪|党参|枸杞|红枣|大枣|柠檬|蜂蜜)",
         treat_nar,
@@ -293,21 +279,14 @@ def extract_screen_fields(
                 h["name"] = known_herbs[i]
         names = " · ".join(known_herbs[:3])
         screen["recipe_text"] = f"{names}  适量"
-    # else keep gold herb names (structure skeleton), do not inject garbage tokens
     screen["herbs"] = herbs
 
-    # medication product names
-    med_names = _bullets(
-        med_nar,
-        2,
-        screen.get("medication_names") or ["常用成药甲", "常用成药乙"],
-        max_len=12,
-    )
-    # drop sentence-like noise
     med_names = [
-        n for n in med_names if 2 <= len(n) <= 12 and not re.search(r"[，。、是的了]", n)
-    ] or (screen.get("medication_names") or ["常用成药甲", "常用成药乙"])
-    screen["medication_names"] = med_names[:2]
+        n
+        for n in extract_list_items(med_nar, max_items=4, max_len=12)
+        if 2 <= len(n) <= 12 and not re.search(r"[，。、是的了]", n)
+    ]
+    screen["medication_names"] = med_names
 
     return screen
 
@@ -570,15 +549,43 @@ def run_health_full(
     disease = content["theme"]
     sections = content["sections"]
     mapped = map_sections_to_segments(sections, disease)
+    if not mapped:
+        return {"ok": False, "error": "未映射到任何有效段落（请提供带旁白的 sections）"}
+    # intro with only disease name is valid if theme present and no intro section —
+    # optional: auto-include short intro when any other segment exists
+    if "intro" not in mapped and mapped:
+        mapped = {
+            "intro": {"title": "开场", "narration": disease},
+            **mapped,
+        }
     screen = extract_screen_fields(disease, mapped, sections)
 
-    write_json(out_dir / "segment-map.json", {k: v.get("title") for k, v in mapped.items()})
+    segment_plan = {
+        seg["id"]: {
+            "label": seg["label"],
+            "status": "included" if seg["id"] in mapped else "omitted",
+            "title": (mapped.get(seg["id"]) or {}).get("title"),
+            "note": None
+            if seg["id"] in mapped
+            else "业务未提供该段内容，跳过渲染",
+        }
+        for seg in SEGMENTS
+    }
+    write_json(
+        out_dir / "segment-map.json",
+        {
+            "included": {k: v.get("title") for k, v in mapped.items()},
+            "plan": segment_plan,
+        },
+    )
     write_json(out_dir / "screen.json", screen)
 
     status: dict[str, Any] = {
         "mode": "full-content-visual-audio",
         "template": "health-video-reference-tech-v1",
         "disease": disease,
+        "content_driven": True,
+        "segment_plan": segment_plan,
         "segments": {},
     }
 
@@ -605,13 +612,25 @@ def run_health_full(
 
     for seg in SEGMENTS:
         sid = seg["id"]
+        if sid not in mapped:
+            status["segments"][sid] = {
+                "status": "omitted",
+                "reason": "业务未提供该段",
+            }
+            print(f"[skip] health/{sid} {seg['label']} （空段跳过）")
+            continue
+
         sec = mapped[sid]
         narration = str(sec.get("narration") or "").strip()
-        if not narration:
-            if sid == "intro":
-                narration = f"{disease}"
-            else:
-                narration = f"{disease} · {seg['label']} 培训要点。"
+        if sid != "intro" and not segment_has_content(sec):
+            status["segments"][sid] = {
+                "status": "omitted",
+                "reason": "旁白为空",
+            }
+            print(f"[skip] health/{sid} {seg['label']} （无旁白）")
+            continue
+        if sid == "intro" and not narration:
+            narration = disease
 
         wav_name = f"business-{sid}.wav"
         wav_ws = public_audio / wav_name
@@ -619,9 +638,10 @@ def run_health_full(
 
         if with_tts:
             print(f"[tts] health/{sid} {seg['label']} …")
-            # intro can be short title card with brief TTS
-            tts_text = narration if sid != "intro" else (
-                narration if len(narration) > 4 else f"中医基础知识，{disease}"
+            tts_text = (
+                narration
+                if sid != "intro"
+                else (narration if len(narration) > 4 else f"中医基础知识，{disease}")
             )
             dur = generate_tts(
                 text=tts_text,
@@ -630,7 +650,6 @@ def run_health_full(
                 ref_text=ref_text,
                 py=py,  # type: ignore[arg-type]
             )
-            # intro visual is short; clamp minimum so animation finishes
             if sid == "intro":
                 dur = max(dur, 4.0)
             shutil.copy2(wav_ws, wav_out)
@@ -654,6 +673,7 @@ def run_health_full(
         write_json(out_dir / "segment-json" / seg["json"], patched)
 
         status["segments"][sid] = {
+            "status": "included",
             "title": sec.get("title"),
             "duration_s": round(dur, 3),
             "narration_chars": len(re.sub(r"\s+", "", narration)),
@@ -668,8 +688,20 @@ def run_health_full(
     if with_render and segment_mp4s:
         final = out_dir / f"{slugify(disease)}_疾病科普视频_v1.mp4"
         concat_mp4s(segment_mp4s, final)
-        status["mp4"] = {"ok": True, "path": str(final), "segments": len(segment_mp4s)}
+        status["mp4"] = {
+            "ok": True,
+            "path": str(final),
+            "segments": len(segment_mp4s),
+            "omitted": [
+                s["id"]
+                for s in SEGMENTS
+                if status["segments"].get(s["id"], {}).get("status") == "omitted"
+            ],
+        }
         status["ok"] = True
+    elif with_render and not segment_mp4s:
+        status["ok"] = False
+        status["mp4"] = {"ok": False, "error": "全部段被跳过，无成片"}
     else:
         status["ok"] = True
         status["mp4"] = {"ok": False, "error": "未请求渲染"}

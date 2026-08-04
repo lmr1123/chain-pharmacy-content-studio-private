@@ -7,11 +7,78 @@ agents must call these rules before emitting PPT/video plans.
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 
 class ContentDrivenError(ValueError):
     pass
+
+
+# ---------------------------------------------------------------------------
+# Video segment helpers (same policy as PPT list blocks)
+# See docs/video-segment-extension-model.md
+# ---------------------------------------------------------------------------
+
+
+def segment_has_content(sec: dict[str, Any] | None) -> bool:
+    """True if a mapped section has real business narration (not a pad shell)."""
+    if not sec or not isinstance(sec, dict):
+        return False
+    text = str(sec.get("narration") or "").strip()
+    if not text:
+        return False
+    compact = re.sub(r"\s+", "", text)
+    if len(compact) < 2:
+        return False
+    # factory placeholder lines — treat as empty
+    if re.match(r"^本段介绍.+相关培训要点。?$", text):
+        return False
+    if text in {"待补充", "待填写", "（空）", "-"}:
+        return False
+    return True
+
+
+def extract_list_items(
+    text: str,
+    *,
+    max_items: int = 8,
+    max_len: int = 28,
+) -> list[str]:
+    """Split narration into list items. Returns 0..max_items; never pads."""
+    raw = text or ""
+    parts = re.split(r"[\n；;]|[0-9]+[、.．]", raw)
+    parts = [p.strip(" ，,。.") for p in parts if len(p.strip()) >= 2]
+    if len(parts) < 2:
+        fine = re.split(r"[、，,/]+", raw)
+        fine = [p.strip(" 。.") for p in fine if 2 <= len(p.strip()) <= max_len + 6]
+        cleaned: list[str] = []
+        for p in fine:
+            p2 = re.sub(r"^(常见|主要|包括|可见|有)", "", p).strip()
+            if len(p2) >= 2:
+                cleaned.append(p2[:max_len])
+        if cleaned:
+            parts = cleaned
+    out: list[str] = []
+    for p in parts:
+        if len(out) >= max_items:
+            break
+        t = p if len(p) <= max_len else p[:max_len]
+        if t and t not in out:
+            out.append(t)
+    return out
+
+
+def number_list_items(items: list[str], *, style: str = "顿号") -> list[str]:
+    """Prefix 1、 / 1. if not already numbered."""
+    out: list[str] = []
+    sep = "、" if style == "顿号" else "."
+    for i, t in enumerate(items, 1):
+        if re.match(r"^\d+[、.．]", t):
+            out.append(t)
+        else:
+            out.append(f"{i}{sep}{t}")
+    return out
 
 
 def normalize_items(items: list[Any] | None) -> list[Any]:

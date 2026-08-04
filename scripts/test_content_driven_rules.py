@@ -18,6 +18,54 @@ from content_driven_rules import (  # noqa: E402
 )
 
 
+def test_video_list_no_pad_and_omit_segment() -> None:
+    """P1: video full mapping — N items, omit empty slots."""
+    from business_video_product_full import (  # noqa: WPS433
+        extract_screen_fields,
+        map_sections_to_segments,
+    )
+    from business_video_health_full import (  # noqa: WPS433
+        extract_screen_fields as health_screen,
+        map_sections_to_segments as health_map,
+    )
+    from content_driven_rules import extract_list_items, segment_has_content
+
+    sections = [
+        {"title": "开场", "narration": "为什么要了解本品。"},
+        {"title": "核心功效", "narration": "1、促进能量。2、抗氧化。"},
+        {"title": "产品特点", "narration": "1、工艺稳。2、原料好。"},
+        {"title": "联合用药", "narration": "1、甲药＋本品。2、乙药＋本品。"},
+        {"title": "总结", "narration": "小结。"},
+    ]
+    mapped = map_sections_to_segments(sections, "本品")
+    assert "audience" not in mapped
+    assert "combination" in mapped
+    screen = extract_screen_fields("本品", mapped, sections)
+    assert len(screen["combo_sections"]) == 2
+    assert len(screen["feature_sections"]) == 2
+    plan = plan_list_block(
+        module_id="combination",
+        title="联合用药",
+        items=screen["combo_sections"],
+        gold_example_count=3,
+    )
+    assert_no_empty_padding(plan)
+
+    assert not segment_has_content({"narration": "本段介绍感冒相关培训要点。"})
+    chips = extract_list_items("鼻塞、流涕、咽痛、乏力", max_items=6, max_len=8)
+    assert len(chips) == 4
+
+    h_sections = [
+        {"title": "开场", "narration": "感冒"},
+        {"title": "基础认知", "narration": "鼻塞、流涕、咽痛、乏力"},
+        {"title": "总结", "narration": "小结"},
+    ]
+    h_mapped = health_map(h_sections, "感冒")
+    assert "mechanism" not in h_mapped
+    h_screen = health_screen("感冒", h_mapped, h_sections)
+    assert len(h_screen["character_cards"]) == 4
+
+
 def test_two_combo_rows_no_third_empty() -> None:
     rows = [
         {

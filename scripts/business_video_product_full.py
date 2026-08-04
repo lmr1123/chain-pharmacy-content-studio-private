@@ -19,6 +19,13 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 GOLD = ROOT / "poc/gold-sample"
+sys.path.insert(0, str(ROOT / "scripts"))
+from content_driven_rules import (  # noqa: E402
+    extract_list_items,
+    number_list_items,
+    plan_list_block,
+    segment_has_content,
+)
 
 SEGMENTS: list[dict[str, str]] = [
     {
@@ -107,7 +114,8 @@ def prepare_workspace(run_dir: Path) -> Path:
 def map_sections_to_segments(
     sections: list[dict[str, Any]], product: str
 ) -> dict[str, dict[str, Any]]:
-    """Map business sections onto the 8 gold segment slots by keyword + order."""
+    """Map business sections onto gold slots. Missing slots stay absent (omit)."""
+    del product  # theme only used by callers; keep signature stable
     by_label: dict[str, dict[str, Any]] = {}
     remaining = list(sections)
 
@@ -130,118 +138,106 @@ def map_sections_to_segments(
     ]
     for sid, kws in order_keywords:
         hit = take(kws)
-        if hit:
+        if hit and segment_has_content(hit):
             by_label[sid] = hit
 
-    # Fill remaining slots in order with leftover sections / pad with last
-    leftovers = remaining
-    li = 0
+    # leftover real sections fill empty slots in order — never invent shells
+    leftovers = [s for s in remaining if segment_has_content(s)]
     for seg in SEGMENTS:
         sid = seg["id"]
         if sid in by_label:
             continue
-        if li < len(leftovers):
-            by_label[sid] = leftovers[li]
-            li += 1
-        elif sections:
-            # pad: reuse nearest content so every segment has narration
-            by_label[sid] = sections[min(len(sections) - 1, len(by_label))]
-        else:
-            by_label[sid] = {
-                "title": seg["label"],
-                "narration": f"本段介绍{product}相关培训要点。",
-            }
+        if leftovers:
+            by_label[sid] = leftovers.pop(0)
     return by_label
 
 
 def extract_screen_fields(
     product: str, mapped: dict[str, dict[str, Any]], sections: list[dict[str, Any]]
 ) -> dict[str, Any]:
-    """Build screen payload for data-driven TSX fields."""
+    """Build screen payload; lists are N-item, never padded to gold counts."""
+    del sections
 
-    def bullets(sid: str, n: int, defaults: list[str]) -> list[str]:
+    def items_for(sid: str, max_items: int = 6, max_len: int = 28) -> list[str]:
         sec = mapped.get(sid) or {}
-        text = str(sec.get("narration") or "")
-        # split by common list markers
-        parts = re.split(r"[\n；;]|[0-9]+[、.．]", text)
-        parts = [p.strip(" ，,。.") for p in parts if len(p.strip()) >= 2]
-        out = []
-        for i in range(n):
-            if i < len(parts) and parts[i]:
-                # keep short for on-screen
-                t = parts[i]
-                if len(t) > 28:
-                    t = t[:28]
-                out.append(f"{i+1}、{t}" if not re.match(r"^\d", t) else t)
-            else:
-                out.append(defaults[i] if i < len(defaults) else f"{i+1}、要点")
-        return out
+        return extract_list_items(
+            str(sec.get("narration") or ""), max_items=max_items, max_len=max_len
+        )
 
-    # labels from brand section first lines
     brand_nar = str((mapped.get("brand") or {}).get("narration") or "")
-    labels = [
-        p.strip()[:12]
-        for p in re.split(r"[\n，,；;]", brand_nar)
-        if 2 <= len(p.strip()) <= 16
-    ][:3]
-    if len(labels) < 3:
-        labels = (labels + ["核心卖点", "适用场景", "沟通要点"])[:3]
+    labels = extract_list_items(brand_nar, max_items=4, max_len=12)
 
-    efficacy = bullets(
-        "efficacy",
-        2,
-        ["1.促进能量生成", "2.抗氧化，减少组织细胞损伤"],
-    )
-    # normalize numbering style for efficacy (dot style in gold)
-    efficacy = [
-        re.sub(r"^(\d+)[、.]", r"\1.", e) if i == 0 else e
-        for i, e in enumerate(efficacy)
-    ]
+    efficacy_raw = items_for("efficacy", max_items=4, max_len=28)
+    efficacy = number_list_items(efficacy_raw, style="点")
+    # gold efficacy uses "1." style
+    efficacy = [re.sub(r"^(\d+)[、．]", r"\1.", e) for e in efficacy]
 
-    features = bullets(
-        "features",
-        3,
-        ["1、原研工艺，锁住活性", "2、海外原料，提升品质", "3、医疗背书"],
-    )
-    combo = bullets(
-        "combination",
-        2,
-        [f"1、联合方案甲＋{product}", f"2、联合方案乙＋{product}"],
-    )
+    features = number_list_items(items_for("features", max_items=5, max_len=28))
+    combo = number_list_items(items_for("combination", max_items=4, max_len=32))
 
-    # summary cells: try pull short phrases from sections
-    def short_lines(sid: str, n: int, fallback: list[str]) -> list[str]:
-        sec = mapped.get(sid) or {}
-        text = str(sec.get("narration") or "")
-        parts = re.split(r"[\n；;。！]", text)
-        parts = [p.strip() for p in parts if 2 <= len(p.strip()) <= 36]
-        out = []
-        for i in range(n):
-            if i < len(parts):
-                out.append(parts[i][:36])
-            else:
-                out.append(fallback[i] if i < len(fallback) else "待补充")
-        return out
-
-    cells = (
-        short_lines("efficacy", 2, ["核心功效一", "核心功效二"])
-        + short_lines("features", 3, ["特点一", "特点二", "特点三"])
-        + short_lines("audience", 3, ["人群一", "人群二", "人群三"])
-        + short_lines("combination", 2, [f"方案甲＋{product}", f"方案乙＋{product}"])
+    n_eff = len(efficacy)
+    _cn = {1: "一", 2: "两", 3: "三", 4: "四", 5: "五"}
+    efficacy_title = (
+        f"{_cn.get(n_eff, str(n_eff))}大核心功效" if n_eff else "核心功效"
     )
+    # summary cells: only from included modules, no pad shells
+    def short_lines(sid: str, max_n: int) -> list[str]:
+        return items_for(sid, max_items=max_n, max_len=36)
+
+    headers: list[str] = []
+    cells: list[str] = []
+    if "efficacy" in mapped and efficacy:
+        headers.append("核心功效")
+        cells.extend(short_lines("efficacy", 4) or efficacy_raw)
+    if "features" in mapped and features:
+        headers.append("产品特点")
+        cells.extend(short_lines("features", 5))
+    if "audience" in mapped:
+        aud = short_lines("audience", 4)
+        if aud:
+            headers.append("适宜人群")
+            cells.extend(aud)
+    if "combination" in mapped and combo:
+        headers.append("联合用药")
+        cells.extend(short_lines("combination", 4))
+    if not headers:
+        headers = ["培训要点"]
+        cells = [product]
+
+    list_plans = {
+        "efficacy": plan_list_block(
+            module_id="efficacy",
+            title="核心功效",
+            items=efficacy,
+            gold_example_count=2,
+        ),
+        "features": plan_list_block(
+            module_id="features",
+            title="产品特点",
+            items=features,
+            gold_example_count=3,
+        ),
+        "combination": plan_list_block(
+            module_id="combination",
+            title="联合用药",
+            items=combo,
+            gold_example_count=2,
+        ),
+    }
 
     return {
         "product_name": product,
         "labels": labels,
-        "efficacy_title": "两大核心功效",
+        "efficacy_title": efficacy_title,
         "efficacy_sections": efficacy,
         "feature_sections": features,
         "combo_sections": combo,
         "audience_title": "适宜人群",
-        "pack_badge": "授权包装" if False else "包装图槽位",
+        "pack_badge": "包装图槽位",
         "meter_label": product,
+        "list_plans": list_plans,
         "summary": {
-            "headers": ["核心功效", "产品特点", "适宜人群", "联合用药"],
+            "headers": headers,
             "cells": cells,
             "brand": "大参林",
             "slogan": f"内部培训 · {product} 商品知识",
@@ -503,16 +499,37 @@ def run_product_full(
     product = content["theme"]
     sections = content["sections"]
     mapped = map_sections_to_segments(sections, product)
+    if not mapped:
+        return {"ok": False, "error": "未映射到任何有效段落（请提供带旁白的 sections）"}
     screen = extract_screen_fields(product, mapped, sections)
     if product_image and product_image.exists():
         screen["pack_badge"] = "授权包装"
 
-    write_json(out_dir / "segment-map.json", {k: v.get("title") for k, v in mapped.items()})
+    segment_plan = {
+        seg["id"]: {
+            "label": seg["label"],
+            "status": "included" if seg["id"] in mapped else "omitted",
+            "title": (mapped.get(seg["id"]) or {}).get("title"),
+            "note": None
+            if seg["id"] in mapped
+            else "业务未提供该段内容，跳过渲染",
+        }
+        for seg in SEGMENTS
+    }
+    write_json(
+        out_dir / "segment-map.json",
+        {
+            "included": {k: v.get("title") for k, v in mapped.items()},
+            "plan": segment_plan,
+        },
+    )
     write_json(out_dir / "screen.json", screen)
 
     status: dict[str, Any] = {
         "mode": "full-content-visual-audio",
         "product": product,
+        "content_driven": True,
+        "segment_plan": segment_plan,
         "segments": {},
     }
 
@@ -541,7 +558,6 @@ def run_product_full(
         product_asset_url = f"/product-training-assets/{dest_img.name}"
         screen["pack_badge"] = "授权包装"
     else:
-        # keep gold generic packshot
         product_asset_url = "/product-training-assets/generic-coq10-packshot-v1.png"
 
     segment_mp4s: list[Path] = []
@@ -550,10 +566,23 @@ def run_product_full(
 
     for seg in SEGMENTS:
         sid = seg["id"]
+        if sid not in mapped:
+            status["segments"][sid] = {
+                "status": "omitted",
+                "reason": "业务未提供该段",
+            }
+            print(f"[skip] {sid} {seg['label']} （空段跳过）")
+            continue
+
         sec = mapped[sid]
         narration = str(sec.get("narration") or "").strip()
-        if not narration:
-            narration = f"{product} · {seg['label']} 培训要点。"
+        if not segment_has_content(sec):
+            status["segments"][sid] = {
+                "status": "omitted",
+                "reason": "旁白为空",
+            }
+            print(f"[skip] {sid} {seg['label']} （无旁白）")
+            continue
 
         wav_name = f"business-{sid}.wav"
         wav_ws = public_audio / wav_name
@@ -570,7 +599,6 @@ def run_product_full(
             )
             shutil.copy2(wav_ws, wav_out)
         else:
-            # without tts cannot full render meaningfully
             return {
                 "ok": False,
                 "error": "full 模式需要 --with-tts 以生成与画面同步的旁白",
@@ -591,6 +619,7 @@ def run_product_full(
         write_json(out_dir / "segment-json" / seg["json"], patched)
 
         status["segments"][sid] = {
+            "status": "included",
             "title": sec.get("title"),
             "duration_s": round(dur, 3),
             "narration_chars": len(re.sub(r"\s+", "", narration)),
@@ -605,8 +634,20 @@ def run_product_full(
     if with_render and segment_mp4s:
         final = out_dir / f"{slugify(product)}_商品培训视频_v1.mp4"
         concat_mp4s(segment_mp4s, final)
-        status["mp4"] = {"ok": True, "path": str(final), "segments": len(segment_mp4s)}
+        status["mp4"] = {
+            "ok": True,
+            "path": str(final),
+            "segments": len(segment_mp4s),
+            "omitted": [
+                s["id"]
+                for s in SEGMENTS
+                if status["segments"].get(s["id"], {}).get("status") == "omitted"
+            ],
+        }
         status["ok"] = True
+    elif with_render and not segment_mp4s:
+        status["ok"] = False
+        status["mp4"] = {"ok": False, "error": "全部段被跳过，无成片"}
     else:
         status["ok"] = True
         status["mp4"] = {"ok": False, "error": "未请求渲染"}

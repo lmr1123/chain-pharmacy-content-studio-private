@@ -21,11 +21,17 @@ import data from '../product-training-efficacy.json';
 import {screenOf} from './product-training-content';
 
 const SCREEN = screenOf(data as any);
-const EFFICACY_TITLE = SCREEN.efficacy_title || '两大核心功效';
-const EFFICACY_SECTIONS = SCREEN.efficacy_sections || [
-  '1.促进能量生成',
-  '2.抗氧化，减少组织细胞损伤',
-];
+const EFFICACY_SECTIONS: string[] =
+  SCREEN.efficacy_sections && SCREEN.efficacy_sections.length > 0
+    ? SCREEN.efficacy_sections
+    : ['1.促进能量生成', '2.抗氧化，减少组织细胞损伤'];
+const EFFICACY_TITLE =
+  SCREEN.efficacy_title ||
+  (EFFICACY_SECTIONS.length === 1
+    ? '核心功效'
+    : EFFICACY_SECTIONS.length === 2
+      ? '两大核心功效'
+      : `${EFFICACY_SECTIONS.length}大核心功效`);
 import {
   DashenlinBrandMark,
   DashenlinInternalNotice,

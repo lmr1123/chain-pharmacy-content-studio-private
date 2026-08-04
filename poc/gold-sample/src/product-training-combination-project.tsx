@@ -22,10 +22,12 @@ import {productName, screenOf} from './product-training-content';
 
 const PRODUCT = productName(data as any);
 const SCREEN = screenOf(data as any);
-const COMBO_SECTIONS = SCREEN.combo_sections || [
-  `1、复方丹参滴丸＋${PRODUCT}`,
-  `2、他汀＋${PRODUCT}`,
-];
+/** Content-driven: N combo lines (never invent empty 3rd row). */
+const COMBO_SECTIONS: string[] =
+  SCREEN.combo_sections && SCREEN.combo_sections.length > 0
+    ? SCREEN.combo_sections
+    : [`1、联合方案＋${PRODUCT}`];
+const COMBO_COUNT = COMBO_SECTIONS.length;
 const PACK_BADGE = SCREEN.pack_badge || '重新制作包装示意';
 import {
   DashenlinBrandMark,
@@ -129,25 +131,36 @@ export const productTrainingCombinationScene = makeScene2D('product-training-com
   );
 
   function* visualTimeline() {
+    // Beat 1 — first combo line (always if N>=1)
+    sectionTitle().text(COMBO_SECTIONS[0]);
     yield* all(danshen().opacity(1, 0.12), danshen().scale(1, 0.46, easeOutBack));
     yield* all(plus().opacity(1, 0.1), plus().scale(1, 0.32, easeOutBack));
     yield* all(product().opacity(1, 0.12), product().scale(1, 0.48, easeOutBack));
-    yield* waitFor(12.90);
+    yield* waitFor(COMBO_COUNT > 1 ? 12.9 : 8.5);
 
-    yield* all(
-      danshen().opacity(0, 0.18),
-      danshen().scale(0.70, 0.20, easeInCubic),
-      partnerFlash().opacity(1, 0.10),
-      partnerFlash().scale(0.86, 0.14, easeOutBack),
-    );
-    sectionTitle().text(COMBO_SECTIONS[1] || `2、他汀＋${PRODUCT}`);
-    yield* all(
-      statin().opacity(1, 0.12),
-      statin().scale(1, 0.38, easeOutBack),
-      partnerFlash().opacity(0, 0.26, easeInCubic),
-      partnerFlash().scale(1.62, 0.26, easeOutCubic),
-    );
-    yield* waitFor(10.42);
+    // Beat 2 — only when business provided a second line
+    if (COMBO_COUNT > 1) {
+      yield* all(
+        danshen().opacity(0, 0.18),
+        danshen().scale(0.7, 0.2, easeInCubic),
+        partnerFlash().opacity(1, 0.1),
+        partnerFlash().scale(0.86, 0.14, easeOutBack),
+      );
+      sectionTitle().text(COMBO_SECTIONS[1]);
+      yield* all(
+        statin().opacity(1, 0.12),
+        statin().scale(1, 0.38, easeOutBack),
+        partnerFlash().opacity(0, 0.26, easeInCubic),
+        partnerFlash().scale(1.62, 0.26, easeOutCubic),
+      );
+      yield* waitFor(10.42);
+    }
+
+    // Extra lines (N>2): cycle section title only (shared packshot beat)
+    for (let i = 2; i < COMBO_COUNT; i++) {
+      sectionTitle().text(COMBO_SECTIONS[i]);
+      yield* waitFor(4.2);
+    }
 
     yield* all(
       sectionTitle().opacity(0, 0.16),

@@ -21,7 +21,10 @@ import {productName, screenOf} from './product-training-content';
 
 const PRODUCT = productName(data as any);
 const SCREEN = screenOf(data as any);
-const BRAND_LABELS = SCREEN.labels || ['90粒大包装', '原研工艺', '海外原料'];
+const BRAND_LABELS: string[] =
+  SCREEN.labels && SCREEN.labels.length > 0
+    ? SCREEN.labels
+    : ['90粒大包装', '原研工艺', '海外原料'];
 const EFFICACY_TITLE = SCREEN.efficacy_title || '两大核心功效';
 const PACK_BADGE = SCREEN.pack_badge || '重新制作包装示意';
 import {
@@ -59,9 +62,10 @@ function* runSubtitles(ref: Reference<Txt>) {
 export const productTrainingBrandOverviewScene = makeScene2D('product-training-brand-overview', function* (view) {
   const product = createRef<Img>();
   const productBadge = createRef<Rect>();
-  const labels = [0, 1, 2].map(() => createRef<Rect>());
+  const labels = BRAND_LABELS.map(() => createRef<Rect>());
   const subtitle = createRef<Txt>();
   const transitionTitle = createRef<Txt>();
+  const labelStep = BRAND_LABELS.length <= 1 ? 0 : 145;
 
   view.add(
     <>
@@ -103,11 +107,17 @@ export const productTrainingBrandOverviewScene = makeScene2D('product-training-b
           fill={'#b64043'}
         />
       </Rect>
-      {BRAND_LABELS.slice(0, 3).map((text, index) => (
+      {BRAND_LABELS.map((text, index) => (
         <Rect
           key={`editable:q10:brand:label:${index}`}
           ref={labels[index]}
-          position={[445, -95 + index * 145]}
+          position={[
+            445,
+            (BRAND_LABELS.length === 1
+              ? 0
+              : -95 + index * labelStep) -
+              (BRAND_LABELS.length === 2 ? -40 : 0),
+          ]}
           size={[510, 100]}
           opacity={0}
           scale={0.45}

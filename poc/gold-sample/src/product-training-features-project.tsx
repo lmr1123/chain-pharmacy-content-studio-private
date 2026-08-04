@@ -22,11 +22,16 @@ import {productName, screenOf} from './product-training-content';
 
 const PRODUCT = productName(data as any);
 const SCREEN = screenOf(data as any);
-const FEATURE_SECTIONS = SCREEN.feature_sections || [
-  '1、原研工艺，锁住活性',
-  '2、海外原料，提升品质',
-  '3、医疗背书',
-];
+/** Content-driven: only cycle titles that business provided. */
+const FEATURE_SECTIONS: string[] =
+  SCREEN.feature_sections && SCREEN.feature_sections.length > 0
+    ? SCREEN.feature_sections
+    : [
+        '1、原研工艺，锁住活性',
+        '2、海外原料，提升品质',
+        '3、医疗背书',
+      ];
+const FEATURE_COUNT = FEATURE_SECTIONS.length;
 import {
   DashenlinBrandMark,
   DashenlinInternalNotice,
@@ -243,12 +248,16 @@ export const productTrainingFeaturesScene = makeScene2D('product-training-featur
       lock().opacity(0, 0.16),
       capsule().opacity(0, 0.16),
     );
-    sectionTitle().text(FEATURE_SECTIONS[1] || '2、海外原料，提升品质');
+    if (FEATURE_COUNT > 1) {
+      sectionTitle().text(FEATURE_SECTIONS[1]);
+    }
     yield* pop(rawPanel);
-    yield* waitFor(7.18);
+    yield* waitFor(FEATURE_COUNT > 1 ? 7.18 : 3.5);
 
     yield* all(rawPanel().opacity(0, 0.16), rawPanel().scale(0.82, 0.18, easeInCubic));
-    sectionTitle().text(FEATURE_SECTIONS[2] || '3、医疗背书');
+    if (FEATURE_COUNT > 2) {
+      sectionTitle().text(FEATURE_SECTIONS[2]);
+    }
     yield* all(
       medicalPanel().opacity(1, 0.1),
       medicalPanel().scale(1, 0.36, easeOutBack),
