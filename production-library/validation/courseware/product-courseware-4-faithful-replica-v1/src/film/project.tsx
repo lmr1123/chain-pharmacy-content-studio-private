@@ -19,9 +19,12 @@ import {playFilmMotion} from './motion';
 import {FilmPage} from './pages';
 import {type FilmMode} from './parts';
 
+/** editor-bg 每页帧数（revideo floor(duration*fps) 有浮点损耗，+1e-4 保证整帧；render-stills 按它对齐抽帧） */
+export const EDITOR_BG_PAGE_FRAMES = 4;
+
 function makeFilmScene(sc: Scene, mode: FilmMode) {
   const full = Math.max(0.1, Number(sc.end) - Number(sc.start));
-  const dur = mode === 'editor-bg' ? 0.12 : full;
+  const dur = mode === 'editor-bg' ? EDITOR_BG_PAGE_FRAMES / 30 + 1e-4 : full;
   const firstCap = captionSegments(sc)[0]?.text || captionText(sc);
   return makeScene2D(sc.id, function* (view) {
     view.fill(SILK);

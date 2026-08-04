@@ -22,6 +22,7 @@ import argparse
 import copy
 import json
 import math
+import os
 import shutil
 import subprocess
 import sys
@@ -726,11 +727,15 @@ def _film_python() -> str:
 
 
 def rebuild_film() -> dict:
-    """Retime model + export full film."""
+    """Retime model + export full film. 默认 Revideo render:film；CW4_EXPORT_ENGINE=pil 回退。"""
     state = load_state()
     meta = retime_and_apply_to_model(state)
+    if os.environ.get("CW4_EXPORT_ENGINE", "revideo") == "pil":
+        cmd = [_film_python(), str(ROOT / "scripts" / "export-full-film-video.py")]
+    else:
+        cmd = ["npm", "run", "render:film"]
     r = subprocess.run(
-        [_film_python(), str(ROOT / "scripts" / "export-full-film-video.py")],
+        cmd,
         cwd=str(ROOT),
         capture_output=True,
         text=True,
