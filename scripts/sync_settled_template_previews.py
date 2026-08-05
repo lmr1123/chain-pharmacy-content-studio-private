@@ -138,7 +138,7 @@ CATALOG: list[dict] = [
         "category": "商品培训",
         "production_ready": True,
         "status_label": "已签样 · 可换主题量产",
-        "status_note": "默认使用速福达课件药师克隆语音包；包装/Logo 须授权原图。",
+        "status_note": "默认使用速福达课件药师克隆语音包；包装/Logo 须授权原图。2026-08-05 视觉/动效 v2 已归档（金样 v2.mp4）；PPTX 仍为 v1 版式。",
         "cover_src": VAL
         / "courseware/sufuda-product-courseware-3-gold-v1/web/media/cover-product.png",
         "keys": [
@@ -200,7 +200,7 @@ CATALOG: list[dict] = [
         "category": "商品培训",
         "production_ready": True,
         "status_label": "已签样 · 可换主题量产",
-        "status_note": "关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。",
+        "status_note": "关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。2026-08-05 视觉/动效 v2 已归档（金样 v2.mp4，7 张插画重生成）；PPTX 仍为 v1 版式。",
         "cover_src": VAL
         / "courseware/product-courseware-4-faithful-replica-v1/web/media/cover-product.png",
         "keys": [
@@ -475,7 +475,7 @@ def main() -> None:
         json.dumps(
             {
                 "version": "1.0.0",
-                "updated": "2026-08-03",
+                "updated": "2026-08-05",
                 "purpose": "业务模板货架单一数据源；由 sync_settled_template_previews.py 生成",
                 "templates": catalog_out,
             },

@@ -2,6 +2,7 @@
   "template_id": "template.sufuda-mabaloshawei-product-courseware-3-v1",
   "template_type": "video+pptx-courseware",
   "status": "user-approved-gold",
+  "revision": "2026-08-05-visual-motion-v2",
   "product": {
     "brand_name": "速福达®",
     "generic_name": "玛巴洛沙韦",
@@ -13,21 +14,27 @@
   "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1",
   "canonical_artifacts": {
     "video": {
-      "path": "速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
+      "path": "速福达玛巴洛沙韦_商品培训课件3_金样_v2.mp4",
       "format": "mp4",
       "resolution": "1920x1080",
-      "duration_s": 94.13,
-      "role": "金样成片（画面+旁白）"
+      "duration_s": 93.233,
+      "role": "金样成片 v2（16 项视觉精修 + 全片动效编排；旁白轨实测 -16.5 LUFS）"
     },
     "pptx": {
       "path": "速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v1.pptx",
       "format": "pptx",
       "slides": 13,
-      "role": "可编辑培训课件（与视频同内容模型）"
+      "role": "可编辑培训课件（与视频同内容模型）；版式落后 v2 视频——2026-08-05 视觉/动效未重新导出，下轮先对齐版式再导出"
     }
   },
+  "previous_canonical": {
+    "video": "速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
+    "note": "v1 留存对照，非当前 canonical"
+  },
   "canonical_confirmed_by": "user",
-  "canonical_confirmed_at": "2026-08-02",
+  "canonical_confirmed_at": "2026-08-05",
+  "last_updated_at": "2026-08-05",
+  "last_update_note": "v2 视觉/动效升级：16 项精修逐帧签样；时长 93.233s=2797 帧；PPTX 版式落后未同步",
   "validation_root": "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1",
   "source_project": "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1",
   "generators": {
@@ -37,6 +44,7 @@
   },
   "content_model_snapshot": "content-model.snapshot.json",
   "layer_manifest_snapshot": "layer-manifest.snapshot.json",
+  "src_snapshot": "src-snapshot/src/",
   "business_input": {
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
@@ -49,6 +57,7 @@
     "本目录为用户确认的速福达·玛巴洛沙韦商品培训课件3 金样归档。",
     "文件名以商品通用名/商品名开头，便于后续扫目录识别。",
     "包装/Logo 为业务授权槽位示意；量产换主题时替换 content-model 资产与文案后重导。",
+    "2026-08-05 v2：16 项视觉精修 + 动效编排（src/project.tsx until 锚点时间轴，时长 93.233s=2797 帧）；v2 明细见 validation/courseware/课件3-4-v2-交付说明.md 与工程 qa/QA_REPORT.md（v2 段）。",
     "验证工程目录仍为 validation/.../sufuda-product-courseware-3-gold-v1（含完整源码与编辑器）。"
   ],
   "preview": {
