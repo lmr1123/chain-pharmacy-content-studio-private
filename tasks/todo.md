@@ -4154,3 +4154,41 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - **QA 中修复的 2 处**：目录页页脚左行压在深色建筑图上不可读 → `addFooter` 加 `opts.left` 开关，目录页仅留右侧页码；outro 12 个椭圆 transparency 74 渲染成波点墙 → 调 88 变隐约肌理。
 - **遗留说明**：outro 讲者卡「博士 副教授」字样来自 content JSON 的 `title_line` 字段（与封面 meta「博士·教授」不一致），因 content 一字未动约束保留原样，业务侧如要统一改 JSON 即可。
 - **待办**：用户确认 v3 后执行第 6 项沉淀。
+
+---
+
+## 2026-08-04 课件3(速福达)+课件4(番茄) 企业级视觉/动效优化 v2 · 分支 feat/courseware34-visual-motion-v2
+
+计划全文：~/.claude/plans/reactive-sparking-zebra.md。用户拍板：番茄成片 PIL→Revideo 迁移 / 布局精修+动效重构 / 插画重生成统一风格 / 交付视频v2+QA对照（settled 不动、PPTX 不同步）。
+
+- [x] 阶段0 基线提交 + 番茄共享层抽取(src/motion/*) + 速福达基线片
+- [x] 阶段1 番茄 film 骨架(layout.ts/film/*/render-film/render-stills/check-layout) f390048；门禁1(S04帧+S05微镜头) 2026-08-04 用户签样通过；全片 v2 156.633s/30fps/1080p/无黑帧
+- [x] 阶段2 editor-bg 双轨 Revideo 化 + 编辑器导出引擎切换(CW4_EXPORT_ENGINE) 312227e；S10/S11 叠合验过；:9012 已重启
+- [x] 阶段3 番茄15页动效全量(S07推镜头/S10序贯/S11级联+溢出/S05红叉淡出) ce24ae8；门禁2(S07+S10+S11) 2026-08-05 用户签样通过；全片 156.600s/30fps/1080p/-16LUFS/无黑帧
+- [x] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)；成片 v2 93.233s(=帧量化下限)/30fps/1080p/-16.5LUFS/无黑帧，QA_REPORT 增 v2 段
+- [x] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance) —— 2026-08-05 用户编辑器签样通过；7/7 重生成(codex-cli+couple.png 锚)→whitekey 抠图→烘焙尺寸→check-alpha 全过→provenance 登记→同名覆盖→全片重渲 156.600s 硬校验过→S04/S05/S06/S10 抽帧验证新图在片
+- [x] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明) —— 2026-08-05 完成：番茄 qa/QA_REPORT.md + validation/courseware/课件3-4-v2-交付说明.md；顺修 merge 漏 -map 静音交付事故(render-film.ts +map +响度硬门禁)，重渲 156.620s/-16.4LUFS 实测过
+
+### review（阶段5+6 完成后补，2026-08-05）
+
+- **阶段5 产出**：5b5077a，7 张主视觉按 style-brief-v1（暖调扁平，锚点 couple.png）重生成并同名覆盖；管线=baoyu-image-gen(codex-cli 通路+--ref 风格锚)→whitekey-cutout.py（贴边连通域抠图+边缘反解去白晕+contain 适配烘焙尺寸）→check-alpha.py 门禁（7/7 corner0/halo0%）→丝绸底预览→用户编辑器签样→provenance 登记→全片重渲→S04/S05/S06/S10 抽帧验证。o2/couple 各二轮（构图有效像素/语义对照标签）。原图物理备份 _regen_v1/originals-backup/（PNG 被 gitignore 不在版本库）。
+- **通路降级链**：google 无 key → dashscope 欠费(Arrearage) → bigmodel 余额不足(1113) → codex-cli（先修复 codex vendor 二进制版本错配，npm i -g @openai/codex@latest）。MINIMAX key（pharmacy-ops/.env.local）未用上。
+- **阶段6 顺修重大缺陷**：番茄 film v2 此前交付的是**静音音轨**——visuals 内嵌静音 AAC，merge 无 -map 时 ffmpeg 默认流选择平局取文件序靠前者，静音轨赢过旁白轨；阶段3「-16LUFS」是 loudnorm 目标值打印非实测。修复：merge 加 `-map 0:v:0 -map 1:a:0` + assertFullFilm 增响度硬门禁（-16±1.5 LUFS 实测，外拒收）。重渲落 156.620s/-16.4LUFS/无黑帧，30-35s 切片旁白实测在轨。
+- **阶段6 产出**：番茄 qa/QA_REPORT.md（技术门禁+合同锁定+regen 门禁+已知差距）；validation/courseware/课件3-4-v2-交付说明.md（双片 QA 全表/签样记录/PPTX 版式落后声明/settled 未动声明/占位槽替换路径/复现命令）。
+
+### review（阶段4 完成后补，2026-08-05）
+
+- **阶段4 产出**：速福达 v2 全 11 组精修落地（16 项）。成片 `速福达_商品培训课件3_独立金样_v2.mp4` 93.233s（= 93.228 合同 × 30fps 帧量化下限 2797 帧）。QA 物料 `qa/v2-frames/` 28 帧 + 4 contact sheet，16 项逐帧验证通过；`qa/QA_REPORT.md` 增 v2 段。ribbon 重生成 1400×200（scripts/make-ribbon.py，几何取自原图像素扫描，4× 超采样），PPTX 下次导出自动受益（export-sufuda-pptx.mjs 引同源）。
+- **v1 遗留时长漂移三连（本轮顺修）**：① setNav 补间 0.2s 被 anim(0.12) 截断 ×8 = 0.64s（setNav 补间改 0.12 一处收口）；② 封面/flu 卡/B1 补间长于 anim 秒数 0.02–0.06/处（anim 秒数对齐最长补间）；③ 末条 caption end=93.513 超旁白轨，runCaptions 把场景拖长 0.285s（clamp 到 DURATION）。修前渲染 94.133s → 修后 93.233s 精确落帧量化下限。教训同番茄 clk 记账一脉：**anim(sec, task) 的 task 时长必须 ≤ sec，否则超账不进 clock、until 锚点照等，漂移静默累积**。
+- **轨道 loop 的坑**：loop(Infinity) 会悬挂 all() 吃掉后续全部锚点；orbitAll 改 for 循环按页内剩余秒整圈摊派（laps=floor(s/6)，step=s/laps/8），精确在 29.55 收笔。
+- **json.dump 重写 content-model 教训**：round-trip 重排格式造成 1072 行 churn，改文本级锚点插入（+12/-1）。tokens 单源化只增不改：content-model 加 fs_*×11，project.tsx 色值/TS 全改读 tk。
+
+### review（阶段3 完成后补，2026-08-05）
+
+- **阶段3 产出**：ce24ae8，番茄 15 页动效编排全量。全片 `番茄红素_商品培训课件4_film_v2.mp4` 156.600s/30fps/1080p/-16LUFS/无黑帧（render-film 硬校验全过）。门禁2 物料：`qa/pair/gate2/`（S07 五拍/S10 四帧/S11 四帧）+ `gate2/full/`（15 页×起/中/末 45 张 PIL 并排对照）。
+- **页时长漂移根因（重大）**：v2 基线片实际每页溢出 +1~3s（共约 +10s），被 render-film 的 `-t expected` 截断掩盖成"校验通过"；门禁1 没暴露是因为 S04/S05 预览恰用绝对 waitFor 算术。修复：makeClock 加 `play(gen, sec)` 记账、全部 motion 函数改造、S04/S05/S06 锚点编排换 clk（负锚点 spend 归零、尾部脉冲按 `clk.remain()` 实补）、render-film 加 visuals 时长硬校验。修后全片 4695 帧 = 逐页帧量化理论值。
+- **硬校验容差定为 页数/fps（15页→0.5s）**：页时长非 30fps 帧整数倍，revideo 逐页取整累计 -0.12s 是物理下限，±0.1 阈值会误杀；真漂移是秒级，0.5s 容差抓得住。
+- **chrome/editable key 误查（2 处）**：S01 `card_chevron`、S12/S13 `plus` 是 chrome 层节点，motion 却用 `nodeOf`（editable key）查找 → 找不到 → 入场动画从未执行 → 元素保持 pre opacity:0 永久隐身。门禁1/2 预览子集不含这三页所以没暴露，是全片 pair 末帧对照抓出来的。修法：改 `view.findKey(chromeKey(...))`（同 S11 row_chev 既有模式）。
+- **S11 两个版式 bug**：左列单行长标签溢出压右栏（计划内 bug，width=340+textWrap 修复）；右列 body 未开 textWrap 冲出表格压右侧竖排（pair 对照 PIL 基线抓出，wrap={true} 修复）。
+- **字幕宽度**：S13 三十字长句在 1700px 框内「荐。」孤字折行 → caption width 统一 1820px（PIL 字幕可用宽 ≈1860）。
+

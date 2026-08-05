@@ -137,23 +137,35 @@ function startExport(format, patches) {
       error: 'PPTX disabled for courseware-4',
     };
   } else {
-    // Video: prefer signed still-film (PIL) for visual fidelity; Revideo optional
-    child = spawn(
-      'python3',
-      [path.resolve(projectRoot, 'scripts/export-full-film-video.py')],
-      {
-        cwd: projectRoot,
-        stdio: ['ignore', logFd, logFd],
-        env: {...process.env, CW4_EXPORT_DIR: exportDir},
-      },
-    );
+    // Video: 默认 Revideo render:film（权威成片）；CW4_EXPORT_ENGINE=pil 回退旧管线
+    if ((process.env.CW4_EXPORT_ENGINE ?? 'revideo') === 'pil') {
+      child = spawn(
+        'python3',
+        [path.resolve(projectRoot, 'scripts/export-full-film-video.py')],
+        {
+          cwd: projectRoot,
+          stdio: ['ignore', logFd, logFd],
+          env: {...process.env, CW4_EXPORT_DIR: exportDir},
+        },
+      );
+    } else {
+      child = spawn(
+        'npm',
+        ['run', 'render:film'],
+        {
+          cwd: projectRoot,
+          stdio: ['ignore', logFd, logFd],
+          env: {...process.env, CW4_EXPORT_DIR: exportDir},
+        },
+      );
+    }
   }
   fs.closeSync(logFd);
 
   child.on('close', code => {
     const outputFile = path.resolve(exportDir, outputName);
-    // Video renderer writes to out/ — copy if present
-    if (format === 'video') {
+    // Video renderer writes to out/ — copy if present (仅 PIL 引擎；Revideo 自行落 CW4_EXPORT_DIR)
+    if (format === 'video' && (process.env.CW4_EXPORT_ENGINE ?? 'revideo') === 'pil') {
       const pil = path.resolve(
         projectRoot,
         'out',

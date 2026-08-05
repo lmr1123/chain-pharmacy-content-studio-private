@@ -7,9 +7,13 @@
     "start:editor": "bash scripts/run-editor-daemon.sh",
     "start:editor:fg": "node scripts/start-cw4-editor.mjs",
     "render:direct": "npx tsx src/render.ts",
-    "export:video": "python3 scripts/export-full-film-video.py",
+    "export:video": "npm run render:film",
     "export:pptx": "node scripts/export-cw4-pptx.mjs",
-    "build:stills": "python3 scripts/export-full-film-video.py"
+    "build:stills": "npm run render:stills",
+    "render:film": "node scripts/check-layout.mjs && npx tsx src/render-film.ts",
+    "render:stills": "npx tsx src/render-stills.ts",
+    "export:video:pil": "python3 scripts/export-full-film-video.py",
+    "build:stills:pil": "python3 scripts/export-full-film-video.py"
   },
   "dependencies": {
     "@revideo/2d": "0.11.0",

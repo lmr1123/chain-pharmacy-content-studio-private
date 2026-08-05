@@ -797,3 +797,37 @@ pptxgenjs 3.12 会**原地改写**传入的 `shadow` 选项对象：blur/offset 
 - pptxgenjs 的 shadow 一律用工厂函数 `const cardShadow = () => ({...})`，每次调用返回新对象；同理警惕其他被原地改写的选项对象。
 - LibreOffice 转换崩溃时按「页面二分 → 单页形状级二分（剥 spTree 子元素重打包）」定位，比猜 XML 快。
 - 验证转换是否成功要看 PDF 是否落盘，不能只看 stdout 的 "convert ... using filter" 行（崩溃前也会打印）。
+
+## 2026-08-05（cw4 阶段3：Revideo 页编排两类隐性 bug 模式）
+
+### 页时长：「-t 截断」会掩盖编排漂移
+
+- 页 generator 超时时长 ≠ 锁定页长时，下游 ffmpeg `-t` 截断会让成片时长"看起来正确"，实际页边界整体漂移（v2 基线 +1~3s/页）。
+- 模式：motion 编排必须经 `makeClock` 的 spend/play 记账；尾部循环动画时长用 `clk.remain()` 实补，不要用「理论锚点」手算常数（锚点差为负时 waitFor 静默归零，理论值就与实耗脱钩）。
+- 防线：render-film 对 visuals 时长硬校验（容差 = 页数/fps，帧量化下限），超限拒绝合成。
+
+### chrome/editable 双 key 命名空间：查错层 = 元素永久隐身
+
+- `nodeOf`(editable key) 查 chrome 层节点返回 undefined → 入场动画跳过 → pre opacity:0 的元素整页不可见，且不报任何错。
+- 排査手法：全片「末帧元素齐全性」对照（末帧时所有入场应完成，缺元素 = 动画没跑到）。预览子集签样覆盖不到的页，必须靠全量 pair 末帧兜底。
+- 修法：chrome 层用 `view.findKey(chromeKey(...))`；加新页时 role 的 layer 与 motion 查找方式必须成对核对。
+
+## 2026-08-05 速福达 v2：anim() 超账漂移 / loop 悬挂 / json 重写 churn
+
+- `anim(sec, task)` 模式里 task 实际时长 > sec 时，all(task, waitFor(sec)) 会等 task 跑完，但 clock 只 += sec —— 超出部分静默累积成全片漂移（速福达 v1 遗留 0.88s：setNav 0.12vs0.2 ×8 + 封面/flu/B1 小超账）。排查法：渲染时长 - 合同时长 ≠ 帧量化量 → 逐 anim 对表补间最长值。修法二选一：补间缩短到 sec 内（优先，一处收口），或 anim 秒数提到最长补间。
+- 旁白轨外的长尾巴也会撑长场景：caption end 超 DURATION 0.285s，runCaptions 的 waitFor 直接把场景拖长。凡 waitFor(c.end …) 都要 clamp 到 DURATION。
+- revideo 里 loop(Infinity) 不能和顺序编排同层 all()：永不结束的 generator 会悬挂 all()，后续 until 锚点全部跳过。有限循环用 for + 按剩余秒整圈摊派（step = seconds/laps/steps），精确收在页末锚点。
+- content-model.json 这类手工维护的多行内联 JSON，改字段用文本锚点插入，不要 json.dump round-trip（1072 行格式 churn → +12/-1）。
+
+## 2026-08-05 番茄 v2 阶段5：AI 生图通路降级链 / white-key 抠图 / codex 修复
+
+- baoyu-image-gen 多后端≠有可用后端：EXTEND.md default google 无 key → dashscope 账户欠费(Arrearage 400) → bigmodel(zai) 余额不足(429/1113) → codex-cli 通路成功。**先试单张再批量**，排障顺序：env key 名录 → EXTEND.md → 供应商余额/配额报错原文。可用 key 名录：DASHSCOPE_API_KEY(欠费)、glm-env.sh 的 bigmodel key(欠费)、pharmacy-ops/.env.local 的 MINIMAX_API_KEY(未试)、codex 订阅(可用)。
+- codex CLI 报 `spawn .../codex-darwin-arm64/vendor/.../codex ENOENT` = npm 包版本错配（JS 包装器与 vendor 二进制布局不一致），`npm i -g @openai/codex@latest` 对齐修复。修坏工具比绕路便宜（RTK 原则同构）。
+- 白底生图抠透明底：必须用「贴边连通近白域」置透明（scipy.ndimage.label + 边界分量），全局近白阈值会吃掉主体内部白色（毛巾/杯沿/衣领）；半透明边缘用 c=αf+(1-α)255 反解前景色去白晕。
+- contain 适配烘焙尺寸后，check-alpha 的 occupancy 单轴=100% 是构造性 WARN 非缺陷；真构图缺陷看「主体在显示尺寸下的有效像素」——o2 首轮横双球在 826 高画布只吃到 47% 高，显示 260px 时主体仅 122px 显小，改对角构图重生成解决。prompt 里写「overall group roughly as tall as wide」有效。
+- 语义校验要对照页面标签：couple 首轮画出明显孕肚，但 S10 标签是「备孕」——prompt 去掉 pregnancy 字样、只留「young couple standing close」后正确。AI 图的内容语义必须逐张对照 scene label 审。
+
+## 2026-08-05 番茄 v2 阶段6：ffmpeg 多输入不 -map = 静音交付事故
+
+- revideo visuals 成片内嵌静音 AAC 轨；merge 旁白时 ffmpeg 默认流选择在声道数平局时取**文件序靠前**者 → 静音轨赢过旁白轨，loudnorm 把静音归一成 -inf LUFS。「audio merged (loudnorm -16 LUFS)」日志打的是目标值不是实测——阶段3 的「-16LUFS」从未被测量验证。
+- 修法：merge 加 `-map 0:v:0 -map 1:a:0`；assertFullFilm 加响度硬门禁（loudnorm 一遍测 Input Integrated，-16±1.5 外拒收）。教训：**容器参数（时长/分辨率/黑帧）查得出结构缺陷，查不出内容缺陷——响度/语义级 QA 必须实测**，凡「目标值打印」不等于「实测通过」。

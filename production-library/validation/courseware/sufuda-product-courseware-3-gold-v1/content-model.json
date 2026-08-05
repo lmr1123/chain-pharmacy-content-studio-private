@@ -23,7 +23,18 @@
     "ink": "#182a43",
     "row_bg": "#fff3e0",
     "row_bg2": "#ffe8c8",
-    "font_family": "HarmonyOS Sans SC, Source Han Sans SC, Source Han Sans CN, PingFang SC, Microsoft YaHei, sans-serif"
+    "font_family": "HarmonyOS Sans SC, Source Han Sans SC, Source Han Sans CN, PingFang SC, Microsoft YaHei, sans-serif",
+    "fs_cover_title": "84",
+    "fs_cover_sub": "36",
+    "fs_cover_check": "40",
+    "fs_chapter": "48",
+    "fs_nav": "28",
+    "fs_nav_num": "24",
+    "fs_card_title": "36",
+    "fs_card_body": "30",
+    "fs_hero_num": "72",
+    "fs_bubble": "46",
+    "fs_caption": "40"
   },
   "assets": {
     "background": "/assets/bg-silk-v1.png",
