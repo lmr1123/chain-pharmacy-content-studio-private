@@ -18,7 +18,7 @@ import {resolve} from 'node:path';
 import {renderVideo} from '@revideo/renderer';
 
 import './ffmpeg-lavfi-patch';
-import {totalDuration} from './content';
+import {scenes, totalDuration} from './content';
 
 const ENTRY = process.env.CW4_ENTRY ?? './src/film/project.tsx';
 const FULL = /film\/project\.tsx$/.test(ENTRY);
@@ -93,6 +93,22 @@ async function main() {
   }
 
   const expected = totalDuration();
+
+  // visuals 时长硬校验：防未记账动画的秒级漂移（v2 基线曾 +1~3s/页被 -t 截断掩盖）。
+  // 容差 = 帧量化下限：页时长非 30fps 帧整数倍，revideo 逐页取整，全片累计 ≤ 页数/fps。
+  const tol = scenes().length / 30;
+  const vdur = Number(
+    ffprobeJson(visuals, 'format=duration').format.duration,
+  );
+  if (Math.abs(vdur - expected) > tol) {
+    console.error(
+      `visuals 时长 ${vdur.toFixed(3)}s != 旁白轨 ${expected.toFixed(3)}s±${tol.toFixed(2)}：` +
+        '页编排有未记账动画（motion.ts 必须经 clk.spend/play 记账），拒绝合成。',
+    );
+    process.exit(1);
+  }
+  console.log(`visuals 时长校验通过：${vdur.toFixed(3)}s（帧量化差 ${(vdur - expected).toFixed(3)}s，容差 ±${tol.toFixed(2)}s）`);
+
   const final = resolve(OUT_DIR, FINAL);
   execFileSync('ffmpeg', [
     '-y',

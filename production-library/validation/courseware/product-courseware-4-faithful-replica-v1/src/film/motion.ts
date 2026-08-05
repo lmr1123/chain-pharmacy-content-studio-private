@@ -1,14 +1,30 @@
 /**
- * film 编排（阶段 1：1:1 复刻 PIL 时序 + S05 红叉淡出修复）。
+ * film 编排（阶段 3：15 页动效全量）。
  * 时码锁定：只消费页内时间，不动 scenes[].start/end。
  * 红线：入场单次弹出后冻结；循环仅 表头白箭头/链路红箭头/S01 »；主视觉禁 idle。
- * 阶段 3 将在此替换 S07 推镜头、S10 序贯、S11 级联。
+ * 阶段 3 落点：S07 四段式（pop→静观→单次推镜头→章节装饰线扫入）、S10 按字幕
+ * 时码序贯揭示、S11 行级联（chevron/label→body）、S02/S08 Ken Burns 单向、
+ * S09 单次 pulse 消死区、S15 末 0.5s 淡丝绸底（非黑帧）。
  */
-import {all, easeInCubic, easeOutCubic, loop, waitFor} from '@revideo/core';
+import {
+  all,
+  easeInCubic,
+  easeInOutCubic,
+  easeOutCubic,
+  linear,
+  loop,
+  waitFor,
+} from '@revideo/core';
 
 import type {Scene} from '../content';
-import {makeClock, nodeOf, popIn, pulseArrowX} from '../motion/primitives';
-import {chromeKey, wrapKey} from './parts';
+import {
+  makeClock,
+  nodeOf,
+  oncePulse,
+  popIn,
+  pulseArrowX,
+} from '../motion/primitives';
+import {chromeKey, pageRootKey, wrapKey} from './parts';
 
 /** 链路入场：scale 0.92→1 + 上移 rise + 快淡入（对齐 PIL pop_scale overshoot=False） */
 function* chainPop(node: any, dur = 0.4, rise = 22) {
@@ -86,8 +102,14 @@ function* coverMotion(view: any, sc: Scene) {
   yield* clk.spend(0.1);
   for (const role of ['pack_a', 'pack_b', 'pack_bottle']) {
     const n = nodeOf(view, page, role);
-    if (n) yield* popIn(n, 0.34);
+    if (n) yield* clk.play(popIn(n, 0.34), 0.34);
     yield* clk.spend(0.08);
+  }
+  // S15 收尾：末 0.5s 整页淡到丝绸底色（含字幕；非黑帧）
+  if (page === 'S15_end') {
+    const root = view.findKey(pageRootKey(page));
+    yield* clk.spend(dur - 0.55 - clk.elapsed());
+    if (root) yield* clk.play(root.opacity(0, 0.5, easeInCubic), 0.5);
   }
   yield* clk.spend(clk.remain());
 }
@@ -98,25 +120,28 @@ function* s01Motion(view: any, sc: Scene) {
   const clk = makeClock(dur);
   const mag = nodeOf(view, page, 'magazine');
   const card = view.findKey(chromeKey(page, 'card'));
-  const chev = nodeOf(view, page, 'card_chevron');
+  const chev = view.findKey(chromeKey(page, 'card_chevron')); // chrome 层（同 S11 row_chev 模式）
   const title = nodeOf(view, page, 'card_title');
   const rule = view.findKey(chromeKey(page, 'rule'));
   // PIL：杂志 0.05 / 卡片 0.28 / 内容（»、标题、线）≈0.73 / 列表 0.55+0.16i
   yield* clk.spend(0.05);
-  if (mag) yield* popRise(mag, 0.5, 36);
-  if (card) yield* popRise(card, 0.5, 28);
+  if (mag) yield* clk.play(popRise(mag, 0.5, 36), 0.5);
+  if (card) yield* clk.play(popRise(card, 0.5, 28), 0.5);
   const jobs: any[] = [];
   if (chev) jobs.push(popIn(chev, 0.32));
   if (title) jobs.push(fadeIn(title, 0.16));
   if (rule) jobs.push(fadeIn(rule, 0.16));
-  if (jobs.length) yield* all(...jobs);
+  if (jobs.length) yield* clk.play(all(...jobs), 0.32);
   yield* clk.spend(0.05);
   for (let i = 1; i <= 3; i++) {
     const row = nodeOf(view, page, `list.${i}`);
     if (row) {
-      yield* all(
-        row.opacity(1, 0.12, easeOutCubic),
-        row.position.y(row.position.y() - 28, 0.35, easeOutCubic),
+      yield* clk.play(
+        all(
+          row.opacity(1, 0.12, easeOutCubic),
+          row.position.y(row.position.y() - 28, 0.35, easeOutCubic),
+        ),
+        0.35,
       );
     }
     yield* clk.spend(0.11);
@@ -131,8 +156,13 @@ function* s02Motion(view: any, sc: Scene) {
   const clk = makeClock(sc.end - sc.start);
   yield* clk.spend(0.05);
   const photo = nodeOf(view, sc.id, 'photo');
-  if (photo) yield* chainPop(photo, 0.45, 24);
-  yield* clk.spend(clk.remain());
+  if (photo) {
+    yield* clk.play(chainPop(photo, 0.45, 24), 0.45);
+    // Ken Burns 单向推近（红线：仅 S02/S08，1.0→1.05 不回摆）
+    yield* photo.scale(1.05, clk.remain(), linear);
+  } else {
+    yield* clk.spend(clk.remain());
+  }
 }
 
 function* s03Motion(view: any, sc: Scene) {
@@ -140,102 +170,126 @@ function* s03Motion(view: any, sc: Scene) {
   yield* clk.spend(0.1);
   for (const role of ['vine', 'pack_a', 'pack_b', 'pack_bottle']) {
     const n = nodeOf(view, sc.id, role);
-    if (n) yield* popIn(n, 0.4);
+    if (n) yield* clk.play(popIn(n, 0.4), 0.4);
     yield* clk.spend(0.12);
   }
   yield* clk.spend(clk.remain());
 }
 
-/** S04：番茄 0.4 → 红箭头 1.0 → 前列腺 1.6（PIL 绝对时序） */
+/** S04：番茄 0.4 → 红箭头 1.0 → 前列腺 1.6（PIL 绝对时序；clk 记账，尾部按实补齐） */
 function* s04Content(view: any, sc: Scene) {
   const page = sc.id;
-  const dur = sc.end - sc.start;
+  const clk = makeClock(sc.end - sc.start);
   const tomato = nodeOf(view, page, 'tomato');
   const arrow = nodeOf(view, page, 'arrow');
   const prost = nodeOf(view, page, 'prostate');
-  yield* waitFor(0.4);
-  if (tomato) yield* chainPop(tomato, 0.45, 24);
-  yield* waitFor(1.0 - 0.4 - 0.45);
-  if (arrow) yield* chainPop(arrow, 0.35, 0);
-  yield* waitFor(1.6 - 1.0 - 0.35);
-  if (prost) yield* chainPop(prost, 0.45, 24);
+  yield* clk.spend(0.4);
+  if (tomato) yield* clk.play(chainPop(tomato, 0.45, 24), 0.45);
+  yield* clk.spend(1.0 - 0.4 - 0.45);
+  if (arrow) yield* clk.play(chainPop(arrow, 0.35, 0), 0.35);
+  yield* clk.spend(1.6 - 1.0 - 0.35);
+  if (prost) yield* clk.play(chainPop(prost, 0.45, 24), 0.45);
   const ax = arrow && typeof arrow.position?.x === 'function' ? arrow.position.x() : 0;
-  yield* pulseArrowX(arrow, ax, dur - 2.05, 14);
+  yield* pulseArrowX(arrow, ax, clk.remain(), 14);
 }
 
-/** S05：番茄 0.7 → 箭1 1.2 → O2 1.4 → 叉 3.6 →（叉 8.6 淡出）→ 箭2 8.9 → 女 9.0 */
+/** S05：番茄 0.7 → 箭1 1.2 → O2 1.4 → 叉 3.6 →（叉 8.6 淡出）→ 箭2 8.9 → 女 9.0
+ *  clk 记账：锚点差为负时 spend 归零，尾部脉冲按 remain 实补齐（页时长锁定） */
 function* s05Content(view: any, sc: Scene) {
   const page = sc.id;
-  const dur = sc.end - sc.start;
+  const clk = makeClock(sc.end - sc.start);
   const tomato = nodeOf(view, page, 'tomato');
   const a1 = nodeOf(view, page, 'arrow1');
   const o2 = nodeOf(view, page, 'o2');
   const x = nodeOf(view, page, 'mark_x');
   const a2 = nodeOf(view, page, 'arrow2');
   const woman = nodeOf(view, page, 'woman');
-  yield* waitFor(0.7);
-  if (tomato) yield* chainPop(tomato, 0.4, 22);
-  yield* waitFor(1.2 - 0.7 - 0.4);
-  if (a1) yield* chainPop(a1, 0.35, 0);
-  yield* waitFor(1.4 - 1.2 - 0.35);
-  if (o2) yield* chainPop(o2, 0.4, 22);
-  yield* waitFor(3.6 - 1.4 - 0.4);
+  yield* clk.spend(0.7);
+  if (tomato) yield* clk.play(chainPop(tomato, 0.4, 22), 0.4);
+  yield* clk.spend(1.2 - 0.7 - 0.4);
+  if (a1) yield* clk.play(chainPop(a1, 0.35, 0), 0.35);
+  yield* clk.spend(1.4 - 1.2 - 0.35);
+  if (o2) yield* clk.play(chainPop(o2, 0.4, 22), 0.4);
+  yield* clk.spend(3.6 - 1.4 - 0.4);
   if (x) {
-    yield* all(
-      x.opacity(1, 0.2, easeOutCubic),
-      x.scale(1, 0.35, easeOutCubic),
+    yield* clk.play(
+      all(x.opacity(1, 0.2, easeOutCubic), x.scale(1, 0.35, easeOutCubic)),
+      0.35,
     );
   }
   // 红叉 8.6 起 0.28s 淡出（消解 PIL 9s 硬切）
-  yield* waitFor(8.6 - 3.6 - 0.35);
-  const fadeJob = x ? x.opacity(0, 0.28, easeInCubic) : waitFor(0.28);
-  yield* all(fadeJob);
-  yield* waitFor(8.9 - 8.6 - 0.28);
+  yield* clk.spend(8.6 - 3.6 - 0.35);
+  if (x) yield* clk.play(x.opacity(0, 0.28, easeInCubic), 0.28);
+  else yield* clk.spend(0.28);
+  yield* clk.spend(8.9 - 8.6 - 0.28);
   const jobs: any[] = [];
   if (a2) jobs.push(chainPop(a2, 0.35, 0));
   if (woman) jobs.push(chainPop(woman, 0.45, 24));
-  if (jobs.length) yield* all(...jobs);
+  if (jobs.length) yield* clk.play(all(...jobs), 0.45);
   const ax1 = a1 && typeof a1.position?.x === 'function' ? a1.position.x() : 0;
   const ax2 = a2 && typeof a2.position?.x === 'function' ? a2.position.x() : 0;
-  const left = dur - 9.35;
-  yield* all(pulseArrowX(a1, ax1, left, 14), pulseArrowX(a2, ax2, left, 14));
+  yield* all(
+    pulseArrowX(a1, ax1, clk.remain(), 14),
+    pulseArrowX(a2, ax2, clk.remain(), 14),
+  );
 }
 
-/** S06：番茄 0.5 → 箭1 1.0 → NK 1.3 → 箭2 5.2 → 手臂 5.5（无呼吸，红线） */
+/** S06：番茄 0.5 → 箭1 1.0 → NK 1.3 → 箭2 5.2 → 手臂 5.5（无呼吸，红线；clk 记账尾部实补） */
 function* s06Content(view: any, sc: Scene) {
   const page = sc.id;
-  const dur = sc.end - sc.start;
+  const clk = makeClock(sc.end - sc.start);
   const tomato = nodeOf(view, page, 'tomato');
   const a1 = nodeOf(view, page, 'arrow1');
   const nk = nodeOf(view, page, 'nk');
   const a2 = nodeOf(view, page, 'arrow2');
   const arm = nodeOf(view, page, 'arm');
-  yield* waitFor(0.5);
-  if (tomato) yield* chainPop(tomato, 0.4, 22);
-  yield* waitFor(1.0 - 0.5 - 0.4);
-  if (a1) yield* chainPop(a1, 0.35, 0);
-  yield* waitFor(1.3 - 1.0 - 0.35);
-  if (nk) yield* chainPop(nk, 0.45, 22);
-  yield* waitFor(5.2 - 1.3 - 0.45);
-  if (a2) yield* chainPop(a2, 0.35, 0);
-  yield* waitFor(5.5 - 5.2 - 0.35);
-  if (arm) yield* chainPop(arm, 0.45, 24);
+  yield* clk.spend(0.5);
+  if (tomato) yield* clk.play(chainPop(tomato, 0.4, 22), 0.4);
+  yield* clk.spend(1.0 - 0.5 - 0.4);
+  if (a1) yield* clk.play(chainPop(a1, 0.35, 0), 0.35);
+  yield* clk.spend(1.3 - 1.0 - 0.35);
+  if (nk) yield* clk.play(chainPop(nk, 0.45, 22), 0.45);
+  yield* clk.spend(5.2 - 1.3 - 0.45);
+  if (a2) yield* clk.play(chainPop(a2, 0.35, 0), 0.35);
+  yield* clk.spend(5.5 - 5.2 - 0.35);
+  if (arm) yield* clk.play(chainPop(arm, 0.45, 24), 0.45);
   const ax1 = a1 && typeof a1.position?.x === 'function' ? a1.position.x() : 0;
   const ax2 = a2 && typeof a2.position?.x === 'function' ? a2.position.x() : 0;
-  const left = dur - 5.95;
-  yield* all(pulseArrowX(a1, ax1, left, 14), pulseArrowX(a2, ax2, left, 14));
+  yield* all(
+    pulseArrowX(a1, ax1, clk.remain(), 14),
+    pulseArrowX(a2, ax2, clk.remain(), 14),
+  );
 }
 
+/** S07 四段式：地图 pop → 静观 → 单次推镜头（同图 ×2.2 交叉淡入淡出）→ 章节装饰线扫入 */
 function* s07Content(view: any, sc: Scene) {
   const page = sc.id;
   const clk = makeClock(sc.end - sc.start);
   yield* clk.spend(0.15);
   const cap = nodeOf(view, page, 'map_caption');
-  if (cap) yield* fadeIn(cap, 0.2);
+  if (cap) yield* clk.play(fadeIn(cap, 0.2), 0.2);
   yield* clk.spend(0.1);
   const map = nodeOf(view, page, 'map');
-  if (map) yield* chainPop(map, 0.45, 24);
-  // 阶段 3：单次推镜头 + 装饰线扫入（17.7s 最长死区）
+  if (map) yield* clk.play(chainPop(map, 0.45, 24), 0.45);
+  // 静观至 6.2s（旁白"世界上最好的番茄产区"起），0.8s 交叉淡入放大局部层
+  const zoom = view.findKey(`film:decor:${page}:map-zoom`);
+  yield* clk.spend(6.2 - clk.elapsed());
+  const zoomIn: any[] = [];
+  if (zoom) zoomIn.push(zoom.opacity(1, 0.8, easeInOutCubic));
+  if (map) zoomIn.push(map.opacity(0, 0.8, easeInOutCubic));
+  if (cap) zoomIn.push(cap.opacity(0, 0.8, easeInOutCubic));
+  if (zoomIn.length) yield* clk.play(all(...zoomIn), 0.8);
+  // 静观放大局部至 11.5s（"含量高达62毫克"前），0.8s 交叉淡回
+  yield* clk.spend(11.5 - clk.elapsed());
+  const zoomOut: any[] = [];
+  if (zoom) zoomOut.push(zoom.opacity(0, 0.8, easeInOutCubic));
+  if (map) zoomOut.push(map.opacity(1, 0.8, easeInOutCubic));
+  if (cap) zoomOut.push(cap.opacity(1, 0.8, easeInOutCubic));
+  if (zoomOut.length) yield* clk.play(all(...zoomOut), 0.8);
+  // 章节装饰线扫入（单次，左→右）
+  const rule = view.findKey(`film:decor:${page}:chapter-rule`);
+  yield* clk.spend(12.7 - clk.elapsed());
+  if (rule) yield* clk.play(rule.end(1, 0.5, easeOutCubic), 0.5);
   yield* clk.spend(clk.remain());
 }
 
@@ -243,9 +297,13 @@ function* s08Content(view: any, sc: Scene) {
   const clk = makeClock(sc.end - sc.start);
   yield* clk.spend(0.2);
   const photo = nodeOf(view, sc.id, 'vine');
-  if (photo) yield* chainPop(photo, 0.45, 24);
-  // 阶段 3：Ken Burns 单向推近
-  yield* clk.spend(clk.remain());
+  if (photo) {
+    yield* clk.play(chainPop(photo, 0.45, 24), 0.45);
+    // Ken Burns 单向推近（1.0→1.06，不回摆）
+    yield* photo.scale(1.06, clk.remain(), linear);
+  } else {
+    yield* clk.spend(clk.remain());
+  }
 }
 
 function* s09Content(view: any, sc: Scene) {
@@ -253,54 +311,58 @@ function* s09Content(view: any, sc: Scene) {
   const clk = makeClock(sc.end - sc.start);
   yield* clk.spend(0.3);
   const softgel = nodeOf(view, page, 'softgel');
-  if (softgel) yield* chainPop(softgel, 0.4, 22);
+  if (softgel) yield* clk.play(chainPop(softgel, 0.4, 22), 0.4);
   yield* clk.spend(0.1);
   const eq = nodeOf(view, page, 'eq');
-  if (eq) yield* popIn(eq, 0.32);
+  if (eq) yield* clk.play(popIn(eq, 0.32), 0.32);
   yield* clk.spend(0.05);
   const five = nodeOf(view, page, 'five_tomatoes');
-  if (five) yield* chainPop(five, 0.45, 24);
+  if (five) yield* clk.play(chainPop(five, 0.45, 24), 0.45);
+  // 消死区：单次强调 pulse（红线允许 1→1.06→1 单次）
+  yield* clk.spend(6.5 - clk.elapsed());
+  if (five) yield* clk.play(oncePulse(five, 0.06, 0.6), 0.6);
   yield* clk.spend(clk.remain());
 }
 
+/** S10 序贯揭示：4 组人群按各自字幕时码逐组 pop（对齐参考片） */
 function* s10Content(view: any, sc: Scene) {
   const page = sc.id;
   const clk = makeClock(sc.end - sc.start);
-  // 阶段 1：四组 0.25s 级联；阶段 3 改字幕时码序贯揭示
+  const ats = (sc.subtitles ?? []).slice(1).map(s => s.t - sc.start);
   for (let i = 1; i <= 4; i++) {
-    yield* clk.spend(i === 1 ? 0.2 : 0.05);
+    const at = ats[i - 1] ?? 1.43 + (i - 1) * 2;
+    // 字幕亮相前 0.12s 抢拍 pop，观感与旁白同步
+    yield* clk.spend(Math.max(0.2, at - 0.12) - clk.elapsed());
     const icon = nodeOf(view, page, `icon.${i}`);
     const label = view.findKey(wrapKey(page, `label.${i}`));
     const jobs: any[] = [];
     if (icon) jobs.push(chainPop(icon, 0.4, 22));
     if (label) jobs.push(popIn(label, 0.32));
-    if (jobs.length) yield* all(...jobs);
-    yield* clk.spend(0.2);
+    if (jobs.length) yield* clk.play(all(...jobs), 0.4);
   }
   yield* clk.spend(clk.remain());
 }
 
+/** S11 表格行级联：chevron+label → body 逐行揭示 */
 function* s11Content(view: any, sc: Scene) {
   const page = sc.id;
   const clk = makeClock(sc.end - sc.start);
-  // 阶段 1：三行 0.3s 级联淡入上移；阶段 3 精修行内时序
+  const rise = (n: any) =>
+    all(
+      n.opacity(1, 0.16, easeOutCubic),
+      n.position.y(n.position.y() - 18, 0.32, easeOutCubic),
+    );
   for (let i = 1; i <= 3; i++) {
-    yield* clk.spend(i === 1 ? 0.35 : 0.1);
+    yield* clk.spend(i === 1 ? 0.35 : 0.28);
+    const chev = view.findKey(chromeKey(page, `row_chev.${i}`));
     const label = view.findKey(wrapKey(page, `row.${i}.label`));
     const body = view.findKey(wrapKey(page, `row.${i}.body`));
-    const jobs: any[] = [];
-    for (const n of [label, body]) {
-      if (n) {
-        jobs.push(
-          all(
-            n.opacity(1, 0.16, easeOutCubic),
-            n.position.y(n.position.y() - 18, 0.32, easeOutCubic),
-          ),
-        );
-      }
-    }
-    if (jobs.length) yield* all(...jobs);
-    yield* clk.spend(0.2);
+    const head: any[] = [];
+    if (chev) head.push(popIn(chev, 0.28));
+    if (label) head.push(rise(label));
+    if (head.length) yield* clk.play(all(...head), 0.32);
+    yield* clk.spend(0.12);
+    if (body) yield* clk.play(rise(body), 0.32);
   }
   yield* clk.spend(clk.remain());
 }
@@ -310,26 +372,26 @@ function* relatedContent(view: any, sc: Scene) {
   const clk = makeClock(sc.end - sc.start);
   yield* clk.spend(0.05);
   const card = view.findKey(chromeKey(page, 'card'));
-  if (card) yield* popRise(card, 0.4, 16);
+  if (card) yield* clk.play(popRise(card, 0.4, 16), 0.4);
   for (let i = 1; i <= 2; i++) {
     const label = nodeOf(view, page, `nav.${i}`);
-    if (label) yield* fadeIn(label, 0.16);
+    if (label) yield* clk.play(fadeIn(label, 0.16), 0.16);
   }
   const note = nodeOf(view, page, 'note');
-  if (note) yield* fadeIn(note, 0.2);
+  if (note) yield* clk.play(fadeIn(note, 0.2), 0.2);
   yield* clk.spend(0.05);
-  const plus = nodeOf(view, page, 'plus');
+  const plus = view.findKey(chromeKey(page, 'plus')); // chrome 层（同 S01 card_chevron）
   const packL = nodeOf(view, page, 'pack_left');
-  if (packL) yield* popIn(packL, 0.38);
-  if (plus) yield* popIn(plus, 0.28);
+  if (packL) yield* clk.play(popIn(packL, 0.38), 0.38);
+  if (plus) yield* clk.play(popIn(plus, 0.28), 0.28);
   const packR = nodeOf(view, page, 'pack_right');
-  if (packR) yield* popIn(packR, 0.38);
+  if (packR) yield* clk.play(popIn(packR, 0.38), 0.38);
   const leftLabel = nodeOf(view, page, 'left_label');
   const rightLabel = nodeOf(view, page, 'right_label');
   const jobs: any[] = [];
   if (leftLabel) jobs.push(fadeIn(leftLabel, 0.18));
   if (rightLabel) jobs.push(fadeIn(rightLabel, 0.18));
-  if (jobs.length) yield* all(...jobs);
+  if (jobs.length) yield* clk.play(all(...jobs), 0.18);
   yield* clk.spend(clk.remain());
 }
 

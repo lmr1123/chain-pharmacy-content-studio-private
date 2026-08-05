@@ -30,6 +30,7 @@ export const ASSET_DIMS: Record<string, readonly [number, number]> = {
   'slot-pack-bottle.png': [360, 580],
   'slot-pack-lycopene.png': [420, 560],
   'slot-pack-zinc.png': [360, 480],
+  'slot-pack-vite.png': [360, 480],
   'badge-hot-recommend.png': [280, 280],
   'icon-check-red.png': [180, 180],
   'icon-chevron-lime.png': [128, 128],
@@ -302,6 +303,8 @@ export const S07 = {
     fallback: '中国分省地图—新疆维吾尔自治区',
   },
   map: {asset: 'map-xinjiang.png', cx: 960, cy: 580, h: 460},
+  /** 阶段3 单次推镜头：同图放大层（不新增资产）；clip 窗口避开章节/表头/字幕 */
+  zoom: {scale: 2.2, clipY0: 150, clipY1: 940},
 };
 
 export const S08 = {

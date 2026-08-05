@@ -3,10 +3,11 @@
  * 坐标/字号一律取自 ../layout.ts（PIL 抄录单一来源），禁止在此写字面量坐标。
  * pre 入场预置仅 film 模式生效；editor-bg 模式所有元素直置终态。
  */
-import {Circle, Line, Node} from '@revideo/2d';
+import {Circle, Img, Layout, Line, Node} from '@revideo/2d';
 
 import {T, type Scene} from '../content';
 import {
+  CHAPTER,
   COVER,
   RELATED,
   S01,
@@ -21,6 +22,7 @@ import {
   S10,
   S11,
   chainLayout,
+  hSize,
   layoutFor,
 } from '../layout';
 import {INK, RED, WHITE} from '../motion/primitives';
@@ -276,12 +278,19 @@ function ChainPage({
 function S07Page({sc, mode}: {sc: Scene; mode: FilmMode}) {
   const page = sc.id;
   const pre = mode === 'film';
+  const chapterText = T(page, 'chapter', sc.chapter || S07.chapterFallback);
+  // 推镜头层：同图 ×2.2，中心与底图对齐；clip 窗口（layout S07.zoom）避开章节/表头/字幕
+  const [zw, zh] = hSize(S07.map.asset, S07.map.h);
+  const clipCy = (S07.zoom.clipY0 + S07.zoom.clipY1) / 2;
+  // 章节装饰线：章节标题下沿，宽度随字数（PIL 无此元素，仅 film 叠加）
+  const ruleW = [...chapterText].length * CHAPTER.font;
+  const ruleY = S07.chapterY + CHAPTER.font + 12;
   return (
     <>
       <FilmChapter
         mode={mode}
         page={page}
-        text={T(page, 'chapter', sc.chapter || S07.chapterFallback)}
+        text={chapterText}
         y={S07.chapterY}
         pre={pre ? {opacity: 0, scale: 0.86} : {}}
       />
@@ -312,6 +321,35 @@ function S07Page({sc, mode}: {sc: Scene; mode: FilmMode}) {
         h={S07.map.h}
         pre={pre ? CHAIN : {}}
       />
+      {mode === 'film' && (
+        <Layout
+          key={`film:decor:${page}:map-zoom`}
+          position={[0, clipCy - 540]}
+          size={[1920, S07.zoom.clipY1 - S07.zoom.clipY0]}
+          clip={true}
+          opacity={0}
+          layout={false}
+        >
+          <Img
+            src={`/assets/${S07.map.asset}`}
+            position={[S07.map.cx - 960, S07.map.cy - clipCy]}
+            size={[zw, zh]}
+            scale={S07.zoom.scale}
+          />
+        </Layout>
+      )}
+      {mode === 'film' && (
+        <Line
+          key={`film:decor:${page}:chapter-rule`}
+          points={[
+            [-ruleW / 2, ruleY - 540],
+            [ruleW / 2, ruleY - 540],
+          ]}
+          stroke={CHAPTER.outline}
+          lineWidth={6}
+          end={0}
+        />
+      )}
     </>
   );
 }
@@ -517,16 +555,18 @@ function S11Page({sc, mode}: {sc: Scene; mode: FilmMode}) {
               cx={t.x0 + S11.chevron.dx + S11.chevron.size / 2}
               cy={y0 + fh / 2}
               h={S11.chevron.size}
+              pre={pre ? POP : {}}
             />
+            {/* 左列 width=340+textWrap：消解单行长标签溢出压右栏（现行 bug） */}
             <OutlineTxt
               mode={mode}
               layer="editable"
               page={page}
               role={`row.${i + 1}.label`}
               text={T(page, `row.${i + 1}.label`, row.label)}
-              cx={t.x0 + S11.label.xOff + 160}
+              cx={t.x0 + S11.label.xOff + 170}
               cy={y0 + fh / 2}
-              width={320}
+              width={340}
               fontSize={S11.label.font}
               weight={900}
               fill={S11.label.fill}
@@ -534,6 +574,7 @@ function S11Page({sc, mode}: {sc: Scene; mode: FilmMode}) {
               steps={S11.label.outlineW}
               align="left"
               lineHeight={S11.label.lh}
+              wrap={true}
               pre={pre ? {opacity: 0, dy: 18} : {}}
             />
             <OutlineTxt
@@ -552,6 +593,7 @@ function S11Page({sc, mode}: {sc: Scene; mode: FilmMode}) {
               steps={S11.body.outlineW}
               align="left"
               lineHeight={S11.body.lh}
+              wrap={true}
               pre={pre ? {opacity: 0, dy: 18} : {}}
             />
           </Node>

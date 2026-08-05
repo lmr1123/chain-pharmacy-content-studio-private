@@ -63,7 +63,7 @@ export function CaptionLayer({
             fill={WHITE}
             position={[pos[0] + dx * (s + 1), pos[1] + dy * (s + 1)]}
             textAlign="center"
-            width={1700}
+            width={1820}
             textWrap={true}
           />
         )),
@@ -77,7 +77,7 @@ export function CaptionLayer({
         fill={CAPTION}
         position={pos}
         textAlign="center"
-        width={1700}
+        width={1820}
         textWrap={true}
       />
     </>

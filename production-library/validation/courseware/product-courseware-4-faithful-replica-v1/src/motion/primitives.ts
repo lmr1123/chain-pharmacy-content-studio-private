@@ -94,7 +94,9 @@ export function* oncePulse(node: any, amount = 0.06, dur = 0.5) {
   yield* node.scale(1, dur * 0.55, easeOutCubic);
 }
 
-/** 页内本地时钟：spend 消耗秒数 / remain 返回页内剩余 */
+/** 页内本地时钟：spend 消耗秒数 / play 记账动画 / remain 返回页内剩余。
+ *  铁律：所有耗时的 yield 必须经 spend/play 记账，否则页时长溢出（旁白轨锁定，
+ *  render-film 的 -t 截断会掩盖漂移——v2 基线曾因此整片延迟 1-3s）。 */
 export function makeClock(dur: number) {
   let t = 0;
   const spend = function* (sec: number) {
@@ -102,7 +104,12 @@ export function makeClock(dur: number) {
     if (s > 0.001) yield* waitFor(s);
     t += s;
   };
-  const remain = () => Math.max(0.05, dur - t);
+  /** yield 动画并把其实际时长计入时钟（sec = 动画内最长分支） */
+  const play = function* (gen: any, sec: number) {
+    yield* gen;
+    t += Math.max(0, sec);
+  };
+  const remain = () => Math.max(0, dur - t);
   const elapsed = () => t;
-  return {spend, remain, elapsed};
+  return {spend, play, remain, elapsed};
 }

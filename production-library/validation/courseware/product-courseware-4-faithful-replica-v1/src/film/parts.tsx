@@ -20,6 +20,8 @@ export const chromeKey = (page: string, role: string) =>
   `film:chrome:${page}:${role}`;
 export const wrapKey = (page: string, role: string) =>
   `film:wrap:${page}:${role}`;
+/** 页根节点（S15 末段整页淡丝绸底用） */
+export const pageRootKey = (page: string) => `film:page:${page}`;
 
 const toRev = ([x, y]: [number, number]): [number, number] => [
   x - 960,
@@ -99,6 +101,7 @@ export function OutlineTxt({
   steps,
   align = 'center',
   lineHeight,
+  wrap,
   pre,
 }: {
   mode: FilmMode;
@@ -116,6 +119,8 @@ export function OutlineTxt({
   steps: number;
   align?: 'left' | 'center' | 'right';
   lineHeight?: number;
+  /** textWrap（S11 左列消溢出） */
+  wrap?: boolean;
   /** 入场预置（仅 film）：opacity/scale/dy */
   pre?: {opacity?: number; scale?: number; dy?: number};
 }) {
@@ -145,6 +150,7 @@ export function OutlineTxt({
             textAlign={align}
             width={width}
             lineHeight={lineHeight}
+            textWrap={wrap}
           />
         )),
       )}
@@ -159,6 +165,7 @@ export function OutlineTxt({
         textAlign={align}
         width={width}
         lineHeight={lineHeight}
+        textWrap={wrap}
       />
     </Node>
   );
@@ -315,6 +322,7 @@ export function FTxt({
   fill,
   align = 'left',
   lineHeight,
+  wrap,
   pre,
 }: {
   mode: FilmMode;
@@ -330,6 +338,7 @@ export function FTxt({
   fill: string;
   align?: 'left' | 'center' | 'right';
   lineHeight?: number;
+  wrap?: boolean;
   pre?: {opacity?: number; scale?: number; dy?: number};
 }) {
   if (!vis(mode, layer)) return null;
@@ -346,6 +355,7 @@ export function FTxt({
       textAlign={align}
       width={width}
       lineHeight={lineHeight}
+      textWrap={wrap}
       opacity={p.opacity ?? 1}
       scale={p.scale ?? 1}
     />
