@@ -826,3 +826,8 @@ pptxgenjs 3.12 会**原地改写**传入的 `shadow` 选项对象：blur/offset 
 - 白底生图抠透明底：必须用「贴边连通近白域」置透明（scipy.ndimage.label + 边界分量），全局近白阈值会吃掉主体内部白色（毛巾/杯沿/衣领）；半透明边缘用 c=αf+(1-α)255 反解前景色去白晕。
 - contain 适配烘焙尺寸后，check-alpha 的 occupancy 单轴=100% 是构造性 WARN 非缺陷；真构图缺陷看「主体在显示尺寸下的有效像素」——o2 首轮横双球在 826 高画布只吃到 47% 高，显示 260px 时主体仅 122px 显小，改对角构图重生成解决。prompt 里写「overall group roughly as tall as wide」有效。
 - 语义校验要对照页面标签：couple 首轮画出明显孕肚，但 S10 标签是「备孕」——prompt 去掉 pregnancy 字样、只留「young couple standing close」后正确。AI 图的内容语义必须逐张对照 scene label 审。
+
+## 2026-08-05 番茄 v2 阶段6：ffmpeg 多输入不 -map = 静音交付事故
+
+- revideo visuals 成片内嵌静音 AAC 轨；merge 旁白时 ffmpeg 默认流选择在声道数平局时取**文件序靠前**者 → 静音轨赢过旁白轨，loudnorm 把静音归一成 -inf LUFS。「audio merged (loudnorm -16 LUFS)」日志打的是目标值不是实测——阶段3 的「-16LUFS」从未被测量验证。
+- 修法：merge 加 `-map 0:v:0 -map 1:a:0`；assertFullFilm 加响度硬门禁（loudnorm 一遍测 Input Integrated，-16±1.5 外拒收）。教训：**容器参数（时长/分辨率/黑帧）查得出结构缺陷，查不出内容缺陷——响度/语义级 QA 必须实测**，凡「目标值打印」不等于「实测通过」。

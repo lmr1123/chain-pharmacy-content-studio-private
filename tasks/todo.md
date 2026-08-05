@@ -4167,7 +4167,14 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - [x] 阶段3 番茄15页动效全量(S07推镜头/S10序贯/S11级联+溢出/S05红叉淡出) ce24ae8；门禁2(S07+S10+S11) 2026-08-05 用户签样通过；全片 156.600s/30fps/1080p/-16LUFS/无黑帧
 - [x] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)；成片 v2 93.233s(=帧量化下限)/30fps/1080p/-16.5LUFS/无黑帧，QA_REPORT 增 v2 段
 - [x] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance) —— 2026-08-05 用户编辑器签样通过；7/7 重生成(codex-cli+couple.png 锚)→whitekey 抠图→烘焙尺寸→check-alpha 全过→provenance 登记→同名覆盖→全片重渲 156.600s 硬校验过→S04/S05/S06/S10 抽帧验证新图在片
-- [ ] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明)
+- [x] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明) —— 2026-08-05 完成：番茄 qa/QA_REPORT.md + validation/courseware/课件3-4-v2-交付说明.md；顺修 merge 漏 -map 静音交付事故(render-film.ts +map +响度硬门禁)，重渲 156.620s/-16.4LUFS 实测过
+
+### review（阶段5+6 完成后补，2026-08-05）
+
+- **阶段5 产出**：5b5077a，7 张主视觉按 style-brief-v1（暖调扁平，锚点 couple.png）重生成并同名覆盖；管线=baoyu-image-gen(codex-cli 通路+--ref 风格锚)→whitekey-cutout.py（贴边连通域抠图+边缘反解去白晕+contain 适配烘焙尺寸）→check-alpha.py 门禁（7/7 corner0/halo0%）→丝绸底预览→用户编辑器签样→provenance 登记→全片重渲→S04/S05/S06/S10 抽帧验证。o2/couple 各二轮（构图有效像素/语义对照标签）。原图物理备份 _regen_v1/originals-backup/（PNG 被 gitignore 不在版本库）。
+- **通路降级链**：google 无 key → dashscope 欠费(Arrearage) → bigmodel 余额不足(1113) → codex-cli（先修复 codex vendor 二进制版本错配，npm i -g @openai/codex@latest）。MINIMAX key（pharmacy-ops/.env.local）未用上。
+- **阶段6 顺修重大缺陷**：番茄 film v2 此前交付的是**静音音轨**——visuals 内嵌静音 AAC，merge 无 -map 时 ffmpeg 默认流选择平局取文件序靠前者，静音轨赢过旁白轨；阶段3「-16LUFS」是 loudnorm 目标值打印非实测。修复：merge 加 `-map 0:v:0 -map 1:a:0` + assertFullFilm 增响度硬门禁（-16±1.5 LUFS 实测，外拒收）。重渲落 156.620s/-16.4LUFS/无黑帧，30-35s 切片旁白实测在轨。
+- **阶段6 产出**：番茄 qa/QA_REPORT.md（技术门禁+合同锁定+regen 门禁+已知差距）；validation/courseware/课件3-4-v2-交付说明.md（双片 QA 全表/签样记录/PPTX 版式落后声明/settled 未动声明/占位槽替换路径/复现命令）。
 
 ### review（阶段4 完成后补，2026-08-05）
 

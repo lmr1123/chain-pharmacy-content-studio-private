@@ -3,7 +3,7 @@
  *
  * - 旁白权威轨：web/working-narration.mp3（156.62s，与 scenes[].end 总和一致）
  * - 默认全片入口 ./src/film/project.tsx；CW4_ENTRY 可切签样子集（如 ./src/film/project-preview.tsx）
- * - 全片渲染后硬校验：时长 ±0.1s / 30fps / 1920×1080 / 无黑帧，任一不合格非零退出
+ * - 全片渲染后硬校验：时长 ±0.1s / 30fps / 1920×1080 / 无黑帧 / 响度 -16±1.5 LUFS，任一不合格非零退出
  * - 子集入口只出 visuals（不含旁白、不做时长校验），供签样门禁对照用
  *
  * 用法：
@@ -63,12 +63,23 @@ function assertFullFilm(file: string, expected: number) {
     .filter((l: string) => l.includes('blackdetect:'));
   if (hits.length) problems.push(`blackdetect hits:\n${hits.join('\n')}`);
 
+  // 响度门禁：visuals 自带静音 AAC 轨，merge 漏 -map 时会选中静音轨（-inf LUFS 交付事故）。
+  const lm = spawnSync(
+    'ffmpeg',
+    ['-i', file, '-af', 'loudnorm=print_format=summary', '-f', 'null', '-'],
+    {encoding: 'utf8', maxBuffer: 64 * 1024 * 1024},
+  );
+  const mi = (lm.stderr || '').match(/Input Integrated:\s+(-?[\d.]+) LUFS/);
+  const integrated = mi ? Number(mi[1]) : NaN;
+  if (!Number.isFinite(integrated) || Math.abs(integrated + 16) > 1.5)
+    problems.push(`loudness ${mi?.[1] ?? 'n/a'} LUFS != -16±1.5（旁白轨未合入？）`);
+
   if (problems.length) {
     console.error('成片校验失败：\n' + problems.join('\n'));
     process.exit(1);
   }
   console.log(
-    `成片校验通过：${duration.toFixed(3)}s / ${v.avg_frame_rate}fps / ${v.width}x${v.height} / 无黑帧`,
+    `成片校验通过：${duration.toFixed(3)}s / ${v.avg_frame_rate}fps / ${v.width}x${v.height} / 无黑帧 / ${integrated.toFixed(1)} LUFS`,
   );
 }
 
@@ -114,6 +125,8 @@ async function main() {
     '-y',
     '-i', visuals,
     '-i', NARRATION,
+    '-map', '0:v:0',
+    '-map', '1:a:0',
     '-c:v', 'copy',
     '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11',
     '-c:a', 'aac',
