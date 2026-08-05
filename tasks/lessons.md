@@ -797,3 +797,17 @@ pptxgenjs 3.12 会**原地改写**传入的 `shadow` 选项对象：blur/offset 
 - pptxgenjs 的 shadow 一律用工厂函数 `const cardShadow = () => ({...})`，每次调用返回新对象；同理警惕其他被原地改写的选项对象。
 - LibreOffice 转换崩溃时按「页面二分 → 单页形状级二分（剥 spTree 子元素重打包）」定位，比猜 XML 快。
 - 验证转换是否成功要看 PDF 是否落盘，不能只看 stdout 的 "convert ... using filter" 行（崩溃前也会打印）。
+
+## 2026-08-05（cw4 阶段3：Revideo 页编排两类隐性 bug 模式）
+
+### 页时长：「-t 截断」会掩盖编排漂移
+
+- 页 generator 超时时长 ≠ 锁定页长时，下游 ffmpeg `-t` 截断会让成片时长"看起来正确"，实际页边界整体漂移（v2 基线 +1~3s/页）。
+- 模式：motion 编排必须经 `makeClock` 的 spend/play 记账；尾部循环动画时长用 `clk.remain()` 实补，不要用「理论锚点」手算常数（锚点差为负时 waitFor 静默归零，理论值就与实耗脱钩）。
+- 防线：render-film 对 visuals 时长硬校验（容差 = 页数/fps，帧量化下限），超限拒绝合成。
+
+### chrome/editable 双 key 命名空间：查错层 = 元素永久隐身
+
+- `nodeOf`(editable key) 查 chrome 层节点返回 undefined → 入场动画跳过 → pre opacity:0 的元素整页不可见，且不报任何错。
+- 排査手法：全片「末帧元素齐全性」对照（末帧时所有入场应完成，缺元素 = 动画没跑到）。预览子集签样覆盖不到的页，必须靠全量 pair 末帧兜底。
+- 修法：chrome 层用 `view.findKey(chromeKey(...))`；加新页时 role 的 layer 与 motion 查找方式必须成对核对。

@@ -4161,12 +4161,20 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 
 计划全文：~/.claude/plans/reactive-sparking-zebra.md。用户拍板：番茄成片 PIL→Revideo 迁移 / 布局精修+动效重构 / 插画重生成统一风格 / 交付视频v2+QA对照（settled 不动、PPTX 不同步）。
 
-- [ ] 阶段0 基线提交 + 番茄共享层抽取(src/motion/*) + 速福达基线片
-- [ ] 阶段1 番茄 film 骨架(layout.ts/film/*/render-film) → 签样门禁1(S04帧+S05微镜头)
-- [ ] 阶段2 editor-bg 双轨 Revideo 化 + 编辑器导出引擎切换(CW4_EXPORT_ENGINE)
-- [ ] 阶段3 番茄15页动效全量(S07推镜头/S10序贯/S11级联+溢出/S05红叉淡出) → 签样门禁2
+- [x] 阶段0 基线提交 + 番茄共享层抽取(src/motion/*) + 速福达基线片
+- [x] 阶段1 番茄 film 骨架(layout.ts/film/*/render-film/render-stills/check-layout) f390048；门禁1(S04帧+S05微镜头) 2026-08-04 用户签样通过；全片 v2 156.633s/30fps/1080p/无黑帧
+- [x] 阶段2 editor-bg 双轨 Revideo 化 + 编辑器导出引擎切换(CW4_EXPORT_ENGINE) 312227e；S10/S11 叠合验过；:9012 已重启
+- [x] 阶段3 番茄15页动效全量(S07推镜头/S10序贯/S11级联+溢出/S05红叉淡出) ce24ae8；门禁2(S07+S10+S11) 2026-08-05 用户签样通过；全片 156.600s/30fps/1080p/-16LUFS/无黑帧
 - [ ] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)
 - [ ] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance)
 - [ ] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明)
 
-### review（完成后补）
+### review（阶段3 完成后补，2026-08-05）
+
+- **阶段3 产出**：ce24ae8，番茄 15 页动效编排全量。全片 `番茄红素_商品培训课件4_film_v2.mp4` 156.600s/30fps/1080p/-16LUFS/无黑帧（render-film 硬校验全过）。门禁2 物料：`qa/pair/gate2/`（S07 五拍/S10 四帧/S11 四帧）+ `gate2/full/`（15 页×起/中/末 45 张 PIL 并排对照）。
+- **页时长漂移根因（重大）**：v2 基线片实际每页溢出 +1~3s（共约 +10s），被 render-film 的 `-t expected` 截断掩盖成"校验通过"；门禁1 没暴露是因为 S04/S05 预览恰用绝对 waitFor 算术。修复：makeClock 加 `play(gen, sec)` 记账、全部 motion 函数改造、S04/S05/S06 锚点编排换 clk（负锚点 spend 归零、尾部脉冲按 `clk.remain()` 实补）、render-film 加 visuals 时长硬校验。修后全片 4695 帧 = 逐页帧量化理论值。
+- **硬校验容差定为 页数/fps（15页→0.5s）**：页时长非 30fps 帧整数倍，revideo 逐页取整累计 -0.12s 是物理下限，±0.1 阈值会误杀；真漂移是秒级，0.5s 容差抓得住。
+- **chrome/editable key 误查（2 处）**：S01 `card_chevron`、S12/S13 `plus` 是 chrome 层节点，motion 却用 `nodeOf`（editable key）查找 → 找不到 → 入场动画从未执行 → 元素保持 pre opacity:0 永久隐身。门禁1/2 预览子集不含这三页所以没暴露，是全片 pair 末帧对照抓出来的。修法：改 `view.findKey(chromeKey(...))`（同 S11 row_chev 既有模式）。
+- **S11 两个版式 bug**：左列单行长标签溢出压右栏（计划内 bug，width=340+textWrap 修复）；右列 body 未开 textWrap 冲出表格压右侧竖排（pair 对照 PIL 基线抓出，wrap={true} 修复）。
+- **字幕宽度**：S13 三十字长句在 1700px 框内「荐。」孤字折行 → caption width 统一 1820px（PIL 字幕可用宽 ≈1860）。
+
