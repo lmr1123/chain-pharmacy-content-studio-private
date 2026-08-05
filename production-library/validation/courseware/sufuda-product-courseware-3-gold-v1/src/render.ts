@@ -11,7 +11,7 @@ async function render() {
     projectFile: './src/project.tsx',
     settings: {
       outDir,
-      outFile: '速福达_商品培训课件3_独立金样_v1.mp4',
+      outFile: '速福达_商品培训课件3_独立金样_v2.mp4',
       workers: 1,
       logProgress: true,
       ffmpeg: {

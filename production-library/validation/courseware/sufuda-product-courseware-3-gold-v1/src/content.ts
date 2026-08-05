@@ -60,6 +60,11 @@ export function A(assetKey: string): string {
   return src;
 }
 
+/** Design tokens（色值 + fs_* 字号），project.tsx 单源读取。 */
+export function tokens(): Record<string, string> {
+  return contentModel.tokens;
+}
+
 export function elementOf(pageId: string, role: string): ContentElement {
   const el = pageOf(pageId).elements[role];
   if (!el) throw new Error(`Unknown element ${pageId}.${role}`);

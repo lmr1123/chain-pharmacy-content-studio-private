@@ -37,3 +37,47 @@
 6. **147 s 尾段闲聊**：有意剔除，不进企业交付。
 
 以上 1–3 项在获得业务授权资产后可做像素级替换而不改时间轴合同。
+
+---
+
+## v2 视觉/动效精修（2026-08-05）
+
+成片：`out/速福达_商品培训课件3_独立金样_v2.mp4`（93.233 s = 2797 帧，时码合同 93.228 s 的帧量化下限）
+
+### 技术门禁
+
+| 检查项 | 结果 |
+| --- | --- |
+| 时长 | 93.233 s（= 93.228 s 帧量化下限，2797 帧）PASS |
+| 分辨率 / 帧率 | 1920×1080 / 30 fps PASS |
+| 黑场 blackdetect | 未检出 PASS |
+| 音频响度 | 集成 −16.5 LUFS / TP −4.3 dBTP PASS（旁白轨原样随渲染，未二次 loudnorm） |
+| 水印 | 「独立金样 v2.1 · 克隆旁白」角标已删除 PASS |
+
+### 16 项精修落点
+
+| 项 | 内容 | 验证帧（qa/v2-frames/） |
+| --- | --- | --- |
+| 1 | 删除 L968 水印 | cover-in_0.30 |
+| 2 | 5 处章节过场：ribbon+标题自左扫入 / 向右扫出（x∓60+opacity，LogoMark 不参与） | ch1-sweepin_11.10 / ch1-sweepout_12.45 / ch5-sweep_90.30 |
+| 3 | ribbon 重生成 1400×200 同名替换（scripts/make-ribbon.py，4× 超采样） | 全章节帧清晰度 |
+| 4 | 12 处离场：opacity 直出 → 定向滑出（x∓50+opacity，左右交替；内容+壳同出时只动壳） | cover-slideout_0.52 / flu-slideout_10.90 / shell-slideout_36.95 / f1-slideout_42.60 |
+| 5 | flu 死区（5.7–10.85）：48h 下划线扫入 + 横幅单次 pulse | flu48-rule_6.20 / flu48-pulse_6.45 |
+| 6 | B2 病毒：写死抖动 → 真椭圆轨道（各异 rx/ry、8 段关键帧、相位错 1/6 圈、页内整圈摊派）+ 左右对撞入场 + 中央分隔线随对照药扫入；cell 主视觉静止 | b2-collision_14.70 / b2-orbit-early_16.50 / b2-orbit-late_28.00 / b2-divider-osel_21.70 |
+| 7 | B3 / A1 地影淡入 + 主视觉单次确认 pulse | b3-shadow-pulse_30.40 / a1-shadow_63.90 / a1-pulse_64.60 |
+| 8 | F1 完整入场：左 icon 滑入 → 圆环 pop → 右 icon 滑入 → 双向 nudge 12px（单次） | f1-baby_38.60 / f1-ring_39.20 / f1-shield_39.80 |
+| 9 | combo_1/2：plus 弹入后连线 draw → note 下划线扫入 → 包装高光扫过（clip 层内，单次） | c1-line_77.20 / c1-rule_77.60 / c1-sweep-mid_77.80 / c2-line_84.00 |
+| 10 | summary：eyebrow → 表头 → 3 数据行级联；92.4 s 起整表 scale 0.995 + opacity 0.92 收束 | sm-eyebrow-head_91.00（行未出）/ sm-collapse_92.60 / final_93.10 |
+| 11 | tokens 单源化：content-model.json tokens 增 fs_* 字号 11 键（只增不改），content.ts 加 tokens()，project.tsx 色值/字号全部改读 tokens | tsc 通过；渲染无视觉回退 |
+
+### 顺带修复的时长漂移（v1 遗留）
+
+- `setNav` 补间 0.2 s 被 `anim(0.12, …)` 截断，8 处共超账 0.64 s → setNav 补间改 0.12 s。
+- 封面/flu 卡/B1 补间长于 anim 记账（0.02–0.06/处）→ anim 秒数对齐最长补间。
+- 末条 caption end=93.513 超出旁白轨 93.228，runCaptions 把场景拖长 0.285 s → clamp 到 DURATION。
+- 修复后渲染时长精确落在帧量化下限（93.233 s），旁白/时码合同未动。
+
+### QA 物料
+
+- 抽帧 28 张 + 4 张 contact sheet：`qa/v2-frames/`（extract-v2-frames.sh 重跑可复现）
+- v1 并排帧 `qa/pair/t*.png` 保留作回归对照
