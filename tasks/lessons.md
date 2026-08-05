@@ -818,3 +818,11 @@ pptxgenjs 3.12 会**原地改写**传入的 `shadow` 选项对象：blur/offset 
 - 旁白轨外的长尾巴也会撑长场景：caption end 超 DURATION 0.285s，runCaptions 的 waitFor 直接把场景拖长。凡 waitFor(c.end …) 都要 clamp 到 DURATION。
 - revideo 里 loop(Infinity) 不能和顺序编排同层 all()：永不结束的 generator 会悬挂 all()，后续 until 锚点全部跳过。有限循环用 for + 按剩余秒整圈摊派（step = seconds/laps/steps），精确收在页末锚点。
 - content-model.json 这类手工维护的多行内联 JSON，改字段用文本锚点插入，不要 json.dump round-trip（1072 行格式 churn → +12/-1）。
+
+## 2026-08-05 番茄 v2 阶段5：AI 生图通路降级链 / white-key 抠图 / codex 修复
+
+- baoyu-image-gen 多后端≠有可用后端：EXTEND.md default google 无 key → dashscope 账户欠费(Arrearage 400) → bigmodel(zai) 余额不足(429/1113) → codex-cli 通路成功。**先试单张再批量**，排障顺序：env key 名录 → EXTEND.md → 供应商余额/配额报错原文。可用 key 名录：DASHSCOPE_API_KEY(欠费)、glm-env.sh 的 bigmodel key(欠费)、pharmacy-ops/.env.local 的 MINIMAX_API_KEY(未试)、codex 订阅(可用)。
+- codex CLI 报 `spawn .../codex-darwin-arm64/vendor/.../codex ENOENT` = npm 包版本错配（JS 包装器与 vendor 二进制布局不一致），`npm i -g @openai/codex@latest` 对齐修复。修坏工具比绕路便宜（RTK 原则同构）。
+- 白底生图抠透明底：必须用「贴边连通近白域」置透明（scipy.ndimage.label + 边界分量），全局近白阈值会吃掉主体内部白色（毛巾/杯沿/衣领）；半透明边缘用 c=αf+(1-α)255 反解前景色去白晕。
+- contain 适配烘焙尺寸后，check-alpha 的 occupancy 单轴=100% 是构造性 WARN 非缺陷；真构图缺陷看「主体在显示尺寸下的有效像素」——o2 首轮横双球在 826 高画布只吃到 47% 高，显示 260px 时主体仅 122px 显小，改对角构图重生成解决。prompt 里写「overall group roughly as tall as wide」有效。
+- 语义校验要对照页面标签：couple 首轮画出明显孕肚，但 S10 标签是「备孕」——prompt 去掉 pregnancy 字样、只留「young couple standing close」后正确。AI 图的内容语义必须逐张对照 scene label 审。

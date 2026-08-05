@@ -4166,7 +4166,7 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - [x] 阶段2 editor-bg 双轨 Revideo 化 + 编辑器导出引擎切换(CW4_EXPORT_ENGINE) 312227e；S10/S11 叠合验过；:9012 已重启
 - [x] 阶段3 番茄15页动效全量(S07推镜头/S10序贯/S11级联+溢出/S05红叉淡出) ce24ae8；门禁2(S07+S10+S11) 2026-08-05 用户签样通过；全片 156.600s/30fps/1080p/-16LUFS/无黑帧
 - [x] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)；成片 v2 93.233s(=帧量化下限)/30fps/1080p/-16.5LUFS/无黑帧，QA_REPORT 增 v2 段
-- [ ] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance)
+- [x] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance) —— 2026-08-05 用户编辑器签样通过；7/7 重生成(codex-cli+couple.png 锚)→whitekey 抠图→烘焙尺寸→check-alpha 全过→provenance 登记→同名覆盖→全片重渲 156.600s 硬校验过→S04/S05/S06/S10 抽帧验证新图在片
 - [ ] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明)
 
 ### review（阶段4 完成后补，2026-08-05）
