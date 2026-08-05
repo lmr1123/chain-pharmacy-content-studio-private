@@ -4165,9 +4165,16 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - [x] 阶段1 番茄 film 骨架(layout.ts/film/*/render-film/render-stills/check-layout) f390048；门禁1(S04帧+S05微镜头) 2026-08-04 用户签样通过；全片 v2 156.633s/30fps/1080p/无黑帧
 - [x] 阶段2 editor-bg 双轨 Revideo 化 + 编辑器导出引擎切换(CW4_EXPORT_ENGINE) 312227e；S10/S11 叠合验过；:9012 已重启
 - [x] 阶段3 番茄15页动效全量(S07推镜头/S10序贯/S11级联+溢出/S05红叉淡出) ce24ae8；门禁2(S07+S10+S11) 2026-08-05 用户签样通过；全片 156.600s/30fps/1080p/-16LUFS/无黑帧
-- [ ] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)
+- [x] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)；成片 v2 93.233s(=帧量化下限)/30fps/1080p/-16.5LUFS/无黑帧，QA_REPORT 增 v2 段
 - [ ] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance)
 - [ ] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明)
+
+### review（阶段4 完成后补，2026-08-05）
+
+- **阶段4 产出**：速福达 v2 全 11 组精修落地（16 项）。成片 `速福达_商品培训课件3_独立金样_v2.mp4` 93.233s（= 93.228 合同 × 30fps 帧量化下限 2797 帧）。QA 物料 `qa/v2-frames/` 28 帧 + 4 contact sheet，16 项逐帧验证通过；`qa/QA_REPORT.md` 增 v2 段。ribbon 重生成 1400×200（scripts/make-ribbon.py，几何取自原图像素扫描，4× 超采样），PPTX 下次导出自动受益（export-sufuda-pptx.mjs 引同源）。
+- **v1 遗留时长漂移三连（本轮顺修）**：① setNav 补间 0.2s 被 anim(0.12) 截断 ×8 = 0.64s（setNav 补间改 0.12 一处收口）；② 封面/flu 卡/B1 补间长于 anim 秒数 0.02–0.06/处（anim 秒数对齐最长补间）；③ 末条 caption end=93.513 超旁白轨，runCaptions 把场景拖长 0.285s（clamp 到 DURATION）。修前渲染 94.133s → 修后 93.233s 精确落帧量化下限。教训同番茄 clk 记账一脉：**anim(sec, task) 的 task 时长必须 ≤ sec，否则超账不进 clock、until 锚点照等，漂移静默累积**。
+- **轨道 loop 的坑**：loop(Infinity) 会悬挂 all() 吃掉后续全部锚点；orbitAll 改 for 循环按页内剩余秒整圈摊派（laps=floor(s/6)，step=s/laps/8），精确在 29.55 收笔。
+- **json.dump 重写 content-model 教训**：round-trip 重排格式造成 1072 行 churn，改文本级锚点插入（+12/-1）。tokens 单源化只增不改：content-model 加 fs_*×11，project.tsx 色值/TS 全改读 tk。
 
 ### review（阶段3 完成后补，2026-08-05）
 

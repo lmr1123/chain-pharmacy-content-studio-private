@@ -811,3 +811,10 @@ pptxgenjs 3.12 会**原地改写**传入的 `shadow` 选项对象：blur/offset 
 - `nodeOf`(editable key) 查 chrome 层节点返回 undefined → 入场动画跳过 → pre opacity:0 的元素整页不可见，且不报任何错。
 - 排査手法：全片「末帧元素齐全性」对照（末帧时所有入场应完成，缺元素 = 动画没跑到）。预览子集签样覆盖不到的页，必须靠全量 pair 末帧兜底。
 - 修法：chrome 层用 `view.findKey(chromeKey(...))`；加新页时 role 的 layer 与 motion 查找方式必须成对核对。
+
+## 2026-08-05 速福达 v2：anim() 超账漂移 / loop 悬挂 / json 重写 churn
+
+- `anim(sec, task)` 模式里 task 实际时长 > sec 时，all(task, waitFor(sec)) 会等 task 跑完，但 clock 只 += sec —— 超出部分静默累积成全片漂移（速福达 v1 遗留 0.88s：setNav 0.12vs0.2 ×8 + 封面/flu/B1 小超账）。排查法：渲染时长 - 合同时长 ≠ 帧量化量 → 逐 anim 对表补间最长值。修法二选一：补间缩短到 sec 内（优先，一处收口），或 anim 秒数提到最长补间。
+- 旁白轨外的长尾巴也会撑长场景：caption end 超 DURATION 0.285s，runCaptions 的 waitFor 直接把场景拖长。凡 waitFor(c.end …) 都要 clamp 到 DURATION。
+- revideo 里 loop(Infinity) 不能和顺序编排同层 all()：永不结束的 generator 会悬挂 all()，后续 until 锚点全部跳过。有限循环用 for + 按剩余秒整圈摊派（step = seconds/laps/steps），精确收在页末锚点。
+- content-model.json 这类手工维护的多行内联 JSON，改字段用文本锚点插入，不要 json.dump round-trip（1072 行格式 churn → +12/-1）。
