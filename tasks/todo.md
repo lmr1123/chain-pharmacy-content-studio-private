@@ -4168,6 +4168,16 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - [x] 阶段4 速福达16项精修(水印/过场/orbit/feature_1/combo/summary收尾/tokens单源)；成片 v2 93.233s(=帧量化下限)/30fps/1080p/-16.5LUFS/无黑帧，QA_REPORT 增 v2 段
 - [x] 阶段5 生图 P0×4→P1×3(check-alpha+丝绸底预览+provenance) —— 2026-08-05 用户编辑器签样通过；7/7 重生成(codex-cli+couple.png 锚)→whitekey 抠图→烘焙尺寸→check-alpha 全过→provenance 登记→同名覆盖→全片重渲 156.600s 硬校验过→S04/S05/S06/S10 抽帧验证新图在片
 - [x] 阶段6 双片QA全表 + 交付说明(PPTX版式落后声明) —— 2026-08-05 完成：番茄 qa/QA_REPORT.md + validation/courseware/课件3-4-v2-交付说明.md；顺修 merge 漏 -map 静音交付事故(render-film.ts +map +响度硬门禁)，重渲 156.620s/-16.4LUFS 实测过
+- [x] 合并归档 —— 2026-08-06 完成：c57dd89(feat) → 64ea60b(main, --no-ff) 已 push origin/main；settled 双条目 canonical 切 v2、v1 留存 previous_canonical；business-catalog updated→2026-08-05
+
+### review（合并归档后补，2026-08-06）
+
+- **产出**：feat c57dd89「课件3/4 视觉动效 v2 归档」→ main 64ea60b（--no-ff），已 push origin/main（c550926..64ea60b，82 文件 +9403/-949）。
+- **番茄条目**：v2 mp4 入归档（156.62s/-16.4LUFS）；manifest revision→2026-08-05-visual-motion-v2、canonical.video→v2+previous_canonical 记 v1、pptx role 声明版式落后、generators.video→render-film、src_snapshot→src-snapshot/src/（全 src 树，旧 project.tsx git 识别为 rename）；content-model/layer-manifest 快照刷新；preview 7 帧从 v2 片重抽。
+- **速福达条目**：v2 mp4 入归档（93.233s=2797帧/-16.5LUFS）；补 src-snapshot/src/（该条目此前无 src 快照，对齐番茄形状）；manifest 同套字段 + notes 追加 v2 段；preview 帧位用 qa/v2-frames 时间戳映射（封面0.30/流感6.45/核心利益28.00/产品特点39.80/适宜人群64.60/联合用药78.30），抽后 Read 图核对了 key-03/key-04/key-05 内容对版。
+- **catalog 三处同步**：business-catalog.json（updated+两条目 status_note）＋ 生成脚本 sync_settled_template_previews.py 的 CATALOG/updated 字面量 ＋ 两条目 preview/catalog-entry.json 与 README 说明行。**未重跑 sync 脚本**——它会 rmtree preview/ 并从 validation web/media 静帧重拷，那些静帧源仍是 v1，重跑会把刚抽的 v2 预览帧冲掉；下次全量 regen 前需先把脚本里两条目的 keys 源切到 v2（或先把 web/media 静帧刷成 v2）。
+- **验证**：5 个 JSON 全部 json.tool 过；catalog↔catalog-entry↔manifest 的 status_note/canonical 交叉断言过；速福达 key-04 抽帧 Read 目检=产品特点场景。
+- **杂物未提交**：poc/.../montage-after-r1.png、穿心莲 settled 目录的 .inspect.ndjson 保持 untracked。
 
 ### review（阶段5+6 完成后补，2026-08-05）
 
