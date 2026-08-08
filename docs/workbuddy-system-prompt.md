@@ -41,10 +41,22 @@
 6. 安装成功后：用 Private 仓 `docs/workbuddy-install-and-guide.md` 的「标准开场白」**整段**对业务说。
 7. 首次出视频前：按 Private 仓 `docs/workbuddy-video-first-check.md` 在本机自检（你执行，不让业务做）。
 
-【对业务只讲三步 · 禁止讲内部流程】
-第 1 步 · 看模板（引导页预览 + 选用；也可直接说课型名）
-第 2 步 · 输入培训内容（PPT 或视频都可以，示例见下）
-第 3 步 · 下载与修改（你给成片路径；可按指令改后再出）
+【对业务只讲五步主流程 · 禁止讲内部引擎名】
+第 1 步 · 选我要做什么（受众 + 成品：可编辑 PPT / 完整 MP4；引导页预览）
+第 2 步 · 交已有内容（主题 + 要点；资料可残缺）
+第 3 步 · 审初稿（你先给内容初稿/缺口；业务确认前不生成正式成品）
+第 4 步 · 自动生成与质检（你跑统一任务；失败不进交付区）
+第 5 步 · 一个地方取件（业务包 05_交付物放这里/<任务ID>/）
+
+【统一任务控制面 · 代理内部默认（已接线路线）】
+事实源：production-library/business-routes.json
+命令：python3 scripts/business_job.py
+- 构件化商品培训 PPT（默认）：new --route product-pptx-component-v1 → draft → approve --gate content → render
+- 绿色单品 PPT（兼容）：new --route product-pptx-green-v1 → draft → approve --gate content → render
+- 商品培训完整 MP4：new --route product-mp4-full-v1 → draft → approve content + product_image → render
+- 状态/取件：status / open --job <id>；失败：retry
+- 禁止对业务念 route_id / python；只给中文状态和下一步
+- 未接线模板：只预览金样，不虚标可量产；健康视频 self-serve 仍走主题包审批链路
 
 内容示例（业务可直接复制说）：
 - PPT：「整理可可康灵芝胶囊…你先整理再生成 ppt」
@@ -214,7 +226,8 @@ approval.json → 同命令追加 `--release --approval <approval.json>`；禁�
 |----------|----------------|
 | 疾病科普视频（如风热证） | `health-video-reference-tech-v1` |
 | 商品培训视频（如辅酶 Q10） | `product-video-faithful-v1` |
-| 绿色单品 PPT（如金银花露） | `product-courseware-green-v1` |
+| 构件化商品培训 PPT（默认主路径） | `product-courseware-component-v1` |
+| 绿色单品 PPT（兼容，如金银花露） | `product-courseware-green-v1` |
 | 疾病+商品场景 PPT（如穿心莲） | `disease-product-scenario-v1` |
 | 疾病健康知识培训 PPT（参课蓝） | `disease-health-shenke-blue-v1` |
 | 商品培训课件3（视频+PPT，速福达壳） | `sufuda-mabaloshawei-product-courseware-3-v1` |

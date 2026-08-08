@@ -1,0 +1,121 @@
+{
+  "family": "product-training",
+  "version": "2026-08-07",
+  "description": "商品培训页型池：只描述排版骨架与槽位，不绑定任何固定课（非金银花露 5 页硬编码）",
+  "growth_channel": "docs/page-type-growth-channel.md",
+  "proposals_dir": "proposals/",
+  "recipes_dir": "recipes/",
+  "rules": {
+    "empty_cards": "forbidden",
+    "adapt_n": "cards/list rows follow content length; split page when over max_per_page",
+    "not_a_fill_in_template": "Do not map every SKU into fixed 金银花露 5-page sequence"
+  },
+  "page_types": [
+    {
+      "id": "courseware_cover",
+      "name_zh": "封面",
+      "status": "settled",
+      "recipe": "recipes/courseware_cover.json",
+      "slots": ["title", "organization", "tagline"],
+      "max_per_page": 1
+    },
+    {
+      "id": "hook_intro",
+      "name_zh": "导语/需求钩子",
+      "status": "settled",
+      "recipe": "recipes/hook_intro.json",
+      "slots": ["paragraphs[]"],
+      "max_per_page": 1,
+      "split_policy": "if paragraphs > 5, continue page hook_intro_cont"
+    },
+    {
+      "id": "benefit_cards",
+      "name_zh": "核心功效卡",
+      "status": "settled",
+      "recipe": "recipes/benefit_cards.json",
+      "slots": ["items[{title,body}]"],
+      "min_items": 1,
+      "max_per_page": 3,
+      "layout": "1|2|3 equal cards by N"
+    },
+    {
+      "id": "feature_cards",
+      "name_zh": "产品特点卡",
+      "status": "settled",
+      "recipe": "recipes/feature_cards.json",
+      "slots": ["items[{title,body}]"],
+      "min_items": 1,
+      "max_per_page": 3,
+      "layout": "1|2|3 equal cards by N"
+    },
+    {
+      "id": "audience_list",
+      "name_zh": "适宜人群",
+      "status": "settled",
+      "recipe": "recipes/audience_list.json",
+      "slots": ["items[string]"],
+      "max_per_page": 6,
+      "layout": "numbered list or 2x2 when N=4"
+    },
+    {
+      "id": "combination_guidance",
+      "name_zh": "联合用药+话术",
+      "status": "settled",
+      "recipe": "recipes/combination_guidance.json",
+      "slots": ["rows[{scenario,partner,talk_track}]"],
+      "max_per_page": 3,
+      "layout": "full-width row cards; N≤3 no empty"
+    },
+    {
+      "id": "summary_matrix",
+      "name_zh": "总结矩阵",
+      "status": "settled",
+      "recipe": "recipes/summary_matrix.json",
+      "slots": ["rows[{label,value}]"],
+      "max_per_page": 6,
+      "layout": "label | value table"
+    },
+    {
+      "id": "precautions",
+      "name_zh": "注意事项",
+      "status": "settled",
+      "recipe": "recipes/precautions.json",
+      "slots": ["items[string]", "illustrations[4]"],
+      "max_per_page": 8,
+      "layout": "left numbered list + right 2×2 illos"
+    },
+    {
+      "id": "hook_pain_data",
+      "name_zh": "痛点数据",
+      "status": "settled",
+      "recipe": "recipes/hook_pain_data.json",
+      "slots": ["symptoms[]", "stats[{number,unit,note,source}]", "source"],
+      "max_per_page": 1,
+      "layout": "symptom chips + data_stat cards + source caption"
+    }
+  ],
+  "mapper_hints": {
+    "导语|引入|痛点|数据": "hook_pain_data|hook_intro",
+    "功效|利益点|核心功效": "benefit_cards",
+    "特点|卖点|产地|原料|含量": "feature_cards",
+    "适宜人群|人群": "audience_list",
+    "联合|联推|搭配|话术": "combination_guidance",
+    "总结|回顾": "summary_matrix",
+    "注意|禁忌|不适宜": "precautions",
+    "封面|开场": "courseware_cover"
+  },
+  "cw4_scene_types": [
+    "cover",
+    "time_list",
+    "broll",
+    "product_intro",
+    "benefit_chain",
+    "feature_origin",
+    "feature_material",
+    "feature_content",
+    "audience",
+    "related_meds",
+    "efficacy_recap_table",
+    "summary_4col"
+  ]
+}

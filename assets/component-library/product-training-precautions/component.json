@@ -1,0 +1,79 @@
+{
+  "id": "product-training.precautions-illo-v1",
+  "category": "product-training-precautions",
+  "series_id": "series.product-training.precautions-illo-v1",
+  "style_id": "dashenlin-medical-flat-illustration-v1",
+  "compatible_style_packs": [
+    "style-pack.courseware-4-silk-yellow-red-v1",
+    "style-pack.lycopene-health-edu-cream-red-v1",
+    "style-pack.dashenlin-courseware-green-v1"
+  ],
+  "version": "1.0.0",
+  "status": "technical-qa-passed",
+  "purpose": "商品培训注意事项页 2×2 插画：不代替药物 / 禁忌人群 / 随餐服用 / 就医咨询",
+  "roles": [
+    {
+      "role_id": "not_medicine",
+      "name_zh": "不代替药物",
+      "file": "transparent/pre-not-medicine.png"
+    },
+    {
+      "role_id": "special_pop",
+      "name_zh": "禁忌人群",
+      "file": "transparent/pre-special-pop.png"
+    },
+    {
+      "role_id": "with_meal",
+      "name_zh": "随餐服用",
+      "file": "transparent/pre-with-meal.png"
+    },
+    {
+      "role_id": "consult",
+      "name_zh": "就医咨询",
+      "file": "transparent/pre-consult.png"
+    }
+  ],
+  "files": {
+    "transparent": [
+      "transparent/pre-not-medicine.png",
+      "transparent/pre-special-pop.png",
+      "transparent/pre-with-meal.png",
+      "transparent/pre-consult.png"
+    ],
+    "master": [
+      "master/pre-not-medicine.png",
+      "master/pre-special-pop.png",
+      "master/pre-with-meal.png",
+      "master/pre-consult.png"
+    ],
+    "source": [
+      "source/pre-not-medicine-src.jpg",
+      "source/pre-special-pop-src.jpg",
+      "source/pre-with-meal-src.jpg",
+      "source/pre-consult-src.jpg"
+    ],
+    "prompt": "prompts/precautions-illo-v1.md"
+  },
+  "pipeline": [
+    "AI 生图（纯白底扁平培训插画）",
+    "whitekey-cutout.py --tol 34",
+    "主体 contain + 14% 透明边距 → 1024×1024",
+    "check-alpha.py（四角 max alpha≤8，halo/occupancy PASS）"
+  ],
+  "alpha_gate": {
+    "corner_max_alpha": 8,
+    "check_script": "production-library/engines/courseware-pptx-v1/check-alpha.py",
+    "verified_2026-08-08": "all four PASS"
+  },
+  "source": {
+    "method": "built-in-imagegen",
+    "software_agent": "Grok Imagine",
+    "reference_video_pixels_used": false,
+    "note": "M3 candidate 页主题插画；M5 修 halo/occupancy 后正式入库"
+  },
+  "review": {
+    "visual": "pending-user-signoff",
+    "medical": "n/a-illustration-only-no-claims",
+    "technical_alpha": "pass-2026-08-08"
+  }
+}

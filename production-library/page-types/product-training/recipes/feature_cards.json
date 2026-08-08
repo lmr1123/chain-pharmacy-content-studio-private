@@ -1,0 +1,29 @@
+{
+  "page_type": "feature_cards",
+  "family": "product-training",
+  "status": "settled",
+  "name_zh": "产品特点卡",
+  "scene_types": ["feature_origin", "feature_material", "feature_content", "broll"],
+  "impl_by_scene": {
+    "feature_origin": "feature_origin",
+    "feature_material": "feature_material",
+    "feature_content": "feature_content",
+    "broll": "broll"
+  },
+  "default_impl": "feature_content",
+  "slots": ["chapter", "section", "items[{title,body}]", "map", "photo", "eq"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "section_label", "slot": "section"},
+    {"use": "white_stage", "slot": "stage"},
+    {"use": "pack_slot", "slot": "photo", "when": "variant=material_photo|photo_stage"},
+    {"use": "note_bar", "slot": "caption"}
+  ],
+  "layout": {
+    "min_items": 1,
+    "max_per_page": 3,
+    "adapt_n": "1|2|3 equal cards by N",
+    "notes": "金样按 origin/map、material/photo、content/eq、broll/photo_stage 四变体"
+  }
+}

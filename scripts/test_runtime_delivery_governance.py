@@ -163,6 +163,7 @@ class BootstrapTests(unittest.TestCase):
                         str(target),
                         "--skip-update",
                         "--no-open",
+                        "--skip-soft-repair",
                     ],
                 ),
                 mock.patch.object(
@@ -174,7 +175,64 @@ class BootstrapTests(unittest.TestCase):
                 mock.patch.object(self.module, "print_guide"),
             ):
                 self.module.main()
-            probe.assert_called_once_with(target.resolve(), ["production-assets"])
+            probe.assert_called_once()
+            args, kwargs = probe.call_args
+            self.assertEqual(args[0], target.resolve())
+            self.assertEqual(args[1], ["production-assets"])
+            self.assertEqual(kwargs.get("profile_ids"), [])
+
+    def test_bootstrap_profile_pptx_expands_require(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            target = self.make_private_root(Path(tmp))
+            # minimal runtime profiles for expand_requirements
+            profiles = target / self.module.RUNTIME_PROFILES_REL
+            profiles.parent.mkdir(parents=True, exist_ok=True)
+            profiles.write_text(
+                json.dumps(
+                    {
+                        "profiles": {
+                            "pptx": {
+                                "probe_require": ["pptx"],
+                                "install_hints_zh": ["安装 node"],
+                            }
+                        },
+                        "route_to_profile": {
+                            "product-pptx-green-v1": "pptx",
+                        },
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            portal = target / "portal.html"
+            with (
+                mock.patch.object(
+                    self.module.sys,
+                    "argv",
+                    [
+                        "workbuddy_bootstrap_for_business.py",
+                        "--target",
+                        str(target),
+                        "--skip-update",
+                        "--no-open",
+                        "--skip-soft-repair",
+                        "--route",
+                        "product-pptx-green-v1",
+                    ],
+                ),
+                mock.patch.object(
+                    self.module,
+                    "probe_environment",
+                    return_value={"capabilities": {"private_production_assets": True, "pptx_export": True}},
+                ) as probe,
+                mock.patch.object(self.module, "ensure_package", return_value=portal),
+                mock.patch.object(self.module, "print_guide"),
+                mock.patch.object(self.module, "run_doctor_summary"),
+            ):
+                self.module.main()
+            args, kwargs = probe.call_args
+            self.assertEqual(args[1], ["production-assets", "pptx"])
+            self.assertEqual(kwargs.get("profile_ids"), ["pptx"])
 
     def test_failed_business_package_rebuild_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -402,9 +460,18 @@ class ProbeTests(unittest.TestCase):
             "render-product-segment.mjs",
             "render-health-segment.mjs",
         ):
-            source = (
-                ROOT / "poc" / "gold-sample" / "scripts" / script_name
-            ).read_text(encoding="utf-8")
+            # Formal production engine entry first; legacy kit remains content source.
+            candidates = [
+                ROOT
+                / "production-library"
+                / "engines"
+                / "video-revideo-runtime-v1"
+                / "scripts"
+                / script_name,
+                ROOT / "poc" / "gold-sample" / "scripts" / script_name,
+            ]
+            path = next(p for p in candidates if p.is_file())
+            source = path.read_text(encoding="utf-8")
             self.assertNotIn("/opt/homebrew/bin/ffmpeg", source)
             self.assertNotIn("/opt/homebrew/bin/ffprobe", source)
 

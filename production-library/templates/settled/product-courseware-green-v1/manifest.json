@@ -41,7 +41,7 @@
       "注意事项"
     ],
     "gallery_title_zh": "绿色商品培训 · 5 页",
-    "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意",
+    "one_liner": "五页绿色固定壳（兼容）：介绍/卖点/人群 · 联合 · 对标 · 注意",
     "name_zh": "绿色单品 PPT（如金银花露）",
     "category_zh": "商品培训",
     "outputs": [
@@ -53,18 +53,15 @@
       "new_theme_preview": true,
       "new_theme_pptx": true,
       "new_theme_mp4": false,
-      "business_selfserve": false
+      "business_selfserve": true
     },
     "requirements": [
       "内容初稿确认",
       "pptx_export"
     ],
-    "blockers": [
-      "正式 PPTX 必须在内容初稿确认后生成",
-      "当前机器须通过 pptx_export 环境检查"
-    ],
-    "production_ready": false,
-    "status_label": "可开始草稿 · 确认后生成 PPTX",
+    "blockers": [],
+    "production_ready": true,
+    "status_label": "兼容路线 · 确认后生成 PPTX",
     "online_url": null
   },
   "business_catalog": {

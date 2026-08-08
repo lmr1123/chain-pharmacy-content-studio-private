@@ -1,0 +1,197 @@
+{
+  "schema": "business-routes-v1",
+  "version": "1.1.0",
+  "updated": "2026-08-09",
+  "purpose": "业务任务唯一路由事实源：中文名、受众、成品、模板、环境、审批闸门、adapter、QA profile、交付白名单",
+  "job_workspace_rel": "outputs/workbuddy-workspaces/jobs",
+  "delivery_root_rel": "outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里",
+  "default_pptx_route": "product-pptx-component-v1",
+  "states": {
+    "intake": "可开始草稿",
+    "needs_input": "等待业务资料",
+    "draft_ready": "等待内容确认",
+    "content_approved": "等待视觉确认或可生成",
+    "visual_approved": "可开始生成",
+    "rendering": "正在生成",
+    "env_blocked": "环境不足",
+    "qa_failed": "质检失败",
+    "qa_passed": "质检通过",
+    "delivered": "已交付"
+  },
+  "business_status_labels": [
+    "可开始草稿",
+    "等待业务资料",
+    "等待内容确认",
+    "等待视觉确认",
+    "正在生成",
+    "质检失败或已交付"
+  ],
+  "routes": [
+    {
+      "route_id": "product-pptx-component-v1",
+      "name_zh": "内部商品培训 · 构件化 PPT（默认主路径）",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "pptx",
+      "deliverable_zh": "可编辑 PPT",
+      "template_slug": "product-courseware-component-v1",
+      "adapter": "product_pptx_component",
+      "active": true,
+      "priority": 5,
+      "env_require": ["pptx_export"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": false,
+        "product_image_approval": false
+      },
+      "qa_profile": "pptx-component",
+      "style_pack_default": "courseware-4-silk-yellow-red-v1",
+      "engine": "courseware-pptx-v1",
+      "delivery_whitelist": [
+        "终稿.pptx",
+        "交付说明.md",
+        "内容确认记录.json",
+        "run-manifest.json",
+        "scene-plan.json",
+        "provenance-report.json"
+      ],
+      "selection_hint_zh": "金样构件 recipe：封面/痛点数据/功效/特点/人群/联合/总结/注意 · 任意大纲进",
+      "notes_zh": "默认主路径。script.structured → scene-plan → content-model → courseware-pptx-v1。文案只取自业务脚本，缺图用授权占位槽。"
+    },
+    {
+      "route_id": "product-pptx-green-v1",
+      "name_zh": "内部商品培训 · 绿色单品 PPT（兼容）",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "pptx",
+      "deliverable_zh": "可编辑 PPT",
+      "template_slug": "product-courseware-green-v1",
+      "adapter": "product_pptx_green",
+      "active": true,
+      "priority": 15,
+      "legacy": true,
+      "env_require": ["pptx_export"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": false,
+        "product_image_approval": false
+      },
+      "qa_profile": "pptx-basic",
+      "delivery_whitelist": [
+        "终稿.pptx",
+        "交付说明.md",
+        "内容确认记录.json",
+        "run-manifest.json"
+      ],
+      "selection_hint_zh": "五页绿色固定壳：介绍/卖点/人群 · 联合 · 对标 · 注意（兼容旧任务）",
+      "notes_zh": "兼容路径，非默认。新任务优先 product-pptx-component-v1。金样回归通过前保留，不删入口。"
+    },
+    {
+      "route_id": "product-mp4-full-v1",
+      "name_zh": "内部商品培训 · 完整 MP4",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "mp4",
+      "deliverable_zh": "本机完整 MP4",
+      "template_slug": "product-video-faithful-v1",
+      "adapter": "product_video_full",
+      "active": true,
+      "priority": 20,
+      "env_require": ["video_full"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": false,
+        "product_image_approval": true
+      },
+      "qa_profile": "video-full",
+      "delivery_whitelist": [
+        "终稿.mp4",
+        "交付说明.md",
+        "内容确认记录.json",
+        "delivery-qa.json",
+        "run-manifest.json",
+        "business-delivery-status.json"
+      ],
+      "selection_hint_zh": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结",
+      "notes_zh": "正式 8 段须完整审核稿 + 授权包装图 + 哈希绑定审批；本机须 video_full。"
+    },
+    {
+      "route_id": "health-mp4-full-v1",
+      "name_zh": "内部疾病培训 · 完整 MP4",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "mp4",
+      "deliverable_zh": "本机完整 MP4",
+      "template_slug": "health-video-reference-tech-v1",
+      "adapter": "health_video_full",
+      "active": false,
+      "priority": 30,
+      "env_require": ["video_full"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": true,
+        "product_image_approval": false
+      },
+      "qa_profile": "video-full",
+      "delivery_whitelist": [
+        "终稿.mp4",
+        "交付说明.md",
+        "内容确认记录.json",
+        "delivery-qa.json",
+        "run-manifest.json"
+      ],
+      "selection_hint_zh": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议",
+      "notes_zh": "P1 暂不开放业务自助：须主题包审批与正式环境验证后再激活。"
+    },
+    {
+      "route_id": "courseware3-pptx-mp4-v1",
+      "name_zh": "内部商品培训 · 课件3（PPT+视频）",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "pptx_and_mp4",
+      "deliverable_zh": "可编辑 PPT + 本机完整 MP4",
+      "template_slug": "sufuda-mabaloshawei-product-courseware-3-v1",
+      "adapter": "courseware3",
+      "active": false,
+      "priority": 40,
+      "env_require": ["pptx_export"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": false,
+        "product_image_approval": true
+      },
+      "qa_profile": "courseware3",
+      "delivery_whitelist": [
+        "终稿.pptx",
+        "终稿.mp4",
+        "交付说明.md",
+        "内容确认记录.json",
+        "run-manifest.json"
+      ],
+      "selection_hint_zh": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型",
+      "notes_zh": "已有胶水入口；统一 job adapter 待 P1 后续批次接入。"
+    },
+    {
+      "route_id": "gold-preview-only",
+      "name_zh": "仅金样预览",
+      "audience": "any",
+      "audience_zh": "任意",
+      "deliverable": "preview",
+      "deliverable_zh": "仅预览",
+      "template_slug": null,
+      "adapter": "preview_only",
+      "active": false,
+      "priority": 900,
+      "env_require": [],
+      "gates": {
+        "content_approval": false,
+        "visual_approval": false,
+        "product_image_approval": false
+      },
+      "qa_profile": "none",
+      "delivery_whitelist": [],
+      "selection_hint_zh": "未接线模板只开放金样查看",
+      "notes_zh": "不创建正式生成任务。"
+    }
+  ]
+}

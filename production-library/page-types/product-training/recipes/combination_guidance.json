@@ -1,0 +1,26 @@
+{
+  "page_type": "combination_guidance",
+  "family": "product-training",
+  "status": "settled",
+  "name_zh": "联合用药+话术",
+  "scene_types": ["combination_guidance", "related_meds"],
+  "impl_by_scene": {
+    "combination_guidance": "combination_guidance",
+    "related_meds": "related_meds"
+  },
+  "default_impl": "combination_guidance",
+  "slots": ["chapter", "rows[{scenario,partner,talk_track,pack?}]", "nav[]"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "nav_pills", "slot": "nav", "when": "variant=two_pack_nav"},
+    {"use": "row_card", "slot": "rows", "layout": "full_width_rows", "when": "variant=three_row_cards"},
+    {"use": "pack_slot", "slot": "partner_pack", "repeat": "rows"},
+    {"use": "white_stage", "slot": "stage", "when": "variant=two_pack_nav"}
+  ],
+  "layout": {
+    "max_per_page": 3,
+    "adapt_n": "N full-width row cards (场景 | 联合品 | 话术); no empty rows",
+    "notes": "金样 related_meds 为双包装+导航 pill；通用 candidate 为单页最多 3 行卡"
+  }
+}

@@ -65,7 +65,37 @@ After authorized Private installation, agent must: `git pull --ff-only` in the P
 checkout + `scripts/workbuddy_bootstrap_for_business.py`, open the portal,
 then on content: lock template → organize → **run generators**.
 Before render: `python3 scripts/probe_production_env.py` (honest degrade if no TTS/ffmpeg).
-- PPT / 绿色单品等：各 settled generator  
+
+**Default production path (P1 control plane + P2 runtime profiles):** prefer the unified job
+runner for the two wired self-serve routes instead of asking business to paste internal
+generator flags:
+
+```bash
+python3 scripts/business_doctor.py --route product-pptx-component-v1   # honest env + install hints
+python3 scripts/workbuddy_bootstrap_for_business.py --route product-pptx-component-v1 --no-open
+# 或 --profile pptx / video-full；默认只强制 production-assets，加 route 才硬校验对应能力
+python3 scripts/business_job.py list-routes
+python3 scripts/business_job.py new --route product-pptx-component-v1 --theme <商品名> --notes '...' --auto-draft
+# 完整审核脚本：再加 --script-json path/to/script.structured.json
+python3 scripts/business_job.py approve --job <id> --gate content --by <姓名>
+python3 scripts/business_job.py render --job <id>
+python3 scripts/business_job.py status --job <id>
+python3 scripts/business_job.py open --job <id>
+```
+
+- Routes truth: `production-library/business-routes.json`（`default_pptx_route` = component）
+- Runtime profiles: `production-library/runtime-profiles.json`（pptx / video-full / optional-external）
+- **Default PPT engine:** `production-library/engines/courseware-pptx-v1/` + `scripts/generate_courseware.py`（构件 + recipe）
+- Green PPT legacy engine: `production-library/engines/product-courseware-green-v1/`（兼容路线 `product-pptx-green-v1`）
+- Video full runtime: `production-library/engines/video-revideo-runtime-v1/`（`kit` 可 symlink 历史 `poc/gold-sample`；业务代码经 `scripts/video_runtime.py` 解析）
+- Active now: `product-pptx-component-v1`（默认 PPT）、`product-pptx-green-v1`（兼容）、`product-mp4-full-v1`（商品 full MP4；另需 `approve --gate product_image`）
+- Job workspace (gitignored): `outputs/workbuddy-workspaces/jobs/`
+- Pickup: `outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/<job_id>/`
+- Pending approval / env block / QA fail never publish into the delivery folder
+- New-theme drafts must not leak gold medical/price/combo copy; residual tokens hard-block draft
+
+Legacy direct generators remain for maker debugging and not-yet-wired templates:
+- PPT 构件生成器：`scripts/generate_courseware.py`；绿色五页兼容：`product-courseware-green-v1`
 - 课件3：`scripts/generate_business_courseware.py --template courseware3 --theme <dir>`  
 - 视频：`generate_business_video.py --mode full`（product 8 / health 7 segments）；never default `audio-shell`。
   商品 full 必须带业务授权包装图，并以 `product-video-approval-v1` 绑定 8 段审核稿、

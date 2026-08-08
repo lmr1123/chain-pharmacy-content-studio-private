@@ -1,0 +1,23 @@
+{
+  "page_type": "precautions",
+  "family": "product-training",
+  "status": "settled",
+  "name_zh": "注意事项",
+  "scene_types": ["precautions"],
+  "impl_by_scene": {
+    "precautions": "precautions"
+  },
+  "default_impl": "precautions",
+  "slots": ["chapter", "items[string]", "illustrations[4]"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "icon_bullet", "slot": "items", "layout": "numbered_left"},
+    {"use": "white_stage", "slot": "illo_grid", "layout": "2x2_right"}
+  ],
+  "layout": {
+    "max_per_page": 8,
+    "adapt_n": "left numbered list + right 2×2 illustration grid",
+    "notes": "插画必须透明底（ensure_transparent_assets）；缺图不硬塞空卡"
+  }
+}

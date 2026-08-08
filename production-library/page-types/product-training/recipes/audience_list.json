@@ -1,0 +1,22 @@
+{
+  "page_type": "audience_list",
+  "family": "product-training",
+  "status": "settled",
+  "name_zh": "适宜人群",
+  "scene_types": ["audience"],
+  "impl_by_scene": {
+    "audience": "audience"
+  },
+  "default_impl": "audience",
+  "slots": ["chapter", "items[{label,icon|asset}]"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "audience_card", "slot": "items", "layout": "row|grid"}
+  ],
+  "layout": {
+    "max_per_page": 6,
+    "adapt_n": "gold default single-row N cols; layout=grid → 2×2 when N=4",
+    "notes": "empty_cards=forbidden"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "page-type-proposal/v1",
+  "title": "Page type growth proposal",
+  "description": "L1 页型生长通道提案：未知内容形态 → 提案 → QA 签样 → 注册。见 docs/page-type-growth-channel.md",
+  "type": "object",
+  "required": [
+    "schema",
+    "page_type_id",
+    "name_zh",
+    "family",
+    "status",
+    "trigger",
+    "content_shape",
+    "slots",
+    "components",
+    "layout",
+    "scene_type",
+    "impl",
+    "gold_lineage"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema": {
+      "const": "page-type-proposal/v1"
+    },
+    "page_type_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "family 内唯一蛇形 id"
+    },
+    "name_zh": { "type": "string", "minLength": 1 },
+    "family": {
+      "type": "string",
+      "enum": ["product-training", "health-edu", "disease-scenario"]
+    },
+    "version": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_qa",
+        "signed_off",
+        "registered_candidate",
+        "settled",
+        "rejected"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "minLength": 8,
+      "description": "为何不能 reuse/cross_template"
+    },
+    "content_shape": {
+      "type": "object",
+      "description": "触发该页型的脚本结构信号",
+      "properties": {
+        "required_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "optional_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "slots": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["use"],
+        "properties": {
+          "use": { "type": "string" },
+          "slot": { "type": "string" },
+          "layout": { "type": "string" },
+          "notes": { "type": "string" },
+          "needs_new_component": { "type": "boolean" }
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "max_per_page": { "type": "integer", "minimum": 1 },
+        "min_items": { "type": "integer", "minimum": 0 },
+        "adapt_n": { "type": "string" },
+        "empty_cards": { "const": "forbidden" },
+        "notes": { "type": "string" }
+      }
+    },
+    "scene_type": { "type": "string" },
+    "impl": { "type": "string" },
+    "mapper_hints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "gold_lineage": {
+      "type": "object",
+      "required": ["sources"],
+      "properties": {
+        "sources": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "reused_builders": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reused_components": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "sample_script_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string" },
+          "section": { "type": "string" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "qa_dir": { "type": "string" },
+    "related_paths": {
+      "type": "object",
+      "properties": {
+        "recipe": { "type": "string" },
+        "builder": { "type": "string" },
+        "registry": { "type": "string" },
+        "content_model": { "type": "string" }
+      }
+    },
+    "signoff": {
+      "type": "object",
+      "properties": {
+        "date": { "type": "string" },
+        "user_quote": { "type": "string" },
+        "checklist": {
+          "type": "object",
+          "additionalProperties": { "type": "boolean" }
+        },
+        "qa_report": { "type": "string" }
+      }
+    },
+    "rejection": {
+      "type": "object",
+      "properties": {
+        "date": { "type": "string" },
+        "reason": { "type": "string" },
+        "fallback": { "type": "string" }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

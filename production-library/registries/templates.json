@@ -222,6 +222,57 @@
       }
     },
     {
+      "id": "template.product-courseware-component-v1",
+      "name_zh": "构件化商品培训 PPT（默认主路径）",
+      "status": "production-default",
+      "style_pack_id": "style-pack.courseware-4-silk-yellow-red-v1",
+      "tags": [
+        "商品培训",
+        "PPTX",
+        "可编辑",
+        "component",
+        "recipe",
+        "default"
+      ],
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/product-courseware-component-v1",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/product-courseware-component-v1/构件化商品培训_默认主路径_签样参考.pptx",
+        "format": "pptx",
+        "confirmed_by": "system-smoke",
+        "confirmed_at": "2026-08-09"
+      },
+      "supported_scene_types": [
+        "courseware_cover",
+        "hook_pain_data",
+        "benefit_chain",
+        "feature_origin",
+        "feature_material",
+        "feature_content",
+        "audience",
+        "combination_guidance",
+        "efficacy_recap_table",
+        "precautions"
+      ],
+      "supported_outputs": [
+        "pptx"
+      ],
+      "source_projects": [
+        "production-library/engines/courseware-pptx-v1/export.mjs",
+        "scripts/generate_courseware.py"
+      ],
+      "business_input": "universal-content-word",
+      "business_template": "production-library/templates/settled/product-courseware-component-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/product-courseware-component-v1/业务提交_填写参考.docx",
+      "business_input_sources": {
+        "blank_word": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+        "filled_example": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
+        "sync_script": "scripts/sync_settled_template_business_words.py"
+      },
+      "business_route": "product-pptx-component-v1",
+      "restriction": "默认业务主路径；文案只取自 script.structured；无授权包装用占位槽。签样参考为结构冒烟，正式医学内容须业务审核稿。"
+    },
+    {
       "id": "template.product-courseware-dashenlin-green-v1",
       "name_zh": "大参林绿色商品培训课件模板 v1",
       "status": "user-approved",

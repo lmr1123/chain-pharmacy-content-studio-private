@@ -42,8 +42,12 @@ PRIVATE_ASSET_PATHS = (
     Path("production-library/catalog.json"),
     Path("production-library/templates/settled/business-catalog.json"),
     Path("production-library/voices/reference-pharmacist-qwen-v1/voice-pack.json"),
-    Path("poc/gold-sample/scripts/render-product-segment.mjs"),
-    Path("poc/gold-sample/scripts/render-health-segment.mjs"),
+    Path(
+        "production-library/engines/video-revideo-runtime-v1/scripts/render-product-segment.mjs"
+    ),
+    Path(
+        "production-library/engines/video-revideo-runtime-v1/scripts/render-health-segment.mjs"
+    ),
 )
 
 # Prefer Homebrew ffmpeg over broken stubs
@@ -233,18 +237,37 @@ def probe() -> dict[str, Any]:
     # diagnostic information, not a usable business-video capability.
     tts_import_ok = mlx_audio_tts_ok
 
-    artifact_tool = (
+    artifact_tool_candidates = (
         ROOT
-        / "poc/courseware-export/work/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs"
+        / "production-library/engines/courseware-pptx-v1/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs",
+        ROOT
+        / "production-library/engines/product-courseware-green-v1/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs",
+        ROOT
+        / "poc/courseware-export/work/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs",
+    )
+    artifact_tool = next(
+        (path for path in artifact_tool_candidates if path.is_file()),
+        artifact_tool_candidates[0],
     )
     reference_voice_ready = voice_pack_ready(voice_ref)
     sufuda_voice_ready = voice_pack_ready(voice_sufuda)
-    video_runtime_files = (
-        ROOT / "poc/gold-sample/scripts/render-product-segment.mjs",
-        ROOT / "poc/gold-sample/scripts/render-health-segment.mjs",
-        ROOT / "poc/gold-sample/node_modules",
-    )
-    video_runtime_ready = all(path.exists() for path in video_runtime_files)
+    # Prefer formal engine kit (may symlink to historical poc/gold-sample).
+    if str(ROOT / "scripts") not in sys.path:
+        sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        from video_runtime import resolve_video_kit_root_or_none  # type: ignore
+
+        video_kit = resolve_video_kit_root_or_none(require_node_modules=True)
+    except Exception:
+        video_kit = None
+        legacy = ROOT / "poc/gold-sample"
+        if (
+            (legacy / "scripts/render-product-segment.mjs").is_file()
+            and (legacy / "scripts/render-health-segment.mjs").is_file()
+            and (legacy / "node_modules").exists()
+        ):
+            video_kit = legacy
+    video_runtime_ready = video_kit is not None
     render_ready = bool(node) and bool(ffmpeg) and bool(ffprobe) and video_runtime_ready
     tts_ready = bool(tts_python) and tts_import_ok and reference_voice_ready
     private_status = private_production_status(ROOT)
@@ -293,14 +316,30 @@ def probe() -> dict[str, Any]:
             "artifact_tool": str(artifact_tool) if artifact_tool.is_file() else None,
             "voice_reference_pharmacist": str(voice_ref) if reference_voice_ready else None,
             "voice_sufuda_courseware": str(voice_sufuda) if sufuda_voice_ready else None,
-            "video_runtime": str(ROOT / "poc/gold-sample") if video_runtime_ready else None,
+            "video_runtime": (
+                str(ROOT / "production-library/engines/video-revideo-runtime-v1/kit")
+                if video_kit is not None
+                and (ROOT / "production-library/engines/video-revideo-runtime-v1/kit").exists()
+                and (
+                    ROOT / "production-library/engines/video-revideo-runtime-v1/kit"
+                ).resolve()
+                == video_kit.resolve()
+                else (str(video_kit) if video_kit is not None else None)
+            ),
+            "video_runtime_resolved": str(video_kit) if video_kit is not None else None,
+            "video_runtime_engine": str(
+                ROOT / "production-library/engines/video-revideo-runtime-v1"
+            ),
         },
         "capabilities": caps,
         "honest_degrade": {
             "no_private_assets": "当前目录不是已验证的 Private 生产仓；所有生产能力均关闭。",
             "no_tts": "可出 PPTX / 规划包；禁止系统机器人音色冒充正式旁白；不得假装已出正式 MP4。",
             "no_ffmpeg_or_node": "可整理 content-model 与 gap；视频渲染需补 ffmpeg/node。",
-            "no_artifact_tool": "PPTX 原生导出不可用；检查 poc/courseware-export/work 依赖。",
+            "no_artifact_tool": (
+                "PPTX 原生导出不可用；检查 production-library/engines/courseware-pptx-v1 "
+                "或 product-courseware-green-v1 的 node_modules/@oai/artifact-tool（或历史 poc 路径）。"
+            ),
         },
         "messages_zh": [],
     }
@@ -339,9 +378,39 @@ def probe() -> dict[str, Any]:
     if not reference_voice_ready:
         report["messages_zh"].append("参考药师 voice pack 缺 manifest、prompt.wav 或 ref_text。")
     if not video_runtime_ready:
-        report["messages_zh"].append("视频分段渲染脚本或 node_modules 不完整。")
+        report["messages_zh"].append(
+            "视频 runtime kit 不完整：检查 production-library/engines/"
+            "video-revideo-runtime-v1/kit（或历史 poc/gold-sample）的 render 脚本与 node_modules。"
+        )
     if not artifact_tool.is_file():
-        report["messages_zh"].append("缺少 artifact-tool：课件 PPTX 导出会失败。")
+        report["messages_zh"].append(
+            "缺少 artifact-tool：课件 PPTX 导出会失败"
+            "（engines/courseware-pptx-v1、product-courseware-green-v1 或 poc/courseware-export/work）。"
+        )
+    component_engine = (
+        ROOT / "production-library/engines/courseware-pptx-v1/export.mjs"
+    )
+    component_generator = ROOT / "scripts/generate_courseware.py"
+    if not component_engine.is_file():
+        report["messages_zh"].append(
+            "缺少默认构件 PPT 引擎：production-library/engines/courseware-pptx-v1/export.mjs。"
+        )
+    else:
+        report["paths"]["component_pptx_engine"] = str(component_engine)
+    if component_generator.is_file():
+        report["paths"]["component_pptx_generator"] = str(component_generator)
+    else:
+        report["messages_zh"].append("缺少 scripts/generate_courseware.py（构件 PPT 生成器）。")
+    green_engine = (
+        ROOT
+        / "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs"
+    )
+    if not green_engine.is_file():
+        report["messages_zh"].append(
+            "缺少兼容绿色 PPT 引擎：production-library/engines/product-courseware-green-v1。"
+        )
+    else:
+        report["paths"]["green_pptx_engine"] = str(green_engine)
 
     if not report["messages_zh"]:
         report["messages_zh"].append("环境探测通过：PPTX + 视频 full 所需工具齐全。")

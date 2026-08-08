@@ -1,0 +1,24 @@
+{
+  "page_type": "summary_matrix",
+  "family": "product-training",
+  "status": "settled",
+  "name_zh": "总结矩阵",
+  "scene_types": ["efficacy_recap_table", "summary_4col"],
+  "impl_by_scene": {
+    "efficacy_recap_table": "efficacy_recap_table",
+    "summary_4col": "summary_4col"
+  },
+  "default_impl": "efficacy_recap_table",
+  "slots": ["chapter", "rows[{label,value|body}]", "columns[{header,items[]}]", "footer"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "row_card", "slot": "rows", "layout": "table"},
+    {"use": "note_bar", "slot": "footer"}
+  ],
+  "layout": {
+    "max_per_page": 6,
+    "adapt_n": "label | value table rows",
+    "notes": "efficacy_recap_table 左标签右正文；summary_4col 红头列+多行要点"
+  }
+}
