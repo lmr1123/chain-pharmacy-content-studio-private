@@ -26,7 +26,8 @@
     "assets/component-library/symptoms/registry.json",
     "assets/component-library/herbs/registry.json",
     "assets/component-library/medications/registry.json",
-    "assets/component-library/mechanisms/registry.json"
+    "assets/component-library/mechanisms/registry.json",
+    "assets/component-library/product-training-precautions/registry.json"
   ],
   "entrypoints": {
     "project_brief": "docs/project-brief.md",
@@ -47,6 +48,26 @@
     "query_tool": "scripts/query_production_library.py",
     "project_skill": "skills/pharmacy-template-replication/SKILL.md",
     "settled_templates": "production-library/templates/settled",
-    "template_validation": "production-library/validation"
+    "template_validation": "production-library/validation",
+    "style_tokens_root": "production-library/styles",
+    "component_recipe_pipeline": "docs/component-recipe-pipeline-architecture.md",
+    "page_type_growth_channel": "docs/page-type-growth-channel.md",
+    "page_type_proposal_schema": "production-library/schemas/page-type-proposal.schema.json",
+    "page_type_proposals_product_training": "production-library/page-types/product-training/proposals/",
+    "page_type_registry_product_training": "production-library/page-types/product-training/registry.json",
+    "style_pack_cream_red": "production-library/styles/lycopene-health-edu-cream-red-v1/tokens.json",
+    "style_pack_silk_yellow_red": "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json",
+    "courseware_pptx_engine": "production-library/engines/courseware-pptx-v1/export.mjs",
+    "courseware_pptx_engine_readme": "production-library/engines/courseware-pptx-v1/README.md",
+    "seedance_health_edu_mode": "docs/seedance-health-edu-video-mode.md",
+    "seedance_health_edu_meta_prompt": "production-library/templates/prompt-modes/seedance-health-edu-v1/meta-prompt.md",
+    "seedance_health_edu_scaffold": "scripts/scaffold_seedance_health_edu.py",
+    "jiugongge_health_edu_mode": "docs/jiugongge-health-edu-video-mode.md",
+    "jiugongge_health_edu_meta_prompt": "production-library/templates/prompt-modes/jiugongge-health-edu-v1/meta-prompt.md",
+    "jiugongge_health_edu_scaffold": "scripts/scaffold_jiugongge_health_edu.py",
+    "jiugongge_health_edu_compliance_mode": "docs/jiugongge-health-edu-compliance-mode.md",
+    "jiugongge_health_edu_compliance_meta_prompt": "production-library/templates/prompt-modes/jiugongge-health-edu-compliance-v1/meta-prompt.md",
+    "jiugongge_health_edu_compliance_scaffold": "scripts/scaffold_jiugongge_health_edu_compliance.py",
+    "digital_human_presenter_mode": "docs/digital-human-presenter-mode.md"
   }
 }

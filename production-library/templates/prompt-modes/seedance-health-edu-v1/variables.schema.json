@@ -1,0 +1,114 @@
+{
+  "mode_id": "seedance-health-edu-v1",
+  "title": "健康科普 Seedance 元提示词变量",
+  "description": "填满后写入 00-主题变量.json，再展开 meta-prompt 与 Seedance 分段提示词",
+  "required": ["theme", "target_audience", "core_pain"],
+  "properties": {
+    "theme": {
+      "type": "string",
+      "description": "主题一句话，如：暴雨天怎么安全出行"
+    },
+    "target_audience": {
+      "type": "string",
+      "description": "目标人群，如：家里有娃的爸妈 / 上班通勤族"
+    },
+    "tone_lighting": {
+      "type": "string",
+      "default": "冷暖对比，窗外冷蓝雨色与室内暖黄灯",
+      "description": "全局光影色调"
+    },
+    "physical_particles": {
+      "type": "string",
+      "default": "雨水、水雾、发丝与衣料被风拉扯",
+      "description": "强调的物理粒子/材质"
+    },
+    "character_a": {
+      "type": "object",
+      "properties": {
+        "age_gender": { "type": "string", "description": "如：三十出头女性" },
+        "outfit_color_block": { "type": "string", "description": "固定服装色块，如：明黄色雨衣+藏青围巾" }
+      }
+    },
+    "character_b": {
+      "type": "object",
+      "properties": {
+        "age_gender": { "type": "string" },
+        "outfit_color_block": { "type": "string", "description": "对比色服装" }
+      }
+    },
+    "core_scene": {
+      "type": "string",
+      "description": "主场景，如：城市小区玄关到街道"
+    },
+    "hook": {
+      "type": "object",
+      "properties": {
+        "core_env_element": { "type": "string" },
+        "pain_visual": { "type": "string" },
+        "pain_physics": { "type": "string" },
+        "core_pain_phrase": { "type": "string" },
+        "env_state_phrase": { "type": "string" }
+      }
+    },
+    "solution": {
+      "type": "object",
+      "properties": {
+        "medium": { "type": "string", "description": "手机/指引卡片等" },
+        "level_icons": { "type": "string" },
+        "level_a": { "type": "string" },
+        "level_b": { "type": "string" }
+      }
+    },
+    "deep_dive": {
+      "type": "object",
+      "properties": {
+        "high_risk_env": { "type": "string" },
+        "key_body_focus": { "type": "string" },
+        "material_interaction": { "type": "string" },
+        "hazard_a": { "type": "string" },
+        "hazard_b": { "type": "string" },
+        "relief_info": { "type": "string", "description": "免责/利好信息，生活向" }
+      }
+    },
+    "extreme": {
+      "type": "object",
+      "properties": {
+        "special_scene": { "type": "string" },
+        "extreme_situation": { "type": "string" },
+        "escape_path": { "type": "string" },
+        "extreme_physics": { "type": "string" },
+        "danger_name": { "type": "string" },
+        "correct_direction": { "type": "string" }
+      }
+    },
+    "wrapup": {
+      "type": "object",
+      "properties": {
+        "safe_env": { "type": "string" },
+        "art_text": { "type": "string", "default": "平安是福" },
+        "season_line": { "type": "string", "default": "平安过春天，咱公园见！" }
+      }
+    },
+    "publish": {
+      "type": "object",
+      "properties": {
+        "emotion_word": { "type": "string" },
+        "subject": { "type": "string" },
+        "crowd_tag": { "type": "string" },
+        "emoji": { "type": "string", "default": "🌧️" },
+        "forward_text": { "type": "string" }
+      }
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "default": "9:16",
+      "description": "默认视频号竖屏"
+    },
+    "segment_seconds": {
+      "type": "integer",
+      "default": 12,
+      "minimum": 4,
+      "maximum": 15
+    }
+  }
+}

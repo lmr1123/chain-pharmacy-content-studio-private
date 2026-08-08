@@ -56,6 +56,10 @@ python3 scripts/refresh_business_delivery.py
 | [`docs/workbuddy-system-prompt.md`](docs/workbuddy-system-prompt.md) | 代理系统提示词 |
 | [`docs/business-workbuddy-foolproof-delivery.md`](docs/business-workbuddy-foolproof-delivery.md) | 业务 WorkBuddy 傻瓜交付总案 |
 | [`production-library/templates/settled/`](production-library/templates/settled/) | 已签样正式模板 |
+| [`docs/digital-human-presenter-mode.md`](docs/digital-human-presenter-mode.md) | 真人数字人侧讲模式 |
+| [`docs/seedance-health-edu-video-mode.md`](docs/seedance-health-edu-video-mode.md) | 健康科普 Seedance（生活避险提示词） |
+| [`docs/jiugongge-health-edu-video-mode.md`](docs/jiugongge-health-edu-video-mode.md) | 九宫格原版（林医生） |
+| [`docs/jiugongge-health-edu-compliance-mode.md`](docs/jiugongge-health-edu-compliance-mode.md) | 九宫格合规版（无医疗） |
 
 ## 仓库边界
 

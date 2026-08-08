@@ -1,8 +1,423 @@
+
+## 构件化课件流水线（2026-08-07 用户拍板 · 交下一模型执行）
+
+> **方案文档：** `docs/component-recipe-pipeline-architecture.md`（先读，含现状盘点/坑位/验收）
+> **前置：** `AGENTS.md`、`docs/handover-user-intent-2026-08-07.md`、`docs/flexible-theme-quality-architecture.md`
+> **一句话：** 页型从整页硬编码降级为「金样构件 recipe 组合」，布局规则求解代替穷举板式，新形态走「提案→签样→注册」生长通道；麦金利脚本仅作验证料。
+> **纪律：** 金样回归贯穿 M2/M3（新引擎渲金样 content-model，QA 与 settled preview 并排一致才准推进）；cw4 旧导出器不动；open-kimi 对照 POC 已砍。
+
+### M1 风格数据化
+
+- [x] 1.1 注册 `styles/lycopene-health-edu-cream-red-v1/{tokens.json,design.md}`（康爱森实测值）
+- [x] 1.2 抽取 `styles/courseware-4-silk-yellow-red-v1/{tokens.json,design.md}`（cw4 导出器常量）
+- [x] 1.3 两套 style_pack 登记 `catalog.json` + `registries/styles.json`（2026-08-07 完成；query 可查 cream-red / silk-yellow）
+
+### M2 通用引擎 + 构件库
+
+- [x] 2.1 新建 `engines/courseware-pptx-v1/export.mjs`（`--model/--style/--recipes/--out/--assets`；artifact-tool 仓根绝对解析）
+- [x] 2.2 构件库 `components/*.mjs`（chapter_title/nav_pills/image_chain/data_stat/row_card/pack_slot/icon_bullet/audience_card/white_stage/note_bar/chrome_bg，只读 tokens）
+- [x] 2.3 布局规则模块（N 卡栅格/字号降档/拆页/图槽分支）
+- [x] 2.4 layer manifest 生成参数化（`--model/--out/--prefix`）
+- [x] 2.5 **验收闸：金样回归** — 15 页 PPTX 已导出 `…/out/engine-v1-gold.pptx`；对照 `pptx-qa` 目检
+- [x] 2.6 **培训字号** — style `scale_factor` silk 1.28 / cream 1.2；正文≥16pt（用户反馈字号过小）
+- [x] 2.7 **插图去底门禁** — `ensure_transparent_assets.py` + whitekey/check-alpha；插画强制透明，pack/photo 豁免
+- [x] 2.8 **用户目检通过**（2026-08-07：布局/字号/去底「可以了」）
+
+### M3 页型 recipe 化
+
+- [x] 3.1 registry 8+1 页型写 recipe（`page-types/product-training/recipes/*.json`）；`scene-type-map.json` 映射 cw4 12 scene type + 3 candidate；export 默认经 recipe 解析
+- [x] 3.2 新页型 candidate：`hook_pain_data`（chips+data_stat）/ `combination_guidance`（单页≤3 行卡）/ `precautions`（左编号+右 2×2）；registry status 已标
+- [x] 3.3 **验收闸：** 金样 15 页 recipe 全量导出 `out/engine-v1-gold-recipe.pptx` + QA 15 张；candidate QA：`m3-candidate-pages/out/qa/slide-*.png`
+- [x] 3.4 candidate 三页排版迭代（对齐/字号/暖米底/行内居中/等高栏）
+- [x] 3.5 **用户签样通过**（2026-08-08：「可以」）— hook_pain_data / combination_guidance / precautions
+
+### M4 生成器
+
+- [x] 4.1 `scripts/generate_courseware.py`（script→scene-plan 留痕→content-model→manifest→导出→QA 图）— 2026-08-08
+- [x] 4.2 硬校验：hidden 排除 / empty_cards / 文案只取自 script / 缺图带标签占位槽
+- [x] 4.3 `scripts/verify_text_provenance.py`（文本溯源 + 禁词表 0 命中；coverage 1.0）
+- **冒烟交付：** `production-library/validation/courseware/fuler-maikenli-lycopene-v1/m4-generator-out/`（12 页 silk + QA + provenance-report）
+- **命令：**
+  ```bash
+  python3 scripts/generate_courseware.py \
+    --script production-library/validation/courseware/fuler-maikenli-lycopene-v1/script.structured.json \
+    --style production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json \
+    --out-dir production-library/validation/courseware/fuler-maikenli-lycopene-v1/m4-generator-out
+  ```
+
+### M5 麦金利验证（先 5 页，后可全量 16 页）
+
+- [x] 5.1 5 页验证稿（cream-red）：cover / hook_pain_data / benefit_chain×1 / combination_guidance / precautions — 2026-08-08
+- [x] 5.2 4 张注意事项插画：whitekey+pad→check-alpha PASS→`assets/component-library/product-training-precautions/` + catalog 登记
+- [x] 5.3 QA：7 项清单 + montage + inspect 原生可编辑 — 见 `m5-validation-out/QA-REPORT.md`
+- [x] **用户目检签样通过**（2026-08-08：「没问题了」）— 含封面单行/章标正式化/combo 短场景/字号抬升返修
+- [ ] 5.4 可选：全量 16 页（页序见方案文档 §5）
+
+**交付：** `…/fuler-maikenli-lycopene-v1/m5-validation-out/`  
+**命令：**
+```bash
+python3 scripts/generate_courseware.py \
+  --script production-library/validation/courseware/fuler-maikenli-lycopene-v1/script.structured.json \
+  --style production-library/styles/lycopene-health-edu-cream-red-v1/tokens.json \
+  --out-dir production-library/validation/courseware/fuler-maikenli-lycopene-v1/m5-validation-out \
+  --page-filter 'cover,hook_pain_data,benefit_chain:1,combination_guidance,precautions' \
+  --name-suffix 'M5验证'
+```
+
+### L1 生长通道 / L2 内容入口
+
+- [x] L1 页型候选提案机制 + 签样流程文档化（2026-08-08）
+  - 手册：`docs/page-type-growth-channel.md`
+  - Schema：`production-library/schemas/page-type-proposal.schema.json`
+  - 提案目录 + M3 历史回填：`page-types/product-training/proposals/`
+  - 未做增强：生成器自动吐 proposal / CI 校验 / WorkBuddy 入口
+- [ ] L2 业务 Word/大纲 → script 半自动（AI 结构化+人审），对接输入契约四步流
+
+---
+
+## 健康科普九宫格 · 双版（2026-08-08）
+
+| | 原版 | 合规版无医疗 |
+|--|------|--------------|
+| ID | `jiugongge-health-edu-v1` | `jiugongge-health-edu-compliance-v1` |
+| 资产 | `prompt-modes/jiugongge-health-edu-v1/` | `…/jiugongge-health-edu-compliance-v1/` |
+| 总规 | `docs/jiugongge-health-edu-video-mode.md` | `docs/jiugongge-health-edu-compliance-mode.md` |
+| scaffold | `scaffold_jiugongge_health_edu.py` | `scaffold_jiugongge_health_edu_compliance.py` |
+| 业务包 | `10_健康科普九宫格模式/` | `11_健康科普九宫格合规版/` |
+
+### 已完成
+
+- [x] 原版资产恢复（林医生）+ 合规版独立落地（小林/Gem 指令）
+- [x] 双 scaffold 冒烟
+- [x] 双业务包 + AGENTS/workbuddy/catalog 路由
+
+### 验收
+
+- [x] 两版示例均可 scaffold
+- [ ] 业务真实主题各跑一轮
+
+---
+
+## 健康科普 Seedance 模式（2026-08-08 · 已接入）
+
+> **模式 ID：** `seedance-health-edu-v1`  
+> **定位：** 视频号生活科普 · 元提示词扩脚本 · 复制到 Seedance 2.0 / 即梦  
+> **非** 内部疾病科普 MG（`health-video-reference-tech-v1`）
+
+### 已完成
+
+- [x] 技术总规 `docs/seedance-health-edu-video-mode.md`
+- [x] 元提示词资产 `production-library/templates/prompt-modes/seedance-health-edu-v1/`
+- [x] scaffold 脚本 `scripts/scaffold_seedance_health_edu.py`（示例跑通 example-baoyu-bixian）
+- [x] 业务包 `09_健康科普Seedance模式/`（README / 口令 / 复核包 / 代理清单）
+- [x] 接入 AGENTS · workbuddy 系统提示 · 安装引导 · 口令卡 · catalog entrypoints
+
+### 验收
+
+- [x] 示例变量 → 五段可复制提示词 + 发布全家桶
+- [ ] 业务用真实主题跑通一轮（用户侧即梦出片）
+
+---
+
+## PPT + 数字人侧讲（方案 D · 2026-08-07 进度）
+
+> **支线：** 店长会 / 药师 IP / 对外科普 · **不替换** MG 金样视频  
+> **形态：** 全屏一张 PPT + 页内内容栏收窄 + 人像去底叠页前右侧  
+> **目录：** `production-library/validation/digital-human-ppt-presenter-poc-v1/`  
+> **交付说明：** 同目录 `DELIVERY.md`
+
+### 已锁定决策
+
+| 项 | 结论 |
+|----|------|
+| 产品 | PPT 讲解片，非 MG 替换 |
+| 构图 | 全屏 PPT；页内收窄内容栏（非左右分屏、非整页缩小） |
+| 生成 | 金样生成器 B 路径 `--presenter`，保留参课蓝样式 |
+| 画面引擎（前期） | **HeyGen API**（网页下载需付费 → 废弃为默认） |
+| 声音 | 本机 Qwen 克隆优先；禁止 HeyGen 再配音覆盖 |
+| 人像 IP | 站姿中国药师（白大褂）；**弃用**用户托腮证件照 |
+| **数字人用量** | **方案 C**：仅开场/关键页动口型；其余静帧药师+旁白（**非**全程 10 分钟） |
+
+### 已完成
+
+- [x] 方案评估：HeyGen 前期验证；本地 LivePortrait 后置  
+- [x] 构图对齐参考真人侧讲（页内收窄 + 人在页前）  
+- [x] 生成器 `build-editable.mjs --presenter`  
+  - 输出：`…/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_讲解安全版_v1.pptx`  
+  - 全宽金样 v3 **未覆盖**  
+- [x] 18 页 QA 静帧：`…/poc-v1/outputs/qa-presenter-v1/slide-*.png`  
+- [x] 第 3 页「疾病概览」口播稿：`inputs/script.md`  
+- [x] 站姿药师 IP 源图 + **rembg 去底**（棋盘格/叠 PPT 无色块挡字）  
+- [x] 第 3 页交付级静帧叠层：`outputs/enterprise-page03-presenter-composite.png`  
+- [x] 15s 样片旁白：`inputs/narration-15s.mp3`（~12s）  
+- [x] **用量锁定方案 C**（关键页动态 / 其余静帧）  
+- [x] 网页版操作指南：`HEYGEN-网页版操作指南.md`
+
+### 未完成 · 下次优先（→ **交 Codex · API 模式**）
+
+> **Handover：** `production-library/validation/digital-human-ppt-presenter-poc-v1/HANDOVER-for-codex.md`  
+> **状态：** `work/job-state.json` = `awaiting_heygen_api_key_then_15s_sample`  
+> **通道：** API only（网页下载付费 → 非默认）。脚本：`scripts/heygen_15s_sample.py`  
+> **阻塞：** 用户提供 `HEYGEN_API_KEY`（禁止写入仓库）
+
+- [ ] 用户 `export HEYGEN_API_KEY=...`  
+- [ ] 跑 `python3 scripts/heygen_15s_sample.py` → `outputs/sample-15s.mp4`  
+- [ ] 验收：声音=本机 `narration-15s.mp3`、口型/脸可接受（失败勿盲重试）  
+- [ ] 叠讲解安全第 3 页预览  
+- [ ] 确认关键动口型页（方案 C，总动态约 1～3 min）  
+- [ ] 方案 C 拼片 POC：1 动态 + 1 静帧 concat  
+- [ ] 可选：企业授权真人药师照；签样后再谈 settled/WorkBuddy  
+
+### 关键路径
+
+```bash
+# Codex 先读
+open production-library/validation/digital-human-ppt-presenter-poc-v1/HANDOVER-for-codex.md
+
+# API 15s 样片（需 Key）
+export HEYGEN_API_KEY='...'   # 用户提供，勿 commit
+cd production-library/validation/digital-human-ppt-presenter-poc-v1
+python3 scripts/heygen_15s_sample.py
+ls outputs/sample-15s.mp4
+```
+
+---
+
+## 灵活主题架构 + 麦金利引擎组装（2026-08-07）
+
+- [x] 产品方案入库（含「固定壳填槽=反模式」）
+- [x] 页型注册表 + style tokens + `assemble_product_training_pptx.py`
+- [x] 麦金利 v2：8 页独立 page_type（非金银花露 5 页填槽）
+- [x] v1 填槽归档 `archive-shell-fill-v1/`
+- [ ] 用户过目 v2；观感向绿系金样组件继续贴
+- [ ] 药师/合规终审；包装授权图
+- [ ] P1：第二 style 热切换 smoke
+
+交付：`…/fuler-maikenli-lycopene-v1/福尔麦金利_商品培训_引擎组装_v2.pptx`
+
+---
+
+## 番茄红素健康科普金样（2026-08-07）
+
+- [x] 参考 PPT 抽帧 + 文案/页型拆解
+- [x] content-model + style-pack（米白番茄红）
+- [x] 15 页型 PPTX 生成器 → `out/番茄红素_健康科普金样_v1.pptx`
+- [x] deck.json + 交互 HTML + Revideo 工程接线
+- [ ] 用户签样确认后迁 `templates/settled/`
+- [ ] 克隆 TTS 旁白 + timing 对齐（可选下一刀）
+- [ ] Remotion 页型级视觉加厚（图卡/柱图动画）
+
+路径：`production-library/validation/courseware/kangaisen-lycopene-health-edu-v1/`
+
+---
+
+## 交接快照（2026-08-07 · 暂停 · 下次续作）
+
+> **状态：今日停工记档，未 commit 要求；下次从本节读起。**  
+> 主线：**疾病科普 · 感冒主题 B 档（风热壳 + 段语言 + 主题包）**  
+> 并行线：PPT 动画讲解探索（见下方补丁，可后做）
+
+### 下次会话先读
+
+1. 本文件本节  
+2. 段语言人话版：`production-library/themes/health-segment-language-v1/段语言v1-人话版.html`  
+3. 感冒主题包：`production-library/themes/ganmao-cold-v1/README.md`  
+4. 当前成片：`outputs/business-video-runs/ganmao-cold-v1-med-tea-fix/感冒_疾病科普视频_v1.mp4`
+
+### 已完成（感冒 MG 线）
+
+| 项 | 状态 / 路径 |
+|----|-------------|
+| 段语言 v1 | `production-library/themes/health-segment-language-v1/language.json` + `style-brief.md` + 人话版 HTML |
+| 主题包生成器 | `scripts/build_health_theme_package.py` |
+| 感冒主题包 | `production-library/themes/ganmao-cold-v1/`（sections / screen / assets / review / approval） |
+| 过目门闸 | `approval.visuals_approved`；full 须 `--theme-package`；未批准 exit 2（已冒烟） |
+| 症状 **2 大组**（非硬套 3 组） | ①上呼吸道 ②咳嗽与全身；recipe 支持 N 组 |
+| 草药 N 卡 | 生姜+葱白 2 卡；`reference-treatment-project.tsx` 已改 N 自适应 |
+| 调理收尾茶图 | 主题驱动 `recipe_tea_image`；感冒用 `ginger-scallion-tea-v1.png`（**不再**桑菊薄荷茶） |
+| 用药段 | **文案提醒卡**（对症选用 / 勿叠加），**无**风热银翘/连花包装示意 |
+| 最新成片 | `outputs/business-video-runs/ganmao-cold-v1-med-tea-fix/感冒_疾病科普视频_v1.mp4`（~31MB） |
+| QA 帧 | 同目录 `qa/medication-cards.png`、`qa/treatment-tea-cup.png` |
+| 环境/课件3 胶水等 | 见下文 2026-08-06 P0 快照（已勾完） |
+
+### 架构共识（已对齐用户，勿回退）
+
+- **主路径**：风格壳 + 段 recipe + 主题填槽（文案/图/声）；**不是**每主题自由重做版式。  
+- **同风格可略调**：如症状 2 组、草药 2 卡、用药 text-only。  
+- **不会**因业务任意结构自动生成全新排版；结构不对 → 新 recipe / 新金样或记 gap。  
+- **医学**：推荐用药只能进框架草稿，**须药师/合规终审**；无授权不仿包装。
+
+### 未完成 · 下次优先（续作清单）
+
+- [ ] **P0 推荐用药（用户已问「按框架给推荐用药」）**  
+  - 待拍板：A 对症分类 / B 风寒风热+公司目录品名 / C 只套审核终稿  
+  - 待拍板：能否出具体药名；段标题「推荐用药思路」vs「门店用药提醒」  
+  - 草稿方案已在对话中给出；确认后写入 `ganmao-cold-v1/screen.json` 的 `medication_cards` + 旁白，重渲 medication（可只渲该段+concat）  
+- [ ] 用户再过目最新成片（用药/姜葱茶）是否满意；不满意继续返修  
+- [ ] 可选：生活建议首条「注意休息」图是否改得更贴（现用 fatigue 人像）  
+- [ ] 可选：机制层外感动态资产是否接受（仍复用 wind-heat-dynamic，已声明须过目）  
+- [ ] 健康 full 批量：第二真实主题；`visual-coverage` 业务可读  
+- [ ] 课件4 换主题 merge 仍未接线；P1-3 业务机真人第二主题  
+
+### 关键命令（续作）
+
+```bash
+cd ~/Projects/chain-pharmacy-content-studio
+
+# 主题包 / 过目
+open production-library/themes/ganmao-cold-v1/review.html
+open production-library/themes/health-segment-language-v1/段语言v1-人话版.html
+
+# 看当前成片
+open outputs/business-video-runs/ganmao-cold-v1-med-tea-fix/感冒_疾病科普视频_v1.mp4
+
+# 全量重渲（改 screen/旁白后）
+.venv-qwen-tts/bin/python scripts/generate_business_video.py \
+  --template health \
+  --theme-package production-library/themes/ganmao-cold-v1 \
+  --with-tts --with-mp4 \
+  --slug ganmao-cold-next
+
+# 重建主题包（慎用：会按 sections 重算分组，可能冲掉手改 2 组/用药卡）
+# python3 scripts/build_health_theme_package.py --theme 感冒 \
+#   --sections-json production-library/themes/ganmao-cold-v1/sections.source.json \
+#   --out-dir production-library/themes/ganmao-cold-v1
+```
+
+### 改过的工程点（返修时别丢）
+
+- `poc/gold-sample/src/reference-symptoms-project.tsx` — N 组居中+高亮  
+- `poc/gold-sample/src/reference-treatment-project.tsx` — N 草药卡；`recipe_tea_image`  
+- `poc/gold-sample/src/reference-medication-advice-project.tsx` — `medication_cards` 文案卡  
+- `poc/gold-sample/src/components/reference-courseware-cards.tsx` — 无包装 text-only  
+- `scripts/business_video_health_full.py` — theme-package + approval 门闸 + 资产注入  
+- `scripts/generate_business_video.py` — `--theme-package`  
+- `scripts/build_health_theme_package.py` — 默认 max_symptom_groups=2  
+
+### 用户原话停工点（2026-08-07）
+
+> 先记录下进度，今天没时间迭代，下次再搞。  
+> 上次开放问题：用药推荐按框架怎么给（待选 A/B/C）。
+
+---
+
+## 交接快照补丁（2026-08-07 · PPT 动画讲解线 · 探索暂停待续）
+
+> **状态：记档暂停，后续再迭代。** 完整探索结论见  
+> `docs/ppt-animated-explain-line.md` **§0 探索记档**（若文件存在）。
+
+- [x] 方案/POC 方向（与金样 MG **并行**）
+- [ ] **续作**：加厚感冒 PPT 信息量 → 页模型 → 再渲动画（优先级低于上面 MG 用药收口）
+
+## 交接快照补丁（2026-08-06 · 感冒主题 B 档主链 · 已并入顶部）
+
+- 段语言 / 主题包 / 门闸 / 2 组症状 / 姜葱茶 / 用药文案卡 / 成片路径：见 **2026-08-07 暂停快照**
+
 # 业务 WorkBuddy 傻瓜交付 · 持续迭代
 
 > **总案**：`docs/business-workbuddy-foolproof-delivery.md`  
 > **新会话先读**：本文件「交接快照」→ `docs/workbuddy-install-and-guide.md` → `docs/workbuddy-system-prompt.md`  
 > **协作模型**：业务 + WorkBuddy · 对话出片（非四步 Word 上传）
+
+---
+
+## 交接快照（2026-08-06 · 对齐承诺 + 真交付）
+
+### 仓库
+
+| 项 | 状态 |
+|----|------|
+| GitHub | **Public** · https://github.com/lmr1123/chain-pharmacy-content-studio |
+| 分支 | `main` · HEAD 约 `41bf570`（课件3/4 v2 已归档） |
+| 业务首句 | `请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用` |
+| bootstrap | `scripts/workbuddy_bootstrap_for_business.py` |
+| 引导页 | `outputs/业务使用资料包/药店培训内容工厂-业务包/index.html` |
+| settled | **7** 套 · 均 `production_ready` |
+
+### 业务路径（对外只讲三步 · 已锁定）
+
+```text
+① 看模板（引导页预览 + 选用）
+② 输入培训内容（聊天说要点；代理内部整理再出片）
+③ 下载与修改（PPT / 视频成品路径；或指令批量改）
+```
+
+**禁止对业务说**：解压 zip、先出初稿再确认、四步 Word/上传区、正常单「请找制作」。
+
+### 已验证能力
+
+| 线 | 状态 |
+|----|------|
+| PPT · 业务机 WorkBuddy 真人绿线 | ✅ 绿色单品等 |
+| 视频 · 商品 full 分段重渲 | ✅ 示例舒心片 |
+| 视频 · 疾病科普 full | ✅ intro「风寒证」冒烟 |
+| 视频金样包 · 风热 + Q10 | ✅ user-approved-gold |
+| 课件3/4 · 视频 v2 金样 | ✅ 2026-08-05/06 归档 canonical |
+
+### 阶段目标（本轮 · 2026-08-06）
+
+> **单一目标：** 业务对 7 套 settled 稳定换主题交付；PPT 全绿；课件3 至少 PPTX 绿；有 TTS 环境再出 MP4；缺口诚实降级。
+
+### 计划（可勾选）
+
+#### P0 · 对齐承诺与事实
+
+- [x] **P0-1** 课件3/4 PPTX 跟视频 v2 同源导出 → 写入 settled 为 `*_可编辑课件_v2.pptx`；manifest/catalog 去掉「版式落后」
+  - 验证：导出成功；关键资产（课件3 ribbon / 课件4 暖调插画）进 PPT；settled + catalog 同步
+- [x] **P0-2** 课件3 WorkBuddy 胶水闭环（`replicate_courseware_theme` 业务入口 + 系统提示）
+  - 验证：theme 包 → PPTX + gap-report；`--skip-tts` 冒烟通过
+- [x] **P0-3** 环境探测 + 诚实降级（Qwen3-TTS / ffmpeg / node）
+  - 验证：`probe_production_env.py`；无 TTS 时明确「PPT 已交付、视频待环境」
+- [x] **P0-4** 系统提示/文档收口（强制 voice_id、视频三步示例、课件3 句式）
+  - 验证：`docs/workbuddy-system-prompt.md` 与 install 开场白一致
+
+#### P1 · 真题压测（制作机可自动部分）
+
+- [x] **P1-1** 课件3 demo 主题 replicate 冒烟（`--skip-tts`）产出 PPTX+gap
+- [x] **P1-2** 商品视频 full 规划包冒烟（可不 TTS）
+- [ ] **P1-3** 文档：真实第二主题清单留给业务机真人跑
+
+#### P2 · 硬化
+
+- [x] **P2-1** 课件4 统一 CLI 入口族（`--export-gold-pptx` 已通；**换主题 merge 仍未接线**）
+- [x] **P2-2** 强制 manifest.voice_id 写入交付 status
+- [x] **P2-3** todo 历史归档说明（本文件以下保留历史 Review，新会话只读顶部）
+
+### 明确延后
+
+- 健康视频按病种换机理插画 · 可可康 settled · Gitee/在线货架 · 编辑器/剪映增量 · 批量队列
+
+### 阶段 DoD
+
+1. 业务只说三步，不碰 theme/npm  
+2. 课件3 换主题至少 **PPTX + gap-report**  
+3. 有 voice 环境再 MP4；无环境诚实降级  
+4. 无假包装、无系统 TTS  
+5. 制作机冒烟 + 文档同步  
+
+### 关键命令
+
+```bash
+cd ~/Projects/chain-pharmacy-content-studio
+git pull --ff-only
+python3 scripts/workbuddy_bootstrap_for_business.py
+python3 scripts/probe_production_env.py
+# 课件3 换主题
+python3 scripts/generate_business_courseware.py --template courseware3 --theme … --skip-tts
+# 纯视频
+python3 scripts/generate_business_video.py --template product --sections-json … --with-tts --with-mp4
+```
+
+---
+
+## Review · 本轮（进行中）
+
+- 计划写入：2026-08-06  
+- 执行顺序：P0-1 → P0-2 → P0-3 → P0-4 → P1 → P2  
+
+---
+
+# 历史交接与任务归档（以下只读，勿当当前主线）
 
 ---
 

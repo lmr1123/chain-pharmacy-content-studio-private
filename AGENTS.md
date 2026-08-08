@@ -74,6 +74,48 @@ When business says 数字人模式 / 真人数字人侧讲 / 方案 C:
 4. Entry: `docs/digital-human-presenter-mode.md`  
    Business pack: `outputs/业务使用资料包/药店培训内容工厂-业务包/08_数字人侧讲模式/`
 
+### Seedance health-edu video mode (prompt-only)
+
+When business says Seedance 科普 / 生活避险科普 / 扁平头部五拍 / 元提示词生活科普
+（若只说「健康科普视频」且未指明，先问：九宫格林医生线 or Seedance 生活避险线）:
+
+1. **Not** the internal 疾病科普视频 Remotion line (`health-video-reference-tech-v1`).
+2. Expand theme via meta-prompt variables → deliver **《科普脚本复核包》** first.
+3. After explicit「脚本通过 / 可以出 Seedance 提示词」: write segmented Seedance 2.0 prompts
+   (≤15s each) + 视频号 publish pack (title / disclaimer / forward text).
+4. Default deliverable = **copy-paste prompts only**; do not call user-paid video APIs
+   unless business explicitly asks and confirms cost.
+5. Compliance: no white coat, no medical devices, no pathology jargon — lifestyle /
+   environment safety / emotion regulation only; always include disclaimer.
+6. Entry: `docs/seedance-health-edu-video-mode.md`  
+   Meta-prompt: `production-library/templates/prompt-modes/seedance-health-edu-v1/`  
+   Scaffold: `python3 scripts/scaffold_seedance_health_edu.py --vars <json>`  
+   Business pack: `outputs/业务使用资料包/药店培训内容工厂-业务包/09_健康科普Seedance模式/`
+
+### Jiugongge health-edu — two parallel modes
+
+| 业务说法 | 模式 ID | 角色 | 医疗元素 |
+|----------|---------|------|----------|
+| 九宫格原版 / 林医生王大爷 | `jiugongge-health-edu-v1` | 林医生+王大爷 | 卡通诊室/白大褂允许 |
+| 九宫格合规版 / 无医疗 | `jiugongge-health-edu-compliance-v1` | 小林+受众 | **严禁**医生医院器材病名话术 |
+
+**A. 原版** (`docs/jiugongge-health-edu-video-mode.md`)
+
+1. Theme + 1–3 knowledge points → 六段口播复核 → 确认后三视图+六段提示词+发布包  
+2. Scaffold: `python3 scripts/scaffold_jiugongge_health_edu.py --vars <json>`  
+3. Assets: `production-library/templates/prompt-modes/jiugongge-health-edu-v1/`  
+4. Business: `10_健康科普九宫格模式/`
+
+**B. 合规版无医疗** (`docs/jiugongge-health-edu-compliance-mode.md`)
+
+1. Theme + audience + habit points → 脱敏+口播复核 → 确认后资产+英九宫格/视频+发布全家桶  
+2. 红线 0 命中：医生/白大褂/医院/诊室/器材/预防治疗缓解/病名  
+3. Scaffold: `python3 scripts/scaffold_jiugongge_health_edu_compliance.py --vars <json>`  
+4. Assets: `production-library/templates/prompt-modes/jiugongge-health-edu-compliance-v1/`  
+5. Business: `11_健康科普九宫格合规版/`
+
+Both: not Seedance 五拍；not disease Remotion MG；default copy-paste prompts only.
+
 ## Product PPT courseware: guide business in four steps
 
 When extending a settled product courseware template (e.g. green 金银花露):

@@ -1,0 +1,59 @@
+{
+  "mode_id": "seedance-health-edu-v1",
+  "theme": "暴雨天怎么安全出行、别硬冲",
+  "target_audience": "有娃的爸妈、上班通勤族",
+  "tone_lighting": "冷暖对比：窗外冷蓝暴雨与玄关暖黄灯光",
+  "physical_particles": "密集雨水、水雾、湿发丝、鞋底打滑水膜",
+  "character_a": {
+    "age_gender": "三十出头女性",
+    "outfit_color_block": "明黄色雨衣 + 藏青围巾"
+  },
+  "character_b": {
+    "age_gender": "十岁左右男孩",
+    "outfit_color_block": "天蓝色冲锋衣 + 红色书包"
+  },
+  "core_scene": "城市小区玄关到湿滑街道",
+  "hook": {
+    "core_env_element": "窗外瓢泼雨帘与积水反光",
+    "pain_visual": "孩子背着书包想冲出门外，地面水花四溅",
+    "pain_physics": "风掀雨披边角，脚底在瓷砖积水上微微打滑",
+    "core_pain_phrase": "暴雨天硬出门",
+    "env_state_phrase": "外面又湿又滑还看不清路"
+  },
+  "solution": {
+    "medium": "手机天气预警界面",
+    "level_icons": "红橙黄三级天气提示图标，红光脉动",
+    "level_a": "红色预警：先别出门",
+    "level_b": "橙色预警：能推迟就推迟，必须出门再全副武装"
+  },
+  "deep_dive": {
+    "high_risk_env": "狂风吹动的街道，积水漫过马路牙子",
+    "key_body_focus": "脚部绕开深积水，手扶稳栏杆，远离大树与广告牌",
+    "material_interaction": "雨水沿雨披滑落，风拉扯金属广告牌发出吱呀声",
+    "hazard_a": "深积水坑",
+    "hazard_b": "摇晃的大树和广告牌",
+    "relief_info": "学校临时调整到课时间也不算「耽误」，安全到了最重要"
+  },
+  "extreme": {
+    "special_scene": "郊外低洼河道旁的步道",
+    "extreme_situation": "上游来水变急、岸边泥土松动的危险感（生活向示意，非灾情播报）",
+    "escape_path": "向两侧高处撤离，绝不顺着水流方向跑",
+    "extreme_physics": "湍急水流体积感、泥沙翻涌",
+    "danger_name": "突发急流和塌岸迹象",
+    "correct_direction": "两侧地势更高的安全处"
+  },
+  "wrapup": {
+    "safe_env": "雨停后的小区花园小径，地面微湿反光",
+    "art_text": "平安是福",
+    "season_line": "平安过雨季，咱公园见！"
+  },
+  "publish": {
+    "emotion_word": "别硬冲",
+    "subject": "暴雨出行避险",
+    "crowd_tag": "有娃家庭必看",
+    "emoji": "🌧️🌀",
+    "forward_text": "@家里人，这个暴雨避险视频讲得很清楚，为了全家安全，花 1 分钟看看。"
+  },
+  "aspect_ratio": "9:16",
+  "segment_seconds": 12
+}

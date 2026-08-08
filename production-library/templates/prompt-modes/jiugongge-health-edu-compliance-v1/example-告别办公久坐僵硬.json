@@ -1,0 +1,28 @@
+{
+  "mode_id": "jiugongge-health-edu-compliance-v1",
+  "theme_raw": "告别办公久坐僵硬 / 颈椎腰椎",
+  "theme": "久坐一会儿就发紧？居家也能做的放松小习惯",
+  "compliance_transform": "不谈颈椎病/治疗/缓解；只谈久坐后身体发紧的现象，以及站起来、扶稳椅子活动肩颈的生活习惯与工位环境摆放。",
+  "audience": "职场人",
+  "style_key": "极简扁平",
+  "style_en": "Minimalist 2D vector flat illustration",
+  "habit_points": [
+    "坐满一阵就站起来，手扶稳椅背缓缓转肩",
+    "屏幕略降到平视，肩膀自然下沉",
+    "午后到窗边看看远处，慢慢深呼吸几下"
+  ],
+  "extra_notes": "全部动作坐稳或扶稳；无医疗器材；片尾情感联结非分享按钮",
+  "aspect_ratio": "9:16",
+  "xiaolin_outfit_en": "casual light blue office shirt, chinos, soft indoor shoes, green crossbody bag",
+  "audience_character": {
+    "age_gender_en": "a friendly 32-year-old Chinese office woman",
+    "outfit_en": "simple blouse and trousers, indoor soft shoes"
+  },
+  "environment_en": "bright modern home office corner with desk, sturdy chair, window with soft daylight, indoor plant, no hospital, no clinic",
+  "ending_chinese_text": "歇一歇再出发",
+  "publish": {
+    "title": "坐久了发紧？3个居家小习惯，扶稳椅子就能做",
+    "body": "家人们，久坐一会儿肩颈发紧很常见。今天只聊生活习惯：扶稳椅子转肩、屏幕平视、看看远处。纯生活经验分享，不是医疗建议。觉得有用转给身边久坐的朋友。",
+    "hashtags": ["久坐习惯", "居家小妙招", "职场生活", "生活常识", "咱公园见"]
+  }
+}

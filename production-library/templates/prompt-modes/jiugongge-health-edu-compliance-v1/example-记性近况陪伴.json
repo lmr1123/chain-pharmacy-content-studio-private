@@ -1,0 +1,28 @@
+{
+  "mode_id": "jiugongge-health-edu-compliance-v1",
+  "theme_raw": "阿尔茨海默病早期筛查",
+  "theme": "记性变差、熟悉的路走岔了？和家人多聊聊近况的小习惯",
+  "compliance_transform": "不出现病名、筛查、诊断、医院、医生；只谈生活现象与家庭陪伴习惯，不做诊疗表述。",
+  "audience": "中老年",
+  "style_key": "3D动画",
+  "style_en": "3D Pixar style",
+  "habit_points": [
+    "发现总叫错熟人名字，先不责备，温和记一记近况变化",
+    "出门结伴、路线简单记在小本本上",
+    "脾气突然变冲时，先安静陪坐，改天再慢慢聊"
+  ],
+  "extra_notes": "禁医生白大褂医院诊室；禁预防治疗缓解",
+  "aspect_ratio": "9:16",
+  "xiaolin_outfit_en": "warm casual cardigan over soft shirt, comfortable pants, green crossbody bag",
+  "audience_character": {
+    "age_gender_en": "a kind 68-year-old Chinese grandfather",
+    "outfit_en": "beige cotton shirt, dark casual pants, brown cloth shoes"
+  },
+  "environment_en": "cozy living room with soft afternoon light, wooden table, sturdy chairs, window plants, no hospital, no clinic",
+  "ending_chinese_text": "咱公园见！",
+  "publish": {
+    "title": "总叫错名字、熟悉的路走岔了？先和家人好好聊聊",
+    "body": "家人们，记性变差、熟悉的路走岔、脾气突然变冲，先别吓自己。今天只聊陪伴和居家小习惯，纯生活经验分享，非医疗建议。",
+    "hashtags": ["家庭陪伴", "生活习惯", "中老年生活", "邻里聊天", "咱公园见"]
+  }
+}
