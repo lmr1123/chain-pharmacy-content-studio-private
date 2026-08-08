@@ -15,6 +15,7 @@ from pathlib import Path
 
 PRIVATE_REPOSITORY = "lmr1123/chain-pharmacy-content-studio-private"
 DEFAULT_TARGET_NAME = "chain-pharmacy-content-studio-private"
+CLONE_ATTEMPTS = 2
 OFFICIAL_ORIGINS = {
     "https://github.com/lmr1123/chain-pharmacy-content-studio-private",
     "https://github.com/lmr1123/chain-pharmacy-content-studio-private.git",
@@ -61,6 +62,40 @@ def _official_origin(root: Path) -> bool:
     except (OSError, subprocess.TimeoutExpired):
         return False
     return result.returncode == 0 and result.stdout.strip() in OFFICIAL_ORIGINS
+
+
+def _clone_private(staging: Path) -> bool:
+    command = [
+        "gh",
+        "repo",
+        "clone",
+        PRIVATE_REPOSITORY,
+        str(staging),
+        "--",
+        "-c",
+        "http.version=HTTP/1.1",
+        "--depth",
+        "1",
+        "--single-branch",
+        "--no-tags",
+    ]
+    for attempt in range(CLONE_ATTEMPTS):
+        _remove_staging(staging)
+        cloned = _gh(command, timeout=1800)
+        bootstrap = staging / "scripts/workbuddy_bootstrap_for_business.py"
+        if (
+            cloned.returncode == 0
+            and (staging / ".git").is_dir()
+            and bootstrap.is_file()
+            and _official_origin(staging)
+        ):
+            return True
+        if attempt + 1 < CLONE_ATTEMPTS:
+            print(
+                "Private 下载未完成，正在通过 GitHub 官方地址清理后重试…",
+                file=sys.stderr,
+            )
+    return False
 
 
 def _handoff(
@@ -168,30 +203,12 @@ def install(
             requirements=requirements,
         )
 
-    staging = Path(
+    staging_parent = Path(
         tempfile.mkdtemp(prefix=f".{target.name}.install-", dir=str(target.parent))
     )
+    staging = staging_parent / "checkout"
     try:
-        cloned = _gh(
-            [
-                "gh",
-                "repo",
-                "clone",
-                PRIVATE_REPOSITORY,
-                str(staging),
-                "--",
-                "--depth",
-                "1",
-            ],
-            timeout=1800,
-        )
-        bootstrap = staging / "scripts/workbuddy_bootstrap_for_business.py"
-        if (
-            cloned.returncode != 0
-            or not (staging / ".git").is_dir()
-            or not bootstrap.is_file()
-            or not _official_origin(staging)
-        ):
+        if not _clone_private(staging):
             print(
                 "私有生产仓库下载或完整性检查失败，未留下半成品。",
                 file=sys.stderr,
@@ -202,7 +219,7 @@ def install(
             return 5
         os.replace(staging, target)
     finally:
-        _remove_staging(staging)
+        _remove_staging(staging_parent)
 
     print(f"私有生产仓库已安全安装：{target}")
     return _handoff(

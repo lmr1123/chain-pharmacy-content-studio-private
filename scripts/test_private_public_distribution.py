@@ -207,8 +207,13 @@ class PublicInstallerTests(unittest.TestCase):
             self.assertTrue((target / ".git").is_dir())
             clone_call = next(call for call in calls if call[:3] == ["gh", "repo", "clone"])
             self.assertEqual(clone_call[3], self.module.PRIVATE_REPOSITORY)
-            self.assertEqual(Path(clone_call[4]).parent.resolve(), target.parent.resolve())
+            self.assertEqual(
+                Path(clone_call[4]).parent.parent.resolve(), target.parent.resolve()
+            )
             self.assertFalse(any("proxy" in part.lower() for part in clone_call))
+            self.assertIn("http.version=HTTP/1.1", clone_call)
+            self.assertIn("--single-branch", clone_call)
+            self.assertIn("--no-tags", clone_call)
             self.assertTrue(any(call[:2] == ["git", "-C"] for call in calls))
             self.assertTrue(gh_environments)
             self.assertTrue(
@@ -224,6 +229,58 @@ class PublicInstallerTests(unittest.TestCase):
             self.assertEqual(Path(handoff[target_index]).resolve(), target.resolve())
             leftovers = list(target.parent.glob(f".{target.name}.install-*"))
             self.assertEqual(leftovers, [])
+
+    def test_interrupted_clone_retries_once_from_clean_official_staging(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "production"
+            clone_calls: list[list[str]] = []
+
+            def fake_run(command, **_kwargs):
+                command = [str(item) for item in command]
+                if command[:3] == ["gh", "auth", "status"]:
+                    return self.completed(command)
+                if command[:3] == ["gh", "repo", "view"]:
+                    return self.completed(
+                        command,
+                        stdout=json.dumps(
+                            {
+                                "nameWithOwner": self.module.PRIVATE_REPOSITORY,
+                                "visibility": "PRIVATE",
+                            }
+                        ),
+                    )
+                if command[:3] == ["gh", "repo", "clone"]:
+                    clone_calls.append(command)
+                    clone_root = Path(command[4])
+                    if len(clone_calls) == 1:
+                        clone_root.mkdir(parents=True)
+                        (clone_root / "partial").write_text(
+                            "interrupted", encoding="utf-8"
+                        )
+                        return self.completed(command, 1, stderr="early EOF")
+                    self.assertFalse((clone_root / "partial").exists())
+                    (clone_root / ".git").mkdir(parents=True)
+                    bootstrap = clone_root / "scripts/workbuddy_bootstrap_for_business.py"
+                    bootstrap.parent.mkdir(parents=True)
+                    bootstrap.write_text("# private\n", encoding="utf-8")
+                    return self.completed(command)
+                if command[:2] == ["git", "-C"]:
+                    return self.completed(
+                        command,
+                        stdout=(
+                            "https://github.com/lmr1123/"
+                            "chain-pharmacy-content-studio-private.git\n"
+                        ),
+                    )
+                return self.completed(command)
+
+            with mock.patch.object(self.module.subprocess, "run", side_effect=fake_run):
+                result = self.module.install(target, no_open=True)
+
+            self.assertEqual(result, 0)
+            self.assertEqual(len(clone_calls), 2)
+            self.assertTrue((target / ".git").is_dir())
+            self.assertEqual(list(target.parent.glob(f".{target.name}.install-*")), [])
 
     def test_auth_or_access_failure_leaves_no_partial_target_and_redacts_output(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
