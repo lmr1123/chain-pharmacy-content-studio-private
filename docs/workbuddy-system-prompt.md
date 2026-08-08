@@ -52,7 +52,7 @@
 事实源：production-library/business-routes.json
 命令：python3 scripts/business_job.py
 - 构件化商品培训 PPT（默认）：new --route product-pptx-component-v1 → draft → approve --gate content → render
-- 绿色单品 PPT（兼容）：new --route product-pptx-green-v1 → draft → approve --gate content → render
+- 绿色单品 PPT：已下线，勿新建任务；请改用 product-pptx-component-v1
 - 商品培训完整 MP4：new --route product-mp4-full-v1 → draft → approve content + product_image → render
 - 状态/取件：status / open --job <id>；失败：retry
 - 禁止对业务念 route_id / python；只给中文状态和下一步
@@ -227,7 +227,7 @@ approval.json → 同命令追加 `--release --approval <approval.json>`；禁�
 | 疾病科普视频（如风热证） | `health-video-reference-tech-v1` |
 | 商品培训视频（如辅酶 Q10） | `product-video-faithful-v1` |
 | 构件化商品培训 PPT（默认主路径） | `product-courseware-component-v1` |
-| 绿色单品 PPT（兼容，如金银花露） | `product-courseware-green-v1` |
+| 绿色单品 PPT（已下线） | `product-courseware-green-v1`（勿新建；改用 component） |
 | 疾病+商品场景 PPT（如穿心莲） | `disease-product-scenario-v1` |
 | 疾病健康知识培训 PPT（参课蓝） | `disease-health-shenke-blue-v1` |
 | 商品培训课件3（视频+PPT，速福达壳） | `sufuda-mabaloshawei-product-courseware-3-v1` |

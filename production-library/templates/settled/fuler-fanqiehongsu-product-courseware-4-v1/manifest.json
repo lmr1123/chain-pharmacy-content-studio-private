@@ -121,7 +121,7 @@
       "courseware4 换主题 adapter"
     ],
     "blockers": [
-      "课件4 整片专用导出器仅金样预览；新主题请走 product-pptx-component-v1（构件 recipe 主路径）"
+      "课件4整片导出器换主题未接线；新主题请走 product-pptx-component-v1（构件 recipe 主路径）"
     ],
     "production_ready": false,
     "status_label": "仅金样预览 · 换主题入口待接线",

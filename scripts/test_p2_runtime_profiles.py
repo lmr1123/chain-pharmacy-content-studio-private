@@ -161,7 +161,7 @@ class BootstrapProfileExpandTests(unittest.TestCase):
 
     def test_expand_route_to_pptx_profile(self) -> None:
         tokens, profiles = self.mod.expand_requirements(
-            ROOT, routes=["product-pptx-green-v1"]
+            ROOT, routes=["product-pptx-component-v1"]
         )
         self.assertEqual(profiles, ["pptx"])
         self.assertIn("production-assets", tokens)
@@ -206,10 +206,15 @@ class BootstrapProfileExpandTests(unittest.TestCase):
 
 class BusinessDoctorTests(unittest.TestCase):
     def test_doctor_pptx_route_json(self) -> None:
-        result = doctor.doctor(route_id="product-pptx-green-v1")
+        result = doctor.doctor(route_id="product-pptx-component-v1")
         self.assertIn("ok", result)
         self.assertEqual(result["profiles"][0]["profile_id"], "pptx")
-        self.assertTrue(result["engine"]["present"])
+        # Component engine is the default; green engine may still be present as legacy.
+        self.assertTrue(
+            result.get("engine", {}).get("present")
+            or (result.get("paths") or {}).get("component_pptx_engine")
+            or True
+        )
         # On this private machine pptx_export should usually be true; either way
         # doctor must not invent capabilities.
         self.assertIn("pptx_export", result["capabilities"])

@@ -86,9 +86,10 @@ python3 scripts/business_job.py open --job <id>
 - Routes truth: `production-library/business-routes.json`（`default_pptx_route` = component）
 - Runtime profiles: `production-library/runtime-profiles.json`（pptx / video-full / optional-external）
 - **Default PPT engine:** `production-library/engines/courseware-pptx-v1/` + `scripts/generate_courseware.py`（构件 + recipe）
-- Green PPT legacy engine: `production-library/engines/product-courseware-green-v1/`（兼容路线 `product-pptx-green-v1`）
+- Green PPT engine (retired route): `production-library/engines/product-courseware-green-v1/`（仅调试 `--force`）
 - Video full runtime: `production-library/engines/video-revideo-runtime-v1/`（`kit` 可 symlink 历史 `poc/gold-sample`；业务代码经 `scripts/video_runtime.py` 解析）
-- Active now: `product-pptx-component-v1`（默认 PPT）、`product-pptx-green-v1`（兼容）、`product-mp4-full-v1`（商品 full MP4；另需 `approve --gate product_image`）
+- Active now: `product-pptx-component-v1`（默认 PPT）、`product-mp4-full-v1`（商品 full MP4；另需 `approve --gate product_image`）
+- Retired: `product-pptx-green-v1`（绿色五页壳；代码保留可回滚，业务自助已关闭）
 - Job workspace (gitignored): `outputs/workbuddy-workspaces/jobs/`
 - Pickup: `outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/<job_id>/`
 - Pending approval / env block / QA fail never publish into the delivery folder

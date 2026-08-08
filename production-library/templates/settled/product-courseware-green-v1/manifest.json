@@ -23,7 +23,7 @@
     "3-review-content-draft",
     "4-generate-pptx-after-draft-approval"
   ],
-  "notes": "五页绿色商品培训可编辑模板（2026-08-04 视觉升级 v2：token GREEN_DEEP/MINT/PALE/INK/MUTED/LINE、圆角 chrome、表头深绿、微软雅黑字体注入；与穿心莲 courseware2 视觉体系对齐）。标准用法见 业务使用流程.md。联合用药页：联合商品图按行独立 + 本品图纵向合并。前后对比与迭代产物见 validation/upgrade-v2。",
+  "notes": "五页绿色商品培训可编辑模板（2026-08-04 视觉升级 v2：token GREEN_DEEP/MINT/PALE/INK/MUTED/LINE、圆角 chrome、表头深绿、微软雅黑字体注入；与穿心莲 courseware2 视觉体系对齐）。标准用法见 业务使用流程.md。联合用药页：联合商品图按行独立 + 本品图纵向合并。前后对比与迭代产物见 validation/upgrade-v2。 2026-08-09：业务自助下线，保留引擎与金样可回滚。",
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [
@@ -41,28 +41,30 @@
       "注意事项"
     ],
     "gallery_title_zh": "绿色商品培训 · 5 页",
-    "one_liner": "五页绿色固定壳（兼容）：介绍/卖点/人群 · 联合 · 对标 · 注意",
-    "name_zh": "绿色单品 PPT（如金银花露）",
+    "one_liner": "已下线（绿色五页固定壳）；请改用构件化商品培训 PPT",
+    "name_zh": "绿色单品 PPT（已下线）",
     "category_zh": "商品培训",
     "outputs": [
       "可编辑 PPTX"
     ],
     "capabilities": {
       "gold_viewable": true,
-      "content_draft": true,
-      "new_theme_preview": true,
-      "new_theme_pptx": true,
+      "content_draft": false,
+      "new_theme_preview": false,
+      "new_theme_pptx": false,
       "new_theme_mp4": false,
-      "business_selfserve": true
+      "business_selfserve": false
     },
     "requirements": [
-      "内容初稿确认",
-      "pptx_export"
+      "改用 product-pptx-component-v1"
     ],
-    "blockers": [],
-    "production_ready": true,
-    "status_label": "兼容路线 · 确认后生成 PPTX",
-    "online_url": null
+    "blockers": [
+      "绿色五页壳已下线；新任务请用「构件化商品培训 PPT」（product-pptx-component-v1）"
+    ],
+    "production_ready": false,
+    "status_label": "已下线 · 仅金样可查看",
+    "online_url": null,
+    "status_note": "2026-08-09 下线业务自助。金样可查看；换主题请走构件化主路径 product-pptx-component-v1。"
   },
   "business_catalog": {
     "name_zh": "绿色单品 PPT（如金银花露）",

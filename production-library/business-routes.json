@@ -60,16 +60,17 @@
     },
     {
       "route_id": "product-pptx-green-v1",
-      "name_zh": "内部商品培训 · 绿色单品 PPT（兼容）",
+      "name_zh": "内部商品培训 · 绿色单品 PPT（已下线）",
       "audience": "store_staff",
       "audience_zh": "店员内部培训",
       "deliverable": "pptx",
       "deliverable_zh": "可编辑 PPT",
       "template_slug": "product-courseware-green-v1",
       "adapter": "product_pptx_green",
-      "active": true,
+      "active": false,
       "priority": 15,
       "legacy": true,
+      "retired": true,
       "env_require": ["pptx_export"],
       "gates": {
         "content_approval": true,
@@ -83,8 +84,8 @@
         "内容确认记录.json",
         "run-manifest.json"
       ],
-      "selection_hint_zh": "五页绿色固定壳：介绍/卖点/人群 · 联合 · 对标 · 注意（兼容旧任务）",
-      "notes_zh": "兼容路径，非默认。新任务优先 product-pptx-component-v1。金样回归通过前保留，不删入口。"
+      "selection_hint_zh": "已下线：请改用 product-pptx-component-v1",
+      "notes_zh": "2026-08-09 业务确认下线。代码与金样保留可回滚；新任务禁止走本路线（仅 --force 调试）。默认请用 product-pptx-component-v1。"
     },
     {
       "route_id": "product-mp4-full-v1",

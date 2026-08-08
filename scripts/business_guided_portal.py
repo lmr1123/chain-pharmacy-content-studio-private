@@ -545,7 +545,7 @@ footer {{
 <div class="shell">
   <header>
     <h1>内部培训课件 · 选模板</h1>
-    <p class="sub">五步完成一单：选做什么 → 交内容 → 审初稿 → 自动生成质检 → 一个地方取件。默认 PPT 主路径为构件 recipe（product-pptx-component-v1）；绿色五页壳为兼容；商品培训 MP4 已接入统一任务（business_job）。</p>
+    <p class="sub">五步完成一单：选做什么 → 交内容 → 审初稿 → 自动生成质检 → 一个地方取件。默认 PPT 为构件 recipe（product-pptx-component-v1）；绿色五页壳已下线；商品培训 MP4 已接入统一任务（business_job）。</p>
     <div class="how">
       <div>
         <b>① 选我要做什么</b>

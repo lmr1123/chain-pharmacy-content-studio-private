@@ -83,12 +83,12 @@ class CriticalPathInventoryTests(unittest.TestCase):
         self.assertEqual(routes.get("default_pptx_route"), "product-pptx-component-v1")
         active = {r["route_id"] for r in bj.load_routes(active_only=True)}
         self.assertIn("product-pptx-component-v1", active)
+        self.assertNotIn("product-pptx-green-v1", active)
         component = bj.get_route("product-pptx-component-v1")
         self.assertEqual(component.get("adapter"), "product_pptx_component")
-        self.assertLess(
-            int(component.get("priority") or 99),
-            int(bj.get_route("product-pptx-green-v1").get("priority") or 99),
-        )
+        green = bj.get_route("product-pptx-green-v1")
+        self.assertFalse(green.get("active"))
+        self.assertTrue(green.get("retired"))
 
 
 class ProbeDoctorHonestyTests(unittest.TestCase):

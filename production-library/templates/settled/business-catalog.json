@@ -132,8 +132,8 @@
     },
     {
       "slug": "product-courseware-green-v1",
-      "name_zh": "绿色单品 PPT（如金银花露）",
-      "one_liner": "五页绿色固定壳（兼容）：介绍/卖点/人群 · 联合 · 对标 · 注意",
+      "name_zh": "绿色单品 PPT（已下线）",
+      "one_liner": "已下线（绿色五页固定壳）；请改用构件化商品培训 PPT",
       "gallery_title_zh": "绿色商品培训 · 5 页",
       "outputs": [
         "可编辑 PPTX"
@@ -141,20 +141,21 @@
       "category": "商品培训",
       "capabilities": {
         "gold_viewable": true,
-        "content_draft": true,
-        "new_theme_preview": true,
-        "new_theme_pptx": true,
+        "content_draft": false,
+        "new_theme_preview": false,
+        "new_theme_pptx": false,
         "new_theme_mp4": false,
-        "business_selfserve": true
+        "business_selfserve": false
       },
       "requirements": [
-        "内容初稿确认",
-        "pptx_export"
+        "改用 product-pptx-component-v1"
       ],
-      "blockers": [],
-      "production_ready": true,
-      "status_label": "兼容路线 · 确认后生成 PPTX",
-      "status_note": "五页绿色固定壳兼容旧任务；新任务优先「构件化商品培训 PPT」。确认内容后且 pptx_export 通过再生成。",
+      "blockers": [
+        "绿色五页壳已下线；新任务请用「构件化商品培训 PPT」（product-pptx-component-v1）"
+      ],
+      "production_ready": false,
+      "status_label": "已下线 · 仅金样可查看",
+      "status_note": "2026-08-09 下线业务自助。金样可查看；换主题请走构件化主路径 product-pptx-component-v1。",
       "key_frame_labels_zh": [
         "封面/介绍",
         "卖点与人群",
@@ -272,7 +273,7 @@
         "courseware4 换主题 adapter"
       ],
       "blockers": [
-        "课件4 整片专用导出器仅金样预览；新主题请走 product-pptx-component-v1（构件 recipe 主路径）"
+        "课件4整片导出器换主题未接线；新主题请走 product-pptx-component-v1（构件 recipe 主路径）"
       ],
       "production_ready": false,
       "status_label": "仅金样预览 · 换主题入口待接线",

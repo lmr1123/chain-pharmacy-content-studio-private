@@ -2,7 +2,7 @@
 """Business environment doctor — map routes to runtime profiles and probe honestly.
 
   python3 scripts/business_doctor.py
-  python3 scripts/business_doctor.py --route product-pptx-green-v1
+  python3 scripts/business_doctor.py --route product-pptx-component-v1
   python3 scripts/business_doctor.py --profile pptx --json
   python3 scripts/business_doctor.py --list-profiles
 
@@ -112,18 +112,22 @@ def doctor(
     missing = list(checked.get("missing_capabilities") or [])
     ok = bool(checked.get("ok", True)) if require_tokens else True
 
-    # Engine presence for pptx profile (production path preferred)
-    engine = (
+    # Engine presence for pptx profile (component default; green retired but kept as fallback)
+    component_engine = (
+        ROOT / "production-library/engines/courseware-pptx-v1/export.mjs"
+    )
+    green_engine = (
         ROOT
         / "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs"
     )
-    engine_ok = engine.is_file()
-    if any(p == "pptx" for p in selected) and not engine_ok:
+    component_ok = component_engine.is_file()
+    green_ok = green_engine.is_file()
+    engine_ok = component_ok or green_ok
+    if any(p == "pptx" for p in selected) and not component_ok:
         ok = False
-        missing.append("green_pptx_engine")
+        missing.append("component_pptx_engine")
         hints.append(
-            "缺少正式引擎文件：production-library/engines/product-courseware-green-v1/"
-            "build-product-courseware.mjs"
+            "缺少默认构件引擎：production-library/engines/courseware-pptx-v1/export.mjs"
         )
 
     payload = {
@@ -137,8 +141,11 @@ def doctor(
         "messages_zh": checked.get("messages_zh") or [],
         "install_hints_zh": hints if missing else [],
         "engine": {
-            "green_pptx": str(engine),
+            "component_pptx": str(component_engine),
+            "green_pptx": str(green_engine),
             "present": engine_ok,
+            "component_present": component_ok,
+            "green_present": green_ok,
         },
     }
     return payload

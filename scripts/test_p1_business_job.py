@@ -26,15 +26,14 @@ class BusinessRoutesTests(unittest.TestCase):
         active = [r for r in doc["routes"] if r.get("active")]
         ids = {r["route_id"] for r in active}
         self.assertIn("product-pptx-component-v1", ids)
-        self.assertIn("product-pptx-green-v1", ids)
+        self.assertNotIn("product-pptx-green-v1", ids)  # retired 2026-08-09
         self.assertIn("product-mp4-full-v1", ids)
         # Health remains inactive until theme-package self-serve is proven.
         health = next(r for r in doc["routes"] if r["route_id"] == "health-mp4-full-v1")
         self.assertFalse(health["active"])
-        # Default component route outranks legacy green.
-        comp = next(r for r in active if r["route_id"] == "product-pptx-component-v1")
-        green = next(r for r in active if r["route_id"] == "product-pptx-green-v1")
-        self.assertLess(int(comp["priority"]), int(green["priority"]))
+        green = next(r for r in doc["routes"] if r["route_id"] == "product-pptx-green-v1")
+        self.assertFalse(green["active"])
+        self.assertTrue(green.get("retired"))
 
     def test_active_routes_point_at_catalog_templates(self) -> None:
         catalog = bj.catalog_by_slug()
@@ -56,7 +55,13 @@ class BusinessRoutesTests(unittest.TestCase):
             "business_job.py new --route product-pptx-component-v1",
             build_business_command(component),
         )
-        self.assertIn("business_job.py new --route product-pptx-green-v1", build_business_command(green))
+        # Green five-page shell retired: portal must not offer job CLI for it.
+        green_cmd = build_business_command(green)
+        self.assertNotIn("product-pptx-green-v1", green_cmd)
+        self.assertTrue(
+            "仅查看金样" in green_cmd or "已下线" in green_cmd or "不要生成正式成品" in green_cmd
+        )
+        self.assertIsNone(build_job_command(green))
         self.assertIn("business_job.py new --route product-mp4-full-v1", build_business_command(video))
         self.assertIn("--gate content", build_job_command(component) or "")
         self.assertIn("product_image", build_job_command(video) or "")
@@ -85,36 +90,37 @@ class BusinessJobStateMachineTests(unittest.TestCase):
             [
                 "new",
                 "--route",
-                "product-pptx-green-v1",
+                "product-pptx-component-v1",
                 "--theme",
-                "测试绿茶",
+                "测试构件片",
                 "--notes",
-                "卖点A\n卖点B",
+                "卖点A\n卖点B\n卖点C",
                 "--job-id",
-                "test-green-1",
+                "test-comp-1",
                 "--json",
             ]
         )
         self.assertEqual(rc, 0)
-        job = bj.load_job("test-green-1")
+        job = bj.load_job("test-comp-1")
         self.assertEqual(job["state"], "intake")
 
-        rc = bj.main(["draft", "--job", "test-green-1", "--json"])
+        rc = bj.main(["draft", "--job", "test-comp-1", "--json"])
         self.assertEqual(rc, 0)
-        job = bj.load_job("test-green-1")
+        job = bj.load_job("test-comp-1")
         self.assertEqual(job["state"], "draft_ready")
+        self.assertEqual(job["draft"]["kind"], "product_pptx_component")
         self.assertTrue(Path(job["draft"]["content_model"]).is_file())
         self.assertEqual(len(job["draft"]["content_sha256"]), 64)
 
         with self.assertRaises(SystemExit) as ctx:
-            bj.main(["render", "--job", "test-green-1", "--json"])
+            bj.main(["render", "--job", "test-comp-1", "--json"])
         self.assertIn("审批未齐", str(ctx.exception))
 
         rc = bj.main(
             [
                 "approve",
                 "--job",
-                "test-green-1",
+                "test-comp-1",
                 "--gate",
                 "content",
                 "--by",
@@ -123,7 +129,7 @@ class BusinessJobStateMachineTests(unittest.TestCase):
             ]
         )
         self.assertEqual(rc, 0)
-        job = bj.load_job("test-green-1")
+        job = bj.load_job("test-comp-1")
         self.assertEqual(job["state"], "content_approved")
         self.assertTrue(job["approvals"]["content"]["approved"])
 
@@ -196,9 +202,11 @@ class BusinessJobStateMachineTests(unittest.TestCase):
             [
                 "new",
                 "--route",
-                "product-pptx-green-v1",
+                "product-pptx-component-v1",
                 "--theme",
                 "环境阻断样例",
+                "--notes",
+                "要点一\n要点二\n要点三",
                 "--job-id",
                 "test-env-1",
                 "--auto-draft",
@@ -226,7 +234,7 @@ class BusinessJobStateMachineTests(unittest.TestCase):
         self.assertEqual(list(self.delivery.iterdir()), [])
 
     def test_whitelist_publish_only_after_success(self) -> None:
-        route = bj.get_route("product-pptx-green-v1")
+        route = bj.get_route("product-pptx-component-v1")
         job = {
             "job_id": "pub-1",
             "theme": "发布样例",
@@ -280,8 +288,23 @@ class BusinessJobStateMachineTests(unittest.TestCase):
             )
         self.assertIn("未激活", str(ctx.exception))
 
-    def test_pptx_draft_strips_green_gold_residue(self) -> None:
-        """New theme must not inherit 金银花露 medical/price/combo copy from gold JSON."""
+    def test_retired_green_route_requires_force(self) -> None:
+        with self.assertRaises(SystemExit) as ctx:
+            bj.main(
+                [
+                    "new",
+                    "--route",
+                    "product-pptx-green-v1",
+                    "--theme",
+                    "不该新建",
+                    "--job-id",
+                    "test-green-off",
+                ]
+            )
+        self.assertIn("未激活", str(ctx.exception))
+
+    def test_pptx_draft_strips_green_gold_residue_force_legacy(self) -> None:
+        """Legacy green adapter (debug --force) must not leak 金银花露 gold copy."""
         rc = bj.main(
             [
                 "new",
@@ -293,6 +316,7 @@ class BusinessJobStateMachineTests(unittest.TestCase):
                 "温和去火\n店员话术清晰",
                 "--job-id",
                 "test-green-clean",
+                "--force",
                 "--auto-draft",
                 "--json",
             ]

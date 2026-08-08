@@ -8,7 +8,8 @@
       "name_zh": "可编辑 PPT 导出（构件主路径 + 绿色兼容）",
       "require_capabilities": ["pptx_export"],
       "probe_require": ["pptx"],
-      "routes": ["product-pptx-component-v1", "product-pptx-green-v1"],
+      "routes": ["product-pptx-component-v1"],
+      "legacy_routes": ["product-pptx-green-v1"],
       "default_route": "product-pptx-component-v1",
       "deps": {
         "node": ">=18",
