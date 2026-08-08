@@ -3,6 +3,8 @@
 
 Mode: jiugongge-health-edu-compliance-v1
 60s / 6×10s / 1+1+3+1 · Xiaolin + audience · English grid+video prompts.
+Default output is review-only; release requires hash-bound approval and a
+zero-hit prohibited-content scan.
 
 Usage:
   python3 scripts/scaffold_jiugongge_health_edu_compliance.py \\
@@ -12,6 +14,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from datetime import date
@@ -22,6 +25,7 @@ MODE_DIR = (
     ROOT / "production-library/templates/prompt-modes/jiugongge-health-edu-compliance-v1"
 )
 DEFAULT_OUT = ROOT / "outputs/business-video-runs/jiugongge-health-edu-compliance"
+MODE_ID = "jiugongge-health-edu-compliance-v1"
 
 STYLE_MAP = {
     "3D动画": "3D Pixar style",
@@ -41,7 +45,16 @@ PINNED = (
 # Soft scan for agent self-check notes in DELIVERY
 BANNED_HINTS = [
     "医生", "白大褂", "护士", "医院", "诊室", "听诊器", "血压计", "药瓶",
-    "注射器", "手术刀", "预防", "治疗", "缓解", "药效", "临床", "发病率",
+    "注射器", "手术刀", "器材", "医疗", "诊断", "疾病", "症状", "用药", "药品",
+    "预防", "治疗", "缓解", "药效", "临床", "发病率",
+]
+
+RELEASE_FILES = [
+    "02-视觉资产提示词.md",
+    "03-九宫格与视频提示词-六段.md",
+    "04-视频号发布全家桶.md",
+    "DELIVERY.md",
+    "release-manifest.json",
 ]
 
 
@@ -59,6 +72,157 @@ def g(d: dict, *keys: str, default: str = "") -> str:
             return default
         cur = cur[k]
     return str(cur) if cur is not None else default
+
+
+def input_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def text_sha256(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def approval_template(digest: str, review_digest: str) -> dict:
+    return {
+        "schema": "prompt-release-approval-v1",
+        "mode_id": MODE_ID,
+        "approved": False,
+        "approved_by": "",
+        "input_sha256": digest,
+        "review_sha256": review_digest,
+        "note": "确认 01-合规脚本复核包后，将 approved 改为 true 并填写 approved_by。",
+    }
+
+
+def require_release_approval(path: Path, digest: str, review_digest: str) -> dict:
+    if not path.is_file():
+        raise SystemExit(f"approval file not found: {path}")
+    approval = json.loads(path.read_text(encoding="utf-8"))
+    if approval.get("mode_id") != MODE_ID:
+        raise SystemExit(f"approval.mode_id must be {MODE_ID}")
+    if approval.get("approved") is not True:
+        raise SystemExit("approval.approved must be true")
+    if not str(approval.get("approved_by") or "").strip():
+        raise SystemExit("approval.approved_by is required")
+    if approval.get("input_sha256") != digest:
+        raise SystemExit("approval input hash mismatch; regenerate review and approve again")
+    if approval.get("review_sha256") != review_digest:
+        raise SystemExit("approval review hash mismatch; regenerate review and approve again")
+    return approval
+
+
+def _flatten_text(value: object, prefix: str) -> list[tuple[str, str]]:
+    if isinstance(value, dict):
+        result: list[tuple[str, str]] = []
+        for key, item in value.items():
+            result.extend(_flatten_text(item, f"{prefix}.{key}"))
+        return result
+    if isinstance(value, list):
+        result = []
+        for index, item in enumerate(value):
+            result.extend(_flatten_text(item, f"{prefix}[{index}]"))
+        return result
+    if value is None:
+        return []
+    return [(prefix, str(value))]
+
+
+def _scan_text_pairs(values: list[tuple[str, str]]) -> list[dict[str, str]]:
+    disease_pattern = re.compile(
+        r"(?:感冒|高血压|糖尿病|阿尔茨海默|脑梗|心梗|中风|癌症|"
+        r"[\u4e00-\u9fff]{1,10}(?:病|症|炎|癌))"
+    )
+    english_pattern = re.compile(
+        r"\b(?:doctor|nurse|hospital|clinic|medical|diagnosis|treatment|"
+        r"prevention|medicine|medication|disease|symptom)\b",
+        re.IGNORECASE,
+    )
+    hits: list[dict[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for field, text in values:
+        scan_text = re.sub(
+            r"(?:非|不是|不作|不构成)医疗(?:建议|内容)", "", text
+        )
+        scan_text = scan_text.replace(PINNED, "")
+        scan_text = scan_text.replace("不能替代执业医师诊断或治疗", "")
+        scan_text = re.sub(
+            r"\b(?:no|without|not)\s+(?:doctors?|nurses?|hospitals?|clinics?|"
+            r"medical(?:\s+(?:tools?|elements?|clothing|symbols?|devices?|"
+            r"terms?|badges?|glow(?:\s+organs)?))?)\b",
+            "",
+            scan_text,
+            flags=re.IGNORECASE,
+        )
+        terms = [term for term in BANNED_HINTS if term in scan_text]
+        terms.extend(match.group(0) for match in disease_pattern.finditer(scan_text))
+        terms.extend(match.group(0) for match in english_pattern.finditer(scan_text))
+        for term in terms:
+            key = (field, term.lower())
+            if key in seen:
+                continue
+            seen.add(key)
+            hits.append({"field": field, "term": term})
+    return hits
+
+
+def scan_release_banned_terms(v: dict, segs: list[dict]) -> list[dict[str, str]]:
+    """Scan user-visible release inputs; audit-only raw fields stay in review."""
+    release_input = {
+        key: v.get(key)
+        for key in (
+            "theme",
+            "audience",
+            "style_key",
+            "style_en",
+            "environment_en",
+            "xiaolin_outfit_en",
+            "audience_character",
+            "ending_chinese_text",
+            "habit_points",
+            "publish",
+        )
+    }
+    values = _flatten_text(release_input, "vars")
+    values.extend(
+        (f"segments[{seg['id']}].narration", str(seg.get("narration") or ""))
+        for seg in segs
+    )
+    return _scan_text_pairs(values)
+
+
+def scan_rendered_release_files(out: Path) -> list[dict[str, str]]:
+    """Scan the exact files handed to business, with explicit disclaimer exemptions."""
+    values: list[tuple[str, str]] = []
+    for name in RELEASE_FILES[:-1]:
+        path = out / name
+        if path.is_file():
+            text = path.read_text(encoding="utf-8").replace(PINNED, "")
+            values.append((f"release.{name}", text))
+    return _scan_text_pairs(values)
+
+
+def write_release_manifest(
+    out: Path,
+    digest: str,
+    review_digest: str,
+    approval_path: Path,
+    approval: dict,
+) -> None:
+    manifest = {
+        "schema": "prompt-release-v1",
+        "mode_id": MODE_ID,
+        "input_sha256": digest,
+        "review_sha256": review_digest,
+        "approved_by": approval["approved_by"],
+        "approval_file": str(approval_path),
+        "compliance_scan": {"passed": True, "hits": []},
+        "released_on": date.today().isoformat(),
+        "files": RELEASE_FILES[:-1],
+    }
+    (out / "release-manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def resolve_style(v: dict) -> str:
@@ -415,7 +579,6 @@ def render_delivery(v: dict, out: Path) -> str:
             f"# DELIVERY · {g(v, 'theme')}",
             "",
             f"- **模式 ID：** `jiugongge-health-edu-compliance-v1`",
-            f"- **并列原版：** `jiugongge-health-edu-v1`（林医生，非本包）",
             f"- **日期：** {date.today().isoformat()}",
             f"- **目录：** `{out}`",
             "",
@@ -436,6 +599,16 @@ def main() -> int:
     ap.add_argument("--vars", required=True)
     ap.add_argument("--slug", default="")
     ap.add_argument("--out-root", default=str(DEFAULT_OUT))
+    ap.add_argument(
+        "--release",
+        action="store_true",
+        help="Release prompts after hash-bound approval and a zero-hit scan",
+    )
+    ap.add_argument(
+        "--approval",
+        default="",
+        help="Path to approval.json; required with --release",
+    )
     args = ap.parse_args()
 
     path = Path(args.vars).expanduser().resolve()
@@ -445,23 +618,76 @@ def main() -> int:
     if not v.get("habit_points"):
         raise SystemExit("habit_points (1-3) required")
 
+    digest = input_sha256(path)
     slug = args.slug or slugify(g(v, "theme"))
     out = Path(args.out_root).expanduser().resolve() / slug
     out.mkdir(parents=True, exist_ok=True)
 
     segs = build_segments(v)
+    review_text = render_review_md(v, segs)
+    review_digest = text_sha256(review_text)
+    if args.release:
+        for name in RELEASE_FILES:
+            (out / name).unlink(missing_ok=True)
+    approval_path: Path | None = None
+    approval: dict | None = None
+    if args.release:
+        if not args.approval:
+            raise SystemExit("--release requires --approval <approval.json>")
+        approval_path = Path(args.approval).expanduser().resolve()
+        approval = require_release_approval(approval_path, digest, review_digest)
+
+    if args.release:
+        banned_hits = scan_release_banned_terms(v, segs)
+        if banned_hits:
+            detail = "；".join(
+                f"{item['field']}={item['term']}" for item in banned_hits[:12]
+            )
+            raise SystemExit(f"合规版 release 禁词扫描失败：{detail}")
+
     (out / "00-主题变量.json").write_text(
         json.dumps(v, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    (out / "01-合规脚本复核包.md").write_text(render_review_md(v, segs), encoding="utf-8")
+    (out / "01-合规脚本复核包.md").write_text(review_text, encoding="utf-8")
+
+    if not args.release:
+        (out / "approval.json").write_text(
+            json.dumps(
+                approval_template(digest, review_digest), ensure_ascii=False, indent=2
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        for name in RELEASE_FILES:
+            (out / name).unlink(missing_ok=True)
+        print(f"OK compliance review scaffold → {out}")
+        print("  01-合规脚本复核包.md")
+        print("  approval.json（确认后填写，再用 --release --approval 发布）")
+        return 0
+
     (out / "02-视觉资产提示词.md").write_text(render_assets_md(v), encoding="utf-8")
     (out / "03-九宫格与视频提示词-六段.md").write_text(
         render_prompts_md(v, segs), encoding="utf-8"
     )
     (out / "04-视频号发布全家桶.md").write_text(render_publish_md(v), encoding="utf-8")
     (out / "DELIVERY.md").write_text(render_delivery(v, out), encoding="utf-8")
+    rendered_hits = scan_rendered_release_files(out)
+    if rendered_hits:
+        detail = "；".join(
+            f"{item['field']}={item['term']}" for item in rendered_hits[:12]
+        )
+        for name in RELEASE_FILES:
+            (out / name).unlink(missing_ok=True)
+        raise SystemExit(f"合规版最终发布文件禁词扫描失败：{detail}")
+    assert approval_path is not None and approval is not None
+    if approval_path != out / "approval.json":
+        (out / "approval.json").write_text(
+            json.dumps(approval, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    write_release_manifest(out, digest, review_digest, approval_path, approval)
 
-    print(f"OK compliance scaffold → {out}")
+    print(f"OK compliance released scaffold → {out}")
     return 0
 
 

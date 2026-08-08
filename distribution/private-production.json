@@ -1,0 +1,6 @@
+{
+  "kind": "chain-pharmacy-private-production",
+  "version": 1,
+  "repository_url": "https://github.com/lmr1123/chain-pharmacy-content-studio-private.git",
+  "production_assets": true
+}

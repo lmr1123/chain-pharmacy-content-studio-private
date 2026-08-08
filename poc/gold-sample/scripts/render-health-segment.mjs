@@ -33,8 +33,8 @@ const outDir = dirname(outPath);
 const outFile = outPath.split('/').pop();
 mkdirSync(outDir, {recursive: true});
 
-const ffmpegPath = process.env.FFMPEG_PATH || '/opt/homebrew/bin/ffmpeg';
-const ffprobePath = process.env.FFPROBE_PATH || '/opt/homebrew/bin/ffprobe';
+const ffmpegPath = process.env.FFMPEG_PATH || 'ffmpeg';
+const ffprobePath = process.env.FFPROBE_PATH || 'ffprobe';
 
 const file = await renderVideo({
   projectFile: SEGMENT_PROJECT[segment],

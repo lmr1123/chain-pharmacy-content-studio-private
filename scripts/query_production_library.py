@@ -11,7 +11,12 @@ from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = PROJECT_ROOT / "production-library/catalog.json"
-APPROVED_STATUSES = {"user-approved", "production-validated", "approved"}
+APPROVED_STATUSES = {
+    "user-approved",
+    "user-approved-gold",
+    "production-validated",
+    "approved",
+}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -25,7 +30,10 @@ def load_entries() -> list[dict[str, Any]]:
         registry_path = PROJECT_ROOT / relative_path
         registry = load_json(registry_path)
         registry_type = registry.get("registry_type", registry.get("library", "asset"))
-        raw_items = registry.get("items", registry.get("components", []))
+        raw_items = [
+            *registry.get("items", []),
+            *registry.get("components", []),
+        ]
         for raw_item in raw_items:
             item = dict(raw_item)
             item["_registry_type"] = registry_type

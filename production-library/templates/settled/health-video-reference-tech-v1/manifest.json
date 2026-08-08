@@ -77,8 +77,26 @@
     "outputs": [
       "MP4 培训视频"
     ],
-    "production_ready": true,
-    "status_label": "已签样金样 · 业务可换主题出片",
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": true,
+      "new_theme_pptx": false,
+      "new_theme_mp4": true,
+      "business_selfserve": false
+    },
+    "requirements": [
+      "药师/法务审核稿",
+      "已批准主题包",
+      "video_full",
+      "正式 voice_id"
+    ],
+    "blockers": [
+      "正式出片前必须完成主题画面审批",
+      "当前机器须通过 video_full 环境检查"
+    ],
+    "production_ready": false,
+    "status_label": "可开始草稿 · 正式出片需环境与审批",
     "online_url": null
   },
   "business_catalog": {
@@ -98,9 +116,9 @@
   "business_greenline": {
     "script": "scripts/generate_business_video.py",
     "package_only": "python3 scripts/generate_business_video.py --template health --mode plan --sections-json <path>",
-    "with_audio_mp4": ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template health --sections-json <path> --with-tts --with-mp4",
+    "with_audio_mp4": ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template health --theme-package <theme-package目录> --with-tts --with-mp4",
     "full_rerender": "scripts/business_video_health_full.py via --mode full",
     "segment_projects": "poc/gold-sample/src/reference-*-project.tsx + health-training-*.json",
-    "notes": "full=换病名/屏显/旁白+7段重渲拼接（对齐商品 full）；audio-shell 仅兼容旧路径"
+    "notes": "full=完整7段审核稿+主题画面无缺口+SHA-256绑定审批后重渲；audio-shell 仅兼容旧路径"
   }
 }

@@ -118,11 +118,22 @@
 |------|------|
 | `00-主题变量.json` | 填满的变量槽 |
 | `01-科普脚本复核包.md` | 给业务审的完整剧本 |
+| `approval.json` | 输入与复核稿双 hash 绑定的审批记录；默认未批准 |
 | `02-Seedance提示词-分段.md` | **复制用**终稿 |
 | `03-视频号发布全家桶.md` | 标题 / 免责置顶 / 转发语 |
 | `DELIVERY.md` | 路径 + 模式 ID + 使用说明 |
 
 业务只需打开 `02` + `03` 复制。
+
+代理先运行默认 scaffold，只生成 `00`、`01` 与 `approval.json`。业务明确确认后，
+代理保留其中的 `input_sha256` 与 `review_sha256`，填写 `approved=true`、`approved_by`，再执行：
+
+```bash
+python3 scripts/scaffold_seedance_health_edu.py --vars <json> \
+  --release --approval <输出目录/approval.json>
+```
+
+输入变量或复核稿若在审批后改变，hash 门会拒绝 release，必须重新复核。
 
 ---
 

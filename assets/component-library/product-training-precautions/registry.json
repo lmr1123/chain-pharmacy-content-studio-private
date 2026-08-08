@@ -1,0 +1,80 @@
+{
+  "library": "product-training-precautions",
+  "version": "1.0.0",
+  "sourcePolicy": "newly-generated-no-reference-video-pixels",
+  "registry_type": "asset",
+  "series_sources": [
+    "assets/component-library/product-training-precautions/series.json"
+  ],
+  "components": [
+    {
+      "id": "pre-not-medicine",
+      "type": "precaution-illustration",
+      "file": "transparent/pre-not-medicine.png",
+      "status": "technical-qa-passed",
+      "series_id": "series.product-training.precautions-illo-v1",
+      "role_ids": ["not_medicine"],
+      "name_zh": "不代替药物",
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated",
+        "note": "M5 注意事项插画"
+      }
+    },
+    {
+      "id": "pre-special-pop",
+      "type": "precaution-illustration",
+      "file": "transparent/pre-special-pop.png",
+      "status": "technical-qa-passed",
+      "series_id": "series.product-training.precautions-illo-v1",
+      "role_ids": ["special_pop"],
+      "name_zh": "禁忌人群",
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated"
+      }
+    },
+    {
+      "id": "pre-with-meal",
+      "type": "precaution-illustration",
+      "file": "transparent/pre-with-meal.png",
+      "status": "technical-qa-passed",
+      "series_id": "series.product-training.precautions-illo-v1",
+      "role_ids": ["with_meal"],
+      "name_zh": "随餐服用",
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated"
+      }
+    },
+    {
+      "id": "pre-consult",
+      "type": "precaution-illustration",
+      "file": "transparent/pre-consult.png",
+      "status": "technical-qa-passed",
+      "series_id": "series.product-training.precautions-illo-v1",
+      "role_ids": ["consult"],
+      "name_zh": "就医咨询",
+      "kind": "member",
+      "source": {
+        "source_class": "in_house_generated"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "series.product-training.precautions-illo-v1",
+      "name_zh": "商品培训注意事项插画系列 v1",
+      "kind": "series",
+      "status": "technical-qa-passed",
+      "tags": ["注意事项", "插画", "系列", "商品培训"],
+      "source": "assets/component-library/product-training-precautions/series.json",
+      "member_ids": [
+        "pre-not-medicine",
+        "pre-special-pop",
+        "pre-with-meal",
+        "pre-consult"
+      ]
+    }
+  ]
+}

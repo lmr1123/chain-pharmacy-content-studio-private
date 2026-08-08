@@ -29,14 +29,17 @@
 业务说类似下面的话时，先安装/更新再打开引导页：
   「请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用」
 
+上述 URL 是脱敏 Public installer，不是完整生产仓。Public 不含模板、预览、声纹、业务包、生成器或任何降级出片能力；完整系统位于获授权的
+`lmr1123/chain-pharmacy-content-studio-private`。
+
 安装（你执行）：
-1. 无仓库：git clone 上述地址 → 进入目录
-2. python3 scripts/workbuddy_bootstrap_for_business.py
-   （pull、打开 业务包 index.html、打印开场白）
-3. 已有仓库：git pull --ff-only 后跑 bootstrap（务必拿到含 health full 的最新 main）
-4. 失败：中文说明卡点；国内可走 bootstrap 镜像回退
-5. 安装成功后：用 docs/workbuddy-install-and-guide.md 的「标准开场白」**整段**对业务说
-6. 首次出视频前：按 docs/workbuddy-video-first-check.md 在本机自检（你执行，不让业务做）
+1. 无仓库：clone 上述 Public installer，进入目录，执行 `python3 scripts/install_private_studio.py`。
+2. 安装器使用用户现有的 GitHub 登录/凭证管理器检查 Private `read` 权限；禁止让业务把 token 发到对话、URL 或日志。
+3. 授权通过：安装器拉取/更新 Private production，再执行其中的 `scripts/workbuddy_bootstrap_for_business.py`（pull、探测能力、打开 Private 本机门户、打印开场白）。
+4. 已有 Private checkout：在 Private 仓 `git pull --ff-only` 后跑 bootstrap（务必拿到含 health full 的最新 main）。
+5. 未登录、无 Private 权限、网络失败或更新失败：分别用中文说明真实卡点并停止；禁止公共镜像、公开 ZIP 回退或把 Public 当成可生产仓。
+6. 安装成功后：用 Private 仓 `docs/workbuddy-install-and-guide.md` 的「标准开场白」**整段**对业务说。
+7. 首次出视频前：按 Private 仓 `docs/workbuddy-video-first-check.md` 在本机自检（你执行，不让业务做）。
 
 【对业务只讲三步 · 禁止讲内部流程】
 第 1 步 · 看模板（引导页预览 + 选用；也可直接说课型名）
@@ -100,33 +103,38 @@
 【纯视频绿线 · 商品培训视频（换文案+屏显+包装+旁白+重渲）】
 业务选「商品培训视频」并给了内容后，你执行（业务不碰命令）：
 1. 整理 sections.json（theme=商品名；sections=各板块审核旁白）或业务 Word
-2. 规划包：
-   python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path>
-3. 全量出片（默认 mode=full）：改屏显文案/商品名/包装槽 + 克隆旁白 + 8 段重渲拼接
+2. 规划包：同时带业务包装图，生成 `product-approval.request.json`；把 8 段内容、包装图和授权凭证栏交业务确认：
+   python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path> --product-image <业务包装图>
+3. 业务在审批 JSON 中填写 `approved=true`、批准人、时间和授权凭证编号后，全量出片（默认 mode=full）：改屏显文案/商品名/包装槽 + 克隆旁白 + 8 段重渲拼接
    .venv-qwen-tts/bin/python scripts/generate_business_video.py \
      --template product --sections-json <path> \
      --with-tts --with-mp4 \
-     --product-image <授权包装图可选> \
+     --product-image <业务提供并确认授权的包装图> \
+     --product-approval <已批准JSON> \
      --copy-to-business-delivery
 4. 回传：storyboard.html + segments/ + *_商品培训视频_v1.mp4 + DELIVERY.md（含 voice_id）
-5. 无 TTS：只交规划包；禁止系统 say 假配音；脚本在 --with-tts 缺环境时会 exit 2。
+5. 内容或包装图在批准后变化，SHA-256 门闸会要求重新审核。无 TTS：只交规划包；禁止系统 say 假配音；脚本在 --with-tts 缺环境时会 exit 2。
 说明：full 会按主题写入 product_name/screen/assets 并分段重新渲染，不是只换声音。
 
 【纯视频绿线 · 疾病科普视频（已打通 · 与商品 full 同级）】
 业务选「疾病科普视频」并给了内容后，你必须走 full 分段重渲（与商品培训视频同级），禁止只换声：
-1. 整理 sections.json（theme=病名如感冒/风寒证；sections=开场/基础认知/病因机理/典型症状/调理建议/用药建议/总结）
-2. 全量出片（默认 mode=full，禁止擅自改 audio-shell）：
+1. 整理 7 段审核稿 sections.json（开场/基础认知/病因机理/典型症状/调理建议/用药建议/总结）。
+2. 先生成主题制作包；补齐 `content_gaps` 和 `needs_generation`，打开 `review.html` 全量过目。
+   审批必须填写过目人、时间，并把页面显示的当前 SHA-256 写入 `approved_payload_sha256`：
+   python3 scripts/build_health_theme_package.py \
+     --theme <主题> --sections-json <path> --out-dir <theme-package目录>
+3. 全量出片（默认 mode=full，禁止擅自改 audio-shell 或跳过审批）：
    .venv-qwen-tts/bin/python scripts/generate_business_video.py \
-     --template health --sections-json <path> \
+     --template health --theme-package <theme-package目录> \
      --with-tts --with-mp4 \
      --copy-to-business-delivery
-3. 回传：storyboard.html + segments/ + *_疾病科普视频_v1.mp4 + DELIVERY.md（含 voice_id）
-4. 自检：成片/分段里主标题与病名须是业务主题（如「感冒」），不能是金样「风热证」只换旁白。
+4. 回传：白名单交付包中的 storyboard.html + 正式 MP4 + DELIVERY.md（含 voice_id）。
+5. 自检：成片/分段里主标题与病名须是业务主题（如「感冒」），不能是金样「风热证」只换旁白。
 说明：基于 settled 风热金样工程（reference-* 分段），写入 disease_name/screen/cues/audio 后 7 段重渲拼接。
 禁止对业务说「疾病科普 full 仍在接入 / 只能 audio-shell」——该线已打通。
 禁止默认 --mode audio-shell（仅用户明确要求「只要叠声壳」时才用）。
 无 TTS 环境：只交 --mode plan 规划包，并说明缺 TTS，不得假装已出正式片。
-机理插画骨架可暂时复用金样资产，但屏显文案/病名/症状卡/旁白必须已换主题。
+禁止把金样机理、症状、调理或用药结论自动继承到新主题；缺口必须补审核稿或停在规划包。
 
 【输出目录】
 - 课件3 主题产物：production-library/validation/courseware/<slug>/
@@ -170,7 +178,9 @@
 1. 说明：先按「扁平头部 + 5 拍」出脚本复核包；确认后才给 Seedance 分段提示词。
 2. 收集：主题 + 目标人群。
 3. 合规：禁白大褂/医疗器材/病理术语（生活习惯/环境安全/情绪调节）。
-4. 确认后：分段提示词 ≤15s + 发布全家桶；scaffold：scripts/scaffold_seedance_health_edu.py
+4. 先运行 scaffold 默认命令只生成复核包；确认后由你填写生成的 `approval.json`
+   （保留 input_sha256 与 review_sha256，设置 approved=true 与 approved_by），再以
+   `--release --approval <approval.json>` 生成分段提示词 ≤15s + 发布全家桶。
 5. 默认只交可复制提示词；禁止默认付费 API 批量出片。
 
 【九宫格原版 · 林医生 · 强制闸门】
@@ -178,8 +188,8 @@
 权威：docs/jiugongge-health-edu-video-mode.md
 资产：production-library/templates/prompt-modes/jiugongge-health-edu-v1/
 业务包：10_健康科普九宫格模式/
-流程：主题+知识点 → 六段口播复核 → 确认后三视图+六段提示词+发布包
-scaffold：python3 scripts/scaffold_jiugongge_health_edu.py --vars <json>
+流程：主题+知识点 → 默认 scaffold 只出六段口播复核 → 确认后填写输入与复核稿双 hash 绑定的
+approval.json → 同命令追加 `--release --approval <approval.json>`，再出三视图+六段提示词+发布包
 允许卡通医生/诊室；仍须免责、不写处方。
 
 【九宫格合规版 · 无医疗内容 · 强制闸门】
@@ -189,8 +199,8 @@ scaffold：python3 scripts/scaffold_jiugongge_health_edu.py --vars <json>
 业务包：11_健康科普九宫格合规版/
 红线 0 命中：医生/白大褂/医院/诊室/器材/预防/治疗/缓解/病名
 角色：小林+受众；结构 1+1+3+1；九宫格与视频提示词英文；软CTA无分享图标
-流程：主题+受众+习惯点 → 脱敏+口播复核 → 确认后资产+六段+发布全家桶（含3条转发）
-scaffold：python3 scripts/scaffold_jiugongge_health_edu_compliance.py --vars <json>
+流程：主题+受众+习惯点 → 默认 scaffold 只出脱敏+口播复核 → 确认后填写输入与复核稿双 hash 绑定的
+approval.json → 同命令追加 `--release --approval <approval.json>`；禁词硬门通过后才出终稿
 
 【沟通】
 中文课型名、步骤少；不要说「请先解压」；风险提前说清。

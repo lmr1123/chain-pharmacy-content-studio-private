@@ -1,4 +1,11 @@
 
+## 2026-08-08（Public 可读 ≠ 生产资产可公开分发）
+
+- 用户确认双仓边界：原安装 URL 只承载**全新历史的脱敏 Public installer**；完整生产仓、settled 金样、声纹与授权资产只在 `chain-pharmacy-content-studio-private`。
+- 业务安装句保持不变，但 WorkBuddy 必须先运行 Public 的 `scripts/install_private_studio.py`，校验 GitHub 登录与 Private `read`；通过后才运行 Private bootstrap。
+- 禁止延用“无需账号、公共镜像、公开 ZIP 备用”的旧承诺；Private 下载失败必须诚实停止。下方 2026-08-03 的 Public/镜像记录仅为历史背景，已被本条替代。
+- Public 必须从 exact allowlist 导出到独立新仓和新历史；从完整仓删文件或重写当前工作树不构成脱敏。
+
 ## 2026-08-08（九宫格双版并存）
 
 - **原版** `jiugongge-health-edu-v1`：林医生+王大爷，卡通诊室允许。
@@ -240,20 +247,20 @@
 
 ---
 
-## 2026-08-03（业务入口 · 安装句 + Public + 国内网）
+## 2026-08-03（历史记录：旧 Public + 镜像方案，已被 2026-08-08 双仓边界替代）
 
 来源：用户要求「业务不需解压 → WorkBuddy 安装仓库并指引」→「开放项目」→「国内可获取」。
 
 ### 进展
 
-- 默认入口：业务在 WorkBuddy 说安装句；`workbuddy_bootstrap_for_business.py` 安装并开引导页。
-- 仓库 **Public**（`lmr1123/chain-pharmacy-content-studio`）；zip 降为备用。
-- 国内：GitHub 权限 OK，直连常 TLS/空响应；bootstrap 自动试 ghproxy 等镜像。
+- 当时入口曾让 `workbuddy_bootstrap_for_business.py` 从完整 Public 仓安装并开引导页；此路径现已停用。
+- 当时完整仓曾为 **Public**，并把 ZIP 作为备用；现已改为 Public installer → Private production。
+- 当时 bootstrap 曾尝试 ghproxy 等镜像；当前 Private 边界明确禁止公共镜像。
 
 ### 教训
 
 - **业务默认路径 = 代理安装 + 逐步引导**，不是发 zip 让业务自学解压。
-- **Public ≠ 国内秒下**：开放解决的是权限，不是跨境链路；必须有镜像回退或内网分发。
+- **历史判断已修正**：生产资产不能为下载速度经过公共镜像；网络不可用时应诚实停止，离线分发仅走有接收人、版本与哈希记录的受控渠道。
 - 文档/口令卡/门户文案必须同步改入口，避免一半仍写「请先解压」。
 
 ### 下一会话

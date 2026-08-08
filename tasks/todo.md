@@ -1,4 +1,107 @@
 
+## 私有生产仓 + 脱敏 Public 安装入口（2026-08-08 · 用户确认）
+
+> **已确认方向：** 完整生产仓库、授权资产包、金样、人声与业务模板全部进入 Private；Public 只保留无旧历史的安装入口。
+> **仓库拓扑假设：** 当前完整仓库改名为 `lmr1123/chain-pharmacy-content-studio-private` 并设为 Private，保留完整 40-commit 历史；随后新建同名 Public 仓 `chain-pharmacy-content-studio`，从独立脱敏 checkout 写入全新历史，因此业务既有安装句不变。Private 默认仅仓库所有者可见，后续协作者按白名单添加。
+> **历史边界：** 已经被第三方克隆或缓存的旧 Public 历史无法通过改可见性收回；本轮目标是停止继续分发，并确保新 Public 历史从第一个 commit 起不含生产资产。
+> **完成定义：** Private 保全完整历史；Public 仅由白名单源生成，二进制/生产资料/私密路径 0 命中；未认证或无权限时 fail-closed；授权用户可从 Public 安装器进入 Private bootstrap；切换可回滚且有审计证据。
+
+- [x] R1. 建立分发边界与保护性测试
+  - [x] 新增机器可读分发策略：Public 固定白名单、Private 禁止项、允许扩展名和体积上限
+  - [x] 测试 Public 导出拒绝音视频、PPTX/DOCX/ZIP、生产资料库、业务输出、令牌和绝对私有路径
+  - [x] 记录旧 Public 历史暴露不可逆边界与迁移回滚点
+- [x] R2. 构建脱敏 Public 安装器
+  - [x] Public 入口只包含 README / AGENTS / 安装脚本 / 安全说明 / 分发清单
+  - [x] 安装器要求 GitHub CLI 已认证且对 Private 仓有读取权限
+  - [x] Private clone/pull 使用官方 GitHub 地址，禁止 ghproxy 或 Public 镜像
+  - [x] 无认证、无权限、拉取失败时诚实停止，不宣称任何生产能力
+- [x] R3. 改造 Private bootstrap 与业务文档
+  - [x] Private bootstrap 不再宣称仓库 Public，不再尝试公共镜像
+  - [x] WorkBuddy 既有安装句继续指向同名脱敏 Public 入口
+  - [x] Public 安装器成功后调用 Private bootstrap，门户和生成链路仍只来自 Private
+- [x] R4. 本地双仓演练与审计
+  - [x] 从白名单源连续两次导出内容摘要一致
+  - [x] 临时 Public 仓安装器成功/无权限/缺 gh/目标冲突测试全通过
+  - [x] Public 导出内生产资产、媒体、Office、ZIP、业务数据、旧 Git 历史均为 0
+- [ ] R5. GitHub 原子切换
+  - [ ] 将当前完整远端仓改名并设为 Private，保全全部历史
+  - [ ] 新建同名 Public 仓并从独立脱敏 checkout 推送唯一全新根历史
+  - [ ] 当前制作工作树 origin 切到 Private；Public 安装 URL 实测匿名可读
+  - [ ] 授权账号从 Public → Private → bootstrap 路径实测通过
+- [ ] R6. Review 与交付
+  - [ ] 更新权利清单、迁移记录、运行手册与回滚说明
+  - [ ] 运行 P0 回归、Public 分发审计、Private 生产就绪校验
+  - [ ] 记录未提交的用户改动边界，不把临时文件混入迁移提交
+
+## P0 真值与安全收口实施（2026-08-08 · 用户确认“依次解决”）
+
+> **顺序：** 先建立回归测试与能力真值，再修内容/授权/审批硬闸门，随后修发布隔离，最后收口 bootstrap、业务包与门户；每一组验收通过后才进入下一组。
+> **边界：** 不新增模板、style、组件或素材；不重写现有生成器；保留工作树中用户正在进行的新课件架构与金样修改。
+> **完成定义：** P0 风险均有代码阻断与自动测试；失败任务不进入交付；业务私密文件不进入 Git；门户只承诺当前真实能力；清洁环境能力不足时明确失败而非误报成功。
+
+- [x] P0.0 建立基线与保护性测试
+  - [x] 记录现有重叠文件 diff，确保不覆盖用户改动
+  - [x] 为医学零派生、无授权包装、审批两阶段、成功后发布、能力探测编写失败用例
+- [x] P0.1 建立模板/本机双层能力真值
+  - [x] 用能力矩阵替换业务层单一 `production_ready` 语义
+  - [x] 增加 manifest/registry/catalog/canonical/引用一致性校验
+  - [x] 门户按交付物生成正确口令，并显示真实能力/缺口
+- [x] P0.2 强制内容、授权与审批边界
+  - [x] 健康视频禁止审核稿外医学推断，无法映射只报 gap
+  - [x] 商品正式视频无授权包装时阻断，通用包装仅允许草稿预览
+  - [x] Seedance/九宫格拆分 draft 与 release，release 必须绑定批准记录
+  - [x] 视觉/内容批准绑定输入与素材 hash；正式路径禁止跳过
+- [x] P0.3 强制成功后白名单发布
+  - [x] 最终状态和质量闸门通过后才写入业务交付目录
+  - [x] 交付只含业务白名单文件，不复制 workspace、依赖、源码或原始堆栈
+  - [x] 失败任务保留在本地运行区并可诊断，不显示为已交付
+- [ ] P0.4 隔离业务数据并收口安装/打包
+  - [x] 业务上传、运行区与交付物默认 Git ignored
+  - [x] bootstrap 拉取/依赖/探测失败时诚实退出
+  - [x] probe 按 `--require` 的任务能力返回真实顶层状态
+  - [x] 业务包由单一源可重复构建，保留并生成 08–11 模式
+  - [x] 形成 Public 资产/人声分发权清单与默认安装分发盘点
+  - [ ] 未获 Public 再分发授权的资产/人声退出默认安装（需权利人选择私有迁移或补齐逐文件授权）
+- [x] P0.5 回归与 Review
+  - [x] 运行单元、契约、一致性与 dry-run 测试
+  - [x] 复查门户桌面/移动主路径和键盘可用性
+  - [x] 在本节追加改动、验证、残余风险与进入 P1 的条件
+
+### Review（2026-08-08 · P0 实施）
+
+- **技术收口：** P0.0–P0.3 已完成。7 个 settled 模板改为显式能力矩阵；门户按交付物给口令，并叠加本机能力；manifest / registry / catalog / canonical / Word / voice 引用由统一 validator 校验。
+- **内容与审批：** 健康视频不再按病名继承医学默认值或改写短片头，正式 7 段只读取已冻结主题包；商品正式 8 段必须有授权包装图和 `product-video-approval-v1`；多出的已审核段落硬拒绝而非静默丢弃；三种 Prompt 模式默认只出复核包，release 同时绑定输入与复核稿 SHA-256，合规终稿再做禁词硬扫描，免责声明只豁免固定原文，不能吞掉同句违规主张。
+- **正式发布：** 仅 `mode=full + TTS + MP4 + 完整分段 + 当前审批 + qa_passed` 可进入业务交付目录；QA 精确核对 8/7 段 ID，逐段解析 WAV、ffprobe 分段 MP4、确认同 ID MP4 音轨覆盖完整旁白、完整解码整片并校验整片/分段时长；旧 `full-narration.wav` 不进入分段正式包；所有业务白名单文件绑定大小与 SHA-256，磁盘 QA 必须与运行状态一致；发布采用同父目录原子替换，失败不覆盖旧交付。
+- **业务包复现：** 08–11 固定内容迁到 `production-library/business-package-static/` 单一源；连续两次真实重建均为 117 个 ZIP 条目，内容摘要均为 `8f447333c058b056979d997c4f76e40b8f8cf7180cb5d658a77fc4370cc0b321`。本机 05 目录重建前后均为 14,215 个文件、1,438,560,090 字节；ZIP 中 05 私密载荷、workspace、node_modules、日志和 `index.local.html` 均为 0。
+- **回归证据：** `test_p0_readiness_portal.py` 8/8、`test_p0_content_safety.py` 16/16、`test_p0_delivery_publish.py` 8/8、`test_runtime_delivery_governance.py` 12/12、`test_plan_training_course.py` 6/6，共 50 项全通过；`test_content_driven_rules.py` 通过；`validate_production_readiness.py` 为 PASS；P0 Python 文件编译通过。独立对抗复核另验证审批/媒体/固定文件篡改均被拒绝。
+- **本机真值：** `pptx_export=true`、`courseware_theme_replicate=true`、`video_render=true`，但 `video_tts=false`、`video_full=false`；原因是当前 `.venv-qwen-tts` 无法导入 `mlx_audio.tts`。`--require video-full` 按约定返回 exit 2，不再把规划包冒充正式 MP4。
+- **界面复核边界：** 既有审计截图已覆盖桌面、390 px 移动视口、模板选择与复制反馈；本轮键盘按钮/移动单列/能力徽标契约测试通过。由于本地 `file://` 被应用安全策略拒绝且 Chrome 未开启远程调试，本轮未重新打开页面做新一轮人工视觉截图。
+- **仍未关闭的 P0.4：** 默认 WorkBuddy 安装仍是 Public 仓库浅克隆，仓库中已有待确认声纹、金样与参考二进制；清单本身不能产生再分发权。进入 P1 前需权利人二选一：① 推荐，将仓库/授权资产包私有化并提供脱敏 Public 代码入口；② 补齐逐文件 Public 再分发授权并启用机器可读权利台账门闸。
+- **版本控制边界：** 当前工作树原本已有大量用户改动，本轮未 stage/commit；新增 P0 脚本、测试和 `business-package-static/` 仍包含未跟踪文件。在这些文件纳入版本控制前，新的 clean clone 不会获得本轮修复。
+
+## 项目整体设计与业务自助交付审计（2026-08-08）
+
+> **范围：** 评估现有产品架构、生产资料库、业务入口、生成链路、质量门禁与运维治理；重点回答“业务如何更简单地使用，同时稳定交付高质量成品”。
+> **本轮边界：** 只做证据化评估与提升计划，不直接重构生产链路；实施性改动待用户确认路线图后开始。
+> **成功标准：** 形成现状能力地图、真实业务流程证据、问题优先级、目标工作流、分阶段任务与可量化验收指标，且不偏离“金样整片优先、单项目单 style pack、业务本机自助生成”的锁定方向。
+
+- [x] A1. 盘点事实源与当前能力边界 → 验证：关键入口、模板、生成器、质量门禁、业务文档均可追溯到文件/注册表
+- [x] A2. 走查业务真实主路径并留存界面证据 → 验证：从安装/进入门户到提交内容、复核、生成、取件均有步骤或明确阻断点
+- [x] A3. 审计系统设计与交付风险 → 验证：区分结构问题、流程问题、质量问题、维护问题，并标注影响与根因
+- [x] A4. 设计更简单的目标业务工作流与整体提升路线图 → 验证：每阶段有负责人边界、交付物、成功指标和退出条件
+- [x] A5. 完成本轮 Review → 验证：在本节末尾记录结论、证据限制与建议的下一实施批次
+
+### Review（2026-08-08）
+
+- **结论：** 项目金样生产能力强，新 component + recipe 课件架构方向正确；当前主要短板是事实源、运行环境、审批状态、统一质量闸门和成功后发布尚未收口。现阶段应暂停继续扩模板/模式，优先产品化已有 settled 能力。
+- **主要 P0：** clean clone 不可复现；readiness 误报；健康视频命令与主题包前置冲突；审核稿之外的医学派生；无授权包装 fallback；Prompt 模式先审后出未硬执行；失败任务可进入正式交付；业务输入有 Git 误提交风险；业务包不可重复构建；Public 资产与声纹分发权待复核。
+- **目标流程：** `选我要做什么 → 交已有内容 → 审初稿 → 自动生成与质检 → 一个地方取件`；统一状态机为 `intake → draft_ready → content_approved → visual_approved → rendering → qa_passed → delivered`。
+- **正式报告：** `docs/project-overall-assessment-and-improvement-plan-2026-08-08.md`。
+- **界面证据：** `production-library/validation/audits/project-design-2026-08-08/`，已覆盖桌面、模板选择、复制反馈与 390 px 移动视口。
+- **验证：** `test_content_driven_rules.py` 通过；`test_plan_training_course.py` 6 项通过；环境探测显示 `pptx_export=true`、`video_tts=false`、`video_full=false`。
+- **限制：** 未在全新业务机执行安装与全量 7 模板重渲染；未调用付费外部 API；未做完整无障碍认证；工作树已有用户进行中的大量修改，本轮未整理或覆盖。
+- **下一批：** 待用户确认后实施 P0“真值与安全收口”，不重写生成器、不加模板、不扩素材库。
+
 ## 构件化课件流水线（2026-08-07 用户拍板 · 交下一模型执行）
 
 > **方案文档：** `docs/component-recipe-pipeline-architecture.md`（先读，含现状盘点/坑位/验收）
@@ -71,7 +174,13 @@ python3 scripts/generate_courseware.py \
   - Schema：`production-library/schemas/page-type-proposal.schema.json`
   - 提案目录 + M3 历史回填：`page-types/product-training/proposals/`
   - 未做增强：生成器自动吐 proposal / CI 校验 / WorkBuddy 入口
-- [ ] L2 业务 Word/大纲 → script 半自动（AI 结构化+人审），对接输入契约四步流
+- [x] L2 业务 Word/大纲 → script 半自动 + 人审清单（2026-08-08）
+  - 手册：`docs/product-training-script-content-entry.md`
+  - Schema：`production-library/schemas/product-training-script.schema.json`
+  - 工具：`scripts/draft_product_training_script.py`
+  - 冒烟：`samples/…/示例大纲_商品培训_L2.md` → `validation/courseware/l2-draft-smoke/`
+  - 四步：选模板→交资料→初稿人审→确认后 `generate_courseware`
+  - 未做：WorkBuddy 一键 / 贴图抽资产 / CI schema
 
 ---
 
@@ -4616,4 +4725,3 @@ Q10 只证明「这一份」能做成大参林版。工厂价值在于**换商�
 - **chrome/editable key 误查（2 处）**：S01 `card_chevron`、S12/S13 `plus` 是 chrome 层节点，motion 却用 `nodeOf`（editable key）查找 → 找不到 → 入场动画从未执行 → 元素保持 pre opacity:0 永久隐身。门禁1/2 预览子集不含这三页所以没暴露，是全片 pair 末帧对照抓出来的。修法：改 `view.findKey(chromeKey(...))`（同 S11 row_chev 既有模式）。
 - **S11 两个版式 bug**：左列单行长标签溢出压右栏（计划内 bug，width=340+textWrap 修复）；右列 body 未开 textWrap 冲出表格压右侧竖排（pair 对照 PIL 基线抓出，wrap={true} 修复）。
 - **字幕宽度**：S13 三十字长句在 1700px 框内「荐。」孤字折行 → caption width 统一 1820px（PIL 字幕可用宽 ≈1860）。
-

@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -85,6 +86,95 @@ def write_json(path: Path, data: Any) -> None:
 
 def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def media_tool(name: str) -> str | None:
+    for prefix in (Path("/opt/homebrew/bin"), Path("/usr/local/bin")):
+        candidate = prefix / name
+        if candidate.is_file():
+            return str(candidate)
+    return shutil.which(name)
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def product_content_sha256(content: dict[str, Any]) -> str:
+    payload = {
+        "theme": str(content.get("theme") or ""),
+        "sections": [
+            {
+                "title": str(section.get("title") or ""),
+                "narration": str(section.get("narration") or ""),
+            }
+            for section in content.get("sections") or []
+        ],
+    }
+    encoded = json.dumps(
+        payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def build_product_approval_request(
+    content: dict[str, Any], product_image: Path | None
+) -> dict[str, Any]:
+    return {
+        "schema": "product-video-approval-v1",
+        "approved": False,
+        "approved_by": "",
+        "approved_at": "",
+        "authorization_reference": "",
+        "approved_content_sha256": product_content_sha256(content),
+        "approved_product_image_sha256": (
+            sha256_file(product_image)
+            if product_image and product_image.is_file()
+            else None
+        ),
+        "notes": "确认 8 段审核稿与包装图可用于本次内部培训视频后再批准",
+    }
+
+
+def require_product_approval(
+    content: dict[str, Any], product_image: Path, approval_path: Path | None
+) -> dict[str, Any]:
+    if not approval_path or not approval_path.is_file():
+        return {
+            "ok": False,
+            "error": "缺少 --product-approval；请先审核 product-approval.request.json",
+        }
+    try:
+        approval = load_json(approval_path)
+    except (OSError, json.JSONDecodeError) as exc:
+        return {"ok": False, "error": f"商品审批文件不可读: {exc}"}
+    expected_content = product_content_sha256(content)
+    expected_image = sha256_file(product_image)
+    required_text = ("approved_by", "approved_at", "authorization_reference")
+    if approval.get("schema") != "product-video-approval-v1":
+        return {"ok": False, "error": "商品审批 schema 不匹配"}
+    if approval.get("approved") is not True:
+        return {"ok": False, "error": "商品内容与包装尚未批准（approved != true）"}
+    missing = [key for key in required_text if not str(approval.get(key) or "").strip()]
+    if missing:
+        return {"ok": False, "error": f"商品审批缺少字段: {', '.join(missing)}"}
+    if approval.get("approved_content_sha256") != expected_content:
+        return {"ok": False, "error": "商品审核稿在审批后发生变化，请重新审核"}
+    if approval.get("approved_product_image_sha256") != expected_image:
+        return {"ok": False, "error": "商品包装图在审批后发生变化，请重新审核"}
+    return {
+        "ok": True,
+        "approved": True,
+        "approved_by": approval["approved_by"],
+        "approved_at": approval["approved_at"],
+        "authorization_reference": approval["authorization_reference"],
+        "approved_content_sha256": expected_content,
+        "approved_product_image_sha256": expected_image,
+    }
 
 
 def slugify(text: str) -> str:
@@ -310,6 +400,9 @@ def generate_tts(
     py: Path,
 ) -> float:
     out_wav.parent.mkdir(parents=True, exist_ok=True)
+    ffmpeg = media_tool("ffmpeg")
+    if not ffmpeg:
+        raise RuntimeError("缺少 ffmpeg，无法生成正式旁白")
     worker = out_wav.with_suffix(".worker.py")
     worker.write_text(
         f"""
@@ -324,6 +417,7 @@ text = {text!r}
 ref_audio = {str(prompt_audio)!r}
 ref_text = {ref_text!r}
 out = {str(out_wav)!r}
+ffmpeg = {ffmpeg!r}
 tempo = {DEFAULT_TEMPO}
 model = load_model({MODEL_ID!r})
 sr = model.sample_rate
@@ -337,7 +431,7 @@ for r in results:
 audio = np.concatenate(chunks) if len(chunks) > 1 else chunks[0]
 raw = Path(out).with_suffix('.raw.wav')
 sf.write(raw, audio, sr)
-subprocess.run(['ffmpeg','-loglevel','error','-y','-i',str(raw),'-af',f'atempo={{tempo:.6f}},aresample={{sr}}',str(out)], check=True)
+subprocess.run([ffmpeg,'-loglevel','error','-y','-i',str(raw),'-af',f'atempo={{tempo:.6f}},aresample={{sr}}',str(out)], check=True)
 raw.unlink(missing_ok=True)
 print(json.dumps({{'ok': True}}))
 """,
@@ -359,7 +453,7 @@ print(json.dumps({{'ok': True}}))
     padded = out_wav.with_suffix(".pad.wav")
     subprocess.run(
         [
-            "ffmpeg",
+            ffmpeg,
             "-loglevel",
             "error",
             "-y",
@@ -424,6 +518,12 @@ def apply_content_to_json(
         assets = data.setdefault("assets", {})
         if isinstance(assets, dict):
             assets["product"] = product_asset
+    else:
+        # Gold JSON may contain the Q10 demonstration packshot. A new product may
+        # never inherit it: missing authorization is a gap, not a substitution.
+        assets = data.get("assets")
+        if isinstance(assets, dict):
+            assets.pop("product", None)
     return data
 
 
@@ -433,9 +533,12 @@ def render_segment(ws: Path, segment_id: str, out_mp4: Path) -> None:
     ws_out = ws / "out" / f"{segment_id}.mp4"
     ws_out.parent.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
-    env["FFMPEG_PATH"] = env.get("FFMPEG_PATH") or "/opt/homebrew/bin/ffmpeg"
-    env["FFPROBE_PATH"] = env.get("FFPROBE_PATH") or "/opt/homebrew/bin/ffprobe"
-    env["PATH"] = f"/opt/homebrew/bin:{env.get('PATH', '')}"
+    ffmpeg = media_tool("ffmpeg")
+    ffprobe = media_tool("ffprobe")
+    if ffmpeg:
+        env["FFMPEG_PATH"] = env.get("FFMPEG_PATH") or ffmpeg
+    if ffprobe:
+        env["FFPROBE_PATH"] = env.get("FFPROBE_PATH") or ffprobe
     cmd = [
         "node",
         "scripts/render-product-segment.mjs",
@@ -462,13 +565,16 @@ def render_segment(ws: Path, segment_id: str, out_mp4: Path) -> None:
 
 
 def concat_mp4s(paths: list[Path], out: Path) -> None:
+    ffmpeg = media_tool("ffmpeg")
+    if not ffmpeg:
+        raise RuntimeError("缺少 ffmpeg，无法拼接正式视频")
     lst = out.with_suffix(".concat.txt")
     lst.write_text(
         "\n".join(f"file '{p.resolve()}'" for p in paths) + "\n", encoding="utf-8"
     )
     subprocess.run(
         [
-            "ffmpeg",
+            ffmpeg,
             "-loglevel",
             "error",
             "-y",
@@ -495,15 +601,64 @@ def run_product_full(
     with_tts: bool,
     with_render: bool,
     product_image: Path | None = None,
+    product_approval: Path | None = None,
 ) -> dict[str, Any]:
     product = content["theme"]
     sections = content["sections"]
+    real_sections = [section for section in sections if segment_has_content(section)]
+    if with_render and len(real_sections) > len(SEGMENTS):
+        extra = real_sections[len(SEGMENTS) :]
+        return {
+            "ok": False,
+            "error": (
+                f"商品正式成片固定为 8 段，检测到 {len(real_sections)} 段审核内容；"
+                "额外内容不得静默丢弃，请合并或重新确认 8 段结构。"
+            ),
+            "extra_sections": [str(item.get("title") or "") for item in extra],
+        }
     mapped = map_sections_to_segments(sections, product)
     if not mapped:
         return {"ok": False, "error": "未映射到任何有效段落（请提供带旁白的 sections）"}
+    authorized_product_image = bool(product_image and product_image.is_file())
+    if with_render and not authorized_product_image:
+        return {
+            "ok": False,
+            "error": (
+                "正式 render 缺少业务声明的授权包装图。"
+                "请通过 --product-image 提供授权原图；通用示意包装仅可用于显式预览/规划。"
+            ),
+            "gate": "authorized_product_packshot",
+            "product": product,
+        }
+    missing_segments = [seg["id"] for seg in SEGMENTS if seg["id"] not in mapped]
+    if with_render and missing_segments:
+        return {
+            "ok": False,
+            "error": f"商品正式成片需要完整 8 段，当前缺少: {', '.join(missing_segments)}",
+            "missing_segments": missing_segments,
+        }
+    approval_gate: dict[str, Any] | None = None
+    if with_render:
+        assert product_image is not None
+        approval_gate = require_product_approval(content, product_image, product_approval)
+        if not approval_gate.get("ok"):
+            return {
+                "ok": False,
+                "error": approval_gate.get("error"),
+                "approval": approval_gate,
+            }
     screen = extract_screen_fields(product, mapped, sections)
-    if product_image and product_image.exists():
+    if authorized_product_image:
         screen["pack_badge"] = "授权包装"
+        screen["content_gaps"] = []
+    else:
+        screen["pack_badge"] = "待补授权包装（仅规划，不可正式渲染）"
+        screen["content_gaps"] = [
+            {
+                "field": "authorized_product_packshot",
+                "reason": "未提供业务声明授权的商品包装原图",
+            }
+        ]
 
     segment_plan = {
         seg["id"]: {
@@ -529,6 +684,9 @@ def run_product_full(
         "mode": "full-content-visual-audio",
         "product": product,
         "content_driven": True,
+        "authorized_product_packshot": authorized_product_image,
+        "approval": approval_gate,
+        "content_gaps": screen["content_gaps"],
         "segment_plan": segment_plan,
         "segments": {},
     }
@@ -551,14 +709,13 @@ def run_product_full(
     public_audio.mkdir(parents=True, exist_ok=True)
 
     product_asset_url = None
-    if product_image and product_image.exists():
+    if authorized_product_image:
+        assert product_image is not None
         dest_img = ws / "public" / "product-training-assets" / f"business-{slugify(product)}.png"
         dest_img.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(product_image, dest_img)
         product_asset_url = f"/product-training-assets/{dest_img.name}"
         screen["pack_badge"] = "授权包装"
-    else:
-        product_asset_url = "/product-training-assets/generic-coq10-packshot-v1.png"
 
     segment_mp4s: list[Path] = []
     audio_dir = out_dir / "audio" / "sections"

@@ -13,8 +13,7 @@
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-仓库已 **Public**：业务机一般无需 GitHub 账号/权限即可安装。  
-国内直连 GitHub 可能慢或超时——WorkBuddy 安装脚本会自动试国内可用镜像；仍失败再换网络或用业务包 zip 备用。
+这个 URL 是**脱敏 Public 安装入口**，不是生产仓库。业务机需先用 GitHub CLI 登录，且当前账号已获 Private production 的 `read` 权限；未登录或无权限时安装器会明确停止。Private 拉取只走 GitHub 官方地址，不经过公共镜像，也不以公开 ZIP 兜底。
 
 **WorkBuddy 侧：** `docs/workbuddy-install-and-guide.md` + `docs/workbuddy-system-prompt.md`  
 **刷新业务包（制作）：** `python3 scripts/refresh_business_delivery.py`
@@ -36,20 +35,21 @@
 业务                              WorkBuddy
 ────                              ────────
 ① 打开 WorkBuddy，粘贴安装句  →
-                                  ② git clone / pull + bootstrap
-                                  ③ 打开 index.html，开始四步指引
-④ 预览选模板
-⑤ 填空白 Word + 授权图
-⑥ 附件或上传区提交            →
-                                  ⑦ 锁定 template / style_pack / voice
-                                  ⑧ 解析内容（N 条→N 行）
-                                  ⑨ 交「内容初稿 + 缺口」或「分镜 + 缺口」
-⑩ 审阅、改文案、确认          →
-                                  ⑪ 生成终稿 PPTX 和/或 MP4
-⑫ 成片归档 / 门店使用
+                                  ② 安装 Public 入口 → 授权检查
+                                  ③ 拉取 Private → bootstrap
+                                  ④ 打开 index.html，开始四步指引
+⑤ 预览选模板
+⑥ 填空白 Word + 授权图
+⑦ 附件或上传区提交            →
+                                  ⑧ 锁定 template / style_pack / voice
+                                  ⑨ 解析内容（N 条→N 行）
+                                  ⑩ 交「内容初稿 + 缺口」或「分镜 + 缺口」
+⑪ 审阅、改文案、确认          →
+                                  ⑫ 生成终稿 PPTX 和/或 MP4
+⑬ 成片归档 / 门店使用
 ```
 
-业务**不需要**自己点生成器、也**不需要**解压包；**需要** WorkBuddy 把安装与 ⑦～⑪ 做完。
+业务**不需要**自己点生成器、也**不需要**解压包；**需要** WorkBuddy 把安装与 ⑧～⑫ 做完。
 
 ---
 
@@ -82,7 +82,7 @@
 
 ## WorkBuddy 侧必须做到（代理）
 
-1. 识别安装句 → 跑 `scripts/workbuddy_bootstrap_for_business.py`（或等价 clone+打开引导页）  
+1. 识别安装句 → 克隆 Public installer，运行 `scripts/install_private_studio.py`；授权安装完成后，才运行 Private 内的 `scripts/workbuddy_bootstrap_for_business.py`
 2. 按 `docs/workbuddy-install-and-guide.md` 逐步指引，不要丢一堆路径让业务自己摸  
 3. 用 `business-catalog.json` 把中文课型名落到 settled slug  
 4. 列表/联合用药用 `scripts/content_driven_rules.py`  
@@ -97,8 +97,8 @@
 
 ## 备用：无 WorkBuddy 时
 
-制作可另发 `outputs/业务使用资料包/药店培训内容工厂-业务包.zip` 供离线预览 Word。  
-**正式交付仍建议装 WorkBuddy 走默认安装句**，否则无法在本机自动出成片。
+如确需离线分发，只能由管理员通过受控渠道交付获授权版本，并记录接收人、版本与哈希；不得把业务包 ZIP 放入 Public、群聊或公开网盘。
+**正式交付仍走默认安装句和 Private 授权**，Public 不提供生产 ZIP 备用路径。
 
 ---
 

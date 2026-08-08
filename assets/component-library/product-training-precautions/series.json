@@ -1,0 +1,30 @@
+{
+  "id": "series.product-training.precautions-illo-v1",
+  "name_zh": "商品培训注意事项插画系列 v1",
+  "version": "1.0.0",
+  "status": "technical-qa-passed",
+  "style_pack_ids": [
+    "style-pack.courseware-4-silk-yellow-red-v1",
+    "style-pack.lycopene-health-edu-cream-red-v1",
+    "style-pack.dashenlin-courseware-green-v1"
+  ],
+  "series_style_id": "dashenlin-medical-flat-illustration-v1",
+  "purpose": "注意事项页右侧 2×2 主题插画，跨品类复用；标签文案由引擎 chrome 写入，不进图内文字。",
+  "role_contracts": [
+    { "role_id": "not_medicine", "name_zh": "不代替药物" },
+    { "role_id": "special_pop", "name_zh": "禁忌人群" },
+    { "role_id": "with_meal", "name_zh": "随餐服用" },
+    { "role_id": "consult", "name_zh": "就医咨询" }
+  ],
+  "members": [
+    "pre-not-medicine",
+    "pre-special-pop",
+    "pre-with-meal",
+    "pre-consult"
+  ],
+  "extension_gate": [
+    "新主题优先复用四角色语义；勿为单品另起一套画风",
+    "入库前必须 whitekey + check-alpha PASS",
+    "图内禁止文字/Logo/真包装仿造"
+  ]
+}

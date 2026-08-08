@@ -3,7 +3,9 @@
 **用途：** 业务在 WorkBuddy **自己出视频**前，由**代理在业务机执行**下面命令确认环境（不要让业务敲命令）。  
 **PPT 出片** 不强制；**商品培训视频 / 疾病科普视频 full 重渲** 必须过。
 
-仓库根目录 `$REPO`（常见 `~/Documents/chain-pharmacy-content-studio`）。
+仓库根目录 `$REPO` 是已授权安装器拉取的 **Private production checkout**（常见
+`~/Documents/chain-pharmacy-content-studio-private`），不是 Public installer 目录。Public
+不含本清单所需模板、声纹、渲染工程或生成器，不能执行视频自检。
 
 ---
 
@@ -11,9 +13,14 @@
 
 ```bash
 cd $REPO
+git remote get-url origin
 git pull --ff-only
 # 系统提示请用最新 docs/workbuddy-system-prompt.md 全文重贴到 WorkBuddy
 ```
+
+期望 origin 指向 `lmr1123/chain-pharmacy-content-studio-private`。若尚未登录、没有
+Private `read` 权限或当前目录是 Public installer，回到
+`scripts/install_private_studio.py` 完成授权安装；禁止公共镜像或公开 ZIP 回退。
 
 ---
 
@@ -87,8 +94,12 @@ EOF
   --template product \
   --sections-json /tmp/wb-video-smoke.json \
   --with-tts --with-mp4 \
+  --product-image <业务确认可用于本次自检的授权包装图> \
+  --product-approval <根据规划包 product-approval.request.json 填写并批准的JSON> \
   --slug wb-first-check
 ```
+
+运行正式自检前，先用同一 sections 与包装图执行 `--mode plan`，填写审批请求中的批准人、时间和授权凭证编号。没有业务确认可用的包装图时，只运行 `--mode plan`；禁止生成通用假包装冒充正式画面。
 
 期望：结束 JSON 里 `"ok": true`、`"mp4": true`，并存在：
 
@@ -96,36 +107,35 @@ EOF
 outputs/business-video-runs/wb-first-check/*_商品培训视频_v1.mp4
 ```
 
-**疾病科普视频（可选 · 7 段，约 4～8 分钟）：**
+**疾病科普视频（可选 · 先验证 7 段规划与安全门）：**
 
 ```bash
 cat > /tmp/wb-health-smoke.json <<'EOF'
 {
   "theme": "自检演示证",
   "sections": [
-    {"title": "开场", "narration": "中医基础知识自检演示证。"},
-    {"title": "基础认知", "narration": "本片仅作业务机环境自检，画面与旁白应出现自检演示证。"},
-    {"title": "病因机理", "narration": "自检演示：外邪入侵导致不适。"},
+    {"title": "开场", "narration": "本片仅作业务机规划自检，不代表正式医学内容。"},
+    {"title": "基础认知", "narration": "审核稿占位要点甲、审核稿占位要点乙。"},
+    {"title": "病因机理", "narration": "审核项甲 + 审核项乙 = 审核结果。"},
     {"title": "典型症状", "narration": "一、表现甲。二、表现乙。三、表现丙。"},
-    {"title": "调理建议", "narration": "核心是辨证调理。可用常用食材配合。"},
-    {"title": "用药建议", "narration": "注意休息、多喝温水、饮食清淡、及时就医。"},
+    {"title": "调理建议", "narration": "核心原则：审核结论甲。审核结论乙。"},
+    {"title": "用药建议", "narration": "审核建议甲、审核建议乙。"},
     {"title": "总结", "narration": "自检完成，请改用真实审核病种内容再出正式片。"}
   ]
 }
 EOF
 
-.venv-qwen-tts/bin/python scripts/generate_business_video.py \
+python3 scripts/generate_business_video.py \
   --template health \
   --sections-json /tmp/wb-health-smoke.json \
-  --with-tts --with-mp4 \
+  --mode plan \
   --slug wb-health-first-check
 ```
 
-期望：
-
-```text
-outputs/business-video-runs/wb-health-first-check/*_疾病科普视频_v1.mp4
-```
+期望生成规划包（`content.json`、`storyboard.html`、`gap-report.json`），但不声称已经生成正式 MP4。
+正式疾病科普出片必须改用真实审核稿，先运行 `build_health_theme_package.py`，补齐
+`content_gaps` / `needs_generation` 并完成 SHA-256 绑定的画面审批，再以
+`--theme-package` 运行 full；本机自检不得自动勾选审批。
 
 ---
 
@@ -134,7 +144,7 @@ outputs/business-video-runs/wb-health-first-check/*_疾病科普视频_v1.mp4
 | 结果 | 含义 |
 |------|------|
 | ①～⑤ 全过 | **可以**让业务在 WorkBuddy 上生成商品培训视频 |
-| ①～⑤ + 疾病科普冒烟 | **可以**生成疾病科普视频（风热金样 full 重渲） |
+| ①～⑤ + 疾病科普规划通过 | 环境与入口可用；正式片仍需真实 7 段审核稿、完整主题画面与哈希审批 |
 | ①②④ 过、③ 挂 | 可 plan / 出 PPT；视频正式旁白需先装 TTS venv |
 | ⑤ 挂 | 把终端报错留给制作侧；勿对业务假装已出片 |
 

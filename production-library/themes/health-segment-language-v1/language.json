@@ -1,0 +1,288 @@
+{
+  "id": "health-segment-language-v1",
+  "name_zh": "疾病科普视频 · 段语言 v1（风热金样抽离）",
+  "version": "1.0.0",
+  "status": "production-candidate",
+  "locked_at": "2026-08-06",
+  "source_gold": {
+    "template_id": "template.health-reference-tech-v1",
+    "style_pack_id": "style-pack.reference-medical-tech-v1",
+    "settled_dir": "production-library/templates/settled/health-video-reference-tech-v1",
+    "engine_root": "poc/gold-sample",
+    "voice_pack_id": "voice.reference-pharmacist-qwen-v1"
+  },
+  "reuse_layers": {
+    "style_shell": "母版色板、字体、字幕条、角标、全局电流底",
+    "presenter": "卡通药师姿势 + 口型体系（不按主题重画身份）",
+    "voice": "克隆药师声 pack，禁止系统 TTS",
+    "segment_recipes": "7 段动效/构图骨架（Revideo project），按主题重跑而非静态贴字"
+  },
+  "not_this_model": [
+    "整段自由生成视频",
+    "仅在金样成片上换字幕",
+    "无槽位合同的随意换图",
+    "未过目即渲染正式成片"
+  ],
+  "workflow": [
+    "1. 业务审核文案 → sections",
+    "2. 按本语言展开主题制作包（script + screen + visual-plan + 生图说明）",
+    "3. 全部画面槽位过目确认（approval.visuals_approved=true）",
+    "4. 资产落入主题包 assets/",
+    "5. TTS + 7 段 recipe 重渲 + concat",
+    "6. visual-coverage + 静音语义验收"
+  ],
+  "approval_gate": {
+    "mode": "all_visuals_review",
+    "require_file": "approval.json",
+    "require_fields": {
+      "visuals_approved": true,
+      "approved_by": "non-empty string",
+      "approved_at": "ISO date"
+    },
+    "block_render_if_missing": true
+  },
+  "segments": [
+    {
+      "id": "intro",
+      "label_zh": "开场",
+      "teaching_job": "建立栏目与主题病名",
+      "recipe_project": "src/reference-native-intro-project.tsx",
+      "content_json": "health-training-intro.json",
+      "text_slots": ["disease_name", "eyebrow", "tagline", "slogan"],
+      "image_slots": [],
+      "n_list_rules": []
+    },
+    {
+      "id": "character",
+      "label_zh": "基础认知",
+      "teaching_job": "用短词卡建立可观察表现",
+      "recipe_project": "src/reference-replica-project.tsx",
+      "content_json": "health-training-character.json",
+      "text_slots": ["chapter_character", "character_cards"],
+      "image_slots": [],
+      "n_list_rules": [
+        {
+          "field": "character_cards",
+          "min": 1,
+          "max": 6,
+          "pad_to_gold": false
+        }
+      ]
+    },
+    {
+      "id": "mechanism",
+      "label_zh": "病因机理",
+      "teaching_job": "外因×内因 → 结果 的方程叙事 + 人体机理演绎",
+      "recipe_project": "src/reference-mechanism-gap-project.tsx",
+      "content_json": "health-training-mechanism.json",
+      "text_slots": [
+        "mechanism_title",
+        "equation_left",
+        "equation_right",
+        "equation_result"
+      ],
+      "image_slots": [
+        {
+          "slot_id": "mechanism.human_body",
+          "role": "半透明人体主视觉",
+          "disease_family_default": "exogenous-cold"
+        },
+        {
+          "slot_id": "mechanism.dynamic_layers",
+          "role": "邪气/病灶动态层（可复用外感系列）",
+          "disease_family_default": "exogenous-cold"
+        }
+      ],
+      "n_list_rules": []
+    },
+    {
+      "id": "symptoms",
+      "label_zh": "典型症状",
+      "teaching_job": "分组症状卡：每项 label + 同画风插图",
+      "recipe_project": "src/reference-symptoms-project.tsx",
+      "content_json": "health-training-symptoms.json",
+      "text_slots": ["symptoms_title", "symptom_groups.*.title", "symptom_groups.*.summaryLines", "symptom_groups.*.items.*.label"],
+      "image_slots": [
+        {
+          "slot_id": "symptoms.item",
+          "role": "单症状插图",
+          "path_in_render": "/production-symptoms/{image}",
+          "series": "series.symptom.pharmacy-health-cartoon-v1",
+          "per": "each item in symptom_groups"
+        }
+      ],
+      "n_list_rules": [
+        {
+          "field": "symptom_groups",
+          "min": 1,
+          "max": 3,
+          "default": 2,
+          "pad_to_gold": false,
+          "note": "按主题重建分组；默认 2 组（同风格略调）。禁止保留风热三组壳只改一行字。recipe 支持 N 组垂直居中与逐组高亮。"
+        },
+        {
+          "field": "symptom_groups[].items",
+          "min": 1,
+          "max": 4,
+          "pad_to_gold": false
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "label_zh": "调理建议",
+      "teaching_job": "核心治法 + 常用食材/草药卡",
+      "recipe_project": "src/reference-treatment-project.tsx",
+      "content_json": "health-training-treatment.json",
+      "text_slots": [
+        "core_heading",
+        "core_treatment",
+        "core_body_1",
+        "core_body_2",
+        "core_body_3",
+        "treatment_principle",
+        "treatment_line_1",
+        "treatment_line_2",
+        "recipe_text",
+        "recipe_effect",
+        "herbs[].name",
+        "herbs[].lines"
+      ],
+      "image_slots": [
+        {
+          "slot_id": "treatment.herb",
+          "role": "草药/食材透明插图",
+          "path_in_render": "/treatment-assets/{image}",
+          "per": "each herb"
+        }
+      ],
+      "n_list_rules": [
+        {
+          "field": "herbs",
+          "min": 0,
+          "max": 3,
+          "pad_to_gold": false
+        }
+      ]
+    },
+    {
+      "id": "medication",
+      "label_zh": "用药与生活建议",
+      "teaching_job": "用药提醒 + 生活建议列表（图标）",
+      "recipe_project": "src/reference-medication-advice-project.tsx",
+      "content_json": "health-training-medication.json",
+      "text_slots": [
+        "medication_names",
+        "advice_title",
+        "advice_items[].title",
+        "advice_items[].body"
+      ],
+      "image_slots": [
+        {
+          "slot_id": "medication.advice_icon",
+          "role": "生活建议图标",
+          "path_in_render": "/advice-assets/{image}",
+          "per": "each advice_items"
+        }
+      ],
+      "n_list_rules": [
+        {
+          "field": "advice_items",
+          "min": 1,
+          "max": 6,
+          "pad_to_gold": false
+        },
+        {
+          "field": "medication_names",
+          "min": 0,
+          "max": 4,
+          "pad_to_gold": false
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "label_zh": "总结",
+      "teaching_job": "矩阵小结回收",
+      "recipe_project": "src/reference-summary-outro-project.tsx",
+      "content_json": "health-training-summary.json",
+      "text_slots": ["summary_title", "summary_items[].title", "summary_items[].body", "slogan"],
+      "image_slots": [],
+      "n_list_rules": [
+        {
+          "field": "summary_items",
+          "min": 1,
+          "max": 4,
+          "pad_to_gold": false
+        }
+      ]
+    }
+  ],
+  "disease_families": {
+    "exogenous-cold": {
+      "name_zh": "外感/感冒/风寒风热族",
+      "can_reuse_mechanism_series": "mechanisms/wind-heat-dynamic-v1 + medical-human-body-v1",
+      "reuse_note": "机理动效骨架可复用；方程文案与症状/草药必须按主题；用户过目后方可渲染"
+    }
+  },
+  "asset_alias": {
+    "发热": "fever",
+    "低热": "fever",
+    "发烧": "fever",
+    "口渴": "thirst",
+    "嘴巴干": "dry-mouth",
+    "口干": "dry-mouth",
+    "烦躁": "irritable",
+    "心里烦躁": "irritable",
+    "咽痛": "sore-throat",
+    "喉咙痛": "sore-throat",
+    "喉咙肿痛": "sore-throat",
+    "咳嗽": "cough",
+    "咳": "cough",
+    "痰黄": "yellow-phlegm",
+    "黄痰": "yellow-phlegm",
+    "鼻涕黄稠": "yellow-nasal",
+    "黄涕": "yellow-nasal",
+    "流涕": "runny-nose",
+    "流鼻涕": "runny-nose",
+    "鼻塞": "nasal-congestion",
+    "鼻塞流涕": "runny-nose",
+    "打喷嚏": "sneeze",
+    "喷嚏": "sneeze",
+    "乏力": "fatigue",
+    "疲倦": "fatigue",
+    "全身酸痛": "body-ache",
+    "酸痛": "body-ache",
+    "舌头红": "red-tongue",
+    "舌红": "red-tongue",
+    "舌苔黄": "yellow-coat",
+    "大便干结": "dry-stool",
+    "胃不适": "stomach-discomfort",
+    "桑叶": "mulberry-leaf",
+    "菊花": "chrysanthemum",
+    "薄荷": "mint",
+    "生姜": "ginger",
+    "葱白": "scallion-white",
+    "通风": "ventilation",
+    "多喝温水": "warm-water",
+    "温水": "warm-water",
+    "饮食清淡": "light-diet",
+    "清淡": "light-diet",
+    "戒烟戒酒": "no-smoking-alcohol",
+    "烟酒": "no-smoking-alcohol"
+  },
+  "library_roots": {
+    "symptoms": "assets/component-library/symptoms",
+    "herbs": "assets/component-library/herbs",
+    "advice": "assets/component-library/advice-icons",
+    "mechanisms": "assets/component-library/mechanisms",
+    "render_symptoms": "poc/gold-sample/public/production-symptoms",
+    "render_treatment": "poc/gold-sample/public/treatment-assets",
+    "render_advice": "poc/gold-sample/public/advice-assets",
+    "render_mechanism": "poc/gold-sample/public/mechanism-assets"
+  },
+  "style_brief": "production-library/themes/health-segment-language-v1/style-brief.md",
+  "defaults": {
+    "max_symptom_groups": 2
+  }
+}

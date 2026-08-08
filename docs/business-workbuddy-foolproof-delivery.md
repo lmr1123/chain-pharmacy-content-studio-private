@@ -94,32 +94,35 @@
 | 角色 | 工具 | 职责 |
 |------|------|------|
 | **业务** | WorkBuddy 对话 + 引导页 + Word | 说安装句、选模板、填审核内容、附授权图、审初稿/分镜 |
-| **WorkBuddy（代理）** | 本机 `git clone` 本仓库 + 系统提示 | **安装/更新**、打开引导页、逐步指引、解析 Word、套模板、克隆旁白、导出 |
+| **WorkBuddy（代理）** | Public installer + 获授权的 Private production + 系统提示 | **检查登录/授权、安装/更新 Private**、打开引导页、逐步指引、解析 Word、套模板、克隆旁白、导出 |
 | **制作** | 全库 + 业务编辑器 + 剪映 | 金样沉淀、新页型、语音包、返修疑难 |
 
 ### 2.2 交付物分层（默认 vs 备用）
 
-#### 默认 · 业务 + WorkBuddy 安装仓库
+#### 默认 · Public 安装入口 → Private 生产仓
 
-业务只发安装句；WorkBuddy 克隆：
+业务只发安装句；WorkBuddy 先克隆脱敏 Public installer：
 
 `https://github.com/lmr1123/chain-pharmacy-content-studio.git`
 
-脚本：`scripts/workbuddy_bootstrap_for_business.py`  
+Public 脚本：`scripts/install_private_studio.py`<br>
+授权通过后脚本：Private 内 `scripts/workbuddy_bootstrap_for_business.py`<br>
 协议：`docs/workbuddy-install-and-guide.md`  
 提示词：`docs/workbuddy-system-prompt.md`
 
-克隆后业务可见引导页在仓库内：
+Public 不含模板、声音、业务包或生成器；安装器检查 GitHub 登录和 Private `read` 权限，通过后才拉取完整生产仓并调用 bootstrap。未登录或无权限时必须停止，禁止公共镜像和公开 ZIP 回退。
+
+授权安装后，业务可见引导页在 Private 仓库内：
 
 `outputs/业务使用资料包/药店培训内容工厂-业务包/index.html`
 
 #### 档 A · 离线业务包（备用 · 非默认）
 
-无代理时由制作拷贝 zip，**仍建议业务装 WorkBuddy 走默认入口**。
+仅在管理员批准的离线场景，由制作通过受控渠道交付获授权 ZIP，并记录接收人、版本与哈希；不得作为 Public fallback。**常规业务仍走 WorkBuddy 默认入口**。
 
 ```text
 药店培训内容工厂-业务包/
-  index.html                       # 开源式四步引导
+  index.html                       # 内部四步引导
   00_一页怎么用.md
   01_模板货架/
   02_空白Word/
@@ -397,7 +400,7 @@ WorkBuddy：**voice_id 只从模板 manifest 读取**，禁止回退系统 TTS�
 ```text
 业务在 WorkBuddy：请安装 <repo.git>，然后指引我使用
     ↓
-WorkBuddy：git clone/pull + bootstrap → 打开 index.html
+WorkBuddy：安装 Public → 校验 Private read → 拉取 Private + bootstrap → 打开 index.html
     ↓
 【A】预览选模板（关键页 + 金样）
     ↓
@@ -436,7 +439,8 @@ WorkBuddy：
 ```text
 你是连锁药店培训内容工厂的本地代理。只使用 production-library/templates/settled 中已登记模板。
 业务默认入口：识别「请安装 …chain-pharmacy-content-studio.git，然后指引我使用」→
-clone/pull + scripts/workbuddy_bootstrap_for_business.py → 打开引导页 → 四步陪做。
+clone Public installer + scripts/install_private_studio.py → 校验 GitHub 登录与 Private read →
+拉取 Private + scripts/workbuddy_bootstrap_for_business.py → 打开引导页 → 四步陪做。
 禁止要求业务自己解压 zip。全文见 docs/workbuddy-system-prompt.md。
 
 【业务可见】
@@ -552,7 +556,8 @@ clone/pull + scripts/workbuddy_bootstrap_for_business.py → 打开引导页 →
 | 2026-08-03 | **小图标按需源头**：Koboyo Icons 写入金样复刻/装配协议与业务交付（§6.5.1）；业务不找图标，代理/制作按需获取 |
 | 2026-08-03 | **Koboyo 不囤库**：删除预下载 SVG；`svg/` gitignore；Git 只留说明与许可，后续按需再拉 |
 | 2026-08-03 | **业务可上手**：每课型「本课型怎么填」；填写参考纠错（商品不再错挂风热样本）；初稿/缺口/分镜标准模板+示例；业务验收清单；内容驱动规则回归；一键 `scripts/refresh_business_delivery.py` |
-| 2026-08-03 | **默认入口改为 WorkBuddy 安装句**：业务不需解压；`workbuddy_bootstrap_for_business.py` + `workbuddy-install-and-guide.md`；开源式四步由代理陪做 |
+| 2026-08-03 | **历史入口**：业务不需解压，由 `workbuddy_bootstrap_for_business.py` 陪做；完整 Public 方案已被 2026-08-08 双仓边界替代 |
+| 2026-08-08 | **分发边界收口**：安装句 URL 保持不变，但该仓改为全新历史的脱敏 Public installer；登录并获 Private `read` 后才安装完整生产仓，禁止公共镜像和公开 ZIP fallback |
 
 **刷新业务包（制作侧 · 推荐一键）：**
 

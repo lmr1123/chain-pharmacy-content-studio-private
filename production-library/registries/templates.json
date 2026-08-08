@@ -365,10 +365,10 @@
       "settled_template": true,
       "settled_template_dir": "production-library/templates/settled/disease-health-shenke-blue-v1",
       "canonical_artifact": {
-        "path": "production-library/templates/settled/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_可编辑金样_v2.pptx",
+        "path": "production-library/templates/settled/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_可编辑金样_v3.pptx",
         "format": "pptx",
         "confirmed_by": "user",
-        "confirmed_at": "2026-08-03"
+        "confirmed_at": "2026-08-04"
       },
       "validation_root": "production-library/validation/courseware/disease-uri-shenke-blue-v1",
       "category_zh": "健康培训",
@@ -399,8 +399,8 @@
         "sync_script": "scripts/sync_settled_template_business_words.py"
       },
       "approved_reference": {
-        "pptx": "production-library/templates/settled/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_可编辑金样_v2.pptx",
-        "approved_at": "2026-08-03",
+        "pptx": "production-library/templates/settled/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_可编辑金样_v3.pptx",
+        "approved_at": "2026-08-04",
         "approval_source": "user"
       },
       "source_projects": [
@@ -433,21 +433,21 @@
       "settled_template": true,
       "settled_template_dir": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1",
       "canonical_artifact": {
-        "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
+        "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v2.mp4",
         "format": "mp4",
         "confirmed_by": "user",
-        "confirmed_at": "2026-08-02"
+        "confirmed_at": "2026-08-05"
       },
       "canonical_artifacts": {
-        "video": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
-        "pptx": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v1.pptx"
+        "video": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v2.mp4",
+        "pptx": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v2.pptx"
       },
       "canonical_gold_sample": {
-        "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
-        "pptx": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v1.pptx",
-        "role": "2026-08-02 用户确认归档的速福达·玛巴洛沙韦商品培训课件3 金样（视频+可编辑PPT）",
+        "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v2.mp4",
+        "pptx": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v2.pptx",
+        "role": "2026-08-05 用户确认归档的速福达·玛巴洛沙韦商品培训课件3 v2 金样（视频+可编辑PPT）",
         "confirmed_by": "user",
-        "confirmed_at": "2026-08-02"
+        "confirmed_at": "2026-08-05"
       },
       "validation_root": "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1",
       "source_projects": [
@@ -491,24 +491,24 @@
       "settled_template": true,
       "settled_template_dir": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1",
       "canonical_artifact": {
-        "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v1.mp4",
+        "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v2.mp4",
         "format": "mp4",
         "confirmed_by": "user",
-        "confirmed_at": "2026-08-03"
+        "confirmed_at": "2026-08-05"
       },
       "canonical_artifacts": {
-        "video": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v1.mp4",
-        "pptx": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx"
+        "video": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v2.mp4",
+        "pptx": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v2.pptx"
       },
       "canonical_gold_sample": {
-        "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v1.mp4",
-        "pptx": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx",
-        "role": "2026-08-03 用户确认归档并更新的福尔番茄红素 · 课件4 金样（视频+PPT+编辑器动效）",
+        "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v2.mp4",
+        "pptx": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v2.pptx",
+        "role": "2026-08-05 用户确认归档并更新的福尔番茄红素 · 课件4 v2 金样（视频+PPT+编辑器动效）",
         "confirmed_by": "user",
-        "confirmed_at": "2026-08-03",
-        "revision": "2026-08-03-motion-editor",
-        "duration_s": 156.73,
-        "pptx_slides": 15
+        "confirmed_at": "2026-08-05",
+        "revision": "2026-08-05-v2",
+        "duration_s": 156.62,
+        "pptx_slides": 16
       },
       "validation_root": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1",
       "source_projects": [

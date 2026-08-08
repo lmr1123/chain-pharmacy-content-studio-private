@@ -22,17 +22,18 @@ GUIDES: dict[str, dict] = {
         "name_zh": "疾病科普视频（如风热证）",
         "outputs": "MP4 培训视频",
         "modules": [
-            "课程主题 / 开场",
-            "典型症状",
+            "开场",
+            "基础认知",
             "病因与机理",
+            "典型症状",
             "治疗思路",
             "用药与生活建议",
             "总结",
         ],
         "tips": [
-            "**业务自助：** 在 WorkBuddy 对话里说病名+要点即可出片，不必找制作代跑。",
-            "金样对照：`风热证_疾病科普视频_金样_v1.mp4`；换病种走 full 分段重渲（屏显/病名/旁白随主题换）。",
-            "每个自然板块 = 可直接讲解的审核正文；有几章写几章，不需要的整段删。",
+            "**业务自助：** 在 WorkBuddy 对话里交完整 7 段审核稿；代理先出脚本/画面复核包。",
+            "金样对照：`风热证_疾病科普视频_金样_v1.mp4`；正式换主题须补齐主题画面并完成当前载荷 SHA-256 审批。",
+            "正式疾病科普片固定 7 段；缺段、内容缺口或待生成画面只交规划包，不冒充成片。",
             "旁白须药师/合规已审；正式成片用模板克隆药师声，禁止系统朗读。",
         ],
         "chat_example": (
@@ -41,8 +42,10 @@ GUIDES: dict[str, dict] = {
             "请整理后直接生成培训视频（画面随主题换，不要只换声音）。"
         ),
         "agent_commands": [
-            "# 业务机 WorkBuddy 执行（默认 full；禁止 audio-shell）",
-            ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template health --sections-json <path> --with-tts --with-mp4 --copy-to-business-delivery",
+            "# 先生成主题包，补齐 content_gaps / needs_generation 并在 review.html 全量过目",
+            "python3 scripts/build_health_theme_package.py --theme <主题> --sections-json <path> --out-dir <theme-package目录>",
+            "# approval.json 必须填写过目人、时间和当前 approved_payload_sha256",
+            ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template health --theme-package <theme-package目录> --with-tts --with-mp4 --copy-to-business-delivery",
             "# 仅规划（无 TTS 时）",
             "python3 scripts/generate_business_video.py --template health --mode plan --sections-json <path>",
         ],
@@ -65,7 +68,7 @@ GUIDES: dict[str, dict] = {
             "**业务自助：** 在 WorkBuddy 对话里说商品名+要点即可出片，不必找制作代跑。",
             "金样对照：`辅酶Q10_商品培训视频_金样_v1.mp4`；换商品走 full 分段重渲。",
             "一份内容一个商品；板块可删可重排。",
-            "包装图用授权原图；无图则说明缺口，禁止仿包装。正式旁白 = 审核原文 + 模板克隆声。",
+            "包装图必须用业务确认授权原图；无图只交规划包，禁止仿包装或正式渲染。正式旁白 = 审核原文 + 模板克隆声。",
         ],
         "chat_example": (
             "我要用【商品培训视频】模板，商品是【商品名】。\n"
@@ -73,10 +76,10 @@ GUIDES: dict[str, dict] = {
             "请整理后直接生成培训视频（画面随主题换，不要只换声音）。"
         ),
         "agent_commands": [
-            "# 业务机 WorkBuddy 执行（默认 full）",
-            ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4 --product-image <包装图可选> --copy-to-business-delivery",
-            "# 仅规划（无 TTS 时）",
-            "python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path>",
+            "# 先出规划包与 product-approval.request.json（业务不碰命令）",
+            "python3 scripts/generate_business_video.py --template product --mode plan --sections-json <path> --product-image <业务提供包装图>",
+            "# 业务确认 8 段内容与包装授权后填写批准人/时间/授权凭证，再由 WorkBuddy 正式出片",
+            ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4 --product-image <业务确认授权包装图> --product-approval <已批准JSON> --copy-to-business-delivery",
         ],
         "filled_source": "outputs/video-training-natural-import/辅酶Q10商品培训视频_真实已填样本.docx",
         "blank_source": "outputs/video-training-natural-import/视频培训内容与素材提交_通用模板.docx",

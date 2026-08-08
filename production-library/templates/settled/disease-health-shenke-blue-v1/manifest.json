@@ -71,8 +71,23 @@
     "outputs": [
       "可编辑 PPTX"
     ],
-    "production_ready": true,
-    "status_label": "已签样 · 可换病种量产",
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": false,
+      "new_theme_pptx": false,
+      "new_theme_mp4": false,
+      "business_selfserve": false
+    },
+    "requirements": [
+      "医学审核稿",
+      "疾病课件统一业务 adapter"
+    ],
+    "blockers": [
+      "换病种生成尚未接入统一业务入口"
+    ],
+    "production_ready": false,
+    "status_label": "金样可查看 · 换病种入口待接线",
     "online_url": null
   },
   "business_catalog": {

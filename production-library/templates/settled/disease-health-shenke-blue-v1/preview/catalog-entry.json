@@ -7,9 +7,24 @@
     "可编辑 PPTX"
   ],
   "category": "健康培训",
-  "production_ready": true,
-  "status_label": "已签样 · 可换病种量产",
-  "status_note": "金样 v3（2026-08-04 签样）：参课蓝全面精修（企业级封面/目录/结束页、统一页眉页脚、logo 零裁切、无 emoji 包装坑）。换病改 content JSON 后重建；包装须授权原图；医学表述须业务复核。",
+  "capabilities": {
+    "gold_viewable": true,
+    "content_draft": true,
+    "new_theme_preview": false,
+    "new_theme_pptx": false,
+    "new_theme_mp4": false,
+    "business_selfserve": false
+  },
+  "requirements": [
+    "医学审核稿",
+    "疾病课件统一业务 adapter"
+  ],
+  "blockers": [
+    "换病种生成尚未接入统一业务入口"
+  ],
+  "production_ready": false,
+  "status_label": "金样可查看 · 换病种入口待接线",
+  "status_note": "参课蓝 v3 金样可查看；当前可先整理审核内容，不承诺业务自助生成新病种正式 PPTX。",
   "key_frame_labels_zh": [
     "疾病概览",
     "临床表现",

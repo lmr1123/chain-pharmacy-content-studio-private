@@ -7,9 +7,24 @@
     "可编辑 PPTX"
   ],
   "category": "商品培训",
-  "production_ready": true,
-  "status_label": "已签样 · 可换主题量产",
-  "status_note": "视觉升级 v2（2026-08-04）：与绿色单品统一 token/圆角/字体。章节可按内容增减；无资料的模块可整节省略。",
+  "capabilities": {
+    "gold_viewable": true,
+    "content_draft": true,
+    "new_theme_preview": false,
+    "new_theme_pptx": false,
+    "new_theme_mp4": false,
+    "business_selfserve": false
+  },
+  "requirements": [
+    "内容初稿确认",
+    "统一业务 adapter"
+  ],
+  "blockers": [
+    "换主题业务 adapter 尚未接入统一入口"
+  ],
+  "production_ready": false,
+  "status_label": "金样可查看 · 换主题入口待接线",
+  "status_note": "可查看穿心莲金样和填写参考；当前仅开放内容草稿，不承诺业务自助生成正式 PPTX。",
   "key_frame_labels_zh": [
     "封面",
     "辨证/知识",
