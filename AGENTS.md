@@ -88,6 +88,7 @@ python3 scripts/business_job.py open --job <id>
 - **Default PPT engine:** `production-library/engines/courseware-pptx-v1/` + `scripts/generate_courseware.py`（构件 + recipe）
 - Green PPT engine (retired route): `production-library/engines/product-courseware-green-v1/`（仅调试 `--force`）
 - Video full runtime: `production-library/engines/video-revideo-runtime-v1/`（`kit` 可 symlink 历史 `poc/gold-sample`；业务代码经 `scripts/video_runtime.py` 解析）
+- 商品正式视频环境：`python3 scripts/video_full_env.py check|soft-repair|package|restore`（说明 `docs/video-full-env-package.md`）
 - Active now: `product-pptx-component-v1`（默认 PPT）、`product-mp4-full-v1`（商品 full MP4；另需 `approve --gate product_image`）
 - Retired: `product-pptx-green-v1`（绿色五页壳；代码保留可回滚，业务自助已关闭）
 - Job workspace (gitignored): `outputs/workbuddy-workspaces/jobs/`

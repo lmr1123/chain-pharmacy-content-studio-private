@@ -130,6 +130,23 @@ def doctor(
             "缺少默认构件引擎：production-library/engines/courseware-pptx-v1/export.mjs"
         )
 
+    video_env: dict[str, Any] | None = None
+    if any(p == "video-full" for p in selected):
+        try:
+            import video_full_env as vfe  # type: ignore
+
+            video_env = vfe.build_check_report()
+            for h in video_env.get("install_hints_zh") or []:
+                if h not in hints:
+                    hints.append(h)
+            for m in video_env.get("missing") or []:
+                if m not in missing:
+                    missing.append(m)
+            if not video_env.get("ok"):
+                ok = False
+        except Exception as exc:  # noqa: BLE001
+            hints.append(f"video_full_env 检查跳过: {exc}")
+
     payload = {
         "ok": ok and not missing,
         "route_id": route_id,
@@ -147,6 +164,7 @@ def doctor(
             "component_present": component_ok,
             "green_present": green_ok,
         },
+        "video_full_env": video_env,
     }
     return payload
 

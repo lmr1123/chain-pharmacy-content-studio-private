@@ -64,8 +64,10 @@
       ],
       "fallback_paths": ["poc/gold-sample"],
       "restore": [
-        "bootstrap soft-repair：kit → poc/gold-sample symlink",
-        "或授权 Release 下发完整 kit（含 node_modules）"
+        "python3 scripts/video_full_env.py soft-repair",
+        "python3 scripts/video_full_env.py package --out <kit.tgz>  # 开发机",
+        "python3 scripts/video_full_env.py restore --from <kit.tgz> --force  # 目标机",
+        "文档：docs/video-full-env-package.md"
       ],
       "ship_in_git": "manifest-only",
       "size_class": "large"
@@ -75,7 +77,12 @@
       "name_zh": "本机克隆旁白 TTS 环境",
       "required_for": ["video_tts", "video_full"],
       "paths": [".venv-qwen-tts"],
-      "restore": ["按 docs 本地创建 venv；不随 Git；禁止系统 TTS 冒充正式旁白"],
+      "restore": [
+        "按 docs/workbuddy-video-first-check.md 与 docs/video-full-env-package.md 本机创建 venv",
+        "验证：.venv-qwen-tts/bin/python -c \"from mlx_audio.tts.utils import load_model; print('OK')\"",
+        "不随 Git；禁止系统 TTS 冒充正式旁白",
+        "总检：python3 scripts/video_full_env.py check"
+      ],
       "ship_in_git": false,
       "size_class": "large"
     },

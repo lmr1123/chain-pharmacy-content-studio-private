@@ -49,10 +49,12 @@
         "video_runtime_module": "scripts/video_runtime.py"
       },
       "install_hints_zh": [
-        "安装 ffmpeg/ffprobe（brew install ffmpeg）",
-        "按文档准备 .venv-qwen-tts 并验证 from mlx_audio.tts.utils import load_model",
+        "安装 ffmpeg/ffprobe（brew install ffmpeg）与 Node 18+",
+        "一键检查：python3 scripts/video_full_env.py check",
+        "kit soft-repair 或离线恢复：python3 scripts/video_full_env.py soft-repair | restore --from <kit.tgz> --force",
+        "开发机打包 kit：python3 scripts/video_full_env.py package --out <kit.tgz>",
+        "按 docs/video-full-env-package.md 准备 .venv-qwen-tts，并验证 mlx_audio.tts",
         "确认参考药师 voice pack 完整（manifest + prompt.wav + ref_text）",
-        "确认视频 runtime：production-library/engines/video-revideo-runtime-v1/kit 含 render 脚本、src、node_modules（bootstrap 可 soft-repair 链接历史 poc 路径）",
         "验证：python3 scripts/business_doctor.py --profile video-full"
       ]
     },

@@ -17,13 +17,29 @@
 | `scripts/render-*-segment.mjs` | 正式入口副本（与 kit 内脚本同步） |
 | `kit/` | 完整 Revideo 工程（src/public/json/node_modules） |
 
-## 本地 soft-repair
+## 本地 soft-repair / 离线包
 
-bootstrap 在 `kit` 缺失且 legacy 存在时，会创建 `kit → ../../../poc/gold-sample` 链接。
+```bash
+# 探测 TTS + kit + ffmpeg（商品正式视频）
+python3 scripts/video_full_env.py check
+
+# kit 缺失且本机有 poc/gold-sample 时：symlink soft-repair
+python3 scripts/video_full_env.py soft-repair
+
+# 开发机打包（可含 node_modules）
+python3 scripts/video_full_env.py package --out /tmp/video-runtime-kit.tgz
+
+# 业务机/干净机从授权包恢复到 formal kit 路径
+python3 scripts/video_full_env.py restore --from /tmp/video-runtime-kit.tgz --force
+```
+
+bootstrap 在 `kit` 缺失且 legacy 存在时，也会创建 `kit → ../../../poc/gold-sample` 链接。  
+完整说明：`docs/video-full-env-package.md`。
 
 ## 探测
 
 ```bash
 python3 scripts/business_doctor.py --profile video-full
 python3 scripts/probe_production_env.py --require video-full
+python3 scripts/video_full_env.py check
 ```

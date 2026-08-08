@@ -76,6 +76,8 @@
     "courseware_pptx_engine_readme": "production-library/engines/courseware-pptx-v1/README.md",
     "on_demand_packages": "production-library/on-demand-packages.json",
     "clean_clone_e2e": "scripts/test_p2_clean_clone_e2e.py",
+    "video_full_env": "scripts/video_full_env.py",
+    "video_full_env_doc": "docs/video-full-env-package.md",
     "seedance_health_edu_mode": "docs/seedance-health-edu-video-mode.md",
     "seedance_health_edu_meta_prompt": "production-library/templates/prompt-modes/seedance-health-edu-v1/meta-prompt.md",
     "seedance_health_edu_scaffold": "scripts/scaffold_seedance_health_edu.py",
