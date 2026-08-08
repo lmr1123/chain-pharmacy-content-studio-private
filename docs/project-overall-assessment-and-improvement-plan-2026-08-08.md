@@ -414,3 +414,22 @@ flowchart LR
 6. bootstrap/probe/业务包构建的诚实失败与可重复验证。
 
 该批次不重写生成器、不加新模板、不扩素材库；通过退出条件后，再进入统一 `business_job` 控制面。
+
+---
+
+## 12. 实施进度更新（2026-08-09）
+
+> 详细交接：`docs/session-handover-2026-08-09.md` · 清单：`tasks/todo.md` 顶部
+
+| 规划项 | 状态 | 备注 |
+|--------|------|------|
+| P0 真值与安全 | **完成** | 已合 Private main |
+| P1 统一 business_job | **完成** | new/draft/approve/render |
+| P2 可复现环境 + 引擎收敛 | **完成** | profiles/doctor/engines/clean-clone |
+| 内部商品培训 PPT 主路径 | **完成** | `product-pptx-component-v1` 默认；绿色五页已下线 |
+| 内部商品培训完整 MP4 | **路线开放** | 环境用 `video_full_env.py`；业务现场验另排 |
+| 健康疾病视频业务自助 | **未开放** | 专项 B，明日后续 |
+| P3 G0–G4 CI / 度量 | **未开** | 规划仍有效，未实施 |
+
+**当前 active 业务路线：** 构件 PPT + 商品 full MP4。  
+**用户已排期未开工：** ① 业务验 PPT ② 健康视频自助。

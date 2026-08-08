@@ -1,5 +1,8 @@
 # Project-specific production rule
 
+**进度（2026-08-09 收工）：** P0–P2 已合 Private `main`（默认构件 PPT、绿色五页下线、`video_full_env`）。  
+**明日专项：** 业务验 PPT · 健康视频自助 — 见 `docs/session-handover-2026-08-09.md` 与 `tasks/todo.md` 顶部快照。
+
 ## Locked direction (do not drift)
 
 Primary deliverable: complete, high-quality training **video/courseware** with unified style and clear structure—not an element stockpile.

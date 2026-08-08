@@ -220,6 +220,12 @@ approval.json → 同命令追加 `--release --approval <approval.json>`；禁�
 
 ---
 
+## 进度（2026-08-09）
+
+- 默认 PPT：`product-pptx-component-v1`（构件 recipe）；绿色五页已下线。
+- 商品 full MP4：`product-mp4-full-v1`；环境检查 `python3 scripts/video_full_env.py check`。
+- 健康/疾病视频：未对业务开放；细节与明日专项见 `docs/session-handover-2026-08-09.md`。
+
 ## 课型中文名 → slug（代理速查）
 
 | 业务说法 | settled 目录 |

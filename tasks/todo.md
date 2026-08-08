@@ -1,5 +1,73 @@
 
-## P2 可复现运行环境与生产引擎收敛（2026-08-08 · 进行中）
+## 进度快照（2026-08-09 收工 · 明日续）
+
+> **Private `main` HEAD：** `e0f06dd`（含 PR #4 + video-full 环境工具）  
+> **仓库：** `lmr1123/chain-pharmacy-content-studio-private`
+
+### 已完成（P0–P2 主线）
+
+| 批次 | 状态 | 一句话 |
+|------|------|--------|
+| P0 真值与安全 | 完成 | 能力矩阵、审批/白名单交付、业务数据隔离、双仓 Private/Public |
+| P1 业务任务控制面 | 完成 | `business_job`：new/draft/approve/render/status/open |
+| P2 运行环境与引擎 | 完成 | profiles/doctor/bootstrap；正式 engines；clean-clone harness |
+| P2.8 默认 PPT | 完成 | **构件 recipe** `product-pptx-component-v1` 为主路径 |
+| 绿色五页 | **已下线** | `product-pptx-green-v1` active=false；代码保留 `--force` |
+| 商品视频环境 | 完成 | `video_full_env.py` check/soft-repair/package/restore |
+
+### 当前业务可用
+
+- ✅ **构件化商品培训 PPT**（默认）：`product-pptx-component-v1`
+- ✅ **商品培训完整 MP4**（路线开）：`product-mp4-full-v1`（本机须 TTS+kit+ffmpeg）
+- ❌ **绿色五页 PPT**：已下线
+- ❌ **健康/疾病培训视频自助**：未开放（`health-mp4-full-v1` active=false）
+
+### 明日专项（用户已排期，未开工）
+
+1. **专项 A · 业务验 PPT**  
+   - 目标：业务同事按五步自助出一单可用 `终稿.pptx`  
+   - 验收表见 `docs/session-handover-2026-08-09.md` §业务验 PPT  
+   - 工程师侧冒烟已过；缺**真实业务试跑**
+
+2. **专项 B · 健康视频自助**  
+   - 指：疾病/健康科普 **MP4**（如风热证类），不是商品 PPT  
+   - 前置：主题包流程 + 正式音色 + 环境 + 路线 `active=true`  
+   - 与商品视频共用 kit/TTS 基建，业务入口另开
+
+### 常用命令（续作入口）
+
+```bash
+# 环境
+python3 scripts/business_doctor.py --route product-pptx-component-v1
+python3 scripts/video_full_env.py check
+
+# 默认 PPT
+python3 scripts/business_job.py new --route product-pptx-component-v1 \
+  --theme <商品名> --notes $'要点1\n要点2' --auto-draft
+python3 scripts/business_job.py approve --job <id> --gate content --by <姓名>
+python3 scripts/business_job.py render --job <id>
+
+# 商品 MP4（环境齐时）
+python3 scripts/business_job.py new --route product-mp4-full-v1 \
+  --theme <商品名> --product-image <授权图> --auto-draft
+```
+
+### 文档索引
+
+- 交接：`docs/session-handover-2026-08-09.md`
+- 构件方案：`docs/component-recipe-pipeline-architecture.md`
+- 视频环境包：`docs/video-full-env-package.md`
+- 整体规划：`docs/project-overall-assessment-and-improvement-plan-2026-08-08.md`
+- 代理入口：`AGENTS.md`
+
+### 工作区注意
+
+- 本地仍有**未提交**的 gold-sample / 动画 POC / voice-pack 等用户 WIP，**不要**与业务主线混提交。
+- 视频 kit 正式路径可为 `engines/video-revideo-runtime-v1/kit` → `poc/gold-sample` symlink。
+
+---
+
+## P2 可复现运行环境与生产引擎收敛（2026-08-08 · **已完成**）
 
 > **目标：** 清洁机器诚实可验证；正式路径优先 `production-library/`，减少对 `poc/` 的业务入口依赖。  
 > **本批边界：** 不重写全部生成器；视频 runtime 仍暂借 `poc/gold-sample`；artifact-tool 可通过 symlink 复用历史 node_modules。
@@ -11,19 +79,26 @@
 - [x] P2.5 测试：`test_p2_runtime_profiles`；P1 10/10；E2E `p2-smoke-green-pptx` delivered
 - [x] P2.6 bootstrap 按 profile/route 探测 + 本地 soft-repair + 失败安装提示 + doctor 摘要
 - [x] P2.7 视频 runtime 正式入口 `video-revideo-runtime-v1` + `video_runtime.py`（kit 过渡 symlink）
-- [x] P2.8 component/recipe 引擎作默认 PPT 主路径；绿色五页降为兼容（未删除）
-- [x] P2.9 按需包清单 + clean-clone/production-path E2E  harness
+- [x] P2.8 component/recipe 引擎作默认 PPT 主路径
+- [x] P2.8b 绿色五页业务下线（active=false / retired；代码保留）
+- [x] P2.9 按需包清单 + clean-clone/production-path E2E harness
+- [x] P2.10 商品 video-full 环境：`video_full_env.py` + `docs/video-full-env-package.md`（已合 main）
+
+### Review（2026-08-09 晚 · 收口）
+
+- **已推 main：** PR #4（控制面 + 构件 PPT + 绿色下线）+ `e0f06dd`（video_full_env）。
+- **默认 PPT：** `product-pptx-component-v1`；绿色 `product-pptx-green-v1` **已下线**。
+- **冒烟：** `p2-smoke-component-pptx` delivered；`video_full_env.py check` 本机 PASS。
+- **明日：** 专项 A 业务验 PPT；专项 B 健康视频自助（均未开工）。
 
 ### Review（2026-08-09 · P2.8 / P2.9）
 
 - **默认 PPT 主路径：** `product-pptx-component-v1` → adapter `product_pptx_component` → `generate_courseware.py` + `engines/courseware-pptx-v1`。
-- **兼容路径：** `product-pptx-green-v1` 仍 active，priority 更低；门户/AGENTS 标明默认 vs 兼容。
+- **绿色：** 随后用户确认业务下线（见 P2.8b），非长期兼容入口。
 - **草稿：** theme+notes 或 `--script-json` → `script.structured.json` → scene-plan/content-model；金样残留硬阻断。
-- **交付：** 审批后 export PPTX + 白名单（终稿/说明/审批/scene-plan/provenance）；冒烟 `p2-smoke-component-pptx` delivered，~10MB，无金银花露/麦金利残留。
-- **环境：** probe/doctor/profiles 指向构件引擎；bootstrap soft-repair 同时链接 courseware-pptx-v1 与绿色引擎 node_modules。
-- **P2.9：** `production-library/on-demand-packages.json`；`scripts/test_p2_clean_clone_e2e.py` 10/10。
-- **回归：** P1 10、P2 profiles 14、P2.9 10、content safety 16、validate_production_readiness PASS。
-- **残余：** 视频 kit 仍可为 poc symlink；Public 不含生产引擎（需 Private）；preview 占位图待后续用真 QA 帧替换；Git 未提交（待用户要求）。
+- **交付：** 审批后 export PPTX + 白名单；冒烟无金样残留。
+- **P2.9：** `on-demand-packages.json`；`test_p2_clean_clone_e2e.py`。
+- **残余（仍有效）：** kit 可为 poc symlink；Public 无生产引擎；构件模板 preview 占位图待真 QA 帧。
 
 ### Review（2026-08-08/09 · P2 至 P2.7）
 
