@@ -2,7 +2,7 @@
 ## 私有生产仓 + 脱敏 Public 安装入口（2026-08-08 · 用户确认）
 
 > **已确认方向：** 完整生产仓库、授权资产包、金样、人声与业务模板全部进入 Private；Public 只保留无旧历史的安装入口。
-> **仓库拓扑假设：** 当前完整仓库改名为 `lmr1123/chain-pharmacy-content-studio-private` 并设为 Private，保留完整 40-commit 历史；随后新建同名 Public 仓 `chain-pharmacy-content-studio`，从独立脱敏 checkout 写入全新历史，因此业务既有安装句不变。Private 默认仅仓库所有者可见，后续协作者按白名单添加。
+> **仓库拓扑结果：** 当前完整仓库已改名为 `lmr1123/chain-pharmacy-content-studio-private` 并设为 Private，保留原完整历史；同名 Public 仓 `chain-pharmacy-content-studio` 已从独立脱敏 checkout 写入唯一全新根历史，因此业务既有安装句不变。Private 当前仅仓库所有者可见，后续协作者按白名单添加。
 > **历史边界：** 已经被第三方克隆或缓存的旧 Public 历史无法通过改可见性收回；本轮目标是停止继续分发，并确保新 Public 历史从第一个 commit 起不含生产资产。
 > **完成定义：** Private 保全完整历史；Public 仅由白名单源生成，二进制/生产资料/私密路径 0 命中；未认证或无权限时 fail-closed；授权用户可从 Public 安装器进入 Private bootstrap；切换可回滚且有审计证据。
 
@@ -23,15 +23,25 @@
   - [x] 从白名单源连续两次导出内容摘要一致
   - [x] 临时 Public 仓安装器成功/无权限/缺 gh/目标冲突测试全通过
   - [x] Public 导出内生产资产、媒体、Office、ZIP、业务数据、旧 Git 历史均为 0
-- [ ] R5. GitHub 原子切换
-  - [ ] 将当前完整远端仓改名并设为 Private，保全全部历史
-  - [ ] 新建同名 Public 仓并从独立脱敏 checkout 推送唯一全新根历史
-  - [ ] 当前制作工作树 origin 切到 Private；Public 安装 URL 实测匿名可读
-  - [ ] 授权账号从 Public → Private → bootstrap 路径实测通过
-- [ ] R6. Review 与交付
-  - [ ] 更新权利清单、迁移记录、运行手册与回滚说明
-  - [ ] 运行 P0 回归、Public 分发审计、Private 生产就绪校验
-  - [ ] 记录未提交的用户改动边界，不把临时文件混入迁移提交
+- [x] R5. GitHub 原子切换
+  - [x] 将当前完整远端仓改名并设为 Private，保全全部历史
+  - [x] 新建同名 Public 仓并从独立脱敏 checkout 推送唯一全新根历史
+  - [x] 当前制作工作树 origin 切到 Private；Public 安装 URL 实测匿名可读
+  - [x] 授权账号从 Public → Private → bootstrap 路径实测通过
+- [x] R6. Review 与交付
+  - [x] 更新权利清单、迁移记录、运行手册与回滚说明
+  - [x] 运行 P0 回归、Public 分发审计、Private 生产就绪校验
+  - [x] 记录未提交的用户改动边界，不把临时文件混入迁移提交
+
+### Review（2026-08-08 · 双仓迁移）
+
+- **Private production：** 原完整 entity 已改名为 `lmr1123/chain-pharmacy-content-studio-private` 并设为 Private，当前协作者仅 owner；本制作工作区 `origin` 已切到 Private。迁移与 clone 稳定性分别经 PR #1/#2 合并，授权 clean clone HEAD 为 `de52fb054d42e8514fc0e830eb2e6af72fad64be`。
+- **Public installer：** 原 URL 由全新 entity 复用；只有 `main`、根 commit `1fbc06ee1ec5c6071930f8243db7fcde045b3d75` 和 8 个 exact-allowlist 文件。匿名 clone 的全历史审计 PASS；Actions `audit` 成功；main 禁止 force push/删除并强制 audit、线性历史、对话解决和管理员约束。
+- **访问边界：** 禁用凭证后 Public 读取成功、Private 读取失败；授权账号从 Public installer 拉取 Private，第一次 `curl 18 / early EOF` 后按官方 HTTP/1.1 干净重试成功，随后 marker/资产检查、bootstrap、能力探测和门户刷新全部通过。
+- **回归与复现：** 授权 clean clone 中 73/73 测试通过，内容规则与 validator PASS；业务包连续两次真实重建均为 117 个文件，ZIP SHA-256 同为 `5376364107b23234b6c0460a159072369cf41ae863dd9d0c1af8054799a1e8ba`，重建后 Git 工作树保持 clean。
+- **诚实能力：** clean clone 的生产资产边界为真，但本机未随 Git 分发 `node_modules`、artifact-tool 和 TTS 虚拟环境，因此 PPTX/TTS/正式视频能力按 probe 显示 false；这属于依赖安装阶段，不再虚报生产成功。
+- **未召回边界：** 迁移前最后公开 commit 为 `1eb6ae0970d55aed232b000d6a9e423de9cc081d`；已发生的外部 clone/缓存无法技术召回。若权利/法务要求处理平台旧 SHA 缓存视图，需另行联系 GitHub Support。
+- **用户 WIP 边界：** component engine、动画 POC、验证输出等原有未提交/未跟踪工作继续保留在当前工作区；本轮没有 reset/clean，也未把这些临时成果混入双仓迁移提交。
 
 ## P0 真值与安全收口实施（2026-08-08 · 用户确认“依次解决”）
 
@@ -55,13 +65,13 @@
   - [x] 最终状态和质量闸门通过后才写入业务交付目录
   - [x] 交付只含业务白名单文件，不复制 workspace、依赖、源码或原始堆栈
   - [x] 失败任务保留在本地运行区并可诊断，不显示为已交付
-- [ ] P0.4 隔离业务数据并收口安装/打包
+- [x] P0.4 隔离业务数据并收口安装/打包
   - [x] 业务上传、运行区与交付物默认 Git ignored
   - [x] bootstrap 拉取/依赖/探测失败时诚实退出
   - [x] probe 按 `--require` 的任务能力返回真实顶层状态
   - [x] 业务包由单一源可重复构建，保留并生成 08–11 模式
   - [x] 形成 Public 资产/人声分发权清单与默认安装分发盘点
-  - [ ] 未获 Public 再分发授权的资产/人声退出默认安装（需权利人选择私有迁移或补齐逐文件授权）
+  - [x] 未获 Public 再分发授权的资产/人声已退出 Public 默认安装，完整生产资产仅由 Private 授权安装器分发
 - [x] P0.5 回归与 Review
   - [x] 运行单元、契约、一致性与 dry-run 测试
   - [x] 复查门户桌面/移动主路径和键盘可用性
@@ -72,12 +82,12 @@
 - **技术收口：** P0.0–P0.3 已完成。7 个 settled 模板改为显式能力矩阵；门户按交付物给口令，并叠加本机能力；manifest / registry / catalog / canonical / Word / voice 引用由统一 validator 校验。
 - **内容与审批：** 健康视频不再按病名继承医学默认值或改写短片头，正式 7 段只读取已冻结主题包；商品正式 8 段必须有授权包装图和 `product-video-approval-v1`；多出的已审核段落硬拒绝而非静默丢弃；三种 Prompt 模式默认只出复核包，release 同时绑定输入与复核稿 SHA-256，合规终稿再做禁词硬扫描，免责声明只豁免固定原文，不能吞掉同句违规主张。
 - **正式发布：** 仅 `mode=full + TTS + MP4 + 完整分段 + 当前审批 + qa_passed` 可进入业务交付目录；QA 精确核对 8/7 段 ID，逐段解析 WAV、ffprobe 分段 MP4、确认同 ID MP4 音轨覆盖完整旁白、完整解码整片并校验整片/分段时长；旧 `full-narration.wav` 不进入分段正式包；所有业务白名单文件绑定大小与 SHA-256，磁盘 QA 必须与运行状态一致；发布采用同父目录原子替换，失败不覆盖旧交付。
-- **业务包复现：** 08–11 固定内容迁到 `production-library/business-package-static/` 单一源；连续两次真实重建均为 117 个 ZIP 条目，内容摘要均为 `8f447333c058b056979d997c4f76e40b8f8cf7180cb5d658a77fc4370cc0b321`。本机 05 目录重建前后均为 14,215 个文件、1,438,560,090 字节；ZIP 中 05 私密载荷、workspace、node_modules、日志和 `index.local.html` 均为 0。
-- **回归证据：** `test_p0_readiness_portal.py` 8/8、`test_p0_content_safety.py` 16/16、`test_p0_delivery_publish.py` 8/8、`test_runtime_delivery_governance.py` 12/12、`test_plan_training_course.py` 6/6，共 50 项全通过；`test_content_driven_rules.py` 通过；`validate_production_readiness.py` 为 PASS；P0 Python 文件编译通过。独立对抗复核另验证审批/媒体/固定文件篡改均被拒绝。
+- **业务包复现：** 08–11 固定内容迁到 `production-library/business-package-static/` 单一源；连续两次真实重建均为 117 个文件，ZIP 字节级 SHA-256 均为 `5376364107b23234b6c0460a159072369cf41ae863dd9d0c1af8054799a1e8ba`；归档成员固定时间、权限、顺序并拒绝符号链接。ZIP 中 05 私密载荷、workspace、node_modules、日志和 `index.local.html` 均为 0。
+- **回归证据：** `test_private_public_distribution.py` 12/12、`test_runtime_delivery_governance.py` 23/23、`test_p0_readiness_portal.py` 8/8、`test_p0_content_safety.py` 16/16、`test_p0_delivery_publish.py` 8/8、`test_plan_training_course.py` 6/6，共 73 项全通过；`test_content_driven_rules.py` 通过；`validate_production_readiness.py` 为 PASS；Python/MJS 语法检查通过。独立对抗复核另验证审批/媒体/固定文件篡改均被拒绝。
 - **本机真值：** `pptx_export=true`、`courseware_theme_replicate=true`、`video_render=true`，但 `video_tts=false`、`video_full=false`；原因是当前 `.venv-qwen-tts` 无法导入 `mlx_audio.tts`。`--require video-full` 按约定返回 exit 2，不再把规划包冒充正式 MP4。
 - **界面复核边界：** 既有审计截图已覆盖桌面、390 px 移动视口、模板选择与复制反馈；本轮键盘按钮/移动单列/能力徽标契约测试通过。由于本地 `file://` 被应用安全策略拒绝且 Chrome 未开启远程调试，本轮未重新打开页面做新一轮人工视觉截图。
-- **仍未关闭的 P0.4：** 默认 WorkBuddy 安装仍是 Public 仓库浅克隆，仓库中已有待确认声纹、金样与参考二进制；清单本身不能产生再分发权。进入 P1 前需权利人二选一：① 推荐，将仓库/授权资产包私有化并提供脱敏 Public 代码入口；② 补齐逐文件 Public 再分发授权并启用机器可读权利台账门闸。
-- **版本控制边界：** 当前工作树原本已有大量用户改动，本轮未 stage/commit；新增 P0 脚本、测试和 `business-package-static/` 仍包含未跟踪文件。在这些文件纳入版本控制前，新的 clean clone 不会获得本轮修复。
+- **P0.4 已关闭：** 原完整仓已改名并设为 Private；原业务 URL 现为只有 8 个白名单文件和 1 个根 commit 的脱敏 Public installer。匿名 Public clone / 匿名 Private 拒绝 / 授权 Public → Private → bootstrap 三条路径均已实测。
+- **版本控制边界：** P0、权威 Word/语言包/组件事实源和双仓边界已通过 Private PR #1/#2 进入 `main`，clean clone 回归与 validator 通过。当前工作区原有的 component engine、动画 POC、验证输出等用户 WIP 仍保持未提交/未跟踪，未混入本次迁移提交，也未被删除或覆盖。
 
 ## 项目整体设计与业务自助交付审计（2026-08-08）
 
