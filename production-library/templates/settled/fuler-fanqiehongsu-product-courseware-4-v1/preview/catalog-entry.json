@@ -8,9 +8,23 @@
     "可编辑 PPTX"
   ],
   "category": "商品培训",
-  "production_ready": true,
-  "status_label": "已签样 · 可换主题量产",
-  "status_note": "关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。2026-08-05 视觉/动效 v2 已归档（金样 v2.mp4，7 张插画重生成）；PPTX 仍为 v1 版式。",
+  "capabilities": {
+    "gold_viewable": true,
+    "content_draft": true,
+    "new_theme_preview": false,
+    "new_theme_pptx": false,
+    "new_theme_mp4": false,
+    "business_selfserve": false
+  },
+  "requirements": [
+    "courseware4 换主题 adapter"
+  ],
+  "blockers": [
+    "课件4换主题 CLI 尚未接线；当前仅提供金样预览"
+  ],
+  "production_ready": false,
+  "status_label": "仅金样预览 · 换主题入口待接线",
+  "status_note": "金样 v2 MP4/PPTX 可查看；当前换主题 CLI 未接线，不承诺生成新主题正式成品。",
   "key_frame_labels_zh": [
     "封面",
     "商品介绍",

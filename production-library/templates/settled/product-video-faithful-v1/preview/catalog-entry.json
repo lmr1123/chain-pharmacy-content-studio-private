@@ -7,9 +7,28 @@
     "MP4 培训视频"
   ],
   "category": "商品培训",
-  "production_ready": true,
-  "status_label": "已签样金样 · 业务可换主题出片",
-  "status_note": "业务在 WorkBuddy 说商品名+审核要点即可 full 重渲（换屏显/包装槽/旁白/8段画面）；有授权包装图可附上。",
+  "capabilities": {
+    "gold_viewable": true,
+    "content_draft": true,
+    "new_theme_preview": true,
+    "new_theme_pptx": false,
+    "new_theme_mp4": true,
+    "business_selfserve": false
+  },
+  "requirements": [
+    "完整 8 段审核稿",
+    "公司授权包装图与凭证",
+    "哈希绑定审批",
+    "video_full",
+    "正式 voice_id"
+  ],
+  "blockers": [
+    "内容/包装/授权凭证未完成哈希审批时只能生成草稿预览",
+    "当前机器须通过 video_full 环境检查"
+  ],
+  "production_ready": false,
+  "status_label": "可开始草稿 · 审批与环境通过后出片",
+  "status_note": "金样可查看；业务先确认完整 8 段脚本、分镜、包装图和授权凭证，哈希审批匹配且本机 video_full 通过后才生成正式 MP4。",
   "key_frame_labels_zh": [
     "开场",
     "品牌/品类",

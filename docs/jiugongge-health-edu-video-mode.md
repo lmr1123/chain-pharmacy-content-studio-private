@@ -58,8 +58,13 @@
 
 ```bash
 python3 scripts/scaffold_jiugongge_health_edu.py --vars <json>
-# → outputs/business-video-runs/jiugongge-health-edu/<slug>/
+# 默认仅生成复核包 + approval.json
+# 业务明确确认后，代理填写 approved=true / approved_by（保留 input_sha256 与 review_sha256），再运行：
+python3 scripts/scaffold_jiugongge_health_edu.py --vars <json> \
+  --release --approval <输出目录/approval.json>
 ```
+
+输入变量或复核稿在审批后改变时，hash 门必须拒绝 release，须重新复核。
 
 ---
 

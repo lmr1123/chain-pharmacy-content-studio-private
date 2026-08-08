@@ -19,18 +19,22 @@
 ## 1. 你（WorkBuddy）立刻做
 
 ```bash
-# 首次
-git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git ~/Documents/chain-pharmacy-content-studio
-cd ~/Documents/chain-pharmacy-content-studio
-python3 scripts/workbuddy_bootstrap_for_business.py
+# 首次：Public 仅为脱敏安装器
+git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git \
+  ~/Documents/chain-pharmacy-content-studio-installer
+cd ~/Documents/chain-pharmacy-content-studio-installer
+python3 scripts/install_private_studio.py
 
-# 已有仓库
-cd ~/Documents/chain-pharmacy-content-studio
+# 已安装完整 Private 生产仓
+cd ~/Documents/chain-pharmacy-content-studio-private
 git pull --ff-only
 python3 scripts/workbuddy_bootstrap_for_business.py
 ```
 
-打开引导页：`outputs/业务使用资料包/药店培训内容工厂-业务包/index.html`  
+Public installer 会先检查当前用户的 GitHub 登录状态，以及
+`lmr1123/chain-pharmacy-content-studio-private` 的 `read` 权限；通过后才拉取/更新完整 Private 生产仓并调用 bootstrap。Public 仓不含模板、预览、声纹、业务包或生成器，不能单独出片。未登录或未获授权时，说明具体权限卡点并停止；禁止把 token 写入 URL/日志，禁止公共镜像，禁止回退公开 ZIP。
+
+Private bootstrap 会优先打开带本机能力状态、且不写入 Git 的 `index.local.html`；刷新失败才回退 Private checkout 内的固定 `index.html`。
 系统提示（须全文重贴到 WorkBuddy）：`docs/workbuddy-system-prompt.md`
 
 **首次出视频前**（你执行，不让业务敲命令）：  
@@ -89,7 +93,7 @@ PPT 不强制；商品/疾病科普视频 full 重渲必须过。
 | 步 | 业务说/做 | 你做 |
 |----|-----------|------|
 | 0 | （安装后） | `python3 scripts/probe_production_env.py`；记 TTS/渲染能力 |
-| 1 | 看引导页 / 说课型名 | 打开 index.html；锁定 settled 模板；读 manifest.voice_id |
+| 1 | 看引导页 / 说课型名 | 打开 bootstrap 返回的本机门户（回退时为 index.html）；锁定 settled 模板；读 manifest.voice_id |
 | 2 | 发商品/病名 + 要点 | 整理内容 → **本机出片**（PPT generator / `generate_business_courseware.py` / `generate_business_video.py`） |
 | 3 | 下载或改稿指令 | 给成片路径 + gap；按指令改后重出 |
 
@@ -105,14 +109,20 @@ python3 scripts/generate_business_courseware.py \
 **视频（业务自助核心）：**
 
 ```bash
-# 疾病科普 · 画面随病名换（禁止 audio-shell）
+# 疾病科普 · WorkBuddy 先生成主题包、补齐内容/画面并完成哈希审批（禁止 audio-shell）
+python3 scripts/build_health_theme_package.py \
+  --theme <主题> --sections-json <你整理的json> --out-dir <theme-package目录>
 .venv-qwen-tts/bin/python scripts/generate_business_video.py \
-  --template health --sections-json <你整理的json> --with-tts --with-mp4
+  --template health --theme-package <theme-package目录> --with-tts --with-mp4
 
-# 商品培训 · 画面随商品换
+# 商品培训 · 先出审批请求，业务确认内容与包装授权后再正式出片
+python3 scripts/generate_business_video.py \
+  --template product --mode plan --sections-json <json> \
+  --product-image <业务提供的包装图>
 .venv-qwen-tts/bin/python scripts/generate_business_video.py \
   --template product --sections-json <json> --with-tts --with-mp4 \
-  --product-image <授权包装图可选>
+  --product-image <业务提供并确认授权的包装图> \
+  --product-approval <已批准JSON>
 ```
 
 回传业务：`*_疾病科普视频_v1.mp4` 或 `*_商品培训视频_v1.mp4` + storyboard。  

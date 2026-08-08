@@ -18,36 +18,41 @@ import subprocess
 import sys
 from pathlib import Path
 
-DEFAULT_REPO = "https://github.com/lmr1123/chain-pharmacy-content-studio.git"
-DEFAULT_DIR_NAME = "chain-pharmacy-content-studio"
-# Mainland CN: github.com often intermittent; try mirrors after official URL fails.
-# Format: ghproxy prefixes the full https://github.com/...git URL.
-CN_CLONE_MIRRORS = (
-    "https://ghproxy.com/https://github.com/lmr1123/chain-pharmacy-content-studio.git",
-    "https://mirror.ghproxy.com/https://github.com/lmr1123/chain-pharmacy-content-studio.git",
-    "https://gitclone.com/github.com/lmr1123/chain-pharmacy-content-studio",
-)
+DEFAULT_REPO = "https://github.com/lmr1123/chain-pharmacy-content-studio-private.git"
+DEFAULT_DIR_NAME = "chain-pharmacy-content-studio-private"
+OFFICIAL_PRIVATE_ORIGINS = {
+    DEFAULT_REPO,
+    DEFAULT_REPO.removesuffix(".git"),
+    "git@github.com:lmr1123/chain-pharmacy-content-studio-private.git",
+    "git@github.com:lmr1123/chain-pharmacy-content-studio-private",
+    "ssh://git@github.com/lmr1123/chain-pharmacy-content-studio-private.git",
+    "ssh://git@github.com/lmr1123/chain-pharmacy-content-studio-private",
+}
+PRIVATE_MARKER_REL = Path("distribution") / "private-production.json"
+PRIVATE_MARKER_KIND = "chain-pharmacy-private-production"
 PKG_REL = Path("outputs") / "业务使用资料包" / "药店培训内容工厂-业务包"
 PORTAL_NAME = "index.html"
+RUNTIME_PORTAL_NAME = "index.local.html"
 CATALOG_REL = (
     Path("production-library") / "templates" / "settled" / "business-catalog.json"
+)
+PROBE_REQUIRE_CHOICES = (
+    "pptx",
+    "courseware",
+    "video-plan",
+    "video-tts",
+    "video-full",
+    "production-assets",
 )
 
 
 def clone_url_candidates(primary: str) -> list[str]:
-    urls = [primary]
-    if "github.com" in primary and "lmr1123/chain-pharmacy-content-studio" in primary:
-        for m in CN_CLONE_MIRRORS:
-            if m not in urls:
-                urls.append(m)
-    # env override: CHAIN_PHARMACY_CLONE_MIRRORS=url1,url2
-    extra = os.environ.get("CHAIN_PHARMACY_CLONE_MIRRORS", "").strip()
-    if extra:
-        for part in extra.split(","):
-            part = part.strip()
-            if part and part not in urls:
-                urls.append(part)
-    return urls
+    if primary != DEFAULT_REPO:
+        raise SystemExit(
+            "只允许从官方 Private 生产仓安装，已拒绝非官方地址或镜像："
+            f"{primary}"
+        )
+    return [DEFAULT_REPO]
 
 
 def default_parent() -> Path:
@@ -68,29 +73,100 @@ def run(cmd: list[str], *, cwd: Path | None = None, check: bool = True) -> subpr
     return subprocess.run(cmd, cwd=str(cwd) if cwd else None, check=check)
 
 
+def update_repo(root: Path) -> None:
+    """Update an existing checkout, stopping rather than using a stale tree."""
+    if not is_private_repo(root):
+        raise SystemExit(
+            f"当前目录不是官方 Private 生产仓，已拒绝 git pull: {root}"
+        )
+    result = run(["git", "pull", "--ff-only"], cwd=root, check=False)
+    if result.returncode != 0:
+        raise SystemExit(
+            f"git pull --ff-only 失败（exit={result.returncode}），已停止启动。\n"
+            "本地仓库保持原状；请修复网络或本地分支冲突后重试。"
+        )
+
+
 def is_repo(path: Path) -> bool:
-    return (path / ".git").is_dir() and (path / "production-library" / "templates" / "settled").is_dir()
+    return (path / ".git").exists() and (
+        path / "production-library" / "templates" / "settled"
+    ).is_dir()
+
+
+def private_origin_url(path: Path) -> str | None:
+    try:
+        result = subprocess.run(
+            ["git", "remote", "get-url", "origin"],
+            cwd=str(path),
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=8.0,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    if result.returncode != 0:
+        return None
+    return result.stdout.strip() or None
+
+
+def private_origin_official(path: Path) -> bool:
+    return private_origin_url(path) in OFFICIAL_PRIVATE_ORIGINS
+
+
+def private_marker_valid(path: Path) -> bool:
+    marker_path = path / PRIVATE_MARKER_REL
+    if not marker_path.is_file():
+        return False
+    try:
+        marker = json.loads(marker_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return marker == {
+        "kind": PRIVATE_MARKER_KIND,
+        "version": 1,
+        "repository_url": DEFAULT_REPO,
+        "production_assets": True,
+    }
+
+
+def is_private_repo(path: Path) -> bool:
+    return (
+        is_repo(path)
+        and private_marker_valid(path)
+        and private_origin_official(path)
+    )
 
 
 def resolve_repo_root(explicit: Path | None) -> Path | None:
-    if explicit and is_repo(explicit):
+    if explicit and is_private_repo(explicit):
         return explicit.resolve()
     # running from inside repo
     here = Path(__file__).resolve().parents[1]
-    if is_repo(here):
+    if is_private_repo(here):
         return here
     # cwd
     cwd = Path.cwd()
-    if is_repo(cwd):
+    if is_private_repo(cwd):
         return cwd.resolve()
     return None
 
 
-def clone_or_update(repo_url: str, target: Path) -> Path:
+def clone_or_update(repo_url: str, target: Path, *, skip_update: bool = False) -> Path:
+    if skip_update:
+        if target.exists() and is_private_repo(target):
+            print(f"已由 Public 安装器同步，跳过更新: {target}")
+            return target.resolve()
+        raise SystemExit(
+            f"--skip-update 只允许用于已同步且校验通过的 Private 生产仓: {target}"
+        )
     if target.exists() and is_repo(target):
+        if not is_private_repo(target):
+            raise SystemExit(
+                f"现有目录不是官方 Private 生产仓，已拒绝更新: {target}"
+            )
         print(f"已安装，更新: {target}")
-        # Prefer pull; if remote is slow, still ok to proceed with existing tree
-        run(["git", "pull", "--ff-only"], cwd=target, check=False)
+        update_repo(target)
         return target.resolve()
     if target.exists() and any(target.iterdir()):
         raise SystemExit(
@@ -108,42 +184,126 @@ def clone_or_update(repo_url: str, target: Path) -> Path:
 
             shutil.rmtree(target, ignore_errors=True)
         result = run(["git", "clone", "--depth", "1", url, str(target)], check=False)
-        if result.returncode == 0 and is_repo(target):
-            # normalize origin to official github for later pull when network allows
-            run(
-                ["git", "remote", "set-url", "origin", DEFAULT_REPO],
-                cwd=target,
-                check=False,
-            )
+        if result.returncode == 0 and is_private_repo(target):
             print(f"克隆成功（来源: {url}）")
             return target.resolve()
+        if result.returncode == 0:
+            raise SystemExit(
+                "克隆完成但 Private 标记或 origin 校验失败，已停止启动。"
+            )
         last_err = result.returncode
         print(f"失败 (exit={last_err})，换下一个源…")
     raise SystemExit(
-        "git clone 全部源失败。说明：\n"
-        "· 仓库已 Public，一般不需要 GitHub 登录\n"
-        "· 国内直连 github.com 常不稳定（TLS/空响应），已自动试过 ghproxy 等镜像\n"
-        "· 仍失败：换网络/手机热点、公司代理，或由制作发业务包 zip 备用\n"
+        "Private 生产仓克隆失败。说明：\n"
+        "· 请先确认 GitHub 账号已获 Private 仓读取权限\n"
+        "· 为保护授权资产，本脚本禁止 ghproxy 和第三方镜像\n"
+        "· 请修复官方 GitHub 网络或账号权限后重试\n"
         f"官方地址: {DEFAULT_REPO}\n"
         "请把报错原文发给 IT/制作，或稍后回复「继续安装」。"
     )
 
 
-def ensure_package(root: Path) -> Path:
+def ensure_package(
+    root: Path,
+    runtime_capabilities: dict[str, bool] | None = None,
+) -> Path:
     portal = root / PKG_REL / PORTAL_NAME
-    if portal.is_file():
-        return portal
-    # try light rebuild if scripts present
     build = root / "scripts" / "build_business_tier_a_package.py"
-    if build.is_file():
+    if not portal.is_file():
+        if not build.is_file():
+            raise SystemExit(f"缺少业务包生成器，无法重建引导页: {build}")
         print("业务引导页缺失，尝试重建业务包…")
-        run([sys.executable, str(build)], cwd=root, check=False)
-    if portal.is_file():
+        result = run([sys.executable, str(build)], cwd=root, check=False)
+        if result.returncode != 0:
+            raise SystemExit(
+                f"业务包重建失败（exit={result.returncode}），已停止启动。\n"
+                f"请检查上方错误并重试: {build}"
+            )
+        if not portal.is_file():
+            raise SystemExit(
+                f"业务包重建完成但未找到引导页，已停止启动: {portal}"
+            )
+
+    if runtime_capabilities is None:
         return portal
-    raise SystemExit(
-        f"未找到业务引导页: {portal}\n"
-        "请制作侧执行: python3 scripts/refresh_business_delivery.py 后推送仓库。"
+
+    if not build.is_file():
+        print(f"警告：缺少业务门户生成器，回退固定引导页: {build}")
+        return portal
+    runtime_portal = portal.with_name(RUNTIME_PORTAL_NAME)
+    command = [
+        sys.executable,
+        str(build),
+        "--runtime-capabilities-json",
+        json.dumps(
+            runtime_capabilities,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        ),
+        "--portal-only",
+    ]
+    print("刷新业务引导页的本机能力状态…")
+    result = run(command, cwd=root, check=False)
+    if result.returncode != 0:
+        print(
+            f"警告：业务门户能力刷新失败（exit={result.returncode}），"
+            "回退固定引导页；生成前仍须重新探测任务能力。"
+        )
+        return portal
+    if not runtime_portal.is_file():
+        print(
+            f"警告：未找到本机能力引导页，回退固定引导页: {runtime_portal}"
+        )
+        return portal
+    return runtime_portal
+
+
+def probe_environment(root: Path, requirements: list[str]) -> dict:
+    """Probe the installed tree for the exact capabilities requested by the task."""
+    probe = root / "scripts" / "probe_production_env.py"
+    if not probe.is_file():
+        raise SystemExit(f"缺少环境探测脚本，已停止启动: {probe}")
+
+    command = [sys.executable, str(probe), "--json"]
+    for requirement in requirements:
+        command.extend(["--require", requirement])
+    print("+", " ".join(command))
+    result = subprocess.run(
+        command,
+        cwd=str(root),
+        check=False,
+        capture_output=True,
+        text=True,
     )
+    if result.returncode not in (0, 2):
+        detail = (result.stderr or result.stdout).strip()
+        suffix = f"\n{detail}" if detail else ""
+        raise SystemExit(
+            f"生产环境探测执行失败（exit={result.returncode}），已停止启动。{suffix}"
+        )
+    try:
+        report = json.loads(result.stdout)
+    except (json.JSONDecodeError, TypeError) as exc:
+        raise SystemExit(f"生产环境探测未返回有效 JSON，已停止启动: {exc}") from exc
+
+    capabilities = report.get("capabilities") or {}
+    ready = sorted(name for name, available in capabilities.items() if available)
+    unavailable = sorted(name for name, available in capabilities.items() if not available)
+    print(f"环境能力可用: {', '.join(ready) if ready else '无'}")
+    if unavailable:
+        print(f"环境能力不可用: {', '.join(unavailable)}")
+
+    missing = report.get("missing_capabilities") or []
+    if result.returncode == 2 or not report.get("ok", False):
+        missing_text = ", ".join(str(item) for item in missing) or ", ".join(requirements)
+        messages = report.get("messages_zh") or []
+        detail = "\n".join(f"· {message}" for message in messages)
+        raise SystemExit(
+            "当前机器缺少本任务要求的生产能力，已诚实停止；不会用降级产物冒充正式交付。\n"
+            f"缺少能力: {missing_text}"
+            + (f"\n{detail}" if detail else "")
+        )
+    return report
 
 
 def load_catalog_names(root: Path) -> list[str]:
@@ -231,7 +391,7 @@ def main() -> None:
         "--target",
         type=Path,
         default=None,
-        help="Install directory (default: ~/Documents/chain-pharmacy-content-studio)",
+        help="Install directory (default: ~/Documents/chain-pharmacy-content-studio-private)",
     )
     parser.add_argument(
         "--no-open",
@@ -243,20 +403,41 @@ def main() -> None:
         action="store_true",
         help="Only update existing repo (fail if missing)",
     )
+    parser.add_argument(
+        "--skip-update",
+        action="store_true",
+        help="Public installer already synced Private; validate root and skip pull",
+    )
+    parser.add_argument(
+        "--require",
+        action="append",
+        default=[],
+        choices=PROBE_REQUIRE_CHOICES,
+        help="Probe a task capability after update (repeatable)",
+    )
     args = parser.parse_args()
+    if args.skip_update and args.update_only:
+        raise SystemExit("--skip-update 与 --update-only 不能同时使用")
 
     existing = resolve_repo_root(None)
-    if existing and args.target is None:
+    if args.skip_update:
+        target = args.target or existing
+        if target is None:
+            raise SystemExit("--skip-update 但未找到已同步的 Private 生产仓")
+        root = clone_or_update(args.repo_url, target, skip_update=True)
+    elif existing and args.target is None:
         root = existing
         print(f"检测到已在仓库内: {root}")
-        run(["git", "pull", "--ff-only"], cwd=root, check=False)
+        update_repo(root)
     else:
         target = args.target or (default_parent() / DEFAULT_DIR_NAME)
-        if args.update_only and not is_repo(target):
+        if args.update_only and not is_private_repo(target):
             raise SystemExit(f"--update-only 但未找到仓库: {target}")
         root = clone_or_update(args.repo_url, target)
 
-    portal = ensure_package(root)
+    requirements = list(dict.fromkeys(["production-assets", *args.require]))
+    environment = probe_environment(root, requirements)
+    portal = ensure_package(root, environment.get("capabilities") or {})
     print_guide(root, portal)
     if not args.no_open:
         open_path(portal)

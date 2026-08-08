@@ -95,11 +95,93 @@ def paragraphs_to_html_blocks(paragraphs: list[str]) -> str:
     return "\n".join(parts) if parts else '<p class="ex-note">暂无填写示例正文。</p>'
 
 
+def build_business_command(template: dict) -> str:
+    """Return an approval-first command matching the actual deliverable."""
+    name = template["name_zh"]
+    slug = str(template.get("slug") or "")
+    category = str(template.get("category") or "")
+    capabilities = template.get("capabilities") or {}
+    can_pptx = bool(capabilities.get("new_theme_pptx"))
+    can_mp4 = bool(capabilities.get("new_theme_mp4"))
+    subject = "商品名" if category == "商品培训" else "病名或健康主题"
+
+    if not can_pptx and not can_mp4:
+        return (
+            f"我选【{name}】，目前仅查看金样和填写参考。"
+            "请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。"
+        )
+    if can_pptx and can_mp4:
+        return (
+            f"我选【{name}】，需要【可编辑 PPTX / 完整 MP4，请保留我选择的一项】。\n"
+            f"{subject}是【请填写】，审核要点是【要点1、要点2、要点3】。"
+            "请先整理内容初稿和所需素材缺口供我确认；确认后再检查本机能力并生成正式成品。"
+        )
+    if can_mp4:
+        if slug == "product-video-faithful-v1":
+            return (
+                f"我选【{name}】，商品名是【请填写】，并附上已获业务授权的商品包装图。\n"
+                "审核要点是【要点1、要点2、要点3】。请先整理完整脚本和分镜、列出素材与授权缺口供我确认；"
+                "确认后再检查本机能力并生成完整 MP4，不要跳过确认。"
+            )
+        if slug == "health-video-reference-tech-v1":
+            return (
+                f"我选【{name}】，病名或健康主题是【请填写】，并提交已审核的 7 段内容要点。\n"
+                "请先整理完整脚本、分镜和主题画面复核包，缺少的医学内容只列缺口；"
+                "内容与全部画面确认后，再检查本机能力并生成完整 MP4。"
+            )
+        return (
+            f"我选【{name}】，{subject}是【请填写】，审核要点是【要点1、要点2、要点3】。\n"
+            "请先整理完整脚本和分镜、列出素材与授权缺口供我确认；"
+            "确认后再检查本机能力并生成完整 MP4，不要跳过确认。"
+        )
+    return (
+        f"我选【{name}】，{subject}是【请填写】，审核要点是【要点1、要点2、要点3】。\n"
+        "请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。"
+    )
+
+
+RUNTIME_CAPABILITY_NAMES = {
+    "pptx_export",
+    "video_full",
+    "video_tts",
+    "video_render",
+}
+
+
+def readiness_badge(
+    template: dict,
+    runtime_capabilities: dict[str, bool] | None = None,
+) -> dict[str, str]:
+    capabilities = template.get("capabilities") or {}
+    if capabilities.get("business_selfserve"):
+        return {"kind": "ready", "label": "可自助生成"}
+    if not capabilities.get("new_theme_pptx") and not capabilities.get("new_theme_mp4"):
+        return {"kind": "preview", "label": "仅金样预览"}
+
+    required = [
+        item
+        for item in template.get("requirements") or []
+        if item in RUNTIME_CAPABILITY_NAMES
+    ]
+    if runtime_capabilities is None:
+        return {"kind": "conditional", "label": "可开始草稿 · 生成前检查环境"}
+    missing = [item for item in required if not runtime_capabilities.get(item)]
+    if missing:
+        return {
+            "kind": "conditional",
+            "label": "本机缺 " + "/".join(missing) + " · 可先做草稿",
+        }
+    if required:
+        return {"kind": "ready", "label": "本机环境通过 · 仍需内容/素材确认"}
+    return {"kind": "preview", "label": "仅金样预览"}
+
+
 def build_guided_portal_html(
     templates: list[dict],
     *,
     examples: dict[str, list[str]] | None = None,
     pack_date: str | None = None,
+    runtime_capabilities: dict[str, bool] | None = None,
 ) -> str:
     pack_date = pack_date or date.today().isoformat()
     examples = examples or {}
@@ -112,6 +194,8 @@ def build_guided_portal_html(
         item = dict(t)
         item["example_paragraphs"] = paras
         item["example_html"] = paragraphs_to_html_blocks(paras)
+        item["selection_command"] = build_business_command(t)
+        item["readiness_badge"] = readiness_badge(t, runtime_capabilities)
         enriched.append(item)
 
     catalog_js = json.dumps(enriched, ensure_ascii=False)
@@ -206,8 +290,14 @@ section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px
   gap: 10px;
 }}
 @media (max-width: 900px) {{ .grid {{ grid-template-columns: repeat(2, 1fr); }} }}
-@media (max-width: 480px) {{ .grid {{ grid-template-columns: 1fr 1fr; }} }}
+@media (max-width: 480px) {{ .grid {{ grid-template-columns: 1fr; }} }}
 .tcard {{
+  appearance: none;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
   border: 1px solid var(--line);
   border-radius: 10px;
   overflow: hidden;
@@ -216,6 +306,7 @@ section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px
   transition: border-color .12s, box-shadow .12s;
 }}
 .tcard:hover {{ border-color: #93c5fd; }}
+.tcard:focus-visible {{ outline: 3px solid #93c5fd; outline-offset: 2px; }}
 .tcard.selected {{
   border-color: var(--ok);
   box-shadow: 0 0 0 2px rgba(4,120,87,.2);
@@ -242,6 +333,18 @@ section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px
   overflow: hidden;
   text-overflow: ellipsis;
 }}
+.readiness-badge {{
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #92400e;
+  background: #fffbeb;
+}}
+.readiness-badge.preview {{ color: #475569; background: #f1f5f9; }}
+.readiness-badge.ready {{ color: var(--ok); background: var(--ok-soft); }}
 
 .preview-pane {{
   display: none;
@@ -378,22 +481,22 @@ footer {{
     <div class="how">
       <div>
         <b>① 看模板</b>
-        本页一行四个卡片，点开看关键页预览，再点「选用」
+        按交付物查看模板，点开关键页预览与真实能力，再点「选用」
       </div>
       <div>
         <b>② 输入培训内容</b>
-        回 WorkBuddy 说主题+要点，例如：整理可可康灵芝胶囊…你先整理符合内容再生成ppt
+        回 WorkBuddy 说主题+审核要点；系统先给内容初稿和素材缺口
       </div>
       <div>
         <b>③ 下载与修改</b>
-        可下载 PPT 修改，或输入指令批量修改，如「第二页卖点改成…」「批量把联合用药改成 2 条」
+        确认后才生成；质检通过的 PPTX / MP4 在同一交付位置取件
       </div>
     </div>
   </header>
 
   <section class="block" id="sec-templates">
     <h2><span class="n">1</span> 模板预览与选择</h2>
-    <p class="hint">一行 4 个；点卡片看<strong>关键页面截图</strong>（大图）。选好后下方会展示该模板的<strong>内容示例</strong>。</p>
+    <p class="hint">点卡片看<strong>关键页面截图</strong>和真实能力。选好后下方会展示该模板的<strong>内容示例</strong>。</p>
     <div class="grid" id="template-grid"></div>
 
     <div class="preview-pane" id="preview-pane">
@@ -441,23 +544,24 @@ function mediaKey(slug, i) {{
 }}
 
 function buildCmd(t) {{
-  return (
-    "我选 【" + t.name_zh + "】。\\n" +
-    "整理【商品名或病名】，主要是围绕【要点1、要点2、要点3】来完善，你先整理符合内容再生成ppt。"
-  );
+  return t.selection_command || "";
 }}
 
 function renderGrid() {{
   const grid = document.getElementById("template-grid");
   grid.innerHTML = "";
   TEMPLATES.forEach(t => {{
-    const card = document.createElement("article");
+    const card = document.createElement("button");
+    card.type = "button";
     card.className = "tcard" + (selected && selected.slug === t.slug ? " selected" : "");
+    card.setAttribute("aria-pressed", selected && selected.slug === t.slug ? "true" : "false");
     card.innerHTML =
       '<img class="cover" src="' + mediaCover(t.slug) + '" alt="' + t.name_zh + '" loading="lazy" />' +
       '<div class="body">' +
       "<h3>" + t.name_zh + "</h3>" +
       '<div class="meta">' + (t.outputs || []).join(" · ") + "</div>" +
+      '<span class="readiness-badge ' + (t.readiness_badge.kind || "preview") + '">' +
+      (t.readiness_badge.label || "能力待确认") + "</span>" +
       "</div>";
     card.addEventListener("click", () => selectTemplate(t));
     grid.appendChild(card);
@@ -491,7 +595,8 @@ function selectTemplate(t) {{
   pane.classList.add("show");
   document.getElementById("sel-name").textContent = t.name_zh;
   document.getElementById("sel-meta").textContent =
-    (t.one_liner || "") + (t.production_ready === false ? " · 新主题请与制作确认" : "");
+    (t.one_liner || "") + " · " + (t.status_label || "能力待确认") +
+    ((t.blockers || []).length ? " · 当前缺口：" + t.blockers.join("；") : "");
 
   const keys = document.getElementById("sel-keys");
   keys.innerHTML = "";

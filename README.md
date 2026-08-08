@@ -26,17 +26,15 @@
 安装脚本（代理执行）：
 
 ```bash
-# 已在仓库内
-python3 scripts/workbuddy_bootstrap_for_business.py
-
-# 首次（示例路径；国内直连失败时 bootstrap 会自动换镜像）
-git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git ~/Documents/chain-pharmacy-content-studio
-# 或：git clone https://ghproxy.com/https://github.com/lmr1123/chain-pharmacy-content-studio.git ~/Documents/chain-pharmacy-content-studio
-cd ~/Documents/chain-pharmacy-content-studio
-python3 scripts/workbuddy_bootstrap_for_business.py
+# Public 仓只有脱敏安装器；WorkBuddy 首次执行
+git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git \
+  ~/Documents/chain-pharmacy-content-studio-installer
+cd ~/Documents/chain-pharmacy-content-studio-installer
+python3 scripts/install_private_studio.py
 ```
 
-**国内网络：** 仓库 Public，无需登录；但 GitHub 在国内常不稳定。优先让 WorkBuddy 跑 bootstrap（内置镜像回退），不要让业务自己硬扛直连。
+安装器会检查 GitHub 登录和
+`lmr1123/chain-pharmacy-content-studio-private` 的授权，随后拉取完整 Private 生产仓并运行其中的 bootstrap。Public 仓**不含**模板、资产、声纹、业务包或生成能力；没有 Private `read` 权限时会明确停止。Private 拉取禁止使用公共镜像，也不提供公开 ZIP 回退。
 
 ## 制作侧
 
@@ -63,10 +61,11 @@ python3 scripts/refresh_business_delivery.py
 
 ## 仓库边界
 
-- **纳入 Git**：settled 金样成片与预览、文档、脚本、登记表、业务包、源码与配置  
-- **默认不纳入**（体积 / 可本地再生）：`third_party/`、`node_modules`、`.venv*`、validation 下音视频与大量 QA 截图、`tmp/`  
+- **Public installer**：全新历史，只含安装、授权检查和安全说明；不具备生产能力。
+- **Private production**：settled 金样、授权资产、声纹、文档、生成器、登记表和配置。第一阶段完整 Private 仓即授权资产包。
+- **本机不入仓**：`third_party/`、`node_modules`、`.venv*`、运行 workspace、业务上传、日志和正式交付物。
 
-克隆后业务路径只依赖业务包内预览与 Word；出片与克隆 TTS 由 WorkBuddy 在本机按 `AGENTS.md` 与各工程依赖执行。
+获授权安装后，出片与克隆 TTS 由 WorkBuddy 在 Private checkout 内按 `AGENTS.md` 与各工程依赖执行。迁移和权限边界见 [`docs/private-public-repository-migration.md`](docs/private-public-repository-migration.md)。
 
 ## 硬原则（摘要）
 
@@ -77,5 +76,5 @@ python3 scripts/refresh_business_delivery.py
 
 ## License / 使用范围
 
-- 仓库 **Public**，业务可在 WorkBuddy 一句话 clone 使用（见上文安装句）。  
-- 用途定位为**公司内部培训制作**；金样中的品牌包装、药学表述、人声克隆包仅限授权范围内使用，不得当未授权对外素材二次分发。
+- Public 仓公开可读不等于获得 Private 生产资产或其再分发授权；除非另有明确书面许可，安装入口之外的权利均不随 Public 可见性授予。
+- 完整生产系统仅供获授权账号进行公司内部培训制作；Private 化不替代素材、人声和品牌的内部使用授权。

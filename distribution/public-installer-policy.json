@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "default_action": "deny",
+  "source_root": "public-entry",
+  "public_repository": "lmr1123/chain-pharmacy-content-studio",
+  "private_repository": "lmr1123/chain-pharmacy-content-studio-private",
+  "history_policy": "new-repository-only",
+  "allowed_source_paths": [
+    ".github/workflows/public-audit.yml",
+    ".gitignore",
+    "AGENTS.md",
+    "README.md",
+    "SECURITY.md",
+    "scripts/audit_public_tree.py",
+    "scripts/install_private_studio.py"
+  ],
+  "generated_paths": [
+    "SHA256SUMS.json"
+  ],
+  "max_file_bytes": 65536,
+  "max_total_bytes": 262144
+}

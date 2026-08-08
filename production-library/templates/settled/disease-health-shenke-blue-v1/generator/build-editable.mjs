@@ -1,5 +1,5 @@
 /**
- * 参课 · 疾病健康知识培训 · 可编辑金样 v2
+ * 参课 · 疾病健康知识培训 · 可编辑金样 v3
  *
  * 交付级标准：
  * 1) 插图为重绘生成（assets/），非视频截图裁切
@@ -7,6 +7,14 @@
  * 3) 商品包装为命名坑位（placeholders），业务替换授权原图
  *
  * 复用：改 content/*.content.json → node build-editable.mjs
+ *
+ * 讲解安全版（数字人侧讲，企业交付）：
+ *   node build-editable.mjs --presenter
+ *   node build-editable.mjs content/xxx.content.json --presenter
+ * - 全屏仍是一张 PPT（非左右分屏）
+ * - 页内内容栏收窄到约 60% 画幅，右侧同页留白供数字人叠层
+ * - 同一套 C/T/chrome/字阶，不另起 UI
+ * - 输出独立文件名，不覆盖全宽金样 v3
  */
 import pptxgen from "pptxgenjs";
 import fs from "node:fs";
@@ -14,14 +22,36 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const argv = process.argv.slice(2).filter((a) => a !== "--presenter");
+const PRESENTER = process.argv.includes("--presenter");
 const contentPath =
-  process.argv[2] ||
+  argv[0] ||
   path.join(__dirname, "content/急性上呼吸道感染.content.json");
 const data = JSON.parse(fs.readFileSync(contentPath, "utf8"));
 const assetsDir = path.join(__dirname, "assets");
 const placeholdersDir = path.join(assetsDir, "placeholders");
-const outName = `${data.meta.topic}_疾病健康知识培训_可编辑金样_v3.pptx`;
+const outName = PRESENTER
+  ? `${data.meta.topic}_疾病健康知识培训_讲解安全版_v1.pptx`
+  : `${data.meta.topic}_疾病健康知识培训_可编辑金样_v3.pptx`;
 const OUT = path.join(__dirname, outName);
+
+/**
+ * 布局度量（英寸，HD 13.333×7.5）
+ * presenter：内容右边界 ≈ 画幅 60%，右侧 40% 同页留白站人
+ */
+const L = {
+  presenter: PRESENTER,
+  x0: 0.45,
+  /** 正文/卡片可用右边界；chrome 页眉页脚仍全宽 */
+  x1: PRESENTER ? 8.05 : 12.85,
+  get contentW() {
+    return this.x1 - this.x0;
+  },
+};
+/** 从 x 起最多能排多宽（不越过内容安全线） */
+function fitW(x, desired) {
+  return Math.min(desired, Math.max(0.4, L.x1 - x));
+}
 
 // —— 参课色（从截图采样，不另起 UI）——
 const C = {
@@ -359,8 +389,10 @@ function addShenkeChrome(slide, num, title, pageIdx) {
     fontFace: FONT, fontSize: 20, bold: true, color: C.white,
     align: "center", valign: "middle", margin: 0,
   });
+  // 讲解安全版：标题勿伸进站人区；Logo 仍可放右上（页眉带）
+  const titleW = L.presenter ? fitW(1.2, 6.5) : 9.0;
   slide.addText(title, {
-    x: 1.2, y: 0.2, w: 9.0, h: 0.52,
+    x: 1.2, y: 0.2, w: titleW, h: 0.52,
     fontFace: FONT, fontSize: T.section, bold: true, color: C.ink,
     valign: "middle", margin: 0,
   });
@@ -396,20 +428,20 @@ function addCornerTag(slide, tag, x = 0.5, y = 1.12) {
   });
 }
 
-/** 虚线角框正文（高度按内容收紧，避免大块空白） */
+/** 虚线角框正文（高度按内容收紧，避免大块空白；宽度随讲解安全区） */
 function addDashedBodyBox(slide, textOrParts, y = 5.05, h = 2.05) {
-  const x = 0.45, w = 12.4;
+  const x = L.x0, w = fitW(x, 12.4);
   const c = C.blueLine;
-  const L = 0.28;
+  const corner = 0.28; // 角标长度（勿命名 L，会与布局对象 L 冲突）
   const thick = 0.055;
-  slide.addShape(pres.shapes.RECTANGLE, { x, y, w: L, h: thick, fill: { color: c } });
-  slide.addShape(pres.shapes.RECTANGLE, { x, y, w: thick, h: L, fill: { color: c } });
-  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - L, y, w: L, h: thick, fill: { color: c } });
-  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - thick, y, w: thick, h: L, fill: { color: c } });
-  slide.addShape(pres.shapes.RECTANGLE, { x, y: y + h - thick, w: L, h: thick, fill: { color: c } });
-  slide.addShape(pres.shapes.RECTANGLE, { x, y: y + h - L, w: thick, h: L, fill: { color: c } });
-  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - L, y: y + h - thick, w: L, h: thick, fill: { color: c } });
-  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - thick, y: y + h - L, w: thick, h: L, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x, y, w: corner, h: thick, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x, y, w: thick, h: corner, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - corner, y, w: corner, h: thick, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - thick, y, w: thick, h: corner, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x, y: y + h - thick, w: corner, h: thick, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x, y: y + h - corner, w: thick, h: corner, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - corner, y: y + h - thick, w: corner, h: thick, fill: { color: c } });
+  slide.addShape(pres.shapes.RECTANGLE, { x: x + w - thick, y: y + h - corner, w: thick, h: corner, fill: { color: c } });
 
   slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
     x: x + 0.06, y: y + 0.06, w: w - 0.12, h: h - 0.12,
@@ -463,8 +495,10 @@ const pres = new pptxgen();
 pres.defineLayout({ name: "HD", width: W, height: H });
 pres.layout = "HD";
 pres.author = "chain-pharmacy-content-studio";
-pres.title = `${data.meta.topic} · 疾病健康知识培训（可编辑金样 v3）`;
-pres.subject = data.template_id;
+pres.title = PRESENTER
+  ? `${data.meta.topic} · 疾病健康知识培训（讲解安全版 v1）`
+  : `${data.meta.topic} · 疾病健康知识培训（可编辑金样 v3）`;
+pres.subject = data.template_id + (PRESENTER ? "+presenter-safe" : "");
 
 for (const [pageNo, s] of data.slides.entries()) {
   const pageIdx = pageNo + 1;
@@ -636,54 +670,59 @@ for (const [pageNo, s] of data.slides.entries()) {
   if (st === "definition_etiology") {
     addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
-    // 病名徽章：深蓝实心 pill
+    const x0 = L.x0;
+    const colW = L.contentW;
+
+    // 病名徽章：深蓝实心 pill（宽度随内容栏，不进站人区）
+    const badgeW = Math.min(4.6, colW);
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.45, y: 1.14, w: 4.6, h: 0.56,
+      x: x0, y: 1.14, w: badgeW, h: 0.56,
       fill: { color: C.blueDeep },
       rectRadius: 0.06,
       shadow: cardShadow(),
     });
     slide.addText(s.badge, {
-      x: 0.45, y: 1.14, w: 4.6, h: 0.56,
+      x: x0, y: 1.14, w: badgeW, h: 0.56,
       fontFace: FONT, fontSize: T.badge, bold: true, color: C.white,
       align: "center", valign: "middle", margin: 0,
     });
 
-    // 左文右图，避免整页纯字单调
+    // 全宽版：左文右图；讲解安全版：仅内容栏内定义卡（插图改到栏内下方或省略，避免占站位）
     const illus = asset("overview-uri-illustration.png");
-    const defW = illus ? 7.9 : 12.4;
+    const useSideIllus = !L.presenter && !!illus;
+    const defW = useSideIllus ? Math.min(7.9, colW) : colW;
 
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.45, y: 1.9, w: defW, h: 2.35,
+      x: x0, y: 1.9, w: defW, h: 2.35,
       fill: { color: C.white },
       line: { color: C.quoteBorder, width: 1.75 },
       rectRadius: 0.06,
       shadow: cardShadow(),
     });
     slide.addText("“", {
-      x: 0.6, y: 2.0, w: 0.55, h: 0.55,
+      x: x0 + 0.15, y: 2.0, w: 0.55, h: 0.55,
       fontFace: FONT, fontSize: 40, bold: true, color: C.quoteBorder, margin: 0,
     });
     slide.addText(partsToRuns(s.definition_parts, T.body), {
-      x: 1.2, y: 2.1, w: defW - 1.0, h: 1.95,
+      x: x0 + 0.75, y: 2.1, w: defW - 1.0, h: 1.95,
       fontFace: FONT, fontSize: T.body, color: C.body, valign: "middle",
     });
 
-    if (illus) {
+    if (useSideIllus) {
       addImageFrame(slide, illus, 8.55, 1.9, 4.3, 2.35, { pad: 0.08 });
     }
 
-    // 病因
-    addTitleChip(slide, s.etiology_title || "病因", 0.45, 4.5, 2.4);
+    // 病因（宽度 = 内容栏）
+    addTitleChip(slide, s.etiology_title || "病因", x0, 4.5, Math.min(2.4, colW));
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.45, y: 5.05, w: 12.4, h: 1.95,
+      x: x0, y: 5.05, w: colW, h: 1.95,
       fill: { color: C.white },
       line: { color: C.line, width: 1 },
       rectRadius: 0.05,
       shadow: cardShadow(),
     });
     slide.addText(partsToRuns(s.etiology_parts, T.body), {
-      x: 0.7, y: 5.2, w: 11.9, h: 1.65,
+      x: x0 + 0.25, y: 5.2, w: colW - 0.5, h: 1.65,
       fontFace: FONT, fontSize: T.body, color: C.body, valign: "middle",
     });
     continue;
@@ -694,66 +733,69 @@ for (const [pageNo, s] of data.slides.entries()) {
     addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     const blocks = s.blocks || [];
-    // 左栏三卡等高：底色标题条 + 正文；短文垂直居中，避免压到底栏
+    // 全宽：左栏卡 + 右栏插图；讲解安全：卡占满内容栏，侧栏插图省略（不进站位）
+    const cardW = L.presenter ? L.contentW : 7.7;
     const gap = 0.12;
     const n = Math.max(blocks.length, 1);
     const startY = 1.14;
     const endY = 6.0; // 提示条上方
     const blockH = (endY - startY - gap * (n - 1)) / n;
     let y = startY;
+    const cx = L.x0;
     blocks.forEach((b) => {
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-        x: 0.4, y, w: 7.7, h: blockH,
+        x: cx, y, w: cardW, h: blockH,
         fill: { color: C.white },
         line: { color: C.cardBorder, width: 1 },
         rectRadius: 0.06,
         shadow: cardShadow(),
       });
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-        x: 0.4, y, w: 7.7, h: 0.42,
+        x: cx, y, w: cardW, h: 0.42,
         fill: { color: C.chipBg },
         rectRadius: 0.06,
       });
       slide.addShape(pres.shapes.RECTANGLE, {
-        x: 0.4, y: y + 0.28, w: 7.7, h: 0.16,
+        x: cx, y: y + 0.28, w: cardW, h: 0.16,
         fill: { color: "E3EEF8" },
       });
       slide.addShape(pres.shapes.RECTANGLE, {
-        x: 0.4, y, w: 0.12, h: 0.42,
+        x: cx, y, w: 0.12, h: 0.42,
         fill: { color: C.blueDeep },
       });
       slide.addText(b.title, {
-        x: 0.65, y, w: 7.2, h: 0.42,
+        x: cx + 0.25, y, w: cardW - 0.5, h: 0.42,
         fontFace: FONT, fontSize: T.h2, bold: true, color: C.blueDeep,
         valign: "middle", margin: 0,
       });
-      // 短正文居中，长正文顶对齐，减少「稀拉拉」感
       const short = (b.body || "").length < 45;
       slide.addText(b.body, {
-        x: 0.6, y: y + 0.5, w: 7.3, h: blockH - 0.58,
+        x: cx + 0.2, y: y + 0.5, w: cardW - 0.4, h: blockH - 0.58,
         fontFace: FONT, fontSize: T.bodySm, color: C.body,
         valign: short ? "middle" : "top",
       });
       y += blockH + gap;
     });
 
-    // 右栏插图（止于提示条上方，不压字）
-    const throat = asset("clinical-throat-anatomy.png");
-    const oral = asset("clinical-oral.png");
-    if (throat) addImageFrame(slide, throat, 8.3, 1.14, 4.55, 2.36);
-    if (oral) addImageFrame(slide, oral, 8.3, 3.62, 4.55, 2.36);
+    if (!L.presenter) {
+      const throat = asset("clinical-throat-anatomy.png");
+      const oral = asset("clinical-oral.png");
+      if (throat) addImageFrame(slide, throat, 8.3, 1.14, 4.55, 2.36);
+      if (oral) addImageFrame(slide, oral, 8.3, 3.62, 4.55, 2.36);
+    }
 
-    // 询问诱因：整宽提示条（去掉无逻辑悬浮小图标）
+    // 询问诱因：宽度 = 内容栏
     if (s.warning) {
+      const warnW = L.contentW;
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-        x: 0.4, y: 6.14, w: 12.5, h: 0.88,
+        x: L.x0, y: 6.14, w: warnW, h: 0.88,
         fill: { color: "FFF8E8" },
         line: { color: "F0D090", width: 1.25 },
         rectRadius: 0.05,
         shadow: cardShadow(),
       });
       slide.addShape(pres.shapes.RECTANGLE, {
-        x: 0.4, y: 6.14, w: 0.12, h: 0.88,
+        x: L.x0, y: 6.14, w: 0.12, h: 0.88,
         fill: { color: "E8A317" },
       });
       slide.addText([
@@ -766,7 +808,7 @@ for (const [pageNo, s] of data.slides.entries()) {
           options: { color: C.body, fontSize: T.bodySm },
         },
       ], {
-        x: 0.7, y: 6.2, w: 12.0, h: 0.76,
+        x: L.x0 + 0.3, y: 6.2, w: warnW - 0.5, h: 0.76,
         fontFace: FONT, valign: "middle", margin: 0,
       });
     }
@@ -776,6 +818,68 @@ for (const [pageNo, s] of data.slides.entries()) {
   // ========== EXAM ==========
   if (st === "exam_two_column") {
     addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
+
+    if (L.presenter) {
+      // 讲解安全：双栏压入内容栏（上体征 / 下病原），不占右侧站位
+      const cw = L.contentW;
+      const x0 = L.x0;
+      slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+        x: x0, y: 1.14, w: cw, h: 2.55,
+        fill: { color: C.white },
+        line: { color: C.cardBorder, width: 1 },
+        rectRadius: 0.06,
+        shadow: cardShadow(),
+      });
+      addTitleChip(slide, "体格 / 实验室检查", x0 + 0.15, 1.26, Math.min(4.2, cw - 0.3));
+      const leftRunsP = (s.left_bullets || []).map((t, i, arr) => ({
+        text: t,
+        options: {
+          bullet: { code: "25B6" },
+          color: C.body,
+          breakLine: i < arr.length - 1,
+          fontSize: T.bodySm,
+          fontFace: FONT,
+        },
+      }));
+      slide.addText(leftRunsP, {
+        x: x0 + 0.2, y: 1.78, w: cw - 0.4, h: 1.75,
+        fontFace: FONT, fontSize: T.bodySm, color: C.body, valign: "top",
+        paraSpaceAfter: 6,
+      });
+
+      slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+        x: x0, y: 3.85, w: cw, h: 3.1,
+        fill: { color: C.white },
+        line: { color: C.cardBorder, width: 1 },
+        rectRadius: 0.06,
+        shadow: cardShadow(),
+      });
+      addTitleChip(slide, "常见病原体", x0 + 0.15, 3.97, Math.min(3.6, cw - 0.3));
+      let py = 4.5;
+      const pathogens = s.pathogens || [];
+      const pH = Math.min(0.85, (2.25) / Math.max(pathogens.length, 1));
+      pathogens.forEach((p) => {
+        slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+          x: x0 + 0.15, y: py, w: cw - 0.3, h: pH,
+          fill: { color: "F4F8FC" },
+          line: { color: "DCE8F4", width: 0.75 },
+          rectRadius: 0.04,
+        });
+        slide.addShape(pres.shapes.RECTANGLE, {
+          x: x0 + 0.15, y: py + 0.12, w: 0.06, h: pH - 0.24,
+          fill: { color: C.blueLine },
+        });
+        slide.addText([
+          { text: p.label + "  ", options: { bold: true, color: C.blueDeep, fontSize: T.h3 } },
+          { text: p.body, options: { color: C.body, fontSize: T.note } },
+        ], {
+          x: x0 + 0.35, y: py + 0.05, w: cw - 0.6, h: pH - 0.1,
+          fontFace: FONT, valign: "middle",
+        });
+        py += pH + 0.08;
+      });
+      continue;
+    }
 
     // 左：体征说明卡
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
@@ -856,6 +960,31 @@ for (const [pageNo, s] of data.slides.entries()) {
       s.images_layout ||
       (images.length === 1 ? "single_wide" : images.length === 3 ? "triple" : "double");
 
+    if (L.presenter) {
+      // 插图压进内容栏
+      const cw = L.contentW;
+      const x0 = L.x0;
+      if (layout === "single_wide" && images[0]) {
+        const p = asset(images[0]);
+        if (p) addImageFrame(slide, p, x0, 1.65, cw, 2.9);
+      } else if (layout === "triple") {
+        const cellW = (cw - 0.2) / Math.min(3, images.length);
+        images.slice(0, 3).forEach((name, i) => {
+          const p = asset(name);
+          if (p) addImageFrame(slide, p, x0 + i * cellW, 1.6, cellW - 0.1, 2.9);
+        });
+      } else {
+        const cellW = (cw - 0.12) / 2;
+        images.slice(0, 2).forEach((name, i) => {
+          const p = asset(name);
+          if (p) addImageFrame(slide, p, x0 + i * (cellW + 0.12), 1.6, cellW, 2.9);
+        });
+      }
+      if (s.body_parts) addDashedBodyBox(slide, s.body_parts, 4.7, 2.2);
+      else if (s.body) addDashedBodyBox(slide, s.body, 4.7, 2.2);
+      continue;
+    }
+
     // 插图区上移放大，正文框收紧，消灭大片空白
     if (layout === "single_wide" && images[0]) {
       const p = asset(images[0]);
@@ -885,12 +1014,13 @@ for (const [pageNo, s] of data.slides.entries()) {
     const empMap = s.emphasize_in_rows || {};
     const rows = s.rows || [];
     const headH = 0.55;
-    const tableX = 0.35;
+    const tableX = L.x0;
     const tableY = 1.12;
-    const tableW = 8.55;
-    const col0W = 2.75;
+    // 全宽：表 + 右侧包装；讲解安全：表占满内容栏，包装坑改到表下 2×2
+    const tableW = L.presenter ? L.contentW : 8.55;
+    const col0W = L.presenter ? 2.35 : 2.75;
     const col1W = tableW - col0W;
-    const bodyH = 5.9;
+    const bodyH = L.presenter ? 4.15 : 5.9;
     const dataRowH = (bodyH - headH) / Math.max(rows.length, 1);
 
     // 外框
@@ -951,7 +1081,7 @@ for (const [pageNo, s] of data.slides.entries()) {
       });
     });
 
-    // 右侧产品包装位
+    // 产品包装位：全宽在右侧；讲解安全在表下 2×2（内容栏内）
     const slots =
       s.packshot_slots || [
         { label: "复方氨酚烷胺胶囊", file: "pack-复方氨酚烷胺胶囊.png" },
@@ -959,13 +1089,33 @@ for (const [pageNo, s] of data.slides.entries()) {
         { label: "磷酸奥司他韦颗粒", file: "pack-磷酸奥司他韦颗粒.png" },
         { label: "阿莫西林胶囊", file: "pack-阿莫西林胶囊.png" },
       ];
-    const slotH = 1.38;
-    const slotGap = 0.1;
-    const slotTop = 1.12;
-    slots.slice(0, 4).forEach((slot, i) => {
-      const y = slotTop + i * (slotH + slotGap);
-      addPackshotSlot(slide, slot.label, 9.15, y, 3.75, slotH, slot.file);
-    });
+    if (L.presenter) {
+      const slotH = 0.95;
+      const slotGap = 0.1;
+      const slotTop = tableY + bodyH + 0.12;
+      const cellW = (L.contentW - 0.1) / 2;
+      slots.slice(0, 4).forEach((slot, i) => {
+        const col = i % 2;
+        const row = Math.floor(i / 2);
+        addPackshotSlot(
+          slide,
+          slot.label,
+          L.x0 + col * (cellW + 0.1),
+          slotTop + row * (slotH + slotGap),
+          cellW,
+          slotH,
+          slot.file,
+        );
+      });
+    } else {
+      const slotH = 1.38;
+      const slotGap = 0.1;
+      const slotTop = 1.12;
+      slots.slice(0, 4).forEach((slot, i) => {
+        const y = slotTop + i * (slotH + slotGap);
+        addPackshotSlot(slide, slot.label, 9.15, y, 3.75, slotH, slot.file);
+      });
+    }
     continue;
   }
 
@@ -975,9 +1125,9 @@ for (const [pageNo, s] of data.slides.entries()) {
 
     const headers = s.headers || ["药品", "注意事项"];
     const headH = 0.5;
-    const tableX = 0.45;
+    const tableX = L.x0;
     const tableY = 1.15;
-    const tableW = 12.4;
+    const tableW = L.contentW;
     const col0W = 2.35;
     const rows = s.rows || [];
     const n = Math.max(rows.length, 1);
@@ -1060,6 +1210,51 @@ for (const [pageNo, s] of data.slides.entries()) {
     addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
     const headers = s.headers || ["药品", "药A", "药B"];
+    if (L.presenter) {
+      // 三列压入内容栏
+      const x0 = L.x0;
+      const tw = L.contentW;
+      const hx = [x0, x0 + 1.15, x0 + 1.15 + (tw - 1.15) / 2];
+      const hw = [1.15, (tw - 1.15) / 2, (tw - 1.15) / 2];
+      slide.addShape(pres.shapes.RECTANGLE, {
+        x: x0, y: 1.18, w: tw, h: 0.52, fill: { color: C.tableHead },
+      });
+      headers.forEach((h, i) => {
+        slide.addText(h, {
+          x: hx[i], y: 1.18, w: hw[i], h: 0.52,
+          fontFace: FONT, fontSize: 15, bold: true, color: C.white,
+          align: "center", valign: "middle", margin: 0,
+        });
+      });
+      slide.addShape(pres.shapes.RECTANGLE, {
+        x: x0, y: 1.7, w: tw, h: 5.28,
+        fill: { color: C.white },
+        line: { color: C.line, width: 0.75 },
+      });
+      slide.addShape(pres.shapes.RECTANGLE, {
+        x: hx[1], y: 1.7, w: 0.02, h: 5.28, fill: { color: C.line },
+      });
+      slide.addShape(pres.shapes.RECTANGLE, {
+        x: hx[2], y: 1.7, w: 0.02, h: 5.28, fill: { color: C.line },
+      });
+      slide.addText("注意\n事项", {
+        x: x0 + 0.05, y: 3.5, w: 1.05, h: 1.2,
+        fontFace: FONT, fontSize: 14, bold: true, color: C.ink,
+        align: "center", valign: "middle", margin: 0,
+      });
+      const leftRunsP = noteBulletRuns(s.left_notes, 12);
+      const rightRunsP = noteBulletRuns(s.right_notes, 12);
+      slide.addText(leftRunsP, {
+        x: hx[1] + 0.1, y: 1.95, w: hw[1] - 0.2, h: 4.85,
+        fontFace: FONT, fontSize: 12, color: C.body, valign: "top",
+      });
+      slide.addText(rightRunsP, {
+        x: hx[2] + 0.1, y: 1.95, w: hw[2] - 0.2, h: 4.85,
+        fontFace: FONT, fontSize: 12, color: C.body, valign: "top",
+      });
+      continue;
+    }
+
     const hx = [0.45, 1.85, 7.55];
     const hw = [1.4, 5.7, 5.35];
     slide.addShape(pres.shapes.RECTANGLE, {
@@ -1106,20 +1301,60 @@ for (const [pageNo, s] of data.slides.entries()) {
   if (st === "care_three_cards") {
     addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
-    // 横幅收紧 + 字加大
+    const bannerW = L.contentW;
     slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
-      x: 0.4, y: 1.1, w: 12.5, h: 1.05,
+      x: L.x0, y: 1.1, w: bannerW, h: 1.05,
       fill: { color: "EAF2FA" },
       line: { color: C.cardBorder, width: 1 },
       rectRadius: 0.06,
     });
     slide.addText(partsToRuns(s.banner_parts, T.body), {
-      x: 0.65, y: 1.18, w: 12.0, h: 0.9,
+      x: L.x0 + 0.25, y: 1.18, w: bannerW - 0.5, h: 0.9,
       fontFace: FONT, fontSize: T.body, color: C.body, valign: "middle",
     });
 
+    const cards = s.cards || [];
+    if (L.presenter) {
+      // 三卡竖排进内容栏
+      const n = Math.max(cards.length, 1);
+      const gap = 0.1;
+      const startY = 2.3;
+      const endY = 7.0;
+      const cardH = (endY - startY - gap * (n - 1)) / n;
+      cards.forEach((card, i) => {
+        const y = startY + i * (cardH + gap);
+        const x = L.x0;
+        const w = L.contentW;
+        slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+          x, y, w, h: cardH,
+          fill: { color: C.white },
+          line: { color: C.cardBorder, width: 1.25 },
+          rectRadius: 0.06,
+          shadow: cardShadow(),
+        });
+        const imgName = (s.images || [])[i];
+        const p = asset(imgName);
+        const imgW = Math.min(2.2, w * 0.32);
+        if (p) {
+          slide.addImage({
+            path: p,
+            x: x + 0.15, y: y + 0.12, w: imgW, h: cardH - 0.24,
+            sizing: { type: "contain", w: imgW, h: cardH - 0.24 },
+          });
+        }
+        slide.addText(
+          partsToRuns(card.parts || [{ text: card.body || "", emphasize: false }], T.bodySm),
+          {
+            x: x + imgW + 0.3, y: y + 0.15, w: w - imgW - 0.5, h: cardH - 0.3,
+            fontFace: FONT, fontSize: T.bodySm, color: C.body, valign: "middle",
+          },
+        );
+      });
+      continue;
+    }
+
     // 三列：图 + 文同一卡，底部贴齐，少留白
-    (s.cards || []).forEach((card, i) => {
+    cards.forEach((card, i) => {
       const x = 0.4 + i * 4.25;
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
         x, y: 2.35, w: 4.1, h: 4.62,
@@ -1161,8 +1396,48 @@ for (const [pageNo, s] of data.slides.entries()) {
   if (st === "care_special") {
     addShenkeChrome(slide, s.section_num, s.section_title, pageIdx);
 
+    const cards = s.cards || [];
+    if (L.presenter) {
+      const n = Math.max(cards.length, 1);
+      const gap = 0.1;
+      const startY = 1.15;
+      const endY = 7.0;
+      const cardH = (endY - startY - gap * (n - 1)) / n;
+      cards.forEach((card, i) => {
+        const y = startY + i * (cardH + gap);
+        const x = L.x0;
+        const w = L.contentW;
+        slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
+          x, y, w, h: cardH,
+          fill: { color: C.white },
+          line: { color: C.cardBorder, width: 1.5 },
+          rectRadius: 0.06,
+          shadow: cardShadow(),
+        });
+        slide.addShape(pres.shapes.RECTANGLE, {
+          x, y, w, h: 0.1,
+          fill: { color: C.blueDeep },
+        });
+        const imgName = (s.images || [])[i];
+        const p = asset(imgName);
+        const imgW = Math.min(2.0, w * 0.3);
+        slide.addText(partsToRuns(card.parts, T.bodySm), {
+          x: x + 0.18, y: y + 0.18, w: w - imgW - 0.4, h: cardH - 0.3,
+          fontFace: FONT, fontSize: T.bodySm, color: C.body, valign: "middle",
+        });
+        if (p) {
+          slide.addImage({
+            path: p,
+            x: x + w - imgW - 0.15, y: y + 0.15, w: imgW, h: cardH - 0.3,
+            sizing: { type: "contain", w: imgW, h: cardH - 0.3 },
+          });
+        }
+      });
+      continue;
+    }
+
     // 三列整卡：上文下图，密度更高
-    (s.cards || []).forEach((card, i) => {
+    cards.forEach((card, i) => {
       const x = 0.4 + i * 4.25;
       slide.addShape(pres.shapes.ROUNDED_RECTANGLE, {
         x, y: 1.15, w: 4.1, h: 5.85,
@@ -1463,4 +1738,8 @@ for (const [pageNo, s] of data.slides.entries()) {
 await pres.writeFile({ fileName: OUT });
 console.log("Wrote", OUT);
 console.log("Slides:", data.slides.length);
-console.log("v2: redrawn assets + typography scale + named packshot slots");
+console.log(
+  PRESENTER
+    ? "layout=presenter-safe contentMaxX=" + L.x1 + " (≈60% 内容栏，右侧同页留白站人)"
+    : "layout=full-width gold v3",
+);

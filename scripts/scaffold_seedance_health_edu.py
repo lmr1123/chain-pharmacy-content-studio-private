@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Scaffold Seedance health-edu delivery package from filled variables JSON.
 
-Does not call any paid video API. Produces review pack + segmented prompts
-for copy-paste into Seedance 2.0 / Jimeng.
+Does not call any paid video API. Default output is review-only. Segmented
+prompts and the publish pack require an explicit hash-bound approval release.
 
 Usage:
   python3 scripts/scaffold_seedance_health_edu.py \\
@@ -14,6 +14,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from datetime import date
@@ -22,10 +23,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MODE_DIR = ROOT / "production-library/templates/prompt-modes/seedance-health-edu-v1"
 DEFAULT_OUT = ROOT / "outputs/business-video-runs/seedance-health-edu"
+MODE_ID = "seedance-health-edu-v1"
 DISCLAIMER = (
     "⚠️ AI 生成技术辅助创作。本视频仅供生活常识分享，"
     "非专业医疗或应急决策建议。平安第一。"
 )
+
+RELEASE_FILES = [
+    "02-Seedance提示词-分段.md",
+    "03-视频号发布全家桶.md",
+    "DELIVERY.md",
+    "release-manifest.json",
+]
 
 
 def slugify(text: str) -> str:
@@ -42,6 +51,66 @@ def g(d: dict, *keys: str, default: str = "") -> str:
             return default
         cur = cur[k]
     return str(cur) if cur is not None else default
+
+
+def input_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def text_sha256(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def approval_template(digest: str, review_digest: str) -> dict:
+    return {
+        "schema": "prompt-release-approval-v1",
+        "mode_id": MODE_ID,
+        "approved": False,
+        "approved_by": "",
+        "input_sha256": digest,
+        "review_sha256": review_digest,
+        "note": "确认 01-科普脚本复核包后，将 approved 改为 true 并填写 approved_by。",
+    }
+
+
+def require_release_approval(path: Path, digest: str, review_digest: str) -> dict:
+    if not path.is_file():
+        raise SystemExit(f"approval file not found: {path}")
+    approval = json.loads(path.read_text(encoding="utf-8"))
+    if approval.get("mode_id") != MODE_ID:
+        raise SystemExit(f"approval.mode_id must be {MODE_ID}")
+    if approval.get("approved") is not True:
+        raise SystemExit("approval.approved must be true")
+    if not str(approval.get("approved_by") or "").strip():
+        raise SystemExit("approval.approved_by is required")
+    if approval.get("input_sha256") != digest:
+        raise SystemExit("approval input hash mismatch; regenerate review and approve again")
+    if approval.get("review_sha256") != review_digest:
+        raise SystemExit("approval review hash mismatch; regenerate review and approve again")
+    return approval
+
+
+def write_release_manifest(
+    out_dir: Path,
+    digest: str,
+    review_digest: str,
+    approval_path: Path,
+    approval: dict,
+) -> None:
+    manifest = {
+        "schema": "prompt-release-v1",
+        "mode_id": MODE_ID,
+        "input_sha256": digest,
+        "review_sha256": review_digest,
+        "approved_by": approval["approved_by"],
+        "approval_file": str(approval_path),
+        "released_on": date.today().isoformat(),
+        "files": RELEASE_FILES[:-1],
+    }
+    (out_dir / "release-manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def global_anchor(v: dict) -> str:
@@ -324,6 +393,16 @@ def main() -> int:
         default=str(DEFAULT_OUT),
         help="Output root directory",
     )
+    ap.add_argument(
+        "--release",
+        action="store_true",
+        help="Release prompts/publish pack after hash-bound approval",
+    )
+    ap.add_argument(
+        "--approval",
+        default="",
+        help="Path to approval.json; required with --release",
+    )
     args = ap.parse_args()
 
     vars_path = Path(args.vars).expanduser().resolve()
@@ -334,17 +413,47 @@ def main() -> int:
     if not g(v, "theme"):
         raise SystemExit("vars.theme is required")
 
+    digest = input_sha256(vars_path)
     slug = args.slug or slugify(g(v, "theme"))
     out_dir = Path(args.out_root).expanduser().resolve() / slug
     out_dir.mkdir(parents=True, exist_ok=True)
 
     segments = build_segments(v)
+    review_text = render_review_md(v, segments)
+    review_digest = text_sha256(review_text)
+    if args.release:
+        for name in RELEASE_FILES:
+            (out_dir / name).unlink(missing_ok=True)
+    approval_path: Path | None = None
+    approval: dict | None = None
+    if args.release:
+        if not args.approval:
+            raise SystemExit("--release requires --approval <approval.json>")
+        approval_path = Path(args.approval).expanduser().resolve()
+        approval = require_release_approval(approval_path, digest, review_digest)
+
     (out_dir / "00-主题变量.json").write_text(
         json.dumps(v, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     (out_dir / "01-科普脚本复核包.md").write_text(
-        render_review_md(v, segments), encoding="utf-8"
+        review_text, encoding="utf-8"
     )
+
+    if not args.release:
+        (out_dir / "approval.json").write_text(
+            json.dumps(
+                approval_template(digest, review_digest), ensure_ascii=False, indent=2
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        for name in RELEASE_FILES:
+            (out_dir / name).unlink(missing_ok=True)
+        print(f"OK review scaffold → {out_dir}")
+        print("  01-科普脚本复核包.md")
+        print("  approval.json（确认后填写，再用 --release --approval 发布）")
+        return 0
+
     (out_dir / "02-Seedance提示词-分段.md").write_text(
         render_prompts_md(v, segments), encoding="utf-8"
     )
@@ -354,6 +463,13 @@ def main() -> int:
     (out_dir / "DELIVERY.md").write_text(
         render_delivery_md(v, out_dir), encoding="utf-8"
     )
+    assert approval_path is not None and approval is not None
+    if approval_path != out_dir / "approval.json":
+        (out_dir / "approval.json").write_text(
+            json.dumps(approval, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    write_release_manifest(out_dir, digest, review_digest, approval_path, approval)
 
     # pointer to meta-prompt
     meta = MODE_DIR / "meta-prompt.md"
@@ -363,7 +479,7 @@ def main() -> int:
             encoding="utf-8",
         )
 
-    print(f"OK scaffold → {out_dir}")
+    print(f"OK released scaffold → {out_dir}")
     print("  01-科普脚本复核包.md")
     print("  02-Seedance提示词-分段.md")
     print("  03-视频号发布全家桶.md")

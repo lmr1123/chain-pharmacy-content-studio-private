@@ -20,10 +20,11 @@
       "role": "金样成片 v2（Revideo film 全片动效编排 + 暖调扁平重生成插画 7 张；工作旁白轨，实测 -16.4 LUFS）"
     },
     "pptx": {
-      "path": "福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx",
+      "path": "福尔番茄红素_商品培训课件4_金样_可编辑课件_v2.pptx",
       "format": "pptx",
-      "slides": 15,
-      "role": "可编辑培训课件（与视频同 content-model；15 页）；版式落后 v2 视频——2026-08-05 视觉/动效未同步，下轮先对齐版式再导出"
+      "role": "可编辑培训课件 v2（与视频 v2 content-model / 资产同源导出）",
+      "confirmed_by": "export-from-v2-content-model",
+      "confirmed_at": "2026-08-06"
     }
   },
   "previous_canonical": {
@@ -32,8 +33,8 @@
   },
   "canonical_confirmed_by": "user",
   "canonical_confirmed_at": "2026-08-05",
-  "last_updated_at": "2026-08-05",
-  "last_update_note": "v2 视觉/动效升级：Revideo film 替代 PIL 多帧；7 张主视觉按 style-brief-v1 暖调扁平重生成（check-alpha 门禁）；merge 修静音轨+响度硬门禁；PPTX 版式落后未同步",
+  "last_updated_at": "2026-08-06",
+  "last_update_note": "v2 PPTX 与视频 v2 同源导出（暖调插画 content-model 资产）；v1 pptx 留存",
   "validation_root": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1",
   "source_project": "production-library/validation/courseware/product-courseware-4-faithful-replica-v1",
   "generators": {
@@ -66,7 +67,7 @@
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
     "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
-    "example_source": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+    "example_source": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "experience": {
@@ -108,8 +109,22 @@
       "MP4",
       "可编辑 PPTX"
     ],
-    "production_ready": true,
-    "status_label": "已签样 · 可换主题量产",
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": false,
+      "new_theme_pptx": false,
+      "new_theme_mp4": false,
+      "business_selfserve": false
+    },
+    "requirements": [
+      "courseware4 换主题 adapter"
+    ],
+    "blockers": [
+      "课件4换主题 CLI 尚未接线；当前仅提供金样预览"
+    ],
+    "production_ready": false,
+    "status_label": "仅金样预览 · 换主题入口待接线",
     "online_url": null
   },
   "notes": [
@@ -118,7 +133,8 @@
     "叙事：…适宜人群 → 关联用药(S12/S13) → 三大核心功效表(S11) → 结尾；无 S14 四列表总表。",
     "成片动效 v2：Revideo film 全片编排（src/film/）；PIL 多帧脚本保留作回退。v2 明细见 validation/courseware/课件3-4-v2-交付说明.md 与工程 qa/QA_REPORT.md。",
     "包装/Logo 为业务授权槽位示意；量产前须替换授权原图。",
-    "验证工程目录仍为 validation/.../product-courseware-4-faithful-replica-v1（含完整源码、编辑器与导出脚本）。"
+    "验证工程目录仍为 validation/.../product-courseware-4-faithful-replica-v1（含完整源码、编辑器与导出脚本）。",
+    "2026-08-06：PPTX v2 与视频 v2 同源 content-model 重导；v1 pptx 同目录留存对照。"
   ],
   "business_catalog": {
     "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）",
@@ -133,5 +149,11 @@
     "pace_policy": "v5-smooth",
     "forbid_system_tts": true
   },
-  "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1"
+  "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1",
+  "previous_canonical_pptx": {
+    "path": "福尔番茄红素_商品培训课件4_金样_可编辑课件_v1.pptx",
+    "format": "pptx",
+    "slides": 15,
+    "role": "可编辑培训课件（与视频同 content-model；15 页）；版式落后 v2 视频——2026-08-05 视觉/动效未同步，下轮先对齐版式再导出"
+  }
 }

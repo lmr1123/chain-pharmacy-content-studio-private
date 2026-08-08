@@ -12,7 +12,7 @@
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
     "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
-    "example_source": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+    "example_source": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "validation_root": "production-library/validation/courseware/product-courseware-green-v1",
@@ -47,8 +47,24 @@
     "outputs": [
       "可编辑 PPTX"
     ],
-    "production_ready": true,
-    "status_label": "已签样 · 可换主题量产",
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": true,
+      "new_theme_pptx": true,
+      "new_theme_mp4": false,
+      "business_selfserve": false
+    },
+    "requirements": [
+      "内容初稿确认",
+      "pptx_export"
+    ],
+    "blockers": [
+      "正式 PPTX 必须在内容初稿确认后生成",
+      "当前机器须通过 pptx_export 环境检查"
+    ],
+    "production_ready": false,
+    "status_label": "可开始草稿 · 确认后生成 PPTX",
     "online_url": null
   },
   "business_catalog": {

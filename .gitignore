@@ -34,6 +34,24 @@ outputs/*
 !outputs/业务使用资料包/
 !outputs/业务使用资料包/**
 
+# --- WorkBuddy runtime/private business data ---
+# Generated workspaces and deliverables are local data, never source artifacts.
+outputs/business-video-runs/
+outputs/business-courseware-runs/
+outputs/workbuddy-workspaces/
+outputs/业务使用资料包/药店培训内容工厂-业务包/index.local.html
+
+# Keep only the fixed instructions/markers inside the distributed business package.
+outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/**
+!outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/.gitkeep
+!outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/README.md
+outputs/业务使用资料包/药店培训内容工厂-业务包/07_业务填报上传/**
+!outputs/业务使用资料包/药店培训内容工厂-业务包/07_业务填报上传/README.md
+!outputs/业务使用资料包/药店培训内容工厂-业务包/07_业务填报上传/待处理/
+!outputs/业务使用资料包/药店培训内容工厂-业务包/07_业务填报上传/待处理/.gitkeep
+!outputs/业务使用资料包/药店培训内容工厂-业务包/07_业务填报上传/已提交/
+!outputs/业务使用资料包/药店培训内容工厂-业务包/07_业务填报上传/已提交/.gitkeep
+
 # --- validation: source+docs only (media is local regenerable / too large) ---
 production-library/validation/**/*.mp4
 production-library/validation/**/*.mov

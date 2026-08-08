@@ -12,7 +12,7 @@
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
     "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
-    "example_source": "outputs/courseware-natural-import/风热证培训课件内容与素材提交_真实已填样本.docx",
+    "example_source": "outputs/courseware-natural-import/穿心莲内酯滴丸_商品培训课件_业务真实内容样本.docx",
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "validation_root": "production-library/validation/courseware/disease-product-scenario-v1",
@@ -40,8 +40,23 @@
     "outputs": [
       "可编辑 PPTX"
     ],
-    "production_ready": true,
-    "status_label": "已签样 · 可换主题量产",
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": false,
+      "new_theme_pptx": false,
+      "new_theme_mp4": false,
+      "business_selfserve": false
+    },
+    "requirements": [
+      "内容初稿确认",
+      "统一业务 adapter"
+    ],
+    "blockers": [
+      "换主题业务 adapter 尚未接入统一入口"
+    ],
+    "production_ready": false,
+    "status_label": "金样可查看 · 换主题入口待接线",
     "online_url": null
   },
   "business_catalog": {

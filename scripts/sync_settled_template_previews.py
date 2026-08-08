@@ -19,6 +19,26 @@ VAL = REPO / "production-library/validation"
 GS = VAL / "courseware/gold-samples"
 GUIDES = REPO / "assets/business-input-guides"
 
+
+def capability_matrix(
+    *,
+    content_draft: bool,
+    new_theme_preview: bool,
+    new_theme_pptx: bool,
+    new_theme_mp4: bool,
+    business_selfserve: bool = False,
+) -> dict[str, bool]:
+    """Static workflow support; runtime capability is checked on the business machine."""
+    return {
+        "gold_viewable": True,
+        "content_draft": content_draft,
+        "new_theme_preview": new_theme_preview,
+        "new_theme_pptx": new_theme_pptx,
+        "new_theme_mp4": new_theme_mp4,
+        "business_selfserve": business_selfserve,
+    }
+
+
 # Business-facing catalog (Chinese names only for shelf)
 CATALOG: list[dict] = [
     {
@@ -28,9 +48,16 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "疾病科普视频 · 风热证金样",
         "outputs": ["MP4 培训视频"],
         "category": "疾病科普",
-        "production_ready": True,
-        "status_label": "已签样金样 · 业务可换主题出片",
-        "status_note": "业务在 WorkBuddy 说病名+审核要点即可 full 重渲（换屏显/旁白/7段画面）；讲解声走模板克隆语音包。",
+        "capabilities": capability_matrix(
+            content_draft=True,
+            new_theme_preview=True,
+            new_theme_pptx=False,
+            new_theme_mp4=True,
+        ),
+        "requirements": ["药师/法务审核稿", "已批准主题包", "video_full", "正式 voice_id"],
+        "blockers": ["正式出片前必须完成主题画面审批", "当前机器须通过 video_full 环境检查"],
+        "status_label": "可开始草稿 · 正式出片需环境与审批",
+        "status_note": "金样可查看；换病种先整理审核稿与主题包，内容和画面确认后，且本机 video_full 通过才生成正式 MP4。",
         "cover_src": GS / "wind-heat-video-gold-v1/web/media/cover-product.jpg",
         "keys": [
             (GS / "wind-heat-video-gold-v1/web/media/thumbs/cover.jpg", "开场"),
@@ -57,9 +84,16 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "商品培训视频 · 辅酶 Q10 金样",
         "outputs": ["MP4 培训视频"],
         "category": "商品培训",
-        "production_ready": True,
-        "status_label": "已签样金样 · 业务可换主题出片",
-        "status_note": "业务在 WorkBuddy 说商品名+审核要点即可 full 重渲（换屏显/包装槽/旁白/8段画面）；有授权包装图可附上。",
+        "capabilities": capability_matrix(
+            content_draft=True,
+            new_theme_preview=True,
+            new_theme_pptx=False,
+            new_theme_mp4=True,
+        ),
+        "requirements": ["完整 8 段审核稿", "公司授权包装图与凭证", "哈希绑定审批", "video_full", "正式 voice_id"],
+        "blockers": ["内容/包装/授权凭证未完成哈希审批时只能生成草稿预览", "当前机器须通过 video_full 环境检查"],
+        "status_label": "可开始草稿 · 审批与环境通过后出片",
+        "status_note": "金样可查看；业务先确认完整 8 段脚本、分镜、包装图和授权凭证，哈希审批匹配且本机 video_full 通过后才生成正式 MP4。",
         "cover_src": GS / "product-q10-video-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "product-q10-video-gold-v1/web/media/thumbs/opening.jpg", "开场"),
@@ -86,9 +120,16 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "绿色商品培训 · 5 页",
         "outputs": ["可编辑 PPTX"],
         "category": "商品培训",
-        "production_ready": True,
-        "status_label": "已签样 · 可换主题量产",
-        "status_note": "视觉升级 v2（2026-08-04）：统一绿色 token、圆角 chrome、微软雅黑。联合用药有几条排几行，禁止空白凑行。",
+        "capabilities": capability_matrix(
+            content_draft=True,
+            new_theme_preview=True,
+            new_theme_pptx=True,
+            new_theme_mp4=False,
+        ),
+        "requirements": ["内容初稿确认", "pptx_export"],
+        "blockers": ["正式 PPTX 必须在内容初稿确认后生成", "当前机器须通过 pptx_export 环境检查"],
+        "status_label": "可开始草稿 · 确认后生成 PPTX",
+        "status_note": "五页绿色金样可查看；先整理内容初稿与缺口，业务确认后且本机 pptx_export 通过再生成可编辑 PPTX。",
         "cover_src": GS / "jinyinhualu-pptx-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "jinyinhualu-pptx-gold-v1/web/media/slides/slide-01.png", "封面/介绍"),
@@ -111,9 +152,16 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "疾病辨证与商品场景 · 穿心莲金样",
         "outputs": ["可编辑 PPTX"],
         "category": "商品培训",
-        "production_ready": True,
-        "status_label": "已签样 · 可换主题量产",
-        "status_note": "视觉升级 v2（2026-08-04）：与绿色单品统一 token/圆角/字体。章节可按内容增减；无资料的模块可整节省略。",
+        "capabilities": capability_matrix(
+            content_draft=True,
+            new_theme_preview=False,
+            new_theme_pptx=False,
+            new_theme_mp4=False,
+        ),
+        "requirements": ["内容初稿确认", "统一业务 adapter"],
+        "blockers": ["换主题业务 adapter 尚未接入统一入口"],
+        "status_label": "金样可查看 · 换主题入口待接线",
+        "status_note": "可查看穿心莲金样和填写参考；当前仅开放内容草稿，不承诺业务自助生成正式 PPTX。",
         "cover_src": GS / "chuanxinlian-pptx-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "chuanxinlian-pptx-gold-v1/web/media/slides/slide-01.png", "封面"),
@@ -136,9 +184,16 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "商品培训课件3 · 速福达金样",
         "outputs": ["MP4", "可编辑 PPTX"],
         "category": "商品培训",
-        "production_ready": True,
-        "status_label": "已签样 · 可换主题量产",
-        "status_note": "默认使用速福达课件药师克隆语音包；包装/Logo 须授权原图。2026-08-05 视觉/动效 v2 已归档（金样 v2.mp4）；PPTX 仍为 v1 版式。",
+        "capabilities": capability_matrix(
+            content_draft=True,
+            new_theme_preview=True,
+            new_theme_pptx=True,
+            new_theme_mp4=True,
+        ),
+        "requirements": ["内容初稿确认", "授权包装/Logo", "pptx_export", "video_full"],
+        "blockers": ["正式 MP4 取决于克隆 TTS 与 video_full", "包装/Logo 必须为业务授权原图"],
+        "status_label": "可开始草稿 · PPT/视频按本机能力生成",
+        "status_note": "金样 v2 已归档；先审内容和包装，PPTX/MP4 分别要求本机通过 pptx_export/video_full。",
         "cover_src": VAL
         / "courseware/sufuda-product-courseware-3-gold-v1/web/media/cover-product.png",
         "keys": [
@@ -198,9 +253,16 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "商品培训课件4 · 福尔番茄红素金样",
         "outputs": ["MP4", "可编辑 PPTX"],
         "category": "商品培训",
-        "production_ready": True,
-        "status_label": "已签样 · 可换主题量产",
-        "status_note": "关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。2026-08-05 视觉/动效 v2 已归档（金样 v2.mp4，7 张插画重生成）；PPTX 仍为 v1 版式。",
+        "capabilities": capability_matrix(
+            content_draft=True,
+            new_theme_preview=False,
+            new_theme_pptx=False,
+            new_theme_mp4=False,
+        ),
+        "requirements": ["courseware4 换主题 adapter"],
+        "blockers": ["课件4换主题 CLI 尚未接线；当前仅提供金样预览"],
+        "status_label": "仅金样预览 · 换主题入口待接线",
+        "status_note": "金样 v2 MP4/PPTX 可查看；当前换主题 CLI 未接线，不承诺生成新主题正式成品。",
         "cover_src": VAL
         / "courseware/product-courseware-4-faithful-replica-v1/web/media/cover-product.png",
         "keys": [
@@ -276,9 +338,16 @@ CATALOG: list[dict] = [
         "gallery_title_zh": "疾病健康知识培训 · 参课蓝金样",
         "outputs": ["可编辑 PPTX"],
         "category": "健康培训",
-        "production_ready": True,
-        "status_label": "已签样 · 可换病种量产",
-        "status_note": "金样 v3（2026-08-04 签样）：参课蓝全面精修（企业级封面/目录/结束页、统一页眉页脚、logo 零裁切、无 emoji 包装坑）。换病改 content JSON 后重建；包装须授权原图；医学表述须业务复核。",
+        "capabilities": capability_matrix(
+            content_draft=True,
+            new_theme_preview=False,
+            new_theme_pptx=False,
+            new_theme_mp4=False,
+        ),
+        "requirements": ["医学审核稿", "疾病课件统一业务 adapter"],
+        "blockers": ["换病种生成尚未接入统一业务入口"],
+        "status_label": "金样可查看 · 换病种入口待接线",
+        "status_note": "参课蓝 v3 金样可查看；当前可先整理审核内容，不承诺业务自助生成新病种正式 PPTX。",
         "cover_src": GS / "uri-shenke-health-pptx-gold-v1/web/media/cover-product.png",
         "keys": [
             (GS / "uri-shenke-health-pptx-gold-v1/web/media/slides/slide-02.png", "疾病概览"),
@@ -353,6 +422,8 @@ def pick_keys(entry: dict) -> list[tuple[Path, str]]:
 def update_manifest(slug: str, entry: dict, key_files: list[str], key_labels: list[str]) -> None:
     manifest_path = SETTLED / slug / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    capabilities = entry["capabilities"]
+    production_ready = bool(capabilities["business_selfserve"])
     data["preview"] = {
         "cover": "preview/cover.png",
         "key_frames": key_files,
@@ -362,7 +433,10 @@ def update_manifest(slug: str, entry: dict, key_files: list[str], key_labels: li
         "name_zh": entry["name_zh"],
         "category_zh": entry["category"],
         "outputs": entry["outputs"],
-        "production_ready": entry["production_ready"],
+        "capabilities": capabilities,
+        "requirements": entry["requirements"],
+        "blockers": entry["blockers"],
+        "production_ready": production_ready,
         "status_label": entry["status_label"],
         "online_url": None,
     }
@@ -449,6 +523,7 @@ def main() -> None:
         write_preview_readme(preview_dir, entry, key_labels)
         update_manifest(slug, entry, key_rel, key_labels)
 
+        capabilities = entry["capabilities"]
         meta = {
             "slug": slug,
             "name_zh": entry["name_zh"],
@@ -456,7 +531,10 @@ def main() -> None:
             "gallery_title_zh": entry["gallery_title_zh"],
             "outputs": entry["outputs"],
             "category": entry["category"],
-            "production_ready": entry["production_ready"],
+            "capabilities": capabilities,
+            "requirements": entry["requirements"],
+            "blockers": entry["blockers"],
+            "production_ready": bool(capabilities["business_selfserve"]),
             "status_label": entry["status_label"],
             "status_note": entry["status_note"],
             "key_frame_labels_zh": key_labels,

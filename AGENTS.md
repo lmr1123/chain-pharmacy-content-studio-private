@@ -48,16 +48,30 @@ Business opens WorkBuddy and says:
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
+The URL above is the **sanitized Public installer**, not the production repository.
+It contains no settled templates, previews, voices, assets, business package, or generation
+capability. WorkBuddy must run `scripts/install_private_studio.py`, use the user's existing
+GitHub credential manager/session to verify `read` access to
+`lmr1123/chain-pharmacy-content-studio-private`, then clone/update that Private repository
+and run its bootstrap. Never put a token in a URL or log; never send the Private clone
+through a public mirror; never fall back to a public ZIP. If the user is not logged in or
+not authorized, stop with the exact access gap instead of pretending the factory is installed.
+
 **Locked model:** business provides content in chat; **WorkBuddy on the business machine**
 produces PPT / product video / health video. Do **not** bounce normal settled work to
 「请找制作」or require the engineer to run renders.
 
-Agent must: `git pull` + `scripts/workbuddy_bootstrap_for_business.py`, open the portal,
+After authorized Private installation, agent must: `git pull --ff-only` in the Private
+checkout + `scripts/workbuddy_bootstrap_for_business.py`, open the portal,
 then on content: lock template → organize → **run generators**.
 Before render: `python3 scripts/probe_production_env.py` (honest degrade if no TTS/ffmpeg).
 - PPT / 绿色单品等：各 settled generator  
 - 课件3：`scripts/generate_business_courseware.py --template courseware3 --theme <dir>`  
-- 视频：`generate_business_video.py --mode full`（product 8 / health 7 segments）；never default `audio-shell`  
+- 视频：`generate_business_video.py --mode full`（product 8 / health 7 segments）；never default `audio-shell`。
+  商品 full 必须带业务授权包装图，并以 `product-video-approval-v1` 绑定 8 段审核稿、
+  包装图 SHA-256、批准人、时间和授权凭证；健康 full 必须先用 `build_health_theme_package.py`
+  生成主题包、补齐内容/画面并完成 SHA-256 绑定审批，再以 `--theme-package` 出片；
+  正式渲染/交付禁止 `--skip-visual-approval`。
 Always write `voice_id` from template manifest; never system TTS for formal narration.
 See `docs/workbuddy-install-and-guide.md`, `docs/workbuddy-system-prompt.md`,
 `docs/workbuddy-video-first-check.md`. Do **not** tell business to unzip zip as default.
@@ -89,7 +103,8 @@ When business says Seedance 科普 / 生活避险科普 / 扁平头部五拍 / �
    environment safety / emotion regulation only; always include disclaimer.
 6. Entry: `docs/seedance-health-edu-video-mode.md`  
    Meta-prompt: `production-library/templates/prompt-modes/seedance-health-edu-v1/`  
-   Scaffold: `python3 scripts/scaffold_seedance_health_edu.py --vars <json>`  
+   Review: `python3 scripts/scaffold_seedance_health_edu.py --vars <json>`；
+   approved release: 同一命令追加 `--release --approval <approval.json>`。
    Business pack: `outputs/业务使用资料包/药店培训内容工厂-业务包/09_健康科普Seedance模式/`
 
 ### Jiugongge health-edu — two parallel modes
@@ -102,7 +117,8 @@ When business says Seedance 科普 / 生活避险科普 / 扁平头部五拍 / �
 **A. 原版** (`docs/jiugongge-health-edu-video-mode.md`)
 
 1. Theme + 1–3 knowledge points → 六段口播复核 → 确认后三视图+六段提示词+发布包  
-2. Scaffold: `python3 scripts/scaffold_jiugongge_health_edu.py --vars <json>`  
+2. Review: `python3 scripts/scaffold_jiugongge_health_edu.py --vars <json>`；确认后追加
+   `--release --approval <approval.json>`
 3. Assets: `production-library/templates/prompt-modes/jiugongge-health-edu-v1/`  
 4. Business: `10_健康科普九宫格模式/`
 
@@ -110,7 +126,8 @@ When business says Seedance 科普 / 生活避险科普 / 扁平头部五拍 / �
 
 1. Theme + audience + habit points → 脱敏+口播复核 → 确认后资产+英九宫格/视频+发布全家桶  
 2. 红线 0 命中：医生/白大褂/医院/诊室/器材/预防治疗缓解/病名  
-3. Scaffold: `python3 scripts/scaffold_jiugongge_health_edu_compliance.py --vars <json>`  
+3. Review: `python3 scripts/scaffold_jiugongge_health_edu_compliance.py --vars <json>`；确认后追加
+   `--release --approval <approval.json>`
 4. Assets: `production-library/templates/prompt-modes/jiugongge-health-edu-compliance-v1/`  
 5. Business: `11_健康科普九宫格合规版/`
 

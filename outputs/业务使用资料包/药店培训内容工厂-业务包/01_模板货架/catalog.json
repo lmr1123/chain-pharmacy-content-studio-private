@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-08-03",
+  "updated": "2026-08-05",
   "purpose": "业务模板货架单一数据源；由 sync_settled_template_previews.py 生成",
   "templates": [
     {
@@ -12,9 +12,27 @@
         "MP4 培训视频"
       ],
       "category": "疾病科普",
-      "production_ready": true,
-      "status_label": "已签样金样 · 业务可换主题出片",
-      "status_note": "业务在 WorkBuddy 说病名+审核要点即可 full 重渲（换屏显/旁白/7段画面）；讲解声走模板克隆语音包。",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": true,
+        "new_theme_pptx": false,
+        "new_theme_mp4": true,
+        "business_selfserve": false
+      },
+      "requirements": [
+        "药师/法务审核稿",
+        "已批准主题包",
+        "video_full",
+        "正式 voice_id"
+      ],
+      "blockers": [
+        "正式出片前必须完成主题画面审批",
+        "当前机器须通过 video_full 环境检查"
+      ],
+      "production_ready": false,
+      "status_label": "可开始草稿 · 正式出片需环境与审批",
+      "status_note": "金样可查看；换病种先整理审核稿与主题包，内容和画面确认后，且本机 video_full 通过才生成正式 MP4。",
       "key_frame_labels_zh": [
         "开场",
         "典型症状",
@@ -37,9 +55,28 @@
         "MP4 培训视频"
       ],
       "category": "商品培训",
-      "production_ready": true,
-      "status_label": "已签样金样 · 业务可换主题出片",
-      "status_note": "业务在 WorkBuddy 说商品名+审核要点即可 full 重渲（换屏显/包装槽/旁白/8段画面）；有授权包装图可附上。",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": true,
+        "new_theme_pptx": false,
+        "new_theme_mp4": true,
+        "business_selfserve": false
+      },
+      "requirements": [
+        "完整 8 段审核稿",
+        "公司授权包装图与凭证",
+        "哈希绑定审批",
+        "video_full",
+        "正式 voice_id"
+      ],
+      "blockers": [
+        "内容/包装/授权凭证未完成哈希审批时只能生成草稿预览",
+        "当前机器须通过 video_full 环境检查"
+      ],
+      "production_ready": false,
+      "status_label": "可开始草稿 · 审批与环境通过后出片",
+      "status_note": "金样可查看；业务先确认完整 8 段脚本、分镜、包装图和授权凭证，哈希审批匹配且本机 video_full 通过后才生成正式 MP4。",
       "key_frame_labels_zh": [
         "开场",
         "品牌/品类",
@@ -62,9 +99,25 @@
         "可编辑 PPTX"
       ],
       "category": "商品培训",
-      "production_ready": true,
-      "status_label": "已签样 · 可换主题量产",
-      "status_note": "视觉升级 v2（2026-08-04）：统一绿色 token、圆角 chrome、微软雅黑。联合用药有几条排几行，禁止空白凑行。",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": true,
+        "new_theme_pptx": true,
+        "new_theme_mp4": false,
+        "business_selfserve": false
+      },
+      "requirements": [
+        "内容初稿确认",
+        "pptx_export"
+      ],
+      "blockers": [
+        "正式 PPTX 必须在内容初稿确认后生成",
+        "当前机器须通过 pptx_export 环境检查"
+      ],
+      "production_ready": false,
+      "status_label": "可开始草稿 · 确认后生成 PPTX",
+      "status_note": "五页绿色金样可查看；先整理内容初稿与缺口，业务确认后且本机 pptx_export 通过再生成可编辑 PPTX。",
       "key_frame_labels_zh": [
         "封面/介绍",
         "卖点与人群",
@@ -86,9 +139,24 @@
         "可编辑 PPTX"
       ],
       "category": "商品培训",
-      "production_ready": true,
-      "status_label": "已签样 · 可换主题量产",
-      "status_note": "视觉升级 v2（2026-08-04）：与绿色单品统一 token/圆角/字体。章节可按内容增减；无资料的模块可整节省略。",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": false,
+        "new_theme_pptx": false,
+        "new_theme_mp4": false,
+        "business_selfserve": false
+      },
+      "requirements": [
+        "内容初稿确认",
+        "统一业务 adapter"
+      ],
+      "blockers": [
+        "换主题业务 adapter 尚未接入统一入口"
+      ],
+      "production_ready": false,
+      "status_label": "金样可查看 · 换主题入口待接线",
+      "status_note": "可查看穿心莲金样和填写参考；当前仅开放内容草稿，不承诺业务自助生成正式 PPTX。",
       "key_frame_labels_zh": [
         "封面",
         "辨证/知识",
@@ -111,9 +179,27 @@
         "可编辑 PPTX"
       ],
       "category": "商品培训",
-      "production_ready": true,
-      "status_label": "已签样 · 可换主题量产",
-      "status_note": "默认使用速福达课件药师克隆语音包；包装/Logo 须授权原图。",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": true,
+        "new_theme_pptx": true,
+        "new_theme_mp4": true,
+        "business_selfserve": false
+      },
+      "requirements": [
+        "内容初稿确认",
+        "授权包装/Logo",
+        "pptx_export",
+        "video_full"
+      ],
+      "blockers": [
+        "正式 MP4 取决于克隆 TTS 与 video_full",
+        "包装/Logo 必须为业务授权原图"
+      ],
+      "production_ready": false,
+      "status_label": "可开始草稿 · PPT/视频按本机能力生成",
+      "status_note": "金样 v2 已归档；先审内容和包装，PPTX/MP4 分别要求本机通过 pptx_export/video_full。",
       "key_frame_labels_zh": [
         "封面",
         "流感背景",
@@ -137,9 +223,23 @@
         "可编辑 PPTX"
       ],
       "category": "商品培训",
-      "production_ready": true,
-      "status_label": "已签样 · 可换主题量产",
-      "status_note": "关联用药 note 在上、总结行标题完整句；无包装图时槽位待补，不仿包装。",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": false,
+        "new_theme_pptx": false,
+        "new_theme_mp4": false,
+        "business_selfserve": false
+      },
+      "requirements": [
+        "courseware4 换主题 adapter"
+      ],
+      "blockers": [
+        "课件4换主题 CLI 尚未接线；当前仅提供金样预览"
+      ],
+      "production_ready": false,
+      "status_label": "仅金样预览 · 换主题入口待接线",
+      "status_note": "金样 v2 MP4/PPTX 可查看；当前换主题 CLI 未接线，不承诺生成新主题正式成品。",
       "key_frame_labels_zh": [
         "封面",
         "商品介绍",
@@ -162,9 +262,24 @@
         "可编辑 PPTX"
       ],
       "category": "健康培训",
-      "production_ready": true,
-      "status_label": "已签样 · 可换病种量产",
-      "status_note": "金样 v3（2026-08-04 签样）：参课蓝全面精修（企业级封面/目录/结束页、统一页眉页脚、logo 零裁切、无 emoji 包装坑）。换病改 content JSON 后重建；包装须授权原图；医学表述须业务复核。",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": false,
+        "new_theme_pptx": false,
+        "new_theme_mp4": false,
+        "business_selfserve": false
+      },
+      "requirements": [
+        "医学审核稿",
+        "疾病课件统一业务 adapter"
+      ],
+      "blockers": [
+        "换病种生成尚未接入统一业务入口"
+      ],
+      "production_ready": false,
+      "status_label": "金样可查看 · 换病种入口待接线",
+      "status_note": "参课蓝 v3 金样可查看；当前可先整理审核内容，不承诺业务自助生成新病种正式 PPTX。",
       "key_frame_labels_zh": [
         "疾病概览",
         "临床表现",

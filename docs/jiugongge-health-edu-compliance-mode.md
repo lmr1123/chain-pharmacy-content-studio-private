@@ -57,7 +57,11 @@
 
 ```bash
 python3 scripts/scaffold_jiugongge_health_edu_compliance.py --vars <json>
-# → outputs/business-video-runs/jiugongge-health-edu-compliance/<slug>/
+# 默认仅生成合规复核包 + approval.json
+# 业务明确确认后，代理填写 approved=true / approved_by（保留 input_sha256 与 review_sha256），再运行：
+python3 scripts/scaffold_jiugongge_health_edu_compliance.py --vars <json> \
+  --release --approval <输出目录/approval.json>
+# 输入/复核稿 hash 不匹配或终稿禁词命中时会拒绝 release
 ```
 
 ---

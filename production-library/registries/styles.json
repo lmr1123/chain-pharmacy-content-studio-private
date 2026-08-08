@@ -100,6 +100,97 @@
       "restriction": "Logo、包装和插图替换为公司批准的高清原图并经用户视觉签样前，不得标记 production-validated"
     },
     {
+      "id": "style-pack.lycopene-health-edu-cream-red-v1",
+      "name_zh": "番茄红素健康科普 · 米白番茄红 v1",
+      "kind": "style-pack",
+      "status": "candidate",
+      "tags": ["健康科普", "商品培训", "米白", "番茄红", "可编辑PPTX", "16:9", "component-recipe"],
+      "tokens_path": "production-library/styles/lycopene-health-edu-cream-red-v1/tokens.json",
+      "design_path": "production-library/styles/lycopene-health-edu-cream-red-v1/design.md",
+      "rules": {
+        "master_ui_style": "lycopene-health-edu-cream-red-v1",
+        "font_family": ["Noto Sans SC", "PingFang SC", "Microsoft YaHei", "sans-serif"],
+        "primary_color": "#D32F2F",
+        "secondary_color": "#43A047",
+        "text_color": "#505050",
+        "title_color": "#D32F2F",
+        "background_color": "#FBF7F0",
+        "card_color": "#FFFFFF",
+        "same_project_style_lock": true,
+        "reference_pixel_policy": "measurement-only",
+        "missing_asset_policy": "editable-labeled-slot",
+        "component_literal_colors_forbidden": true
+      },
+      "sources": [
+        "production-library/validation/courseware/kangaisen-lycopene-health-edu-v1/style-pack.json",
+        "production-library/styles/lycopene-health-edu-cream-red-v1/tokens.json",
+        "docs/component-recipe-pipeline-architecture.md"
+      ],
+      "restriction": "candidate：待构件引擎金样回归与用户签样后可升 production-validated。包装/Logo 须业务授权原图。"
+    },
+    {
+      "id": "style-pack.sufuda-pearl-silk-orange-v1",
+      "name_zh": "速福达课件3 · 珍珠丝绸橙蓝风 v1",
+      "kind": "style-pack",
+      "status": "production-validated",
+      "tags": [
+        "商品培训",
+        "课件3",
+        "珍珠白丝绸",
+        "橙蓝",
+        "视频",
+        "可编辑PPTX",
+        "16:9"
+      ],
+      "rules": {
+        "master_ui_style": "sufuda-pearl-silk-orange-v1",
+        "primary_color": "#e98200",
+        "secondary_colors": ["#123c78", "#22579b"],
+        "background": "珍珠白丝绸 + 淡橙轨道线",
+        "same_project_style_lock": true,
+        "missing_asset_policy": "editable-labeled-slot",
+        "authorized_packshot_required": true
+      },
+      "sources": [
+        "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1/docs/style-pack-and-slots.md",
+        "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/manifest.json",
+        "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/content-model.snapshot.json"
+      ],
+      "restriction": "从用户确认的课件3完整金样注册；只用于同框架主题扩展。包装、Logo 与证据必须使用业务授权原图。"
+    },
+    {
+      "id": "style-pack.courseware-4-silk-yellow-red-v1",
+      "name_zh": "课件4 · 丝绸底黄字红描边 v1",
+      "kind": "style-pack",
+      "status": "candidate",
+      "tags": ["商品培训", "丝绸底", "黄字红描边", "课件4", "可编辑PPTX", "16:9", "component-recipe"],
+      "tokens_path": "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json",
+      "design_path": "production-library/styles/courseware-4-silk-yellow-red-v1/design.md",
+      "rules": {
+        "master_ui_style": "courseware-4-silk-yellow-red-v1",
+        "font_family": ["HarmonyOS Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", "sans-serif"],
+        "primary_color": "#c43c2c",
+        "accent_colors": ["#ffe33c", "#e9f200", "#e8c020"],
+        "text_color": "#1a1a1a",
+        "title_fill": "#ffe33c",
+        "title_outline": "#c43c2c",
+        "background_color": "#cecbc4",
+        "caption_color": "#111111",
+        "same_project_style_lock": true,
+        "reference_pixel_policy": "measurement-only",
+        "missing_asset_policy": "editable-labeled-slot",
+        "component_literal_colors_forbidden": true,
+        "image_fit": "contain"
+      },
+      "sources": [
+        "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/scripts/export-cw4-pptx.mjs",
+        "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/src/motion/primitives.ts",
+        "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json",
+        "docs/component-recipe-pipeline-architecture.md"
+      ],
+      "restriction": "candidate：数据化抽取自 cw4 金样导出器；旧 export-cw4-pptx.mjs 冻结不动。金样回归通过前不得标记 production-validated。包装/Logo 须业务授权原图。"
+    },
+    {
       "id": "style-pack.shenke-medical-blue-v1",
       "name_zh": "参课蓝 · 疾病健康知识培训课件风 v1",
       "kind": "style-pack",

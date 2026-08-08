@@ -121,8 +121,27 @@
     "outputs": [
       "MP4 培训视频"
     ],
-    "production_ready": true,
-    "status_label": "已签样金样 · 业务可换主题出片",
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": true,
+      "new_theme_pptx": false,
+      "new_theme_mp4": true,
+      "business_selfserve": false
+    },
+    "requirements": [
+      "完整 8 段审核稿",
+      "公司授权包装图与凭证",
+      "哈希绑定审批",
+      "video_full",
+      "正式 voice_id"
+    ],
+    "blockers": [
+      "内容/包装/授权凭证未完成哈希审批时只能生成草稿预览",
+      "当前机器须通过 video_full 环境检查"
+    ],
+    "production_ready": false,
+    "status_label": "可开始草稿 · 审批与环境通过后出片",
     "online_url": null
   },
   "business_catalog": {
@@ -142,7 +161,7 @@
   "business_greenline": {
     "script": "scripts/generate_business_video.py",
     "package_only": "python3 scripts/generate_business_video.py --template product --sections-json <path>",
-    "with_audio_mp4": ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4",
-    "notes": "金样画面壳 + 新旁白克隆；完整换包装重渲另线"
+    "with_audio_mp4": ".venv-qwen-tts/bin/python scripts/generate_business_video.py --template product --sections-json <path> --with-tts --with-mp4 --product-image <业务确认授权包装图> --product-approval <已批准JSON>",
+    "notes": "先由 plan 生成 product-approval.request.json；full=8段审核稿+包装图+授权凭证绑定哈希审批+正式 voice_id 后分段重渲；缺任一项只交规划包"
   }
 }

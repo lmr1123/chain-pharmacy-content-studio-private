@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Scaffold 九宫格健康科普 delivery package (60s / 6×10s).
 
-Produces character sheets, per-segment (narration + 9-grid + video prompt),
-and social compliance pack. No paid API calls.
+Default output is the narration review pack. Character sheets, per-segment
+prompts, and the publish pack require explicit hash-bound approval release.
+No paid API calls.
 
 Usage:
   python3 scripts/scaffold_jiugongge_health_edu.py \\
@@ -12,6 +13,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from datetime import date
@@ -20,6 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MODE_DIR = ROOT / "production-library/templates/prompt-modes/jiugongge-health-edu-v1"
 DEFAULT_OUT = ROOT / "outputs/business-video-runs/jiugongge-health-edu"
+MODE_ID = "jiugongge-health-edu-v1"
 
 CHAR_CONSISTENCY = (
     "林医生与王大爷造型与角色设定图完全一致：林医生白大褂浅蓝衬衫听诊器；"
@@ -38,6 +41,14 @@ PINNED_COMMENT = (
     "转发前也请提醒家人：有不适早就医。🙏"
 )
 
+RELEASE_FILES = [
+    "02-角色三视图提示词.md",
+    "03-九宫格与视频提示词-六段.md",
+    "04-社媒合规发布包.md",
+    "DELIVERY.md",
+    "release-manifest.json",
+]
+
 
 def slugify(text: str) -> str:
     s = text.strip().lower()
@@ -53,6 +64,66 @@ def g(d: dict, *keys: str, default: str = "") -> str:
             return default
         cur = cur[k]
     return str(cur) if cur is not None else default
+
+
+def input_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def text_sha256(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def approval_template(digest: str, review_digest: str) -> dict:
+    return {
+        "schema": "prompt-release-approval-v1",
+        "mode_id": MODE_ID,
+        "approved": False,
+        "approved_by": "",
+        "input_sha256": digest,
+        "review_sha256": review_digest,
+        "note": "确认 01-科普脚本复核包后，将 approved 改为 true 并填写 approved_by。",
+    }
+
+
+def require_release_approval(path: Path, digest: str, review_digest: str) -> dict:
+    if not path.is_file():
+        raise SystemExit(f"approval file not found: {path}")
+    approval = json.loads(path.read_text(encoding="utf-8"))
+    if approval.get("mode_id") != MODE_ID:
+        raise SystemExit(f"approval.mode_id must be {MODE_ID}")
+    if approval.get("approved") is not True:
+        raise SystemExit("approval.approved must be true")
+    if not str(approval.get("approved_by") or "").strip():
+        raise SystemExit("approval.approved_by is required")
+    if approval.get("input_sha256") != digest:
+        raise SystemExit("approval input hash mismatch; regenerate review and approve again")
+    if approval.get("review_sha256") != review_digest:
+        raise SystemExit("approval review hash mismatch; regenerate review and approve again")
+    return approval
+
+
+def write_release_manifest(
+    out_dir: Path,
+    digest: str,
+    review_digest: str,
+    approval_path: Path,
+    approval: dict,
+) -> None:
+    manifest = {
+        "schema": "prompt-release-v1",
+        "mode_id": MODE_ID,
+        "input_sha256": digest,
+        "review_sha256": review_digest,
+        "approved_by": approval["approved_by"],
+        "approval_file": str(approval_path),
+        "released_on": date.today().isoformat(),
+        "files": RELEASE_FILES[:-1],
+    }
+    (out_dir / "release-manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def expand_knowledge(points: list[str]) -> list[str]:
@@ -407,6 +478,16 @@ def main() -> int:
     ap.add_argument("--vars", required=True, help="Path to filled variables JSON")
     ap.add_argument("--slug", default="", help="Output folder slug")
     ap.add_argument("--out-root", default=str(DEFAULT_OUT))
+    ap.add_argument(
+        "--release",
+        action="store_true",
+        help="Release visual/video prompts after hash-bound approval",
+    )
+    ap.add_argument(
+        "--approval",
+        default="",
+        help="Path to approval.json; required with --release",
+    )
     args = ap.parse_args()
 
     vars_path = Path(args.vars).expanduser().resolve()
@@ -419,17 +500,47 @@ def main() -> int:
     if not v.get("knowledge_points"):
         raise SystemExit("vars.knowledge_points (1-3) is required")
 
+    digest = input_sha256(vars_path)
     slug = args.slug or slugify(g(v, "theme"))
     out_dir = Path(args.out_root).expanduser().resolve() / slug
     out_dir.mkdir(parents=True, exist_ok=True)
 
     segs = build_segments(v)
+    review_text = render_review_md(v, segs)
+    review_digest = text_sha256(review_text)
+    if args.release:
+        for name in RELEASE_FILES:
+            (out_dir / name).unlink(missing_ok=True)
+    approval_path: Path | None = None
+    approval: dict | None = None
+    if args.release:
+        if not args.approval:
+            raise SystemExit("--release requires --approval <approval.json>")
+        approval_path = Path(args.approval).expanduser().resolve()
+        approval = require_release_approval(approval_path, digest, review_digest)
+
     (out_dir / "00-主题变量.json").write_text(
         json.dumps(v, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     (out_dir / "01-科普脚本复核包.md").write_text(
-        render_review_md(v, segs), encoding="utf-8"
+        review_text, encoding="utf-8"
     )
+
+    if not args.release:
+        (out_dir / "approval.json").write_text(
+            json.dumps(
+                approval_template(digest, review_digest), ensure_ascii=False, indent=2
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        for name in RELEASE_FILES:
+            (out_dir / name).unlink(missing_ok=True)
+        print(f"OK review scaffold → {out_dir}")
+        print("  01-科普脚本复核包.md")
+        print("  approval.json（确认后填写，再用 --release --approval 发布）")
+        return 0
+
     (out_dir / "02-角色三视图提示词.md").write_text(
         render_characters_md(), encoding="utf-8"
     )
@@ -442,8 +553,15 @@ def main() -> int:
     (out_dir / "DELIVERY.md").write_text(
         render_delivery_md(v, out_dir), encoding="utf-8"
     )
+    assert approval_path is not None and approval is not None
+    if approval_path != out_dir / "approval.json":
+        (out_dir / "approval.json").write_text(
+            json.dumps(approval, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    write_release_manifest(out_dir, digest, review_digest, approval_path, approval)
 
-    print(f"OK scaffold → {out_dir}")
+    print(f"OK released scaffold → {out_dir}")
     for name in [
         "01-科普脚本复核包.md",
         "02-角色三视图提示词.md",

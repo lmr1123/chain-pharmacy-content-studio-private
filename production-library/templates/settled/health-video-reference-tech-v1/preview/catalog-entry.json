@@ -7,9 +7,27 @@
     "MP4 培训视频"
   ],
   "category": "疾病科普",
-  "production_ready": true,
-  "status_label": "已签样金样 · 业务可换主题出片",
-  "status_note": "业务在 WorkBuddy 说病名+审核要点即可 full 重渲（换屏显/旁白/7段画面）；讲解声走模板克隆语音包。",
+  "capabilities": {
+    "gold_viewable": true,
+    "content_draft": true,
+    "new_theme_preview": true,
+    "new_theme_pptx": false,
+    "new_theme_mp4": true,
+    "business_selfserve": false
+  },
+  "requirements": [
+    "药师/法务审核稿",
+    "已批准主题包",
+    "video_full",
+    "正式 voice_id"
+  ],
+  "blockers": [
+    "正式出片前必须完成主题画面审批",
+    "当前机器须通过 video_full 环境检查"
+  ],
+  "production_ready": false,
+  "status_label": "可开始草稿 · 正式出片需环境与审批",
+  "status_note": "金样可查看；换病种先整理审核稿与主题包，内容和画面确认后，且本机 video_full 通过才生成正式 MP4。",
   "key_frame_labels_zh": [
     "开场",
     "典型症状",
