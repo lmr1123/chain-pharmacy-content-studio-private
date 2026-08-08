@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "product-training-script/v1",
+  "title": "Product training structured script",
+  "description": "构件化课件唯一文案源。见 docs/product-training-script-content-entry.md",
+  "type": "object",
+  "required": ["schema", "meta"],
+  "additionalProperties": true,
+  "properties": {
+    "schema": { "const": "product-training-script/v1" },
+    "meta": {
+      "type": "object",
+      "required": ["display_name", "content_lock"],
+      "properties": {
+        "display_name": { "type": "string", "minLength": 1 },
+        "organization": { "type": "string" },
+        "tagline": { "type": "string" },
+        "content_lock": {
+          "type": "string",
+          "description": "草稿默认 pending；禁止工具自动升锁"
+        },
+        "brand_boast_disabled": { "type": "boolean" },
+        "family": { "type": "string" },
+        "style_pack_id": { "type": "string" }
+      }
+    },
+    "hook": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "paragraphs": { "type": "array", "items": { "type": "string" } },
+        "symptoms": { "type": "array", "items": { "type": "string" } },
+        "stats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": { "type": "string" },
+              "unit": { "type": "string" },
+              "note": { "type": "string" },
+              "source": { "type": "string" }
+            }
+          }
+        },
+        "source": { "type": "string" }
+      }
+    },
+    "benefits": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "body": { "type": "string" },
+              "hidden": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "body": { "type": "string" },
+              "hidden": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "audience": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "combination": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "problem": { "type": "string" },
+              "scenario": { "type": "string" },
+              "partner": { "type": "string" },
+              "talk_track": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string" },
+              "body": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "precautions": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "_l2": {
+      "type": "object",
+      "description": "草稿元数据；生成器可忽略"
+    }
+  }
+}

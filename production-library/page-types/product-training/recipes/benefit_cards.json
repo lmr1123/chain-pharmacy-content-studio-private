@@ -1,0 +1,25 @@
+{
+  "page_type": "benefit_cards",
+  "family": "product-training",
+  "status": "settled",
+  "name_zh": "核心功效卡",
+  "scene_types": ["benefit_chain"],
+  "impl_by_scene": {
+    "benefit_chain": "benefit_chain"
+  },
+  "default_impl": "benefit_chain",
+  "slots": ["chapter", "section", "items[{title,body,asset}]", "chain"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "section_label", "slot": "section"},
+    {"use": "image_chain", "slot": "chain", "layout": "auto-center"},
+    {"use": "note_bar", "slot": "body"}
+  ],
+  "layout": {
+    "min_items": 1,
+    "max_per_page": 3,
+    "adapt_n": "1|2|3 equal cards by N; gold uses sequential image_chain pages",
+    "notes": "金样 benefit_chain 为图链逐步展开；生成器侧 N 卡版走 row_card/icon 卡"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "page-type-proposal/v1",
+  "page_type_id": "your_page_type_id",
+  "name_zh": "中文名",
+  "family": "product-training",
+  "version": "2026-08-08",
+  "status": "draft",
+  "trigger": "说明：现有哪些 page_type 不够、硬套会损失什么信息/版式。",
+  "content_shape": {
+    "required_fields": ["example_items[]"],
+    "optional_fields": ["source"],
+    "signals": ["出现对比两组 / 出现时间轴节点 / …"]
+  },
+  "slots": ["chapter", "section", "items[{title,body}]"],
+  "components": [
+    { "use": "chrome_bg" },
+    { "use": "chapter_title", "slot": "chapter" },
+    { "use": "section_label", "slot": "section" },
+    { "use": "row_card", "slot": "items", "layout": "adapt_n" }
+  ],
+  "layout": {
+    "max_per_page": 3,
+    "min_items": 1,
+    "adapt_n": "1|2|3 equal by N；超 max 拆页",
+    "empty_cards": "forbidden",
+    "notes": ""
+  },
+  "scene_type": "your_page_type_id",
+  "impl": "your_page_type_id",
+  "mapper_hints": ["关键词1", "关键词2"],
+  "gold_lineage": {
+    "sources": [
+      "templates/settled/fuler-fanqiehongsu-product-courseware-4-v1 或 m3-candidate 构件"
+    ],
+    "reused_builders": [],
+    "reused_components": ["chrome_bg", "chapter_title", "row_card"]
+  },
+  "sample_script_refs": [
+    {
+      "path": "production-library/validation/courseware/…/script.structured.json",
+      "section": "…",
+      "note": "示意文案须 script 溯源，或标明版式示意-非交付"
+    }
+  ],
+  "qa_dir": "production-library/validation/courseware/<id>-candidate-pages/",
+  "related_paths": {
+    "recipe": "production-library/page-types/product-training/recipes/<id>.json",
+    "builder": "production-library/engines/courseware-pptx-v1/scenes/builders.mjs",
+    "registry": "production-library/page-types/product-training/registry.json",
+    "content_model": "production-library/validation/courseware/<id>-candidate-pages/content-model.json"
+  },
+  "signoff": {
+    "date": null,
+    "user_quote": null,
+    "checklist": {
+      "title_fit": false,
+      "readable_type": false,
+      "no_empty_cards": false,
+      "asset_alpha_ok": false,
+      "alignment_ok": false,
+      "copy_provenance": false,
+      "native_editable": false
+    },
+    "qa_report": null
+  },
+  "rejection": null,
+  "notes": "复制本文件后改 id；流程见 docs/page-type-growth-channel.md"
+}

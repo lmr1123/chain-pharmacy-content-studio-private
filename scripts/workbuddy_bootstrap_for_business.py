@@ -44,6 +44,21 @@ PROBE_REQUIRE_CHOICES = (
     "video-full",
     "production-assets",
 )
+PROFILE_CHOICES = (
+    "pptx",
+    "video-full",
+    "optional-external",
+)
+RUNTIME_PROFILES_REL = Path("production-library") / "runtime-profiles.json"
+GREEN_ENGINE_REL = (
+    Path("production-library") / "engines" / "product-courseware-green-v1"
+)
+COMPONENT_ENGINE_REL = (
+    Path("production-library") / "engines" / "courseware-pptx-v1"
+)
+LEGACY_PPTX_NODE_MODULES_REL = (
+    Path("poc") / "courseware-export" / "work" / "node_modules"
+)
 
 
 def clone_url_candidates(primary: str) -> list[str]:
@@ -258,7 +273,159 @@ def ensure_package(
     return runtime_portal
 
 
-def probe_environment(root: Path, requirements: list[str]) -> dict:
+def load_runtime_profiles(root: Path) -> dict:
+    path = root / RUNTIME_PROFILES_REL
+    if not path.is_file():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def expand_requirements(
+    root: Path,
+    *,
+    require: list[str] | None = None,
+    profiles: list[str] | None = None,
+    routes: list[str] | None = None,
+) -> tuple[list[str], list[str]]:
+    """Map --require / --profile / --route into probe tokens + profile ids used.
+
+    Always starts from production-assets. Returns (probe_tokens, profile_ids).
+    """
+    doc = load_runtime_profiles(root)
+    profile_map = doc.get("profiles") or {}
+    route_map = doc.get("route_to_profile") or {}
+
+    tokens: list[str] = ["production-assets"]
+    used_profiles: list[str] = []
+
+    for token in require or []:
+        if token not in tokens:
+            tokens.append(token)
+
+    for route_id in routes or []:
+        pid = route_map.get(route_id)
+        if pid is None and route_id in route_map:
+            # explicit null: preview-only
+            continue
+        if pid and pid not in used_profiles:
+            used_profiles.append(pid)
+
+    for pid in profiles or []:
+        if pid not in used_profiles:
+            used_profiles.append(pid)
+
+    for pid in used_profiles:
+        prof = profile_map.get(pid) or {}
+        for token in prof.get("probe_require") or []:
+            if token not in tokens:
+                tokens.append(token)
+
+    return tokens, used_profiles
+
+
+def install_hints_for_profiles(root: Path, profile_ids: list[str]) -> list[str]:
+    doc = load_runtime_profiles(root)
+    profiles = doc.get("profiles") or {}
+    hints: list[str] = []
+    for pid in profile_ids:
+        for hint in (profiles.get(pid) or {}).get("install_hints_zh") or []:
+            if hint not in hints:
+                hints.append(hint)
+    return hints
+
+
+def _soft_repair_pptx_node_modules(engine: Path, legacy: Path, label: str) -> list[str]:
+    """Symlink engine/node_modules → historical artifact-tool tree when missing."""
+    actions: list[str] = []
+    if not engine.is_dir():
+        return actions
+    nm = engine / "node_modules"
+    artifact = nm / "@oai" / "artifact-tool" / "dist" / "artifact_tool.mjs"
+    if artifact.is_file():
+        return actions
+    if nm.is_symlink() and not nm.exists():
+        try:
+            nm.unlink()
+        except OSError:
+            pass
+    legacy_artifact = legacy / "@oai" / "artifact-tool" / "dist" / "artifact_tool.mjs"
+    if (not nm.exists()) and legacy.is_dir() and legacy_artifact.is_file():
+        try:
+            rel = Path(os.path.relpath(legacy, start=engine))
+            nm.symlink_to(rel, target_is_directory=True)
+            actions.append(
+                f"已为{label}链接 node_modules → {rel.as_posix()}（本地复用，非网络安装）"
+            )
+        except OSError as exc:
+            actions.append(f"未能为{label}自动链接 node_modules: {exc}")
+    return actions
+
+
+def soft_repair_local_deps(root: Path) -> list[str]:
+    """Local-only repairs that do not install paid services or network packages.
+
+    - Component PPT engine (default): link historical node_modules for @oai/artifact-tool
+    - Green PPT engine (legacy): same
+    - Video runtime: link kit → poc/gold-sample when formal kit is missing
+    """
+    actions: list[str] = []
+    legacy = root / LEGACY_PPTX_NODE_MODULES_REL
+    actions.extend(
+        _soft_repair_pptx_node_modules(
+            root / COMPONENT_ENGINE_REL, legacy, "构件 PPT 引擎 courseware-pptx-v1"
+        )
+    )
+    actions.extend(
+        _soft_repair_pptx_node_modules(
+            root / GREEN_ENGINE_REL, legacy, "绿色 PPT 兼容引擎"
+        )
+    )
+
+    # Video runtime kit soft-repair (shared helper; no network)
+    try:
+        if str(root / "scripts") not in sys.path:
+            sys.path.insert(0, str(root / "scripts"))
+        from video_runtime import soft_repair_kit_symlink  # type: ignore
+
+        actions.extend(soft_repair_kit_symlink(root))
+    except Exception as exc:
+        actions.append(f"视频 kit soft-repair 跳过: {exc}")
+    return actions
+
+
+def platform_summary() -> str:
+    return f"{platform.system()} {platform.machine()} · python {platform.python_version()}"
+
+
+def run_doctor_summary(root: Path, *, route: str | None, profile: str | None) -> None:
+    """Best-effort doctor print; never overrides probe hard-fail."""
+    doctor = root / "scripts" / "business_doctor.py"
+    if not doctor.is_file():
+        return
+    command = [sys.executable, str(doctor)]
+    if route:
+        command.extend(["--route", route])
+    elif profile:
+        command.extend(["--profile", profile])
+    print("+", " ".join(command))
+    result = subprocess.run(
+        command,
+        cwd=str(root),
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    text = (result.stdout or "").strip()
+    if text:
+        print(text)
+    if result.returncode not in (0, 2) and result.stderr:
+        print(f"（doctor 辅助输出异常 exit={result.returncode}，可忽略）")
+
+
+def probe_environment(root: Path, requirements: list[str], *, profile_ids: list[str] | None = None) -> dict:
     """Probe the installed tree for the exact capabilities requested by the task."""
     probe = root / "scripts" / "probe_production_env.py"
     if not probe.is_file():
@@ -298,10 +465,29 @@ def probe_environment(root: Path, requirements: list[str]) -> dict:
         missing_text = ", ".join(str(item) for item in missing) or ", ".join(requirements)
         messages = report.get("messages_zh") or []
         detail = "\n".join(f"· {message}" for message in messages)
+        hints = install_hints_for_profiles(root, profile_ids or [])
+        # If only production-assets was required, still try pptx hints when pptx missing
+        if not hints and "pptx_export" in missing:
+            hints = install_hints_for_profiles(root, ["pptx"])
+        if not hints and "video_full" in missing:
+            hints = install_hints_for_profiles(root, ["video-full"])
+        hint_block = ""
+        if hints:
+            hint_block = "\n安装/修复提示:\n" + "\n".join(f"· {h}" for h in hints)
+        doctor_hint = (
+            "\n也可运行: python3 scripts/business_doctor.py"
+            + (
+                f" --profile {profile_ids[0]}"
+                if profile_ids
+                else " --route product-pptx-green-v1"
+            )
+        )
         raise SystemExit(
             "当前机器缺少本任务要求的生产能力，已诚实停止；不会用降级产物冒充正式交付。\n"
             f"缺少能力: {missing_text}"
             + (f"\n{detail}" if detail else "")
+            + hint_block
+            + doctor_hint
         )
     return report
 
@@ -352,28 +538,35 @@ def print_guide(root: Path, portal: Path) -> None:
 仓库: {root}
 引导页: {portal}
 
-你好！培训内容工厂已装好。你在本对话就能出课件和视频，三步做完：
+你好！培训内容工厂已装好。你在本对话就能出课件和视频，按五步做完：
 
-第 1 步 · 看模板
+第 1 步 · 选我要做什么
   引导页：{portal}
   点卡片可看预览，再点「选用此模板」；也可直接说课型名。
   可选课型：
 {name_lines}
 
-第 2 步 · 输入培训内容（PPT 或视频都行）
-  · PPT：「整理可可康灵芝胶囊…你先整理再生成 ppt」
-  · 疾病科普视频：「我要用疾病科普视频，主题是感冒。症状…病因…调理…请生成培训视频」
-  · 商品培训视频：「我要用商品培训视频，商品是××。功效/特点/人群…请生成培训视频」
+第 2 步 · 交已有内容
+  · 商品 PPT：「用绿色单品 PPT，主题是××，卖点…你先出内容初稿」
+  · 商品视频：「用商品培训视频，商品是××。功效/特点/人群…先出脚本初稿」
+  · 疾病视频（未全面自助开放时会诚实说明缺口）
 
-第 3 步 · 下载与修改
-  我把成片路径发给你；要改就说「…改成…再出一版」。
+第 3 步 · 审初稿
+  你确认内容后，我再生成正式成品；标「待确认」的医学/价格字段不能当审核结论。
+
+第 4–5 步 · 生成与取件
+  成片只在交付目录；失败不会伪装成已交付。
 
 现在可以从第 1 步选模板，或直接发第 2 步内容给我。
 ========================================
 【代理内部 · 勿对业务念】
-- 系统提示全文：docs/workbuddy-system-prompt.md（须保持最新，含视频 full）
-- 视频首次自检：docs/workbuddy-video-first-check.md（你执行）
-- 疾病/商品视频：scripts/generate_business_video.py --mode full（禁止默认 audio-shell）
+- 平台: {platform_summary()}
+- 系统提示全文：docs/workbuddy-system-prompt.md
+- 统一任务：python3 scripts/business_job.py list-routes | new | draft | approve | render
+- 环境自检：python3 scripts/business_doctor.py --route product-pptx-green-v1
+- 能力真值：python3 scripts/probe_production_env.py --require pptx|video-full
+- 绿色 PPT 正式引擎：production-library/engines/product-courseware-green-v1/
+- 视频 full：scripts/generate_business_video.py --mode full（禁止默认 audio-shell）
 - 业务自助：正常 settled 单由你在本机出片，禁止推回制作
 ========================================
 """
@@ -415,6 +608,24 @@ def main() -> None:
         choices=PROBE_REQUIRE_CHOICES,
         help="Probe a task capability after update (repeatable)",
     )
+    parser.add_argument(
+        "--profile",
+        action="append",
+        default=[],
+        choices=PROFILE_CHOICES,
+        help="Runtime profile from production-library/runtime-profiles.json (repeatable)",
+    )
+    parser.add_argument(
+        "--route",
+        action="append",
+        default=[],
+        help="Business route_id; expands to its runtime profile (repeatable)",
+    )
+    parser.add_argument(
+        "--skip-soft-repair",
+        action="store_true",
+        help="Do not auto-link local node_modules for green PPT engine",
+    )
     args = parser.parse_args()
     if args.skip_update and args.update_only:
         raise SystemExit("--skip-update 与 --update-only 不能同时使用")
@@ -435,8 +646,31 @@ def main() -> None:
             raise SystemExit(f"--update-only 但未找到仓库: {target}")
         root = clone_or_update(args.repo_url, target)
 
-    requirements = list(dict.fromkeys(["production-assets", *args.require]))
-    environment = probe_environment(root, requirements)
+    print(f"平台: {platform_summary()}")
+    if not args.skip_soft_repair:
+        for action in soft_repair_local_deps(root):
+            print(f"本地修复: {action}")
+
+    requirements, profile_ids = expand_requirements(
+        root,
+        require=list(args.require or []),
+        profiles=list(args.profile or []),
+        routes=list(args.route or []),
+    )
+    if profile_ids:
+        print(f"runtime profiles: {', '.join(profile_ids)}")
+    print(f"probe require: {', '.join(requirements)}")
+
+    environment = probe_environment(
+        root, requirements, profile_ids=profile_ids
+    )
+
+    # Optional human-readable doctor summary for the first route/profile.
+    first_route = (args.route or [None])[0]
+    first_profile = (args.profile or profile_ids or [None])[0]
+    if first_route or first_profile:
+        run_doctor_summary(root, route=first_route, profile=first_profile)
+
     portal = ensure_package(root, environment.get("capabilities") or {})
     print_guide(root, portal)
     if not args.no_open:
@@ -444,6 +678,8 @@ def main() -> None:
     # machine-readable last line for agents
     print(f"WB_ROOT={root}")
     print(f"WB_PORTAL={portal}")
+    print(f"WB_PROFILES={','.join(profile_ids)}")
+    print(f"WB_REQUIRE={','.join(requirements)}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,82 @@
+{
+  "family": "product-training",
+  "version": "2026-08-07",
+  "description": "cw4 content-model scene.type → registry page_type + builder impl（金样回归走 recipe 解析）",
+  "scene_type_map": {
+    "cover": {
+      "page_type": "courseware_cover",
+      "impl": "cover",
+      "variant": "cover_or_end"
+    },
+    "time_list": {
+      "page_type": "hook_intro",
+      "impl": "time_list",
+      "variant": "time_magazine_list"
+    },
+    "broll": {
+      "page_type": "feature_cards",
+      "impl": "broll",
+      "variant": "photo_stage"
+    },
+    "product_intro": {
+      "page_type": "courseware_cover",
+      "impl": "product_intro",
+      "variant": "pack_showcase"
+    },
+    "benefit_chain": {
+      "page_type": "benefit_cards",
+      "impl": "benefit_chain",
+      "variant": "image_chain"
+    },
+    "feature_origin": {
+      "page_type": "feature_cards",
+      "impl": "feature_origin",
+      "variant": "map"
+    },
+    "feature_material": {
+      "page_type": "feature_cards",
+      "impl": "feature_material",
+      "variant": "material_photo"
+    },
+    "feature_content": {
+      "page_type": "feature_cards",
+      "impl": "feature_content",
+      "variant": "content_eq"
+    },
+    "audience": {
+      "page_type": "audience_list",
+      "impl": "audience",
+      "variant": "icon_row"
+    },
+    "related_meds": {
+      "page_type": "combination_guidance",
+      "impl": "related_meds",
+      "variant": "two_pack_nav"
+    },
+    "efficacy_recap_table": {
+      "page_type": "summary_matrix",
+      "impl": "efficacy_recap_table",
+      "variant": "label_body_rows"
+    },
+    "summary_4col": {
+      "page_type": "summary_matrix",
+      "impl": "summary_4col",
+      "variant": "header_col_rows"
+    },
+    "hook_pain_data": {
+      "page_type": "hook_pain_data",
+      "impl": "hook_pain_data",
+      "variant": "chips_stats"
+    },
+    "combination_guidance": {
+      "page_type": "combination_guidance",
+      "impl": "combination_guidance",
+      "variant": "three_row_cards"
+    },
+    "precautions": {
+      "page_type": "precautions",
+      "impl": "precautions",
+      "variant": "list_plus_2x2"
+    }
+  }
+}

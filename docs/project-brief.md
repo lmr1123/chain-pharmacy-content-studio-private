@@ -32,6 +32,14 @@
 登记：`decision.gold-sample-first`、`lesson.gold-sample-not-asset-stockpile`（`tasks/lessons.md`）。  
 资产 registry / 外补 / gap 仅为金样槽位服务，冲突时服从本原则。
 
+## 1.1b 灵活主题 × 质量架构（2026-08-07）
+
+正式产品方案：`docs/flexible-theme-quality-architecture.md`  
+
+三层：**style_pack**（视觉）· **page_type**（页型池，属 family）· **content script**（审核稿）。  
+流水线：输入 → 脚本确认 → 匹配页型 → 匹配风格 → 质检 → PPTX。  
+首跑样例：`production-library/validation/courseware/fuler-maikenli-lycopene-v1/`。
+
 ## 1.2 当前验证状态（2026-07-30 收工）
 
 **目标提醒：** 批量生产**可培训交付**的内部视频/课件；药学结论只来自审核稿；真包装/Logo 由业务提供。任务背后的「为什么」详见 `tasks/todo.md` §0。

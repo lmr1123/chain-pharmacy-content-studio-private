@@ -1,0 +1,73 @@
+{
+  "schema": "page-type-proposal/v1",
+  "page_type_id": "combination_guidance",
+  "name_zh": "联合用药+话术",
+  "family": "product-training",
+  "version": "2026-08-08",
+  "status": "settled",
+  "trigger": "业务需要「问题场景短标 + 搭配品 + 话术」全宽行卡（N≤3）；cw4 related_meds 是双包装+导航 pills，信息结构不同，硬套会丢话术或假塞包装。",
+  "content_shape": {
+    "required_fields": ["rows[{scenario|problem,partner,talk_track}]"],
+    "optional_fields": ["icon", "chapter"],
+    "signals": ["联合", "联推", "搭配", "话术", "多场景行表"]
+  },
+  "slots": ["chapter", "rows[{scenario,partner,talk_track}]"],
+  "components": [
+    { "use": "chrome_bg" },
+    { "use": "chapter_title", "slot": "chapter" },
+    { "use": "row_card", "slot": "rows", "layout": "full-width; N≤3" },
+    { "use": "pack_slot", "slot": "icon", "notes": "组合示意/授权图；可缺省" }
+  ],
+  "layout": {
+    "max_per_page": 3,
+    "adapt_n": "full-width row cards; N≤3 no empty",
+    "empty_cards": "forbidden",
+    "notes": "问题场景用短标签（非「顾客买…」长句）；M5 已返修"
+  },
+  "scene_type": "combination_guidance",
+  "impl": "combination_guidance",
+  "mapper_hints": ["联合", "联推", "搭配", "话术"],
+  "gold_lineage": {
+    "sources": [
+      "康爱森/课件4 行卡气质",
+      "related_meds 仅作槽位灵感，非同构"
+    ],
+    "reused_builders": ["related_meds"],
+    "reused_components": ["chrome_bg", "chapter_title", "row_card", "pack_slot"]
+  },
+  "sample_script_refs": [
+    {
+      "path": "production-library/validation/courseware/m3-candidate-pages/content-model.json",
+      "section": "C02_combination",
+      "note": "M3 版式示意"
+    },
+    {
+      "path": "production-library/validation/courseware/fuler-maikenli-lycopene-v1/script.structured.json",
+      "section": "combination",
+      "note": "M5 验证稿"
+    }
+  ],
+  "qa_dir": "production-library/validation/courseware/m3-candidate-pages/out/qa/",
+  "related_paths": {
+    "recipe": "production-library/page-types/product-training/recipes/combination_guidance.json",
+    "builder": "production-library/engines/courseware-pptx-v1/scenes/builders.mjs#buildCombinationGuidance",
+    "registry": "production-library/page-types/product-training/registry.json",
+    "content_model": "production-library/validation/courseware/m3-candidate-pages/content-model.json"
+  },
+  "signoff": {
+    "date": "2026-08-08",
+    "user_quote": "可以",
+    "checklist": {
+      "title_fit": true,
+      "readable_type": true,
+      "no_empty_cards": true,
+      "asset_alpha_ok": true,
+      "alignment_ok": true,
+      "copy_provenance": true,
+      "native_editable": true
+    },
+    "qa_report": "production-library/validation/courseware/m3-candidate-pages/out/qa/slide-2.png"
+  },
+  "rejection": null,
+  "notes": "L1 历史回填。scene-type-map 中 related_meds 仍映射本 page_type 的另一 impl。"
+}

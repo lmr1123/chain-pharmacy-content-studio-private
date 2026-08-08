@@ -67,6 +67,15 @@ AI 在生成前输出可确认的课件规划，至少包括：
 
 业务确认规划结果，不负责设计页面坐标。
 
+### 4.1 构件化主链路（L2 · product-training-script）
+
+商品培训走构件化引擎时，Word/大纲先半自动落为 **`script.structured.json`**（人审后才生成 PPTX）：
+
+1. 手册：`docs/product-training-script-content-entry.md`
+2. 草稿工具：`scripts/draft_product_training_script.py`（确定性归类，不扩写功效）
+3. 人审：`REVIEW-CHECKLIST.md` 勾完 → `scripts/generate_courseware.py`
+4. 未知页型 → `docs/page-type-growth-channel.md`（L1）
+
 ## 5. 自适应约束
 
 - 2 个要点可采用双卡或双栏；

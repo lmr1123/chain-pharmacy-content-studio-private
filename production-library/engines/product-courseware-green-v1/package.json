@@ -1,0 +1,10 @@
+{
+  "name": "product-courseware-green-v1-engine",
+  "private": true,
+  "type": "module",
+  "description": "正式绿色商品培训 PPT 导出引擎（从 poc/courseware-export 提升）。依赖 @oai/artifact-tool：开发机可 symlink 到 poc 的 node_modules，业务机用 runtime profile 安装说明。",
+  "scripts": {
+    "build": "node build-product-courseware.mjs",
+    "build:gold": "node build-product-courseware.mjs"
+  }
+}

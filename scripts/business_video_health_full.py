@@ -20,13 +20,22 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-GOLD = ROOT / "poc/gold-sample"
 sys.path.insert(0, str(ROOT / "scripts"))
 from content_driven_rules import (  # noqa: E402
     extract_list_items,
     plan_list_block,
     segment_has_content,
 )
+from video_runtime import (  # noqa: E402
+    health_render_script_rel,
+    prepare_workspace as _prepare_workspace_from_kit,
+    resolve_video_kit_root,
+)
+
+
+def gold_root() -> Path:
+    """Formal kit root (production engine kit preferred over poc/gold-sample)."""
+    return resolve_video_kit_root(require_node_modules=False)
 
 SEGMENTS: list[dict[str, str]] = [
     {"id": "intro", "json": "health-training-intro.json", "label": "开场"},
@@ -75,22 +84,8 @@ def slugify(text: str) -> str:
 
 
 def prepare_workspace(run_dir: Path) -> Path:
-    ws = run_dir / "render-workspace"
-    if ws.exists():
-        shutil.rmtree(ws)
-    ignore = shutil.ignore_patterns(
-        "node_modules",
-        "dist",
-        ".render-work",
-        ".git",
-        "*.mp4",
-        ".DS_Store",
-    )
-    shutil.copytree(GOLD, ws, ignore=ignore, symlinks=True)
-    nm = GOLD / "node_modules"
-    if nm.exists() and not (ws / "node_modules").exists():
-        os.symlink(nm, ws / "node_modules")
-    return ws
+    """Stage a disposable render workspace from the formal video runtime kit."""
+    return _prepare_workspace_from_kit(run_dir, kit_root=gold_root())
 
 
 def map_sections_to_segments(
@@ -514,7 +509,7 @@ def render_segment(ws: Path, segment_id: str, out_mp4: Path) -> None:
     # Relative out path keeps Revideo public/ audio resolution inside workspace
     cmd = [
         "node",
-        "scripts/render-health-segment.mjs",
+        health_render_script_rel(),
         segment_id,
         f"out/{segment_id}.mp4",
     ]
@@ -868,7 +863,7 @@ def run_health_full(
                 "error": "full 模式需要 --with-tts 以生成与画面同步的旁白",
             }
 
-        base = load_json(GOLD / seg["json"])
+        base = load_json(gold_root() / seg["json"])
         patched = apply_content_to_json(
             base=base,
             disease=disease,

@@ -8,12 +8,13 @@ const currentFile = fileURLToPath(import.meta.url);
 const workDir = path.dirname(currentFile);
 const projectDir = path.resolve(workDir, "..");
 const repoDir = path.resolve(projectDir, "../..");
-const dataPath = path.join(projectDir, "product-courseware-green.json");
-// --out / --qa：默认 settled；升级迭代改道 validation，避免误覆盖已签样金样。
+// --data / --out / --qa：默认 settled 金样 JSON；业务任务通过 --data 注入主题稿。
 function cliValue(flag) {
   const index = process.argv.indexOf(flag);
   return index >= 0 && process.argv[index + 1] ? path.resolve(process.argv[index + 1]) : null;
 }
+const dataPath =
+  cliValue("--data") ?? path.join(projectDir, "product-courseware-green.json");
 const outputPptx =
   cliValue("--out") ??
   path.join(
@@ -596,10 +597,13 @@ function addBenchmark(page) {
         LINE,
         1,
       );
+      // Labels follow column headers so gold product names never leak into new themes.
+      const primaryLabel = `${page.columns[1] || "本品"}包装图\n待接入`;
+      const competitorLabel = `${page.columns[2] || "竞品"}包装图\n待接入`;
       assetSlot(
         slide,
         "benchmark-primary-packshot",
-        "可可康包装图\n待接入",
+        primaryLabel,
         x + widths[0] + 195,
         cy + 18,
         140,
@@ -608,7 +612,7 @@ function addBenchmark(page) {
       assetSlot(
         slide,
         "benchmark-competitor-packshot",
-        "竞品包装图\n待接入",
+        competitorLabel,
         x + widths[0] + widths[1] + 175,
         cy + 18,
         140,

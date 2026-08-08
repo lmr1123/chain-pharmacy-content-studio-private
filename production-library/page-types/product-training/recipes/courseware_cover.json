@@ -1,0 +1,23 @@
+{
+  "page_type": "courseware_cover",
+  "family": "product-training",
+  "status": "settled",
+  "name_zh": "封面",
+  "scene_types": ["cover", "product_intro"],
+  "impl_by_scene": {
+    "cover": "cover",
+    "product_intro": "product_intro"
+  },
+  "default_impl": "cover",
+  "slots": ["title", "organization", "tagline", "benefits[]", "pack_slots"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "title_pill", "when": "variant=cover_or_end"},
+    {"use": "icon_bullet", "slot": "benefits", "when": "variant=cover_or_end"},
+    {"use": "pack_slot", "slot": "packs", "repeat": "pack_a|pack_b|pack_bottle"}
+  ],
+  "layout": {
+    "max_per_page": 1,
+    "notes": "封面：标题 pill + 卖点勾选 + 包装槽；product_intro 变体为左实拍右包装"
+  }
+}

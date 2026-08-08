@@ -1,4 +1,61 @@
 
+## P2 可复现运行环境与生产引擎收敛（2026-08-08 · 进行中）
+
+> **目标：** 清洁机器诚实可验证；正式路径优先 `production-library/`，减少对 `poc/` 的业务入口依赖。  
+> **本批边界：** 不重写全部生成器；视频 runtime 仍暂借 `poc/gold-sample`；artifact-tool 可通过 symlink 复用历史 node_modules。
+
+- [x] P2.1 `runtime-profiles.json`：pptx / video-full / optional-external + route 映射
+- [x] P2.2 `business_doctor.py`：按 route/profile 探测并输出安装提示
+- [x] P2.3 绿色 PPT 正式引擎迁入 `production-library/engines/product-courseware-green-v1/`
+- [x] P2.4 `business_job` / `probe` 优先正式引擎路径；draft 硬剥离金样残留
+- [x] P2.5 测试：`test_p2_runtime_profiles`；P1 10/10；E2E `p2-smoke-green-pptx` delivered
+- [x] P2.6 bootstrap 按 profile/route 探测 + 本地 soft-repair + 失败安装提示 + doctor 摘要
+- [x] P2.7 视频 runtime 正式入口 `video-revideo-runtime-v1` + `video_runtime.py`（kit 过渡 symlink）
+- [x] P2.8 component/recipe 引擎作默认 PPT 主路径；绿色五页降为兼容（未删除）
+- [x] P2.9 按需包清单 + clean-clone/production-path E2E  harness
+
+### Review（2026-08-09 · P2.8 / P2.9）
+
+- **默认 PPT 主路径：** `product-pptx-component-v1` → adapter `product_pptx_component` → `generate_courseware.py` + `engines/courseware-pptx-v1`。
+- **兼容路径：** `product-pptx-green-v1` 仍 active，priority 更低；门户/AGENTS 标明默认 vs 兼容。
+- **草稿：** theme+notes 或 `--script-json` → `script.structured.json` → scene-plan/content-model；金样残留硬阻断。
+- **交付：** 审批后 export PPTX + 白名单（终稿/说明/审批/scene-plan/provenance）；冒烟 `p2-smoke-component-pptx` delivered，~10MB，无金银花露/麦金利残留。
+- **环境：** probe/doctor/profiles 指向构件引擎；bootstrap soft-repair 同时链接 courseware-pptx-v1 与绿色引擎 node_modules。
+- **P2.9：** `production-library/on-demand-packages.json`；`scripts/test_p2_clean_clone_e2e.py` 10/10。
+- **回归：** P1 10、P2 profiles 14、P2.9 10、content safety 16、validate_production_readiness PASS。
+- **残余：** 视频 kit 仍可为 poc symlink；Public 不含生产引擎（需 Private）；preview 占位图待后续用真 QA 帧替换；Git 未提交（待用户要求）。
+
+### Review（2026-08-08/09 · P2 至 P2.7）
+
+- **金样残留修复：** draft 全量替换；forbidden token 硬阻断；builder 去「可可康包装图」。
+- **绿色 PPT 引擎：** `engines/product-courseware-green-v1/`。
+- **视频 runtime：** `engines/video-revideo-runtime-v1/` + `scripts/video_runtime.py`；product/health full 经 `gold_root()`/`prepare_workspace` 统一解析；probe 优先正式 kit 路径。
+- **bootstrap：** profile/route 展开 + soft-repair（绿色 node_modules + 视频 kit 链接）。
+- **回归：** P2 13、Bootstrap 12+、prepare_workspace 冒烟 OK；本机 `video_render/video_full` 仍依赖 TTS/kit 真实状态。
+
+## P1 统一业务任务控制面（2026-08-08 · 按 overall plan §8/§11 实施）
+
+> **目标：** 业务不再拼内部脚本/mode/路径；在现有生成器上增加薄控制面。  
+> **首批产品化：** 绿色单品 PPT + 商品培训完整 MP4。  
+> **边界：** 不新增模板/素材；不重写生成器；健康视频 route 保持 active=false。
+
+- [x] P1.1 建立 `production-library/business-routes.json` 唯一路由事实源
+- [x] P1.2 实现 `scripts/business_job.py`（new/draft/approve/render/status/open/retry/list-routes）
+- [x] P1.3 接入 `product-pptx-green-v1` 与 `product-mp4-full-v1` adapters
+- [x] P1.4 审批绑定 content/product_image hash；env_blocked / qa_failed 不发布
+- [x] P1.5 白名单交付到 `05_交付物放这里/<job_id>/` + run-manifest
+- [x] P1.6 门户五步文案 + 选用口令含 job CLI；AGENTS / catalog / system prompt 同步
+- [x] P1.7 测试与冒烟：`test_p1_business_job` 10/10（含金样残留用例）；绿色 PPT E2E delivered
+
+### Review（2026-08-08 · P1）
+
+- **控制面：** `business-routes.json` + `business_job.py`；任务目录 `outputs/workbuddy-workspaces/jobs/`（gitignore）。
+- **接线路线：** 绿色单品 PPT（`product_pptx_green`）与商品 full MP4（`product_video_full`）active；健康 MP4 / 课件3 登记但未激活。
+- **闸门：** draft 后 content 审批；视频另需 product_image 审批；render 前 probe env；失败保持 workspace 诊断、交付区为空。
+- **冒烟：** `p1-smoke-green-pptx-v3` / `p2-smoke-green-pptx` → `delivered`，取件含白名单文件；正文无金样残留。
+- **回归：** P1 10、P2 profiles 6、P0 既有套件此前通过。
+- **未做（进入 P2 余项/P3）：** clean-clone 依赖闭环；component/recipe 默认主路径；健康视频 self-serve；统一 G0–G4 CI。
+
 ## 私有生产仓 + 脱敏 Public 安装入口（2026-08-08 · 用户确认）
 
 > **已确认方向：** 完整生产仓库、授权资产包、金样、人声与业务模板全部进入 Private；Public 只保留无旧历史的安装入口。

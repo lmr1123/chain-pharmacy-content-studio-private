@@ -1,0 +1,92 @@
+{
+  "schema": "on-demand-packages-v1",
+  "version": "1.0.0",
+  "updated": "2026-08-09",
+  "purpose": "大金样、模型与重型依赖不随 Public 安装器分发；Private clone 内按需声明路径与恢复方式，避免 clean-clone 误报「已具备」",
+  "policy": {
+    "public_installer": "exact-allowlist only；不含本清单任何包",
+    "private_clone": "源码与轻量元数据随 Git；重型二进制/node_modules/模型按本清单 soft-repair 或授权包恢复",
+    "no_silent_network_install": true,
+    "no_paid_api_by_default": true
+  },
+  "packages": [
+    {
+      "id": "artifact-tool-node-modules",
+      "name_zh": "PPTX 导出 runtime（@oai/artifact-tool）",
+      "required_for": ["pptx_export", "product-pptx-component-v1", "product-pptx-green-v1"],
+      "paths": [
+        "production-library/engines/courseware-pptx-v1/node_modules/@oai/artifact-tool",
+        "production-library/engines/product-courseware-green-v1/node_modules/@oai/artifact-tool"
+      ],
+      "fallback_paths": [
+        "poc/courseware-export/work/node_modules/@oai/artifact-tool"
+      ],
+      "restore": [
+        "python3 scripts/workbuddy_bootstrap_for_business.py --profile pptx --skip-probe（soft-repair 本地 symlink）",
+        "或由 Private 授权安装器/Release 包下发 node_modules 快照"
+      ],
+      "ship_in_git": false,
+      "size_class": "medium"
+    },
+    {
+      "id": "courseware-pptx-component-engine",
+      "name_zh": "构件 + recipe PPT 引擎与页型库",
+      "required_for": ["product-pptx-component-v1"],
+      "paths": [
+        "production-library/engines/courseware-pptx-v1/export.mjs",
+        "production-library/engines/courseware-pptx-v1/components",
+        "production-library/page-types/product-training/recipes",
+        "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json",
+        "scripts/generate_courseware.py"
+      ],
+      "restore": ["Private clone 完整拉取 production-library 与 scripts"],
+      "ship_in_git": true,
+      "size_class": "small"
+    },
+    {
+      "id": "cw4-gold-assets",
+      "name_zh": "课件4 金样插画资产（密度参考）",
+      "required_for": ["component-pptx-visual-density", "gold-regression"],
+      "paths": [
+        "production-library/validation/courseware/product-courseware-4-faithful-replica-v1/assets"
+      ],
+      "restore": ["Private clone；Public 不含 validation 金样资产"],
+      "ship_in_git": true,
+      "size_class": "large",
+      "note_zh": "新主题无授权图时引擎用占位槽；金样资产仅提升插画密度与回归对照"
+    },
+    {
+      "id": "video-revideo-runtime-kit",
+      "name_zh": "视频 Revideo runtime kit",
+      "required_for": ["video_full", "product-mp4-full-v1"],
+      "paths": [
+        "production-library/engines/video-revideo-runtime-v1/kit"
+      ],
+      "fallback_paths": ["poc/gold-sample"],
+      "restore": [
+        "bootstrap soft-repair：kit → poc/gold-sample symlink",
+        "或授权 Release 下发完整 kit（含 node_modules）"
+      ],
+      "ship_in_git": "manifest-only",
+      "size_class": "large"
+    },
+    {
+      "id": "qwen-tts-venv",
+      "name_zh": "本机克隆旁白 TTS 环境",
+      "required_for": ["video_tts", "video_full"],
+      "paths": [".venv-qwen-tts"],
+      "restore": ["按 docs 本地创建 venv；不随 Git；禁止系统 TTS 冒充正式旁白"],
+      "ship_in_git": false,
+      "size_class": "large"
+    },
+    {
+      "id": "voice-reference-pharmacist",
+      "name_zh": "参考药师 voice pack",
+      "required_for": ["video_tts", "video_full"],
+      "paths": ["production-library/voices/reference-pharmacist-qwen-v1"],
+      "restore": ["Private 授权资产；Public 默认安装不含声纹"],
+      "ship_in_git": true,
+      "size_class": "medium"
+    }
+  ]
+}

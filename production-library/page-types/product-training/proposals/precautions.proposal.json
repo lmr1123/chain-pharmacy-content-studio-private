@@ -1,0 +1,73 @@
+{
+  "schema": "page-type-proposal/v1",
+  "page_type_id": "precautions",
+  "name_zh": "注意事项",
+  "family": "product-training",
+  "version": "2026-08-08",
+  "status": "settled",
+  "trigger": "需要左栏编号注意条目 + 右栏 2×2 插画；仅列表页或仅图标页无法同时满足培训讲解密度。",
+  "content_shape": {
+    "required_fields": ["items[string]"],
+    "optional_fields": ["illustrations[4]", "chapter"],
+    "signals": ["注意", "禁忌", "不适宜", "条目+插图槽"]
+  },
+  "slots": ["chapter", "items[string]", "illustrations[4]"],
+  "components": [
+    { "use": "chrome_bg" },
+    { "use": "chapter_title", "slot": "chapter" },
+    { "use": "icon_bullet", "slot": "items", "layout": "left numbered list" },
+    { "use": "audience_card", "slot": "illustrations", "layout": "right 2×2", "notes": "插画卡；缺图走 labeled 占位" }
+  ],
+  "layout": {
+    "max_per_page": 8,
+    "adapt_n": "left list + right 2×2 illos",
+    "empty_cards": "forbidden",
+    "notes": "插画系列 product-training-precautions；whitekey+check-alpha 必过"
+  },
+  "scene_type": "precautions",
+  "impl": "precautions",
+  "mapper_hints": ["注意", "禁忌", "不适宜"],
+  "gold_lineage": {
+    "sources": [
+      "课件4 列表+图槽语法",
+      "M5 component-library product-training-precautions"
+    ],
+    "reused_builders": [],
+    "reused_components": ["chrome_bg", "chapter_title", "icon_bullet", "audience_card"]
+  },
+  "sample_script_refs": [
+    {
+      "path": "production-library/validation/courseware/m3-candidate-pages/content-model.json",
+      "section": "C03_precautions",
+      "note": "M3 版式示意"
+    },
+    {
+      "path": "production-library/validation/courseware/fuler-maikenli-lycopene-v1/script.structured.json",
+      "section": "precautions",
+      "note": "M5；插画已 catalog 登记"
+    }
+  ],
+  "qa_dir": "production-library/validation/courseware/m3-candidate-pages/out/qa/",
+  "related_paths": {
+    "recipe": "production-library/page-types/product-training/recipes/precautions.json",
+    "builder": "production-library/engines/courseware-pptx-v1/scenes/builders.mjs#buildPrecautions",
+    "registry": "production-library/page-types/product-training/registry.json",
+    "content_model": "production-library/validation/courseware/m3-candidate-pages/content-model.json"
+  },
+  "signoff": {
+    "date": "2026-08-08",
+    "user_quote": "可以",
+    "checklist": {
+      "title_fit": true,
+      "readable_type": true,
+      "no_empty_cards": true,
+      "asset_alpha_ok": true,
+      "alignment_ok": true,
+      "copy_provenance": true,
+      "native_editable": true
+    },
+    "qa_report": "production-library/validation/courseware/m3-candidate-pages/out/qa/slide-3.png"
+  },
+  "rejection": null,
+  "notes": "L1 历史回填。M5 用户「没问题了」为 cream-red 成片再确认，页型骨架仍以 M3 签样为准。"
+}

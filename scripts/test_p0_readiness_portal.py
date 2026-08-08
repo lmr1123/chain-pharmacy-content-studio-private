@@ -82,11 +82,14 @@ class PortalContractTests(unittest.TestCase):
     def test_commands_match_the_requested_deliverable_and_keep_approval_gate(self) -> None:
         templates = {item["slug"]: item for item in load_catalog()}
 
-        ppt_cmd = build_business_command(templates["product-courseware-green-v1"])
+        ppt_cmd = build_business_command(templates["product-courseware-component-v1"])
         self.assertIn("内容初稿", ppt_cmd)
         self.assertIn("确认后", ppt_cmd)
         self.assertIn("PPTX", ppt_cmd)
         self.assertNotIn("完整 MP4", ppt_cmd)
+        # Green five-page shell retired from self-serve.
+        green_cmd = build_business_command(templates["product-courseware-green-v1"])
+        self.assertIn("仅查看金样", green_cmd)
 
         video_cmd = build_business_command(templates["product-video-faithful-v1"])
         self.assertIn("脚本和分镜", video_cmd)
@@ -139,7 +142,8 @@ class PortalContractTests(unittest.TestCase):
             runtime_capabilities={"pptx_export": True, "video_full": False},
         )
         self.assertIn("本机缺 video_full · 可先做草稿", blocked)
-        self.assertIn("本机环境通过 · 仍需内容/素材确认", blocked)
+        # Default PPT (component) is self-serve when local pptx is ready.
+        self.assertIn("可自助生成", blocked)
 
 
 if __name__ == "__main__":

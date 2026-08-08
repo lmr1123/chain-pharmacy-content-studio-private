@@ -1,0 +1,77 @@
+{
+  "template_id": "template.product-courseware-component-v1",
+  "template_type": "pptx-courseware-component",
+  "status": "production-default",
+  "style_pack_id": "style-pack.courseware-4-silk-yellow-red-v1",
+  "canonical_artifact": "构件化商品培训_默认主路径_签样参考.pptx",
+  "canonical_confirmed_by": "system-smoke",
+  "canonical_confirmed_at": "2026-08-09",
+  "engine": "production-library/engines/courseware-pptx-v1/export.mjs",
+  "generator": "scripts/generate_courseware.py",
+  "script_schema": "production-library/schemas/product-training-script.schema.json",
+  "page_types": "production-library/page-types/product-training/registry.json",
+  "recipes": "production-library/page-types/product-training/recipes",
+  "business_route": "product-pptx-component-v1",
+  "business_input": {
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
+    "example_source": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
+    "sync_script": "scripts/sync_settled_template_business_words.py"
+  },
+  "usage_workflow": "业务使用流程.md",
+  "usage_steps": [
+    "1-select-component-route",
+    "2-provide-script-or-notes",
+    "3-review-content-draft",
+    "4-approve-content",
+    "5-render-pptx"
+  ],
+  "notes": "P2.8 默认 PPT 主路径。金样构件 recipe 组合；绿色五页壳降为兼容。签样参考为新主题冒烟交付，非医学审核金样。",
+  "preview": {
+    "cover": "preview/cover.png",
+    "key_frames": [
+      "preview/key-01.png",
+      "preview/key-02.png",
+      "preview/key-03.png",
+      "preview/key-04.png",
+      "preview/key-05.png"
+    ],
+    "key_frame_labels_zh": [
+      "封面",
+      "痛点与数据",
+      "核心功效",
+      "产品特点",
+      "适宜人群"
+    ],
+    "gallery_title_zh": "构件化商品培训 · recipe 主路径",
+    "one_liner": "金样构件 recipe：封面/痛点/功效/特点/人群/联合/总结/注意 · 任意大纲进",
+    "name_zh": "构件化商品培训 PPT（默认主路径）",
+    "category_zh": "商品培训",
+    "outputs": [
+      "可编辑 PPTX"
+    ],
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": true,
+      "new_theme_pptx": true,
+      "new_theme_mp4": false,
+      "business_selfserve": true
+    },
+    "requirements": [
+      "内容初稿确认",
+      "pptx_export"
+    ],
+    "blockers": [],
+    "production_ready": true,
+    "status_label": "默认主路径 · 确认后生成可编辑 PPTX",
+    "online_url": null
+  },
+  "business_catalog": {
+    "name_zh": "构件化商品培训 PPT（默认主路径）",
+    "one_liner": "金样构件 recipe：封面/痛点/功效/特点/人群/联合/总结/注意 · 任意大纲进",
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx"
+  }
+}

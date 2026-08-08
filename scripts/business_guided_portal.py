@@ -95,6 +95,55 @@ def paragraphs_to_html_blocks(paragraphs: list[str]) -> str:
     return "\n".join(parts) if parts else '<p class="ex-note">暂无填写示例正文。</p>'
 
 
+def _load_active_routes_by_template() -> dict[str, dict]:
+    """Optional business-routes overlay; portal still works if routes file missing."""
+    routes_path = (
+        Path(__file__).resolve().parents[1]
+        / "production-library"
+        / "business-routes.json"
+    )
+    if not routes_path.is_file():
+        return {}
+    try:
+        doc = json.loads(routes_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    out: dict[str, dict] = {}
+    for route in doc.get("routes") or []:
+        if not route.get("active"):
+            continue
+        slug = route.get("template_slug")
+        if slug:
+            out[str(slug)] = route
+    return out
+
+
+def build_job_command(template: dict, route: dict | None = None) -> str | None:
+    """Agent-facing job CLI when a settled template is wired to business_job."""
+    slug = str(template.get("slug") or "")
+    route = route or _load_active_routes_by_template().get(slug)
+    if not route:
+        return None
+    route_id = route["route_id"]
+    subject = "商品名" if template.get("category") == "商品培训" else "病名或健康主题"
+    if route.get("gates", {}).get("product_image_approval"):
+        return (
+            f"python3 scripts/business_job.py new --route {route_id} "
+            f"--theme 【{subject}】 --notes 【要点】 "
+            f"--product-image 【授权包装图路径】 --auto-draft\n"
+            f"python3 scripts/business_job.py approve --job <任务ID> --gate content --by 【姓名】\n"
+            f"python3 scripts/business_job.py approve --job <任务ID> --gate product_image "
+            f"--by 【姓名】 --authorization-reference 【凭证】\n"
+            f"python3 scripts/business_job.py render --job <任务ID>"
+        )
+    return (
+        f"python3 scripts/business_job.py new --route {route_id} "
+        f"--theme 【{subject}】 --notes 【要点】 --auto-draft\n"
+        f"python3 scripts/business_job.py approve --job <任务ID> --gate content --by 【姓名】\n"
+        f"python3 scripts/business_job.py render --job <任务ID>"
+    )
+
+
 def build_business_command(template: dict) -> str:
     """Return an approval-first command matching the actual deliverable."""
     name = template["name_zh"]
@@ -104,6 +153,8 @@ def build_business_command(template: dict) -> str:
     can_pptx = bool(capabilities.get("new_theme_pptx"))
     can_mp4 = bool(capabilities.get("new_theme_mp4"))
     subject = "商品名" if category == "商品培训" else "病名或健康主题"
+    route = _load_active_routes_by_template().get(slug)
+    job_cli = build_job_command(template, route)
 
     if not can_pptx and not can_mp4:
         return (
@@ -111,33 +162,45 @@ def build_business_command(template: dict) -> str:
             "请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。"
         )
     if can_pptx and can_mp4:
-        return (
+        base = (
             f"我选【{name}】，需要【可编辑 PPTX / 完整 MP4，请保留我选择的一项】。\n"
             f"{subject}是【请填写】，审核要点是【要点1、要点2、要点3】。"
             "请先整理内容初稿和所需素材缺口供我确认；确认后再检查本机能力并生成正式成品。"
         )
-    if can_mp4:
+    elif can_mp4:
         if slug == "product-video-faithful-v1":
-            return (
+            base = (
                 f"我选【{name}】，商品名是【请填写】，并附上已获业务授权的商品包装图。\n"
                 "审核要点是【要点1、要点2、要点3】。请先整理完整脚本和分镜、列出素材与授权缺口供我确认；"
                 "确认后再检查本机能力并生成完整 MP4，不要跳过确认。"
             )
-        if slug == "health-video-reference-tech-v1":
-            return (
+        elif slug == "health-video-reference-tech-v1":
+            base = (
                 f"我选【{name}】，病名或健康主题是【请填写】，并提交已审核的 7 段内容要点。\n"
                 "请先整理完整脚本、分镜和主题画面复核包，缺少的医学内容只列缺口；"
                 "内容与全部画面确认后，再检查本机能力并生成完整 MP4。"
             )
-        return (
+        else:
+            base = (
+                f"我选【{name}】，{subject}是【请填写】，审核要点是【要点1、要点2、要点3】。\n"
+                "请先整理完整脚本和分镜、列出素材与授权缺口供我确认；"
+                "确认后再检查本机能力并生成完整 MP4，不要跳过确认。"
+            )
+    else:
+        base = (
             f"我选【{name}】，{subject}是【请填写】，审核要点是【要点1、要点2、要点3】。\n"
-            "请先整理完整脚本和分镜、列出素材与授权缺口供我确认；"
-            "确认后再检查本机能力并生成完整 MP4，不要跳过确认。"
+            "请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。"
         )
-    return (
-        f"我选【{name}】，{subject}是【请填写】，审核要点是【要点1、要点2、要点3】。\n"
-        "请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。"
-    )
+
+    if job_cli:
+        return (
+            base
+            + "\n\n【代理执行 · 统一任务】\n"
+            + job_cli
+            + "\n# 状态/取件：python3 scripts/business_job.py status --job <任务ID>"
+            + "\n# 打开取件：python3 scripts/business_job.py open --job <任务ID>"
+        )
+    return base
 
 
 RUNTIME_CAPABILITY_NAMES = {
@@ -195,6 +258,10 @@ def build_guided_portal_html(
         item["example_paragraphs"] = paras
         item["example_html"] = paragraphs_to_html_blocks(paras)
         item["selection_command"] = build_business_command(t)
+        item["job_command"] = build_job_command(t)
+        item["route_id"] = (_load_active_routes_by_template().get(t["slug"]) or {}).get(
+            "route_id"
+        )
         item["readiness_badge"] = readiness_badge(t, runtime_capabilities)
         enriched.append(item)
 
@@ -239,11 +306,12 @@ header h1 {{ font-size: 20px; font-weight: 800; margin-bottom: 6px; }}
 header .sub {{ font-size: 13px; color: var(--dim); max-width: 70ch; }}
 .how {{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   margin-top: 12px;
 }}
-@media (max-width: 720px) {{ .how {{ grid-template-columns: 1fr; }} }}
+@media (max-width: 900px) {{ .how {{ grid-template-columns: 1fr 1fr; }} }}
+@media (max-width: 520px) {{ .how {{ grid-template-columns: 1fr; }} }}
 .how div {{
   background: var(--accent-soft);
   border-radius: 10px;
@@ -477,19 +545,27 @@ footer {{
 <div class="shell">
   <header>
     <h1>内部培训课件 · 选模板</h1>
-    <p class="sub">商品 / 疾病内部培训课件与视频。页面只做两件事：选模板、看对应内容示例。内容在 WorkBuddy 对话里说即可。</p>
+    <p class="sub">五步完成一单：选做什么 → 交内容 → 审初稿 → 自动生成质检 → 一个地方取件。默认 PPT 为构件 recipe（product-pptx-component-v1）；绿色五页壳已下线；商品培训 MP4 已接入统一任务（business_job）。</p>
     <div class="how">
       <div>
-        <b>① 看模板</b>
-        按交付物查看模板，点开关键页预览与真实能力，再点「选用」
+        <b>① 选我要做什么</b>
+        看受众与成品（PPT / MP4），点卡片看关键页与真实能力
       </div>
       <div>
-        <b>② 输入培训内容</b>
-        回 WorkBuddy 说主题+审核要点；系统先给内容初稿和素材缺口
+        <b>② 交已有内容</b>
+        回 WorkBuddy 说主题与要点；资料可残缺
       </div>
       <div>
-        <b>③ 下载与修改</b>
-        确认后才生成；质检通过的 PPTX / MP4 在同一交付位置取件
+        <b>③ 审初稿</b>
+        系统先给内容初稿和缺口；未确认不生成正式成品
+      </div>
+      <div>
+        <b>④ 生成与质检</b>
+        确认后由统一任务生成；失败不进交付区
+      </div>
+      <div>
+        <b>⑤ 一个地方取件</b>
+        质检通过的终稿在业务包「05_交付物放这里」
       </div>
     </div>
   </header>
@@ -506,7 +582,7 @@ footer {{
       </div>
       <div class="keys" id="sel-keys"></div>
       <div class="actions">
-        <button type="button" class="btn ok" id="btn-use">选用此模板 · 复制口令</button>
+        <button type="button" class="btn ok" id="btn-use">选用 · 复制任务口令</button>
         <button type="button" class="btn" id="btn-copy-ex">复制内容示例</button>
       </div>
       <div class="cmdbox" id="cmdbox"></div>
@@ -624,7 +700,9 @@ document.getElementById("btn-use").addEventListener("click", async () => {{
   try {{
     await navigator.clipboard.writeText(text);
     document.getElementById("toast").textContent =
-      "已复制口令。回到 WorkBuddy 粘贴，把【商品名或病名】和要点改成你的内容即可。";
+      selected.route_id
+        ? "已复制任务口令。回到 WorkBuddy 粘贴；代理会用 business_job 创建任务，先审初稿再生成。"
+        : "已复制口令。回到 WorkBuddy 粘贴，把【商品名或病名】和要点改成你的内容即可。";
   }} catch (e) {{
     document.getElementById("toast").textContent = "请手动选中下方口令复制。";
   }}

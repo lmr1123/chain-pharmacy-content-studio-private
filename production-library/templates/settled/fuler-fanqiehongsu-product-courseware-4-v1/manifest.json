@@ -121,11 +121,12 @@
       "courseware4 换主题 adapter"
     ],
     "blockers": [
-      "课件4换主题 CLI 尚未接线；当前仅提供金样预览"
+      "课件4整片导出器换主题未接线；新主题请走 product-pptx-component-v1（构件 recipe 主路径）"
     ],
     "production_ready": false,
     "status_label": "仅金样预览 · 换主题入口待接线",
-    "online_url": null
+    "online_url": null,
+    "status_note": "金样 v2 可查看。换主题正式生产请用业务路线 product-pptx-component-v1（courseware-pptx-v1 引擎），勿走本条目。"
   },
   "notes": [
     "本目录为用户确认的福尔番茄红素软胶囊 · 商品培训课件4 金样归档（视频 + 可编辑 PPTX）。",
