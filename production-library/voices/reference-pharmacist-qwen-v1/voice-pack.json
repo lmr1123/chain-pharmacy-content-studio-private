@@ -2,13 +2,23 @@
   "id": "voice.reference-pharmacist-qwen-v1",
   "name_zh": "参考药师克隆音色 v1",
   "status": "user-approved",
-  "usage": "仅用于公司内部已授权健康科普/商品培训视频；克隆生成新主题旁白",
+  "usage": "仅用于公司内部已授权健康科普/商品培训视频；克隆生成新主题旁白。亦为「真人数字人侧讲模式」全课唯一默认声源（关键页口型轨 + 非关键页旁白必须同源）。",
+  "modes": {
+    "digital_human_presenter_scheme_C": {
+      "required": true,
+      "rule_zh": "数字人页与非数字人页禁止换引擎；禁止 edge-tts/系统音混用",
+      "product_doc": "docs/digital-human-presenter-mode.md",
+      "detail_doc": "production-library/validation/digital-human-ppt-presenter-poc-v1/PRODUCT-MODE-presenter-scheme-C.md",
+      "signed": "2026-08-08"
+    }
+  },
   "tags": [
     "中文女声",
     "药师",
     "克隆音色",
     "Qwen3-TTS",
-    "视频金样"
+    "视频金样",
+    "数字人侧讲默认声源"
   ],
   "engine": {
     "id": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-bf16",
@@ -49,6 +59,8 @@
     "整段语义块一次 TTS 连读，禁止逐 cue 硬拼",
     "DEFAULT_TEMPO≈1.16，MAX_TEMPO≤1.18；贴不上窗则延时间轴",
     "新主题验收：必须用新文案生成至少一段，证明不是复用原轨",
-    "禁止默认系统机器人音色"
+    "禁止默认系统机器人音色",
+    "真人数字人侧讲：全课同一 pack；edge-tts 与克隆混用会导致音色语速割裂（2026-08-08 已踩坑）"
   ]
 }
+

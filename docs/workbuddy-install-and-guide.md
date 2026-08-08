@@ -50,11 +50,18 @@ PPT 不强制；商品/疾病科普视频 full 重渲必须过。
 第 2 步 · 输入培训内容（PPT 或视频都行）
 例如：
 · PPT：「整理可可康灵芝胶囊…你先整理再生成 ppt」
+· 商品培训课件3：「按课件3模板，整理××商品：卖点…、人群…、联合用药2组…，生成可编辑课件」
 · 疾病科普视频：「我要用疾病科普视频，主题是感冒。症状…病因…调理…用药注意…请生成培训视频」
 · 商品培训视频：「我要用商品培训视频，商品是××。功效/特点/人群/联合用药…请生成培训视频」
+· 数字人侧讲：「这个课件用数字人模式。请先整理旁白脚本和数字人页清单给我确认，确认前不要生成数字人」
 
 第 3 步 · 下载与修改
 我把成片路径发给你；要改就说「第二页…改成…」或「把症状段改成…再出一版」。
+
+【若选用数字人模式 · 多一道确认】
+我会先给你「全课旁白脚本 + 哪些页有数字人」。
+你确认页码和文案、并说「可以生成」后，我才生成数字人（确认前不产生数字人费用）。
+说明：业务包 08_数字人侧讲模式/README.md
 
 现在可以从第 1 步选模板，或直接发第 2 步内容给我。
 ```
@@ -65,9 +72,19 @@ PPT 不强制；商品/疾病科普视频 full 重渲必须过。
 
 | 步 | 业务说/做 | 你做 |
 |----|-----------|------|
-| 1 | 看引导页 / 说课型名 | 打开 index.html；锁定 settled 模板 |
-| 2 | 发商品/病名 + 要点 | 整理 sections → **本机 full 出片**（PPT generator 或 `generate_business_video.py`） |
-| 3 | 下载或改稿指令 | 给成片路径；按指令改内容后重出 |
+| 0 | （安装后） | `python3 scripts/probe_production_env.py`；记 TTS/渲染能力 |
+| 1 | 看引导页 / 说课型名 | 打开 index.html；锁定 settled 模板；读 manifest.voice_id |
+| 2 | 发商品/病名 + 要点 | 整理内容 → **本机出片**（PPT generator / `generate_business_courseware.py` / `generate_business_video.py`） |
+| 3 | 下载或改稿指令 | 给成片路径 + gap；按指令改后重出 |
+
+**课件3（优先 PPTX）：**
+
+```bash
+python3 scripts/probe_production_env.py
+python3 scripts/generate_business_courseware.py \
+  --template courseware3 --theme <theme目录> --skip-tts
+# 有 TTS 再去掉 --skip-tts；无环境脚本会诚实降级
+```
 
 **视频（业务自助核心）：**
 

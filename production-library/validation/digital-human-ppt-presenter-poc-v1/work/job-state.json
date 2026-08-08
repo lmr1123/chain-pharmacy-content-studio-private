@@ -1,0 +1,213 @@
+{
+  "poc_id": "digital-human-ppt-presenter-poc-v1",
+  "product": "ppt-side-presenter-scheme-C",
+  "status": "digital_human_presenter_mode_signed_global",
+  "handover_for": "codex",
+  "heygen_channel": "api_only",
+  "progress_summary_zh": "真人数字人侧讲模式已签样入库：双布局+穿插+v6.2+全课Qwen克隆声一致。其他课件二次调整见 docs/digital-human-presenter-mode.md",
+  "updated": "2026-08-08",
+  "digital_human_policy": {
+    "scheme": "C",
+    "name_zh": "仅关键页动态数字人；非关键页全宽PPT无人",
+    "target_dynamic_minutes": "1-3",
+    "reject_default": "full_10min_talking_head",
+    "cost_note_usd": "sample~12s $0.2-0.6; scheme C 1-3min $1-9; full 10min $10-30 not default",
+    "non_key_pages": "full_width_no_person_with_same_voice_narration",
+    "forbid_static_person_placeholder": true,
+    "layout_from_ppt_not_post_stretch": true,
+    "reusable_for_other_courseware": true,
+    "product_doc": "PRODUCT-MODE-presenter-scheme-C.md",
+    "voice_pack": "reference-pharmacist-qwen-v1",
+    "voice_unity_global": true
+  },
+  "done": [
+    "layout_fullppt_content_narrow",
+    "generator_presenter_flag",
+    "pptx_presenter_v1_18_pages",
+    "qa_png_18_pages",
+    "script_page03",
+    "portrait_standing_ip",
+    "portrait_rembg_cutout",
+    "composite_page03_static",
+    "narration_15s_local_qwen",
+    "scheme_C_locked",
+    "heygen_web_howto_written",
+    "narration_copied_to_Downloads",
+    "web_path_abandoned_due_to_paid_download",
+    "api_mode_selected",
+    "api_script_ready",
+    "api_sample_15s_generated",
+    "motion_prompt_hands_down_occasional_raise_single_person",
+    "business_chin_portrait_sample_generated",
+    "two_versions_for_business_compare",
+    "business_standing_portrait_sample_generated",
+    "ppt_presenter_abc_composites",
+    "ppt_presenter_abc_v2_layout",
+    "ppt_presenter_abc_v3_exposure_c_fix",
+    "ppt_presenter_abc_v4_highlight_fix",
+    "ppt_presenter_abc_v5_strong_underexpose",
+    "ppt_presenter_abc_v6_rembg_crush",
+    "ppt_presenter_abc_v6_2_original_exposure_fixed_scale",
+    "ppt_presenter_v6_2_user_signed",
+    "lessons_composite_v6_2_recorded",
+    "scheme_c_reuse_single_dh_film",
+    "product_mode_dual_layout_locked",
+    "scheme_c_film_no_static_person",
+    "lessons_2026_08_08_presenter_mode",
+    "key_page_interleave_rules",
+    "scheme_c_interleave_review_film",
+    "non_dh_narration_p04_p10",
+    "voice_unity_qwen_clone_signed",
+    "digital_human_mode_global_docs",
+    "voice_pack_bound_to_dh_mode"
+  ],
+  "todo": [
+    "user_signoff_sample_15s_lip_sync_and_gestures",
+    "confirm_key_pages_list",
+    "scheme_C_concat_poc",
+    "business_compare_two_portrait_samples",
+    "user_signoff_chosen_portrait"
+  ],
+  "done_extra_after_sample": [
+    "user_provide_HEYGEN_API_KEY",
+    "run_scripts/heygen_15s_sample.py",
+    "save_outputs/sample-15s.mp4",
+    "motion_prompt_hands_down_occasional_raise_single_person"
+  ],
+  "inputs": {
+    "portrait": "inputs/portrait-pharmacist-standing-v1.jpg",
+    "portrait_cutout": "inputs/portrait-pharmacist-standing-v1-cutout.png",
+    "narration_mp3": "inputs/narration-15s.mp3",
+    "narration_wav": "inputs/narration-15s.wav",
+    "narration_duration_s": 11.99,
+    "script": "inputs/script.md",
+    "slide_still_page03": "outputs/enterprise-page03-presenter-slide-only.png"
+  },
+  "heygen": {
+    "path": "api",
+    "web_download": "abandoned_default_due_to_paywall",
+    "status": "sample_ready",
+    "api_key_on_machine": false,
+    "script": "scripts/heygen_15s_sample.py",
+    "env": [
+      "HEYGEN_API_KEY",
+      "HEYGEN_API_TOKEN",
+      "HEYGEN_KEY"
+    ],
+    "sample_path_expected": "outputs/sample-15s.mp4",
+    "sample_confirmed": false,
+    "rule": "audio-driven lip sync only; never HeyGen script+voice overwrite",
+    "image_asset_id": "3715b94d8f9a475fa39a7ec6e85301fb",
+    "image_url": "https://resource2.heygen.ai/image/3715b94d8f9a475fa39a7ec6e85301fb/original.jpg",
+    "motion_prompt": "Single person only — one professional female trainer, no second person, no extra people, no duplicate limbs. Do NOT keep the chin-rest or arm-crossed photo pose frozen. Lower both hands to a relaxed natural position at the sides for most of the clip, like a calm standing presenter. Occasionally raise one hand slightly for emphasis while speaking, like a real corporate trainer giving a short pharmacy training talk — subtle, natural, infrequent. Soft natural head nods and small upper-body micro-movements only. No exaggerated waving, no continuous gesturing, no pointing repeatedly, no walking, no props, no hand on chin.",
+    "expressiveness": "medium",
+    "updated": "2026-08-07T17:08:58",
+    "audio_asset_id": "fa7a5e192c1c4d858fab30ff201f7edd",
+    "audio_url": "https://resource2.heygen.ai/audio/fa7a5e192c1c4d858fab30ff201f7edd/original.mp3",
+    "sample_video_id": "4355691857ff421787153d5cc3fa63ba",
+    "sample_download_url_redacted": true,
+    "sample_path": "outputs/sample-15s.mp4",
+    "variants": {
+      "business_chin_v1": {
+        "image_asset_id": "8b0d43ac3e964954abed9150c18e2fc5",
+        "image_url": "https://resource2.heygen.ai/image/8b0d43ac3e964954abed9150c18e2fc5/original.jpg",
+        "status": "sample_ready",
+        "motion_prompt": "Single person only — one professional female trainer, no second person, no extra people, no duplicate limbs. Do NOT keep the chin-rest or arm-crossed photo pose frozen. Lower both hands to a relaxed natural position at the sides for most of the clip, like a calm standing presenter. Occasionally raise one hand slightly for emphasis while speaking, like a real corporate trainer giving a short pharmacy training talk — subtle, natural, infrequent. Soft natural head nods and small upper-body micro-movements only. No exaggerated waving, no continuous gesturing, no pointing repeatedly, no walking, no props, no hand on chin.",
+        "expressiveness": "medium",
+        "updated": "2026-08-07T17:04:31",
+        "image": "inputs/portrait-business-chin-v1-1024.jpg",
+        "sample_path": "outputs/sample-15s-business-chin-v1.mp4",
+        "audio_asset_id": "6b32981f08064d47b5e5407e13d6691d",
+        "audio_url": "https://resource2.heygen.ai/audio/6b32981f08064d47b5e5407e13d6691d/original.mp3",
+        "sample_video_id": "febfba15266f4b06adc673556ff1ab14",
+        "sample_download_url_redacted": true,
+        "sample_confirmed": false
+      },
+      "business_standing_v1": {
+        "image_asset_id": "3715b94d8f9a475fa39a7ec6e85301fb",
+        "image_url": "https://resource2.heygen.ai/image/3715b94d8f9a475fa39a7ec6e85301fb/original.jpg",
+        "status": "sample_ready",
+        "motion_prompt": "Single person only — one professional female trainer, no second person, no extra people, no duplicate limbs. Do NOT keep the chin-rest or arm-crossed photo pose frozen. Lower both hands to a relaxed natural position at the sides for most of the clip, like a calm standing presenter. Occasionally raise one hand slightly for emphasis while speaking, like a real corporate trainer giving a short pharmacy training talk — subtle, natural, infrequent. Soft natural head nods and small upper-body micro-movements only. No exaggerated waving, no continuous gesturing, no pointing repeatedly, no walking, no props, no hand on chin.",
+        "expressiveness": "medium",
+        "updated": "2026-08-07T17:08:58",
+        "image": "inputs/portrait-business-standing-v1-1024.jpg",
+        "sample_path": "outputs/sample-15s-business-standing-v1.mp4",
+        "audio_asset_id": "fa7a5e192c1c4d858fab30ff201f7edd",
+        "audio_url": "https://resource2.heygen.ai/audio/fa7a5e192c1c4d858fab30ff201f7edd/original.mp3",
+        "sample_video_id": "4355691857ff421787153d5cc3fa63ba",
+        "sample_download_url_redacted": true,
+        "sample_confirmed": false
+      }
+    },
+    "latest_tag": "business_standing_v1",
+    "compare_note_zh": "pharmacist_standing_v1 vs business_chin_v1，同旁白同motion_prompt策略"
+  },
+  "outputs": {
+    "pptx_presenter": "production-library/templates/settled/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_讲解安全版_v1.pptx",
+    "page03_slide_only": "outputs/enterprise-page03-presenter-slide-only.png",
+    "page03_composite_static": "outputs/enterprise-page03-presenter-composite.png",
+    "sample_15s": "outputs/sample-15s.mp4",
+    "sample_15s_frames_qa": [
+      "outputs/sample-15s-frame-02s.jpg",
+      "outputs/sample-15s-frame-mid.jpg",
+      "outputs/sample-15s-frame-09s.jpg"
+    ],
+    "sample_15s_pharmacist_standing": "outputs/sample-15s.mp4",
+    "sample_15s_business_chin_v1": "outputs/sample-15s-business-chin-v1.mp4",
+    "sample_15s_business_standing_v1": "outputs/sample-15s-business-standing-v1.mp4",
+    "ppt_presenter_samples": {
+      "A": "outputs/ppt-presenter-15s-A-pharmacist-standing.mp4",
+      "B": "outputs/ppt-presenter-15s-B-business-chin.mp4",
+      "C": "outputs/ppt-presenter-15s-C-business-standing.mp4"
+    },
+    "ppt_presenter_layout": {
+      "version": "v6.2-rembg-original-exposure-fixed-scale",
+      "note_zh": "rembg抠像；保留原片曝光；首帧标定固定缩放防抖；硬alpha去白边"
+    },
+    "scheme_c_reuse_film": "outputs/scheme-c-reuse-A-film.mp4",
+    "scheme_c_reuse_plan": "outputs/scheme-c-reuse-A-plan.json",
+    "scheme_c_interleave_review": "outputs/scheme-c-interleave-review.mp4",
+    "key_pages": "work/key_pages.json"
+  },
+  "gates": {
+    "scheme_C_only": true,
+    "api_not_web_download": true,
+    "sample_15s_before_more_pages": true,
+    "no_heygen_tts_overwrite": true,
+    "no_api_key_in_git": true,
+    "no_blind_retry_billing": true,
+    "not_settled_until_signoff": true
+  },
+  "next_agent_instructions_zh": [
+    "等业务在 A/B/C PPT侧讲视频（v5强压曝光）中选型",
+    "选定后再推进方案C关键页"
+  ],
+  "composite_pipeline": {
+    "version": "v6.2",
+    "script": "scripts/composite_with_rembg.py",
+    "lessons": "LESSONS-composite-v6.2.md",
+    "user_signed": true,
+    "signed_date": "2026-08-07",
+    "rules": [
+      "rembg_only_no_colorkey_main",
+      "keep_original_heygen_rgb_no_crush",
+      "hard_alpha_against_light_ppt",
+      "fixed_scale_and_paste_from_frame1",
+      "heygen_api_only"
+    ]
+  },
+  "mode": {
+    "id": "digital-human-presenter-scheme-C",
+    "signed": true,
+    "signed_date": "2026-08-08",
+    "product_doc": "PRODUCT-MODE-presenter-scheme-C.md",
+    "global_entry": "docs/digital-human-presenter-mode.md",
+    "voice_pack": "production-library/voices/reference-pharmacist-qwen-v1",
+    "voice_unity_required": true,
+    "forbid_edge_tts_mix": true,
+    "composite": "v6.2",
+    "key_pages_config": "work/key_pages.json",
+    "reuse_for_other_courseware": true,
+    "secondary_adjust_sop": "PRODUCT-MODE §4"
+  }
+}

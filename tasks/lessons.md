@@ -1,4 +1,63 @@
+
+## 2026-08-07（拷贝金样 ≠ 做事；要大纲驱动的生成）
+
+- 用户纠正：把 settled 课件4 **直接复用/改名** 当交付 = **完全没做事**。
+- 金样 = 质量锚 + 资产/布局参考，**不是** `cp` 终点。
+- 真正缺口：**用户大纲 → 可复现流水线 → 图文并茂新 PPTX** 仍未打通。
+- 完整意图交接：`docs/handover-user-intent-2026-08-07.md`（换模型先读）。
+
+## 2026-08-07（图文交付 ≠ 色块骨架）
+
+- `assemble` v2 色块字卡 = AI 直出级，不可当培训交付。
+- 观感须达课件4 插画密度；结构对了不够。
+- `assemble_product_training_pptx.py` 仅结构实验通道。
+
+## 2026-08-07（架构执行 ≠ 固定壳填槽）
+
+- 用户纠正：把麦金利塞进金银花露绿系 5 页槽 **不是** 灵活主题方案。
+- 页序可内容驱动；**观感必须挂已签样视觉系统**（课件4 插画线），不能只做 token 色块。
+- 反例须归档：`archive-shell-fill-v1/`、`archive-skeleton-v2/`。
+
+
+## 2026-08-07（康爱森番茄红素 → 成分科普金样）
+
+- 文件名含品牌，正文是**成分科普**不是单品货架课；勿与福尔课件4 商品培训壳混用。
+- **用户纠正：框架级重建 ≠ 金样。** 字体（Noto Sans SC）、背景图、SVG 图标、outerShdw、自由曲线封面必须 100% 保留 → **金样 PPTX = 原片归档**，不是 python 重画。
+- 抽象 page_type 只服务扩展/Remotion 结构；**不得**把 `archive-framework-v1` 当签样对象。
+- 功效剂量数字一律 `pending-medical-review`，不自动升 content_lock。
+
+
 # Lessons
+
+## 2026-08-07（PPT→动画讲解线：探索记档，后续再迭代）
+
+### 用户意图演进
+
+- 金样段 recipe 扩主题成本高 → 想要「元提示词无限扩」→ 澄清后仍要框架。
+- 最终选定 **并行线**：PPT 定稿（可扩展、可审）→ 有质感动画讲解片（非单调淡入）。
+- 示例必须：**有主题（感冒）+ 图文 + 旁白**，框架跟风热健康视频，不是无主题纯字短样。
+
+### 已验证
+
+- 感冒：主题包 → PPTX + 克隆 TTS → Revideo 图文动画 MP4（~84s）。
+- 权威记档：`docs/ppt-animated-explain-line.md` §0。
+
+### 工程坑
+
+- Revideo `outDir` 会按「outDir 父级/public」找音频；`out/public → ../public` 要保留。
+- 本机 ffmpeg/fluent **无 lavfi** → 用整轨 `full-timeline.wav`，勿依赖 renderer 静音。
+
+### 续作入口
+
+- 清单在方案 §0.5；todo 顶部「PPT 动画讲解线 · 探索暂停待续」。
+
+### 2026-08-07 补充反馈
+
+- 方向值得探索，但 **POC PPT/片信息量太少**。
+- 下一刀优先 **加厚内容密度**（可培训要点写满），不是先炫动效。
+- 参照：风热金样屏显信息量 + `ganmao-cold-v1/script.md` 完整旁白结构。
+
+---
 
 ## 2026-08-03 晚（Koboyo 图标：按需源头、不囤库不进 Git）
 
@@ -831,3 +890,113 @@ pptxgenjs 3.12 会**原地改写**传入的 `shadow` 选项对象：blur/offset 
 
 - revideo visuals 成片内嵌静音 AAC 轨；merge 旁白时 ffmpeg 默认流选择在声道数平局时取**文件序靠前**者 → 静音轨赢过旁白轨，loudnorm 把静音归一成 -inf LUFS。「audio merged (loudnorm -16 LUFS)」日志打的是目标值不是实测——阶段3 的「-16LUFS」从未被测量验证。
 - 修法：merge 加 `-map 0:v:0 -map 1:a:0`；assertFullFilm 加响度硬门禁（loudnorm 一遍测 Input Integrated，-16±1.5 外拒收）。教训：**容器参数（时长/分辨率/黑帧）查得出结构缺陷，查不出内容缺陷——响度/语义级 QA 必须实测**，凡「目标值打印」不等于「实测通过」。
+
+## 2026-08-07（PPT 侧讲数字人合成 · 曝光与防抖 · v6.2 签样）
+
+路径：`production-library/validation/digital-human-ppt-presenter-poc-v1/`  
+脚本：`scripts/composite_with_rembg.py`（**现行标准**）  
+状态：用户确认 v6.2「可以了」→ 曝光与缩放方案锁定。
+
+### 解决方案（必须遵守）
+
+1. **抠像**：`rembg` u2net，**禁止** ffmpeg `colorkey` 作为主路径（白大褂/浅肤会被抠穿或留半透明白边）。
+2. **曝光**：**保留 HeyGen 原片 RGB**，不做 `crush_exposure` / 强 curves / `colorlevels rimax`。
+   - 只做 rembg + **硬 alpha**（半透明边 → 0 或 255），防止半透明白边叠浅蓝 PPT 二次发白。
+   - 业务说「过白」时：优先查是否半透明叠色 / 错误 grade，**不要默认整脸 ×0.48 压黑**。
+3. **缩放与位置（防抖）**：
+   - **首帧**标定一次 `scale` + `paste_x/paste_y`（按 content bbox 定尺寸与锚点）。
+   - **整段**对 rembg 输出**整帧**用同一 scale、同一原点粘贴。
+   - **禁止**每帧按 content bbox 高度重算 `scale = target_h / h`（举手 bbox 变高 → 人突然变小/变大）。
+4. **布局**：内容栏收窄 + 右侧人槽（`PERSON_LEFT≈1280`）；A/B 布局业务认可；C 半身另参。
+5. **渠道**：HeyGen **仅 API**（网页下载付费路径已弃）。
+
+### 错误路径（勿回退）
+
+| 版本 | 做法 | 结果 |
+|------|------|------|
+| colorkey | 按白/浅灰抠 | 白大褂破洞、肤色边缘糊 |
+| colorlevels rimax&lt;1 | 以为压高光 | 实际拉爆高光更白 |
+| v5 curves 强压 | ffmpeg grade | 仍偏白或发灰 |
+| v6.1 crush ×0.48 + 硬 clip 148 + 二次压肤 | 消白光 | **太黑**，业务拒 |
+| 每帧 crop+按 bbox 高度缩放 | place_person | **一大一小、位移大** |
+
+### 教训（可复用到任意「动图抠像叠 PPT」）
+
+- **「脸上白光」≠ 一定要压曝光**：半透明 alpha × 浅底 ≈ 二次加白；先硬 alpha / 干净抠像。
+- **曝光旋钮与稳定旋钮分开**：亮度用可选极轻全局系数；大小/位置用固定 scale+锚点，二者不要绑在一起。
+- **标定一次、整段锁定**：scale/paste 与「内容 bbox 几何」解耦；content bbox 只用于首帧定尺，不当每帧重缩放输入。
+- **过调后再回调**：从过白一路压到过黑，成本高；中间态应保留「原片」分支可随时切换。
+- **用户签样句**：「可以了」= v6.2 方案写进 lessons，后续多页方案 C 复用同一合成逻辑，勿重开曝光实验除非明确要求。
+
+### 重跑命令
+
+```bash
+cd production-library/validation/digital-human-ppt-presenter-poc-v1
+.venv-rembg/bin/python scripts/composite_with_rembg.py --all --fps 20
+# → outputs/ppt-presenter-15s-{A,B,C}-*.mp4
+```
+
+### 未决（与本教训无关）
+
+- 业务最终选 A / B / C 人像哪条做方案 C 多页。
+- 关键页列表 + 方案 C 拼接 POC。
+
+## 2026-08-07（方案 C 业务审片 · 先复用数字人）
+
+- 用户意图：方案 C 整体效果给业务看，**先不要多生成 HeyGen 数字人**，复用已有样片。
+- 做法：`scripts/scheme_c_reuse_dh_film.py`
+  - 关键页（默认 p03）= 复用 v6.2 侧讲动态 mp4 + 原旁白
+  - 其余内容页 = QA 静帧 + 药师 cutout 短 hold
+  - 封面/目录/尾页 = 全幅不叠人
+  - **HeyGen 调用次数 = 0**
+- 默认 variant **A 药师**（与静帧 cutout 同 IP）；B/C 仅当业务已选定商务像时再 `--variant B|C`。
+- 产出：`outputs/scheme-c-reuse-A-film.mp4`（~53s）+ plan.json。
+- 明确告知业务：非关键页暂无分页旁白，确认节奏后再补旁白/按需数字人。
+
+## 2026-08-08（侧讲模式产品化 · 双布局 · 禁静帧站人）
+
+用户锁定（可复用到**其他课件**）：
+
+1. **转化模式**：课件宽度收窄 + 数字人在侧讲解；后续课同模式转换。
+2. **方案 C**：仅关键页动态数字人。
+3. **非关键页**：用**全宽 PPT 放大内容**，**不要**静帧数字人站旁边（很怪）。
+4. **布局从 PPT 比例开始**（generator 全宽 vs `--presenter`），再叠人；**禁止**后期强行拉升/扭曲画面。
+5. 合成叠人仍守 **v6.2**（原片曝光 + 固定 scale + rembg）。
+
+反例（已废）：
+- 讲解安全版空右栏 + 静帧 cutout 假站人
+- 全宽页事后 scale 成侧讲构图
+
+事实源：`validation/digital-human-ppt-presenter-poc-v1/PRODUCT-MODE-presenter-scheme-C.md`
+脚本：`scheme_c_reuse_dh_film.py`（非关键页读全宽金样 slides）
+
+## 2026-08-08（关键页穿插 + 非关键页也要旁白）
+
+- 用户纠正：不能只有「第一内容页」有数字人；要像真人培训 **头-腰-尾穿插出镜**。
+- 非关键页也要旁白（全宽课件 + 声），不是哑巴翻页；可先 1–2 页给业务验收。
+- 规则文档：`KEY-PAGE-INTERLEAVE-RULES.md` + `work/key_pages.json`。
+- 本课默认关键页：**3（概览）/ 9（用药）/ 15（关怀）**；间距≥2 页；不选壳页。
+- 审片：`scheme-c-interleave-review.mp4`（3 关键出镜 + p04/p10 全宽旁白）。
+
+## 2026-08-08（数字人与非关键页旁白必须同声源）
+
+- 问题：关键页 HeyGen 用 Qwen 克隆药师声，非关键页曾用 edge-tts 晓晓 → **音色/语速差巨大**。
+- 规则：**全课旁白同一 voice pack**（`production-library/voices/reference-pharmacist-qwen-v1` + Qwen3-TTS），禁止 edge-tts/系统音默认混用。
+- 响度：统一 loudnorm ≈ -16 LUFS；语速跟 voice-pack pace（tempo≈1.12–1.16）。
+- 已重出 p04/p10 克隆旁白并重建 `scheme-c-interleave-review.mp4`。
+
+## 2026-08-08（数字人模式入库 · 后续课件二次调整）
+
+- 用户确认声音一致后，**整套模式入库**为全局标准。
+- 模式 ID：`digital-human-presenter-scheme-C`
+- 入口：`docs/digital-human-presenter-mode.md`
+- 总规：`…/digital-human-ppt-presenter-poc-v1/PRODUCT-MODE-presenter-scheme-C.md`（含 §4 二次调整 SOP）
+- 声源绑死：`voices/reference-pharmacist-qwen-v1`（voice-pack.json 已写 modes 绑定）
+- 触发语：用户说某课件「用真人数字人/侧讲模式」→ 按 SOP 做二次调整，不另起规则。
+
+## 2026-08-08（数字人模式进业务手册 + 生成前复核闸门）
+
+- 业务包新增 `08_数字人侧讲模式/`：README、口令卡、业务复核包模板、代理执行清单。
+- 闸门：先交**最终脚本 + 数字人页清单**给业务确认 → 才允许 HeyGen。
+- 已写入：WorkBuddy 系统提示 / install 开场白 / business-ready-use-today / PRODUCT-MODE §4。
+- 用户要求同步 **git push**，便于业务 pull 后选「数字人模式」。

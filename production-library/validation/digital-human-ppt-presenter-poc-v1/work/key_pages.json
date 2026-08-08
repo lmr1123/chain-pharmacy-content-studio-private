@@ -1,0 +1,69 @@
+{
+  "course": "急性上呼吸道感染_疾病健康知识培训",
+  "total_pages": 18,
+  "scheme": "C",
+  "rules_doc": "KEY-PAGE-INTERLEAVE-RULES.md",
+  "pattern": "head-waist-tail",
+  "key_count": 3,
+  "key_pages": [
+    {
+      "page": 3,
+      "role": "open_knowledge",
+      "section": "疾病概览",
+      "layout": "presenter_narrow",
+      "person": "dynamic_dh",
+      "narration": "required",
+      "reason_zh": "目录后首个核心知识节，建立药师IP与听课状态"
+    },
+    {
+      "page": 9,
+      "role": "mid_decision",
+      "section": "治疗用药",
+      "layout": "presenter_narrow",
+      "person": "dynamic_dh",
+      "narration": "required",
+      "reason_zh": "中段用药决策高峰，像真人在关键处强调"
+    },
+    {
+      "page": 15,
+      "role": "close_care",
+      "section": "专业关怀",
+      "layout": "presenter_narrow",
+      "person": "dynamic_dh",
+      "narration": "required",
+      "reason_zh": "收尾关怀与行动建议，形成记忆点"
+    }
+  ],
+  "never_key": [
+    1,
+    2,
+    18
+  ],
+  "min_gap_between_keys": 2,
+  "non_key_policy": {
+    "layout": "full_width_gold",
+    "person": "none",
+    "narration": "required"
+  },
+  "business_review_pages": {
+    "with_dh_real": [
+      3
+    ],
+    "with_dh_reuse_rhythm": [
+      9,
+      15
+    ],
+    "with_narration_no_dh": [
+      4,
+      10
+    ],
+    "shell_hold": [
+      1,
+      2,
+      18
+    ]
+  },
+  "mode_id": "digital-human-presenter-scheme-C",
+  "voice_pack": "production-library/voices/reference-pharmacist-qwen-v1",
+  "voice_unity": true
+}

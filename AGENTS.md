@@ -53,10 +53,26 @@ produces PPT / product video / health video. Do **not** bounce normal settled wo
 「请找制作」or require the engineer to run renders.
 
 Agent must: `git pull` + `scripts/workbuddy_bootstrap_for_business.py`, open the portal,
-then on content: lock template → organize → **run generators / `generate_business_video.py --mode full`**.
-Video: full segment re-render (product 8 / health 7); never default `audio-shell`.
+then on content: lock template → organize → **run generators**.
+Before render: `python3 scripts/probe_production_env.py` (honest degrade if no TTS/ffmpeg).
+- PPT / 绿色单品等：各 settled generator  
+- 课件3：`scripts/generate_business_courseware.py --template courseware3 --theme <dir>`  
+- 视频：`generate_business_video.py --mode full`（product 8 / health 7 segments）；never default `audio-shell`  
+Always write `voice_id` from template manifest; never system TTS for formal narration.
 See `docs/workbuddy-install-and-guide.md`, `docs/workbuddy-system-prompt.md`,
 `docs/workbuddy-video-first-check.md`. Do **not** tell business to unzip zip as default.
+
+### Digital-human presenter mode (scheme C)
+
+When business says 数字人模式 / 真人数字人侧讲 / 方案 C:
+
+1. **Do not** call HeyGen until business confirms the final script **and** the key-page list
+   (which pages get the digital human).
+2. Deliver a review pack first: full narration scripts + key pages table (page / section / why).
+3. After explicit「可以生成」: same voice pack for all pages; only key pages get DH;
+   non-key = full-width slide + narration, no static avatar.
+4. Entry: `docs/digital-human-presenter-mode.md`  
+   Business pack: `outputs/业务使用资料包/药店培训内容工厂-业务包/08_数字人侧讲模式/`
 
 ## Product PPT courseware: guide business in four steps
 

@@ -1,0 +1,58 @@
+{
+  "output": "outputs/scheme-c-interleave-review.mp4",
+  "total_s": 100.09,
+  "key_pages": [
+    3,
+    9,
+    15
+  ],
+  "rules": "KEY-PAGE-INTERLEAVE-RULES.md",
+  "segments": [
+    {
+      "page": 1,
+      "mode": "shell_hold",
+      "dur": 2.0
+    },
+    {
+      "page": 2,
+      "mode": "shell_hold",
+      "dur": 2.0
+    },
+    {
+      "page": 3,
+      "mode": "key_dh_real",
+      "dur": 11.99
+    },
+    {
+      "page": 4,
+      "mode": "full_narration",
+      "dur": 33.48
+    },
+    {
+      "page": 9,
+      "mode": "key_dh_on_correct_slide",
+      "dur": 11.99
+    },
+    {
+      "page": 10,
+      "mode": "full_narration",
+      "dur": 19.4
+    },
+    {
+      "page": 15,
+      "mode": "key_dh_on_correct_slide",
+      "dur": 11.99
+    },
+    {
+      "page": 18,
+      "mode": "shell_hold",
+      "dur": 2.2
+    },
+    {
+      "page": "endcard",
+      "mode": "info",
+      "dur": 5.0
+    }
+  ],
+  "note_zh": "头-腰-尾 3 关键页穿插；p04/p10 全宽旁白验收；p09/p15 复用同段数字人仅示节奏，量产需各页旁白+HeyGen"
+}

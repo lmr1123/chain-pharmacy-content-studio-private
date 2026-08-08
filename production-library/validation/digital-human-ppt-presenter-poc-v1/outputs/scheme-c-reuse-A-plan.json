@@ -1,0 +1,167 @@
+{
+  "scheme": "C",
+  "mode": "reuse_single_dh_no_heygen",
+  "product_rules": "PRODUCT-MODE-presenter-scheme-C.md",
+  "variant": "A",
+  "variant_label": "药师站姿",
+  "note_zh": "与静帧 cutout 同 IP，整片人物一致",
+  "key_pages": [
+    3
+  ],
+  "static_sec": 2.2,
+  "total_duration_s": 53.43,
+  "output": "outputs/scheme-c-reuse-A-film.mp4",
+  "layout_policy_zh": "关键页=讲解安全版收窄+动态数字人；非关键页=全宽金样内容放大、无人；禁止静帧站人；禁止后期强行拉升构图",
+  "pages": [
+    {
+      "page": 1,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-01.png"
+    },
+    {
+      "page": 2,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-02.png"
+    },
+    {
+      "page": 3,
+      "mode": "dynamic_presenter",
+      "layout": "presenter_narrow",
+      "person": "dynamic_dh_reuse",
+      "duration_s": 11.99,
+      "source": "outputs/ppt-presenter-15s-A-pharmacist-standing.mp4"
+    },
+    {
+      "page": 4,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-04.png"
+    },
+    {
+      "page": 5,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-05.png"
+    },
+    {
+      "page": 6,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-06.png"
+    },
+    {
+      "page": 7,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-07.png"
+    },
+    {
+      "page": 8,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-08.png"
+    },
+    {
+      "page": 9,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-09.png"
+    },
+    {
+      "page": 10,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-10.png"
+    },
+    {
+      "page": 11,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-11.png"
+    },
+    {
+      "page": 12,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-12.png"
+    },
+    {
+      "page": 13,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-13.png"
+    },
+    {
+      "page": 14,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-14.png"
+    },
+    {
+      "page": 15,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-15.png"
+    },
+    {
+      "page": 16,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-16.png"
+    },
+    {
+      "page": 17,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-17.png"
+    },
+    {
+      "page": 18,
+      "mode": "still_full_width",
+      "layout": "full_width_gold",
+      "person": "none",
+      "duration_s": 2.2,
+      "source": "/Users/liminrong/Projects/chain-pharmacy-content-studio/production-library/validation/courseware/gold-samples/uri-shenke-health-pptx-gold-v1/web/media/slides/slide-18.png"
+    },
+    {
+      "page": "endcard",
+      "mode": "info",
+      "duration_s": 4.0
+    }
+  ],
+  "business_message_zh": "方案 C 节奏样片（零新增 HeyGen）：仅关键页侧讲数字人；其余页全宽课件无人。后续其他课件同模式：先改 PPT 双布局，再叠人。"
+}
