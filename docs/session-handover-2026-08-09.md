@@ -70,6 +70,11 @@
 
 **一句话：** 业务不用工程师，按五步交一单能用的培训 PPT。
 
+**业务使用说明 + 完整测试案例（含记录表）：**  
+→ **`docs/business-usage-and-test-cases.md`**
+
+主路径放行：该文档中 **TC-PPT-01～05** 全部通过。
+
 | # | 检查 | 通过标准 |
 |---|------|----------|
 | 1 | 选对课型 | 选「构件化商品培训 PPT」，不会误走已下线绿色五页 |
@@ -79,15 +84,7 @@
 | 5 | 取件 | `05_交付物放这里/<job_id>/`，无技术垃圾目录 |
 | 6 | 安全 | 无其他商品金样残留；无授权包装不伪造包装图 |
 
-建议命令（业务由 WorkBuddy 代跑亦可）：
-
-```bash
-python3 scripts/business_job.py new --route product-pptx-component-v1 \
-  --theme <真实商品名> --notes $'审核要点…' --auto-draft
-python3 scripts/business_job.py approve --job <id> --gate content --by <业务姓名>
-python3 scripts/business_job.py render --job <id>
-python3 scripts/business_job.py open --job <id>
-```
+建议命令见业务文档 §1.4；业务侧优先用 WorkBuddy 口语（§1.2）。
 
 ---
 

@@ -54,6 +54,7 @@ python3 scripts/business_job.py new --route product-mp4-full-v1 \
 
 ### 文档索引
 
+- **业务使用与测试案例：** `docs/business-usage-and-test-cases.md`（专项 A 带测用）
 - 交接：`docs/session-handover-2026-08-09.md`
 - 构件方案：`docs/component-recipe-pipeline-architecture.md`
 - 视频环境包：`docs/video-full-env-package.md`
