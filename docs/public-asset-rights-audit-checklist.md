@@ -32,7 +32,7 @@
 | P1 | 外部参考帧/音频/拆解素材：`poc/reference-replica/reference-analysis/frames/`、`poc/gold-sample/public/audio/`、`poc/gold-sample/public/ganmao-ppt-explain/audio/` | `private-only`；“reference/public”目录名不构成授权 | 原视频/音频来源、权利人、取得方式、许可条款；内部分析与改编范围；引用必要性 | Private 保存或只留不可逆分析摘要；Public 禁止包含 |
 | P1 | 品牌与产品图：`production-library/themes/kekang-lingzhi-capsule/refs/`、`poc/gold-sample/public/kekang-lingzhi/packshot.png` 及相关销售案例图 | `private-only` | 包装图、Logo、人物肖像、案例截图的提供人和内部使用授权 | Private 最小权限保存；无内部授权则替换/停用；Public 只允许中性占位说明 |
 | P1 | 插画、人物、医学场景和组件：`assets/component-library/`、`poc/gold-sample/public/assets/`、`poc/gold-sample/assets/` | `private-only`；仍需区分自制、AI 生成、开源与第三方参考 | 每个资产的 provenance；模型/工具与生成日期；输入素材权利；开源许可证及署名/NOTICE；人物肖像与医学使用限制 | Private 建 manifest + 哈希并补 NOTICE；Public installer 不携带这些组件 |
-| P1 | 仓库级许可 | Public/Private 许可必须分离 | Public 安装器代码许可证、第三方声明；Private 代码/资产/业务资料的内部授权边界 | Public 补 LICENSE/NOTICE；明确其许可证不延伸到 Private 生产仓和资产 |
+| P1 | 仓库级许可 | Public/Private 权利边界必须分离；当前 Public 未声明开源许可证，公开可读不构成再授权 | 若未来开放再分发，补明确许可证与第三方声明；Private 代码/资产/业务资料继续按内部授权 | Public README 已明示可见性不授予 Private 权利；未来变更许可证须独立法务复核 |
 
 ## 大文件与重复制品复核
 
@@ -62,16 +62,16 @@
 
 ## Public installer 发布闸门（当前必须全部通过）
 
-- [ ] 完整生产仓远端已是 Private，初始访问为 owner-only；授权成员按最小权限登记。
-- [ ] Public installer 是独立 repository entity 和全新历史，未从完整仓 fork/import/mirror/template。
-- [ ] Public 全部 refs/全部历史中不存在 `assets/`、`production-library/`、`poc/`、`outputs/`、`samples/`、`tasks/` 旧路径。
-- [ ] Public 不跟踪音视频、PPTX、DOCX、PDF、ZIP、预览 PNG、字体、voice manifest、审批记录或凭证。
-- [ ] Public README 明示需要 GitHub 登录和 Private `read` 权限；不声称 Public 本身可预览模板或生成内容。
-- [ ] 安装器不在 URL、命令行或日志中暴露 token；Private clone/update 不走公共镜像。
-- [ ] 未登录、无权限、网络失败、Private 更新失败四类状态均诚实停止；不回退公开 ZIP 或伪交付。
-- [ ] 已授权 clean machine 能由 Public installer 拉取 Private，并通过 Private bootstrap、能力探测和门户启动。
-- [ ] 迁移前 Public 暴露时间窗、最后公开 commit、资产清单和不可召回边界已记录。
-- [ ] Public 安全 CI 采用 `default deny + allowlist`，且每次提交扫描工作树、全历史、秘密、大小和禁止扩展名。
+- [x] 完整生产仓远端已是 Private，当前协作者仅 owner `lmr1123`；后续授权成员按最小权限登记。
+- [x] Public installer 是独立 repository entity 和全新历史，未从完整仓 fork/import/mirror/template。
+- [x] Public 全部 refs/全部历史中不存在 `assets/`、`production-library/`、`poc/`、`outputs/`、`samples/`、`tasks/` 旧路径。
+- [x] Public 不跟踪音视频、PPTX、DOCX、PDF、ZIP、预览 PNG、字体、voice manifest、审批记录或凭证。
+- [x] Public README 明示需要 GitHub 登录和 Private `read` 权限；不声称 Public 本身可预览模板或生成内容。
+- [x] 安装器不在 URL、命令行或日志中暴露 token；Private clone/update 不走公共镜像。
+- [x] 未登录、无权限、网络失败、Private 更新失败四类状态均诚实停止；不回退公开 ZIP 或伪交付。
+- [x] 已授权 clean machine 能由 Public installer 拉取 Private，并通过 Private bootstrap、能力探测和门户启动。
+- [x] 迁移前最后公开 commit、资产类别和不可召回边界已记录；迁移时间为 2026-08-08。
+- [x] Public 安全 CI 采用 `default deny + exact allowlist`，且每次提交扫描工作树、全历史、秘密、大小和禁止扩展名。
 
 ## 建议审计记录字段
 

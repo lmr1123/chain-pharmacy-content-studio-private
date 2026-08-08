@@ -1,8 +1,20 @@
 # Private 生产仓与 Public 安装入口迁移方案
 
-**状态：** 已选定方向，待仓库管理员执行远端迁移
+**状态：** 已完成远端迁移、双向访问验证与 Public 全历史审计
 **日期：** 2026-08-08
 **目标：** 完整生产仓、签样模板、声纹和授权资产只对获授权成员开放；业务仍保留一条简单、稳定的 WorkBuddy 安装句。
+
+## 0. 已执行结果
+
+- 迁移前最后公开 commit：`1eb6ae0970d55aed232b000d6a9e423de9cc081d`。
+- 原 repository entity 已改名为 `lmr1123/chain-pharmacy-content-studio-private` 并设为 Private；完整历史保留，当前 `main` 为 `de52fb054d42e8514fc0e830eb2e6af72fad64be`。迁移实现经 Private PR [#1](https://github.com/lmr1123/chain-pharmacy-content-studio-private/pull/1) 与 clone 稳定性修复 PR [#2](https://github.com/lmr1123/chain-pharmacy-content-studio-private/pull/2) 合并。
+- 原名称已由全新 repository entity `lmr1123/chain-pharmacy-content-studio` 复用；Public 只有根 commit `1fbc06ee1ec5c6071930f8243db7fcde045b3d75`、`main` 一个 ref 和 8 个白名单文件。
+- Public Actions `audit` 已成功；`main` 强制该检查、线性历史和对话解决，管理员同样受保护，force push 与分支删除关闭。
+- 禁用 Git 凭证帮助器后，Public `ls-remote` 与 clone 成功，Private `ls-remote` 失败；授权账号由 Public installer 拉取 Private、校验 marker/资产、运行 bootstrap 和门户刷新成功。
+- 真实大仓 clone 曾复现 `curl 18 / early EOF`；安装器现固定 GitHub 官方 HTTP/1.1、浅克隆单分支/无 tags，失败时清理 staging 后重试一次，不输出 GitHub stderr 或凭证。
+- 授权 clean clone 的 `private_production_assets=true`、`validate_production_readiness.py=PASS`；未安装本机依赖时 PPTX/TTS/视频能力继续诚实显示为不可用，不以规划包冒充成品。
+
+迁移停止了后续匿名分发，但无法召回迁移前第三方已取得的 clone、缓存或下载。若权利/法务要求清除旧 SHA 的平台缓存视图，仍需另行联系 GitHub Support；不得以此为由把完整仓重新公开。
 
 ## 1. 最终仓库实体
 
