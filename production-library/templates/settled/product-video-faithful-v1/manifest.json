@@ -8,7 +8,7 @@
   "canonical_artifacts": {
     "video": {
       "path": "辅酶Q10_商品培训视频_金样_v1.mp4",
-      "alias": "product-training-reference-full-script-system-v3-final-exact.mp4",
+      "alias_note": "former alias product-training-reference-full-script-system-v3-final-exact.mp4 removed (duplicate blob)",
       "format": "mp4",
       "resolution": "1920x1080",
       "duration_s": 156.17,
@@ -107,12 +107,12 @@
       "preview/key-06.png"
     ],
     "key_frame_labels_zh": [
-      "讲师页",
-      "图文讲解",
-      "包装主视觉",
-      "概览",
-      "功效",
-      "证据"
+      "开场",
+      "品牌/品类",
+      "核心功效",
+      "产品特点",
+      "适宜人群",
+      "联合用药"
     ],
     "gallery_title_zh": "商品培训视频 · 辅酶 Q10 金样",
     "one_liner": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结",
@@ -145,7 +145,12 @@
     "preview_identity_qualified": true,
     "preview_identity_note_zh": null,
     "preview_suite_evidence": null,
-    "online_url": null
+    "online_url": null,
+    "portal_video_example": {
+      "filename": "gold.mp4",
+      "label": "辅酶 Q10 商品培训视频 · 金样成片",
+      "source": "production-library/templates/settled/product-video-faithful-v1/辅酶Q10_商品培训视频_金样_v1.mp4"
+    }
   },
   "business_catalog": {
     "name_zh": "商品培训视频（如辅酶 Q10）",

@@ -48,6 +48,14 @@ outputs/business-courseware-runs/
 outputs/workbuddy-workspaces/
 outputs/业务使用资料包/药店培训内容工厂-业务包/index.local.html
 
+# Large regenerable package artifacts (built by build_business_tier_a_package.py).
+# Keep the unpacked package HTML/docs/previews; do not version multi-MB zip or
+# gold-video copies that already live under production-library/templates/settled/.
+outputs/业务使用资料包/**/*.zip
+outputs/业务使用资料包/药店培训内容工厂-业务包/01_模板货架/media/**/gold.mp4
+outputs/业务使用资料包/药店培训内容工厂-业务包/01_模板货架/media/production-modes/*.mp4
+outputs/业务使用资料包/药店培训内容工厂-业务包/01_模板货架/media/production-modes/**/*.mp4
+
 # Keep only the fixed instructions/markers inside the distributed business package.
 outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/**
 !outputs/业务使用资料包/药店培训内容工厂-业务包/05_交付物放这里/.gitkeep

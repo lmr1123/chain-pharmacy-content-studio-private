@@ -20,7 +20,7 @@
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "validation_root": "production-library/validation/courseware/disease-product-scenario-v1",
-  "notes": "十八页疾病辨证、商品知识与销售场景已签样标准课型。正式数据驱动引擎只从 disease-product-scenario-script/v1 读取疾病、商品、两组场景、权重商品及全部图片；非穿心莲主题硬阻断穿心莲文案与源图残留，并输出原生可编辑 PPTX 与逐页 QA。",
+  "notes": "十八页疾病辨证、商品知识与销售场景已签样标准课型。正式数据驱动引擎只从 disease-product-scenario-script/v1 读取疾病、商品、两组场景、权重商品及全部图片；非穿心莲主题硬阻断穿心莲文案与源图像素（gold_asset_guard SHA+路径，content/visual/render 三道），并输出原生可编辑 PPTX 与逐页 QA。",
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [

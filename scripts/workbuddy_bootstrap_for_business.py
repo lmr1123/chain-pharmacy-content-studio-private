@@ -219,16 +219,33 @@ def clone_or_update(repo_url: str, target: Path, *, skip_update: bool = False) -
     )
 
 
+def _package_media_incomplete(package_root: Path) -> bool:
+    """True when gold/example videos are missing (not tracked in git; built locally)."""
+    media = package_root / "01_模板货架" / "media"
+    required = (
+        media / "health-video-reference-tech-v1" / "gold.mp4",
+        media / "product-video-faithful-v1" / "gold.mp4",
+    )
+    return any(not path.is_file() for path in required)
+
+
 def ensure_package(
     root: Path,
     runtime_capabilities: dict[str, bool] | None = None,
 ) -> Path:
     portal = root / PKG_REL / PORTAL_NAME
+    package_root = root / PKG_REL
     build = root / "scripts" / "build_business_tier_a_package.py"
-    if not portal.is_file():
+    needs_full_rebuild = (not portal.is_file()) or _package_media_incomplete(package_root)
+    if needs_full_rebuild:
         if not build.is_file():
             raise SystemExit(f"缺少业务包生成器，无法重建引导页: {build}")
-        print("业务引导页缺失，尝试重建业务包…")
+        reason = (
+            "业务引导页缺失"
+            if not portal.is_file()
+            else "业务包金样视频未生成（仓库不跟踪重复 gold.mp4）"
+        )
+        print(f"{reason}，尝试重建业务包…")
         result = run([sys.executable, str(build)], cwd=root, check=False)
         if result.returncode != 0:
             raise SystemExit(

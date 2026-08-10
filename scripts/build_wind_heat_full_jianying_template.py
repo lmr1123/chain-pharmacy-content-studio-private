@@ -29,7 +29,7 @@ JIANYING_ROOT = Path.home() / "Movies/JianyingPro/User Data/Projects/com.lvedito
 CANONICAL_VIDEO = (
     PROJECT_ROOT
     / "production-library/templates/settled/health-video-reference-tech-v1"
-    / "wind-heat-reference-full-181s.mp4"
+    / "风热证_疾病科普视频_金样_v1.mp4"
 )
 CANONICAL_AUDIO = VERSION_ROOT / "风热证-完整旁白.mp3"
 WIDTH = 1920

@@ -33,7 +33,7 @@
   "routes": [
     {
       "route_id": "product-pptx-component-v1",
-      "name_zh": "内部商品培训 · 灵活构件兜底 PPT",
+      "name_zh": "内部 · 金样缺页签补漏 PPT",
       "audience": "store_staff",
       "audience_zh": "店员内部培训",
       "deliverable": "pptx",
@@ -41,7 +41,7 @@
       "template_slug": "product-courseware-component-v1",
       "adapter": "product_pptx_component",
       "active": true,
-      "priority": 5,
+      "priority": 90,
       "env_require": ["pptx_export"],
       "gates": {
         "content_approval": true,
@@ -59,8 +59,8 @@
         "scene-plan.json",
         "provenance-report.json"
       ],
-      "selection_hint_zh": "没有命中固定标准课型时的灵活路线：封面/痛点数据/功效/特点/人群/联合/总结/注意可按大纲组合",
-      "notes_zh": "通用兜底路线。先锁定业务文案，再由 WorkBuddy 生成并绑定主题插图，最后绑定业务授权包装图；内容、视觉与包装三道哈希确认、逐页 QA 全部通过后才可交付。"
+      "selection_hint_zh": "业务主路径先选已签样金样模板；本路线仅对金样缺失页签内部补漏，不对外展示、不整课自由组合。",
+      "notes_zh": "自由构件化当前达不到交付标准。仅在主金样锁定后，对没有的页签补漏；内容、视觉与包装三道哈希确认；绑定图经 gold_asset_guard 阻断全部签样金样像素，逐页 QA 全部通过后才可交付补页。"
     },
     {
       "route_id": "product-pptx-green-v1",
@@ -90,7 +90,7 @@
         "run-manifest.json"
       ],
       "selection_hint_zh": "已签样 5 页紧凑课型：商品介绍 · 联合话术 · 品种对标 · 注意事项",
-      "notes_zh": "固定标准课型；业务明确要绿色五页或金银花同结构时优先选择。换商品只继承结构与绿色视觉；完整审核稿、本品/搭档/竞品授权图和 4 张正式插图缺一不可，内容/图片哈希与逐页 QA 通过后才交付。"
+      "notes_zh": "固定标准课型；业务明确要绿色五页或金银花同结构时优先选择。换商品只继承结构与绿色视觉，禁止继承金银花金样像素；完整审核稿、本品/搭档/竞品授权图和 4 张正式插图缺一不可；content/visual/render 对金样图 SHA 与路径 fail-closed，内容/图片哈希与逐页 QA 通过后才交付。"
     },
     {
       "route_id": "product-pptx-disease-scenario-v1",
@@ -120,7 +120,7 @@
         "run-manifest.json"
       ],
       "selection_hint_zh": "已签样 18 页长课型：疾病认知 · 商品知识 · 人群咨询 · 销售场景 · 权重对标",
-      "notes_zh": "固定 18 页数据驱动引擎。换主题必须提交完整疾病、商品、两组场景、权重商品和全部正式图片；非穿心莲主题硬阻断穿心莲医学文案与源图残留。"
+      "notes_zh": "固定 18 页数据驱动引擎。换主题必须提交完整疾病、商品、两组场景、权重商品和全部正式图片；非穿心莲主题硬阻断穿心莲医学文案与源图像素（SHA+路径，content/visual/render 三道）；禁止只换包装图沿用金样疾病/症状插图。"
     },
     {
       "route_id": "product-mp4-full-v1",
@@ -205,7 +205,7 @@
         "run-manifest.json"
       ],
       "selection_hint_zh": "已签样专项讲解课型：背景 · 三大功效 · 三大特点 · 人群 · 联合 · 总结",
-      "notes_zh": "PPTX 正式路线。12 个主题内容单元、授权包装/Logo 与 23 个主题插图必须全部显式覆盖；正式导出为 13 页可编辑 PPTX（适宜人群单元拆为 2 页）。普通新主题按文字与图片 SHA 双重阻断速福达金样继承。"
+      "notes_zh": "PPTX 正式路线。草稿产出《素材计划》：业务给包装/Logo 真图，WorkBuddy 按计划生成约 23 槽主题插图并 visual --asset-bindings。12 个主题内容单元文案由 content 锁定；正式导出 13 页可编辑 PPTX。金样文案/像素双重 fail-closed（含 gold_asset_guard）。"
     },
     {
       "route_id": "ingredient-health-edu-pptx-v1",
@@ -235,7 +235,7 @@
         "run-manifest.json"
       ],
       "selection_hint_zh": "已签样 20 页成分健康科普：定义来源 · 原理 · 研究信息 · 补充提示 · 应用 · 总结",
-      "notes_zh": "只复用米白番茄红视觉与 15 类页型。新主题须完整覆盖 107 个文字槽和 69 个授权 PNG 槽；参考医学正文与 94 个非样式源媒体 SHA 对新主题全部 fail-closed，20 页逐页 QA 后才交付。"
+      "notes_zh": "只复用米白番茄红视觉与 15 类页型。草稿产出《素材计划》：content 锁 107 文字槽，visual --asset-bindings 绑定全部 69 图槽（无 product_image 闸门）。参考医学正文与金样像素双重 fail-closed（含 gold_asset_guard），20 页逐页 QA 后才交付。"
     },
     {
       "route_id": "courseware3-mp4-v1",
