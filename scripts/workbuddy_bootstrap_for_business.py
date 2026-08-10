@@ -16,6 +16,7 @@ import os
 import platform
 import subprocess
 import sys
+from collections.abc import Mapping
 from pathlib import Path
 
 DEFAULT_REPO = "https://github.com/lmr1123/chain-pharmacy-content-studio-private.git"
@@ -337,8 +338,42 @@ def install_hints_for_profiles(root: Path, profile_ids: list[str]) -> list[str]:
     return hints
 
 
-def _soft_repair_pptx_node_modules(engine: Path, legacy: Path, label: str) -> list[str]:
-    """Symlink engine/node_modules → historical artifact-tool tree when missing."""
+def _artifact_node_modules_candidates(
+    legacy: Path,
+    *,
+    home: Path | None = None,
+    environ: Mapping[str, str] | None = None,
+) -> list[Path]:
+    """Return bounded local node_modules candidates in deterministic order."""
+    env = os.environ if environ is None else environ
+    home_dir = Path.home() if home is None else home
+    candidates = [legacy]
+    explicit = env.get("WORKBUDDY_NODE_MODULES")
+    if explicit:
+        candidates.append(Path(explicit).expanduser())
+    for raw in (env.get("NODE_PATH") or "").split(os.pathsep):
+        if raw:
+            candidates.append(Path(raw).expanduser())
+    for cache_name in ("codex-runtimes", "workbuddy-runtimes"):
+        cache_root = home_dir / ".cache" / cache_name
+        candidates.extend(
+            sorted(cache_root.glob("*/dependencies/node/node_modules"))
+        )
+
+    unique: list[Path] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        key = str(candidate)
+        if key not in seen:
+            seen.add(key)
+            unique.append(candidate)
+    return unique
+
+
+def _soft_repair_pptx_node_modules(
+    engine: Path, candidates: list[Path], label: str
+) -> list[str]:
+    """Symlink engine/node_modules to a verified local artifact-tool runtime."""
     actions: list[str] = []
     if not engine.is_dir():
         return actions
@@ -351,36 +386,58 @@ def _soft_repair_pptx_node_modules(engine: Path, legacy: Path, label: str) -> li
             nm.unlink()
         except OSError:
             pass
-    legacy_artifact = legacy / "@oai" / "artifact-tool" / "dist" / "artifact_tool.mjs"
-    if (not nm.exists()) and legacy.is_dir() and legacy_artifact.is_file():
+    source = next(
+        (
+            candidate
+            for candidate in candidates
+            if (
+                candidate
+                / "@oai"
+                / "artifact-tool"
+                / "dist"
+                / "artifact_tool.mjs"
+            ).is_file()
+        ),
+        None,
+    )
+    if (not nm.exists()) and source is not None:
         try:
-            rel = Path(os.path.relpath(legacy, start=engine))
+            rel = Path(os.path.relpath(source, start=engine))
             nm.symlink_to(rel, target_is_directory=True)
             actions.append(
-                f"已为{label}链接 node_modules → {rel.as_posix()}（本地复用，非网络安装）"
+                f"已为{label}链接 node_modules 到本机已验证的 artifact-tool runtime（非网络安装）"
             )
         except OSError as exc:
             actions.append(f"未能为{label}自动链接 node_modules: {exc}")
     return actions
 
 
-def soft_repair_local_deps(root: Path) -> list[str]:
+def soft_repair_local_deps(
+    root: Path,
+    *,
+    home: Path | None = None,
+    environ: Mapping[str, str] | None = None,
+) -> list[str]:
     """Local-only repairs that do not install paid services or network packages.
 
-    - Component PPT engine (default): link historical node_modules for @oai/artifact-tool
-    - Green PPT engine (legacy): same
+    - PPT engines: link a verified repository or WorkBuddy/Codex local artifact-tool runtime
     - Video runtime: link kit → poc/gold-sample when formal kit is missing
     """
     actions: list[str] = []
     legacy = root / LEGACY_PPTX_NODE_MODULES_REL
+    pptx_candidates = _artifact_node_modules_candidates(
+        legacy, home=home, environ=environ
+    )
     actions.extend(
         _soft_repair_pptx_node_modules(
-            root / COMPONENT_ENGINE_REL, legacy, "构件 PPT 引擎 courseware-pptx-v1"
+            root / COMPONENT_ENGINE_REL,
+            pptx_candidates,
+            "构件 PPT 引擎 courseware-pptx-v1",
         )
     )
     actions.extend(
         _soft_repair_pptx_node_modules(
-            root / GREEN_ENGINE_REL, legacy, "绿色 PPT 兼容引擎"
+            root / GREEN_ENGINE_REL, pptx_candidates, "绿色 PPT 兼容引擎"
         )
     )
 
@@ -628,7 +685,7 @@ def main() -> None:
     parser.add_argument(
         "--skip-soft-repair",
         action="store_true",
-        help="Do not auto-link local node_modules for green PPT engine",
+        help="Do not auto-link a verified local artifact-tool runtime for PPT engines",
     )
     args = parser.parse_args()
     if args.skip_update and args.update_only:

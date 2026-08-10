@@ -221,6 +221,45 @@ class BootstrapProfileExpandTests(unittest.TestCase):
             actions2 = self.mod.soft_repair_local_deps(root)
             self.assertEqual(actions2, [])
 
+    def test_soft_repair_discovers_agent_runtime_in_clean_clone(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            root = base / "clean-clone"
+            engine = root / self.mod.COMPONENT_ENGINE_REL
+            engine.mkdir(parents=True)
+            home = base / "business-home"
+            runtime = (
+                home
+                / ".cache"
+                / "codex-runtimes"
+                / "codex-primary-runtime"
+                / "dependencies"
+                / "node"
+                / "node_modules"
+            )
+            artifact = (
+                runtime / "@oai" / "artifact-tool" / "dist" / "artifact_tool.mjs"
+            )
+            artifact.parent.mkdir(parents=True)
+            artifact.write_text("ok", encoding="utf-8")
+
+            actions = self.mod.soft_repair_local_deps(
+                root, home=home, environ={}
+            )
+
+            self.assertTrue(any("artifact-tool runtime" in a for a in actions))
+            linked = (
+                engine
+                / "node_modules"
+                / "@oai"
+                / "artifact-tool"
+                / "dist"
+                / "artifact_tool.mjs"
+            )
+            self.assertTrue(linked.is_file())
+
 
 class BusinessDoctorTests(unittest.TestCase):
     def test_doctor_pptx_route_json(self) -> None:

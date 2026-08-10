@@ -36,7 +36,7 @@
       "install_hints_zh": [
         "安装 Node.js 18+（Homebrew: brew install node）",
         "确认 Private 生产仓已完整 clone（含 production-library/engines/courseware-pptx-v1 与 page-types）",
-        "若缺少 artifact-tool：bootstrap soft-repair 可链接历史 node_modules 到 courseware-pptx-v1 与绿色引擎",
+      "若缺少 artifact-tool：bootstrap soft-repair 会优先链接仓内历史 runtime，并自动发现 WorkBuddy/Codex 标准本机 runtime 缓存",
         "默认通用路线为构件化 PPT；金银花、穿心莲、速福达为已签样固定标准课型",
         "验证：python3 scripts/probe_production_env.py --require pptx && python3 scripts/business_doctor.py --profile pptx"
       ]
