@@ -52,21 +52,18 @@ Business opens WorkBuddy and says:
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-The URL above is the **sanitized Public installer**, not the production repository.
-It contains no settled templates, previews, voices, assets, business package, or generation
-capability. WorkBuddy must run `scripts/install_private_studio.py`, use the user's existing
-GitHub credential manager/session to verify `read` access to
-`lmr1123/chain-pharmacy-content-studio-private`, then clone/update that Private repository
-and run its bootstrap. Never put a token in a URL or log; never send the Private clone
-through a public mirror; never fall back to a public ZIP. If the user is not logged in or
-not authorized, stop with the exact access gap instead of pretending the factory is installed.
+The URL above is the **installer entry**. WorkBuddy clones it and runs
+`scripts/install_private_studio.py`, which anonymously HTTPS-clones the production repository
+`lmr1123/chain-pharmacy-content-studio-private` (currently **Public**) and bootstraps.
+Business needs **no** GitHub account, device request, Deploy key, or admin approval.
+Never ask business to use GitHub, SSH, tokens, or a CLI. Never use public mirrors.
 
 **Locked model:** business provides content in chat; **WorkBuddy on the business machine**
 produces PPT / product video / health video. Do **not** bounce normal settled work to
 「请找制作」or require the engineer to run renders.
 
-After authorized Private installation, agent must: `git pull --ff-only` in the Private
-checkout + `scripts/workbuddy_bootstrap_for_business.py`, open the portal,
+After installation, agent must: `git pull --ff-only` in the production checkout +
+`scripts/workbuddy_bootstrap_for_business.py`, open the portal,
 then on content: recommend route → explain and confirm courseware → organize → **run generators**.
 Before render: `python3 scripts/probe_production_env.py` (honest degrade if no TTS/ffmpeg).
 

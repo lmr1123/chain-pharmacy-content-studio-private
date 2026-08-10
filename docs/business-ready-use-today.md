@@ -13,7 +13,7 @@
 请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
 ```
 
-这个 URL 是**脱敏 Public 安装入口**，不是生产仓库。业务机需先用 GitHub CLI 登录，且当前账号已获 Private production 的 `read` 权限；未登录或无权限时安装器会明确停止。Private 拉取只走 GitHub 官方地址，不经过公共镜像，也不以公开 ZIP 兜底。
+这个 URL 是**安装入口**。WorkBuddy 会自动拉取生产仓并打开引导页。业务**不需要** GitHub 账号、设备申请、管理员批准或自己敲命令。生产仓当前为 Public，安装器默认官方 HTTPS 匿名克隆；失败时如实说明，不走公共镜像。
 
 **WorkBuddy 侧：** `docs/workbuddy-install-and-guide.md` + `docs/workbuddy-system-prompt.md`  
 **刷新业务包（制作）：** `python3 scripts/refresh_business_delivery.py`
@@ -35,21 +35,17 @@
 业务                              WorkBuddy
 ────                              ────────
 ① 打开 WorkBuddy，粘贴安装句  →
-                                  ② 安装 Public 入口 → 授权检查
-                                  ③ 拉取 Private → bootstrap
-                                  ④ 打开 index.html，开始四步指引
-⑤ 预览选模板
-⑥ 填空白 Word + 授权图
-⑦ 附件或上传区提交            →
-                                  ⑧ 锁定 template / style_pack / voice
-                                  ⑨ 解析内容（N 条→N 行）
-                                  ⑩ 交「内容初稿 + 缺口」或「分镜 + 缺口」
-⑪ 审阅、改文案、确认          →
-                                  ⑫ 生成终稿 PPTX 和/或 MP4
-⑬ 成片归档 / 门店使用
+                                  ② clone 安装入口 → 匿名拉生产仓 → bootstrap
+                                  ③ 打开引导页，开始指引
+④ 预览选模板
+⑤ 填内容 / 交授权图          →
+                                  ⑥ 锁定模板、整理初稿与缺口
+⑦ 审阅、确认                  →
+                                  ⑧ 生成终稿 PPTX 和/或 MP4
+⑨ 成片归档 / 门店使用
 ```
 
-业务**不需要**自己点生成器、也**不需要**解压包；**需要** WorkBuddy 把安装与 ⑧～⑫ 做完。
+业务**不需要**自己点生成器、也**不需要**解压包；**需要** WorkBuddy 把安装与出片做完。
 
 ---
 
@@ -82,7 +78,7 @@
 
 ## WorkBuddy 侧必须做到（代理）
 
-1. 识别安装句 → 克隆 Public installer，运行 `scripts/install_private_studio.py`；授权安装完成后，才运行 Private 内的 `scripts/workbuddy_bootstrap_for_business.py`
+1. 识别安装句 → 克隆安装入口，运行 `scripts/install_private_studio.py`（匿名 HTTPS 拉生产仓并 bootstrap）
 2. 按 `docs/workbuddy-install-and-guide.md` 逐步指引，不要丢一堆路径让业务自己摸  
 3. 用 `business-catalog.json` 把中文课型名落到 settled slug  
 4. 列表/联合用药用 `scripts/content_driven_rules.py`  
@@ -97,8 +93,7 @@
 
 ## 备用：无 WorkBuddy 时
 
-如确需离线分发，只能由管理员通过受控渠道交付获授权版本，并记录接收人、版本与哈希；不得把业务包 ZIP 放入 Public、群聊或公开网盘。
-**正式交付仍走默认安装句和 Private 授权**，Public 不提供生产 ZIP 备用路径。
+优先仍用默认安装句。确需离线拷贝时，由管理员受控交付，并记录接收人与版本；不要把整仓 ZIP 丢进群聊或公开网盘。
 
 ---
 
