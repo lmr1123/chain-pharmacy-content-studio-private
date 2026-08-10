@@ -1247,6 +1247,21 @@
       "rule": "本机存在被忽略的权威 Word、哈希绑定预览图或 UAT fixture 时，readiness 与回归可能通过，但 WorkBuddy 新机器仍会缺文件。正式发布前必须从 Git index 或 clean clone 复核全部 manifest、registry、测试合同和门户构建引用；仅对不可重建且已审核的正式源与证据做精确白名单，禁止放开整个 outputs/validation 或提交 job workspace、个人授权输入和原始 QA 运行目录。",
       "source": "tasks/lessons.md",
       "evidence": "scripts/test_p2_clean_clone_e2e.py"
+    },
+    {
+      "id": "lesson.clean-clone-files-do-not-prove-production-runtime",
+      "name_zh": "clean clone 文件齐全不等于生产运行时就绪",
+      "status": "active",
+      "tags": [
+        "WorkBuddy",
+        "clean-clone",
+        "runtime",
+        "artifact-tool",
+        "远端发布"
+      ],
+      "rule": "Git index、readiness 和业务包可重复构建只证明生产文件齐全。正式发布还必须从远端 main 全新克隆并运行目标 runtime profile；重型 PPT runtime 优先从仓内历史位置、显式环境变量或 WorkBuddy/Codex 标准本机缓存做有界发现，验证真实 artifact-tool 入口后才建立本地忽略软链接。验收必须同时证明 pptx_export=true 和一次真实非金样 PPTX 导出。",
+      "source": "tasks/lessons.md",
+      "evidence": "scripts/test_p2_runtime_profiles.py"
     }
   ]
 }

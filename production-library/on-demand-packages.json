@@ -28,7 +28,7 @@
         "poc/courseware-export/work/node_modules/@oai/artifact-tool"
       ],
       "restore": [
-        "python3 scripts/workbuddy_bootstrap_for_business.py --profile pptx --skip-probe（soft-repair 本地 symlink）",
+        "python3 scripts/workbuddy_bootstrap_for_business.py --profile pptx --no-open（自动发现仓内历史 runtime、WORKBUDDY_NODE_MODULES、NODE_PATH 或 WorkBuddy/Codex 标准本机缓存并 soft-repair symlink）",
         "或由 Private 授权安装器/Release 包下发 node_modules 快照"
       ],
       "ship_in_git": false,
@@ -60,7 +60,7 @@
         "production-library/engines/courseware-pptx-v1/export.mjs",
         "production-library/engines/courseware-pptx-v1/components",
         "production-library/page-types/product-training/recipes",
-        "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json",
+        "production-library/styles/reference-product-blue-v1/tokens.json",
         "scripts/generate_courseware.py"
       ],
       "restore": ["Private clone 完整拉取 production-library 与 scripts"],

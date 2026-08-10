@@ -1032,3 +1032,9 @@ cd production-library/validation/digital-human-ppt-presenter-poc-v1
 - 本机存在被 `.gitignore` 忽略的权威 Word、哈希绑定预览图或 UAT fixture 时，readiness 和业务回归可能全部通过，但 WorkBuddy 在新机器 clone 后仍会缺源文件。
 - 正式发布前必须从 Git index/clean clone 视角复核 manifest、registry、测试合同和门户构建器引用的每个文件；权威源和不可重建的签样证据必须被 Git 跟踪。
 - 只允许对明确、最小、已审核的文件做精确白名单；不得为解决一个缺口而放开整个 `outputs/` 或 `validation/`，也不得提交 job workspace、个人授权输入、原始 QA 运行目录或带本机绝对路径的产物。
+
+## 2026-08-10（clean clone 文件齐全不等于生产运行时就绪）
+
+- Git index、readiness 和业务包可重复构建只能证明生产文件齐全，不能证明新业务机器具备 PPT 导出运行时；正式发布还必须从远端 `main` 全新克隆，并执行 WorkBuddy bootstrap 的目标 profile。
+- 重型运行时不应盲目提交进 Git。bootstrap 应先验证仓内历史 runtime，再在明确环境变量与 WorkBuddy/Codex 标准本机缓存中做有界发现；只有真实入口文件存在时才允许建立被 Git 忽略的本地软链接。
+- 发布验收至少要包含一次远端 clean clone 的 `pptx_export=true` 探测和一次真实非金样 PPTX 导出；只看到门户或只通过不渲染的单测，不能宣称业务机已可生产。
