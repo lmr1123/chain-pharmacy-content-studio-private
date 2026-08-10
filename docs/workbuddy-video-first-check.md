@@ -18,9 +18,7 @@ git pull --ff-only
 # 系统提示请用最新 docs/workbuddy-system-prompt.md 全文重贴到 WorkBuddy
 ```
 
-期望 origin 指向 `lmr1123/chain-pharmacy-content-studio-private`。若尚未登录、没有
-Private `read` 权限或当前目录是 Public installer，回到
-`scripts/install_private_studio.py` 完成授权安装；禁止公共镜像或公开 ZIP 回退。
+期望 origin 指向 `lmr1123/chain-pharmacy-content-studio-private`。若目录不对，按 `docs/workbuddy-install-and-guide.md` 重新浅克隆生产仓。所有技术命令由 WorkBuddy 执行；禁止公共镜像。
 
 ---
 

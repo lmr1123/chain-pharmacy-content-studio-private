@@ -32,7 +32,7 @@
 1. 打开 **WorkBuddy**，粘贴：
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 2. 三步：  
@@ -94,25 +94,24 @@
 | 角色 | 工具 | 职责 |
 |------|------|------|
 | **业务** | WorkBuddy 对话 + 引导页 + Word | 说安装句、选模板、填审核内容、附授权图、审初稿/分镜 |
-| **WorkBuddy（代理）** | Public installer + 获授权的 Private production + 系统提示 | **检查登录/授权、安装/更新 Private**、打开引导页、逐步指引、解析 Word、套模板、克隆旁白、导出 |
+| **WorkBuddy（代理）** | 唯一生产仓 + 系统提示 | **直接 clone/更新生产仓**、打开引导页、逐步指引、解析 Word、套模板、克隆旁白、导出；不把 GitHub、SSH 或命令交给业务 |
 | **制作** | 全库 + 业务编辑器 + 剪映 | 金样沉淀、新页型、语音包、返修疑难 |
 
 ### 2.2 交付物分层（默认 vs 备用）
 
-#### 默认 · Public 安装入口 → Private 生产仓
+#### 默认 · 单仓生产仓库
 
-业务只发安装句；WorkBuddy 先克隆脱敏 Public installer：
+业务只发安装句；WorkBuddy 官方 HTTPS 直接克隆：
 
-`https://github.com/lmr1123/chain-pharmacy-content-studio.git`
+`https://github.com/lmr1123/chain-pharmacy-content-studio-private.git`
 
-Public 脚本：`scripts/install_private_studio.py`<br>
-授权通过后脚本：Private 内 `scripts/workbuddy_bootstrap_for_business.py`<br>
+脚本：`scripts/workbuddy_bootstrap_for_business.py`<br>
 协议：`docs/workbuddy-install-and-guide.md`  
 提示词：`docs/workbuddy-system-prompt.md`
 
-Public 不含模板、声音、业务包或生成器；安装器检查 GitHub 登录和 Private `read` 权限，通过后才拉取完整生产仓并调用 bootstrap。未登录或无权限时必须停止，禁止公共镜像和公开 ZIP 回退。
+业务不需要 GitHub 账号。禁止公共镜像。旧安装入口 URL 仅兼容转发，新业务不要用。
 
-授权安装后，业务可见引导页在 Private 仓库内：
+安装后引导页在生产仓内：
 
 `outputs/业务使用资料包/药店培训内容工厂-业务包/index.html`
 
@@ -400,7 +399,7 @@ WorkBuddy：**voice_id 只从模板 manifest 读取**，禁止回退系统 TTS�
 ```text
 业务在 WorkBuddy：请安装 <repo.git>，然后指引我使用
     ↓
-WorkBuddy：安装 Public → 校验 Private read → 拉取 Private + bootstrap → 打开 index.html
+WorkBuddy：安装 Public → 校验维护登录或设备只读授权（待批准则停止）→ 拉取 Private + bootstrap → 打开 index.html
     ↓
 【A】预览选模板（关键页 + 金样）
     ↓
@@ -438,10 +437,9 @@ WorkBuddy：
 
 ```text
 你是连锁药店培训内容工厂的本地代理。只使用 production-library/templates/settled 中已登记模板。
-业务默认入口：识别「请安装 …chain-pharmacy-content-studio.git，然后指引我使用」→
-clone Public installer + scripts/install_private_studio.py → 校验 GitHub 登录与 Private read →
-拉取 Private + scripts/workbuddy_bootstrap_for_business.py → 打开引导页 → 四步陪做。
-禁止要求业务自己解压 zip。全文见 docs/workbuddy-system-prompt.md。
+业务默认入口：识别「请安装 …chain-pharmacy-content-studio-private.git，然后指引我使用」→
+官方 HTTPS 浅克隆生产仓 + scripts/workbuddy_bootstrap_for_business.py → 打开引导页 → 四步陪做。
+禁止要求业务登录 GitHub、配置 SSH、执行命令或自己解压 zip。全文见 docs/workbuddy-system-prompt.md。
 
 【业务可见】
 - 安装/更新仓库并打开 index.html 引导页
@@ -557,7 +555,8 @@ clone Public installer + scripts/install_private_studio.py → 校验 GitHub 登
 | 2026-08-03 | **Koboyo 不囤库**：删除预下载 SVG；`svg/` gitignore；Git 只留说明与许可，后续按需再拉 |
 | 2026-08-03 | **业务可上手**：每课型「本课型怎么填」；填写参考纠错（商品不再错挂风热样本）；初稿/缺口/分镜标准模板+示例；业务验收清单；内容驱动规则回归；一键 `scripts/refresh_business_delivery.py` |
 | 2026-08-03 | **历史入口**：业务不需解压，由 `workbuddy_bootstrap_for_business.py` 陪做；完整 Public 方案已被 2026-08-08 双仓边界替代 |
-| 2026-08-08 | **分发边界收口**：安装句 URL 保持不变，但该仓改为全新历史的脱敏 Public installer；登录并获 Private `read` 后才安装完整生产仓，禁止公共镜像和公开 ZIP fallback |
+| 2026-08-08 | **分发边界收口**：安装句 URL 保持不变，但该仓改为全新历史的脱敏 Public installer；只有通过 Private 授权后才安装完整生产仓，禁止公共镜像和公开 ZIP fallback |
+| 2026-08-10 | **普通业务设备授权**：业务无需 GitHub 账号；WorkBuddy 生成公钥申请，管理员批准单仓只读设备授权后继续安装；维护设备保留原登录路径 |
 
 **刷新业务包（制作侧 · 推荐一键）：**
 

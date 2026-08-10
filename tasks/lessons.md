@@ -1209,3 +1209,14 @@ cd production-library/validation/digital-human-ppt-presenter-poc-v1
 - 风险已告知：公开后无法完整召回已 clone 副本；生产资产仅限公司内部培训，不等于可外传再分发。
 - 旧话术「不得因授权麻烦公开生产仓」被本次用户书面选择覆盖；若以后要再收紧，需重新 Private + 恢复授权路径。
 
+## 2026-08-10（单仓化：只保留生产仓）
+
+- 用户确认：生产仓已公开后，双仓等于同一产品两套 git，应收敛。
+- 固化：业务安装句只指向 `chain-pharmacy-content-studio-private`；WorkBuddy 直接浅克隆 + `workbuddy_bootstrap_for_business.py`。
+- 旧仓 `chain-pharmacy-content-studio` 降为废弃转发入口，不删也可以，但新业务与文档不再用；删除前必须先改完安装句。
+
+## 2026-08-10 · 国内扁平 MG R09–R16 视觉否决
+
+- 用户否决 R09–R16 v1：① 横幅与全片字号过小；② 楼宇用代码 SVG 半成品；③ 人物画风偏离已签 soft flat；④ 背景简陋、主题场景不完整。后续扩展复用必须以该细致度为门槛。
+- 对策：主视觉城市／人物／场景必须用高质量栅格（full-replica 同画风或 image-edit 从母版提取）；代码只做 UI 壳（浏览器、目标条、黄标、箭头）；1080p 字号下限写入批次 ASSET_MANIFEST（横幅≥72、展示标题≥96、数据条≥52）。
+- 禁止把「对象级动画已做」当作视觉通过；字号、画风一致、主题背景完整必须与运动合同并列验收。

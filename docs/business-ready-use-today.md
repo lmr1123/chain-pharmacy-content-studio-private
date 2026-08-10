@@ -10,10 +10,10 @@
 **业务首句（复制到 WorkBuddy）：**
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
-这个 URL 是**安装入口**。WorkBuddy 会自动拉取生产仓并打开引导页。业务**不需要** GitHub 账号、设备申请、管理员批准或自己敲命令。生产仓当前为 Public，安装器默认官方 HTTPS 匿名克隆；失败时如实说明，不走公共镜像。
+这是**唯一生产仓**（Public）。WorkBuddy 直接 clone 后打开引导页。业务**不需要** GitHub 账号或自己敲命令；失败时如实说明，不走公共镜像。
 
 **WorkBuddy 侧：** `docs/workbuddy-install-and-guide.md` + `docs/workbuddy-system-prompt.md`  
 **刷新业务包（制作）：** `python3 scripts/refresh_business_delivery.py`
@@ -35,7 +35,7 @@
 业务                              WorkBuddy
 ────                              ────────
 ① 打开 WorkBuddy，粘贴安装句  →
-                                  ② clone 安装入口 → 匿名拉生产仓 → bootstrap
+                                  ② 直接 clone 生产仓 → bootstrap
                                   ③ 打开引导页，开始指引
 ④ 预览选模板
 ⑤ 填内容 / 交授权图          →
@@ -55,7 +55,7 @@
 2. 输入：
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 3. **三步做完：**  
@@ -78,7 +78,7 @@
 
 ## WorkBuddy 侧必须做到（代理）
 
-1. 识别安装句 → 克隆安装入口，运行 `scripts/install_private_studio.py`（匿名 HTTPS 拉生产仓并 bootstrap）
+1. 识别安装句 → 官方 HTTPS 浅克隆生产仓 → `scripts/workbuddy_bootstrap_for_business.py`
 2. 按 `docs/workbuddy-install-and-guide.md` 逐步指引，不要丢一堆路径让业务自己摸  
 3. 用 `business-catalog.json` 把中文课型名落到 settled slug  
 4. 列表/联合用药用 `scripts/content_driven_rules.py`  

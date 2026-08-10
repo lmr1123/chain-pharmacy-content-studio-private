@@ -2,10 +2,10 @@
 """WorkBuddy: install or update the factory repo, then print the business guide path.
 
 Business only says in WorkBuddy:
-  请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+  请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 
-WorkBuddy runs this script (or follows docs/workbuddy-install-and-guide.md).
-No zip/unzip for business.
+WorkBuddy clones that single production repository (or follows
+docs/workbuddy-install-and-guide.md). No zip/unzip for business.
 """
 
 from __future__ import annotations
