@@ -35,7 +35,7 @@
   },
   "previous_canonical": {
     "video": "速福达玛巴洛沙韦_商品培训课件3_金样_v1.mp4",
-    "note": "v1 留存对照，非当前 canonical"
+    "note": "v1 已从仓库移除以减体积；仅 v2 为 canonical"
   },
   "canonical_confirmed_by": "user",
   "canonical_confirmed_at": "2026-08-05",

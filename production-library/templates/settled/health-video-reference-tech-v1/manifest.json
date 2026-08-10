@@ -8,7 +8,7 @@
   "canonical_artifacts": {
     "video_visual_gold_v1": {
       "path": "风热证_疾病科普视频_金样_v1.mp4",
-      "alias": "wind-heat-reference-full-181s.mp4",
+      "alias_note": "former alias wind-heat-reference-full-181s.mp4 removed (duplicate blob; use Chinese path)",
       "format": "mp4",
       "resolution": "1920x1080",
       "duration_s": 181.2,
@@ -63,12 +63,12 @@
       "preview/key-06.png"
     ],
     "key_frame_labels_zh": [
-      "母版角色",
-      "症状页",
-      "机理页",
-      "开场帧",
-      "机理帧",
-      "治疗帧"
+      "开场",
+      "典型症状",
+      "病因机理",
+      "治疗思路",
+      "用药建议",
+      "总结"
     ],
     "gallery_title_zh": "疾病科普视频 · 风热证金样",
     "one_liner": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议",
@@ -96,13 +96,18 @@
     ],
     "production_ready": false,
     "status_label": "尚未开放 · 当前不可生成 · 金样可查看",
-    "status_note": "金样、结构和填写参考可以复用；正式换主题生产路线尚未激活，不承诺生成正式成品。",
+    "status_note": "金样、结构和门户内容示例可以复用；正式换主题生产路线尚未激活，不承诺生成正式成品。",
     "capabilities_note_zh": null,
     "shelf_group": "other",
     "preview_identity_qualified": true,
     "preview_identity_note_zh": null,
     "preview_suite_evidence": null,
-    "online_url": null
+    "online_url": null,
+    "portal_video_example": {
+      "filename": "gold.mp4",
+      "label": "风热证疾病科普视频 · 金样成片",
+      "source": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_金样_v1.mp4"
+    }
   },
   "business_catalog": {
     "name_zh": "疾病科普视频（如风热证）",

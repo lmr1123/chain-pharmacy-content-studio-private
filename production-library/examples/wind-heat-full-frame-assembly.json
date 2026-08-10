@@ -27,7 +27,7 @@
     "sample_rate": 48000,
     "samples_per_frame": 1600
   },
-  "output": "production-library/templates/settled/health-video-reference-tech-v1/wind-heat-reference-full-181s.mp4",
+  "output": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_金样_v1.mp4",
   "supersedes_as_template_locator": [
     "production-library/validation/video/wind-heat-gold-sample-master.mp4"
   ],
