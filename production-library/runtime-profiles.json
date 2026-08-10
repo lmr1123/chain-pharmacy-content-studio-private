@@ -1,15 +1,21 @@
 {
   "schema": "runtime-profiles-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "updated": "2026-08-09",
   "purpose": "按业务能力锁定依赖与探测项；bootstrap/doctor/business_job 共用，避免口头清单漂移",
   "profiles": {
     "pptx": {
-      "name_zh": "可编辑 PPT 导出（构件主路径 + 绿色兼容）",
+      "name_zh": "可编辑 PPT 导出（灵活构件 + 已签样标准课型）",
       "require_capabilities": ["pptx_export"],
       "probe_require": ["pptx"],
-      "routes": ["product-pptx-component-v1"],
-      "legacy_routes": ["product-pptx-green-v1"],
+      "routes": [
+        "product-pptx-component-v1",
+        "product-pptx-green-v1",
+        "product-pptx-disease-scenario-v1",
+        "courseware3-pptx-v1",
+        "ingredient-health-edu-pptx-v1"
+      ],
+      "legacy_routes": [],
       "default_route": "product-pptx-component-v1",
       "deps": {
         "node": ">=18",
@@ -21,16 +27,17 @@
         ],
         "primary_engine_entry": "production-library/engines/courseware-pptx-v1/export.mjs",
         "primary_generator": "scripts/generate_courseware.py",
-        "primary_style": "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json",
+        "primary_style": "production-library/styles/reference-product-blue-v1/tokens.json",
         "primary_recipes": "production-library/page-types/product-training/recipes",
-        "legacy_engine_entry": "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs",
-        "legacy_gold_content_model": "production-library/engines/product-courseware-green-v1/gold-content-model.json"
+        "fixed_engine_green": "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs",
+        "fixed_engine_disease_scenario": "production-library/engines/disease-product-scenario-pptx-v1/export.mjs",
+        "fixed_engine_courseware3": "production-library/engines/courseware3-pptx-v1/export.mjs"
       },
       "install_hints_zh": [
         "安装 Node.js 18+（Homebrew: brew install node）",
         "确认 Private 生产仓已完整 clone（含 production-library/engines/courseware-pptx-v1 与 page-types）",
         "若缺少 artifact-tool：bootstrap soft-repair 可链接历史 node_modules 到 courseware-pptx-v1 与绿色引擎",
-        "默认路线 product-pptx-component-v1；绿色单品为兼容路线",
+        "默认通用路线为构件化 PPT；金银花、穿心莲、速福达为已签样固定标准课型",
         "验证：python3 scripts/probe_production_env.py --require pptx && python3 scripts/business_doctor.py --profile pptx"
       ]
     },
@@ -38,7 +45,7 @@
       "name_zh": "本机完整商品/健康 MP4",
       "require_capabilities": ["video_full"],
       "probe_require": ["video-full"],
-      "routes": ["product-mp4-full-v1", "health-mp4-full-v1"],
+      "routes": ["product-mp4-full-v1", "health-mp4-full-v1", "courseware3-mp4-v1"],
       "deps": {
         "node": ">=18",
         "ffmpeg": "homebrew 优先 /opt/homebrew/bin/ffmpeg",
@@ -75,9 +82,12 @@
   "route_to_profile": {
     "product-pptx-component-v1": "pptx",
     "product-pptx-green-v1": "pptx",
+    "product-pptx-disease-scenario-v1": "pptx",
+    "courseware3-pptx-v1": "pptx",
+    "ingredient-health-edu-pptx-v1": "pptx",
     "product-mp4-full-v1": "video-full",
     "health-mp4-full-v1": "video-full",
-    "courseware3-pptx-mp4-v1": "pptx",
+    "courseware3-mp4-v1": "video-full",
     "gold-preview-only": null
   }
 }

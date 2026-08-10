@@ -3,6 +3,7 @@
 .venv-*/
 **/.venv*/
 **/node_modules/
+**/node_modules
 third_party/
 __pycache__/
 *.py[cod]
@@ -33,6 +34,12 @@ editor-logs/
 outputs/*
 !outputs/业务使用资料包/
 !outputs/业务使用资料包/**
+!outputs/courseware-natural-import/
+outputs/courseware-natural-import/*
+!outputs/courseware-natural-import/构件化商品培训_业务提交_空白模板.docx
+!outputs/courseware-natural-import/构件化商品培训_业务提交_填写参考.docx
+!outputs/courseware-natural-import/成分健康科普_米白番茄红_业务提交_空白模板.docx
+!outputs/courseware-natural-import/成分健康科普_米白番茄红_业务提交_填写参考.docx
 
 # --- WorkBuddy runtime/private business data ---
 # Generated workspaces and deliverables are local data, never source artifacts.
@@ -75,6 +82,18 @@ production-library/validation/**/contact-sheet*/
 production-library/validation/**/stills/
 production-library/validation/**/thumbs/
 production-library/validation/**/pptx-slides/
+
+# Keep only the reviewed, hash-bound component UAT evidence needed by clean clones.
+!production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/**/*.png
+!production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/**/*.pptx
+!production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png
+
+# Stable visual baseline used to prove the flexible suite is not a courseware-4 recolor.
+!production-library/validation/courseware/product-courseware-4-faithful-replica-v1/out/
+production-library/validation/courseware/product-courseware-4-faithful-replica-v1/out/*
+!production-library/validation/courseware/product-courseware-4-faithful-replica-v1/out/engine-v1-gold-qa/
+production-library/validation/courseware/product-courseware-4-faithful-replica-v1/out/engine-v1-gold-qa/*
+!production-library/validation/courseware/product-courseware-4-faithful-replica-v1/out/engine-v1-gold-qa/slide-*.png
 
 # --- poc: keep source; drop binary media (settled has canonicals) ---
 poc/**/*.mp4

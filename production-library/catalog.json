@@ -19,6 +19,7 @@
     "production-library/registries/effects.json",
     "production-library/registries/voices.json",
     "production-library/registries/scene-recipes.json",
+    "production-library/business-modes.json",
     "production-library/registries/decisions.json",
     "production-library/registries/lessons.json"
   ],
@@ -88,6 +89,7 @@
     "jiugongge_health_edu_compliance_mode": "docs/jiugongge-health-edu-compliance-mode.md",
     "jiugongge_health_edu_compliance_meta_prompt": "production-library/templates/prompt-modes/jiugongge-health-edu-compliance-v1/meta-prompt.md",
     "jiugongge_health_edu_compliance_scaffold": "scripts/scaffold_jiugongge_health_edu_compliance.py",
-    "digital_human_presenter_mode": "docs/digital-human-presenter-mode.md"
+    "digital_human_presenter_mode": "docs/digital-human-presenter-mode.md",
+    "business_modes": "production-library/business-modes.json"
   }
 }

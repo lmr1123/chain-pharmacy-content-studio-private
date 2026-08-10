@@ -1,8 +1,8 @@
 {
   "mode_id": "jiugongge-health-edu-compliance-v1",
   "title": "九宫格合规版（无医疗内容）变量",
-  "description": "只谈现象/习惯/常识；禁止医疗身份器材术语",
-  "required": ["theme", "audience", "habit_points"],
+  "description": "只谈现象/习惯/常识；复核可接受残缺输入，正式 release 禁止医疗身份器材术语且必须补齐合规脱敏说明",
+  "required": ["theme", "compliance_transform", "audience", "habit_points"],
   "properties": {
     "theme": {
       "type": "string",

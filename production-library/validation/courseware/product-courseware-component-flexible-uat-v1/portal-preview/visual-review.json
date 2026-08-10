@@ -1,0 +1,214 @@
+{
+  "schema": "component-portal-preview-visual-review-v1",
+  "reviewed": true,
+  "reviewer": "Codex逐页视觉复核",
+  "reviewed_at": "2026-08-10",
+  "scope_zh": "A/B/C 三套 r4 共 18 页逐页复核",
+  "conclusion_zh": "碰撞、截断、重复页码与正文溢出均为 0；三套保持统一浅蓝视觉。",
+  "cases": [
+    {
+      "case_id": "case-a",
+      "source_job_id": "uat-component-suite-a-20260810-r4",
+      "deck_sha256": "80421f5fd901af23c4456c9097518bd1786867c90985490f65be6d30dfaff792",
+      "reviewed": true,
+      "pages": [
+        {
+          "page_number": 1,
+          "page_type": "courseware_cover",
+          "render_sha256": "2ad55b6ee254253f72911f6bdcfb6e75fc6a95b2b701bf44fd7a74dd098fe7e4",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 2,
+          "page_type": "hook_intro",
+          "render_sha256": "00a08a889aa2063057bfb658229642341f7bc792d85f78844165244d2e7ab894",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 3,
+          "page_type": "product_overview",
+          "render_sha256": "8b540f81cdf3f5867a44abe6e06768d4fcd4d13190a5dd0c7f4eca48edaef202",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 4,
+          "page_type": "consultation_framework",
+          "render_sha256": "fb9752ab1b5dad222d8a804a6b21fea59ee37b7cddcba6bd775f8b56c00591cf",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 5,
+          "page_type": "evidence_ladder",
+          "render_sha256": "b6e2b62ca7d28b0778ff495921dabd2efd7bb3e4bc87d542c8b66f353d7e5c3d",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 6,
+          "page_type": "objection_handling",
+          "render_sha256": "68b6c7abe88b78ef265533f0e7336ddd1fec246640851ac7811602b8f6e62af6",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 7,
+          "page_type": "summary_matrix",
+          "render_sha256": "5087d3ff2b5033f9081a78fbad42f60bfb649e5117c83a120fd0c20f17757d56",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        }
+      ]
+    },
+    {
+      "case_id": "case-b",
+      "source_job_id": "uat-component-suite-b-20260810-r4",
+      "deck_sha256": "56e6d44c4e10ef20b6e5f8d97f9fd3ed2d38bd6a510dc682583c0f61de5b3c40",
+      "reviewed": true,
+      "pages": [
+        {
+          "page_number": 1,
+          "page_type": "courseware_cover",
+          "render_sha256": "7fee3cab634c17c8fd0a610120ebccee15490e7e7973d1fb13d4fc58523b0f92",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 2,
+          "page_type": "hook_pain_data",
+          "render_sha256": "fa7bcb90bc275ad26655ce042ec2ba36d5754e9807c1d12083b084f80454e7f3",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 3,
+          "page_type": "evidence_ladder",
+          "render_sha256": "36d0b6c7cda72eb2debcc00b48bff05e60b1142929f8ae0f435e355ef40b9d98",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 4,
+          "page_type": "product_overview",
+          "render_sha256": "9c834f26aa5673ed0bae033266be6b2846a10919fe9d32b2cafd3eba50eba6e4",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 5,
+          "page_type": "objection_handling",
+          "render_sha256": "a72ead9fbcbd538e15c09600942e6e4d2eb873a812475528a2ad1c2dc06ad502",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 6,
+          "page_type": "summary_matrix",
+          "render_sha256": "a3163fffb466dadeb713315d20ea272cb25539745a705dcad0a01314954552cf",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        }
+      ]
+    },
+    {
+      "case_id": "case-c",
+      "source_job_id": "uat-component-suite-c-20260810-r4",
+      "deck_sha256": "c4b71b4d75a69e2a7f5dccfa564e043c9a3dc0d8ba5c4786cf6fd6098434e4cb",
+      "reviewed": true,
+      "pages": [
+        {
+          "page_number": 1,
+          "page_type": "courseware_cover",
+          "render_sha256": "2a5c6371e8eb37a97b34210278c9d4edb59fa7f05b80490bd1ed7442d362df23",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 2,
+          "page_type": "hook_intro",
+          "render_sha256": "ceffd9f53245a000a13ffc64ffbb1e657d79b6f711b9cba05cd281775a0073a8",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 3,
+          "page_type": "consultation_framework",
+          "render_sha256": "d87a592968892fc74fcfa16c7b7efc76ca9d4936b56a497f7872b83011032899",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 4,
+          "page_type": "summary_matrix",
+          "render_sha256": "5352c2d01af6fd4a4e4966510e243c0e70889fb4bd678634a7ed7e62befefcf3",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        },
+        {
+          "page_number": 5,
+          "page_type": "evidence_ladder",
+          "render_sha256": "f50237dad2965ad288d31887f194ab5b89293bc79b7ef509bcec89df416ed68f",
+          "reviewed": true,
+          "collision_hits": 0,
+          "clipping_hits": 0,
+          "duplicate_page_number_hits": 0,
+          "body_overflow_hits": 0
+        }
+      ]
+    }
+  ]
+}

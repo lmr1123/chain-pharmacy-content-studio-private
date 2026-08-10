@@ -562,6 +562,18 @@ class BusinessPackageRebuildTests(unittest.TestCase):
                     path.parent.mkdir(parents=True, exist_ok=True)
                     path.write_text(f"{mode}/{filename}\n", encoding="utf-8")
 
+            minimal_mp4 = (
+                b"\x00\x00\x00\x18ftypisom\x00\x00\x02\x00isomiso2"
+                b"\x00\x00\x00\x08moov\x00\x00\x00\x08mdat"
+            )
+            for filename in (
+                "seedance-meta-prompt-example.mp4",
+                "digital-human-presenter-example.mp4",
+            ):
+                portal_example = static_package / "media/production-modes" / filename
+                portal_example.parent.mkdir(parents=True, exist_ok=True)
+                portal_example.write_bytes(minimal_mp4)
+
             private_files = (
                 package / "05_交付物放这里/job/final.mp4",
                 package / "07_业务填报上传/待处理/业务资料.docx",

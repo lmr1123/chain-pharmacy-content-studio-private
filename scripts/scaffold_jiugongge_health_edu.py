@@ -66,6 +66,34 @@ def g(d: dict, *keys: str, default: str = "") -> str:
     return str(cur) if cur is not None else default
 
 
+def _filled_list(value: object) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return [str(item).strip() for item in value if str(item).strip()]
+
+
+def missing_release_fields(v: dict) -> list[str]:
+    missing: list[str] = []
+    if not g(v, "theme").strip():
+        missing.append("theme（科普主题）")
+    knowledge = _filled_list(v.get("knowledge_points"))
+    if len(knowledge) != 3:
+        missing.append(
+            f"knowledge_points（需 3 条已审核医学知识，当前 {len(knowledge)} 条）"
+        )
+    emergency = _filled_list(v.get("emergency_actions"))
+    if len(emergency) < 3:
+        missing.append(
+            f"emergency_actions（需至少 3 条已审核应急口径，当前 {len(emergency)} 条）"
+        )
+    prevention = _filled_list(v.get("prevention_tips"))
+    if len(prevention) < 3:
+        missing.append(
+            f"prevention_tips（需至少 3 条已审核预防口径，当前 {len(prevention)} 条）"
+        )
+    return missing
+
+
 def input_sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -156,11 +184,19 @@ def nine_grid_block(title: str, cells: list[str]) -> str:
 
 def build_segments(v: dict) -> list[dict]:
     theme = g(v, "theme")
-    k1, k2, k3 = expand_knowledge(list(v.get("knowledge_points") or []))
+    k1, k2, k3 = expand_knowledge(_filled_list(v.get("knowledge_points")))
     clinic = g(v, "clinic_scene", default="温馨明亮的社区诊所卡通诊室，柔和暖光")
     ar = g(v, "aspect_ratio", default="9:16")
-    emergency = list(v.get("emergency_actions") or ["保持冷静", "立即拨打120", "协助等待救援"])
-    prevent = list(v.get("prevention_tips") or ["规律作息", "适度活动", "定期体检"])
+    emergency = _filled_list(v.get("emergency_actions")) or [
+        "保持冷静",
+        "立即拨打120",
+        "协助等待救援",
+    ]
+    prevent = _filled_list(v.get("prevention_tips")) or [
+        "规律作息",
+        "适度活动",
+        "定期体检",
+    ]
     e1, e2, e3 = (emergency + ["", "", ""])[:3]
     p1, p2, p3 = (prevent + ["", "", ""])[:3]
 
@@ -313,16 +349,29 @@ def render_characters_md() -> str:
     return f"# 角色三视图提示词（复制出图）\n\n{base}\n"
 
 
-def render_review_md(v: dict, segs: list[dict]) -> str:
-    pts = list(v.get("knowledge_points") or [])
+def render_review_md(v: dict, segs: list[dict], missing_fields: list[str]) -> str:
+    pts = _filled_list(v.get("knowledge_points"))
+    is_draft = bool(missing_fields)
+    can_render_draft = bool(g(v, "theme").strip() and pts)
     lines = [
-        f"# 九宫格科普脚本复核包 · {g(v, 'theme')}",
+        f"# 九宫格科普脚本复核包 · {g(v, 'theme') or '待补主题'}",
         "",
         f"**模式：** jiugongge-health-edu-v1  ",
         f"**日期：** {date.today().isoformat()}  ",
         f"**时长：** 60 秒（6×10s）  ",
-        f"**状态：** 待业务确认",
+        f"**状态：** {'草稿·待补字段' if is_draft else '待业务确认'}",
         "",
+    ]
+    if missing_fields:
+        lines += [
+            "## 待补字段（正式发布前必须补齐）",
+            "",
+            *[f"- {field}" for field in missing_fields],
+            "",
+            "**自动扩写仅用于草稿。** 自动补出的知识点、应急或预防口径未经业务/医学审核，不能进入正式提示词。",
+            "",
+        ]
+    lines += [
         "## 核心知识点",
         "",
     ]
@@ -331,11 +380,17 @@ def render_review_md(v: dict, segs: list[dict]) -> str:
     if g(v, "extra_notes"):
         lines += ["", f"**补充：** {g(v, 'extra_notes')}"]
     lines += ["", "## 六段口播（请先审文案）", ""]
-    for s in segs:
+    if can_render_draft:
+        for s in segs:
+            lines += [
+                f"### 片段 {s['id']}（{s['range']}）· {s['title']}",
+                "",
+                s["narration"],
+                "",
+            ]
+    else:
         lines += [
-            f"### 片段 {s['id']}（{s['range']}）· {s['title']}",
-            "",
-            s["narration"],
+            "主题和至少 1 条知识点补齐后，才生成六段口播草稿；当前不输出空槽伪成稿。",
             "",
         ]
     lines += [
@@ -495,18 +550,17 @@ def main() -> int:
         raise SystemExit(f"vars not found: {vars_path}")
 
     v = json.loads(vars_path.read_text(encoding="utf-8"))
-    if not g(v, "theme"):
-        raise SystemExit("vars.theme is required")
-    if not v.get("knowledge_points"):
-        raise SystemExit("vars.knowledge_points (1-3) is required")
+    if not isinstance(v, dict):
+        raise SystemExit("vars must be a JSON object")
 
     digest = input_sha256(vars_path)
     slug = args.slug or slugify(g(v, "theme"))
     out_dir = Path(args.out_root).expanduser().resolve() / slug
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    missing_fields = missing_release_fields(v)
     segs = build_segments(v)
-    review_text = render_review_md(v, segs)
+    review_text = render_review_md(v, segs, missing_fields)
     review_digest = text_sha256(review_text)
     if args.release:
         for name in RELEASE_FILES:
@@ -518,6 +572,10 @@ def main() -> int:
             raise SystemExit("--release requires --approval <approval.json>")
         approval_path = Path(args.approval).expanduser().resolve()
         approval = require_release_approval(approval_path, digest, review_digest)
+        if missing_fields:
+            raise SystemExit(
+                "release blocked：缺少正式发布必填字段：" + "；".join(missing_fields)
+            )
 
     (out_dir / "00-主题变量.json").write_text(
         json.dumps(v, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

@@ -37,10 +37,18 @@ const modelPath = path.resolve(argValue('--model', path.join(ROOT, 'content-mode
 const outPath = path.resolve(
   argValue(
     '--out',
-    path.join(ROOT, 'out', '速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v1.pptx'),
+    path.join(ROOT, 'out', '速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v2.pptx'),
   ),
 );
 const assetsRoot = path.resolve(argValue('--assets', path.join(ROOT, 'public')));
+const qaValue = argValue('--qa', null);
+const qaDir = qaValue ? path.resolve(qaValue) : null;
+const reportValue = argValue('--report', null);
+const reportPath = reportValue
+  ? path.resolve(reportValue)
+  : qaDir
+    ? path.join(qaDir, 'generate-report.json')
+    : outPath + '.inspect.json';
 
 /** 视频设计坐标 */
 const DW = 1920;
@@ -57,7 +65,7 @@ const model = JSON.parse(await fs.readFile(modelPath, 'utf8'));
 const patches = snapshotPath
   ? JSON.parse(await fs.readFile(snapshotPath, 'utf8')).patches ?? {}
   : {};
-const C = model.tokens;
+const C = model.tokens || {};
 const assets = model.assets;
 
 /** 与视频 project.tsx 一致：优先 HarmonyOS Sans SC */
@@ -66,18 +74,24 @@ const FONT_FINAL =
     .split(',')[0]
     .trim();
 
-/** 视频 TS 字号 → PPT */
+/** 视频设计字号 → PPT：优先 content-model tokens.fs_*（v2 单源），缺省回退硬编码 */
+function designFs(tokenKey, fallback) {
+  const raw = C[tokenKey];
+  const n = raw != null && raw !== '' ? Number(raw) : NaN;
+  return Math.round((Number.isFinite(n) ? n : fallback) * FS);
+}
+
 const TS = {
-  coverTitle: Math.round(84 * FS),
-  coverSub: Math.round(36 * FS),
-  coverCheck: Math.round(40 * FS),
-  chapter: Math.round(48 * FS),
-  nav: Math.round(28 * FS),
-  navNum: Math.round(24 * FS),
-  cardTitle: Math.round(36 * FS),
-  cardBody: Math.round(30 * FS),
-  heroNum: Math.round(72 * FS),
-  bubble: Math.round(46 * FS),
+  coverTitle: designFs('fs_cover_title', 84),
+  coverSub: designFs('fs_cover_sub', 36),
+  coverCheck: designFs('fs_cover_check', 40),
+  chapter: designFs('fs_chapter', 48),
+  nav: designFs('fs_nav', 28),
+  navNum: designFs('fs_nav_num', 24),
+  cardTitle: designFs('fs_card_title', 36),
+  cardBody: designFs('fs_card_body', 30),
+  heroNum: designFs('fs_hero_num', 72),
+  bubble: designFs('fs_bubble', 46),
   labelLg: Math.round(44 * FS),
   labelMd: Math.round(40 * FS),
   body32: Math.round(32 * FS),
@@ -89,6 +103,7 @@ const TS = {
   body20: Math.round(20 * FS),
   body18: Math.round(18 * FS),
   ageHero: Math.round(78 * FS),
+  // 屏显字幕在视频里用 fs_caption；PPT 页脚/小字仍用较小可读字号，避免占满版心
   caption: Math.round(16 * FS),
 };
 
@@ -853,6 +868,29 @@ for (const page of pages) {
 }
 
 await fs.mkdir(path.dirname(outPath), {recursive: true});
+if (qaDir) {
+  await fs.mkdir(qaDir, {recursive: true});
+  for (const [index, slide] of presentation.slides.items.entries()) {
+    const stem = `slide-${String(index + 1).padStart(2, '0')}`;
+    const png = await presentation.export({slide, format: 'png', scale: 1});
+    await fs.writeFile(
+      path.join(qaDir, `${stem}.png`),
+      new Uint8Array(await png.arrayBuffer()),
+    );
+    const layout = await slide.export({format: 'layout'});
+    await fs.writeFile(path.join(qaDir, `${stem}.layout.json`), await layout.text());
+  }
+  const montage = await presentation.export({format: 'webp', montage: true, scale: 1});
+  await fs.writeFile(
+    path.join(qaDir, 'deck-montage.webp'),
+    new Uint8Array(await montage.arrayBuffer()),
+  );
+  const inspection = await presentation.inspect({
+    kind: 'slide,textbox,shape,notes',
+    maxChars: 60000,
+  });
+  await fs.writeFile(path.join(qaDir, 'inspection.ndjson'), inspection.ndjson);
+}
 const pptx = await PresentationFile.exportPptx(presentation);
 await pptx.save(outPath);
 
@@ -880,7 +918,14 @@ const inspect = {
   image_fit: 'native-aspect-contain-box',
   audience_split: true,
   font_patched: patch.status === 0,
+  qa_dir: qaDir,
+  qa_previews: qaDir ? presentation.slides.items.length : 0,
+  qa_layouts: qaDir ? presentation.slides.items.length : 0,
 };
 const inspectPath = outPath + '.inspect.json';
 await fs.writeFile(inspectPath, JSON.stringify(inspect, null, 2) + '\n');
+if (reportPath !== inspectPath) {
+  await fs.mkdir(path.dirname(reportPath), {recursive: true});
+  await fs.writeFile(reportPath, JSON.stringify(inspect, null, 2) + '\n');
+}
 console.log(JSON.stringify(inspect, null, 2));

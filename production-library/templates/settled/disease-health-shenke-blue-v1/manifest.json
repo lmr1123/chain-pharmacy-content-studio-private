@@ -55,9 +55,11 @@
       "preview/key-02.png",
       "preview/key-03.png",
       "preview/key-04.png",
-      "preview/key-05.png"
+      "preview/key-05.png",
+      "preview/key-06.png"
     ],
     "key_frame_labels_zh": [
+      "封面",
       "疾病概览",
       "临床表现",
       "对症用药表",
@@ -73,7 +75,7 @@
     ],
     "capabilities": {
       "gold_viewable": true,
-      "content_draft": true,
+      "content_draft": false,
       "new_theme_preview": false,
       "new_theme_pptx": false,
       "new_theme_mp4": false,
@@ -88,6 +90,12 @@
     ],
     "production_ready": false,
     "status_label": "金样可查看 · 换病种入口待接线",
+    "status_note": "参课蓝 v3 金样可查看；当前可先整理审核内容，不承诺业务自助生成新病种正式 PPTX。",
+    "capabilities_note_zh": null,
+    "shelf_group": "other",
+    "preview_identity_qualified": true,
+    "preview_identity_note_zh": null,
+    "preview_suite_evidence": null,
     "online_url": null
   },
   "business_catalog": {
@@ -95,6 +103,7 @@
     "one_liner": "门店健康顾问疾病知识培训：概览、表现、检查、用药、关怀、一页通",
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
-    "framework_guide": "../../框架填写说明.md"
+    "framework_guide": "../../框架填写说明.md",
+    "shelf_group": "other"
   }
 }

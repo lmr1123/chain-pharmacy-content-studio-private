@@ -1,0 +1,18 @@
+{
+  "page_type": "objection_handling",
+  "family": "product-training",
+  "status": "production-validated",
+  "production_validation_ref": "../registry.json#/production_validation/page_type_cases/objection_handling",
+  "name_zh": "门店异议应答",
+  "scene_types": ["objection_handling"],
+  "impl_by_scene": {"objection_handling": "objection_handling"},
+  "default_impl": "objection_handling",
+  "slots": ["chapter", "rows[{objection,response,boundary}]"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "row_card", "slot": "rows", "layout": "objection_response_boundary"}
+  ],
+  "source_contract": "new_business_contract#component-objection-handling-v1",
+  "reuse_boundary": "new component page; all copy must be explicitly supplied and approved"
+}

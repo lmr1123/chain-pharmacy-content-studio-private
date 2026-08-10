@@ -74,6 +74,7 @@ sys.path.insert(0, str(REPO / "scripts"))
 from business_guided_portal import (  # noqa: E402
     build_guided_portal_html,
     extract_docx_paragraphs,
+    load_business_modes,
     write_upload_folder_readme,
 )
 
@@ -340,6 +341,23 @@ def copy_static_modes() -> None:
             copy_file(STATIC_PACKAGE / mode / filename, PKG / mode / filename)
 
 
+def copy_portal_mode_media() -> None:
+    """Copy reviewed mode examples into the self-contained business portal."""
+    destination = PKG / "01_模板货架" / "media" / "production-modes"
+    for mode in load_business_modes():
+        example = mode.get("portal_video_example") or {}
+        source_value = str(example.get("source") or "")
+        filename = str(example.get("filename") or "")
+        if not source_value and not filename:
+            continue
+        if not source_value or not filename or Path(filename).name != filename:
+            raise SystemExit(f"invalid portal video example for {mode['mode_id']}")
+        source = (REPO / source_value).resolve()
+        if REPO.resolve() not in source.parents or not source.is_file():
+            raise SystemExit(f"missing portal video example for {mode['mode_id']}: {source}")
+        copy_file(source, destination / filename)
+
+
 def include_in_business_zip(path: Path) -> bool:
     """Exclude local uploads and generated deliverables from the distributable zip."""
     relative = path.relative_to(PKG)
@@ -524,6 +542,7 @@ def _build_full_package(
     shelf.mkdir()
     words.mkdir()
     refs.mkdir()
+    copy_portal_mode_media()
 
     for t in templates:
         slug = t["slug"]
@@ -693,6 +712,7 @@ def main(
         catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
         templates = catalog["templates"]
         examples = load_fill_examples(templates)
+        copy_portal_mode_media()
         portal = write_runtime_portal(templates, examples, runtime_capabilities)
         print(f"Local portal refreshed: {portal}")
         return

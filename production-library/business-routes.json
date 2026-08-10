@@ -1,6 +1,6 @@
 {
   "schema": "business-routes-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "updated": "2026-08-09",
   "purpose": "业务任务唯一路由事实源：中文名、受众、成品、模板、环境、审批闸门、adapter、QA profile、交付白名单",
   "job_workspace_rel": "outputs/workbuddy-workspaces/jobs",
@@ -10,7 +10,7 @@
     "intake": "可开始草稿",
     "needs_input": "等待业务资料",
     "draft_ready": "等待内容确认",
-    "content_approved": "等待视觉确认或可生成",
+    "content_approved": "已通过内容确认",
     "visual_approved": "可开始生成",
     "rendering": "正在生成",
     "env_blocked": "环境不足",
@@ -24,12 +24,16 @@
     "等待内容确认",
     "等待视觉确认",
     "正在生成",
-    "质检失败或已交付"
+    "可开始生成",
+    "环境不足",
+    "质检失败",
+    "质检通过",
+    "已交付"
   ],
   "routes": [
     {
       "route_id": "product-pptx-component-v1",
-      "name_zh": "内部商品培训 · 构件化 PPT（默认主路径）",
+      "name_zh": "内部商品培训 · 灵活构件兜底 PPT",
       "audience": "store_staff",
       "audience_zh": "店员内部培训",
       "deliverable": "pptx",
@@ -41,11 +45,11 @@
       "env_require": ["pptx_export"],
       "gates": {
         "content_approval": true,
-        "visual_approval": false,
-        "product_image_approval": false
+        "visual_approval": true,
+        "product_image_approval": true
       },
       "qa_profile": "pptx-component",
-      "style_pack_default": "courseware-4-silk-yellow-red-v1",
+      "style_pack_default": "style-pack.reference-product-blue-v1",
       "engine": "courseware-pptx-v1",
       "delivery_whitelist": [
         "终稿.pptx",
@@ -55,37 +59,68 @@
         "scene-plan.json",
         "provenance-report.json"
       ],
-      "selection_hint_zh": "金样构件 recipe：封面/痛点数据/功效/特点/人群/联合/总结/注意 · 任意大纲进",
-      "notes_zh": "默认主路径。script.structured → scene-plan → content-model → courseware-pptx-v1。文案只取自业务脚本，缺图用授权占位槽。"
+      "selection_hint_zh": "没有命中固定标准课型时的灵活路线：封面/痛点数据/功效/特点/人群/联合/总结/注意可按大纲组合",
+      "notes_zh": "通用兜底路线。先锁定业务文案，再由 WorkBuddy 生成并绑定主题插图，最后绑定业务授权包装图；内容、视觉与包装三道哈希确认、逐页 QA 全部通过后才可交付。"
     },
     {
       "route_id": "product-pptx-green-v1",
-      "name_zh": "内部商品培训 · 绿色单品 PPT（已下线）",
+      "name_zh": "内部商品培训 · 绿色单品标准课型（金银花金样）",
       "audience": "store_staff",
       "audience_zh": "店员内部培训",
       "deliverable": "pptx",
       "deliverable_zh": "可编辑 PPT",
       "template_slug": "product-courseware-green-v1",
       "adapter": "product_pptx_green",
-      "active": false,
+      "active": true,
       "priority": 15,
-      "legacy": true,
-      "retired": true,
+      "legacy": false,
+      "retired": false,
       "env_require": ["pptx_export"],
       "gates": {
         "content_approval": true,
-        "visual_approval": false,
-        "product_image_approval": false
+        "visual_approval": true,
+        "product_image_approval": true
       },
-      "qa_profile": "pptx-basic",
+      "qa_profile": "pptx-fixed-full",
       "delivery_whitelist": [
         "终稿.pptx",
         "交付说明.md",
         "内容确认记录.json",
+        "qa-summary.json",
         "run-manifest.json"
       ],
-      "selection_hint_zh": "已下线：请改用 product-pptx-component-v1",
-      "notes_zh": "2026-08-09 业务确认下线。代码与金样保留可回滚；新任务禁止走本路线（仅 --force 调试）。默认请用 product-pptx-component-v1。"
+      "selection_hint_zh": "已签样 5 页紧凑课型：商品介绍 · 联合话术 · 品种对标 · 注意事项",
+      "notes_zh": "固定标准课型；业务明确要绿色五页或金银花同结构时优先选择。换商品只继承结构与绿色视觉；完整审核稿、本品/搭档/竞品授权图和 4 张正式插图缺一不可，内容/图片哈希与逐页 QA 通过后才交付。"
+    },
+    {
+      "route_id": "product-pptx-disease-scenario-v1",
+      "name_zh": "内部商品培训 · 疾病辨证＋商品＋场景标准课型（穿心莲金样）",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "pptx",
+      "deliverable_zh": "可编辑 PPT",
+      "template_slug": "disease-product-scenario-v1",
+      "adapter": "disease_product_scenario_pptx",
+      "active": true,
+      "priority": 16,
+      "env_require": ["pptx_export"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": true,
+        "product_image_approval": true
+      },
+      "qa_profile": "pptx-fixed-full",
+      "style_pack_default": "style-pack.dashenlin-courseware-green-v1",
+      "engine": "disease-product-scenario-pptx-v1",
+      "delivery_whitelist": [
+        "终稿.pptx",
+        "交付说明.md",
+        "内容确认记录.json",
+        "qa-summary.json",
+        "run-manifest.json"
+      ],
+      "selection_hint_zh": "已签样 18 页长课型：疾病认知 · 商品知识 · 人群咨询 · 销售场景 · 权重对标",
+      "notes_zh": "固定 18 页数据驱动引擎。换主题必须提交完整疾病、商品、两组场景、权重商品和全部正式图片；非穿心莲主题硬阻断穿心莲医学文案与源图残留。"
     },
     {
       "route_id": "product-mp4-full-v1",
@@ -145,32 +180,90 @@
       "notes_zh": "P1 暂不开放业务自助：须主题包审批与正式环境验证后再激活。"
     },
     {
-      "route_id": "courseware3-pptx-mp4-v1",
-      "name_zh": "内部商品培训 · 课件3（PPT+视频）",
+      "route_id": "courseware3-pptx-v1",
+      "name_zh": "内部商品培训 · 专项讲解标准课型 PPT（速福达金样）",
       "audience": "store_staff",
       "audience_zh": "店员内部培训",
-      "deliverable": "pptx_and_mp4",
-      "deliverable_zh": "可编辑 PPT + 本机完整 MP4",
+      "deliverable": "pptx",
+      "deliverable_zh": "可编辑 PPT",
       "template_slug": "sufuda-mabaloshawei-product-courseware-3-v1",
-      "adapter": "courseware3",
-      "active": false,
-      "priority": 40,
+      "adapter": "courseware3_pptx",
+      "active": true,
+      "priority": 17,
       "env_require": ["pptx_export"],
       "gates": {
         "content_approval": true,
-        "visual_approval": false,
+        "visual_approval": true,
         "product_image_approval": true
       },
-      "qa_profile": "courseware3",
+      "qa_profile": "pptx-fixed-full",
       "delivery_whitelist": [
         "终稿.pptx",
+        "交付说明.md",
+        "内容确认记录.json",
+        "qa-summary.json",
+        "run-manifest.json"
+      ],
+      "selection_hint_zh": "已签样专项讲解课型：背景 · 三大功效 · 三大特点 · 人群 · 联合 · 总结",
+      "notes_zh": "PPTX 正式路线。12 个主题内容单元、授权包装/Logo 与 23 个主题插图必须全部显式覆盖；正式导出为 13 页可编辑 PPTX（适宜人群单元拆为 2 页）。普通新主题按文字与图片 SHA 双重阻断速福达金样继承。"
+    },
+    {
+      "route_id": "ingredient-health-edu-pptx-v1",
+      "name_zh": "内部健康科普 · 米白番茄红 20 页标准课型 PPT",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "pptx",
+      "deliverable_zh": "可编辑 PPT",
+      "template_slug": "kangaisen-lycopene-health-edu-v1",
+      "adapter": "ingredient_health_edu_pptx",
+      "active": true,
+      "priority": 18,
+      "env_require": ["pptx_export"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": true,
+        "product_image_approval": false
+      },
+      "qa_profile": "pptx-fixed-full",
+      "style_pack_default": "style-pack.lycopene-health-edu-cream-red-v1",
+      "engine": "ingredient-health-edu-pptx-v1",
+      "delivery_whitelist": [
+        "终稿.pptx",
+        "交付说明.md",
+        "内容确认记录.json",
+        "qa-summary.json",
+        "run-manifest.json"
+      ],
+      "selection_hint_zh": "已签样 20 页成分健康科普：定义来源 · 原理 · 研究信息 · 补充提示 · 应用 · 总结",
+      "notes_zh": "只复用米白番茄红视觉与 15 类页型。新主题须完整覆盖 107 个文字槽和 69 个授权 PNG 槽；参考医学正文与 94 个非样式源媒体 SHA 对新主题全部 fail-closed，20 页逐页 QA 后才交付。"
+    },
+    {
+      "route_id": "courseware3-mp4-v1",
+      "name_zh": "内部商品培训 · 专项讲解标准课型 MP4（速福达金样）",
+      "audience": "store_staff",
+      "audience_zh": "店员内部培训",
+      "deliverable": "mp4",
+      "deliverable_zh": "本机完整 MP4",
+      "template_slug": "sufuda-mabaloshawei-product-courseware-3-v1",
+      "adapter": "courseware3_mp4",
+      "active": false,
+      "priority": 40,
+      "env_require": ["video_full"],
+      "gates": {
+        "content_approval": true,
+        "visual_approval": true,
+        "product_image_approval": true
+      },
+      "qa_profile": "video-full",
+      "delivery_whitelist": [
         "终稿.mp4",
         "交付说明.md",
         "内容确认记录.json",
+        "delivery-qa.json",
         "run-manifest.json"
       ],
-      "selection_hint_zh": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型",
-      "notes_zh": "已有胶水入口；统一 job adapter 待 P1 后续批次接入。"
+      "selection_hint_zh": "与专项讲解 PPT 同源的完整讲解视频",
+      "notes_zh": "暂不开放：须完成统一 MP4 adapter、正式音色、完整解码/黑帧/响度 QA 与 video_full 环境验收后再激活；PPTX 可独立生成。"
     },
     {
       "route_id": "gold-preview-only",

@@ -9,10 +9,10 @@
   "category": "疾病科普",
   "capabilities": {
     "gold_viewable": true,
-    "content_draft": true,
-    "new_theme_preview": true,
+    "content_draft": false,
+    "new_theme_preview": false,
     "new_theme_pptx": false,
-    "new_theme_mp4": true,
+    "new_theme_mp4": false,
     "business_selfserve": false
   },
   "requirements": [
@@ -22,19 +22,23 @@
     "正式 voice_id"
   ],
   "blockers": [
-    "正式出片前必须完成主题画面审批",
-    "当前机器须通过 video_full 环境检查"
+    "正式换主题生产路线尚未激活"
   ],
   "production_ready": false,
-  "status_label": "可开始草稿 · 正式出片需环境与审批",
-  "status_note": "金样可查看；换病种先整理审核稿与主题包，内容和画面确认后，且本机 video_full 通过才生成正式 MP4。",
+  "status_label": "尚未开放 · 当前不可生成 · 金样可查看",
+  "status_note": "金样、结构和填写参考可以复用；正式换主题生产路线尚未激活，不承诺生成正式成品。",
+  "capabilities_note_zh": null,
+  "shelf_group": "other",
+  "preview_identity_qualified": true,
+  "preview_identity_note_zh": null,
+  "preview_suite_evidence": null,
   "key_frame_labels_zh": [
-    "开场",
-    "典型症状",
-    "病因机理",
-    "治疗思路",
-    "用药建议",
-    "总结"
+    "母版角色",
+    "症状页",
+    "机理页",
+    "开场帧",
+    "机理帧",
+    "治疗帧"
   ],
   "voice_id": "voice.reference-pharmacist-qwen-v1",
   "blank_word": "业务提交_空白模板.docx",

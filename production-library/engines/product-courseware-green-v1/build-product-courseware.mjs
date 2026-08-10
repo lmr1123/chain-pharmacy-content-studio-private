@@ -216,6 +216,70 @@ function assetSlot(slide, name, label, x, y, width, height, fill = MINT) {
   });
 }
 
+function assetFile(spec) {
+  if (typeof spec === "string") return spec;
+  if (!spec || typeof spec !== "object") return null;
+  return spec.file || spec.src || spec.asset || null;
+}
+
+function assetContentType(file) {
+  const ext = path.extname(file).toLowerCase();
+  if (ext === ".jpg" || ext === ".jpeg") return "image/jpeg";
+  if (ext === ".webp") return "image/webp";
+  if (ext === ".svg") return "image/svg+xml";
+  return "image/png";
+}
+
+async function loadLocalAsset(spec) {
+  const source = assetFile(spec);
+  if (!source || source.startsWith("asset://")) return null;
+  const file = path.isAbsolute(source)
+    ? source
+    : path.resolve(path.dirname(dataPath), source);
+  try {
+    return { file, blob: await fs.readFile(file) };
+  } catch {
+    return null;
+  }
+}
+
+async function addAssetOrSlot(
+  slide,
+  name,
+  label,
+  spec,
+  x,
+  y,
+  width,
+  height,
+  { fill = MINT, fit = "contain" } = {},
+) {
+  const loaded = await loadLocalAsset(spec);
+  if (!loaded) {
+    assetSlot(slide, name, label, x, y, width, height, fill);
+    return false;
+  }
+  rect(slide, `${name}-surface`, x, y, width, height, fill, LINE, 1, { radius: 10 });
+  const requestedFit =
+    typeof spec === "object" && spec?.fit ? spec.fit : fit;
+  const crop = typeof spec === "object" ? spec?.crop : null;
+  slide.images.add({
+    name,
+    blob: loaded.blob,
+    contentType: assetContentType(loaded.file),
+    alt: label.replaceAll("\n", " "),
+    fit: requestedFit === "cover" ? "cover" : "contain",
+    ...(crop ? { crop } : {}),
+    position: {
+      left: x + 6,
+      top: y + 6,
+      width: width - 12,
+      height: height - 12,
+    },
+  });
+  return true;
+}
+
 /** 薄荷底 + 绿左条 callout（总结条/卖点条） */
 function callout(slide, name, value, x, y, width, height, options = {}) {
   const { fill, color = WHITE, size = 18, bold = true } = options;
@@ -290,11 +354,21 @@ function addCover(page) {
   addNotes(slide, page.reference);
 }
 
-function addOverview(page) {
+async function addOverview(page) {
   const slide = presentation.slides.add();
   addPageChrome(slide, page);
 
-  assetSlot(slide, "primary-packshot", "商品包装高清图\n待接入", 145, 92, 205, 260);
+  await addAssetOrSlot(
+    slide,
+    "primary-packshot",
+    `${page.product.display_name || "本品"}包装图`,
+    page.product.image_slot,
+    145,
+    92,
+    205,
+    260,
+    { fill: WHITE, fit: "contain" },
+  );
   text(slide, "product-name", page.product.display_name, 130, 365, 240, 34, {
     size: 22,
     color: RED,
@@ -402,7 +476,7 @@ function addOverview(page) {
  * | 应用场景 | 联合用药 | 联合商品图(每行) | 本品图(纵向合并) | 销售话术 |
  * 每行搭档包装独立成列；本品在旁侧合并列贯穿全部行，保证「每一行都与本品关联」。
  */
-function addCombination(page) {
+async function addCombination(page) {
   const slide = presentation.slides.add();
   addPageChrome(slide, page);
 
@@ -450,7 +524,7 @@ function addCombination(page) {
     "本品包装图\n待接入";
 
   let cy = bodyTop;
-  page.rows.forEach((row, rowIndex) => {
+  for (const [rowIndex, row] of page.rows.entries()) {
     const h = rowHeights[rowIndex];
     const fill = rowIndex % 2 === 1 ? PALE : WHITE;
     const talkSize = (row.talk_track || "").length > 95 ? 14 : 15;
@@ -486,15 +560,16 @@ function addCombination(page) {
       1,
     );
     const partnerSlotH = Math.min(h - 28, 150);
-    assetSlot(
+    await addAssetOrSlot(
       slide,
       `partner-slot-${rowIndex}`,
-      `${row.partner}\n包装图待接入`,
+      `${row.partner || row.combination || "联合商品"}包装图`,
+      row.partner_asset,
       x + widths[0] + widths[1] + 20,
       cy + (h - partnerSlotH) / 2,
       widths[2] - 40,
       partnerSlotH,
-      MINT,
+      { fill: MINT, fit: "contain" },
     );
 
     // 行分隔线仍画在本品列背景上（合并列本体在循环外绘制）
@@ -509,7 +584,7 @@ function addCombination(page) {
       { fill, size: talkSize, align: "left", line: LINE },
     );
     cy += h;
-  });
+  }
 
   // 本品合并列：整块背景 + 居中包装槽 + 红色「+」示意关联
   const primaryX = x + widths[0] + widths[1] + widths[2];
@@ -540,21 +615,22 @@ function addCombination(page) {
 
   const primarySlotW = 130;
   const primarySlotH = Math.min(bodyH - 48, 280);
-  assetSlot(
+  await addAssetOrSlot(
     slide,
     "combination-primary-product",
     primaryLabel,
+    page.primary_asset || page.primary_pack_asset || page.product_asset,
     primaryX + (widths[3] - primarySlotW) / 2 + 10,
     bodyTop + (bodyH - primarySlotH) / 2,
     primarySlotW,
     primarySlotH,
-    WHITE,
+    { fill: WHITE, fit: "contain" },
   );
 
   addNotes(slide, page.reference);
 }
 
-function addBenchmark(page) {
+async function addBenchmark(page) {
   const slide = presentation.slides.add();
   addPageChrome(slide, page);
 
@@ -575,7 +651,7 @@ function addBenchmark(page) {
   });
 
   let cy = y + rowHeights[0];
-  page.rows.forEach((row, rowIndex) => {
+  for (const [rowIndex, row] of page.rows.entries()) {
     const h = rowHeights[rowIndex + 1];
     const zebra = rowIndex % 2 === 1 ? PALE : WHITE;
     cell(slide, `benchmark-label-${rowIndex}`, row.label, x, cy, widths[0], h, {
@@ -600,24 +676,27 @@ function addBenchmark(page) {
       // Labels follow column headers so gold product names never leak into new themes.
       const primaryLabel = `${page.columns[1] || "本品"}包装图\n待接入`;
       const competitorLabel = `${page.columns[2] || "竞品"}包装图\n待接入`;
-      assetSlot(
+      await addAssetOrSlot(
         slide,
         "benchmark-primary-packshot",
         primaryLabel,
+        row.values?.[0],
         x + widths[0] + 195,
         cy + 18,
         140,
         h - 36,
+        { fill: WHITE, fit: "contain" },
       );
-      assetSlot(
+      await addAssetOrSlot(
         slide,
         "benchmark-competitor-packshot",
         competitorLabel,
+        row.values?.[1],
         x + widths[0] + widths[1] + 175,
         cy + 18,
         140,
         h - 36,
-        PALE,
+        { fill: PALE, fit: "contain" },
       );
     } else if (row.merge) {
       cell(
@@ -664,11 +743,11 @@ function addBenchmark(page) {
       );
     }
     cy += h;
-  });
+  }
   addNotes(slide, page.reference);
 }
 
-function addPrecautions(page) {
+async function addPrecautions(page) {
   const slide = presentation.slides.add();
   addPageChrome(slide, page);
 
@@ -699,7 +778,7 @@ function addPrecautions(page) {
   const gap = 10;
   const cellW = (gridW - gap) / 2;
   const cellH = (gridH - gap) / 2;
-  page.illustration_slots.forEach((slot, index) => {
+  for (const [index, slot] of page.illustration_slots.entries()) {
     const col = index % 2;
     const row = Math.floor(index / 2);
     const sx = gridX + col * (cellW + gap);
@@ -714,17 +793,21 @@ function addPrecautions(page) {
       bold: true,
       vAlign: "middle",
     });
-    assetSlot(
+    await addAssetOrSlot(
       slide,
       `precaution-asset-${index}`,
-      `原创插图槽位\n${slot.title}`,
+      `${slot.title}插图`,
+      slot.asset || slot.file || slot.src,
       sx + 28,
       sy + 64,
       cellW - 56,
       cellH - 86,
-      index % 2 === 0 ? WHITE : SOFT_YELLOW,
+      {
+        fill: index % 2 === 0 ? WHITE : SOFT_YELLOW,
+        fit: slot.fit || "cover",
+      },
     );
-  });
+  }
   addNotes(slide, page.reference);
 }
 
@@ -739,7 +822,7 @@ const builders = {
 for (const page of data.pages) {
   const builder = builders[page.scene_type];
   if (!builder) throw new Error(`Unsupported scene_type: ${page.scene_type}`);
-  builder(page);
+  await builder(page);
 }
 
 await fs.mkdir(qaDir, { recursive: true });

@@ -361,16 +361,13 @@ class P0ContentSafetyTest(unittest.TestCase):
         cases = [
             (
                 "scaffold_seedance_health_edu.py",
-                {
-                    "theme": "暴雨天居家安全",
-                    "target_audience": "家人",
-                },
+                "seedance-health-edu-v1/example-暴雨避险.json",
                 "01-科普脚本复核包.md",
                 ["02-Seedance提示词-分段.md", "03-视频号发布全家桶.md"],
             ),
             (
                 "scaffold_jiugongge_health_edu.py",
-                {"theme": "生活状态提醒", "knowledge_points": ["留意日常变化"]},
+                "jiugongge-health-edu-v1/example-阿尔茨海默早期筛查.json",
                 "01-科普脚本复核包.md",
                 [
                     "02-角色三视图提示词.md",
@@ -380,7 +377,7 @@ class P0ContentSafetyTest(unittest.TestCase):
             ),
             (
                 "scaffold_jiugongge_health_edu_compliance.py",
-                {"theme": "办公久坐小习惯", "habit_points": ["每小时起身走一走"]},
+                "jiugongge-health-edu-compliance-v1/example-告别办公久坐僵硬.json",
                 "01-合规脚本复核包.md",
                 [
                     "02-视觉资产提示词.md",
@@ -392,8 +389,15 @@ class P0ContentSafetyTest(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as temp_dir:
             temp = Path(temp_dir)
-            for index, (script, variables, review_name, release_names) in enumerate(cases):
+            for index, (script, example, review_name, release_names) in enumerate(cases):
                 with self.subTest(script=script):
+                    variables = json.loads(
+                        (
+                            ROOT
+                            / "production-library/templates/prompt-modes"
+                            / example
+                        ).read_text(encoding="utf-8")
+                    )
                     vars_path = temp / f"vars-{index}.json"
                     vars_path.write_text(
                         json.dumps(variables, ensure_ascii=False), encoding="utf-8"
@@ -436,6 +440,93 @@ class P0ContentSafetyTest(unittest.TestCase):
                         self.assertTrue((out / name).is_file(), name)
                     self.assertTrue((out / "release-manifest.json").is_file())
 
+    def test_partial_prompt_scaffolds_stay_draft_and_block_release(self) -> None:
+        cases = [
+            (
+                "scaffold_seedance_health_edu.py",
+                {"theme": "暴雨天居家安全", "target_audience": "家人"},
+                "01-科普脚本复核包.md",
+                ["02-Seedance提示词-分段.md", "03-视频号发布全家桶.md"],
+            ),
+            (
+                "scaffold_jiugongge_health_edu.py",
+                {"theme": "生活状态提醒", "knowledge_points": ["留意日常变化"]},
+                "01-科普脚本复核包.md",
+                [
+                    "02-角色三视图提示词.md",
+                    "03-九宫格与视频提示词-六段.md",
+                    "04-社媒合规发布包.md",
+                ],
+            ),
+            (
+                "scaffold_jiugongge_health_edu_compliance.py",
+                {"theme": "办公久坐小习惯", "habit_points": ["每小时起身走一走"]},
+                "01-合规脚本复核包.md",
+                [
+                    "02-视觉资产提示词.md",
+                    "03-九宫格与视频提示词-六段.md",
+                    "04-视频号发布全家桶.md",
+                ],
+            ),
+        ]
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp = Path(temp_dir)
+            for index, (script, variables, review_name, release_names) in enumerate(cases):
+                with self.subTest(script=script):
+                    vars_path = temp / f"partial-vars-{index}.json"
+                    vars_path.write_text(
+                        json.dumps(variables, ensure_ascii=False), encoding="utf-8"
+                    )
+                    out_root = temp / f"partial-out-{index}"
+                    slug = f"partial-{index}"
+                    review = self._run_scaffold(script, vars_path, out_root, slug)
+                    self.assertEqual(review.returncode, 0, review.stderr)
+
+                    out = out_root / slug
+                    review_text = (out / review_name).read_text(encoding="utf-8")
+                    self.assertIn("草稿", review_text)
+                    self.assertIn("待补字段", review_text)
+                    if script == "scaffold_seedance_health_edu.py":
+                        self.assertNotIn("镜头从特写切入", review_text)
+                    if script == "scaffold_jiugongge_health_edu.py":
+                        self.assertIn("自动扩写仅用于草稿", review_text)
+
+                    approval_path = out / "approval.json"
+                    approval = json.loads(approval_path.read_text(encoding="utf-8"))
+                    approval.update({"approved": True, "approved_by": "测试审核人"})
+                    approval_path.write_text(
+                        json.dumps(approval, ensure_ascii=False), encoding="utf-8"
+                    )
+                    release = self._run_scaffold(
+                        script,
+                        vars_path,
+                        out_root,
+                        slug,
+                        "--release",
+                        "--approval",
+                        str(approval_path),
+                    )
+                    self.assertNotEqual(release.returncode, 0)
+                    self.assertIn("正式发布必填字段", release.stderr + release.stdout)
+                    for name in release_names:
+                        self.assertFalse((out / name).exists(), name)
+                    self.assertFalse((out / "release-manifest.json").exists())
+
+    def test_seedance_schema_defines_required_core_pain(self) -> None:
+        mode_dir = ROOT / (
+            "production-library/templates/prompt-modes/seedance-health-edu-v1"
+        )
+        schema = json.loads(
+            (mode_dir / "variables.schema.json").read_text(encoding="utf-8")
+        )
+        example = json.loads(
+            (mode_dir / "example-暴雨避险.json").read_text(encoding="utf-8")
+        )
+        self.assertIn("core_pain", schema["required"])
+        self.assertIn("core_pain", schema["properties"])
+        self.assertTrue(str(example.get("core_pain") or "").strip())
+
     def test_prompt_release_rejects_stale_input_hash(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             temp = Path(temp_dir)
@@ -475,13 +566,11 @@ class P0ContentSafetyTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             temp = Path(temp_dir)
             vars_path = temp / "vars.json"
-            vars_path.write_text(
-                json.dumps(
-                    {"theme": "暴雨天居家安全", "target_audience": "家人"},
-                    ensure_ascii=False,
-                ),
-                encoding="utf-8",
+            example = ROOT / (
+                "production-library/templates/prompt-modes/"
+                "seedance-health-edu-v1/example-暴雨避险.json"
             )
+            vars_path.write_text(example.read_text(encoding="utf-8"), encoding="utf-8")
             out_root = temp / "out"
             slug = "seedance-review-hash"
             review = self._run_scaffold(

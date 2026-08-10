@@ -1,7 +1,7 @@
 # 番茄红素健康科普 · 米白番茄红 v1
 
 **style_pack_id:** `style-pack.lycopene-health-edu-cream-red-v1`<br>
-**状态:** `candidate`<br>
+**状态:** `production-validated`<br>
 **机器可读:** 同目录 `tokens.json`<br>
 **来源:** 康爱森番茄红素参考课件视觉抽离（`kangaisen-lycopene-health-edu-v1/style-pack.json`）<br>
 **用途:** 健康科普 / 商品培训共用构件皮肤；米白底 + 番茄红标题 + 白卡 + 绿辅色
@@ -136,8 +136,8 @@
 
 ## 签样与升级
 
-- 当前：`candidate`（验证用，可进 validation/）
-- 升 `production-validated` 条件：金样回归 QA 并排一致 + 用户视觉签样
+- 当前：`production-validated`
+- 证据：20 页原 OOXML 换主题、107 个文字槽、69 个显式新图绑定、源媒体 SHA 零残留与逐页 QA 已通过
 - 换主题只换 content-model，不改本 tokens
 
 ---

@@ -1,0 +1,18 @@
+{
+  "page_type": "evidence_ladder",
+  "family": "product-training",
+  "status": "production-validated",
+  "production_validation_ref": "../registry.json#/production_validation/page_type_cases/evidence_ladder",
+  "name_zh": "商品证据阶梯",
+  "scene_types": ["evidence_ladder"],
+  "impl_by_scene": {"evidence_ladder": "evidence_ladder"},
+  "default_impl": "evidence_ladder",
+  "slots": ["chapter", "items[{metric,label,source}]"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "data_stat", "slot": "items", "layout": "evidence_row"}
+  ],
+  "source_contract": "template.sufuda-mabaloshawei-product-courseware-3-v1#feature_3",
+  "reuse_boundary": "evidence hierarchy only; no pearl-silk master, source claims, logos, or product media"
+}

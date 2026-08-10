@@ -1,0 +1,46 @@
+{
+  "slug": "kangaisen-lycopene-health-edu-v1",
+  "name_zh": "番茄红素成分健康科普 PPT（米白番茄红）",
+  "one_liner": "20 页成分健康科普：定义与来源、抗氧化机制、健康研究、吸收指南与应用；独立米白番茄红课型，不是福尔课件4",
+  "gallery_title_zh": "番茄红素成分健康科普 · 20 页米白番茄红金样",
+  "outputs": [
+    "可编辑 PPTX"
+  ],
+  "category": "成分健康科普",
+  "capabilities": {
+    "gold_viewable": true,
+    "content_draft": true,
+    "new_theme_preview": true,
+    "new_theme_pptx": true,
+    "new_theme_mp4": false,
+    "business_selfserve": true
+  },
+  "requirements": [
+    "完整 20 页成分健康科普审核稿",
+    "成分定义/来源/机制/研究/补充指南字段",
+    "药师与合规终审",
+    "全部正式图片及版权/授权",
+    "内容/素材/视觉确认",
+    "pptx_export"
+  ],
+  "blockers": [],
+  "production_ready": true,
+  "status_label": "已签样标准课型 · PPTX 可生成",
+  "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+  "capabilities_note_zh": null,
+  "shelf_group": "signed-standard",
+  "preview_identity_qualified": true,
+  "preview_identity_note_zh": null,
+  "preview_suite_evidence": null,
+  "key_frame_labels_zh": [
+    "成分定义",
+    "抗氧化能力",
+    "健康研究",
+    "吸收指南",
+    "目录结构"
+  ],
+  "voice_id": null,
+  "blank_word": "业务提交_空白模板.docx",
+  "filled_example": "业务提交_填写参考.docx",
+  "template_id": "template.kangaisen-lycopene-health-edu-v1"
+}

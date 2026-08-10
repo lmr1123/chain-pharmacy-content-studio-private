@@ -1232,6 +1232,21 @@
       "rule": "使用Qwen3/mlx-audio做声线克隆时，reference-prompt 的音频窗口必须按词级时码切完整句，且 ref_text 与切片内容一字级对齐；禁止音频截断在半句而 ref_text 写完整句——否则每段TTS开头会补念漏掉的半句（如「最大的十种健康食品…」循环）。切片参数变更须失效缓存（meta记录ss/t/ref_text）。扩展段补录后对每段做离线ASR，重点查开头3s泄漏与药名漏读；有波形不等于内容正确。",
       "source": "tasks/lessons.md",
       "evidence": "product-courseware-4-faithful-replica-v1/docs/segment-studio-v1.md"
+    },
+    {
+      "id": "lesson.local-readiness-must-verify-git-tracked-authoritative-sources",
+      "name_zh": "本机 readiness 通过仍须验证 clean clone 权威源",
+      "status": "active",
+      "tags": [
+        "WorkBuddy",
+        "clean-clone",
+        "Git发布",
+        "权威源",
+        "业务包"
+      ],
+      "rule": "本机存在被忽略的权威 Word、哈希绑定预览图或 UAT fixture 时，readiness 与回归可能通过，但 WorkBuddy 新机器仍会缺文件。正式发布前必须从 Git index 或 clean clone 复核全部 manifest、registry、测试合同和门户构建引用；仅对不可重建且已审核的正式源与证据做精确白名单，禁止放开整个 outputs/validation 或提交 job workspace、个人授权输入和原始 QA 运行目录。",
+      "source": "tasks/lessons.md",
+      "evidence": "scripts/test_p2_clean_clone_e2e.py"
     }
   ]
 }

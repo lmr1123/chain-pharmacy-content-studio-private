@@ -1,0 +1,489 @@
+{
+  "schema": "business-route-selector-v1",
+  "version": "1.0.0",
+  "updated": "2026-08-09",
+  "purpose": "业务自然语言意图到 business route 的推荐契约及多金样能力地图；active、环境、审批、adapter 与交付真值始终从 business-routes.json 读取",
+  "portal": {
+    "title_zh": "我不懂模板，帮我选",
+    "description_zh": "只说明想交付什么和现有资料，WorkBuddy 先解释推荐与缺口；确认课型前不创建任务。"
+  },
+  "intent_options": {
+    "deliverables": [
+      {"value": "unsure", "label_zh": "不确定，帮我判断"},
+      {"value": "pptx", "label_zh": "可编辑 PPTX"},
+      {"value": "mp4", "label_zh": "完整 MP4"}
+    ],
+    "content_types": [
+      {"value": "unsure", "label_zh": "不确定，按需求判断"},
+      {"value": "product-training", "label_zh": "单品商品培训"},
+      {"value": "disease-product-scenario", "label_zh": "疾病 + 商品 + 场景演练"},
+      {"value": "ingredient-health-edu", "label_zh": "成分健康科普"},
+      {"value": "product-video", "label_zh": "商品培训视频"}
+    ],
+    "structure_preferences": [
+      {"value": "unsure", "label_zh": "不确定，帮我推荐"},
+      {"value": "dynamic", "label_zh": "动态页数 · 灵活构件 PPT"},
+      {"value": "fixed-5", "label_zh": "固定 5 页 · 绿色紧凑课"},
+      {"value": "fixed-18", "label_zh": "固定 18 页 · 疾病商品场景课"},
+      {"value": "fixed-13", "label_zh": "固定 13 页 · 专项商品讲解"},
+      {"value": "fixed-20", "label_zh": "固定 20 页 · 成分健康科普"}
+    ]
+  },
+  "profiles": [
+    {
+      "profile_id": "flexible-product-training-pptx",
+      "route_id": "product-pptx-component-v1",
+      "business_intent_zh": "普通新商品培训 PPT，页数和大纲需要灵活编排",
+      "family": "product-training",
+      "structure_mode": "dynamic",
+      "page_count": {
+        "mode": "dynamic",
+        "fixed": null,
+        "description_zh": "按已审核内容和可用页型动态编排"
+      },
+      "gold_lineage": {
+        "source_zh": "绿色单品商品总览 + 疾病商品场景咨询框架 + 课件3证据层级 + 新增业务页型；统一使用辅酶 Q10 浅蓝商品培训视觉金样",
+        "reuse_scope_zh": "按审核大纲动态组合多课型的信息层级与新页型，统一使用 Q10 沉淀的浅蓝商品培训视觉语法；不继承任一金样的商品文案、包装、证据或原图"
+      },
+      "reusable_capabilities": {
+        "page_types": [
+          "封面",
+          "痛点与数据",
+          "核心功效",
+          "产品特点",
+          "适宜人群",
+          "联合建议",
+          "总结矩阵",
+          "注意事项",
+          "商品信息总览",
+          "门店咨询框架",
+          "商品证据阶梯",
+          "门店异议应答"
+        ],
+        "evidence": [
+          "业务审核数据槽",
+          "证据来源脚注",
+          "包装与证据真图绑定",
+          "多课型页签来源说明"
+        ],
+        "scenes": [
+          "商品引入",
+          "卖点讲解",
+          "人群识别",
+          "联合场景",
+          "培训收口",
+          "多课型页签重组",
+          "新增页签"
+        ]
+      },
+      "signals": {
+        "strong": [
+          "构件化",
+          "普通商品",
+          "灵活页数",
+          "页数灵活",
+          "任意大纲",
+          "自定义大纲",
+          "灵活编排",
+          "多课型组合",
+          "多个课件页签",
+          "2到3个课件页签",
+          "2-3课件页签组合",
+          "页签组合",
+          "新增页签"
+        ],
+        "supporting": [
+          "商品培训ppt",
+          "商品课件",
+          "可编辑ppt",
+          "商品信息总览",
+          "门店咨询框架",
+          "证据阶梯",
+          "异议应答"
+        ],
+        "negative": [
+          "绿色五页",
+          "绿色5页",
+          "穿心莲",
+          "疾病辨证",
+          "速福达",
+          "课件3",
+          "成分科普",
+          "成分健康科普",
+          "mp4",
+          "培训视频"
+        ]
+      },
+      "explanation_zh": "没有明确指定已签样固定课型时，普通商品 PPT 走默认构件化路线；它可以按业务大纲扩展，不强套固定页数。"
+    },
+    {
+      "profile_id": "green-five-page-product-pptx",
+      "route_id": "product-pptx-green-v1",
+      "business_intent_zh": "复用金银花绿色单品的五页紧凑商品培训结构",
+      "family": "product-training",
+      "structure_mode": "fixed",
+      "page_count": {
+        "mode": "fixed",
+        "fixed": 5,
+        "description_zh": "固定五页标准课型"
+      },
+      "gold_lineage": {
+        "source_zh": "金银花露绿色商品培训五页金样",
+        "reuse_scope_zh": "只继承五页结构与绿色视觉，不继承金银花露文案、包装或插图"
+      },
+      "reusable_capabilities": {
+        "page_types": [
+          "商品介绍与卖点人群",
+          "联合用药话术",
+          "品种对标",
+          "注意事项"
+        ],
+        "evidence": [
+          "本品、搭档与竞品授权图绑定",
+          "内容与图片哈希确认"
+        ],
+        "scenes": [
+          "单品快速培训",
+          "联合销售话术",
+          "竞品对标",
+          "风险提醒"
+        ]
+      },
+      "signals": {
+        "strong": [
+          "金银花",
+          "绿色五页",
+          "绿色5页",
+          "五页绿色",
+          "5页绿色",
+          "绿色商品培训",
+          "绿色商品培训ppt",
+          "绿色单品"
+        ],
+        "supporting": [
+          "五页",
+          "5页",
+          "绿色",
+          "联合用药",
+          "品种对标",
+          "注意事项"
+        ],
+        "negative": [
+          "穿心莲",
+          "18页",
+          "速福达",
+          "课件3",
+          "成分科普",
+          "20页",
+          "mp4",
+          "视频"
+        ]
+      },
+      "explanation_zh": "明确要绿色五页、金银花同结构或紧凑的介绍/联合/对标/注意课型时，选择该已签样固定路线。"
+    },
+    {
+      "profile_id": "disease-product-scenario-eighteen-page-pptx",
+      "route_id": "product-pptx-disease-scenario-v1",
+      "business_intent_zh": "复用穿心莲的疾病辨证、商品知识与销售场景长课型",
+      "family": "disease-product-scenario-training",
+      "structure_mode": "fixed",
+      "page_count": {
+        "mode": "fixed",
+        "fixed": 18,
+        "description_zh": "固定十八页疾病—商品—场景标准课型"
+      },
+      "gold_lineage": {
+        "source_zh": "穿心莲内酯滴丸商品培训课件2金样",
+        "reuse_scope_zh": "复用十八页结构和绿色视觉；新主题不得残留穿心莲医学文案或源图"
+      },
+      "reusable_capabilities": {
+        "page_types": [
+          "疾病认知与辨证",
+          "商品知识",
+          "人群咨询",
+          "销售场景",
+          "权重商品对标"
+        ],
+        "evidence": [
+          "疾病与商品审核字段",
+          "正式图片显式绑定",
+          "非金样残留阻断"
+        ],
+        "scenes": [
+          "疾病识别",
+          "商品承接",
+          "两组咨询场景",
+          "权重商品比较"
+        ]
+      },
+      "signals": {
+        "strong": [
+          "穿心莲",
+          "疾病商品场景",
+          "疾病+商品场景",
+          "疾病-商品-场景",
+          "疾病辨证",
+          "18页",
+          "十八页"
+        ],
+        "supporting": [
+          "两组场景",
+          "销售场景",
+          "权重对标",
+          "长课件"
+        ],
+        "negative": [
+          "绿色五页",
+          "5页",
+          "速福达",
+          "课件3",
+          "成分科普",
+          "20页",
+          "mp4",
+          "视频"
+        ]
+      },
+      "explanation_zh": "主题需要从疾病认知进入商品，再落到咨询和销售场景，并明确采用穿心莲十八页框架时，选择该固定路线。"
+    },
+    {
+      "profile_id": "special-topic-thirteen-page-pptx",
+      "route_id": "courseware3-pptx-v1",
+      "business_intent_zh": "复用速福达课件3的专项讲解商品培训结构",
+      "family": "product-training-special-topic",
+      "structure_mode": "fixed",
+      "page_count": {
+        "mode": "fixed",
+        "fixed": 13,
+        "description_zh": "十二个内容单元固定导出十三页"
+      },
+      "gold_lineage": {
+        "source_zh": "速福达玛巴洛沙韦商品培训课件3金样",
+        "reuse_scope_zh": "复用专项讲解结构与珠光丝绸橙视觉；新主题不得继承速福达文案、包装、Logo 或插图"
+      },
+      "reusable_capabilities": {
+        "page_types": [
+          "主题背景",
+          "三大功效",
+          "三大特点",
+          "适宜人群",
+          "联合建议",
+          "总结"
+        ],
+        "evidence": [
+          "十二个内容单元完整性",
+          "包装与Logo授权槽",
+          "主题插图显式绑定",
+          "文字与图片SHA残留阻断"
+        ],
+        "scenes": [
+          "专项背景铺陈",
+          "核心利益讲解",
+          "产品特点讲解",
+          "人群拆页",
+          "联合与收口"
+        ]
+      },
+      "signals": {
+        "strong": [
+          "速福达",
+          "课件3",
+          "专项讲解",
+          "13页",
+          "十三页"
+        ],
+        "supporting": [
+          "三大功效",
+          "三大特点",
+          "流感背景",
+          "十二个内容单元"
+        ],
+        "negative": [
+          "绿色五页",
+          "穿心莲",
+          "18页",
+          "成分科普",
+          "20页",
+          "mp4",
+          "视频"
+        ]
+      },
+      "explanation_zh": "明确指定速福达课件3、十三页或背景/功效/特点/人群/联合的专项讲解框架时，选择该固定 PPT 路线。"
+    },
+    {
+      "profile_id": "ingredient-health-education-twenty-page-pptx",
+      "route_id": "ingredient-health-edu-pptx-v1",
+      "business_intent_zh": "复用番茄红素米白番茄红的二十页成分健康科普结构",
+      "family": "ingredient-health-education",
+      "structure_mode": "fixed",
+      "page_count": {
+        "mode": "fixed",
+        "fixed": 20,
+        "description_zh": "固定二十页成分健康科普标准课型"
+      },
+      "gold_lineage": {
+        "source_zh": "康爱森番茄红素成分健康科普金样",
+        "reuse_scope_zh": "只继承米白番茄红视觉和二十页页型；不得继承康爱森或番茄红素参考医学正文与原图"
+      },
+      "reusable_capabilities": {
+        "page_types": [
+          "成分定义与来源",
+          "作用原理",
+          "研究信息",
+          "补充提示",
+          "应用场景",
+          "总结"
+        ],
+        "evidence": [
+          "研究信息与来源槽",
+          "一百零七个文字槽",
+          "六十九个授权图片槽",
+          "医学正文与源媒体零残留"
+        ],
+        "scenes": [
+          "成分认知",
+          "原理解释",
+          "研究信息解读",
+          "补充指南",
+          "生活应用"
+        ]
+      },
+      "signals": {
+        "strong": [
+          "成分健康科普",
+          "成分科普",
+          "20页",
+          "二十页",
+          "米白番茄红"
+        ],
+        "supporting": [
+          "定义与来源",
+          "作用原理",
+          "抗氧化机制",
+          "健康研究",
+          "补充指南",
+          "番茄红素"
+        ],
+        "negative": [
+          "普通商品",
+          "商品培训",
+          "商品课件",
+          "绿色五页",
+          "穿心莲",
+          "速福达",
+          "mp4",
+          "视频"
+        ]
+      },
+      "explanation_zh": "内容主体是成分定义、来源、原理、研究与补充应用，而不是单品卖点培训，并明确采用二十页米白番茄红结构时，选择该固定路线。"
+    },
+    {
+      "profile_id": "full-product-training-mp4",
+      "route_id": "product-mp4-full-v1",
+      "business_intent_zh": "生成本机完整商品培训 MP4",
+      "family": "product-training-video",
+      "structure_mode": "fixed",
+      "page_count": {
+        "mode": "fixed",
+        "fixed": 8,
+        "unit_zh": "视频段",
+        "description_zh": "固定八段完整商品培训视频"
+      },
+      "gold_lineage": {
+        "source_zh": "辅酶Q10商品培训完整视频金样",
+        "reuse_scope_zh": "复用八段培训结构、品牌壳、正式音色与动效语法；不继承金样商品文案或包装"
+      },
+      "reusable_capabilities": {
+        "page_types": [
+          "开场",
+          "品牌与品类",
+          "商品介绍",
+          "核心功效",
+          "产品特点",
+          "适宜人群",
+          "联合建议",
+          "总结"
+        ],
+        "evidence": [
+          "八段审核稿",
+          "授权包装图与凭证",
+          "内容和包装SHA绑定审批",
+          "正式voice_id"
+        ],
+        "scenes": [
+          "八段连续讲解",
+          "药师口播",
+          "包装展示",
+          "功效与人群",
+          "联合与收口"
+        ]
+      },
+      "signals": {
+        "strong": [
+          "mp4",
+          "完整视频",
+          "培训视频",
+          "商品视频",
+          "完整出片"
+        ],
+        "supporting": [
+          "视频",
+          "8段",
+          "八段",
+          "旁白",
+          "出片"
+        ],
+        "negative": [
+          "ppt",
+          "pptx",
+          "可编辑课件",
+          "五页",
+          "18页",
+          "13页",
+          "20页",
+          "成分科普"
+        ]
+      },
+      "explanation_zh": "业务明确要完整 MP4、培训视频或出片时，选择商品视频路线；是否可正式渲染必须另行检查本机 video_full，不能只凭推荐结果承诺。"
+    }
+  ],
+  "ambiguity_rules": [
+    {
+      "rule_id": "product-training-deliverable-unspecified",
+      "signals": {
+        "required_any": [
+          "商品培训"
+        ],
+        "absent_all": [
+          "ppt",
+          "pptx",
+          "课件",
+          "幻灯",
+          "视频",
+          "mp4",
+          "出片",
+          "绿色",
+          "五页",
+          "5页",
+          "金银花",
+          "穿心莲",
+          "疾病辨证",
+          "18页",
+          "十八页",
+          "速福达",
+          "课件3",
+          "13页",
+          "十三页",
+          "成分科普",
+          "20页",
+          "二十页"
+        ]
+      },
+      "candidate_route_ids": [
+        "product-pptx-component-v1",
+        "product-mp4-full-v1"
+      ],
+      "question_zh": "您要交付可编辑的商品培训 PPT，还是本机完整商品培训 MP4？",
+      "explanation_zh": "只说商品培训无法判断最终成品；先确认 PPT 或 MP4，避免错误进入不同审批和运行环境。"
+    }
+  ]
+}

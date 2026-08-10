@@ -1,0 +1,18 @@
+{
+  "page_type": "consultation_framework",
+  "family": "product-training",
+  "status": "production-validated",
+  "production_validation_ref": "../registry.json#/production_validation/page_type_cases/consultation_framework",
+  "name_zh": "门店咨询框架",
+  "scene_types": ["consultation_framework"],
+  "impl_by_scene": {"consultation_framework": "consultation_framework"},
+  "default_impl": "consultation_framework",
+  "slots": ["chapter", "steps[{question,why}]"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "white_stage", "slot": "consultation_path"}
+  ],
+  "source_contract": "template.dashenlin-disease-product-scenario-v1#consultation_framework",
+  "reuse_boundary": "question-path logic only; no disease copy, green master pixels, or source illustrations"
+}

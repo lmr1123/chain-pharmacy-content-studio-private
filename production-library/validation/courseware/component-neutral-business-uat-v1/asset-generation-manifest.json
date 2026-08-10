@@ -1,0 +1,21 @@
+{
+  "schema": "component-neutral-uat-assets/v1",
+  "scope": "uat-only",
+  "generator": "Codex built-in image generation",
+  "style": "warm ivory, coral red, warm gold, premium editorial 3D",
+  "policy": {
+    "real_brand": false,
+    "medical_claims": false,
+    "formal_business_packshot": false,
+    "may_publish_to_production": false
+  },
+  "assets": [
+    {"file": "assets/uat-packshot.png", "sha256": "641aca7999bb6205d2f14f173a38d8a87f344e73efdc99868d8c1a1be26a975f", "purpose": "fictional UAT packshot"},
+    {"file": "assets/benefit-training-flow.png", "sha256": "87af666a170d1c24b5aaaee529047f8698669e6d178a978cc2c9a02f1cec311d", "purpose": "wide training information flow"},
+    {"file": "assets/feature-package-structure.png", "sha256": "66d0d50c94d5d5e8808aa74c0b617203d11a8711c4b0cd7e8c613246ae5be9d9", "purpose": "package structure"},
+    {"file": "assets/feature-label-verification.png", "sha256": "c24ceb30029923a73a63cd244b8cbe89c8209f69dbc1cdb7ab6d02cfc6324773", "purpose": "label and source verification"},
+    {"file": "assets/audience-training-team.png", "sha256": "3c1edd1c694fe49f00449871643581a5d1aea89a86890ca67e4972dd9160d543", "purpose": "training audience"},
+    {"file": "assets/combination-source-check.png", "sha256": "0297fa1a12bec50dd44da9d4080565af71c2b7229df3387f493fb6481cc7321f", "purpose": "approved-source consultation scene"},
+    {"file": "assets/precautions-approval-shield.png", "sha256": "facf38882de58f925196fda39805317ac79f0da524ceb856b1b6b30a69649f50", "purpose": "authorization and review boundary"}
+  ]
+}

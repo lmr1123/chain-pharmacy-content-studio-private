@@ -13,7 +13,13 @@
     {
       "id": "artifact-tool-node-modules",
       "name_zh": "PPTX 导出 runtime（@oai/artifact-tool）",
-      "required_for": ["pptx_export", "product-pptx-component-v1", "product-pptx-green-v1"],
+      "required_for": [
+        "pptx_export",
+        "product-pptx-component-v1",
+        "product-pptx-green-v1",
+        "product-pptx-disease-scenario-v1",
+        "courseware3-pptx-v1"
+      ],
       "paths": [
         "production-library/engines/courseware-pptx-v1/node_modules/@oai/artifact-tool",
         "production-library/engines/product-courseware-green-v1/node_modules/@oai/artifact-tool"
@@ -27,6 +33,24 @@
       ],
       "ship_in_git": false,
       "size_class": "medium"
+    },
+    {
+      "id": "fixed-courseware-pptx-engines",
+      "name_zh": "已签样固定标准课型 PPT 引擎",
+      "required_for": [
+        "product-pptx-green-v1",
+        "product-pptx-disease-scenario-v1",
+        "courseware3-pptx-v1"
+      ],
+      "paths": [
+        "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs",
+        "production-library/engines/disease-product-scenario-pptx-v1/export.mjs",
+        "production-library/engines/courseware3-pptx-v1/export.mjs",
+        "scripts/replicate_courseware_theme.py"
+      ],
+      "restore": ["Private clone 完整拉取 production-library 与 scripts"],
+      "ship_in_git": true,
+      "size_class": "small"
     },
     {
       "id": "courseware-pptx-component-engine",

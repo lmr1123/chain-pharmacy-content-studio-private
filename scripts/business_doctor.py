@@ -112,23 +112,32 @@ def doctor(
     missing = list(checked.get("missing_capabilities") or [])
     ok = bool(checked.get("ok", True)) if require_tokens else True
 
-    # Engine presence for pptx profile (component default; green retired but kept as fallback)
-    component_engine = (
-        ROOT / "production-library/engines/courseware-pptx-v1/export.mjs"
-    )
-    green_engine = (
-        ROOT
-        / "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs"
-    )
-    component_ok = component_engine.is_file()
-    green_ok = green_engine.is_file()
-    engine_ok = component_ok or green_ok
-    if any(p == "pptx" for p in selected) and not component_ok:
+    pptx_engines = {
+        "product-pptx-component-v1": ROOT / "production-library/engines/courseware-pptx-v1/export.mjs",
+        "product-pptx-green-v1": ROOT / "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs",
+        "product-pptx-disease-scenario-v1": ROOT / "production-library/engines/disease-product-scenario-pptx-v1/export.mjs",
+        "courseware3-pptx-v1": ROOT / "production-library/engines/courseware3-pptx-v1/export.mjs",
+        "ingredient-health-edu-pptx-v1": ROOT / "production-library/engines/ingredient-health-edu-pptx-v1/export.mjs",
+    }
+    active_route_ids = {r["route_id"] for r in load_routes() if r.get("active")}
+    if route_id:
+        required_engine_routes = [route_id]
+    elif any(p == "pptx" for p in selected):
+        required_engine_routes = [
+            rid for rid in pptx_engines if rid in active_route_ids
+        ]
+    else:
+        required_engine_routes = []
+    engine_presence = {rid: path.is_file() for rid, path in pptx_engines.items()}
+    for rid in required_engine_routes:
+        path = pptx_engines.get(rid)
+        if path is None or path.is_file():
+            continue
         ok = False
-        missing.append("component_pptx_engine")
-        hints.append(
-            "缺少默认构件引擎：production-library/engines/courseware-pptx-v1/export.mjs"
-        )
+        missing_name = f"{rid}_engine"
+        if missing_name not in missing:
+            missing.append(missing_name)
+        hints.append(f"缺少路线引擎：{path.relative_to(ROOT)}")
 
     video_env: dict[str, Any] | None = None
     if any(p == "video-full" for p in selected):
@@ -158,11 +167,9 @@ def doctor(
         "messages_zh": checked.get("messages_zh") or [],
         "install_hints_zh": hints if missing else [],
         "engine": {
-            "component_pptx": str(component_engine),
-            "green_pptx": str(green_engine),
-            "present": engine_ok,
-            "component_present": component_ok,
-            "green_present": green_ok,
+            "routes": {rid: str(path) for rid, path in pptx_engines.items()},
+            "route_present": engine_presence,
+            "present": all(engine_presence.get(rid, False) for rid in required_engine_routes),
         },
         "video_full_env": video_env,
     }

@@ -13,19 +13,24 @@
     "new_theme_preview": true,
     "new_theme_pptx": true,
     "new_theme_mp4": false,
-    "business_selfserve": false
+    "business_selfserve": true
   },
   "requirements": [
-    "内容初稿确认",
+    "完整 5 页审核稿",
+    "本品/搭档/竞品授权图片",
+    "4 张正式注意事项插图",
+    "内容/商品图/视觉确认",
     "pptx_export"
   ],
-  "blockers": [
-    "正式 PPTX 必须在内容初稿确认后生成",
-    "当前机器须通过 pptx_export 环境检查"
-  ],
-  "production_ready": false,
-  "status_label": "可开始草稿 · 确认后生成 PPTX",
-  "status_note": "五页绿色金样可查看；先整理内容初稿与缺口，业务确认后且本机 pptx_export 通过再生成可编辑 PPTX。",
+  "blockers": [],
+  "production_ready": true,
+  "status_label": "已签样标准课型 · PPTX 可生成",
+  "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+  "capabilities_note_zh": null,
+  "shelf_group": "signed-standard",
+  "preview_identity_qualified": true,
+  "preview_identity_note_zh": null,
+  "preview_suite_evidence": null,
   "key_frame_labels_zh": [
     "封面/介绍",
     "卖点与人群",

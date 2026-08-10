@@ -1,7 +1,7 @@
 /**
- * Scene builders for gold content-model types.
+ * Scene builders for the shared product-training content model.
  * Use components + ctx tokens only (no literal brand colors).
- * Geometry preserved from cw4 for regression fidelity.
+ * Geometry is reusable; theme copy and media must come from explicit bindings.
  */
 import {
   chromeBg,
@@ -17,11 +17,129 @@ import {
 } from '../components/index.mjs';
 import {fitFontSize} from '../layout-rules.mjs';
 
+function hasPendingCopy(sc) {
+  const blob = JSON.stringify(sc || {});
+  return blob.includes('待确认') || blob.includes('待业务提供') || blob.includes('待审核');
+}
+
+async function pendingVisual(ctx, slide, pageId, label, cx = 0, cy = 40, w = 1100, h = 460) {
+  return ctx.imageFit(
+    slide,
+    ctx.eid(pageId, 'pending_visual'),
+    '__missing__/business-pending.png',
+    cx,
+    cy,
+    w,
+    h,
+    label,
+    label,
+  );
+}
+
 export async function buildCover(ctx, slide, sc) {
-  const {shape, text, eid, centerBox, C, TS} = ctx;
+  const {shape, text, eid, centerBox, C, TS, style} = ctx;
   chromeBg(ctx, slide);
-  shape(slide, 'ellipse', centerBox(0, 520, 2200, 420), C.hill, 'none', 'hill');
-  shape(slide, 'ellipse', centerBox(-400, 480, 900, 280), 'rgba(190,190,190,0.5)', 'none', 'hill-l');
+  if (style.visual_grammar === 'product-blue-asymmetric-v1') {
+    const coverPoints = (sc.cover_points || []).length ? sc.cover_points : sc.benefits || [];
+    const hasCoverPoints = coverPoints.length > 0;
+    shape(
+      slide,
+      'roundRect',
+      centerBox(-440, 20, 850, 790),
+      C.primaryDeep,
+      C.primaryDeep,
+      'cover-info-panel',
+    );
+    shape(slide, 'roundRect', centerBox(-796, -328, 92, 18), C.coral, C.coral, 'cover-coral-mark');
+    shape(slide, 'roundRect', centerBox(-684, -328, 108, 18), C.green, C.green, 'cover-green-mark');
+
+    const title = String(sc.title_pill || '').trim();
+    const titleFit = fitFontSize(title, {
+      preferred: TS.coverTitle,
+      min: 28,
+      boxW: 700,
+      maxLines: 2,
+    });
+    text(slide, eid(sc.id, 'title_pill'), title, centerBox(-430, hasCoverPoints ? -215 : -80, 700, 190), {
+      fontSize: titleFit.fontSize,
+      color: C.white,
+      align: 'left',
+      vAlign: 'middle',
+    });
+    if (sc.subtitle) {
+      text(slide, eid(sc.id, 'subtitle'), sc.subtitle, centerBox(-430, hasCoverPoints ? -92 : 58, 700, 58), {
+        fontSize: TS.body20,
+        color: C.yellow,
+        align: 'left',
+      });
+    }
+    if (sc.badge) {
+      shape(slide, 'roundRect', centerBox(-676, 306, 300, 70), C.coral, C.coral, eid(sc.id, 'badge'));
+      text(slide, eid(sc.id, 'badge_text'), sc.badge, centerBox(-676, 306, 260, 56), {
+        fontSize: TS.body20,
+        color: C.white,
+      });
+    }
+    await iconBullet(ctx, slide, sc.id, coverPoints, {
+      startY: 35,
+      stepY: 112,
+      iconX: -780,
+      textX: -360,
+      textW: 650,
+      iconSize: 54,
+      fontSize: TS.coverBenefit,
+      iconFill: C.coral,
+      iconTextColor: C.white,
+      textColor: C.white,
+      rolePrefix: (sc.cover_points || []).length ? 'cover_point' : 'benefit',
+    });
+
+    whiteStage(ctx, slide, 'cover-product-stage', 475, 30, 800, 750, {
+      fill: C.white,
+      line: C.primarySoft,
+    });
+    if (sc.stage_tag) {
+      const stageTag = String(sc.stage_tag).trim();
+      const stageTagFit = fitFontSize(stageTag, {
+        preferred: TS.caption,
+        min: TS.minimum,
+        boxW: 206,
+        maxLines: 1,
+      });
+      shape(slide, 'roundRect', centerBox(710, -300, 238, 54), C.green, C.green, 'cover-stage-tag');
+      text(slide, eid(sc.id, 'stage_tag'), stageTag, centerBox(710, -300, 206, 42), {
+        fontSize: stageTagFit.fontSize,
+        color: C.white,
+      });
+    }
+    if (sc.product_packshot) {
+      await ctx.imageFit(
+        slide,
+        eid(sc.id, 'product_packshot'),
+        sc.product_packshot,
+        475,
+        55,
+        650,
+        580,
+        '商品正式包装图',
+      );
+    } else {
+      await ctx.imageFit(
+        slide,
+        eid(sc.id, 'product_packshot'),
+        '__missing__/authorized-product-packshot.png',
+        475,
+        55,
+        620,
+        560,
+        '商品正式包装图',
+        '商品正式包装图\n待业务提供',
+      );
+    }
+    return;
+  }
+  shape(slide, 'ellipse', centerBox(0, 390, 1920, 300), C.hill, 'none', 'hill');
+  shape(slide, 'ellipse', centerBox(-400, 440, 900, 200), 'rgba(190,190,190,0.5)', 'none', 'hill-l');
 
   // 品名标题：强制单行（培训课件商品名尽量不换行）
   // 策略：长名略降字号 → 按 CJK 光学宽加宽 pill → 单行高度，避免 textbox 自动折行
@@ -54,33 +172,86 @@ export async function buildCover(ctx, slide, sc) {
     vAlign: 'middle',
   });
 
-  // placeholder label must not inject policy-forbidden copy (好物推荐)
-  await ctx.imageFit(
-    slide,
-    eid(sc.id, 'badge_img'),
-    'badge-hot-recommend.png',
-    760,
-    -400,
-    200,
-    200,
-    '角标',
-    '角标',
-  );
+  if (sc.badge) {
+    shape(slide, 'roundRect', centerBox(760, -400, 240, 104), C.red, C.red, eid(sc.id, 'badge'));
+    text(slide, eid(sc.id, 'badge_text'), sc.badge, centerBox(760, -400, 216, 84), {
+      fontSize: TS.body22,
+      color: C.white,
+    });
+  }
 
   await iconBullet(ctx, slide, sc.id, sc.benefits || [], {
     startY: -160,
     stepY: 110,
-    iconFile: 'icon-check-red.png',
   });
 
-  await packSlot(ctx, slide, sc.id, 'pack_a', 'slot-pack-box-a.png', 280, 60, 280, 400, '盒装A');
-  await packSlot(ctx, slide, sc.id, 'pack_b', 'slot-pack-box-b.png', 560, 60, 280, 400, '盒装B');
-  await packSlot(ctx, slide, sc.id, 'pack_bottle', 'slot-pack-bottle.png', 820, 40, 260, 440, '瓶装');
+  if (sc.product_packshot) {
+    await ctx.imageFit(
+      slide,
+      eid(sc.id, 'product_packshot'),
+      sc.product_packshot,
+      610,
+      60,
+      620,
+      520,
+      '商品正式包装图',
+    );
+  } else {
+    await ctx.imageFit(
+      slide,
+      eid(sc.id, 'product_packshot'),
+      '__missing__/authorized-product-packshot.png',
+      610,
+      60,
+      560,
+      500,
+      '商品正式包装图',
+      '商品正式包装图\n待业务提供',
+    );
+  }
 }
 
 export async function buildTimeList(ctx, slide, sc) {
-  const {shape, text, imageFit, eid, centerBox, C, TS, FS} = ctx;
+  const {shape, text, eid, centerBox, C, TS, style} = ctx;
   chromeBg(ctx, slide);
+  if (style.visual_grammar === 'product-blue-asymmetric-v1') {
+    chapterTitle(ctx, slide, sc.id, sc.card_title || '');
+    whiteStage(ctx, slide, 'list-stage', 0, 70, 1680, 650);
+    const list = sc.list || [];
+    const rowH = Math.min(190, 560 / Math.max(list.length, 1));
+    const startY = 70 - (rowH * list.length) / 2 + rowH / 2;
+    for (let i = 0; i < list.length; i += 1) {
+      const y = startY + i * rowH;
+      shape(
+        slide,
+        'ellipse',
+        centerBox(-700, y, 58, 58),
+        i % 2 === 0 ? C.coral : C.green,
+        i % 2 === 0 ? C.coral : C.green,
+        eid(sc.id, `list.${i + 1}__number`),
+      );
+      text(slide, eid(sc.id, `list.${i + 1}__n`), String(i + 1), centerBox(-700, y, 48, 48), {
+        fontSize: TS.body20,
+        color: C.white,
+      });
+      const rowText = String(list[i] || '');
+      const rowFit = fitFontSize(rowText, {
+        preferred: TS.listItem,
+        min: TS.body18,
+        boxW: 1320,
+        maxLines: 2,
+      });
+      const textH = Math.min(rowH - 20, Math.max(64, rowFit.lines * rowFit.fontSize * 1.55));
+      text(slide, eid(sc.id, `list.${i + 1}`), rowText, centerBox(40, y, 1320, textH), {
+        fontSize: rowFit.fontSize,
+        color: C.ink,
+        align: 'left',
+        bold: false,
+        vAlign: 'middle',
+      });
+    }
+    return;
+  }
   shape(slide, 'rect', centerBox(-560, 40, 400, 560), C.white, C.red, 'time-card');
   text(slide, eid(sc.id, 'time_label'), 'TIME', centerBox(-560, -140, 340, 90), {
     fontSize: TS.timeLabel,
@@ -92,7 +263,10 @@ export async function buildTimeList(ctx, slide, sc) {
   });
 
   shape(slide, 'roundRect', centerBox(320, 40, 980, 520), C.dark, C.dark, 'list-card');
-  await imageFit(slide, eid(sc.id, 'list_chevron'), 'icon-chevron-lime.png', -80, -140, 64, 64, '»');
+  text(slide, eid(sc.id, 'list_chevron'), '»', centerBox(-80, -140, 64, 64), {
+    fontSize: TS.body32,
+    color: C.lime,
+  });
   text(
     slide,
     eid(sc.id, 'card_title'),
@@ -102,7 +276,7 @@ export async function buildTimeList(ctx, slide, sc) {
   );
   shape(slide, 'rect', centerBox(320, -70, 840, 3), C.lime, C.lime, 'list-div');
 
-  const list = sc.list || ['1.番茄', '2.***', '3.***'];
+  const list = sc.list || [];
   for (let i = 0; i < list.length; i++) {
     text(slide, eid(sc.id, `list.${i + 1}`), list[i], centerBox(280, 20 + i * 100, 800, 72), {
       fontSize: TS.listItem,
@@ -117,23 +291,44 @@ export async function buildBroll(ctx, slide, sc) {
   whiteStage(ctx, slide, 'photo-stage', 0, 20, 1200, 820, {
     fill: 'rgba(255,255,255,0.55)',
   });
-  await packSlot(ctx, slide, sc.id, 'photo', 'slot-photo-tomato.png', 0, 0, 1100, 780, '实拍槽位');
+  if (sc.visual || sc.photo) {
+    await ctx.imageFit(slide, ctx.eid(sc.id, 'visual'), sc.visual || sc.photo, 0, 0, 1100, 780, '主题实拍');
+  } else {
+    await pendingVisual(ctx, slide, sc.id, '主题实拍待绑定', 0, 0, 1100, 780);
+  }
 }
 
 export async function buildProductIntro(ctx, slide, sc) {
   chromeBg(ctx, slide);
-  await packSlot(ctx, slide, sc.id, 'vine', 'slot-photo-vine.png', -520, 20, 520, 640, '实拍槽位');
-  await packSlot(ctx, slide, sc.id, 'pack_a', 'slot-pack-box-a.png', 80, 40, 300, 480, '盒装A');
-  await packSlot(ctx, slide, sc.id, 'pack_b', 'slot-pack-box-b.png', 400, 40, 300, 480, '盒装B');
-  await packSlot(ctx, slide, sc.id, 'pack_bottle', 'slot-pack-bottle.png', 720, 20, 300, 520, '瓶装');
+  if (sc.visual || sc.product_packshot) {
+    await ctx.imageFit(
+      slide,
+      ctx.eid(sc.id, 'visual'),
+      sc.visual || sc.product_packshot,
+      0,
+      20,
+      1200,
+      700,
+      '商品主题图',
+    );
+  } else {
+    await pendingVisual(ctx, slide, sc.id, '商品主题图待绑定', 0, 20, 1200, 700);
+  }
 }
 
 export async function buildBenefitChain(ctx, slide, sc) {
-  const {C, TS, centerBox, shape, text, eid} = ctx;
+  const {C, TS, centerBox, shape, text, eid, style} = ctx;
   chromeBg(ctx, slide);
   chapterTitle(ctx, slide, sc.id, sc.chapter || '一、三大核心功效');
   await sectionLabel(ctx, slide, sc.id, sc.section || '');
-  await imageChain(ctx, slide, sc.id, sc);
+  if (style.visual_grammar === 'product-blue-asymmetric-v1') {
+    whiteStage(ctx, slide, 'benefit-visual-stage', 0, 80, 1660, 560);
+  }
+  if (hasPendingCopy(sc)) {
+    await pendingVisual(ctx, slide, sc.id, '功效画面待业务资料');
+  } else {
+    await imageChain(ctx, slide, sc.id, sc);
+  }
   const bodyHint = (sc.subtitles || []).slice(-1)[0]?.text;
   if (bodyHint) {
     noteBar(ctx, slide, sc.id, bodyHint, {
@@ -163,7 +358,11 @@ export async function buildOrigin(ctx, slide, sc) {
     );
   }
   whiteStage(ctx, slide, 'map-stage', 0, 40, 780, 520);
-  await imageFit(slide, eid(sc.id, 'map'), 'map-xinjiang.png', 0, 20, 720, 480, '新疆地图');
+  if (sc.visual) {
+    await imageFit(slide, eid(sc.id, 'visual'), sc.visual, 0, 20, 720, 480, sc.section || '主题插图');
+  } else {
+    await pendingVisual(ctx, slide, sc.id, '产地/来源素材待业务资料', 0, 20, 720, 480);
+  }
   const bodyHint =
     (sc.subtitles || []).map((s) => s.text).filter(Boolean).slice(-1)[0] || sc.body || '';
   if (bodyHint) {
@@ -179,12 +378,16 @@ export async function buildOrigin(ctx, slide, sc) {
 }
 
 export async function buildMaterial(ctx, slide, sc) {
-  const {C, TS} = ctx;
+  const {C, TS, imageFit, eid} = ctx;
   chromeBg(ctx, slide);
   chapterTitle(ctx, slide, sc.id, sc.chapter || '二、产品特点');
   await sectionLabel(ctx, slide, sc.id, sc.section || '2、原料优');
   whiteStage(ctx, slide, 'vine-stage', 0, 20, 960, 560);
-  await packSlot(ctx, slide, sc.id, 'vine', 'slot-photo-vine.png', 0, 0, 900, 520, '原料实拍');
+  if (sc.visual) {
+    await imageFit(slide, eid(sc.id, 'visual'), sc.visual, 0, 0, 900, 520, sc.section || '主题插图');
+  } else {
+    await pendingVisual(ctx, slide, sc.id, '原料素材待业务资料', 0, 0, 900, 520);
+  }
   const bodyHint =
     (sc.subtitles || []).map((s) => s.text).filter(Boolean).slice(-1)[0] || sc.body || '';
   if (bodyHint) {
@@ -207,12 +410,11 @@ export async function buildContent(ctx, slide, sc) {
   whiteStage(ctx, slide, 'eq-stage', 0, 40, 1600, 520, {
     fill: 'rgba(255,255,255,0.72)',
   });
-  await imageFit(slide, eid(sc.id, 'softgel'), 'softgel.png', -420, 20, 300, 300, '软胶囊');
-  text(slide, eid(sc.id, 'eq'), '=', centerBox(0, 0, 160, 160), {
-    fontSize: TS.heroEq,
-    color: C.gold,
-  });
-  await imageFit(slide, eid(sc.id, 'five_tomatoes'), 'five-tomatoes.png', 420, 20, 480, 360, '五个番茄');
+  if (sc.visual) {
+    await imageFit(slide, eid(sc.id, 'visual'), sc.visual, 0, 20, 1400, 400, sc.section || '主题插图');
+  } else {
+    await pendingVisual(ctx, slide, sc.id, '含量/规格素材待业务资料', 0, 20, 1400, 400);
+  }
   // Prefer script-provided body/subtitle; never invent default marketing line
   const hint =
     (sc.subtitles || []).map((s) => s.text).filter(Boolean).slice(-1)[0] ||
@@ -230,13 +432,67 @@ export async function buildContent(ctx, slide, sc) {
 export async function buildAudience(ctx, slide, sc) {
   chromeBg(ctx, slide);
   chapterTitle(ctx, slide, sc.id, sc.chapter || '三、适宜人群');
-  await audienceCards(ctx, slide, sc.id, sc.items || []);
+  if (sc.visual) {
+    const {imageFit, eid, shape, text, centerBox, C, TS} = ctx;
+    whiteStage(ctx, slide, 'audience-visual-stage', 0, 20, 1680, 610);
+    await imageFit(slide, eid(sc.id, 'visual'), sc.visual, 260, 0, 1040, 540, sc.chapter || '咨询场景');
+    const items = (sc.items || [])
+      .map((item) => (typeof item === 'string' ? item : item?.label || item?.text || ''))
+      .filter(Boolean);
+    if (items.length) {
+      const spanH = 500;
+      const gap = spanH / items.length;
+      const cardH = Math.min(116, Math.max(64, gap - 18));
+      for (let i = 0; i < items.length; i++) {
+        const cy = -spanH / 2 + gap * (i + 0.5);
+        shape(
+          slide,
+          'roundRect',
+          centerBox(-580, cy, 430, cardH),
+          C.card || C.silkLight,
+          C.cardBorder,
+          `aud-visual-label-card-${i}`,
+        );
+        shape(
+          slide,
+          'ellipse',
+          centerBox(-740, cy, 34, 34),
+          C.red,
+          C.red,
+          `aud-visual-label-dot-${i}`,
+        );
+        text(
+          slide,
+          eid(sc.id, `label.${i + 1}`),
+          items[i],
+          centerBox(-550, cy, 330, cardH - 12),
+          {
+            fontSize: items.length > 4 ? TS.body18 : TS.body22,
+            color: C.brown,
+            align: 'left',
+          },
+        );
+      }
+    }
+    if (sc.body) {
+      noteBar(ctx, slide, sc.id, sc.body, {
+        cy: 400,
+        w: 1660,
+        h: 76,
+        role: 'body',
+        fontSize: TS.body22,
+        color: C.brown,
+      });
+    }
+  } else {
+    await audienceCards(ctx, slide, sc.id, sc.items || []);
+  }
 }
 
 export async function buildEfficacyTable(ctx, slide, sc) {
   const {shape, text, imageFit, eid, centerBox, C, TS, FS} = ctx;
   chromeBg(ctx, slide);
-  chapterTitle(ctx, slide, sc.id, sc.chapter || '五、福尔番茄红素三大核心功效');
+  chapterTitle(ctx, slide, sc.id, sc.chapter || '总结回顾');
   const rows = sc.rows || [];
   const tableW = 1600;
   const tableH = 720;
@@ -258,16 +514,10 @@ export async function buildEfficacyTable(ctx, slide, sc) {
       );
     }
     shape(slide, 'rect', centerBox(-400, y, 2, fh - 8), C.tableBorder, C.tableBorder, `eff-vdiv-${i}`);
-    await imageFit(
-      slide,
-      eid(sc.id, `row.${i + 1}.chevron`),
-      'icon-chevron-lime.png',
-      -720,
-      y,
-      44,
-      44,
-      '»',
-    );
+    text(slide, eid(sc.id, `row.${i + 1}.chevron`), '»', centerBox(-720, y, 44, 44), {
+      fontSize: TS.body24,
+      color: C.lime,
+    });
     text(slide, eid(sc.id, `row.${i + 1}.label`), row.label, centerBox(-560, y, 300, fh - 24), {
       fontSize: TS.rowLabel + 4,
       color: C.brown,
@@ -315,7 +565,7 @@ export async function buildRelatedMeds(ctx, slide, sc) {
     slide,
     sc.id,
     'pack_left',
-    sc.left_pack || 'slot-pack-lycopene.png',
+    sc.left_pack || '__missing__/authorized-primary-product.png',
     -360,
     0,
     320,
@@ -331,7 +581,7 @@ export async function buildRelatedMeds(ctx, slide, sc) {
     slide,
     sc.id,
     'pack_right',
-    sc.right_pack || 'slot-pack-zinc.png',
+    sc.right_pack || '__missing__/authorized-partner-product.png',
     360,
     0,
     300,
@@ -529,8 +779,8 @@ export async function buildCombinationGuidance(ctx, slide, sc) {
   const rowH = tableH / n;
   const pad = 32;
   // 列：问题场景(短·单行) | 搭配药品+解说 | 组合图
-  const scenarioW = 300;
-  const iconW = 168;
+  const scenarioW = n === 1 ? 340 : 300;
+  const iconW = n === 1 ? 360 : 168;
   const gap = 28;
   // content column: partner title + talk — same left edge
   const contentLeft = -tableW / 2 + pad + scenarioW + gap;
@@ -616,7 +866,7 @@ export async function buildCombinationGuidance(ctx, slide, sc) {
       vAlign: 'middle',
     });
 
-    const iconSize = Math.min(iconW - 8, rowH - 48, 150);
+    const iconSize = Math.min(iconW - 8, rowH - 48, n === 1 ? 320 : 150);
     const iconFile = r.icon || r.pack || r.partner_pack;
     if (iconFile) {
       await imageFit(
@@ -716,7 +966,6 @@ export async function buildPrecautions(ctx, slide, sc) {
 
   // right 2×2 — same height as left
   const illos = sc.illustrations || sc.images || [];
-  const defaultLabels = ['不代替药物', '禁忌人群', '随餐服用', '就医咨询'];
   const gridW = 680;
   const gridH = panelH;
   const gridCx = 500;
@@ -729,13 +978,44 @@ export async function buildPrecautions(ctx, slide, sc) {
     fill: C.cardSoft || C.silkLight,
   });
 
-  for (let i = 0; i < 4; i++) {
+  if (hasPendingCopy(sc)) {
+    await pendingVisual(
+      ctx,
+      slide,
+      sc.id,
+      '注意事项素材待业务资料',
+      gridCx,
+      gridCy,
+      gridW - 48,
+      gridH - 48,
+    );
+    return;
+  }
+
+  if (illos.length === 1 && illos[0] && illos[0].wide) {
+    const illo = illos[0];
+    await imageFit(
+      slide,
+      eid(sc.id, 'illo.wide'),
+      typeof illo === 'object'
+        ? {src: illo.file || illo.src, fit: illo.fit || 'cover', crop: illo.crop}
+        : illo,
+      gridCx,
+      gridCy,
+      gridW - 48,
+      gridH - 48,
+      illo.label || '安全核对',
+    );
+    return;
+  }
+
+  for (let i = 0; i < Math.min(4, illos.length); i++) {
     const col = i % 2;
     const row = Math.floor(i / 2);
     const x = gridCx - (cell + cellGap) / 2 + col * (cell + cellGap);
     const y = gridCy - (cell + cellGap) / 2 + row * (cell + cellGap);
     const illo = illos[i];
-    const label = (illo && (illo.label || illo.caption)) || defaultLabels[i];
+    const label = (illo && (illo.label || illo.caption)) || '注意事项图';
     shape(
       slide,
       'roundRect',
@@ -776,6 +1056,252 @@ export async function buildPrecautions(ctx, slide, sc) {
   }
 }
 
+/** Green gold contract: authorized packshot + compact product fact hierarchy. */
+export async function buildProductOverview(ctx, slide, sc) {
+  const {shape, text, eid, centerBox, C, TS, imageFit} = ctx;
+  chromeBg(ctx, slide);
+  chapterTitle(ctx, slide, sc.id, sc.chapter || '');
+  whiteStage(ctx, slide, 'overview-stage', 0, 70, 1720, 650);
+
+  shape(slide, 'roundRect', centerBox(-570, 70, 500, 520), C.primarySoft, C.cardBorder, 'overview-pack-stage');
+  await imageFit(
+    slide,
+    eid(sc.id, 'product_packshot'),
+    sc.product_packshot,
+    -570,
+    60,
+    410,
+    430,
+    '商品正式包装图',
+  );
+
+  const facts = (sc.facts || []).slice(0, 6);
+  const cols = facts.length <= 3 ? 1 : 2;
+  const rows = Math.max(1, Math.ceil(facts.length / cols));
+  const areaW = 1040;
+  const areaH = sc.statement ? 460 : 520;
+  const gapX = 24;
+  const gapY = 20;
+  const cardW = (areaW - gapX * (cols - 1)) / cols;
+  const cardH = (areaH - gapY * (rows - 1)) / rows;
+  const left = -190;
+  const top = -190;
+  for (let index = 0; index < facts.length; index += 1) {
+    const fact = facts[index];
+    const col = index % cols;
+    const row = Math.floor(index / cols);
+    const cx = left + cardW / 2 + col * (cardW + gapX);
+    const cy = top + cardH / 2 + row * (cardH + gapY);
+    shape(slide, 'roundRect', centerBox(cx, cy, cardW, cardH), C.cardSoft, C.cardBorder, `overview-fact-${index + 1}`);
+    const factLabel = String(fact.label || '');
+    const labelW = Math.min(
+      cardW - 40,
+      Math.max(160, 64 + [...factLabel].length * TS.caption * 1.15),
+    );
+    const labelCx = cx - cardW / 2 + 22 + labelW / 2;
+    shape(
+      slide,
+      'roundRect',
+      centerBox(labelCx, cy - cardH / 2 + 34, labelW, 42),
+      index % 2 === 0 ? C.coral : C.green,
+      index % 2 === 0 ? C.coral : C.green,
+      eid(sc.id, `fact.${index + 1}.label__pill`),
+    );
+    text(
+      slide,
+      eid(sc.id, `fact.${index + 1}.label`),
+      factLabel,
+      centerBox(labelCx, cy - cardH / 2 + 34, labelW - 24, 34),
+      {fontSize: TS.caption, color: C.white},
+    );
+    const fit = fitFontSize(fact.value || '', {
+      preferred: TS.body24,
+      min: TS.minimum,
+      boxW: cardW - 54,
+      maxLines: 2,
+    });
+    text(slide, eid(sc.id, `fact.${index + 1}.value`), fact.value || '', centerBox(cx, cy + 18, cardW - 54, cardH - 64), {
+      fontSize: fit.fontSize,
+      color: C.ink,
+      align: 'left',
+      bold: false,
+    });
+  }
+  if (sc.statement) {
+    noteBar(ctx, slide, sc.id, sc.statement, {
+      cx: 330,
+      cy: 365,
+      w: 1040,
+      h: 68,
+      role: 'statement',
+      fontSize: TS.body20,
+      color: C.ink,
+      bold: false,
+    });
+  }
+}
+
+/** Courseware-2 contract: an adaptive consultation path, without source-template chrome. */
+export async function buildConsultationFramework(ctx, slide, sc) {
+  const {shape, text, eid, centerBox, C, TS} = ctx;
+  chromeBg(ctx, slide);
+  chapterTitle(ctx, slide, sc.id, sc.chapter || '');
+  whiteStage(ctx, slide, 'consultation-stage', 0, 70, 1720, 650);
+  const steps = (sc.steps || []).slice(0, 4);
+  const n = Math.max(steps.length, 1);
+  const totalW = 1540;
+  const gap = 32;
+  const cardW = (totalW - gap * (n - 1)) / n;
+  const startX = -totalW / 2 + cardW / 2;
+  if (n > 1) {
+    shape(slide, 'rect', centerBox(0, 60, totalW - cardW, 8), C.primarySoft, C.primarySoft, 'consultation-connector');
+  }
+  for (let index = 0; index < steps.length; index += 1) {
+    const step = steps[index];
+    const cx = startX + index * (cardW + gap);
+    shape(slide, 'roundRect', centerBox(cx, 80, cardW, 450), C.cardSoft, C.cardBorder, `consult-step-${index + 1}`);
+    const accent = index % 2 === 0 ? C.coral : C.green;
+    shape(slide, 'ellipse', centerBox(cx, -105, 78, 78), accent, accent, eid(sc.id, `step.${index + 1}.number__dot`));
+    text(slide, eid(sc.id, `step.${index + 1}.number`), String(index + 1), centerBox(cx, -105, 66, 66), {
+      fontSize: TS.body24,
+      color: C.white,
+    });
+    const questionFit = fitFontSize(step.question || '', {
+      preferred: TS.body24,
+      min: TS.minimum,
+      boxW: cardW - 44,
+      maxLines: 2,
+    });
+    text(slide, eid(sc.id, `step.${index + 1}.question`), step.question || '', centerBox(cx, 15, cardW - 44, 110), {
+      fontSize: questionFit.fontSize,
+      color: C.primaryDeep,
+    });
+    shape(slide, 'rect', centerBox(cx, 88, cardW - 84, 3), C.cardBorder, C.cardBorder, `consult-step-${index + 1}-divider`);
+    const whyFit = fitFontSize(step.why || '', {
+      preferred: TS.body20,
+      min: TS.minimum,
+      boxW: cardW - 54,
+      maxLines: 4,
+    });
+    text(slide, eid(sc.id, `step.${index + 1}.why`), step.why || '', centerBox(cx, 190, cardW - 54, 150), {
+      fontSize: whyFit.fontSize,
+      color: C.body,
+      bold: false,
+    });
+  }
+}
+
+/** Courseware-3 contract: evidence points retain source attribution as a first-class field. */
+export async function buildEvidenceLadder(ctx, slide, sc) {
+  const {shape, text, eid, centerBox, C, TS} = ctx;
+  chromeBg(ctx, slide);
+  chapterTitle(ctx, slide, sc.id, sc.chapter || '');
+  whiteStage(ctx, slide, 'evidence-stage', 0, 70, 1720, 650);
+  const items = (sc.items || []).slice(0, 5);
+  const n = Math.max(items.length, 1);
+  const totalW = 1540;
+  const gap = 26;
+  const cardW = (totalW - gap * (n - 1)) / n;
+  const startX = -totalW / 2 + cardW / 2;
+  for (let index = 0; index < items.length; index += 1) {
+    const item = items[index];
+    const cx = startX + index * (cardW + gap);
+    const accent = index % 2 === 0 ? C.coral : C.green;
+    shape(slide, 'roundRect', centerBox(cx, 78, cardW, 500), C.cardSoft, C.cardBorder, `evidence-card-${index + 1}`);
+    shape(slide, 'rect', centerBox(cx, -152, cardW - 8, 20), accent, accent, `evidence-card-${index + 1}-accent`);
+    const metricFit = fitFontSize(item.metric || '', {
+      preferred: TS.dataStatNumber,
+      min: TS.body28,
+      boxW: cardW - 40,
+      maxLines: 1,
+    });
+    text(slide, eid(sc.id, `item.${index + 1}.metric`), item.metric || '', centerBox(cx, -55, cardW - 40, 130), {
+      fontSize: metricFit.fontSize,
+      color: accent,
+    });
+    const labelFit = fitFontSize(item.label || '', {
+      preferred: TS.body24,
+      min: TS.minimum,
+      boxW: cardW - 46,
+      maxLines: 2,
+    });
+    text(slide, eid(sc.id, `item.${index + 1}.label`), item.label || '', centerBox(cx, 75, cardW - 46, 110), {
+      fontSize: labelFit.fontSize,
+      color: C.primaryDeep,
+    });
+    shape(slide, 'rect', centerBox(cx, 145, cardW - 76, 3), C.cardBorder, C.cardBorder, `evidence-card-${index + 1}-divider`);
+    const sourceFit = fitFontSize(item.source || '', {
+      preferred: TS.caption,
+      min: TS.minimum,
+      boxW: cardW - 46,
+      maxLines: 3,
+    });
+    text(slide, eid(sc.id, `item.${index + 1}.source`), item.source || '', centerBox(cx, 220, cardW - 46, 100), {
+      fontSize: sourceFit.fontSize,
+      color: C.muted,
+      bold: false,
+    });
+  }
+}
+
+/** New component contract: objection → approved response → escalation boundary. */
+export async function buildObjectionHandling(ctx, slide, sc) {
+  const {shape, text, eid, centerBox, C, TS} = ctx;
+  chromeBg(ctx, slide);
+  chapterTitle(ctx, slide, sc.id, sc.chapter || '');
+  const rows = (sc.rows || []).slice(0, 3);
+  const n = Math.max(rows.length, 1);
+  const tableH = 650;
+  const tableCy = 70;
+  const rowH = tableH / n;
+  whiteStage(ctx, slide, 'objection-table', 0, tableCy, 1720, tableH);
+  for (let index = 0; index < rows.length; index += 1) {
+    const row = rows[index];
+    const cy = tableCy - tableH / 2 + rowH * (index + 0.5);
+    if (index > 0) {
+      shape(slide, 'rect', centerBox(0, cy - rowH / 2, 1650, 3), C.cardBorder, C.cardBorder, `objection-row-${index + 1}-divider`);
+    }
+    const accent = index % 2 === 0 ? C.coral : C.green;
+    shape(slide, 'roundRect', centerBox(-650, cy, 330, rowH - 42), accent, accent, eid(sc.id, `row.${index + 1}.objection__pill`));
+    const objectionFit = fitFontSize(row.objection || '', {
+      preferred: TS.body22,
+      min: TS.minimum,
+      boxW: 290,
+      maxLines: 3,
+    });
+    text(slide, eid(sc.id, `row.${index + 1}.objection`), row.objection || '', centerBox(-650, cy, 290, rowH - 60), {
+      fontSize: objectionFit.fontSize,
+      color: C.white,
+    });
+    const responseFit = fitFontSize(row.response || '', {
+      preferred: TS.body22,
+      min: TS.minimum,
+      boxW: 690,
+      maxLines: 4,
+    });
+    text(slide, eid(sc.id, `row.${index + 1}.response`), row.response || '', centerBox(-95, cy, 690, rowH - 54), {
+      fontSize: responseFit.fontSize,
+      color: C.ink,
+      align: 'left',
+      bold: false,
+    });
+    shape(slide, 'roundRect', centerBox(555, cy, 470, rowH - 42), C.primarySoft, C.cardBorder, `objection-boundary-${index + 1}`);
+    shape(slide, 'rect', centerBox(344, cy, 12, rowH - 76), C.green, C.green, `objection-boundary-${index + 1}-rail`);
+    const boundaryFit = fitFontSize(row.boundary || '', {
+      preferred: TS.body18,
+      min: TS.minimum,
+      boxW: 390,
+      maxLines: 4,
+    });
+    text(slide, eid(sc.id, `row.${index + 1}.boundary`), row.boundary || '', centerBox(570, cy, 390, rowH - 58), {
+      fontSize: boundaryFit.fontSize,
+      color: C.primaryDeep,
+      align: 'left',
+      bold: false,
+    });
+  }
+}
+
 export const builders = {
   cover: buildCover,
   time_list: buildTimeList,
@@ -793,6 +1319,10 @@ export const builders = {
   hook_pain_data: buildHookPainData,
   combination_guidance: buildCombinationGuidance,
   precautions: buildPrecautions,
+  product_overview: buildProductOverview,
+  consultation_framework: buildConsultationFramework,
+  evidence_ladder: buildEvidenceLadder,
+  objection_handling: buildObjectionHandling,
 };
 
 export function notes(ctx, slide, scene) {
@@ -811,6 +1341,7 @@ export function notes(ctx, slide, scene) {
       `- engine: courseware-pptx-v1`,
       `- 图片按原比例装箱；包装/Logo 为业务授权槽位。`,
       scene.note ? `- note: ${scene.note}` : null,
+      ...((ctx.model.sources || []).map((source) => `- ${source}`)),
     ]
       .filter(Boolean)
       .join('\n'),

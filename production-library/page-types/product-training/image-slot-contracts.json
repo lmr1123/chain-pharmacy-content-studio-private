@@ -1,0 +1,86 @@
+{
+  "schema": "product-training-image-slot-contracts/v1",
+  "purpose": "构件化商品培训 PPT 的共享图片槽合同；素材规划、生图与渲染共同使用，禁止按整页海报构图。",
+  "design_canvas": {"width": 1920, "height": 1080, "origin": "center"},
+  "defaults": {
+    "fit": "cover",
+    "safe_area": "center",
+    "subject_coverage": "65%-85%",
+    "no_internal_copy_space": true,
+    "no_text": true,
+    "no_watermark": true
+  },
+  "slots": {
+    "cover.product_packshot": {
+      "width": 620,
+      "height": 520,
+      "cx": 610,
+      "cy": 60,
+      "fit": "contain",
+      "safe_area": "center",
+      "source_policy": "business_authorized",
+      "required_from_business": true
+    },
+    "benefit.chain_wide_visual": {
+      "width": 1200,
+      "height": 580,
+      "cx": 0,
+      "cy": 80,
+      "fit": "cover",
+      "safe_area": "center",
+      "source_policy": "system_generate_or_approved_library"
+    },
+    "feature.origin.visual": {
+      "width": 720,
+      "height": 480,
+      "cx": 0,
+      "cy": 20,
+      "fit": "cover",
+      "safe_area": "center",
+      "source_policy": "system_generate_or_business_evidence"
+    },
+    "feature.material.visual": {
+      "width": 900,
+      "height": 520,
+      "cx": 0,
+      "cy": 0,
+      "fit": "cover",
+      "safe_area": "center",
+      "source_policy": "system_generate_or_business_evidence"
+    },
+    "feature.content.visual": {
+      "width": 1400,
+      "height": 400,
+      "cx": 0,
+      "cy": 20,
+      "fit": "cover",
+      "safe_area": "center",
+      "source_policy": "system_generate_or_business_evidence"
+    },
+    "audience.visual": {
+      "width": 1040,
+      "height": 540,
+      "cx": 260,
+      "cy": 0,
+      "fit": "cover",
+      "safe_area": "center",
+      "source_policy": "system_generate_or_approved_library"
+    },
+    "combination.row_icon": {
+      "width": 512,
+      "height": 512,
+      "fit": "contain",
+      "safe_area": "center",
+      "source_policy": "system_generate_or_business_authorized_partner_packshot"
+    },
+    "precautions.visual_wide": {
+      "width": 632,
+      "height": 752,
+      "cx": 500,
+      "cy": 100,
+      "fit": "cover",
+      "safe_area": "center",
+      "source_policy": "system_generate_or_approved_library"
+    }
+  }
+}

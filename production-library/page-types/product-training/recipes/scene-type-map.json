@@ -77,6 +77,26 @@
       "page_type": "precautions",
       "impl": "precautions",
       "variant": "list_plus_2x2"
+    },
+    "product_overview": {
+      "page_type": "product_overview",
+      "impl": "product_overview",
+      "variant": "packshot_fact_grid"
+    },
+    "consultation_framework": {
+      "page_type": "consultation_framework",
+      "impl": "consultation_framework",
+      "variant": "numbered_question_path"
+    },
+    "evidence_ladder": {
+      "page_type": "evidence_ladder",
+      "impl": "evidence_ladder",
+      "variant": "metric_source_cards"
+    },
+    "objection_handling": {
+      "page_type": "objection_handling",
+      "impl": "objection_handling",
+      "variant": "objection_response_boundary"
     }
   }
 }

@@ -1026,3 +1026,9 @@ cd production-library/validation/digital-human-ppt-presenter-poc-v1
 - 闸门：先交**最终脚本 + 数字人页清单**给业务确认 → 才允许 HeyGen。
 - 已写入：WorkBuddy 系统提示 / install 开场白 / business-ready-use-today / PRODUCT-MODE §4。
 - 用户要求同步 **git push**，便于业务 pull 后选「数字人模式」。
+
+## 2026-08-10（本机 readiness 通过不等于 clean clone 可用）
+
+- 本机存在被 `.gitignore` 忽略的权威 Word、哈希绑定预览图或 UAT fixture 时，readiness 和业务回归可能全部通过，但 WorkBuddy 在新机器 clone 后仍会缺源文件。
+- 正式发布前必须从 Git index/clean clone 视角复核 manifest、registry、测试合同和门户构建器引用的每个文件；权威源和不可重建的签样证据必须被 Git 跟踪。
+- 只允许对明确、最小、已审核的文件做精确白名单；不得为解决一个缺口而放开整个 `outputs/` 或 `validation/`，也不得提交 job workspace、个人授权输入、原始 QA 运行目录或带本机绝对路径的产物。

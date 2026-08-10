@@ -1,0 +1,80 @@
+{
+  "style_pack_id": "style-pack.lycopene-health-edu-cream-red-v1",
+  "name_zh": "番茄红素健康科普 · 米白番茄红 v1",
+  "status": "production-validated",
+  "canvas": {
+    "width_in": 13.333,
+    "height_in": 7.5,
+    "width_px": 1920,
+    "height_px": 1080,
+    "fps": 30
+  },
+  "colors": {
+    "bg": "#FBF7F0",
+    "bg_warm": "#FFF8F2",
+    "ink": "#2C2C2C",
+    "muted": "#6B6B6B",
+    "title_red": "#E53935",
+    "accent_red": "#D32F2F",
+    "deep_red": "#B71C1C",
+    "cover_start": "#FF3D00",
+    "cover_end": "#FF6E40",
+    "accent_green": "#43A047",
+    "soft_green": "#E8F5E9",
+    "soft_red": "#FFEBEE",
+    "card": "#FFFFFF",
+    "line": "#EDE7DF",
+    "white": "#FFFFFF"
+  },
+  "type": {
+    "font_family": "Noto Sans SC",
+    "font_fallback": ["PingFang SC", "Microsoft YaHei", "sans-serif"],
+    "cover_title_pt": 40,
+    "page_title_pt": 36,
+    "chapter_num_pt": 64,
+    "chapter_title_pt": 32,
+    "card_title_pt": 18,
+    "card_kicker_pt": 20,
+    "body_pt": 14,
+    "body_emphasis_pt": 16,
+    "caption_pt": 14,
+    "toc_item_pt": 18,
+    "note": "实测自主金样原片 runs；金样 PPTX 不依赖本生成器重排"
+  },
+  "shadow_card": {
+    "blur_emu": 127000,
+    "dist_emu": 50800,
+    "dir": 5400000,
+    "color": "000000",
+    "alpha_pct": 5
+  },
+  "colors_measured": {
+    "bg": "#FAFAF5",
+    "title_red": "#D32F2F",
+    "accent_green": "#4CAF50",
+    "body": "#505050",
+    "body_muted": "#616161",
+    "body_soft": "#757575",
+    "body_faint": "#9E9E9E",
+    "card": "#FFFFFF"
+  },
+  "layout": {
+    "margin_x_in": 0.55,
+    "margin_y_in": 0.4,
+    "card_radius_pt": 12,
+    "gap_in": 0.22,
+    "title_top_in": 0.38
+  },
+  "motion_defaults": {
+    "enter": "stagger-up",
+    "title": "fade-slide-left",
+    "cards": "stagger-up-0.12s",
+    "media": "scale-in",
+    "chapter": "number-count + title-fade",
+    "duration_s_per_page_hint": 8
+  },
+  "notes": [
+    "从参考课件 康爱森番茄红素.pptx 视觉抽离；不绑定具体商品包装。",
+    "米白底 + 番茄红标题 + 白卡片 + 绿色辅助语义色；换主题时只换 content-model。"
+  ]
+}

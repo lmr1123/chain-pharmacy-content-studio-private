@@ -1,6 +1,6 @@
 {
   "family": "product-training",
-  "version": "2026-08-07",
+  "version": "2026-08-10",
   "description": "商品培训页型池：只描述排版骨架与槽位，不绑定任何固定课（非金银花露 5 页硬编码）",
   "growth_channel": "docs/page-type-growth-channel.md",
   "proposals_dir": "proposals/",
@@ -9,6 +9,36 @@
     "empty_cards": "forbidden",
     "adapt_n": "cards/list rows follow content length; split page when over max_per_page",
     "not_a_fill_in_template": "Do not map every SKU into fixed 金银花露 5-page sequence"
+  },
+  "production_validation": {
+    "schema": "component-page-type-production-validation-v1",
+    "status": "production-validated",
+    "style_pack_id": "style-pack.reference-product-blue-v1",
+    "qa_summary": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/qa-summary.json",
+    "qa_summary_sha256": "7ff6fbca1fe00f7968a1ddf998a1fd4f7821bcc3f7aad731cc7cccc36ec752f6",
+    "visual_review": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/visual-review.json",
+    "visual_review_sha256": "c6b54744e6521ab8b78882f1125be552c2a646ce03995622a850f76519c48272",
+    "page_type_cases": {
+      "product_overview": [
+        {"case_id": "case-a", "page": 3},
+        {"case_id": "case-b", "page": 4}
+      ],
+      "consultation_framework": [
+        {"case_id": "case-a", "page": 4},
+        {"case_id": "case-c", "page": 3}
+      ],
+      "evidence_ladder": [
+        {"case_id": "case-a", "page": 5},
+        {"case_id": "case-b", "page": 3},
+        {"case_id": "case-c", "page": 5}
+      ],
+      "objection_handling": [
+        {"case_id": "case-a", "page": 6},
+        {"case_id": "case-b", "page": 5}
+      ]
+    },
+    "scope": "A/B/C r4 三套独立非金样 UAT；7/6/5 页序互异，artifact-tool 逐页 QA、slides_test、溯源、视觉复核与哈希绑定通过",
+    "boundary": "只晋升页型结构、动态组合与浅蓝 PPT 适配能力；UAT 为非医学中性内容，不授权继承来源课型文案、包装、Logo、证据或原图"
   },
   "page_types": [
     {
@@ -92,6 +122,75 @@
       "slots": ["symptoms[]", "stats[{number,unit,note,source}]", "source"],
       "max_per_page": 1,
       "layout": "symptom chips + data_stat cards + source caption"
+    },
+    {
+      "id": "product_overview",
+      "name_zh": "商品信息总览",
+      "status": "production-validated",
+      "production_validation_ref": "#/production_validation/page_type_cases/product_overview",
+      "recipe": "recipes/product_overview.json",
+      "slots": ["facts[{label,value}]", "statement", "product_packshot"],
+      "max_per_page": 6,
+      "layout": "left authorized packshot + right adaptive fact cards",
+      "source_contract": {
+        "kind": "abstracted_page_contract",
+        "template_id": "template.product-courseware-dashenlin-green-v1",
+        "template_status": "user-approved",
+        "canonical_artifact": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+        "source_scene_type": "product_overview",
+        "reuse_boundary": "slot and information hierarchy only; no master pixels, brand chrome, copy, or product media"
+      }
+    },
+    {
+      "id": "consultation_framework",
+      "name_zh": "门店咨询框架",
+      "status": "production-validated",
+      "production_validation_ref": "#/production_validation/page_type_cases/consultation_framework",
+      "recipe": "recipes/consultation_framework.json",
+      "slots": ["steps[{question,why}]"],
+      "max_per_page": 4,
+      "layout": "adaptive numbered consultation path",
+      "source_contract": {
+        "kind": "abstracted_page_contract",
+        "template_id": "template.dashenlin-disease-product-scenario-v1",
+        "template_status": "user-approved",
+        "canonical_artifact": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+        "source_scene_type": "consultation_framework",
+        "reuse_boundary": "question-path structure only; no disease copy, green master pixels, packshots, or scene illustrations"
+      }
+    },
+    {
+      "id": "evidence_ladder",
+      "name_zh": "商品证据阶梯",
+      "status": "production-validated",
+      "production_validation_ref": "#/production_validation/page_type_cases/evidence_ladder",
+      "recipe": "recipes/evidence_ladder.json",
+      "slots": ["items[{metric,label,source}]"],
+      "max_per_page": 5,
+      "layout": "adaptive evidence cards from claim to traceable source",
+      "source_contract": {
+        "kind": "abstracted_page_contract",
+        "template_id": "template.sufuda-mabaloshawei-product-courseware-3-v1",
+        "template_status": "user-approved-gold",
+        "canonical_artifact": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v2.pptx",
+        "source_scene_type": "feature_3",
+        "reuse_boundary": "evidence hierarchy only; no orange silk master, source claims, logos, or product media"
+      }
+    },
+    {
+      "id": "objection_handling",
+      "name_zh": "门店异议应答",
+      "status": "production-validated",
+      "production_validation_ref": "#/production_validation/page_type_cases/objection_handling",
+      "recipe": "recipes/objection_handling.json",
+      "slots": ["rows[{objection,response,boundary}]"],
+      "max_per_page": 3,
+      "layout": "objection | approved response | escalation boundary",
+      "source_contract": {
+        "kind": "new_business_contract",
+        "version": "component-objection-handling-v1",
+        "reuse_boundary": "new component page; copy must be explicitly supplied and approved"
+      }
     }
   ],
   "mapper_hints": {
@@ -102,7 +201,11 @@
     "联合|联推|搭配|话术": "combination_guidance",
     "总结|回顾": "summary_matrix",
     "注意|禁忌|不适宜": "precautions",
-    "封面|开场": "courseware_cover"
+    "封面|开场": "courseware_cover",
+    "商品信息|商品总览|基础信息": "product_overview",
+    "咨询步骤|问询框架|四步法": "consultation_framework",
+    "证据|指南|资料来源": "evidence_ladder",
+    "异议|答疑|边界": "objection_handling"
   },
   "cw4_scene_types": [
     "cover",

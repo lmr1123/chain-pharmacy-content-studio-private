@@ -1,0 +1,18 @@
+{
+  "schema": "uat-asset-authorization/v1",
+  "authorization_reference": "UAT-FIXTURE-NONBRAND-20260809",
+  "scope": "uat-only",
+  "asset_path": "production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png",
+  "sha256": "641aca7999bb6205d2f14f173a38d8a87f344e73efdc99868d8c1a1be26a975f",
+  "source_record": "production-library/validation/courseware/component-neutral-business-uat-v1/asset-generation-manifest.json",
+  "description_zh": "无品牌、无真实商品标识的内部 UAT 包装示意图；文件真实存在，仅用于三闸和版式验收。",
+  "allowed_use": [
+    "--scope uat 的构件化课件验收",
+    "内部逐页视觉 QA"
+  ],
+  "prohibited_use": [
+    "正式业务交付",
+    "对外宣传",
+    "替代业务授权的真实商品包装图"
+  ]
+}

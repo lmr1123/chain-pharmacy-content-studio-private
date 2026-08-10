@@ -30,6 +30,12 @@ class RuntimeProfilesTests(unittest.TestCase):
             doc["route_to_profile"]["product-pptx-green-v1"], "pptx"
         )
         self.assertEqual(
+            doc["route_to_profile"]["ingredient-health-edu-pptx-v1"], "pptx"
+        )
+        self.assertIn(
+            "ingredient-health-edu-pptx-v1", doc["profiles"]["pptx"]["routes"]
+        )
+        self.assertEqual(
             doc["route_to_profile"]["product-mp4-full-v1"], "video-full"
         )
         self.assertEqual(
@@ -38,6 +44,10 @@ class RuntimeProfilesTests(unittest.TestCase):
         )
         deps = doc["profiles"]["pptx"].get("deps") or {}
         self.assertIn("courseware-pptx-v1", str(deps.get("primary_engine_entry") or ""))
+        self.assertEqual(
+            deps.get("primary_style"),
+            "production-library/styles/reference-product-blue-v1/tokens.json",
+        )
 
     def test_active_routes_have_profiles_or_explicit_null(self) -> None:
         doc = doctor.load_profiles()
@@ -167,6 +177,14 @@ class BootstrapProfileExpandTests(unittest.TestCase):
         self.assertIn("production-assets", tokens)
         self.assertIn("pptx", tokens)
 
+    def test_expand_ingredient_health_route_to_pptx_profile(self) -> None:
+        tokens, profiles = self.mod.expand_requirements(
+            ROOT, routes=["ingredient-health-edu-pptx-v1"]
+        )
+        self.assertEqual(profiles, ["pptx"])
+        self.assertIn("production-assets", tokens)
+        self.assertIn("pptx", tokens)
+
     def test_expand_video_route(self) -> None:
         tokens, profiles = self.mod.expand_requirements(
             ROOT, routes=["product-mp4-full-v1"]
@@ -209,15 +227,30 @@ class BusinessDoctorTests(unittest.TestCase):
         result = doctor.doctor(route_id="product-pptx-component-v1")
         self.assertIn("ok", result)
         self.assertEqual(result["profiles"][0]["profile_id"], "pptx")
-        # Component engine is the default; green engine may still be present as legacy.
-        self.assertTrue(
-            result.get("engine", {}).get("present")
-            or (result.get("paths") or {}).get("component_pptx_engine")
-            or True
-        )
+        self.assertTrue(result.get("engine", {}).get("present"))
         # On this private machine pptx_export should usually be true; either way
         # doctor must not invent capabilities.
         self.assertIn("pptx_export", result["capabilities"])
+
+    def test_doctor_ingredient_health_route_uses_pptx_profile(self) -> None:
+        route_id = "ingredient-health-edu-pptx-v1"
+        result = doctor.doctor(route_id=route_id)
+        self.assertEqual(result["profiles"][0]["profile_id"], "pptx")
+        self.assertIn("pptx_export", result["capabilities"])
+        self.assertIn(route_id, result["engine"]["routes"])
+        self.assertTrue(result["engine"]["route_present"][route_id])
+        self.assertTrue(result["engine"]["present"])
+
+    def test_doctor_checks_each_active_fixed_pptx_engine(self) -> None:
+        for route_id in (
+            "product-pptx-green-v1",
+            "product-pptx-disease-scenario-v1",
+            "courseware3-pptx-v1",
+            "ingredient-health-edu-pptx-v1",
+        ):
+            result = doctor.doctor(route_id=route_id)
+            self.assertTrue(result["engine"]["route_present"][route_id], route_id)
+            self.assertTrue(result["engine"]["present"], route_id)
 
     def test_doctor_preview_route_needs_no_profile(self) -> None:
         result = doctor.doctor(route_id="gold-preview-only")

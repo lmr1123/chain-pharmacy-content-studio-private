@@ -1,0 +1,134 @@
+{
+  "schema": "product-training-script/v1",
+  "meta": {
+    "display_name": "晴岚资料核验套装 A（内部 UAT）",
+    "organization": "连锁门店内部业务验收",
+    "tagline": "识别 · 核对 · 留痕",
+    "content_lock": "uat-safe-non-medical-v1",
+    "brand_boast_disabled": true,
+    "family": "product-training",
+    "style_pack_id": "style-pack.reference-product-blue-v1",
+    "cover_stage_tag": "内部 UAT",
+    "cover_points": [
+      "三课型页型组合",
+      "新增异议应答页签",
+      "统一浅蓝视觉"
+    ],
+    "product_packshot": {
+      "src": "production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png",
+      "source_kind": "business_authorized"
+    },
+    "page_sequence": [
+      "courseware_cover",
+      "hook_intro",
+      "product_overview",
+      "consultation_framework",
+      "evidence_ladder",
+      "objection_handling",
+      "summary_matrix"
+    ]
+  },
+  "hook": {
+    "title": "先统一资料状态",
+    "paragraphs": [
+      "本课件只验证内部资料从接收到交付的核验闭环，不对应任何真实商品。",
+      "培训重点是识别版本、核对来源、记录确认，并在信息不一致时及时升级。"
+    ]
+  },
+  "product_overview": {
+    "title": "核验对象总览",
+    "statement": "先确认对象与版本，再进入后续资料核验。",
+    "facts": [
+      {
+        "label": "物料编号",
+        "value": "UAT-A-01"
+      },
+      {
+        "label": "当前版本",
+        "value": "V1"
+      },
+      {
+        "label": "使用范围",
+        "value": "内部业务验收"
+      }
+    ]
+  },
+  "consultation": {
+    "title": "资料核验四步",
+    "steps": [
+      {
+        "question": "先核名称",
+        "why": "确认收到的是本次验收对象"
+      },
+      {
+        "question": "再核版本",
+        "why": "避免旧稿与当前稿混用"
+      },
+      {
+        "question": "复核负责人",
+        "why": "确保修改与确认可追溯"
+      },
+      {
+        "question": "记录异常",
+        "why": "超出当前资料时升级确认"
+      }
+    ]
+  },
+  "evidence": {
+    "title": "交付证据阶梯",
+    "items": [
+      {
+        "metric": "01",
+        "label": "包装文件",
+        "source": "内部 UAT 授权记录"
+      },
+      {
+        "metric": "02",
+        "label": "内容版本",
+        "source": "内容确认哈希"
+      },
+      {
+        "metric": "03",
+        "label": "视觉版本",
+        "source": "视觉确认哈希"
+      }
+    ]
+  },
+  "objection_handling": {
+    "title": "新增页签 · 异议与升级",
+    "rows": [
+      {
+        "objection": "为什么不能直接替换一页？",
+        "response": "先确认修改范围，再更新对应记录。",
+        "boundary": "未确认的修改不得进入交付版本。"
+      },
+      {
+        "objection": "来源暂时找不到怎么办？",
+        "response": "记录缺口并暂停使用该项信息。",
+        "boundary": "来源补齐并确认后才能恢复。"
+      }
+    ]
+  },
+  "summary": {
+    "title": "核验闭环回顾",
+    "rows": [
+      {
+        "label": "识别",
+        "value": "核对对象、编号与版本"
+      },
+      {
+        "label": "确认",
+        "value": "核对内容、视觉与包装记录"
+      },
+      {
+        "label": "留痕",
+        "value": "保存批准人与哈希结果"
+      },
+      {
+        "label": "升级",
+        "value": "发现不一致时暂停并反馈"
+      }
+    ]
+  },
+  "gaps": []
+}

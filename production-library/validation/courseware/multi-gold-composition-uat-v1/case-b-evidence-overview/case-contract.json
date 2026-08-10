@@ -1,0 +1,79 @@
+{
+  "schema": "multi-gold-composition-uat-case/v1",
+  "case_id": "B",
+  "title_zh": "双金样来源 + 全新页签 · 陈列物料核验",
+  "business_intent_zh": "验证先看凭证、再看物料的非默认页序，并在同一蓝色视觉下加入变更应答页。",
+  "route_id": "product-pptx-component-v1",
+  "scope": "uat",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "script_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/case-b-evidence-overview/script.structured.json",
+  "source_tabs": [
+    {
+      "tab_id": "evidence-first",
+      "name_zh": "先看资料凭证",
+      "source_ref": "sufuda.evidence_ladder",
+      "target_page_type": "evidence_ladder",
+      "page": 3
+    },
+    {
+      "tab_id": "material-overview",
+      "name_zh": "再看物料总览",
+      "source_ref": "green.product_overview",
+      "target_page_type": "product_overview",
+      "page": 4
+    }
+  ],
+  "new_tabs": [
+    {
+      "tab_id": "change-response",
+      "name_zh": "临时变更如何处理",
+      "source_ref": "new.objection_handling",
+      "target_page_type": "objection_handling",
+      "page": 5,
+      "requires_new_renderer": false
+    }
+  ],
+  "shared_pages": [
+    {
+      "page": 1,
+      "page_type": "courseware_cover"
+    },
+    {
+      "page": 2,
+      "page_type": "hook_pain_data"
+    },
+    {
+      "page": 6,
+      "page_type": "summary_matrix"
+    }
+  ],
+  "expected": {
+    "page_count": 6,
+    "page_sequence": [
+      "courseware_cover",
+      "hook_pain_data",
+      "evidence_ladder",
+      "product_overview",
+      "objection_handling",
+      "summary_matrix"
+    ]
+  },
+  "assets": {
+    "product_image_path": "production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png",
+    "authorization_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/packshot-authorization.json",
+    "authorization_reference": "UAT-FIXTURE-NONBRAND-20260809",
+    "asset_bindings_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/case-b-evidence-overview/asset-bindings.json",
+    "required_slots": {
+      "business_authorized": [
+        "meta.product_packshot"
+      ],
+      "system_generated_or_approved_library": []
+    }
+  },
+  "visual_acceptance": [
+    "六页必须保持同一蓝色标题、卡片、网格与页脚语法。",
+    "数据页、总览页与应答页之间不得切回来源母版。",
+    "包装图使用 contain，不得裁切主体。",
+    "逐页检查溢出、遮挡、对比度与页序。"
+  ]
+}
