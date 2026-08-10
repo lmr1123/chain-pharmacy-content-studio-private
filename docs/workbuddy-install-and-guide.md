@@ -18,23 +18,26 @@
 
 ## 1. 你（WorkBuddy）立刻做
 
+下面所有命令都由 WorkBuddy 执行，不得让业务登录 GitHub、配置 SSH、提供 token 或自己敲命令。
+
 ```bash
-# 首次：Public 仅为脱敏安装器
+# 首次：安装入口 → 匿名拉生产仓 → bootstrap
 git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git \
   ~/Documents/chain-pharmacy-content-studio-installer
 cd ~/Documents/chain-pharmacy-content-studio-installer
 python3 scripts/install_private_studio.py
 
-# 已安装完整 Private 生产仓
+# 已安装生产仓
 cd ~/Documents/chain-pharmacy-content-studio-private
 git pull --ff-only
 python3 scripts/workbuddy_bootstrap_for_business.py
 ```
 
-Public installer 会先检查当前用户的 GitHub 登录状态，以及
-`lmr1123/chain-pharmacy-content-studio-private` 的 `read` 权限；通过后才拉取/更新完整 Private 生产仓并调用 bootstrap。Public 仓不含模板、预览、声纹、业务包或生成器，不能单独出片。未登录或未获授权时，说明具体权限卡点并停止；禁止把 token 写入 URL/日志，禁止公共镜像，禁止回退公开 ZIP。
+**默认路径：无账号、无设备申请。** 生产仓当前为 Public，安装器官方 HTTPS 匿名克隆后自动 bootstrap。业务不需要转发任何 JSON、等管理员批准或说「继续安装」。
 
-Private bootstrap 会优先打开带本机能力状态、且不写入 Git 的 `index.local.html`；刷新失败才回退 Private checkout 内的固定 `index.html`。
+网络失败时如实说明并停止；禁止公共镜像。仅当 HTTPS 与已登录 `gh` 都不可用时，才回退历史设备 Deploy-key 路径。
+
+Bootstrap 优先打开本机 `index.local.html`；失败再回退固定 `index.html`。  
 系统提示（须全文重贴到 WorkBuddy）：`docs/workbuddy-system-prompt.md`
 
 **首次出视频前**（你执行，不让业务敲命令）：  

@@ -160,43 +160,25 @@ class PublicInstallerTests(unittest.TestCase):
     def completed(cmd: list[str], code: int = 0, stdout: str = "", stderr: str = ""):
         return subprocess.CompletedProcess(cmd, code, stdout=stdout, stderr=stderr)
 
-    def test_authorized_clone_is_atomic_official_and_hands_off_without_update(self) -> None:
+    def test_public_https_clone_is_default_atomic_and_hands_off_without_update(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             target = Path(tmp) / "production"
             calls: list[list[str]] = []
-            gh_environments: list[dict[str, str]] = []
 
             def fake_run(command, **kwargs):
                 command = [str(item) for item in command]
                 calls.append(command)
-                if command and command[0] == "gh":
-                    gh_environments.append(kwargs["env"])
-                if command[:3] == ["gh", "auth", "status"]:
-                    return self.completed(command)
-                if command[:3] == ["gh", "repo", "view"]:
-                    return self.completed(
-                        command,
-                        stdout=json.dumps(
-                            {
-                                "nameWithOwner": self.module.PRIVATE_REPOSITORY,
-                                "visibility": "PRIVATE",
-                            }
-                        ),
-                    )
-                if command[:3] == ["gh", "repo", "clone"]:
-                    clone_root = Path(command[4])
+                if command and command[0] == "git" and "clone" in command:
+                    clone_root = Path(command[-1])
                     (clone_root / ".git").mkdir(parents=True)
                     bootstrap = clone_root / "scripts/workbuddy_bootstrap_for_business.py"
                     bootstrap.parent.mkdir(parents=True)
-                    bootstrap.write_text("# private\n", encoding="utf-8")
+                    bootstrap.write_text("# production\n", encoding="utf-8")
                     return self.completed(command)
                 if command[:2] == ["git", "-C"]:
                     return self.completed(
                         command,
-                        stdout=(
-                            "git@github.com:lmr1123/"
-                            "chain-pharmacy-content-studio-private.git\n"
-                        ),
+                        stdout=self.module.PRODUCTION_HTTPS_ORIGIN + "\n",
                     )
                 return self.completed(command)
 
@@ -205,20 +187,14 @@ class PublicInstallerTests(unittest.TestCase):
 
             self.assertEqual(result, 0)
             self.assertTrue((target / ".git").is_dir())
-            clone_call = next(call for call in calls if call[:3] == ["gh", "repo", "clone"])
-            self.assertEqual(clone_call[3], self.module.PRIVATE_REPOSITORY)
-            self.assertEqual(
-                Path(clone_call[4]).parent.parent.resolve(), target.parent.resolve()
+            clone_call = next(
+                call for call in calls if call and call[0] == "git" and "clone" in call
             )
-            self.assertFalse(any("proxy" in part.lower() for part in clone_call))
+            self.assertIn(self.module.PRODUCTION_HTTPS_ORIGIN, clone_call)
             self.assertIn("http.version=HTTP/1.1", clone_call)
             self.assertIn("--single-branch", clone_call)
             self.assertIn("--no-tags", clone_call)
-            self.assertTrue(any(call[:2] == ["git", "-C"] for call in calls))
-            self.assertTrue(gh_environments)
-            self.assertTrue(
-                all(environment.get("GH_HOST") == "github.com" for environment in gh_environments)
-            )
+            self.assertFalse(any(call[:3] == ["gh", "repo", "clone"] for call in calls))
             handoff = calls[-1]
             self.assertIn("--skip-update", handoff)
             self.assertEqual(
@@ -230,28 +206,16 @@ class PublicInstallerTests(unittest.TestCase):
             leftovers = list(target.parent.glob(f".{target.name}.install-*"))
             self.assertEqual(leftovers, [])
 
-    def test_interrupted_clone_retries_once_from_clean_official_staging(self) -> None:
+    def test_interrupted_https_clone_retries_once_from_clean_official_staging(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             target = Path(tmp) / "production"
             clone_calls: list[list[str]] = []
 
             def fake_run(command, **_kwargs):
                 command = [str(item) for item in command]
-                if command[:3] == ["gh", "auth", "status"]:
-                    return self.completed(command)
-                if command[:3] == ["gh", "repo", "view"]:
-                    return self.completed(
-                        command,
-                        stdout=json.dumps(
-                            {
-                                "nameWithOwner": self.module.PRIVATE_REPOSITORY,
-                                "visibility": "PRIVATE",
-                            }
-                        ),
-                    )
-                if command[:3] == ["gh", "repo", "clone"]:
+                if command and command[0] == "git" and "clone" in command:
                     clone_calls.append(command)
-                    clone_root = Path(command[4])
+                    clone_root = Path(command[-1])
                     if len(clone_calls) == 1:
                         clone_root.mkdir(parents=True)
                         (clone_root / "partial").write_text(
@@ -262,15 +226,12 @@ class PublicInstallerTests(unittest.TestCase):
                     (clone_root / ".git").mkdir(parents=True)
                     bootstrap = clone_root / "scripts/workbuddy_bootstrap_for_business.py"
                     bootstrap.parent.mkdir(parents=True)
-                    bootstrap.write_text("# private\n", encoding="utf-8")
+                    bootstrap.write_text("# production\n", encoding="utf-8")
                     return self.completed(command)
                 if command[:2] == ["git", "-C"]:
                     return self.completed(
                         command,
-                        stdout=(
-                            "https://github.com/lmr1123/"
-                            "chain-pharmacy-content-studio-private.git\n"
-                        ),
+                        stdout=self.module.PRODUCTION_HTTPS_ORIGIN + "\n",
                     )
                 return self.completed(command)
 
@@ -282,14 +243,21 @@ class PublicInstallerTests(unittest.TestCase):
             self.assertTrue((target / ".git").is_dir())
             self.assertEqual(list(target.parent.glob(f".{target.name}.install-*")), [])
 
-    def test_auth_or_access_failure_leaves_no_partial_target_and_redacts_output(self) -> None:
+    def test_https_and_fallback_failure_leaves_no_partial_target_and_redacts_output(
+        self,
+    ) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             target = Path(tmp) / "production"
             secret = "ghp_1234567890abcdefghijklmnopqrstuv"
-            failed = self.completed(["gh"], 1, stderr=f"token={secret}")
+            failed = self.completed(["git"], 1, stderr=f"token={secret}")
             output = io.StringIO()
             with (
                 mock.patch.object(self.module.subprocess, "run", return_value=failed),
+                mock.patch.object(
+                    self.module,
+                    "_install_with_device_access",
+                    return_value=self.module.DEVICE_ACCESS_PENDING_EXIT,
+                ),
                 contextlib.redirect_stdout(output),
                 contextlib.redirect_stderr(output),
             ):
@@ -299,7 +267,7 @@ class PublicInstallerTests(unittest.TestCase):
             self.assertEqual(list(target.parent.glob(f".{target.name}.install-*")), [])
             self.assertNotIn(secret, output.getvalue())
 
-    def test_authenticated_account_without_private_access_honestly_stops(self) -> None:
+    def test_https_failure_then_gh_view_failure_uses_device_authorization(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             target = Path(tmp) / "production"
             calls: list[list[str]] = []
@@ -307,30 +275,42 @@ class PublicInstallerTests(unittest.TestCase):
             def fake_run(command, **_kwargs):
                 command = [str(item) for item in command]
                 calls.append(command)
+                if command and command[0] == "git" and "clone" in command:
+                    return self.completed(command, 1, stderr="network blocked")
                 if command[:3] == ["gh", "auth", "status"]:
                     return self.completed(command)
                 if command[:3] == ["gh", "repo", "view"]:
                     return self.completed(command, 1, stderr="not found")
-                raise AssertionError("clone must not run without repository access")
+                return self.completed(command)
 
             output = io.StringIO()
             with (
                 mock.patch.object(self.module.subprocess, "run", side_effect=fake_run),
+                mock.patch.object(
+                    self.module,
+                    "_install_with_device_access",
+                    return_value=self.module.DEVICE_ACCESS_PENDING_EXIT,
+                ) as device_access,
                 contextlib.redirect_stdout(output),
                 contextlib.redirect_stderr(output),
             ):
                 result = self.module.install(target)
-            self.assertEqual(result, 3)
+            self.assertEqual(result, self.module.DEVICE_ACCESS_PENDING_EXIT)
             self.assertFalse(target.exists())
             self.assertFalse(any(call[:3] == ["gh", "repo", "clone"] for call in calls))
-            self.assertIn("没有私有生产仓库权限", output.getvalue())
+            device_access.assert_called_once()
+            self.assertEqual(device_access.call_args.kwargs["existing"], False)
 
-    def test_failed_clone_removes_atomic_staging_directory(self) -> None:
+    def test_https_failure_then_public_gh_clone_succeeds(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             target = Path(tmp) / "production"
+            calls: list[list[str]] = []
 
             def fake_run(command, **_kwargs):
                 command = [str(item) for item in command]
+                calls.append(command)
+                if command and command[0] == "git" and "clone" in command:
+                    return self.completed(command, 1, stderr="https blocked")
                 if command[:3] == ["gh", "auth", "status"]:
                     return self.completed(command)
                 if command[:3] == ["gh", "repo", "view"]:
@@ -339,18 +319,54 @@ class PublicInstallerTests(unittest.TestCase):
                         stdout=json.dumps(
                             {
                                 "nameWithOwner": self.module.PRIVATE_REPOSITORY,
-                                "visibility": "PRIVATE",
+                                "visibility": "PUBLIC",
                             }
                         ),
                     )
                 if command[:3] == ["gh", "repo", "clone"]:
-                    clone_root = Path(str(command[4]))
+                    clone_root = Path(command[4])
+                    (clone_root / ".git").mkdir(parents=True)
+                    bootstrap = clone_root / "scripts/workbuddy_bootstrap_for_business.py"
+                    bootstrap.parent.mkdir(parents=True)
+                    bootstrap.write_text("# production\n", encoding="utf-8")
+                    return self.completed(command)
+                if command[:2] == ["git", "-C"]:
+                    return self.completed(
+                        command,
+                        stdout=self.module.PRODUCTION_HTTPS_ORIGIN + "\n",
+                    )
+                return self.completed(command)
+
+            with mock.patch.object(self.module.subprocess, "run", side_effect=fake_run):
+                result = self.module.install(target, no_open=True)
+
+            self.assertEqual(result, 0)
+            self.assertTrue((target / ".git").is_dir())
+            self.assertTrue(any(call[:3] == ["gh", "repo", "clone"] for call in calls))
+
+    def test_failed_clone_removes_atomic_staging_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "production"
+
+            def fake_run(command, **_kwargs):
+                command = [str(item) for item in command]
+                if command and command[0] == "git" and "clone" in command:
+                    clone_root = Path(str(command[-1]))
                     clone_root.mkdir(parents=True)
                     (clone_root / "partial").write_text("partial", encoding="utf-8")
                     return self.completed(command, 1, stderr="clone failed")
-                raise AssertionError(command)
+                if command[:3] == ["gh", "auth", "status"]:
+                    return self.completed(command, 1)
+                return self.completed(command, 1)
 
-            with mock.patch.object(self.module.subprocess, "run", side_effect=fake_run):
+            with (
+                mock.patch.object(self.module.subprocess, "run", side_effect=fake_run),
+                mock.patch.object(
+                    self.module,
+                    "_install_with_device_access",
+                    return_value=4,
+                ),
+            ):
                 result = self.module.install(target)
             self.assertNotEqual(result, 0)
             self.assertFalse(target.exists())
@@ -362,24 +378,12 @@ class PublicInstallerTests(unittest.TestCase):
 
             def fake_run(command, **_kwargs):
                 command = [str(item) for item in command]
-                if command[:3] == ["gh", "auth", "status"]:
-                    return self.completed(command)
-                if command[:3] == ["gh", "repo", "view"]:
-                    return self.completed(
-                        command,
-                        stdout=json.dumps(
-                            {
-                                "nameWithOwner": self.module.PRIVATE_REPOSITORY,
-                                "visibility": "PRIVATE",
-                            }
-                        ),
-                    )
-                if command[:3] == ["gh", "repo", "clone"]:
-                    clone_root = Path(command[4])
+                if command and command[0] == "git" and "clone" in command:
+                    clone_root = Path(command[-1])
                     (clone_root / ".git").mkdir(parents=True)
                     bootstrap = clone_root / "scripts/workbuddy_bootstrap_for_business.py"
                     bootstrap.parent.mkdir(parents=True)
-                    bootstrap.write_text("# private\n", encoding="utf-8")
+                    bootstrap.write_text("# production\n", encoding="utf-8")
                     return self.completed(command)
                 if command[:2] == ["git", "-C"]:
                     return self.completed(
@@ -389,9 +393,18 @@ class PublicInstallerTests(unittest.TestCase):
                             "chain-pharmacy-content-studio-private.git\n"
                         ),
                     )
-                raise AssertionError(command)
+                if command[:3] == ["gh", "auth", "status"]:
+                    return self.completed(command, 1)
+                return self.completed(command)
 
-            with mock.patch.object(self.module.subprocess, "run", side_effect=fake_run):
+            with (
+                mock.patch.object(self.module.subprocess, "run", side_effect=fake_run),
+                mock.patch.object(
+                    self.module,
+                    "_install_with_device_access",
+                    return_value=4,
+                ),
+            ):
                 result = self.module.install(target)
             self.assertEqual(result, 4)
             self.assertFalse(target.exists())
@@ -403,7 +416,7 @@ class PublicInstallerTests(unittest.TestCase):
             (target / ".git").mkdir(parents=True)
             bootstrap = target / "scripts/workbuddy_bootstrap_for_business.py"
             bootstrap.parent.mkdir(parents=True)
-            bootstrap.write_text("# private\n", encoding="utf-8")
+            bootstrap.write_text("# production\n", encoding="utf-8")
             calls: list[list[str]] = []
 
             def fake_run(command, **_kwargs):
@@ -412,22 +425,7 @@ class PublicInstallerTests(unittest.TestCase):
                 if command[:2] == ["git", "-C"]:
                     return self.completed(
                         command,
-                        stdout=(
-                            "https://github.com/lmr1123/"
-                            "chain-pharmacy-content-studio-private.git\n"
-                        ),
-                    )
-                if command[:3] == ["gh", "auth", "status"]:
-                    return self.completed(command)
-                if command[:3] == ["gh", "repo", "view"]:
-                    return self.completed(
-                        command,
-                        stdout=json.dumps(
-                            {
-                                "nameWithOwner": self.module.PRIVATE_REPOSITORY,
-                                "visibility": "PRIVATE",
-                            }
-                        ),
+                        stdout=self.module.PRODUCTION_HTTPS_ORIGIN + "\n",
                     )
                 return self.completed(command)
 
@@ -436,6 +434,9 @@ class PublicInstallerTests(unittest.TestCase):
 
             self.assertEqual(result, 0)
             self.assertFalse(any(call[:3] == ["gh", "repo", "clone"] for call in calls))
+            self.assertFalse(
+                any(call and call[0] == "git" and "clone" in call for call in calls)
+            )
             handoff = calls[-1]
             self.assertNotIn("--skip-update", handoff)
             self.assertIn("--no-open", handoff)

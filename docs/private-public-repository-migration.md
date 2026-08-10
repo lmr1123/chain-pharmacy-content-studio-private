@@ -1,7 +1,7 @@
 # Private 生产仓与 Public 安装入口迁移方案
 
-**状态：** 已完成远端迁移、双向访问验证与 Public 全历史审计
-**日期：** 2026-08-08
+**状态：** 2026-08-10 用户选择将生产仓改回 **Public** 以简化业务安装；安装器默认匿名 HTTPS。设备授权降为回退路径。历史迁移记录仍保留。
+**日期：** 2026-08-10
 **目标：** 完整生产仓、签样模板、声纹和授权资产只对获授权成员开放；业务仍保留一条简单、稳定的 WorkBuddy 安装句。
 
 ## 0. 已执行结果
@@ -12,6 +12,7 @@
 - Public Actions `audit` 已成功；`main` 强制该检查、线性历史和对话解决，管理员同样受保护，force push 与分支删除关闭。
 - 禁用 Git 凭证帮助器后，Public `ls-remote` 与 clone 成功，Private `ls-remote` 失败；授权账号由 Public installer 拉取 Private、校验 marker/资产、运行 bootstrap 和门户刷新成功。
 - 真实大仓 clone 曾复现 `curl 18 / early EOF`；安装器现固定 GitHub 官方 HTTP/1.1、浅克隆单分支/无 tags，失败时清理 staging 后重试一次，不输出 GitHub stderr 或凭证。
+- 无 GitHub 账号的业务设备由安装器生成专用 Ed25519 密钥和公钥申请；管理员批准为单设备、单仓只读 Deploy key 后，安装器使用固定 GitHub ED25519 主机密钥的官方 SSH 路径拉取。业务只负责转发申请并说「继续安装」，不接触 GitHub、SSH、token 或 CLI。
 - 授权 clean clone 的 `private_production_assets=true`、`validate_production_readiness.py=PASS`；未安装本机依赖时 PPTX/TTS/视频能力继续诚实显示为不可用，不以规划包冒充成品。
 
 迁移停止了后续匿名分发，但无法召回迁移前第三方已取得的 clone、缓存或下载。若权利/法务要求清除旧 SHA 的平台缓存视图，仍需另行联系 GitHub Support；不得以此为由把完整仓重新公开。
@@ -22,10 +23,10 @@
 
 | 实体 | 地址 | 可见性 | 内容与职责 |
 |------|------|--------|------------|
-| Public installer | `https://github.com/lmr1123/chain-pharmacy-content-studio.git` | Public | 全新历史的脱敏安装器、登录/授权指引、安全策略；不含模板、预览、声纹、生成器或业务包 |
+| Public installer | `https://github.com/lmr1123/chain-pharmacy-content-studio.git` | Public | 全新历史的脱敏安装器、账号/设备授权指引、安全策略；不含模板、预览、声纹、生成器或业务包 |
 | Private production | `https://github.com/lmr1123/chain-pharmacy-content-studio-private.git` | Private | 当前完整生产仓、签样事实源、生成器、内部文档和第一阶段授权资产包 |
 
-Private production 默认 **owner-only**：新建后先不给任何团队或外部协作者访问；由仓库 owner 逐个授予最小权限。业务账号至少需要 Private 仓 `read` 权限，制作/维护账号才授予 `write` 或更高权限。
+Private production 默认 **owner-only**。维护账号通过仓库成员权限按需授权；普通业务设备不共享 owner 账号或凭证，只登记该设备专用、仅绑定本仓且不启用写权限的 Deploy key。
 
 第一阶段不拆第二套制品系统：**完整 Private 仓本身就是授权资产包**。这样可以先关闭 Public 再分发风险，并保持现有固定路径和生成链路不变。大文件迁 Private Release/LFS/对象存储属于第二阶段性能治理，不能阻塞本次隔离。
 
@@ -33,8 +34,8 @@ Private production 默认 **owner-only**：新建后先不给任何团队或外�
 
 - Public installer 不得包含 `assets/`、`production-library/`、`poc/`、`outputs/`、`samples/`、内部 `tasks/` 或现有生产文档的副本。
 - Public installer 不得包含 MP4、音频、PPTX、DOCX、PDF、ZIP、金样预览 PNG、voice manifest、审批记录或授权凭证。
-- Public installer 不具备模板预览、内容生成、TTS、渲染、业务包构建或降级出片能力；它唯一负责身份检查、Private 访问检查和启动 Private bootstrap。
-- Private clone、拉取和更新不得经过 ghproxy、gitclone 等公共镜像；凭证不得写入 URL、命令参数、日志或配置样例。
+- Public installer 不具备模板预览、内容生成、TTS、渲染、业务包构建或降级出片能力；它只负责账号或设备授权检查、Private 拉取和启动 Private bootstrap。
+- Private clone、拉取和更新不得经过 ghproxy、gitclone 等公共镜像；凭证不得写入 URL、命令参数、日志或配置样例。设备路径必须固定校验 GitHub ED25519 主机密钥，不得关闭 SSH 主机校验。
 - Public 无模板或 Private 无权限时必须明确停止，不得回退公开 ZIP、假模板、系统 TTS、`audio-shell` 或制作代跑。
 
 ## 3. 为什么必须使用全新 Public 历史
@@ -64,7 +65,7 @@ Private production 默认 **owner-only**：新建后先不给任何团队或外�
 
 1. 创建 `chain-pharmacy-content-studio-private`，初始访问仅 owner。
 2. 将完整仓库和所需历史推入 Private；确认默认分支和保护规则。
-3. 把 Public 安装 URL、公开镜像和“无需登录”旧话术改为 Public installer → Private production 模型。
+3. 把 Public 安装 URL、公开镜像和“无需 Private 授权”旧话术改为 Public installer → Private production 模型。
 4. 在一台没有旧 checkout 的机器上，用获授权账号完成 clean clone、环境探测、门户构建和至少一个真实主路径测试。
 
 验证：Private 远端 `visibility=PRIVATE`；未授权账号无法读取；授权账号 clean clone 后生产就绪校验通过。
@@ -74,7 +75,7 @@ Private production 默认 **owner-only**：新建后先不给任何团队或外�
 1. 将原 Public entity 转 Private 或停止对外服务，确保完整仓不再匿名可读。
 2. 用全新历史创建脱敏 Public installer，并保持业务安装句 URL 不变。
 3. Public 首次提交只包含安装器 allowlist；CI 对路径、扩展名、大小、秘密和全部历史做阻断检查。
-4. Public README 明示需要 GitHub 登录和 Private 仓授权；不承诺公开 ZIP 或镜像回退。
+4. Public README 明示需要 Private 账号或设备授权；业务设备可走管理员批准的只读设备申请，不承诺公开 ZIP 或镜像回退。
 
 验证：Public 全历史不存在旧资产路径或二进制；未授权安装诚实停止；授权安装能拉取 Private 并启动门户。
 
@@ -86,18 +87,30 @@ Private production 默认 **owner-only**：新建后先不给任何团队或外�
    请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
    ```
 
-2. WorkBuddy 安装 Public installer，检查 GitHub 登录和 Private `read` 权限，再安装/更新 Private production。
-3. 观察一轮授权账号安装、更新、门户、PPT 和视频能力探测；失败不发布降级成品。
+2. WorkBuddy 安装 Public installer；无已授权登录时，输出设备申请供业务转发管理员，并在批准前停止。
+3. 管理员把设备公钥批准为本仓只读 Deploy key；业务说「继续安装」后，WorkBuddy 重新运行安装器并安装/更新 Private production。
+4. 观察授权账号和授权设备两条路径的安装、更新、门户、PPT 和视频能力探测；失败不发布降级成品。
 
-验证：业务不需要理解双仓；代理日志能区分网络失败、未登录、无授权、Private 更新失败和生产环境缺口。
+验证：业务不需要理解双仓，也不接触 GitHub、SSH、token 或 CLI；代理日志能区分待设备批准、网络失败、Private 更新失败和生产环境缺口。
 
 ## 5. 访问与凭证规则
 
-- Private 仓默认 owner-only，授权必须通过 GitHub repository/team 权限，不共享个人 token。
-- 优先使用 `gh auth login`、Git Credential Manager 或 SSH agent；安装器只调用凭证管理器，不读取或打印 token。
-- 业务人员离岗、角色变化或声纹授权撤回时，及时移除访问并记录复核。
+- Private 仓默认 owner-only。维护人员走 GitHub repository/team 权限；业务设备走本仓只读 Deploy key。两条路径都不得共享 owner 账号、owner 凭证或个人 token。
+- 设备密钥必须一机一把、一把只绑定本仓，管理员不得启用写权限。申请只含公钥、设备 ID 和指纹，业务不接触 SSH 或私钥。
+- Deploy key 当前没有自动有效期。业务人员离岗、角色变化、设备遗失或授权撤回时，管理员必须主动移除对应 key 并记录复核。
+- 撤销只阻止设备后续拉取和更新，不会远程删除已经存在的本地仓库或交付物；终端管理流程必须另行清理本地副本。
 - 不把 Private ZIP 发送到群聊、公开网盘或 Public Release；离线分发必须是受控渠道，并保留接收人、版本、哈希和有效期。
 - 安装器不得自动把 Private origin 改回 Public，也不得把 Private URL 交给公共镜像缓存。
+
+管理员收到设备申请后，由管理员自己的 WorkBuddy 在 Private checkout 内执行：
+
+```bash
+python3 scripts/manage_business_device_access.py approve <申请文件.json>
+python3 scripts/manage_business_device_access.py list
+python3 scripts/manage_business_device_access.py revoke-id <wb-设备ID>
+```
+
+申请文件只保存公钥合同；不得收集业务设备私钥或任何账号密码。管理员工具的批准操作固定创建 `read_only=true` 的受管设备记录，冲突时停止，不自动覆盖既有授权。
 
 ## 6. Public allowlist 与发布门
 
@@ -157,13 +170,13 @@ git rev-list --objects --all | \
   sort -k3nr | head -n 20
 ```
 
-Public 不应出现 MB 级生产资产。最终必须完成三类安装测试：未登录、已登录但无权限、已授权；前两类诚实停止，第三类成功启动 Private 门户。
+Public 不应出现 MB 级生产资产。最终必须覆盖：账号授权成功、账号无权限、设备首次申请、设备未批准、设备已批准五类安装测试；未授权状态诚实停止，授权状态成功启动 Private 门户。
 
 ## 9. 完成定义
 
 - 完整生产仓匿名访问已关闭，Private 默认 owner-only。
 - Public 是独立 entity、独立全新历史，只含安装入口 allowlist。
-- 业务安装句保持不变，但文档不再承诺“Public 无需登录、公共镜像或 ZIP fallback”。
-- 授权账号在 clean machine 能由 Public installer 拉取 Private 并启动；无授权不产生半安装或伪交付。
+- 业务安装句保持不变；业务无需 GitHub 账号或命令行，但 Private 账号或设备授权仍是生产安装硬门，且没有公共镜像或 ZIP fallback。
+- 授权账号或获批业务设备在 clean machine 能由 Public installer 拉取 Private 并启动；无授权不产生半安装或伪交付。
 - Public 全 refs/全历史安全扫描通过；迁移前公开历史的不可召回边界已留档。
 - 第一阶段完整 Private 仓作为授权资产包通过验证，之后才能讨论大文件拆包优化。

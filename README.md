@@ -26,15 +26,16 @@
 安装脚本（代理执行）：
 
 ```bash
-# Public 仓只有脱敏安装器；WorkBuddy 首次执行
+# 安装入口仓 → 自动拉取生产仓并打开引导页
 git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git \
   ~/Documents/chain-pharmacy-content-studio-installer
 cd ~/Documents/chain-pharmacy-content-studio-installer
 python3 scripts/install_private_studio.py
 ```
 
-安装器会检查 GitHub 登录和
-`lmr1123/chain-pharmacy-content-studio-private` 的授权，随后拉取完整 Private 生产仓并运行其中的 bootstrap。Public 仓**不含**模板、资产、声纹、业务包或生成能力；没有 Private `read` 权限时会明确停止。Private 拉取禁止使用公共镜像，也不提供公开 ZIP 回退。
+业务**不需要** GitHub 账号、设备申请或管理员批准。安装器默认用官方 HTTPS 匿名拉取生产仓
+`chain-pharmacy-content-studio-private`（当前为 Public），再 bootstrap 打开引导页。
+安装与出片命令都由 WorkBuddy 执行。禁止公共镜像。
 
 ## 制作侧
 
@@ -61,11 +62,11 @@ python3 scripts/refresh_business_delivery.py
 
 ## 仓库边界
 
-- **Public installer**：全新历史，只含安装、授权检查和安全说明；不具备生产能力。
-- **Private production**：settled 金样、授权资产、声纹、文档、生成器、登记表和配置。第一阶段完整 Private 仓即授权资产包。
+- **安装入口**（`chain-pharmacy-content-studio`）：只含安装脚本与说明。
+- **生产仓**（`chain-pharmacy-content-studio-private`，**当前 Public**）：settled 金样、资产、声纹、生成器与业务门户。业务经安装器自动拉取，无需账号。
 - **本机不入仓**：`third_party/`、`node_modules`、`.venv*`、运行 workspace、业务上传、日志和正式交付物。
 
-获授权安装后，出片与克隆 TTS 由 WorkBuddy 在 Private checkout 内按 `AGENTS.md` 与各工程依赖执行。迁移和权限边界见 [`docs/private-public-repository-migration.md`](docs/private-public-repository-migration.md)。
+安装后，出片与克隆 TTS 由 WorkBuddy 在生产 checkout 内按 `AGENTS.md` 执行。公开可读仅便于内部业务安装，不等于对外再分发授权。
 
 ## 硬原则（摘要）
 
@@ -76,5 +77,5 @@ python3 scripts/refresh_business_delivery.py
 
 ## License / 使用范围
 
-- Public 仓公开可读不等于获得 Private 生产资产或其再分发授权；除非另有明确书面许可，安装入口之外的权利均不随 Public 可见性授予。
-- 完整生产系统仅供获授权账号进行公司内部培训制作；Private 化不替代素材、人声和品牌的内部使用授权。
+- 仓库公开可读仅为简化内部业务安装；模板、声纹与素材仅供公司内部培训制作，禁止外传或再分发。
+- 不替代商品包装、人声克隆与品牌素材的内部使用授权。

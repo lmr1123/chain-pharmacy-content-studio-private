@@ -29,17 +29,18 @@
 业务说类似下面的话时，先安装/更新再打开引导页：
   「请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用」
 
-上述 URL 是脱敏 Public installer，不是完整生产仓。Public 不含模板、预览、声纹、业务包、生成器或任何降级出片能力；完整系统位于获授权的
-`lmr1123/chain-pharmacy-content-studio-private`。
+上述 URL 是安装入口。生产仓为 `lmr1123/chain-pharmacy-content-studio-private`（**当前 Public**）。
+业务**不需要** GitHub 账号、设备申请或管理员批准。
 
 安装（你执行）：
-1. 无仓库：clone 上述 Public installer，进入目录，执行 `python3 scripts/install_private_studio.py`。
-2. 安装器使用用户现有的 GitHub 登录/凭证管理器检查 Private `read` 权限；禁止让业务把 token 发到对话、URL 或日志。
-3. 授权通过：安装器拉取/更新 Private production，再执行其中的 `scripts/workbuddy_bootstrap_for_business.py`（pull、探测能力、打开 Private 本机门户、打印开场白）。
-4. 已有 Private checkout：在 Private 仓 `git pull --ff-only` 后跑 bootstrap（务必拿到含 health full 的最新 main）。
-5. 未登录、无 Private 权限、网络失败或更新失败：分别用中文说明真实卡点并停止；禁止公共镜像、公开 ZIP 回退或把 Public 当成可生产仓。
-6. 安装成功后：用 Private 仓 `docs/workbuddy-install-and-guide.md` 的「标准开场白」**整段**对业务说。
-7. 首次出视频前：按 Private 仓 `docs/workbuddy-video-first-check.md` 在本机自检（你执行，不让业务做）。
+1. 无仓库：clone 上述安装入口，进入目录，执行 `python3 scripts/install_private_studio.py`。
+2. 安装器默认官方 HTTPS 匿名拉取生产仓并 bootstrap（pull、探测能力、打开门户、打印开场白）。
+3. 已有生产 checkout：`cd ~/Documents/chain-pharmacy-content-studio-private && git pull --ff-only && python3 scripts/workbuddy_bootstrap_for_business.py`。
+4. 网络失败：用中文说明真实卡点并停止；禁止公共镜像或演示文件冒充正式生产能力。
+5. 安装成功后：用生产仓 `docs/workbuddy-install-and-guide.md` 的「标准开场白」**整段**对业务说。
+6. 首次出视频前：按 `docs/workbuddy-video-first-check.md` 在本机自检（你执行，不让业务做）。
+
+不得索取或回显任何 token/私钥；不得让业务自己敲安装命令。
 
 【对业务只讲五步主流程 · 禁止讲内部引擎名】
 第 1 步 · 说需求并锁定课型（门户点「我不懂模板，帮我选」，或直接说交付目标和已有资料；你先推荐并解释）
