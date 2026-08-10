@@ -31,6 +31,7 @@ OFFICIAL_PRIVATE_ORIGINS = {
 }
 PRIVATE_MARKER_REL = Path("distribution") / "private-production.json"
 PRIVATE_MARKER_KIND = "chain-pharmacy-private-production"
+BUSINESS_SPARSE_REL = Path("distribution") / "business-sparse-checkout.txt"
 PKG_REL = Path("outputs") / "业务使用资料包" / "药店培训内容工厂-业务包"
 PORTAL_NAME = "index.html"
 RUNTIME_PORTAL_NAME = "index.local.html"
@@ -89,6 +90,80 @@ def run(cmd: list[str], *, cwd: Path | None = None, check: bool = True) -> subpr
     return subprocess.run(cmd, cwd=str(cwd) if cwd else None, check=check)
 
 
+def load_business_sparse_paths(root: Path) -> list[str]:
+    """Paths for cone sparse-checkout (quality-critical production only)."""
+    path = root / BUSINESS_SPARSE_REL
+    if not path.is_file():
+        return []
+    paths: list[str] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        text = line.strip()
+        if not text or text.startswith("#"):
+            continue
+        paths.append(text)
+    return paths
+
+
+def is_sparse_checkout(root: Path) -> bool:
+    try:
+        result = subprocess.run(
+            ["git", "sparse-checkout", "list"],
+            cwd=str(root),
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=8.0,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    return result.returncode == 0 and bool(result.stdout.strip())
+
+
+def apply_business_sparse_checkout(root: Path, *, force: bool = False) -> bool:
+    """Apply business sparse paths. Returns True if sparse mode is active.
+
+    Never force-sparse a full developer tree (has excluded research dirs)
+    unless force=True (fresh business clone only).
+    """
+    paths = load_business_sparse_paths(root)
+    if not paths:
+        print("警告：缺少 business-sparse-checkout.txt，跳过 sparse 安装。")
+        return False
+    if not force and not is_sparse_checkout(root):
+        # Full developer checkout: do not strip local research trees.
+        if (root / "poc" / "reference-replica").exists() or (
+            root / "assets" / "business-input-guides"
+        ).exists():
+            print(
+                "检测到完整开发检出（含 research/素材目录），保持全量树；"
+                "业务精简安装仅用于新 clone。"
+            )
+            return False
+    # non-cone: allow keeping production-library while excluding validation/
+    result = run(
+        ["git", "sparse-checkout", "init", "--no-cone"],
+        cwd=root,
+        check=False,
+    )
+    if result.returncode != 0:
+        print("警告：sparse-checkout init 失败，继续全量树。")
+        return False
+    result = run(
+        ["git", "sparse-checkout", "set", *paths],
+        cwd=root,
+        check=False,
+    )
+    if result.returncode != 0:
+        print("警告：sparse-checkout set 失败，继续当前检出。")
+        return False
+    print(
+        "已启用业务 sparse 检出："
+        "保留 settled 金样 / 构件库 / 视频 kit（成片质量不变），"
+        "去掉 validation/research 冗余。"
+    )
+    return True
+
+
 def update_repo(root: Path) -> None:
     """Update an existing checkout, stopping rather than using a stale tree."""
     if not is_private_repo(root):
@@ -101,6 +176,9 @@ def update_repo(root: Path) -> None:
             f"git pull --ff-only 失败（exit={result.returncode}），已停止启动。\n"
             "本地仓库保持原状；请修复网络或本地分支冲突后重试。"
         )
+    # Refresh sparse patterns only when already in sparse business mode.
+    if is_sparse_checkout(root):
+        apply_business_sparse_checkout(root, force=True)
 
 
 def is_repo(path: Path) -> bool:
@@ -190,7 +268,7 @@ def clone_or_update(repo_url: str, target: Path, *, skip_update: bool = False) -
             "请换路径，或删空后重试。"
         )
     target.parent.mkdir(parents=True, exist_ok=True)
-    print(f"首次安装，克隆到: {target}")
+    print(f"首次安装，克隆到: {target}（业务 sparse + depth 1，成片质量资产完整保留）")
     last_err = None
     for url in clone_url_candidates(repo_url):
         print(f"尝试: {url}")
@@ -199,8 +277,34 @@ def clone_or_update(repo_url: str, target: Path, *, skip_update: bool = False) -
             import shutil
 
             shutil.rmtree(target, ignore_errors=True)
-        result = run(["git", "clone", "--depth", "1", url, str(target)], check=False)
+        # Partial clone + sparse: skip research trees; keep settled golds &
+        # component-library (illustration quality) and poc/gold-sample (video kit).
+        result = run(
+            [
+                "git",
+                "clone",
+                "--depth",
+                "1",
+                "--filter=blob:none",
+                "--sparse",
+                url,
+                str(target),
+            ],
+            check=False,
+        )
+        if result.returncode != 0:
+            # Fallback for older git without sparse/filter support.
+            print("sparse/filter 克隆失败，回退普通 depth-1 克隆…")
+            if target.exists():
+                import shutil
+
+                shutil.rmtree(target, ignore_errors=True)
+            result = run(
+                ["git", "clone", "--depth", "1", url, str(target)],
+                check=False,
+            )
         if result.returncode == 0 and is_private_repo(target):
+            apply_business_sparse_checkout(target, force=True)
             print(f"克隆成功（来源: {url}）")
             return target.resolve()
         if result.returncode == 0:
@@ -219,14 +323,31 @@ def clone_or_update(repo_url: str, target: Path, *, skip_update: bool = False) -
     )
 
 
-def _package_media_incomplete(package_root: Path) -> bool:
-    """True when gold/example videos are missing (not tracked in git; built locally)."""
+def _package_media_incomplete(root: Path, package_root: Path) -> bool:
+    """True when portal gold videos should exist but are missing locally.
+
+    Gold mp4s are not tracked (deduped); production installs rebuild them from
+    settled sources. Fixture/min repos without settled golds are not incomplete.
+    """
     media = package_root / "01_模板货架" / "media"
-    required = (
-        media / "health-video-reference-tech-v1" / "gold.mp4",
-        media / "product-video-faithful-v1" / "gold.mp4",
+    pairs = (
+        (
+            media / "health-video-reference-tech-v1" / "gold.mp4",
+            root
+            / "production-library/templates/settled/health-video-reference-tech-v1",
+        ),
+        (
+            media / "product-video-faithful-v1" / "gold.mp4",
+            root
+            / "production-library/templates/settled/product-video-faithful-v1",
+        ),
     )
-    return any(not path.is_file() for path in required)
+    for dest, settled in pairs:
+        if dest.is_file():
+            continue
+        if settled.is_dir() and any(settled.glob("*.mp4")):
+            return True
+    return False
 
 
 def ensure_package(
@@ -236,21 +357,29 @@ def ensure_package(
     portal = root / PKG_REL / PORTAL_NAME
     package_root = root / PKG_REL
     build = root / "scripts" / "build_business_tier_a_package.py"
-    needs_full_rebuild = (not portal.is_file()) or _package_media_incomplete(package_root)
+    portal_missing = not portal.is_file()
+    media_missing = _package_media_incomplete(root, package_root)
+    needs_full_rebuild = portal_missing or media_missing
     if needs_full_rebuild:
         if not build.is_file():
             raise SystemExit(f"缺少业务包生成器，无法重建引导页: {build}")
         reason = (
             "业务引导页缺失"
-            if not portal.is_file()
+            if portal_missing
             else "业务包金样视频未生成（仓库不跟踪重复 gold.mp4）"
         )
         print(f"{reason}，尝试重建业务包…")
         result = run([sys.executable, str(build)], cwd=root, check=False)
         if result.returncode != 0:
-            raise SystemExit(
-                f"业务包重建失败（exit={result.returncode}），已停止启动。\n"
-                f"请检查上方错误并重试: {build}"
+            # Hard-fail only when we have no portal at all.
+            if portal_missing and not portal.is_file():
+                raise SystemExit(
+                    f"业务包重建失败（exit={result.returncode}），已停止启动。\n"
+                    f"请检查上方错误并重试: {build}"
+                )
+            print(
+                f"警告：业务包重建失败（exit={result.returncode}），"
+                "继续使用现有引导页；视频预览金样可能稍后补齐。"
             )
         if not portal.is_file():
             raise SystemExit(
