@@ -3,7 +3,7 @@
 ## 安装
 
 ```
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 ## 第 2 步 · 输入培训内容

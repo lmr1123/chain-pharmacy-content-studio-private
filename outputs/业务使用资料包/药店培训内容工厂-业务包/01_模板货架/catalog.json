@@ -31,23 +31,28 @@
       ],
       "production_ready": false,
       "status_label": "尚未开放 · 当前不可生成 · 金样可查看",
-      "status_note": "金样、结构和填写参考可以复用；正式换主题生产路线尚未激活，不承诺生成正式成品。",
+      "status_note": "金样、结构和门户内容示例可以复用；正式换主题生产路线尚未激活，不承诺生成正式成品。",
       "capabilities_note_zh": null,
       "shelf_group": "other",
       "preview_identity_qualified": true,
       "preview_identity_note_zh": null,
       "preview_suite_evidence": null,
       "key_frame_labels_zh": [
-        "母版角色",
-        "症状页",
-        "机理页",
-        "开场帧",
-        "机理帧",
-        "治疗帧"
+        "开场",
+        "典型症状",
+        "病因机理",
+        "治疗思路",
+        "用药建议",
+        "总结"
       ],
       "voice_id": "voice.reference-pharmacist-qwen-v1",
       "blank_word": "业务提交_空白模板.docx",
       "filled_example": "业务提交_填写参考.docx",
+      "portal_video_example": {
+        "filename": "gold.mp4",
+        "label": "风热证疾病科普视频 · 金样成片",
+        "source": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_金样_v1.mp4"
+      },
       "settled_dir": "production-library/templates/settled/health-video-reference-tech-v1"
     },
     {
@@ -84,23 +89,28 @@
       "preview_identity_note_zh": null,
       "preview_suite_evidence": null,
       "key_frame_labels_zh": [
-        "讲师页",
-        "图文讲解",
-        "包装主视觉",
-        "概览",
-        "功效",
-        "证据"
+        "开场",
+        "品牌/品类",
+        "核心功效",
+        "产品特点",
+        "适宜人群",
+        "联合用药"
       ],
       "voice_id": "voice.reference-pharmacist-qwen-v1",
       "blank_word": "业务提交_空白模板.docx",
       "filled_example": "业务提交_填写参考.docx",
+      "portal_video_example": {
+        "filename": "gold.mp4",
+        "label": "辅酶 Q10 商品培训视频 · 金样成片",
+        "source": "production-library/templates/settled/product-video-faithful-v1/辅酶Q10_商品培训视频_金样_v1.mp4"
+      },
       "settled_dir": "production-library/templates/settled/product-video-faithful-v1"
     },
     {
       "slug": "product-courseware-component-v1",
-      "name_zh": "灵活构件商品培训 PPT（兜底）",
-      "one_liner": "未命中 5/18/13/20 页固定课型时使用；按审核大纲动态编排",
-      "gallery_title_zh": "灵活构件商品培训 · 兜底路线",
+      "name_zh": "构件补缺页签（内部）",
+      "one_liner": "内部：已选金样缺少页签时补漏；不作为业务货架课型",
+      "gallery_title_zh": "内部 · 金样缺页补漏",
       "outputs": [
         "可编辑 PPTX"
       ],
@@ -122,9 +132,9 @@
       ],
       "blockers": [],
       "production_ready": true,
-      "status_label": "灵活构件兜底 · PPTX 可生成",
-      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。 旧 12 页仅为结构冒烟，不是金样；业务预览与能力验收以 A/B/C 非金样套件为准。",
-      "capabilities_note_zh": "gold_viewable 为旧兼容键，仅表示 A/B/C 非金样预览可查看；旧 12 页结构冒烟稿不是金样。",
+      "status_label": "内部补缺页签 · PPTX 可生成",
+      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。 业务主路径必须先选已签样金样模板；本路线仅对金样缺失页签内部补漏，不对外展示、不作为自由组合主课型。自由构件化当前达不到交付标准。",
+      "capabilities_note_zh": "门户不展示本课型。gold_viewable 仅表示内部 UAT 证据可查；自由构件组合当前达不到交付标准。",
       "shelf_group": "default-general",
       "preview_identity_qualified": true,
       "preview_identity_note_zh": "至少 3 套正式差异化非金样 UAT 已通过逐页 QA、来源、页型组合、色彩、构图与文件哈希门闸。",
@@ -489,7 +499,6 @@
       "preview_identity_note_zh": null,
       "preview_suite_evidence": null,
       "key_frame_labels_zh": [
-        "封面",
         "疾病概览",
         "临床表现",
         "对症用药表",

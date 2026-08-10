@@ -20,8 +20,11 @@ from business_guided_portal import (
     build_guided_portal_html,
     build_route_selector_prompt,
     deliverable_badges,
+    green_gold_portal_example_paragraphs,
     load_business_modes,
     load_business_route_selector,
+    paragraphs_to_html_blocks,
+    portal_example_paragraphs_for_slug,
     shelf_group_for_template,
 )
 from query_production_library import APPROVED_STATUSES, load_entries
@@ -115,6 +118,7 @@ class CapabilityTruthTests(unittest.TestCase):
                 "jiugongge-health-edu-v1",
                 "jiugongge-health-edu-compliance-v1",
                 "digital-human-presenter-scheme-C",
+                "domestic-flat-cartoon-health-mg-v1",
             },
             {
                 item.get("id")
@@ -181,7 +185,46 @@ class CapabilityTruthTests(unittest.TestCase):
 
 
 class PortalContractTests(unittest.TestCase):
-    def test_preview_sync_preserves_complete_settled_keys_in_clean_clone(self) -> None:
+    def test_preview_sync_prefers_catalog_gold_keys_over_stale_settled(self) -> None:
+        """Catalog gold thumbs must win so bootstrap fallbacks can be replaced."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "settled-template"
+            preview = root / "preview"
+            preview.mkdir(parents=True)
+            stale_labels = [f"旧回退关键页 {index}" for index in range(1, 6)]
+            for index in range(1, 6):
+                Image.new("RGB", (16, 9), (index, index, index)).save(
+                    preview / f"key-{index:02d}.png"
+                )
+            (root / "manifest.json").write_text(
+                json.dumps(
+                    {"preview": {"key_frame_labels_zh": stale_labels}},
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            gold_dir = Path(tmp) / "gold-thumbs"
+            gold_dir.mkdir()
+            gold_sources = []
+            gold_labels = [f"金样关键页 {index}" for index in range(1, 6)]
+            for index, label in enumerate(gold_labels, 1):
+                path = gold_dir / f"key-{index:02d}.png"
+                Image.new("RGB", (16, 9), (200 + index, 0, 0)).save(path)
+                gold_sources.append((path, label))
+            missing = Path(tmp) / "missing.png"
+            entry = {
+                "preview_key_limit": 6,
+                "keys": gold_sources,
+                "fallback_keys": [(missing, "缺失回退")],
+            }
+
+            chosen = pick_keys(entry, root)
+
+            self.assertEqual(5, len(chosen))
+            self.assertEqual(gold_labels, [label for _, label in chosen])
+            self.assertTrue(all(path.parent == gold_dir for path, _ in chosen))
+
+    def test_preview_sync_uses_settled_when_catalog_keys_missing(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / "settled-template"
             preview = root / "preview"
@@ -198,17 +241,10 @@ class PortalContractTests(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-            dirty_source_dir = Path(tmp) / "dirty-validation"
-            dirty_source_dir.mkdir()
-            dirty_sources = []
-            for index in range(1, 6):
-                path = dirty_source_dir / f"key-{index:02d}.png"
-                Image.new("RGB", (16, 9), (200 + index, 0, 0)).save(path)
-                dirty_sources.append((path, f"未签样来源 {index}"))
             missing = Path(tmp) / "missing.png"
             entry = {
                 "preview_key_limit": 6,
-                "keys": dirty_sources,
+                "keys": [(missing, "缺失金样 1"), (missing, "缺失金样 2")],
                 "fallback_keys": [(missing, "缺失回退")],
             }
 
@@ -216,7 +252,6 @@ class PortalContractTests(unittest.TestCase):
 
             self.assertEqual(5, len(chosen))
             self.assertEqual(labels, [label for _, label in chosen])
-            self.assertTrue(all(path.is_file() for path, _ in chosen))
             self.assertTrue(all(path.parent == preview for path, _ in chosen))
 
     def test_component_preview_requires_a_qualified_three_case_uat_suite(self) -> None:
@@ -640,7 +675,7 @@ class PortalContractTests(unittest.TestCase):
         self.assertIn("已有包装图和审核要点", prompt)
         self.assertIn("business_job recommend", prompt)
         self.assertIn("不要原样回显内部路线标识、脚本命令或建草稿命令", prompt)
-        self.assertIn("推荐模板", prompt)
+        self.assertIn("推荐的已签样金样模板", prompt)
         self.assertIn("推荐理由", prompt)
         self.assertIn("确认模板【模板名】", prompt)
         self.assertIn("不得创建任务", prompt)
@@ -655,10 +690,10 @@ class PortalContractTests(unittest.TestCase):
             missing = Path(tmp) / "missing.json"
             fallback = load_business_route_selector(missing)
             self.assertEqual("我不懂模板，帮我选", fallback["title_zh"])
-            self.assertIn(
-                "动态页数 · 灵活构件兜底 PPT",
-                [item["label_zh"] for item in fallback["structures"]],
-            )
+            labels = [item["label_zh"] for item in fallback["structures"]]
+            self.assertIn("固定 5 页 · 绿色紧凑课", labels)
+            self.assertNotIn("动态页数 · 灵活构件兜底 PPT", labels)
+            self.assertNotIn("灵活构件", " ".join(labels))
 
             configured_path = Path(tmp) / "selector.json"
             configured_path.write_text(
@@ -699,64 +734,72 @@ class PortalContractTests(unittest.TestCase):
             recovered = load_business_route_selector(configured_path)
             self.assertEqual("我不懂模板，帮我选", recovered["title_zh"])
 
-    def test_route_selector_is_a_prominent_mobile_safe_shelf_entry(self) -> None:
+    def test_route_selector_form_is_not_on_business_portal(self) -> None:
+        """Business picks gold cards; dropdown form options are unreadable and removed."""
         html = build_guided_portal_html(load_catalog(), examples={})
-        self.assertLess(
-            html.index('id="route-selector"'),
-            html.index('id="template-grid"'),
-        )
-        self.assertIn("不会选也能开始", html)
-        self.assertIn("我不懂模板，帮我选", html)
-        self.assertIn("可编辑 PPTX", html)
-        self.assertIn("完整 MP4", html)
-        for page_rule in (
-            "动态页数",
-            "固定 5 页",
-            "固定 18 页",
-            "固定 13 页",
-            "固定 20 页",
-        ):
-            self.assertIn(page_rule, html)
-        self.assertIn("当前只承诺 PPTX，MP4 尚未开放", html)
-        self.assertIn("固定 8 段商品培训视频路线（不是 PPT 页数）", html)
-        self.assertIn("固定页 PPT 课型不等于同时生成视频", html)
-        self.assertIn("只推荐 · 确认模板前不建任务", html)
-        self.assertIn('id="selector-copy" disabled', html)
-        self.assertIn("function buildRouteSelectorPrompt()", html)
-        self.assertIn("business_job recommend", html)
-        self.assertIn("推荐模板（最多 2 个候选）", html)
-        self.assertIn("确认模板【模板名】", html)
-        self.assertIn("不得创建任务、不得生成正式成品", html)
+        self.assertIn('id="template-grid"', html)
+        self.assertNotIn('id="route-selector"', html)
+        self.assertNotIn("不会选也能开始", html)
+        self.assertNotIn("我不懂模板，帮我选", html)
+        self.assertNotIn("生成选课口令", html)
+        self.assertNotIn('id="selector-copy"', html)
+        self.assertNotIn("function buildRouteSelectorPrompt()", html)
+        self.assertNotIn("ROUTE_SELECTOR_PROMPT", html)
+        self.assertNotIn("selector-layout", html)
         self.assertNotIn("route_id", html)
         self.assertNotRegex(html, r"business_job(?:\.py)?\s+new")
-        self.assertRegex(
-            html,
-            re.compile(
-                r"@media \(max-width: 760px\).*?"
-                r"\.selector-layout\s*\{\s*grid-template-columns:\s*minmax\(0, 1fr\)",
-                re.S,
-            ),
-        )
+        # Keep gold-card shelf as the only portal selection UI.
+        self.assertIn("选金样", html)
+        self.assertIn("确认选用 · 复制给 WorkBuddy", html)
         self.assertNotIn("internal-route-must-not-leak", html)
+
+    def test_green_portal_example_uses_gold_composition_not_blank_fill(self) -> None:
+        paras = green_gold_portal_example_paragraphs()
+        self.assertGreaterEqual(len(paras), 20)
+        text = "\n".join(paras)
+        self.assertIn("金样内容组成", text)
+        self.assertIn("金银花露", text)
+        self.assertIn("【封面", text)
+        self.assertIn("商品介绍、核心卖点、适宜人群", text)
+        self.assertIn("联合用药话术", text)
+        self.assertIn("品种对标", text)
+        self.assertIn("注意事项", text)
+        self.assertIn("小儿咽扁颗粒", text)
+        self.assertIn("宝宝去火，温和安全，甘甜又好喝", text)
+        # Blank fill-in placeholders must not replace gold composition.
+        self.assertNotIn("【待替换为审核原文】", text)
+        self.assertNotIn("示例商品A", text)
+        self.assertNotIn("asset://", text)
+
+        via_slug = portal_example_paragraphs_for_slug("product-courseware-green-v1")
+        self.assertEqual(via_slug, paras)
+
+        html = build_guided_portal_html(
+            load_catalog(),
+            examples={"product-courseware-green-v1": paras},
+        )
+        self.assertIn("金样内容组成", html)
+        self.assertIn("金银花露（可可康）", html)
+        self.assertIn("已签样真实结构示范", html)
+        self.assertIn("小儿咽扁颗粒", html)
+        self.assertNotIn("【待替换为审核原文】", html)
+        # Body lines stay body (not false headings).
+        rendered = paragraphs_to_html_blocks(paras)
+        self.assertIn("<h4>【封面 · 金银花露】</h4>", rendered)
+        self.assertIn("<p>· 主要成分：金银花</p>", rendered)
 
     def test_commands_match_the_requested_deliverable_and_keep_approval_gate(self) -> None:
         templates = {item["slug"]: item for item in load_catalog()}
 
         ppt_cmd = build_business_command(templates["product-courseware-component-v1"])
-        self.assertIn("自然语言交付目标", ppt_cmd)
-        self.assertIn("内容缺口和待确认字段", ppt_cmd)
-        self.assertIn("全中文页签大纲", ppt_cmd)
-        self.assertIn("每页能力来源解释", ppt_cmd)
-        self.assertIn("只使用一种主视觉", ppt_cmd)
-        self.assertIn("素材分工", ppt_cmd)
-        self.assertIn("等我明确确认", ppt_cmd)
-        self.assertIn("PPTX", ppt_cmd)
-        self.assertIn("先不要创建正式任务", ppt_cmd)
-        self.assertIn("不需要填写 JSON", ppt_cmd)
-        self.assertIn("WorkBuddy 内部锁定页序", ppt_cmd)
-        self.assertIn("确认前不得继续", ppt_cmd)
+        self.assertIn("内部补缺", ppt_cmd)
+        self.assertIn("已签样金样模板", ppt_cmd)
+        self.assertIn("需要补漏的页签", ppt_cmd)
+        self.assertIn("禁止整课自由组合", ppt_cmd)
+        self.assertIn("达不到交付标准", ppt_cmd)
+        self.assertIn("不得创建任务", ppt_cmd)
         self.assertNotIn("完整 MP4", ppt_cmd)
-        self.assertNotIn("确认先锁定模板", ppt_cmd)
+        self.assertNotIn("自然语言交付目标", ppt_cmd)
         self.assertNotIn("python3", ppt_cmd)
         self.assertNotIn("route", ppt_cmd.lower())
         # Signed green courseware is a real fixed route after full content/image gates.
@@ -821,8 +864,8 @@ class PortalContractTests(unittest.TestCase):
             if item["slug"] == "product-courseware-component-v1"
         )
         note = catalog_component.get("capabilities_note_zh") or ""
-        self.assertIn("旧兼容键", note)
-        self.assertIn("不是金样", note)
+        self.assertIn("门户不展示", note)
+        self.assertIn("达不到交付标准", note)
         settled = ROOT / "production-library/templates/settled/product-courseware-component-v1"
         manifest = json.loads((settled / "manifest.json").read_text(encoding="utf-8"))
         catalog_entry = json.loads(
@@ -831,7 +874,7 @@ class PortalContractTests(unittest.TestCase):
         self.assertEqual(note, manifest["preview"]["capabilities_note_zh"])
         self.assertEqual(note, catalog_entry["capabilities_note_zh"])
         self.assertNotIn("active route", catalog_component["status_note"])
-        self.assertIn("逐页质量检查", catalog_component["status_note"])
+        self.assertIn("内部补漏", catalog_component["status_note"])
 
     def test_portal_cards_are_keyboard_buttons_and_mobile_grid_is_single_column(self) -> None:
         templates = load_catalog()
@@ -849,28 +892,29 @@ class PortalContractTests(unittest.TestCase):
         )
         self.assertNotIn("本页一行四个卡片", html)
         self.assertIn("readiness-badge", html)
-        self.assertIn("灵活构件兜底", html)
-        self.assertIn("未命中已签样固定课型时使用", html)
-        self.assertNotIn("默认通用路线", html)
-        self.assertIn("灵活构件商品培训 PPT（兜底）", html)
-        self.assertIn("已复制灵活构件口令", html)
-        self.assertIn("中文页签大纲、每页来源解释、单一视觉与素材分工", html)
-        self.assertIn("未命中 5/18/13/20 页固定课型时使用", html)
-        self.assertNotIn("构件化商品培训 PPT（默认主路径）", html)
-        self.assertIn("差异化预览待 QA", html)
-        self.assertIn("至少 3 套正式差异化非金样 UAT suite 尚未通过 QA", html)
-        self.assertIn("为避免误认成课件4，门户暂不展示旧图", html)
-        self.assertIn("preview-pending-cover", html)
-        self.assertIn("t.preview_identity_qualified === true", html)
         self.assertIn("已签样标准课型", html)
         self.assertIn("其他课型", html)
-        self.assertIn("一个课型可分别显示 PPTX、MP4", html)
-        self.assertIn("A · 先选课型或模式（推荐）", html)
-        self.assertIn("B · 先交内容", html)
+        self.assertIn("先选金样模板", html)
+        self.assertIn("自由构件化不在货架展示", html)
+        # Gold-first: no separate「金样课型与制作模式」step or A/B entry; content opens with the card.
+        self.assertNotIn("金样课型与制作模式", html)
+        self.assertNotIn("选择开始方式", html)
+        self.assertNotIn("填报示例与模式说明", html)
+        self.assertNotIn("A · 先选金样模板（推荐）", html)
+        self.assertNotIn("B · 先交内容", html)
+        self.assertIn("选金样", html)
+        self.assertIn("inline-ex-panel", html)
         self.assertIn("确认选用 · 复制给 WorkBuddy", html)
         self.assertIn("业务提供真图", html)
         self.assertIn("系统自动生成", html)
         self.assertIn("业务不需要自己写生图提示词", html)
+        # Free-form component shelf is internal-only: not on the business portal.
+        self.assertNotIn("灵活构件商品培训 PPT（兜底）", html)
+        self.assertNotIn("已复制灵活构件口令", html)
+        self.assertNotIn("未命中 5/18/13/20 页固定课型时使用", html)
+        self.assertNotIn("构件化商品培训 PPT（默认主路径）", html)
+        # Dead internal JS may still mention the slug; the shelf must not list the card.
+        self.assertNotRegex(html, r'"slug": "product-courseware-component-v1"')
         self.assertNotIn('"job_command"', html)
         self.assertNotIn('"route_id"', html)
         self.assertNotIn("business_job.py", html)
@@ -879,160 +923,29 @@ class PortalContractTests(unittest.TestCase):
         template_match = re.search(r"const TEMPLATES = (.*);\n", html)
         self.assertIsNotNone(template_match)
         embedded_templates = json.loads(template_match.group(1))
-        component = next(
-            item
-            for item in embedded_templates
-            if item["slug"] == "product-courseware-component-v1"
+        self.assertFalse(
+            any(
+                item["slug"] == "product-courseware-component-v1"
+                for item in embedded_templates
+            )
         )
-        self.assertTrue(component["preview_identity_qualified"])
-        self.assertEqual(3, component["preview_suite_evidence"]["case_count"])
-        labels = [
-            label
-            for case in component["preview_suite_evidence"]["cases"]
-            for label in case["page_type_sequence_labels_zh"]
-        ]
-        for label in ("封面", "培训导语", "痛点与数据", "总结回顾"):
-            self.assertIn(label, labels)
-        self.assertNotIn("自定义扩展页型", html)
+        self.assertTrue(
+            any(item["slug"] == "product-courseware-green-v1" for item in embedded_templates)
+        )
 
-    def test_qualified_component_suite_renders_business_safe_case_tabs(self) -> None:
+    def test_qualified_component_suite_is_hidden_from_business_portal(self) -> None:
+        """Component UAT suite remains internal; portal never surfaces free-compose cards."""
         templates = source_catalog_for_portal()
-        component = next(
-            item
-            for item in templates
-            if item["slug"] == "product-courseware-component-v1"
+        self.assertTrue(
+            any(item["slug"] == "product-courseware-component-v1" for item in templates)
         )
-        component["preview_identity_qualified"] = True
-        component["preview_identity_note_zh"] = "三套正式业务验收案例已通过。"
-        component["preview_suite_evidence"] = {
-            "schema": COMPONENT_PREVIEW_QA_SCHEMA,
-            "case_count": 3,
-            "style_pack_id": "style-pack.component-internal-v3",
-            "settled_capability_labels_zh": [
-                "绿色商品培训 5 页",
-                "疾病 + 商品场景 18 页",
-            ],
-            "new_page_types": ["objection_handling"],
-            "cases": [
-                {
-                    "case_id": f"case-{slot.lower()}",
-                    "suite_slot": slot,
-                    "name_zh": f"正式业务案例{slot}",
-                    "source_job_id": f"uat-component-{slot.lower()}",
-                    "page_count": page_count,
-                    "source_capability_labels_zh": [source],
-                    "page_type_sequence": sequence,
-                    "new_page_types": (
-                        ["objection_handling"] if slot == "C" else []
-                    ),
-                    "representative_page_number": min(index + 1, len(sequence)),
-                    "representative_page_type": sequence[
-                        min(index, len(sequence) - 1)
-                    ],
-                    "portal_media_index": index,
-                }
-                for index, (slot, page_count, source, sequence) in enumerate(
-                    (
-                        (
-                            "A",
-                            7,
-                            "绿色商品培训 5 页",
-                            [
-                                "cover",
-                                "product_overview",
-                                "evidence_ladder",
-                                "ingredient_proof",
-                                "benefit_chain",
-                                "audience",
-                                "summary",
-                            ],
-                        ),
-                        (
-                            "B",
-                            6,
-                            "疾病 + 商品场景 18 页",
-                            [
-                                "cover",
-                                "disease_bridge",
-                                "scenario",
-                                "consultation_framework",
-                                "precautions",
-                                "summary",
-                            ],
-                        ),
-                        (
-                            "C",
-                            5,
-                            "绿色商品培训 5 页",
-                            [
-                                "cover",
-                                "product_overview",
-                                "objection_handling",
-                                "action_checklist",
-                                "summary",
-                            ],
-                        ),
-                    ),
-                    1,
-                )
-            ],
-        }
-        html = build_guided_portal_html(templates, production_modes=[])
-        for expected in (
-            "统一浅蓝商品培训视觉",
-            "商品封面",
-            "商品信息总览",
-            "证据阶梯",
-            "咨询框架",
-            "异议应答",
-            "案例 A",
-            "案例 B",
-            "案例 C",
-            "独立业务验收任务已通过",
-            "suite-tab",
-            'role", "tablist',
-        ):
-            self.assertIn(expected, html)
-        for internal_value in (
-            "style-pack.",
-            "uat-component-",
-            "objection_handling",
-            "product_overview",
-            "evidence_ladder",
-            "consultation_framework",
-        ):
-            self.assertNotIn(internal_value, html)
-
-        template_match = re.search(r"const TEMPLATES = (.*);\n", html)
-        self.assertIsNotNone(template_match)
-        embedded = json.loads(template_match.group(1))
-        embedded_component = next(
-            item
-            for item in embedded
-            if item["slug"] == "product-courseware-component-v1"
-        )
-        evidence = embedded_component["preview_suite_evidence"]
-        self.assertEqual(3, evidence["case_count"])
-        self.assertNotIn("style_pack_id", evidence)
-        self.assertNotIn("source_job_id", evidence["cases"][0])
-        self.assertNotIn("page_type_sequence", evidence["cases"][0])
-
-        component["preview_suite_evidence"]["cases"] = component[
-            "preview_suite_evidence"
-        ]["cases"][:1]
-        single_case_html = build_guided_portal_html(
-            templates, production_modes=[]
-        )
-        self.assertIn("差异化预览待 QA", single_case_html)
-        single_match = re.search(r"const TEMPLATES = (.*);\n", single_case_html)
-        self.assertIsNotNone(single_match)
-        single_embedded = json.loads(single_match.group(1))
-        single_component = next(
-            item
-            for item in single_embedded
-            if item["slug"] == "product-courseware-component-v1"
-        )
-        self.assertIsNone(single_component["preview_suite_evidence"])
+        html = build_guided_portal_html(templates, examples={})
+        self.assertNotRegex(html, r'"slug": "product-courseware-component-v1"')
+        self.assertNotIn("正式非金样 UAT", html)
+        self.assertIn("product-courseware-green-v1", html)
+        # Internal page-type labels remain available for WorkBuddy, not the portal.
+        self.assertEqual("商品信息总览", _component_page_type_label_zh("product_overview"))
+        self.assertEqual("异议应答", _component_page_type_label_zh("objection_handling"))
 
     def test_catalog_json_remains_serializable_for_portal(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -1134,9 +1047,10 @@ class PortalContractTests(unittest.TestCase):
             },
         )
         self.assertEqual(
-            "灵活构件兜底 · PPTX 可生成", component["status_label"]
+            "内部补缺页签 · PPTX 可生成", component["status_label"]
         )
-        self.assertIn("未命中 5/18/13/20 页固定课型", component["one_liner"])
+        self.assertIn("不作为业务货架课型", component["one_liner"])
+        self.assertIn("内部补漏", component["status_note"])
         for fixed_slug in (
             "product-courseware-green-v1",
             "disease-product-scenario-v1",
@@ -1255,9 +1169,10 @@ class ProductionModePortalTests(unittest.TestCase):
         "jiugongge-health-edu-v1",
         "jiugongge-health-edu-compliance-v1",
         "digital-human-presenter-scheme-C",
+        "domestic-flat-cartoon-health-mg-v1",
     }
 
-    def test_machine_catalog_exposes_four_gated_external_modes(self) -> None:
+    def test_machine_catalog_exposes_gated_production_modes(self) -> None:
         modes = load_business_modes()
         self.assertEqual(
             self.EXPECTED_MODE_IDS,
@@ -1271,8 +1186,14 @@ class ProductionModePortalTests(unittest.TestCase):
                 )
                 self.assertTrue(mode["approval_gate"]["required"])
                 self.assertTrue(mode["approval_gate"]["confirmation_phrase"])
-                self.assertTrue(mode["external_render"]["required"])
-                self.assertIn("账号", mode["external_render"]["boundary_zh"])
+                self.assertIn("external_render", mode)
+                boundary = mode["external_render"]["boundary_zh"]
+                if mode["external_render"]["required"]:
+                    self.assertIn("账号", boundary)
+                else:
+                    self.assertTrue(
+                        "本机" in boundary or "ReVideo" in boundary or "费用" in boundary
+                    )
 
         prompt_modes = [mode for mode in modes if mode["prompt_only"]]
         self.assertTrue(
@@ -1281,7 +1202,11 @@ class ProductionModePortalTests(unittest.TestCase):
                 for mode in prompt_modes
             )
         )
-        digital_human = next(mode for mode in modes if not mode["prompt_only"])
+        digital_human = next(
+            mode
+            for mode in modes
+            if mode["mode_id"] == "digital-human-presenter-scheme-C"
+        )
         self.assertFalse(digital_human["workbuddy_direct_generation"])
         self.assertEqual(
             "human_process_only",
@@ -1291,6 +1216,17 @@ class ProductionModePortalTests(unittest.TestCase):
         self.assertIn("复核包模板", digital_human["badges"][0]["label"])
         self.assertIn(".venv-rembg", digital_human["production_requirements"])
         self.assertIn("ffmpeg", digital_human["production_requirements"])
+        mg = next(
+            mode
+            for mode in modes
+            if mode["mode_id"] == "domestic-flat-cartoon-health-mg-v1"
+        )
+        self.assertFalse(mg["prompt_only"])
+        self.assertFalse(mg["external_render"]["required"])
+        self.assertIn("mp4", mg["local_artifact_types"])
+        self.assertGreaterEqual(len(mg.get("portal_key_frames") or []), 5)
+        self.assertTrue((ROOT / mg["portal_video_example"]["source"]).is_file())
+        self.assertTrue((ROOT / mg["portal_cover"]["source"]).is_file())
 
     def test_prompt_only_modes_never_claim_a_local_video_delivery(self) -> None:
         modes = load_business_modes()
@@ -1327,8 +1263,11 @@ class ProductionModePortalTests(unittest.TestCase):
                 self.assertIn("请先", command)
                 self.assertIn("确认", command)
                 self.assertIn("前", command)
-                self.assertIn("账号", command)
-                self.assertIn("费用", command)
+                if mode["external_render"]["required"]:
+                    self.assertIn("账号", command)
+                    self.assertIn("费用", command)
+                else:
+                    self.assertTrue("费用" in command or "确认" in command)
 
         digital_human = modes["digital-human-presenter-scheme-C"]["selection_command"]
         self.assertIn("最终脚本通过", digital_human)
@@ -1341,9 +1280,13 @@ class ProductionModePortalTests(unittest.TestCase):
         self.assertIn("meta-prompt", seedance["selection_command"])
         self.assertIn("逐项列为待补", seedance["selection_command"])
         self.assertIn("不得生成正式提示词包", seedance["selection_command"])
+        mg_cmd = modes["domestic-flat-cartoon-health-mg-v1"]["selection_command"]
+        self.assertIn("scene_recipe", mg_cmd)
+        self.assertIn("不得登记 settled", mg_cmd)
         for mode_id in (
             "seedance-health-edu-v1",
             "digital-human-presenter-scheme-C",
+            "domestic-flat-cartoon-health-mg-v1",
         ):
             example = modes[mode_id]["portal_video_example"]
             self.assertTrue((ROOT / example["source"]).is_file())
@@ -1384,9 +1327,21 @@ class ProductionModePortalTests(unittest.TestCase):
         self.assertIsNotNone(mode_match)
         embedded_templates = json.loads(template_match.group(1))
         embedded_modes = json.loads(mode_match.group(1))
-        self.assertEqual(9, len(embedded_templates))
-        self.assertEqual(len(templates), len(embedded_templates))
-        self.assertEqual(4, len(embedded_modes))
+        # Component free-compose is cataloged but filtered out of the business portal.
+        visible_templates = [
+            item
+            for item in templates
+            if item["slug"] != "product-courseware-component-v1"
+        ]
+        self.assertEqual(len(visible_templates), len(embedded_templates))
+        self.assertEqual(8, len(embedded_templates))
+        self.assertFalse(
+            any(
+                item["slug"] == "product-courseware-component-v1"
+                for item in embedded_templates
+            )
+        )
+        self.assertEqual(5, len(embedded_modes))
         self.assertFalse(
             self.EXPECTED_MODE_IDS.intersection(
                 item["slug"] for item in embedded_templates
@@ -1416,6 +1371,51 @@ class ProductionModePortalTests(unittest.TestCase):
         )
         self.assertIn("冷调暴雨 vs 暖调台灯", seedance["generated_prompt_example"])
         self.assertIn("52-60s | [温暖收尾与转发]", seedance["generated_prompt_example"])
+        self.assertIn("function mediaCaseVideo(t)", html)
+        self.assertIn("function mediaModeAsset(filename)", html)
+        mg = next(
+            item
+            for item in embedded_modes
+            if item["slug"] == "domestic-flat-cartoon-health-mg-v1"
+        )
+        self.assertEqual("国内扁平卡通健康 MG 动画", mg["name_zh"])
+        self.assertEqual(
+            "domestic-flat-cartoon-mg-example.mp4",
+            mg["portal_video_example"]["filename"],
+        )
+        self.assertTrue(mg["portal_cover_filename"])
+        self.assertGreaterEqual(len(mg["portal_key_frames"]), 5)
+        self.assertIn("政策城市分层", " ".join(mg["key_frame_labels_zh"]))
+        health = next(
+            item
+            for item in embedded_templates
+            if item["slug"] == "health-video-reference-tech-v1"
+        )
+        product = next(
+            item
+            for item in embedded_templates
+            if item["slug"] == "product-video-faithful-v1"
+        )
+        self.assertEqual("gold.mp4", health["portal_video_example"]["filename"])
+        self.assertEqual("gold.mp4", product["portal_video_example"]["filename"])
+        self.assertIn("风热证", health["portal_video_example"]["label"])
+        self.assertIn("辅酶", product["portal_video_example"]["label"])
+        self.assertTrue(
+            (ROOT / health["portal_video_example"]["source"]).is_file()
+        )
+        self.assertTrue(
+            (ROOT / product["portal_video_example"]["source"]).is_file()
+        )
+        # Labels live on the generated shelf catalog after preview sync.
+        catalog_by_slug = {item["slug"]: item for item in load_catalog()}
+        self.assertEqual(
+            ["开场", "典型症状", "病因机理", "治疗思路", "用药建议", "总结"],
+            catalog_by_slug["health-video-reference-tech-v1"]["key_frame_labels_zh"],
+        )
+        self.assertEqual(
+            ["开场", "品牌/品类", "核心功效", "产品特点", "适宜人群", "联合用药"],
+            catalog_by_slug["product-video-faithful-v1"]["key_frame_labels_zh"],
+        )
         self.assertNotIn("production-library/validation/", mode_match.group(1))
         for item in embedded_modes:
             if item["prompt_only"]:
