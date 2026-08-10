@@ -1,4 +1,28 @@
 
+## 2026-08-10（门户示例 = 金样真实内容组成，不是空白填写模板）
+
+- 用户纠正：绿色单品 PPT 的「内容示例」不应是 `【待替换】/示例商品A` 空白填写参考，而应展示金样（金银花露）**真实 5 页结构与文案组成**，业务才能直观看懂每页写什么。
+- 固化：门户优先从 `gold-content-model.json` 生成「金样内容组成」；settled docx 仅作无金样模型时的回退，且不向业务分发 Word。
+- 换主题说明必须写清：只继承页签结构与视觉，文案/包装/插图换成审核稿与授权图。
+
+## 2026-08-10（门户不要「我不懂模板，帮我选」表单）
+
+- 用户纠正：交付物/内容类型/结构偏好等下拉文字业务也看不懂，门户「我不懂模板，帮我选」整块去掉。
+- 门户只保留金样卡片货架：点卡看预览与内容，复制给 WorkBuddy。
+- 不会选时在 **WorkBuddy 聊天** 用自然语言说用途/主题，由内部 recommend 推荐；表单口令生成不作为业务入口。
+
+## 2026-08-10（点金样即见内容 · 不要「金样课型与制作模式」分步）
+
+- 用户纠正：门户不必再单独挂「金样课型与制作模式」「选择开始方式」「填报示例与模式说明」等分步教学区。
+- 固化交互：点选金样卡片 → 预览、内容示例、选用口令**就在选中区展开**；业务在本页复制粘贴给 WorkBuddy。
+- 不需要先学「课型 vs 制作模式」概念；动画/数字人仍作为货架卡片存在，点开同样看边界与说明。
+
+## 2026-08-10（业务不填 Word · 内容示例全在门户复制粘贴）
+
+- 用户明确：业务**不需要** Word 空白模板 / 填写参考；填写说明、示例正文、选用口令都在门户 `index.html`，业务**复制粘贴**给 WorkBuddy 即可。
+- 业务包不得再向业务分发 `02_空白Word/`、`03_填写参考/`。settled 内 docx 仅作门户示例抽取与内部同步源，不是业务入口。
+- 门户与 README / 一页说明 / 框架说明文案禁止引导「先下载 Word 再填」。
+
 ## 2026-08-09（MG 标题 ≠ 系统黑体加粗）
 
 - 用户纠正：国内扁平 MG 的标题不是把系统黑体设为粗体、斜体和大字号；参考中的辨识度来自展示字本身的非规整笔画，加上逐字宽扁比、轻微错位、描边、挤出和节奏化入场。
@@ -1220,3 +1244,29 @@ cd production-library/validation/digital-human-ppt-presenter-poc-v1
 - 用户否决 R09–R16 v1：① 横幅与全片字号过小；② 楼宇用代码 SVG 半成品；③ 人物画风偏离已签 soft flat；④ 背景简陋、主题场景不完整。后续扩展复用必须以该细致度为门槛。
 - 对策：主视觉城市／人物／场景必须用高质量栅格（full-replica 同画风或 image-edit 从母版提取）；代码只做 UI 壳（浏览器、目标条、黄标、箭头）；1080p 字号下限写入批次 ASSET_MANIFEST（横幅≥72、展示标题≥96、数据条≥52）。
 - 禁止把「对象级动画已做」当作视觉通过；字号、画风一致、主题背景完整必须与运动合同并列验收。
+
+## 2026-08-10 · 金样换主题必须阻断源图像素继承
+
+- **问题：** WorkBuddy 用疾病+商品等金样拓展新商品时，只换文案/包装图，疾病/症状/场景插图仍是金样像素；文案 token 门闸拦不住画面残留。
+- **根治：** 新增 `scripts/gold_asset_guard.py`，扫描全部 settled 金样 PPTX media 与源资产 SHA；在 green / disease / courseware3 / ingredient / component 的 content、visual、render 与 `asset_file_info` 统一 fail-closed。
+- **规则：** 换主题只继承结构与 style pack；包装/Logo/证据业务授权；其余插图按新主题重生绑定。禁止打开金样 PPT 改字交付。路径命中 `templates/settled` / `validation/courseware` 或 SHA 命中任一金样源图均阻断。
+- **验证：** `test_gold_asset_guard.py` 5/5；`test_fixed_courseware_business_routes.py` 3/3；`test_component_courseware_neutral_assets.py` 10/10。
+
+## 2026-08-10 · 固定课型素材计划 + visual 绑定
+
+- 疾病+商品 / 绿色固定线草稿产出《素材计划》（business_provides vs system_generates）；content 只锁文案；visual 必须 `--asset-bindings` 绑定本主题插图（或槽已就绪时自动收录）。
+- 与 gold_asset_guard 叠加：绑定图 SHA 命中金样则 visual/render fail-closed。
+- 实现：`scripts/fixed_courseware_asset_plan.py`；测试：`test_fixed_courseware_asset_plan.py`。
+
+## 2026-08-10 · 课件3 / 成分 20 页统一素材计划
+
+- 用户确认需要：课件3、成分健康科普也走同一份《素材计划》文案与 visual 绑定接口。
+- 课件3：`business_provides`=packGroup/Logo 等；`system_generates`≈23 主题插图；content 只验文案。
+- 成分：全部 69 图槽 `system_generates`；visual 绑定时写入 `asset_authorization`。
+- 四条固定 PPT 共用 `approve visual --asset-bindings` + `fixed_courseware_asset_plan`。
+
+## 2026-08-10（MG 模式进门户：演示可看 ≠ settled 可交付）
+
+- 业务演示需要门户卡片 + 样片 + 关键帧 + 口令，但不得把未签样 validation 批次登记为 settled 模板。
+- 制作模式目录 `business-modes.json` 与课型 `business-routes` 分离；本机 MG 可标 `external_render.required=false`，仍须写清费用/插画边界。
+- 制作模式也可挂关键截图：`portal_key_frames` + `portal_cover`，包构建须同步拷贝到 `01_模板货架/media/production-modes/`。

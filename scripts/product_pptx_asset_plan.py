@@ -108,6 +108,13 @@ def cw4_gold_image_hashes() -> frozenset[str]:
                     hashes.add(_sha256_file(image))
                 except OSError:
                     continue
+    # Also union global settled gold media (cross-template fail-closed).
+    try:
+        from gold_asset_guard import all_settled_gold_media_hashes
+
+        hashes |= set(all_settled_gold_media_hashes())
+    except Exception:
+        pass
     return frozenset(hashes)
 
 

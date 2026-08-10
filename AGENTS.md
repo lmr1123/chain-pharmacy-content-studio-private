@@ -93,12 +93,14 @@ python3 scripts/business_job.py open --job <id>
 
 构件路线的 notes-only 入口只生成“待确认中文页签大纲”草稿，绝不能作为正式锁定编排；业务确认大纲、来源解释和单一视觉后，由 WorkBuddy 内部生成确认版 script-json，再创建统一任务。Business never edits JSON or page-type IDs，也不接触 route、页型或视觉包的内部 ID。
 
-- Routes truth: `production-library/business-routes.json`（`default_pptx_route` = component 是技术兜底指针，不代表覆盖固定课型推荐）
+- Routes truth: `production-library/business-routes.json`（`default_pptx_route` = component 仅为技术指针；**业务主路径先选已签样金样模板**，构件路线只做金样缺页内部补漏，门户不展示自由组合）
 - Selection/capability map: `production-library/business-route-selector.json`（只存业务意图、金样 lineage 与可复用能力；不得复制 active/gates/env 真值）
 - Runtime profiles: `production-library/runtime-profiles.json`（pptx / video-full / optional-external）
 - **Generic fallback PPT engine:** `production-library/engines/courseware-pptx-v1/` + `scripts/generate_courseware.py`（构件 + recipe；动态页数，不是福尔 16 页复刻器）
 - Green fixed-courseware engine: `production-library/engines/product-courseware-green-v1/`
 - Disease-product-scenario fixed-courseware engine: `production-library/engines/disease-product-scenario-pptx-v1/`
+- Gold media fail-closed (all settled templates): `scripts/gold_asset_guard.py` — SHA + path block at content/visual/render; tests in `scripts/test_gold_asset_guard.py`
+- Fixed courseware asset plans (disease + green): `scripts/fixed_courseware_asset_plan.py` — draft 出《素材计划》；content 锁文案；visual `--asset-bindings` 绑本主题插图；tests in `scripts/test_fixed_courseware_asset_plan.py`
 - Courseware3 fixed PPT engine: `production-library/engines/courseware3-pptx-v1/`
 - Video full runtime: `production-library/engines/video-revideo-runtime-v1/`（`kit` 可 symlink 历史 `poc/gold-sample`；业务代码经 `scripts/video_runtime.py` 解析）
 - 商品正式视频环境：`python3 scripts/video_full_env.py check|soft-repair|package|restore`（说明 `docs/video-full-env-package.md`）

@@ -44,6 +44,22 @@ from product_pptx_asset_plan import (
     formal_render_blockers,
     render_asset_plan_markdown,
 )
+from gold_asset_guard import (
+    check_asset_manifest,
+    check_image_files,
+    is_authorized_gold_theme,
+)
+from fixed_courseware_asset_plan import (
+    apply_image_bindings,
+    build_courseware3_asset_plan,
+    build_disease_asset_plan,
+    build_green_asset_plan,
+    build_ingredient_asset_plan,
+    content_asset_notes,
+    formal_asset_blockers,
+    plan_visual_manifest,
+    render_asset_plan_markdown as render_fixed_asset_plan_markdown,
+)
 import recommend_business_route as route_recommender
 
 
@@ -321,23 +337,43 @@ def next_step_zh(job: dict[str, Any], route: dict[str, Any]) -> str:
     if state in (None, "intake", "needs_input"):
         return "补充主题/要点后生成初稿"
     if state == "draft_ready":
-        if route.get("adapter") == "product_pptx_component":
-            return "请业务确认内容；确认后由 WorkBuddy 补齐并实槽检查素材，再生成正式稿"
+        if route.get("adapter") in {
+            "product_pptx_component",
+            "disease_product_scenario_pptx",
+            "product_pptx_green",
+            "courseware3_pptx",
+            "ingredient_health_edu_pptx",
+        }:
+            return "请业务确认内容；确认后由 WorkBuddy 按素材计划生成并绑定插图，再生成正式稿"
         return "请业务确认当前初稿，再继续审批与生成"
     if state == "content_approved":
-        if route.get("adapter") == "product_pptx_component" and gates.get(
-            "visual_approval"
-        ) and not (
+        adapter = str(route.get("adapter") or "")
+        visual_pending = gates.get("visual_approval") and not (
             (job.get("approvals") or {}).get("visual") or {}
-        ).get("approved"):
-            return "由 WorkBuddy 按素材计划生成并绑定插图，先给业务确认代表图"
-        if gates.get("product_image_approval") and not (
+        ).get("approved")
+        pack_pending = gates.get("product_image_approval") and not (
             (job.get("approvals") or {}).get("product_image") or {}
-        ).get("approved"):
+        ).get("approved")
+        # 构件线：内容确认后先补插图（visual），再锁包装
+        if adapter == "product_pptx_component" and visual_pending:
+            return "由 WorkBuddy 按素材计划生成并绑定插图，先给业务确认代表图"
+        # 固定课型（含课件3/成分）：可先收包装，插图由 WorkBuddy 按素材计划绑定
+        if adapter in {
+            "disease_product_scenario_pptx",
+            "product_pptx_green",
+            "courseware3_pptx",
+            "ingredient_health_edu_pptx",
+        }:
+            if pack_pending:
+                return "请提交并确认业务授权包装图；WorkBuddy 同时按素材计划生成主题插图"
+            if visual_pending:
+                return (
+                    "由 WorkBuddy 按素材计划绑定主题插图后 "
+                    "approve --gate visual --asset-bindings <bindings.json>"
+                )
+        if pack_pending:
             return "请提交并确认业务授权包装图"
-        if gates.get("visual_approval") and not (
-            (job.get("approvals") or {}).get("visual") or {}
-        ).get("approved"):
+        if visual_pending:
             return "请确认当前画面稿"
         return "环境就绪后由 WorkBuddy 开始生成"
     if state == "visual_approved":
@@ -805,7 +841,8 @@ def _green_pending_fields(value: Any, path: str = "$") -> list[str]:
     return hits
 
 
-def _green_formal_blockers(model: dict[str, Any]) -> list[str]:
+def _green_content_blockers(model: dict[str, Any], theme: str = "") -> list[str]:
+    """Text/structure for content gate; packshots/illustrations deferred to asset plan."""
     blockers: list[str] = []
     pages = _green_page_map(model)
     required = {
@@ -828,11 +865,16 @@ def _green_formal_blockers(model: dict[str, Any]) -> list[str]:
 
     overview = pages.get("product-overview") or {}
     product = overview.get("product") or {}
-    for field in ("display_name", "code", "priority", "specification", "retail_price", "one_line_selling_point"):
+    for field in (
+        "display_name",
+        "code",
+        "priority",
+        "specification",
+        "retail_price",
+        "one_line_selling_point",
+    ):
         if not str(product.get(field) or "").strip():
             blockers.append(f"商品信息缺少 {field}")
-    if not _asset_source(product.get("image_slot")):
-        blockers.append("商品介绍页缺少本品包装图")
     for index, section in enumerate(overview.get("sections") or []):
         if not (section.get("items") or []):
             blockers.append(f"商品介绍 section[{index}] 没有审核内容")
@@ -840,12 +882,37 @@ def _green_formal_blockers(model: dict[str, Any]) -> list[str]:
     combo = pages.get("combination-guidance") or {}
     if not combo.get("rows"):
         blockers.append("联合用药页至少需要一条经审核内容")
-    if not any(field in combo for field in ("primary_asset", "primary_pack_asset", "product_asset")):
-        blockers.append("联合用药页缺少本品包装图")
     for index, row in enumerate(combo.get("rows") or []):
         for field in ("scenario", "combination", "partner", "talk_track"):
             if not str((row or {}).get(field) or "").strip():
                 blockers.append(f"联合用药 rows[{index}] 缺少 {field}")
+
+    precautions = pages.get("precautions") or {}
+    if not precautions.get("items"):
+        blockers.append("注意事项页没有审核内容")
+    if len(precautions.get("illustration_slots") or []) != 4:
+        blockers.append("注意事项页需要 4 个插图槽（内容确认后由系统生图）")
+
+    if theme:
+        blockers.extend(_green_gold_image_blockers(model, theme))
+    return list(dict.fromkeys(blockers))
+
+
+def _green_formal_blockers(model: dict[str, Any], theme: str = "") -> list[str]:
+    blockers = _green_content_blockers(model, theme)
+    pages = _green_page_map(model)
+
+    overview = pages.get("product-overview") or {}
+    product = overview.get("product") or {}
+    if not _asset_source(product.get("image_slot")):
+        blockers.append("商品介绍页缺少本品包装图")
+
+    combo = pages.get("combination-guidance") or {}
+    if not any(
+        field in combo for field in ("primary_asset", "primary_pack_asset", "product_asset")
+    ):
+        blockers.append("联合用药页缺少本品包装图")
+    for index, row in enumerate(combo.get("rows") or []):
         if not _asset_source((row or {}).get("partner_asset")):
             blockers.append(f"联合用药 rows[{index}] 缺少搭档商品包装图")
 
@@ -858,19 +925,38 @@ def _green_formal_blockers(model: dict[str, Any]) -> list[str]:
     if not display_rows or len(display_rows[0].get("values") or []) < 2:
         blockers.append("品种对标页缺少本品/竞品两张正式图片")
 
-    precautions = pages.get("precautions") or {}
-    if not precautions.get("items"):
-        blockers.append("注意事项页没有审核内容")
-    if len(precautions.get("illustration_slots") or []) != 4:
-        blockers.append("注意事项页需要 4 张正式插图")
-
     for binding, container, key in _green_asset_bindings(model):
         source = _asset_source(container[key])
         if not source or source.startswith("asset://"):
             blockers.append(f"缺少正式图片 {binding}")
         elif not Path(source).is_file():
             blockers.append(f"图片文件不存在 {binding}: {source}")
+    if theme:
+        blockers.extend(_green_gold_image_blockers(model, theme))
+        plan = build_green_asset_plan(
+            model, theme=theme, template_slug="product-courseware-green-v1"
+        )
+        blockers.extend(formal_asset_blockers(plan))
     return list(dict.fromkeys(blockers))
+
+
+def _green_gold_image_blockers(model: dict[str, Any], theme: str) -> list[str]:
+    """SHA/path fail-closed for green fixed courseware images."""
+    allow_gold = is_authorized_gold_theme(
+        template_slug="product-courseware-green-v1",
+        theme=theme,
+        model=model,
+    )
+    pairs: list[tuple[str, Path | str]] = []
+    for binding, container, key in _green_asset_bindings(model):
+        source = _asset_source(container[key])
+        if source and not source.startswith("asset://") and Path(source).is_file():
+            pairs.append((binding, source))
+    return check_image_files(
+        pairs,
+        template_slug="product-courseware-green-v1",
+        allow_gold=allow_gold,
+    )
 
 
 def _assert_no_green_gold_residue(model: dict[str, Any], theme: str) -> None:
@@ -885,6 +971,11 @@ def _assert_no_green_gold_residue(model: dict[str, Any], theme: str) -> None:
             raise SystemExit(
                 f"draft 仍含金样残留「{token}」，已阻断；请检查 _draft_product_pptx_green 替换逻辑"
             )
+    image_hits = _green_gold_image_blockers(model, theme)
+    if image_hits:
+        raise SystemExit(
+            "draft 仍含金样源图像素/路径，已阻断：" + "；".join(image_hits[:6])
+        )
 
 
 def _draft_product_pptx_green(job: dict[str, Any], route: dict[str, Any]) -> dict[str, Any]:
@@ -1043,26 +1134,36 @@ def _draft_product_pptx_green(job: dict[str, Any], route: dict[str, Any]) -> dic
     source_dir = Path(source_dir_value) if source_dir_value else None
     _snapshot_green_assets(job, model, source_dir=source_dir)
 
+    draft_dir = job_dir(job["job_id"]) / "draft"
+    content_path = draft_dir / "content-model.json"
+    review_path = draft_dir / "内容初稿.md"
+    gaps_path = draft_dir / "缺口清单.md"
+    asset_manifest_path = draft_dir / "asset-manifest.json"
+    asset_plan_json = draft_dir / "素材计划.json"
+    asset_plan_md = draft_dir / "素材计划.md"
+    write_json(content_path, model)
+    plan = build_green_asset_plan(
+        model, theme=theme, template_slug="product-courseware-green-v1"
+    )
+    write_json(asset_plan_json, plan)
+    asset_plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=theme), encoding="utf-8"
+    )
+
     if supplied_model:
-        gaps = _green_formal_blockers(model)
+        gaps = _green_content_blockers(model, theme) + content_asset_notes(plan)
     else:
         gaps = [
             "规格 / 编码 / 零售价",
             "审核后的功能主治与用法用量",
             "联合用药场景、搭档商品与销售话术",
             "竞品对标内容与竞品正式图片",
-            "注意事项审核稿与 4 张正式插图",
+            "注意事项审核稿",
             "本品与搭档商品授权包装图（正式生成必填）",
+            *content_asset_notes(plan),
         ]
         if notes:
             gaps.insert(0, "业务已提供文字要点，请逐条核对是否可进正式培训")
-
-    draft_dir = job_dir(job["job_id"]) / "draft"
-    content_path = draft_dir / "content-model.json"
-    review_path = draft_dir / "内容初稿.md"
-    gaps_path = draft_dir / "缺口清单.md"
-    asset_manifest_path = draft_dir / "asset-manifest.json"
-    write_json(content_path, model)
 
     review_lines = [
         f"# 内容初稿 · {theme}",
@@ -1126,6 +1227,8 @@ def _draft_product_pptx_green(job: dict[str, Any], route: dict[str, Any]) -> dic
         "review_md": str(review_path),
         "gaps_md": str(gaps_path),
         "asset_manifest_json": str(asset_manifest_path),
+        "asset_plan_json": str(asset_plan_json),
+        "asset_plan_md": str(asset_plan_md),
         "content_model_sha256": sha256_file(content_path),
         "content_sha256": digest,
         "gaps": gaps,
@@ -1220,7 +1323,8 @@ def _disease_content_digest(
     )
 
 
-def _disease_formal_blockers(model: dict[str, Any], theme: str) -> list[str]:
+def _disease_content_blockers(model: dict[str, Any], theme: str) -> list[str]:
+    """Text/structure only — illustrations are deferred to asset plan + visual gate."""
     blockers: list[str] = []
     if model.get("schema_version") != "disease-product-scenario-script/v1":
         blockers.append("schema_version 必须是 disease-product-scenario-script/v1")
@@ -1273,15 +1377,59 @@ def _disease_formal_blockers(model: dict[str, Any], theme: str) -> list[str]:
         if not isinstance(current, list) or len(current) != minimum:
             blockers.append(f"固定 18 页课型要求 {dotted} 恰好 {minimum} 项审核内容")
 
+    if theme not in blob:
+        blockers.append("任务主题未出现在审核内容中")
+
+    # If illustrations already bound, still fail-closed on gold pixels at content time.
+    image_pairs: list[tuple[str, Path | str]] = []
+    for binding, container, key in _disease_image_bindings(model):
+        source = Path(str(container.get(key) or ""))
+        if source.is_file():
+            image_pairs.append((binding, source))
+    allow_gold = is_authorized_gold_theme(
+        template_slug="disease-product-scenario-v1",
+        theme=theme,
+        model=model,
+    )
+    blockers.extend(
+        check_image_files(
+            image_pairs,
+            template_slug="disease-product-scenario-v1",
+            allow_gold=allow_gold,
+        )
+    )
+    return list(dict.fromkeys(blockers))
+
+
+def _disease_formal_blockers(model: dict[str, Any], theme: str) -> list[str]:
+    """Full formal gate: content + every image slot + gold SHA + asset plan."""
+    blockers = _disease_content_blockers(model, theme)
     image_bindings = _disease_image_bindings(model)
     if not image_bindings:
         blockers.append("没有绑定正式商品图/插图")
+    image_pairs: list[tuple[str, Path | str]] = []
     for binding, container, key in image_bindings:
         source = Path(str(container.get(key) or ""))
         if not source.is_file():
             blockers.append(f"图片不存在 {binding}: {source}")
-    if theme not in blob:
-        blockers.append("任务主题未出现在审核内容中")
+        else:
+            image_pairs.append((binding, source))
+    allow_gold = is_authorized_gold_theme(
+        template_slug="disease-product-scenario-v1",
+        theme=theme,
+        model=model,
+    )
+    blockers.extend(
+        check_image_files(
+            image_pairs,
+            template_slug="disease-product-scenario-v1",
+            allow_gold=allow_gold,
+        )
+    )
+    plan = build_disease_asset_plan(
+        model, theme=theme, template_slug="disease-product-scenario-v1"
+    )
+    blockers.extend(formal_asset_blockers(plan))
     return list(dict.fromkeys(blockers))
 
 
@@ -1335,10 +1483,21 @@ def _draft_disease_product_scenario(
     review_path = draft_dir / "内容初稿.md"
     gaps_path = draft_dir / "缺口清单.md"
     manifest_path = draft_dir / "asset-manifest.json"
+    asset_plan_json = draft_dir / "素材计划.json"
+    asset_plan_md = draft_dir / "素材计划.md"
     write_json(content_path, model)
     digest, assets = _disease_content_digest(content_path, model)
     write_json(manifest_path, assets)
-    gaps = _disease_formal_blockers(model, theme)
+    plan = build_disease_asset_plan(
+        model, theme=theme, template_slug="disease-product-scenario-v1"
+    )
+    write_json(asset_plan_json, plan)
+    asset_plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=theme), encoding="utf-8"
+    )
+    content_gaps = _disease_content_blockers(model, theme)
+    asset_notes = content_asset_notes(plan)
+    gaps = content_gaps + asset_notes
     review_path.write_text(
         "\n".join(
             [
@@ -1348,9 +1507,12 @@ def _draft_disease_product_scenario(
                 f"- 疾病主题：{(model.get('disease') or {}).get('name') or '待确认'}",
                 f"- 主商品：{(model.get('product') or {}).get('name') or theme}",
                 f"- 场景数：{len((model.get('product') or {}).get('scenarios') or [])}",
-                f"- 图片数：{len(assets)}",
+                f"- 已绑定图片：{len(assets)}",
+                f"- 素材计划：系统插图 {len(plan.get('system_generates') or [])} 槽 / "
+                f"业务真图 {len(plan.get('business_provides') or [])} 槽",
                 "",
-                "确认前不生成正式 PPTX；疾病、商品、场景、话术和图片均须来自业务审核资料。",
+                "确认前不生成正式 PPTX。",
+                "内容确认后：业务给包装/对标真图；WorkBuddy 按《素材计划》生成疾病/症状/人群/护理插图并绑定，禁止继承穿心莲金样像素。",
                 "",
                 "## 待补 / 待确认",
                 "",
@@ -1370,6 +1532,8 @@ def _draft_disease_product_scenario(
         "review_md": str(review_path),
         "gaps_md": str(gaps_path),
         "asset_manifest_json": str(manifest_path),
+        "asset_plan_json": str(asset_plan_json),
+        "asset_plan_md": str(asset_plan_md),
         "content_model_sha256": sha256_file(content_path),
         "content_sha256": digest,
         "gaps": gaps,
@@ -1459,6 +1623,69 @@ def _courseware3_content_digest(
     )
 
 
+def _courseware3_content_blockers(
+    theme: dict[str, Any], job_theme: str, base: dict[str, Any] | None = None
+) -> list[str]:
+    """Text/structure only — images deferred to asset plan + visual/product gates."""
+    blockers: list[str] = []
+    base_model = base if isinstance(base, dict) else _courseware3_base_model()
+    module = _courseware3_module()
+
+    product = theme.get("product") if isinstance(theme.get("product"), dict) else {}
+    for field in ("brand_name", "generic_name", "display_name"):
+        if not module._is_complete_text(product.get(field)):
+            blockers.append(f"product.{field} 缺少正式内容")
+    if "title" in theme and not module._is_complete_text(theme.get("title")):
+        blockers.append("title 仍为空或占位")
+
+    expected_style = str(base_model.get("style_pack_id") or "")
+    supplied_style = str(theme.get("style_pack_id") or expected_style)
+    if expected_style and supplied_style != expected_style:
+        blockers.append(
+            f"style_pack_id 必须锁定 {expected_style}，收到 {supplied_style or '空'}"
+        )
+
+    page_overrides: dict[str, dict] = {}
+    for page in theme.get("pages") or []:
+        if not isinstance(page, dict) or not page.get("id"):
+            blockers.append("pages 中存在缺少 id 的页面")
+            continue
+        page_id = str(page["id"])
+        if page_id in page_overrides:
+            blockers.append(f"pages.{page_id} 重复")
+            continue
+        page_overrides[page_id] = page
+
+    for page in base_model.get("pages") or []:
+        if not isinstance(page, dict):
+            continue
+        page_id = str(page.get("id") or "")
+        override = page_overrides.get(page_id)
+        if override is None:
+            blockers.append(f"pages.{page_id} 整页未覆盖，禁止继承金样")
+            continue
+        if "title" in override and not module._is_complete_text(override.get("title")):
+            blockers.append(f"pages.{page_id}.title 仍为空或占位")
+        element_overrides = override.get("elements") or {}
+        if not isinstance(element_overrides, dict):
+            blockers.append(f"pages.{page_id}.elements 必须是对象")
+            continue
+        for role, element in (page.get("elements") or {}).items():
+            if not isinstance(element, dict):
+                continue
+            if element.get("kind") != "text" or element.get("replace") != "theme_copy":
+                continue
+            if not module._is_complete_text(element_overrides.get(role)):
+                blockers.append(
+                    f"pages.{page_id}.elements.{role} 缺少正式文案，禁止继承金样"
+                )
+
+    blob = json.dumps(theme, ensure_ascii=False)
+    if job_theme and job_theme not in blob:
+        blockers.append("任务商品名未出现在课件3审核内容中")
+    return list(dict.fromkeys(blockers))
+
+
 def _courseware3_formal_blockers(
     theme: dict[str, Any], theme_dir: Path, job_theme: str
 ) -> list[str]:
@@ -1481,6 +1708,32 @@ def _courseware3_formal_blockers(
     blob = json.dumps(theme, ensure_ascii=False)
     if job_theme not in blob:
         blockers.append("任务商品名未出现在课件3审核内容中")
+    allow_gold = is_authorized_gold_theme(
+        template_slug="sufuda-mabaloshawei-product-courseware-3-v1",
+        theme=job_theme,
+        model=theme,
+    )
+    pairs = [
+        (f"assets.{key}", path)
+        for key, path in sorted(
+            _courseware3_resolved_assets(theme, theme_dir).items()
+        )
+    ]
+    blockers.extend(
+        check_image_files(
+            pairs,
+            template_slug="sufuda-mabaloshawei-product-courseware-3-v1",
+            allow_gold=allow_gold,
+        )
+    )
+    plan = build_courseware3_asset_plan(
+        theme,
+        theme_name=job_theme,
+        base=_courseware3_base_model(),
+        theme_dir=theme_dir,
+        template_slug="sufuda-mabaloshawei-product-courseware-3-v1",
+    )
+    blockers.extend(formal_asset_blockers(plan))
     return list(dict.fromkeys(blockers))
 
 
@@ -1529,7 +1782,22 @@ def _draft_courseware3_pptx(job: dict[str, Any], route: dict[str, Any]) -> dict[
     digest, assets = _courseware3_content_digest(theme_path, theme)
     manifest_path = draft_dir / "asset-manifest.json"
     write_json(manifest_path, assets)
-    gaps = _courseware3_formal_blockers(theme, theme_dir, theme_name)
+    base = _courseware3_base_model()
+    plan = build_courseware3_asset_plan(
+        theme,
+        theme_name=theme_name,
+        base=base,
+        theme_dir=theme_dir,
+        template_slug="sufuda-mabaloshawei-product-courseware-3-v1",
+    )
+    asset_plan_json = draft_dir / "素材计划.json"
+    asset_plan_md = draft_dir / "素材计划.md"
+    write_json(asset_plan_json, plan)
+    asset_plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=theme_name), encoding="utf-8"
+    )
+    content_gaps = _courseware3_content_blockers(theme, theme_name, base)
+    gaps = content_gaps + content_asset_notes(plan)
     review_path = draft_dir / "内容初稿.md"
     gaps_path = draft_dir / "缺口清单.md"
     review_path.write_text(
@@ -1540,8 +1808,10 @@ def _draft_courseware3_pptx(job: dict[str, Any], route: dict[str, Any]) -> dict[
                 f"- 课型：{route.get('name_zh')}",
                 f"- 主题内容单元覆盖：{len(theme.get('pages') or [])}/12（导出为 13 页）",
                 f"- 已绑定图片：{len(assets)}",
+                f"- 素材计划：系统插图 {len(plan.get('system_generates') or [])} 槽 / "
+                f"业务真图 {len(plan.get('business_provides') or [])} 槽",
                 "",
-                "确认前不生成正式 PPTX。12 个主题内容单元、正式包装/Logo 与每个主题插图都必须显式提供；不会继承速福达金样内容或图片。",
+                "确认前不生成正式 PPTX。内容确认后：业务给包装/Logo 真图；WorkBuddy 按《素材计划》生成主题插图并绑定，禁止继承速福达金样像素。",
                 "",
                 "## 待补 / 待确认",
                 "",
@@ -1562,6 +1832,8 @@ def _draft_courseware3_pptx(job: dict[str, Any], route: dict[str, Any]) -> dict[
         "review_md": str(review_path),
         "gaps_md": str(gaps_path),
         "asset_manifest_json": str(manifest_path),
+        "asset_plan_json": str(asset_plan_json),
+        "asset_plan_md": str(asset_plan_md),
         "content_model_sha256": sha256_file(theme_path),
         "content_sha256": digest,
         "gaps": gaps,
@@ -1675,6 +1947,61 @@ def _ingredient_health_validation(theme_path: Path) -> dict[str, Any]:
     }
 
 
+_INGREDIENT_PENDING_MARKERS = (
+    "待确认",
+    "待业务",
+    "待补充",
+    "待审核",
+    "TODO",
+    "TBD",
+    "占位",
+    "示例",
+    "虚构",
+)
+
+
+def _ingredient_health_content_blockers(
+    theme: dict[str, Any], job_theme: str
+) -> list[str]:
+    """Text/structure only — 69 image slots deferred to asset plan + visual gate."""
+    blockers: list[str] = []
+    if theme.get("gold_sample") is True:
+        blockers.append("新主题不得标记 gold_sample:true")
+    theme_name = str(theme.get("theme_name") or "").strip()
+    if not theme_name:
+        blockers.append("theme_name 缺失")
+    elif job_theme and job_theme not in theme_name and job_theme not in json.dumps(
+        theme, ensure_ascii=False
+    ):
+        blockers.append("任务成分主题未出现在 20 页审核内容中")
+
+    pages = theme.get("pages") if isinstance(theme.get("pages"), list) else []
+    if len(pages) != 20:
+        blockers.append(f"固定 20 页，当前 {len(pages)} 页")
+    pending_hits: list[str] = []
+    for index, page in enumerate(pages):
+        if not isinstance(page, dict):
+            blockers.append(f"pages[{index}] 格式错误")
+            continue
+        texts = page.get("texts") if isinstance(page.get("texts"), dict) else {}
+        if not texts:
+            blockers.append(f"第{page.get('slide') or index + 1}页缺少文字槽")
+            continue
+        for text_id, value in texts.items():
+            text = str(value or "").strip()
+            if not text:
+                pending_hits.append(f"pages[{index}].texts.{text_id}")
+                continue
+            if any(marker in text for marker in _INGREDIENT_PENDING_MARKERS):
+                pending_hits.append(f"pages[{index}].texts.{text_id}")
+    if pending_hits:
+        blockers.append(
+            "仍有待确认/占位文字：" + ", ".join(pending_hits[:8])
+            + (f" 等{len(pending_hits)}处" if len(pending_hits) > 8 else "")
+        )
+    return list(dict.fromkeys(blockers))
+
+
 def _ingredient_health_formal_blockers(
     theme_path: Path, job_theme: str
 ) -> list[str]:
@@ -1685,9 +2012,38 @@ def _ingredient_health_formal_blockers(
     except (OSError, json.JSONDecodeError) as exc:
         blockers.append(f"theme.json 无法读取：{exc}")
         return list(dict.fromkeys(blockers))
+    if not isinstance(theme, dict):
+        blockers.append("theme.json 格式错误")
+        return list(dict.fromkeys(blockers))
+    blockers.extend(_ingredient_health_content_blockers(theme, job_theme))
     blob = json.dumps(theme, ensure_ascii=False)
     if job_theme not in blob:
         blockers.append("任务成分主题未出现在 20 页审核内容中")
+    allow_gold = is_authorized_gold_theme(
+        template_slug="kangaisen-lycopene-health-edu-v1",
+        theme=job_theme,
+        model=theme,
+    )
+    pairs = [
+        (f"assets.{key}", path)
+        for key, path in sorted(
+            _ingredient_health_resolved_assets(theme, theme_path.parent).items()
+        )
+    ]
+    blockers.extend(
+        check_image_files(
+            pairs,
+            template_slug="kangaisen-lycopene-health-edu-v1",
+            allow_gold=allow_gold,
+        )
+    )
+    plan = build_ingredient_asset_plan(
+        theme,
+        theme_name=job_theme,
+        theme_dir=theme_path.parent,
+        template_slug="kangaisen-lycopene-health-edu-v1",
+    )
+    blockers.extend(formal_asset_blockers(plan))
     return list(dict.fromkeys(blockers))
 
 
@@ -1742,7 +2098,20 @@ def _draft_ingredient_health_edu_pptx(
     digest, assets = _ingredient_health_content_digest(theme_path, theme)
     manifest_path = draft_dir / "asset-manifest.json"
     write_json(manifest_path, assets)
-    gaps = _ingredient_health_formal_blockers(theme_path, theme_name)
+    plan = build_ingredient_asset_plan(
+        theme,
+        theme_name=theme_name,
+        theme_dir=theme_dir,
+        template_slug="kangaisen-lycopene-health-edu-v1",
+    )
+    asset_plan_json = draft_dir / "素材计划.json"
+    asset_plan_md = draft_dir / "素材计划.md"
+    write_json(asset_plan_json, plan)
+    asset_plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=theme_name), encoding="utf-8"
+    )
+    content_gaps = _ingredient_health_content_blockers(theme, theme_name)
+    gaps = content_gaps + content_asset_notes(plan)
     validation_path = theme_dir / "validation-report.json"
     validation = read_json(validation_path) if validation_path.is_file() else {}
     contract = validation.get("contract") or {}
@@ -1759,8 +2128,9 @@ def _draft_ingredient_health_edu_pptx(
                 f"- 页面图片槽：{contract.get('slide_image_slots') or 67}",
                 f"- 母版/版式图片槽：{contract.get('template_image_slots') or 2}",
                 f"- 已登记图片资产：{len(assets)}",
+                f"- 素材计划：系统插图 {len(plan.get('system_generates') or [])} 槽",
                 "",
-                "确认前不生成正式 PPTX。新主题必须完整填写 107 个文字槽和 69 个图片槽；不会继承金样医学正文、剂量、功效或番茄参考图片。",
+                "确认前不生成正式 PPTX。内容确认后由 WorkBuddy 按《素材计划》生成并绑定全部插图；不会继承金样医学正文、剂量、功效或番茄参考图片。",
                 "",
                 "## 待补 / 待确认",
                 "",
@@ -1783,6 +2153,8 @@ def _draft_ingredient_health_edu_pptx(
         "review_md": str(review_path),
         "gaps_md": str(gaps_path),
         "asset_manifest_json": str(manifest_path),
+        "asset_plan_json": str(asset_plan_json),
+        "asset_plan_md": str(asset_plan_md),
         "validation_report_json": str(validation_path),
         "content_model_sha256": sha256_file(theme_path),
         "content_sha256": digest,
@@ -2639,6 +3011,282 @@ def _component_visual_manifest_sha256(
     )
 
 
+def _load_asset_bindings_mapping(bindings_json: Path | None) -> dict[str, str]:
+    if not bindings_json:
+        return {}
+    bindings_path = bindings_json.expanduser().resolve()
+    if not bindings_path.is_file():
+        raise SystemExit(f"素材绑定文件不存在: {bindings_path}")
+    raw = read_json(bindings_path)
+    if isinstance(raw, dict) and isinstance(raw.get("bindings"), dict):
+        raw = raw["bindings"]
+    if not isinstance(raw, dict):
+        raise SystemExit("素材绑定文件必须是 {script_path: 本地图片路径} 对象")
+    return {str(key): str(value) for key, value in raw.items()}
+
+
+def _prepare_fixed_visuals_for_approval(
+    job: dict[str, Any],
+    route: dict[str, Any],
+    *,
+    bindings_json: Path | None,
+) -> dict[str, dict[str, str]]:
+    """Apply WorkBuddy-generated illustration bindings for fixed PPT routes."""
+    adapter = str(route.get("adapter") or "")
+    theme = str(job.get("theme") or "")
+    draft = job.get("draft") or {}
+    content_path = Path(str(draft.get("content_model") or ""))
+    if not content_path.is_file():
+        raise SystemExit("缺少 content-model，无法视觉确认")
+    model = read_json(content_path)
+    if not isinstance(model, dict):
+        raise SystemExit("content-model 格式错误")
+
+    theme_dir = Path(str(draft.get("theme_package") or content_path.parent))
+    courseware3_base: dict[str, Any] | None = None
+    bind_mode = "disease"
+    green = False
+
+    if adapter == "disease_product_scenario_pptx":
+        plan = build_disease_asset_plan(
+            model, theme=theme, template_slug="disease-product-scenario-v1"
+        )
+        bind_mode = "disease"
+        formal = lambda m: _disease_formal_blockers(m, theme)
+    elif adapter == "product_pptx_green":
+        plan = build_green_asset_plan(
+            model, theme=theme, template_slug="product-courseware-green-v1"
+        )
+        bind_mode = "green"
+        green = True
+        formal = lambda m: _green_formal_blockers(m, theme)
+    elif adapter == "courseware3_pptx":
+        courseware3_base = _courseware3_base_model()
+        plan = build_courseware3_asset_plan(
+            model,
+            theme_name=theme,
+            base=courseware3_base,
+            theme_dir=theme_dir,
+            template_slug="sufuda-mabaloshawei-product-courseware-3-v1",
+        )
+        bind_mode = "courseware3"
+        formal = lambda m: _courseware3_formal_blockers(m, theme_dir, theme)
+    elif adapter == "ingredient_health_edu_pptx":
+        plan = build_ingredient_asset_plan(
+            model,
+            theme_name=theme,
+            theme_dir=theme_dir,
+            template_slug="kangaisen-lycopene-health-edu-v1",
+        )
+        bind_mode = "ingredient"
+        formal = lambda m: _ingredient_health_formal_blockers(content_path, theme)
+    else:
+        raise SystemExit(f"当前 adapter 不支持固定课型插图绑定: {adapter}")
+
+    mapping = _load_asset_bindings_mapping(bindings_json)
+    # Auto-include already-ready system slots so partial bindings work after draft fills
+    if not mapping:
+        for item in plan.get("system_generates") or []:
+            if item.get("status") == "ready" and item.get("existing_src"):
+                mapping[str(item["script_path"])] = str(item["existing_src"])
+        if not mapping:
+            raise SystemExit(
+                "视觉确认需要 --asset-bindings <JSON>："
+                "按草稿《素材计划》为每个 system_generates 槽绑定本主题新图路径"
+            )
+
+    try:
+        apply_image_bindings(
+            model,
+            mapping,
+            plan,
+            green=green,
+            mode=bind_mode,
+            base=courseware3_base,
+        )
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+
+    intake_dir = job_dir(job["job_id"]) / "intake"
+    generated_dir = intake_dir / "generated-assets"
+    generated_dir.mkdir(parents=True, exist_ok=True)
+
+    def _rebuild_plan(current: dict[str, Any]) -> dict[str, Any]:
+        if adapter == "product_pptx_green":
+            return build_green_asset_plan(
+                current, theme=theme, template_slug="product-courseware-green-v1"
+            )
+        if adapter == "disease_product_scenario_pptx":
+            return build_disease_asset_plan(
+                current, theme=theme, template_slug="disease-product-scenario-v1"
+            )
+        if adapter == "courseware3_pptx":
+            return build_courseware3_asset_plan(
+                current,
+                theme_name=theme,
+                base=courseware3_base or _courseware3_base_model(),
+                theme_dir=theme_dir,
+                template_slug="sufuda-mabaloshawei-product-courseware-3-v1",
+            )
+        return build_ingredient_asset_plan(
+            current,
+            theme_name=theme,
+            theme_dir=theme_dir,
+            template_slug="kangaisen-lycopene-health-edu-v1",
+        )
+
+    # Snapshot bound system images into job intake (stable paths)
+    plan_after = _rebuild_plan(model)
+    for item in plan_after.get("system_generates") or []:
+        target = str(item.get("script_path") or "")
+        source = Path(str(item.get("existing_src") or "")).expanduser()
+        if not target or not source.is_file():
+            continue
+        digest = sha256_file(source)
+        dest = generated_dir / f"{digest[:12]}{source.suffix.lower() or '.png'}"
+        if source.resolve() != dest.resolve():
+            shutil.copy2(source, dest)
+        apply_image_bindings(
+            model,
+            {target: str(dest)},
+            plan_after,
+            green=green,
+            mode=bind_mode,
+            base=courseware3_base,
+        )
+
+    if adapter == "product_pptx_green":
+        _snapshot_green_assets(job, model)
+    elif adapter == "disease_product_scenario_pptx":
+        _snapshot_disease_images(job, model, source_dir=content_path.parent)
+    elif adapter == "courseware3_pptx":
+        source_dir_value = (job.get("intake") or {}).get("script_source_dir")
+        source_dir = (
+            Path(str(source_dir_value)) if source_dir_value else theme_dir
+        )
+        _snapshot_courseware3_assets(
+            model, source_dir=source_dir, theme_dir=theme_dir
+        )
+    elif adapter == "ingredient_health_edu_pptx":
+        source_dir_value = (job.get("intake") or {}).get("script_source_dir")
+        source_dir = (
+            Path(str(source_dir_value)) if source_dir_value else theme_dir
+        )
+        _snapshot_ingredient_health_assets(
+            model, source_dir=source_dir, theme_dir=theme_dir
+        )
+
+    if adapter == "ingredient_health_edu_pptx":
+        auth = model.get("asset_authorization")
+        if not isinstance(auth, dict):
+            auth = {}
+            model["asset_authorization"] = auth
+        auth["confirmed"] = True
+        auth.setdefault("authorized_by", "workbuddy-visual-bind")
+        auth.setdefault(
+            "authorization_reference", "theme-images-bound-at-visual-approval"
+        )
+        auth["scope"] = "all-theme-images"
+
+    write_json(content_path, model)
+    blockers = formal(model)
+    if blockers:
+        raise SystemExit(
+            "主题插图/包装未齐或命中金样像素，不能视觉确认：" + "；".join(blockers[:10])
+        )
+
+    if adapter == "product_pptx_green":
+        digest, assets = _green_content_digest(content_path, model)
+    elif adapter == "disease_product_scenario_pptx":
+        digest, assets = _disease_content_digest(content_path, model)
+    elif adapter == "courseware3_pptx":
+        digest, assets = _courseware3_content_digest(content_path, model)
+    else:
+        digest, assets = _ingredient_health_content_digest(content_path, model)
+    final_plan = _rebuild_plan(model)
+
+    # Content gate freezes copy; illustration rebinding updates the joint content+asset
+    # digest. Refresh the content approval hash so render can proceed without
+    # re-approving medical copy after legitimate visual binding.
+    manifest_path = Path(
+        draft.get("asset_manifest_json")
+        or (job_dir(job["job_id"]) / "draft" / "asset-manifest.json")
+    )
+    write_json(manifest_path, assets)
+    plan_json = Path(
+        draft.get("asset_plan_json")
+        or (job_dir(job["job_id"]) / "draft" / "素材计划.json")
+    )
+    plan_md = Path(
+        draft.get("asset_plan_md") or (job_dir(job["job_id"]) / "draft" / "素材计划.md")
+    )
+    write_json(plan_json, final_plan)
+    plan_md.write_text(
+        render_fixed_asset_plan_markdown(final_plan, theme=theme), encoding="utf-8"
+    )
+    draft["asset_manifest_json"] = str(manifest_path)
+    draft["asset_plan_json"] = str(plan_json)
+    draft["asset_plan_md"] = str(plan_md)
+    draft["content_model_sha256"] = sha256_file(content_path)
+    draft["content_sha256"] = digest
+    draft["gaps"] = []
+    content_rec = (job.get("approvals") or {}).get("content")
+    if isinstance(content_rec, dict) and content_rec.get("approved"):
+        content_rec["content_sha256"] = digest
+        content_rec["visual_rebind_at"] = utc_now()
+        approvals_path = job_dir(job["job_id"]) / "approvals" / "content.json"
+        write_json(approvals_path, content_rec)
+        job.setdefault("approvals", {})["content"] = content_rec
+    write_json(intake_dir / "intake.json", job.get("intake") or {})
+    return plan_visual_manifest(final_plan)
+
+
+def _fixed_route_visual_blockers(job: dict[str, Any], route: dict[str, Any]) -> list[str]:
+    """Re-validate image bindings at visual approval for every fixed PPT route."""
+    adapter = str(route.get("adapter") or "")
+    slug = str(route.get("template_slug") or "")
+    theme = str(job.get("theme") or "")
+    draft = job.get("draft") or {}
+    content_path = Path(str(draft.get("content_model") or ""))
+    if not content_path.is_file():
+        return ["缺少 content-model，无法做视觉确认"]
+
+    if adapter == "product_pptx_green":
+        model = read_json(content_path)
+        if not isinstance(model, dict):
+            return ["绿色课型 content-model 格式错误"]
+        return _green_formal_blockers(model, theme)
+
+    if adapter == "disease_product_scenario_pptx":
+        model = read_json(content_path)
+        if not isinstance(model, dict):
+            return ["疾病+商品 content-model 格式错误"]
+        return _disease_formal_blockers(model, theme)
+
+    if adapter == "courseware3_pptx":
+        theme_obj = read_json(content_path)
+        if not isinstance(theme_obj, dict):
+            return ["课件3 theme.json 格式错误"]
+        theme_dir = Path(str(draft.get("theme_package") or content_path.parent))
+        return _courseware3_formal_blockers(theme_obj, theme_dir, theme)
+
+    if adapter == "ingredient_health_edu_pptx":
+        return _ingredient_health_formal_blockers(content_path, theme)
+
+    manifest_path = Path(str(draft.get("asset_manifest_json") or ""))
+    if manifest_path.is_file():
+        manifest = read_json(manifest_path)
+        if isinstance(manifest, dict):
+            return check_asset_manifest(
+                manifest,
+                template_slug=slug or None,
+                allow_gold=is_authorized_gold_theme(
+                    template_slug=slug, theme=theme, model={}
+                ),
+            )
+    return []
+
+
 def _prepare_component_content_for_approval(
     job: dict[str, Any], route: dict[str, Any]
 ) -> str:
@@ -2816,9 +3464,9 @@ def _prepare_green_for_approval(
     _snapshot_green_assets(job, model, source_dir=source_dir)
     model["content_lock"] = "business-content-final-candidate"
     _assert_no_green_gold_residue(model, job["theme"])
-    blockers = _green_formal_blockers(model)
+    blockers = _green_content_blockers(model, job["theme"])
     if blockers:
-        raise SystemExit("绿色标准课型终稿资料未齐，不能批准：" + "；".join(blockers[:10]))
+        raise SystemExit("绿色标准课型内容未齐，不能批准：" + "；".join(blockers[:10]))
 
     write_json(content_path, model)
     digest, manifest = _green_content_digest(content_path, model)
@@ -2827,17 +3475,34 @@ def _prepare_green_for_approval(
         or (job_dir(job["job_id"]) / "draft" / "asset-manifest.json")
     )
     write_json(asset_manifest_path, manifest)
+    plan = build_green_asset_plan(
+        model, theme=job["theme"], template_slug="product-courseware-green-v1"
+    )
+    plan_json = Path(
+        draft.get("asset_plan_json")
+        or (job_dir(job["job_id"]) / "draft" / "素材计划.json")
+    )
+    plan_md = Path(
+        draft.get("asset_plan_md") or (job_dir(job["job_id"]) / "draft" / "素材计划.md")
+    )
+    write_json(plan_json, plan)
+    plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=job["theme"]), encoding="utf-8"
+    )
     draft["asset_manifest_json"] = str(asset_manifest_path)
+    draft["asset_plan_json"] = str(plan_json)
+    draft["asset_plan_md"] = str(plan_md)
     draft["content_model_sha256"] = sha256_file(content_path)
     draft["content_sha256"] = digest
-    draft["gaps"] = []
+    draft["gaps"] = content_asset_notes(plan)
     gaps_value = draft.get("gaps_md")
     if gaps_value:
-        gaps_path = Path(str(gaps_value))
-        gaps_path.write_text(
-            "# 缺口清单\n\n- [x] 内容、正式图片与审核字段已齐，等待内容审批。\n",
-            encoding="utf-8",
+        notes = content_asset_notes(plan)
+        body = (
+            "# 缺口清单\n\n- [x] 文案已确认，等待包装图与主题插图绑定。\n"
+            + ("\n".join(f"- [ ] {n}" for n in notes) + "\n" if notes else "")
         )
+        Path(str(gaps_value)).write_text(body, encoding="utf-8")
     write_json(intake_dir / "intake.json", intake)
 
 
@@ -2876,9 +3541,9 @@ def _prepare_disease_for_approval(
     source_dir_value = intake.get("script_source_dir")
     source_dir = Path(str(source_dir_value)) if source_dir_value else content_path.parent
     _snapshot_disease_images(job, model, source_dir=source_dir)
-    blockers = _disease_formal_blockers(model, job["theme"])
+    blockers = _disease_content_blockers(model, job["theme"])
     if blockers:
-        raise SystemExit("疾病+商品标准课型终稿资料未齐，不能批准：" + "；".join(blockers[:10]))
+        raise SystemExit("疾病+商品标准课型内容未齐，不能批准：" + "；".join(blockers[:10]))
 
     write_json(content_path, model)
     digest, assets = _disease_content_digest(content_path, model)
@@ -2887,16 +3552,34 @@ def _prepare_disease_for_approval(
         or (job_dir(job["job_id"]) / "draft" / "asset-manifest.json")
     )
     write_json(manifest_path, assets)
+    plan = build_disease_asset_plan(
+        model, theme=job["theme"], template_slug="disease-product-scenario-v1"
+    )
+    plan_json = Path(
+        draft.get("asset_plan_json")
+        or (job_dir(job["job_id"]) / "draft" / "素材计划.json")
+    )
+    plan_md = Path(
+        draft.get("asset_plan_md") or (job_dir(job["job_id"]) / "draft" / "素材计划.md")
+    )
+    write_json(plan_json, plan)
+    plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=job["theme"]), encoding="utf-8"
+    )
     draft["asset_manifest_json"] = str(manifest_path)
+    draft["asset_plan_json"] = str(plan_json)
+    draft["asset_plan_md"] = str(plan_md)
     draft["content_model_sha256"] = sha256_file(content_path)
     draft["content_sha256"] = digest
-    draft["gaps"] = []
+    draft["gaps"] = content_asset_notes(plan)
     gaps_value = draft.get("gaps_md")
     if gaps_value:
-        Path(str(gaps_value)).write_text(
-            "# 缺口清单\n\n- [x] 内容、正式图片与审核字段已齐，等待内容审批。\n",
-            encoding="utf-8",
+        notes = content_asset_notes(plan)
+        body = (
+            "# 缺口清单\n\n- [x] 文案已确认，等待包装图与主题插图绑定。\n"
+            + ("\n".join(f"- [ ] {n}" for n in notes) + "\n" if notes else "")
         )
+        Path(str(gaps_value)).write_text(body, encoding="utf-8")
     write_json(intake_dir / "intake.json", intake)
 
 
@@ -2905,6 +3588,7 @@ def _prepare_courseware3_for_approval(
     *,
     product_image: Path | None,
 ) -> None:
+    """Content gate only — freeze copy; images via visual/product_image + asset plan."""
     draft = job.get("draft") or {}
     theme_path = Path(draft.get("content_model") or "")
     theme_dir = Path(draft.get("theme_package") or theme_path.parent)
@@ -2936,31 +3620,55 @@ def _prepare_courseware3_for_approval(
     source_dir_value = intake.get("script_source_dir")
     source_dir = Path(str(source_dir_value)) if source_dir_value else theme_dir
     _snapshot_courseware3_assets(theme, source_dir=source_dir, theme_dir=theme_dir)
-    write_json(theme_path, theme)
-    blockers = _courseware3_formal_blockers(theme, theme_dir, job["theme"])
+    base = _courseware3_base_model()
+    blockers = _courseware3_content_blockers(theme, job["theme"], base)
     if blockers:
-        raise SystemExit("课件3终稿资料未齐，不能批准：" + "；".join(blockers[:12]))
+        raise SystemExit("课件3内容未齐，不能批准：" + "；".join(blockers[:12]))
 
+    write_json(theme_path, theme)
     digest, assets = _courseware3_content_digest(theme_path, theme)
     manifest_path = Path(
         draft.get("asset_manifest_json")
         or (job_dir(job["job_id"]) / "draft" / "asset-manifest.json")
     )
     write_json(manifest_path, assets)
+    plan = build_courseware3_asset_plan(
+        theme,
+        theme_name=job["theme"],
+        base=base,
+        theme_dir=theme_dir,
+        template_slug="sufuda-mabaloshawei-product-courseware-3-v1",
+    )
+    plan_json = Path(
+        draft.get("asset_plan_json")
+        or (job_dir(job["job_id"]) / "draft" / "素材计划.json")
+    )
+    plan_md = Path(
+        draft.get("asset_plan_md") or (job_dir(job["job_id"]) / "draft" / "素材计划.md")
+    )
+    write_json(plan_json, plan)
+    plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=job["theme"]), encoding="utf-8"
+    )
     draft["asset_manifest_json"] = str(manifest_path)
+    draft["asset_plan_json"] = str(plan_json)
+    draft["asset_plan_md"] = str(plan_md)
     draft["content_model_sha256"] = sha256_file(theme_path)
     draft["content_sha256"] = digest
-    draft["gaps"] = []
+    draft["gaps"] = content_asset_notes(plan)
     gaps_value = draft.get("gaps_md")
     if gaps_value:
-        Path(str(gaps_value)).write_text(
-            "# 缺口清单\n\n- [x] 12 个主题内容单元、授权包装/Logo 与主题插图已齐，等待内容审批。\n",
-            encoding="utf-8",
+        notes = content_asset_notes(plan)
+        body = (
+            "# 缺口清单\n\n- [x] 文案已确认，等待包装/Logo 与主题插图绑定。\n"
+            + ("\n".join(f"- [ ] {n}" for n in notes) + "\n" if notes else "")
         )
+        Path(str(gaps_value)).write_text(body, encoding="utf-8")
     write_json(intake_dir / "intake.json", intake)
 
 
 def _prepare_ingredient_health_for_approval(job: dict[str, Any]) -> None:
+    """Content gate only — freeze copy; 69 image slots via visual + asset plan."""
     draft = job.get("draft") or {}
     theme_path = Path(draft.get("content_model") or "")
     theme_dir = Path(draft.get("theme_package") or theme_path.parent)
@@ -2976,30 +3684,50 @@ def _prepare_ingredient_health_for_approval(job: dict[str, Any]) -> None:
     _snapshot_ingredient_health_assets(
         theme, source_dir=source_dir, theme_dir=theme_dir
     )
-    write_json(theme_path, theme)
-    blockers = _ingredient_health_formal_blockers(theme_path, job["theme"])
+    blockers = _ingredient_health_content_blockers(theme, job["theme"])
     if blockers:
         raise SystemExit(
-            "20 页成分健康科普终稿资料未齐，不能批准："
-            + "；".join(blockers[:12])
+            "20 页成分健康科普内容未齐，不能批准：" + "；".join(blockers[:12])
         )
 
+    write_json(theme_path, theme)
     digest, assets = _ingredient_health_content_digest(theme_path, theme)
     manifest_path = Path(
         draft.get("asset_manifest_json")
         or (job_dir(job["job_id"]) / "draft" / "asset-manifest.json")
     )
     write_json(manifest_path, assets)
+    plan = build_ingredient_asset_plan(
+        theme,
+        theme_name=job["theme"],
+        theme_dir=theme_dir,
+        template_slug="kangaisen-lycopene-health-edu-v1",
+    )
+    plan_json = Path(
+        draft.get("asset_plan_json")
+        or (job_dir(job["job_id"]) / "draft" / "素材计划.json")
+    )
+    plan_md = Path(
+        draft.get("asset_plan_md") or (job_dir(job["job_id"]) / "draft" / "素材计划.md")
+    )
+    write_json(plan_json, plan)
+    plan_md.write_text(
+        render_fixed_asset_plan_markdown(plan, theme=job["theme"]), encoding="utf-8"
+    )
     draft["asset_manifest_json"] = str(manifest_path)
+    draft["asset_plan_json"] = str(plan_json)
+    draft["asset_plan_md"] = str(plan_md)
     draft["content_model_sha256"] = sha256_file(theme_path)
     draft["content_sha256"] = digest
-    draft["gaps"] = []
+    draft["gaps"] = content_asset_notes(plan)
     gaps_value = draft.get("gaps_md")
     if gaps_value:
-        Path(str(gaps_value)).write_text(
-            "# 缺口清单\n\n- [x] 20 页、107 个文字槽与 69 个授权图片槽已齐，等待内容审批。\n",
-            encoding="utf-8",
+        notes = content_asset_notes(plan)
+        body = (
+            "# 缺口清单\n\n- [x] 文案已确认，等待主题插图绑定。\n"
+            + ("\n".join(f"- [ ] {n}" for n in notes) + "\n" if notes else "")
         )
+        Path(str(gaps_value)).write_text(body, encoding="utf-8")
     write_json(job_dir(job["job_id"]) / "intake" / "intake.json", intake)
 
 
@@ -3155,6 +3883,60 @@ def cmd_approve(args: argparse.Namespace) -> int:
             record["visual_assets_sha256"] = _component_visual_manifest_sha256(
                 manifest
             )
+            gold_hits = check_asset_manifest(
+                {
+                    key: {"file": rec.get("path"), "sha256": rec.get("sha256")}
+                    for key, rec in (manifest or {}).items()
+                    if isinstance(rec, dict)
+                },
+                template_slug=str(
+                    route.get("template_slug") or "product-courseware-component-v1"
+                ),
+                allow_gold=False,
+            )
+            if gold_hits:
+                raise SystemExit(
+                    "视觉确认失败：主题插图仍含金样源图 — " + "；".join(gold_hits[:8])
+                )
+        elif route.get("adapter") in {
+            "disease_product_scenario_pptx",
+            "product_pptx_green",
+            "courseware3_pptx",
+            "ingredient_health_edu_pptx",
+        }:
+            manifest = _prepare_fixed_visuals_for_approval(
+                job,
+                route,
+                bindings_json=getattr(args, "asset_bindings", None),
+            )
+            record["asset_bindings"] = manifest
+            record["visual_assets_sha256"] = _component_visual_manifest_sha256(
+                manifest
+            )
+            gold_hits = check_asset_manifest(
+                {
+                    key: {"file": rec.get("path"), "sha256": rec.get("sha256")}
+                    for key, rec in (manifest or {}).items()
+                    if isinstance(rec, dict)
+                },
+                template_slug=str(route.get("template_slug") or ""),
+                allow_gold=is_authorized_gold_theme(
+                    template_slug=str(route.get("template_slug") or ""),
+                    theme=str(job.get("theme") or ""),
+                    model={},
+                ),
+            )
+            if gold_hits:
+                raise SystemExit(
+                    "视觉确认失败：主题插图仍含金样源图 — " + "；".join(gold_hits[:8])
+                )
+        else:
+            visual_blockers = _fixed_route_visual_blockers(job, route)
+            if visual_blockers:
+                raise SystemExit(
+                    "视觉确认失败：画面/插图未按新主题替换 — "
+                    + "；".join(visual_blockers[:8])
+                )
         record["content_sha256"] = _require_draft_hash(job)
         record["visual_ref"] = (args.note or "business-visual-confirmed").strip()
 
@@ -3291,7 +4073,7 @@ def _render_product_pptx_green(job: dict[str, Any], route: dict[str, Any]) -> di
     if not isinstance(model, dict):
         raise RuntimeError("content-model.json 格式错误")
     _assert_no_green_gold_residue(model, job["theme"])
-    blockers = _green_formal_blockers(model)
+    blockers = _green_formal_blockers(model, job["theme"])
     if blockers:
         raise RuntimeError("终稿仍有未完成内容/素材：" + "；".join(blockers[:10]))
     current_digest, asset_manifest = _green_content_digest(content_model, model)
