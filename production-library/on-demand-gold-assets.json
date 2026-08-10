@@ -1,0 +1,105 @@
+{
+  "schema": "on-demand-gold-assets-v1",
+  "version": "1.0.0",
+  "updated": "2026-08-10",
+  "purpose": "Large settled gold media kept in git but not in business sparse checkout; materialize full-quality blobs on first use via git cat-file (promisor fetch).",
+  "min_bytes_default": 2000000,
+  "assets": [
+    {
+      "path": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_金样_v1.mp4",
+      "kind": "mp4",
+      "template_slugs": ["health-video-reference-tech-v1"],
+      "route_ids": ["health-mp4-full-v1", "product-mp4-full-v1"],
+      "portal": true,
+      "quality_role": "gold_reference_full"
+    },
+    {
+      "path": "production-library/templates/settled/health-video-reference-tech-v1/风热证_疾病科普视频_可编辑金样_v2.mp4",
+      "kind": "mp4",
+      "template_slugs": ["health-video-reference-tech-v1"],
+      "route_ids": [],
+      "portal": false,
+      "quality_role": "gold_reference_editable"
+    },
+    {
+      "path": "production-library/templates/settled/product-video-faithful-v1/辅酶Q10_商品培训视频_金样_v1.mp4",
+      "kind": "mp4",
+      "template_slugs": ["product-video-faithful-v1"],
+      "route_ids": ["product-mp4-full-v1"],
+      "portal": true,
+      "quality_role": "gold_reference_full"
+    },
+    {
+      "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_v2.mp4",
+      "kind": "mp4",
+      "template_slugs": ["fuler-fanqiehongsu-product-courseware-4-v1"],
+      "route_ids": [],
+      "portal": false,
+      "quality_role": "gold_reference_full"
+    },
+    {
+      "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_v2.mp4",
+      "kind": "mp4",
+      "template_slugs": ["sufuda-mabaloshawei-product-courseware-3-v1"],
+      "route_ids": ["courseware3-mp4-v1"],
+      "portal": false,
+      "quality_role": "gold_reference_full"
+    },
+    {
+      "path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v2.pptx",
+      "kind": "pptx",
+      "template_slugs": ["sufuda-mabaloshawei-product-courseware-3-v1"],
+      "route_ids": ["courseware3-pptx-v1"],
+      "portal": false,
+      "quality_role": "canonical_template"
+    },
+    {
+      "path": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1/福尔番茄红素_商品培训课件4_金样_可编辑课件_v2.pptx",
+      "kind": "pptx",
+      "template_slugs": ["fuler-fanqiehongsu-product-courseware-4-v1"],
+      "route_ids": [],
+      "portal": false,
+      "quality_role": "canonical_template"
+    },
+    {
+      "path": "production-library/templates/settled/product-courseware-component-v1/构件化商品培训_默认主路径_签样参考.pptx",
+      "kind": "pptx",
+      "template_slugs": ["product-courseware-component-v1"],
+      "route_ids": ["product-pptx-component-v1"],
+      "portal": false,
+      "quality_role": "canonical_template"
+    },
+    {
+      "path": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1/番茄红素_健康科普金样_v1.pptx",
+      "kind": "pptx",
+      "template_slugs": ["kangaisen-lycopene-health-edu-v1"],
+      "route_ids": ["ingredient-health-edu-pptx-v1"],
+      "portal": false,
+      "quality_role": "canonical_template"
+    },
+    {
+      "path": "production-library/templates/settled/disease-health-shenke-blue-v1/急性上呼吸道感染_疾病健康知识培训_可编辑金样_v3.pptx",
+      "kind": "pptx",
+      "template_slugs": ["disease-health-shenke-blue-v1"],
+      "route_ids": [],
+      "portal": false,
+      "quality_role": "canonical_template"
+    },
+    {
+      "path": "production-library/templates/settled/disease-health-shenke-blue-v1/generator/急性上呼吸道感染_疾病健康知识培训_可编辑金样_v3.pptx",
+      "kind": "pptx",
+      "template_slugs": ["disease-health-shenke-blue-v1"],
+      "route_ids": [],
+      "portal": false,
+      "quality_role": "canonical_template"
+    },
+    {
+      "path": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+      "kind": "pptx",
+      "template_slugs": ["disease-product-scenario-v1"],
+      "route_ids": ["product-pptx-disease-scenario-v1"],
+      "portal": false,
+      "quality_role": "canonical_template"
+    }
+  ]
+}

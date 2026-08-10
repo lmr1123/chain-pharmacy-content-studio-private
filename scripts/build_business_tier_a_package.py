@@ -682,9 +682,22 @@ def _build_full_package(
                 raise SystemExit(f"invalid portal_video_example for {slug}")
             source = (REPO / video_source).resolve()
             if REPO.resolve() not in source.parents or not source.is_file():
+                # Sparse business install: pull full-quality gold blob first.
+                try:
+                    if str(REPO / "scripts") not in sys.path:
+                        sys.path.insert(0, str(REPO / "scripts"))
+                    from ensure_gold_assets import ensure_path  # type: ignore
+
+                    source = ensure_path(video_source, root=REPO)
+                except Exception as exc:  # noqa: BLE001
+                    raise SystemExit(
+                        f"missing portal gold video for {slug}: {video_source} ({exc})"
+                    ) from exc
+            if not source.is_file():
                 raise SystemExit(
                     f"missing portal gold video for {slug}: {video_source}"
                 )
+            # Full-quality gold for portal recognition (gitignored duplicate).
             copy_file(source, dest_media / video_filename)
 
         # Business does not receive Word blanks/refs. Settled docx is only the

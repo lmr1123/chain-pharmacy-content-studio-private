@@ -91,7 +91,7 @@ def run(cmd: list[str], *, cwd: Path | None = None, check: bool = True) -> subpr
 
 
 def load_business_sparse_paths(root: Path) -> list[str]:
-    """Paths for cone sparse-checkout (quality-critical production only)."""
+    """Sparse patterns: production dirs + negations for on-demand gold media."""
     path = root / BUSINESS_SPARSE_REL
     if not path.is_file():
         return []
@@ -101,6 +101,18 @@ def load_business_sparse_paths(root: Path) -> list[str]:
         if not text or text.startswith("#"):
             continue
         paths.append(text)
+    # Exclude large gold MP4/PPTX from initial checkout; ensure_gold_assets
+    # materializes full-quality blobs on first use.
+    try:
+        if str(root / "scripts") not in sys.path:
+            sys.path.insert(0, str(root / "scripts"))
+        from ensure_gold_assets import sparse_negation_patterns  # type: ignore
+
+        for pattern in sparse_negation_patterns(root):
+            if pattern not in paths:
+                paths.append(pattern)
+    except Exception as exc:  # noqa: BLE001 — install must not die on optional module
+        print(f"警告：无法加载 on-demand 金样清单，sparse 不排除大文件: {exc}")
     return paths
 
 
@@ -345,8 +357,15 @@ def _package_media_incomplete(root: Path, package_root: Path) -> bool:
     for dest, settled in pairs:
         if dest.is_file():
             continue
-        if settled.is_dir() and any(settled.glob("*.mp4")):
-            return True
+        # Settled gold may be sparse-excluded; still treat as incomplete so
+        # package rebuild pulls full-quality portal gold after ensure.
+        if settled.is_dir() and (
+            any(settled.glob("*.mp4"))
+            or (root / "production-library/on-demand-gold-assets.json").is_file()
+        ):
+            # Only if this install has the catalog (production), not empty fixtures.
+            if (root / "production-library/templates/settled/business-catalog.json").is_file():
+                return True
     return False
 
 
@@ -369,6 +388,14 @@ def ensure_package(
             else "业务包金样视频未生成（仓库不跟踪重复 gold.mp4）"
         )
         print(f"{reason}，尝试重建业务包…")
+        # Portal gold videos: pull full-quality settled sources first if sparse.
+        ensure_script = root / "scripts" / "ensure_gold_assets.py"
+        if ensure_script.is_file():
+            run(
+                [sys.executable, str(ensure_script), "--portal"],
+                cwd=root,
+                check=False,
+            )
         result = run([sys.executable, str(build)], cwd=root, check=False)
         if result.returncode != 0:
             # Hard-fail only when we have no portal at all.

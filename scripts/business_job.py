@@ -535,6 +535,27 @@ def cmd_recommend(args: argparse.Namespace) -> int:
     return 0 if result.get("decision") == "recommended" else 2
 
 
+def _ensure_route_gold_assets(route: dict[str, Any]) -> None:
+    """Pull full-quality gold MP4/PPTX for this route if sparse-excluded."""
+    try:
+        from ensure_gold_assets import ensure_for_route, ensure_for_template
+    except ImportError:
+        return
+    route_id = str(route.get("route_id") or "")
+    slug = str(route.get("template_slug") or "")
+    try:
+        if route_id:
+            ensure_for_route(route_id, root=ROOT)
+        if slug:
+            ensure_for_template(slug, root=ROOT)
+    except (FileNotFoundError, RuntimeError, OSError) as exc:
+        raise SystemExit(
+            f"按需拉取金样失败（成片需要全质量模板/对照）：{exc}\n"
+            "请检查网络后重试，或执行：python3 scripts/ensure_gold_assets.py "
+            f"--route {route_id or slug}"
+        ) from exc
+
+
 def cmd_new(args: argparse.Namespace) -> int:
     route = get_route(args.route)
     if not route.get("active") and not args.force:
@@ -544,6 +565,8 @@ def cmd_new(args: argparse.Namespace) -> int:
     theme = (args.theme or "").strip()
     if not theme:
         raise SystemExit("--theme 必填（商品名/病名/主题）")
+
+    _ensure_route_gold_assets(route)
 
     job_id = args.job_id or make_job_id(route["route_id"], theme)
     path = job_dir(job_id)
@@ -2892,6 +2915,7 @@ def cmd_draft(args: argparse.Namespace) -> int:
     if job.get("state") in {"rendering"}:
         raise SystemExit("任务正在生成，不能重写草稿；请等结束后再 draft 或新开任务")
 
+    _ensure_route_gold_assets(route)
     result = ADAPTER_DRAFT[adapter](job, route)
     job["draft"] = result
     transition(job, "draft_ready", reason="draft generated")
@@ -5112,6 +5136,8 @@ def cmd_render(args: argparse.Namespace) -> int:
     adapter = route.get("adapter")
     if adapter not in ADAPTER_RENDER:
         raise SystemExit(f"route adapter 未实现 render: {adapter}")
+
+    _ensure_route_gold_assets(route)
 
     ready, missing_gates = _approvals_ready(job, route)
     if not ready:

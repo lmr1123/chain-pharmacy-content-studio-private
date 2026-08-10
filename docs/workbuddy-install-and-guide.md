@@ -21,14 +21,16 @@
 下面所有命令都由 WorkBuddy 执行，不得让业务登录 GitHub、配置 SSH、提供 token 或自己敲命令。
 
 ```bash
-# 首次：由 bootstrap 执行（业务 sparse + depth 1；保留金样/构件库/视频 kit）
-# 等价效果：不检出 poc/reference-replica、validation 等 research 目录
+# 首次：由 bootstrap 执行（业务 sparse + depth 1）
+# · 构件库/引擎/视频 kit 完整保留（成片质量）
+# · 大体积金样 MP4/PPTX 默认不检出；首次选该课型时按需 git 拉取全质量文件
+# · 不检出 validation、poc/reference-replica 等 research 目录
 git clone --depth 1 --filter=blob:none --sparse \
   https://github.com/lmr1123/chain-pharmacy-content-studio-private.git \
   ~/Documents/chain-pharmacy-content-studio-private
 cd ~/Documents/chain-pharmacy-content-studio-private
 python3 scripts/workbuddy_bootstrap_for_business.py
-# bootstrap 会应用 distribution/business-sparse-checkout.txt 并重建门户
+# bootstrap 应用 sparse + 按需金样清单；门户预览片在重建包时拉取
 
 # 已安装
 cd ~/Documents/chain-pharmacy-content-studio-private
