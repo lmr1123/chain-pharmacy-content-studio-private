@@ -326,6 +326,50 @@ def copy_file(src: Path, dest: Path) -> None:
     shutil.copy2(src, dest)
 
 
+# Portal preview only: shrink for install size. Production still uses
+# assets/component-library + settled gold PPTX/MP4 (full quality).
+PORTAL_PREVIEW_MAX_EDGE = 1280
+PORTAL_PREVIEW_PNG_COMPRESS = 6
+
+
+def copy_portal_preview_image(src: Path, dest: Path) -> None:
+    """Copy key-frame/cover into business portal as optimized PNG.
+
+    Does not touch settled/ or component-library sources used for rendering.
+    """
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    if src.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp"}:
+        copy_file(src, dest)
+        return
+    try:
+        from PIL import Image  # type: ignore
+    except ImportError:
+        copy_file(src, dest)
+        return
+    try:
+        with Image.open(src) as image:
+            image = image.convert("RGBA") if image.mode in ("P", "LA") else image
+            w, h = image.size
+            longest = max(w, h)
+            if longest > PORTAL_PREVIEW_MAX_EDGE:
+                scale = PORTAL_PREVIEW_MAX_EDGE / float(longest)
+                image = image.resize(
+                    (max(1, int(w * scale)), max(1, int(h * scale))),
+                    Image.Resampling.LANCZOS,
+                )
+            # Keep .png extension (portal HTML hardcodes cover.png / key-XX.png).
+            if image.mode not in ("RGB", "RGBA"):
+                image = image.convert("RGBA")
+            image.save(
+                dest,
+                format="PNG",
+                optimize=True,
+                compress_level=PORTAL_PREVIEW_PNG_COMPRESS,
+            )
+    except OSError:
+        copy_file(src, dest)
+
+
 def prepare_package_directory() -> None:
     """Refresh generated files without deleting local business payloads."""
     if PKG.is_symlink():
@@ -376,7 +420,12 @@ def _copy_mode_media_file(
     source = (REPO / source_value).resolve()
     if REPO.resolve() not in source.parents or not source.is_file():
         raise SystemExit(f"missing portal {kind} for {mode_id}: {source}")
-    copy_file(source, destination_root / filename)
+    dest = destination_root / filename
+    if source.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}:
+        copy_portal_preview_image(source, dest)
+    else:
+        # Video examples stay full quality for portal recognition of production modes.
+        copy_file(source, dest)
 
 
 def copy_portal_mode_media() -> None:
@@ -611,13 +660,14 @@ def _build_full_package(
             raise SystemExit(f"missing preview for {slug}")
         dest_media = shelf / "media" / slug
         dest_media.mkdir(parents=True)
-        copy_file(src_preview / "cover.png", dest_media / "cover.png")
+        # Portal thumbs only — full-fidelity assets stay in settled/component-library.
+        copy_portal_preview_image(src_preview / "cover.png", dest_media / "cover.png")
         labels = t.get("key_frame_labels_zh") or []
         for i in range(1, len(labels) + 1):
             kp = src_preview / f"key-{i:02d}.png"
             if not kp.is_file():
                 raise SystemExit(f"missing {kp}")
-            copy_file(kp, dest_media / f"key-{i:02d}.png")
+            copy_portal_preview_image(kp, dest_media / f"key-{i:02d}.png")
 
         video_example = t.get("portal_video_example") or {}
         video_filename = str(video_example.get("filename") or "").strip()
