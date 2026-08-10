@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated": "2026-08-09",
   "purpose": "业务模板货架单一数据源；由 sync_settled_template_previews.py 生成",
   "templates": [
@@ -14,10 +14,10 @@
       "category": "疾病科普",
       "capabilities": {
         "gold_viewable": true,
-        "content_draft": true,
-        "new_theme_preview": true,
+        "content_draft": false,
+        "new_theme_preview": false,
         "new_theme_pptx": false,
-        "new_theme_mp4": true,
+        "new_theme_mp4": false,
         "business_selfserve": false
       },
       "requirements": [
@@ -27,19 +27,23 @@
         "正式 voice_id"
       ],
       "blockers": [
-        "正式出片前必须完成主题画面审批",
-        "当前机器须通过 video_full 环境检查"
+        "正式换主题生产路线尚未激活"
       ],
       "production_ready": false,
-      "status_label": "可开始草稿 · 正式出片需环境与审批",
-      "status_note": "金样可查看；换病种先整理审核稿与主题包，内容和画面确认后，且本机 video_full 通过才生成正式 MP4。",
+      "status_label": "尚未开放 · 当前不可生成 · 金样可查看",
+      "status_note": "金样、结构和填写参考可以复用；正式换主题生产路线尚未激活，不承诺生成正式成品。",
+      "capabilities_note_zh": null,
+      "shelf_group": "other",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
       "key_frame_labels_zh": [
-        "开场",
-        "典型症状",
-        "病因机理",
-        "治疗思路",
-        "用药建议",
-        "总结"
+        "母版角色",
+        "症状页",
+        "机理页",
+        "开场帧",
+        "机理帧",
+        "治疗帧"
       ],
       "voice_id": "voice.reference-pharmacist-qwen-v1",
       "blank_word": "业务提交_空白模板.docx",
@@ -61,7 +65,7 @@
         "new_theme_preview": true,
         "new_theme_pptx": false,
         "new_theme_mp4": true,
-        "business_selfserve": false
+        "business_selfserve": true
       },
       "requirements": [
         "完整 8 段审核稿",
@@ -70,20 +74,22 @@
         "video_full",
         "正式 voice_id"
       ],
-      "blockers": [
-        "内容/包装/授权凭证未完成哈希审批时只能生成草稿预览",
-        "当前机器须通过 video_full 环境检查"
-      ],
-      "production_ready": false,
-      "status_label": "可开始草稿 · 审批与环境通过后出片",
-      "status_note": "金样可查看；业务先确认完整 8 段脚本、分镜、包装图和授权凭证，哈希审批匹配且本机 video_full 通过后才生成正式 MP4。",
+      "blockers": [],
+      "production_ready": true,
+      "status_label": "正式路线 · MP4 可生成",
+      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+      "capabilities_note_zh": null,
+      "shelf_group": "other",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
       "key_frame_labels_zh": [
-        "开场",
-        "品牌/品类",
-        "核心功效",
-        "产品特点",
-        "适宜人群",
-        "联合用药"
+        "讲师页",
+        "图文讲解",
+        "包装主视觉",
+        "概览",
+        "功效",
+        "证据"
       ],
       "voice_id": "voice.reference-pharmacist-qwen-v1",
       "blank_word": "业务提交_空白模板.docx",
@@ -92,9 +98,9 @@
     },
     {
       "slug": "product-courseware-component-v1",
-      "name_zh": "构件化商品培训 PPT（默认主路径）",
-      "one_liner": "金样构件 recipe：封面/痛点/功效/特点/人群/联合/总结/注意 · 任意大纲进",
-      "gallery_title_zh": "构件化商品培训 · recipe 主路径",
+      "name_zh": "灵活构件商品培训 PPT（兜底）",
+      "one_liner": "未命中 5/18/13/20 页固定课型时使用；按审核大纲动态编排",
+      "gallery_title_zh": "灵活构件商品培训 · 兜底路线",
       "outputs": [
         "可编辑 PPTX"
       ],
@@ -109,21 +115,113 @@
       },
       "requirements": [
         "内容初稿确认",
+        "业务授权正式包装图",
+        "素材计划全部就绪",
+        "完整逐页视觉 QA",
         "pptx_export"
       ],
       "blockers": [],
       "production_ready": true,
-      "status_label": "默认主路径 · 确认后生成可编辑 PPTX",
-      "status_note": "正式默认：script.structured → generate_courseware → courseware-pptx-v1。金样构件组合，文案只取自业务脚本；无授权包装用占位槽。绿色五页壳为兼容路线。",
+      "status_label": "灵活构件兜底 · PPTX 可生成",
+      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。 旧 12 页仅为结构冒烟，不是金样；业务预览与能力验收以 A/B/C 非金样套件为准。",
+      "capabilities_note_zh": "gold_viewable 为旧兼容键，仅表示 A/B/C 非金样预览可查看；旧 12 页结构冒烟稿不是金样。",
+      "shelf_group": "default-general",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": "至少 3 套正式差异化非金样 UAT 已通过逐页 QA、来源、页型组合、色彩、构图与文件哈希门闸。",
+      "preview_suite_evidence": {
+        "schema": "component-portal-preview-suite-qa-v3",
+        "case_count": 3,
+        "style_pack_id": "style-pack.reference-product-blue-v1",
+        "style_label_zh": "统一浅蓝商品培训视觉",
+        "settled_capability_labels_zh": [
+          "绿色商品培训 5 页",
+          "疾病 + 商品场景 18 页",
+          "商品培训课件3 13 页"
+        ],
+        "new_page_types": [
+          "objection_handling"
+        ],
+        "cases": [
+          {
+            "case_id": "case-a",
+            "suite_slot": "A",
+            "name_zh": "三课型资料核验组合",
+            "source_job_id": "uat-component-suite-a-20260810-r4",
+            "page_count": 7,
+            "source_capability_labels_zh": [
+              "绿色商品培训 5 页",
+              "疾病 + 商品场景 18 页",
+              "商品培训课件3 13 页"
+            ],
+            "page_type_sequence": [
+              "courseware_cover",
+              "hook_intro",
+              "product_overview",
+              "consultation_framework",
+              "evidence_ladder",
+              "objection_handling",
+              "summary_matrix"
+            ],
+            "new_page_types": [
+              "objection_handling"
+            ],
+            "representative_page_number": 4,
+            "representative_page_type": "consultation_framework",
+            "portal_media_index": 1
+          },
+          {
+            "case_id": "case-b",
+            "suite_slot": "B",
+            "name_zh": "双课型陈列核验组合",
+            "source_job_id": "uat-component-suite-b-20260810-r4",
+            "page_count": 6,
+            "source_capability_labels_zh": [
+              "商品培训课件3 13 页",
+              "绿色商品培训 5 页"
+            ],
+            "page_type_sequence": [
+              "courseware_cover",
+              "hook_pain_data",
+              "evidence_ladder",
+              "product_overview",
+              "objection_handling",
+              "summary_matrix"
+            ],
+            "new_page_types": [
+              "objection_handling"
+            ],
+            "representative_page_number": 2,
+            "representative_page_type": "hook_pain_data",
+            "portal_media_index": 2
+          },
+          {
+            "case_id": "case-c",
+            "suite_slot": "C",
+            "name_zh": "双课型交接路径组合",
+            "source_job_id": "uat-component-suite-c-20260810-r4",
+            "page_count": 5,
+            "source_capability_labels_zh": [
+              "疾病 + 商品场景 18 页",
+              "商品培训课件3 13 页"
+            ],
+            "page_type_sequence": [
+              "courseware_cover",
+              "hook_intro",
+              "consultation_framework",
+              "summary_matrix",
+              "evidence_ladder"
+            ],
+            "new_page_types": [],
+            "representative_page_number": 4,
+            "representative_page_type": "summary_matrix",
+            "portal_media_index": 3
+          }
+        ]
+      },
       "key_frame_labels_zh": [
-        "封面",
-        "痛点与数据",
-        "核心功效",
-        "产品特点",
-        "适宜人群",
-        "联合用药",
-        "总结",
-        "注意事项"
+        "三课型资料核验组合 · 差异化关键页",
+        "双课型陈列核验组合 · 差异化关键页",
+        "双课型交接路径组合 · 差异化关键页"
       ],
       "voice_id": null,
       "blank_word": "业务提交_空白模板.docx",
@@ -132,8 +230,8 @@
     },
     {
       "slug": "product-courseware-green-v1",
-      "name_zh": "绿色单品 PPT（已下线）",
-      "one_liner": "已下线（绿色五页固定壳）；请改用构件化商品培训 PPT",
+      "name_zh": "绿色单品 PPT（如金银花露）",
+      "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意",
       "gallery_title_zh": "绿色商品培训 · 5 页",
       "outputs": [
         "可编辑 PPTX"
@@ -141,21 +239,28 @@
       "category": "商品培训",
       "capabilities": {
         "gold_viewable": true,
-        "content_draft": false,
-        "new_theme_preview": false,
-        "new_theme_pptx": false,
+        "content_draft": true,
+        "new_theme_preview": true,
+        "new_theme_pptx": true,
         "new_theme_mp4": false,
-        "business_selfserve": false
+        "business_selfserve": true
       },
       "requirements": [
-        "改用 product-pptx-component-v1"
+        "完整 5 页审核稿",
+        "本品/搭档/竞品授权图片",
+        "4 张正式注意事项插图",
+        "内容/商品图/视觉确认",
+        "pptx_export"
       ],
-      "blockers": [
-        "绿色五页壳已下线；新任务请用「构件化商品培训 PPT」（product-pptx-component-v1）"
-      ],
-      "production_ready": false,
-      "status_label": "已下线 · 仅金样可查看",
-      "status_note": "2026-08-09 下线业务自助。金样可查看；换主题请走构件化主路径 product-pptx-component-v1。",
+      "blockers": [],
+      "production_ready": true,
+      "status_label": "已签样标准课型 · PPTX 可生成",
+      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+      "capabilities_note_zh": null,
+      "shelf_group": "signed-standard",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
       "key_frame_labels_zh": [
         "封面/介绍",
         "卖点与人群",
@@ -180,21 +285,27 @@
       "capabilities": {
         "gold_viewable": true,
         "content_draft": true,
-        "new_theme_preview": false,
-        "new_theme_pptx": false,
+        "new_theme_preview": true,
+        "new_theme_pptx": true,
         "new_theme_mp4": false,
-        "business_selfserve": false
+        "business_selfserve": true
       },
       "requirements": [
-        "内容初稿确认",
-        "统一业务 adapter"
+        "完整 18 页审核稿",
+        "疾病/商品/两组场景/权重商品字段",
+        "全部正式图片",
+        "内容/商品图/视觉确认",
+        "pptx_export"
       ],
-      "blockers": [
-        "换主题业务 adapter 尚未接入统一入口"
-      ],
-      "production_ready": false,
-      "status_label": "金样可查看 · 换主题入口待接线",
-      "status_note": "可查看穿心莲金样和填写参考；当前仅开放内容草稿，不承诺业务自助生成正式 PPTX。",
+      "blockers": [],
+      "production_ready": true,
+      "status_label": "已签样标准课型 · PPTX 可生成",
+      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+      "capabilities_note_zh": null,
+      "shelf_group": "signed-standard",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
       "key_frame_labels_zh": [
         "封面",
         "辨证/知识",
@@ -209,11 +320,10 @@
     },
     {
       "slug": "sufuda-mabaloshawei-product-courseware-3-v1",
-      "name_zh": "商品培训课件3（视频+PPT，速福达壳）",
-      "one_liner": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型",
+      "name_zh": "商品培训课件3（可编辑 PPT，速福达标准课型）",
+      "one_liner": "复用速福达金样的 12 个内容单元，生成 13 页新主题可编辑 PPTX",
       "gallery_title_zh": "商品培训课件3 · 速福达金样",
       "outputs": [
-        "MP4",
         "可编辑 PPTX"
       ],
       "category": "商品培训",
@@ -222,22 +332,25 @@
         "content_draft": true,
         "new_theme_preview": true,
         "new_theme_pptx": true,
-        "new_theme_mp4": true,
-        "business_selfserve": false
+        "new_theme_mp4": false,
+        "business_selfserve": true
       },
       "requirements": [
-        "内容初稿确认",
-        "授权包装/Logo",
-        "pptx_export",
-        "video_full"
+        "12 个主题内容单元（导出为 13 页 PPTX）",
+        "6 类业务授权包装/Logo",
+        "23 个主题插图显式绑定",
+        "内容/商品图/视觉确认",
+        "pptx_export"
       ],
-      "blockers": [
-        "正式 MP4 取决于克隆 TTS 与 video_full",
-        "包装/Logo 必须为业务授权原图"
-      ],
-      "production_ready": false,
-      "status_label": "可开始草稿 · PPT/视频按本机能力生成",
-      "status_note": "金样 v2 已归档；先审内容和包装，PPTX/MP4 分别要求本机通过 pptx_export/video_full。",
+      "blockers": [],
+      "production_ready": true,
+      "status_label": "已签样标准课型 · PPTX 可生成",
+      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+      "capabilities_note_zh": null,
+      "shelf_group": "signed-standard",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
       "key_frame_labels_zh": [
         "封面",
         "流感背景",
@@ -252,6 +365,53 @@
       "settled_dir": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1"
     },
     {
+      "slug": "kangaisen-lycopene-health-edu-v1",
+      "name_zh": "番茄红素成分健康科普 PPT（米白番茄红）",
+      "one_liner": "20 页成分健康科普：定义与来源、抗氧化机制、健康研究、吸收指南与应用；独立米白番茄红课型，不是福尔课件4",
+      "gallery_title_zh": "番茄红素成分健康科普 · 20 页米白番茄红金样",
+      "outputs": [
+        "可编辑 PPTX"
+      ],
+      "category": "成分健康科普",
+      "capabilities": {
+        "gold_viewable": true,
+        "content_draft": true,
+        "new_theme_preview": true,
+        "new_theme_pptx": true,
+        "new_theme_mp4": false,
+        "business_selfserve": true
+      },
+      "requirements": [
+        "完整 20 页成分健康科普审核稿",
+        "成分定义/来源/机制/研究/补充指南字段",
+        "药师与合规终审",
+        "全部正式图片及版权/授权",
+        "内容/素材/视觉确认",
+        "pptx_export"
+      ],
+      "blockers": [],
+      "production_ready": true,
+      "status_label": "已签样标准课型 · PPTX 可生成",
+      "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+      "capabilities_note_zh": null,
+      "shelf_group": "signed-standard",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
+      "key_frame_labels_zh": [
+        "成分定义",
+        "抗氧化能力",
+        "健康研究",
+        "吸收指南",
+        "目录结构"
+      ],
+      "voice_id": null,
+      "blank_word": "业务提交_空白模板.docx",
+      "filled_example": "业务提交_填写参考.docx",
+      "template_id": "template.kangaisen-lycopene-health-edu-v1",
+      "settled_dir": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1"
+    },
+    {
       "slug": "fuler-fanqiehongsu-product-courseware-4-v1",
       "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）",
       "one_liner": "保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）",
@@ -263,7 +423,7 @@
       "category": "商品培训",
       "capabilities": {
         "gold_viewable": true,
-        "content_draft": true,
+        "content_draft": false,
         "new_theme_preview": false,
         "new_theme_pptx": false,
         "new_theme_mp4": false,
@@ -273,11 +433,16 @@
         "courseware4 换主题 adapter"
       ],
       "blockers": [
-        "课件4整片导出器换主题未接线；新主题请走 product-pptx-component-v1（构件 recipe 主路径）"
+        "课件4换主题 CLI 尚未接线；当前仅提供金样预览"
       ],
       "production_ready": false,
       "status_label": "仅金样预览 · 换主题入口待接线",
-      "status_note": "金样 v2 可查看。换主题正式生产请用业务路线 product-pptx-component-v1（courseware-pptx-v1 引擎），勿走本条目。",
+      "status_note": "金样 v2 MP4/PPTX 可查看；当前换主题 CLI 未接线，不承诺生成新主题正式成品。",
+      "capabilities_note_zh": null,
+      "shelf_group": "other",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
       "key_frame_labels_zh": [
         "封面",
         "商品介绍",
@@ -302,7 +467,7 @@
       "category": "健康培训",
       "capabilities": {
         "gold_viewable": true,
-        "content_draft": true,
+        "content_draft": false,
         "new_theme_preview": false,
         "new_theme_pptx": false,
         "new_theme_mp4": false,
@@ -318,7 +483,13 @@
       "production_ready": false,
       "status_label": "金样可查看 · 换病种入口待接线",
       "status_note": "参课蓝 v3 金样可查看；当前可先整理审核内容，不承诺业务自助生成新病种正式 PPTX。",
+      "capabilities_note_zh": null,
+      "shelf_group": "other",
+      "preview_identity_qualified": true,
+      "preview_identity_note_zh": null,
+      "preview_suite_evidence": null,
       "key_frame_labels_zh": [
+        "封面",
         "疾病概览",
         "临床表现",
         "对症用药表",

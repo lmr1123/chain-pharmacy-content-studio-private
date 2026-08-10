@@ -63,7 +63,215 @@ def image_layer(
     }
 
 
+def _asset_key(value: object) -> str:
+    if isinstance(value, dict):
+        return str(value.get("file") or value.get("src") or value.get("asset") or "")
+    return str(value or "")
+
+
+def build_component(model: dict, prefix: str) -> dict:
+    """Build a manifest from explicit component-model fields only."""
+    layers: list[dict] = []
+    pages: list[dict] = []
+
+    def add_text(sid: str, role: str, value: object, replace: str = "theme_copy") -> None:
+        if value is not None and str(value) != "":
+            layers.append(text_layer(prefix, sid, role, str(value), replace))
+
+    def add_image(
+        sid: str,
+        role: str,
+        value: object,
+        slot: str,
+        replace: str = "theme_illustration",
+    ) -> None:
+        key = _asset_key(value)
+        if key:
+            layers.append(image_layer(prefix, sid, role, key, slot, replace))
+
+    for sc in model.get("scenes") or []:
+        sid = sc["id"]
+        stype = sc.get("type", "")
+        pages.append(
+            {
+                "id": sid,
+                "type": stype,
+                "layer": sc.get("layer", "generator_component"),
+                "start": sc.get("start"),
+                "end": sc.get("end"),
+                "pptx_slide": True,
+                "video_scene": False,
+            }
+        )
+
+        if stype == "cover":
+            add_text(sid, "title_pill", sc.get("title_pill"))
+            add_text(sid, "subtitle", sc.get("subtitle"))
+            add_text(sid, "badge", sc.get("badge"))
+            add_text(sid, "stage_tag", sc.get("stage_tag"))
+            for index, value in enumerate(sc.get("cover_points") or [], 1):
+                label = value if isinstance(value, str) else value.get("text") or value.get("label")
+                add_text(sid, f"cover_point.{index}", label)
+            for index, value in enumerate(sc.get("benefits") or [], 1):
+                add_text(sid, f"benefit.{index}", value)
+            add_image(
+                sid,
+                "product_packshot",
+                sc.get("product_packshot"),
+                "slot.pack.product",
+                "business_authorized",
+            )
+        elif stype == "time_list":
+            add_text(sid, "card_title", sc.get("card_title"))
+            for index, value in enumerate(sc.get("list") or [], 1):
+                add_text(sid, f"list.{index}", value)
+        elif stype in ("broll", "product_intro"):
+            add_image(
+                sid,
+                "visual",
+                sc.get("visual") or sc.get("photo") or sc.get("product_packshot"),
+                "slot.visual.primary",
+            )
+        elif stype == "benefit_chain":
+            add_text(sid, "chapter", sc.get("chapter"))
+            add_text(sid, "section", sc.get("section"))
+            for index, item in enumerate(sc.get("chain") or sc.get("chain_items") or [], 1):
+                role = item.get("role") if isinstance(item, dict) else f"chain.{index}"
+                add_image(sid, str(role or f"chain.{index}"), item, f"slot.illu.chain.{index}")
+        elif stype in ("feature_origin", "feature_material", "feature_content"):
+            add_text(sid, "chapter", sc.get("chapter"))
+            add_text(sid, "section", sc.get("section"))
+            add_text(sid, "map_caption", sc.get("map_caption"))
+            add_text(sid, "body", sc.get("body"))
+            add_text(sid, "eq_caption", sc.get("eq_caption"))
+            add_image(sid, "visual", sc.get("visual"), "slot.visual.feature")
+        elif stype == "audience":
+            add_text(sid, "chapter", sc.get("chapter"))
+            for index, item in enumerate(sc.get("items") or [], 1):
+                label = item if isinstance(item, str) else item.get("label") or item.get("text")
+                add_text(sid, f"label.{index}", label)
+                if isinstance(item, dict):
+                    add_image(
+                        sid,
+                        f"icon.{index}",
+                        item.get("asset") or item.get("visual"),
+                        f"slot.illu.audience.{index}",
+                    )
+            add_image(sid, "visual", sc.get("visual"), "slot.visual.audience")
+            add_text(sid, "body", sc.get("body"))
+        elif stype in ("efficacy_recap_table", "summary_table"):
+            add_text(sid, "chapter", sc.get("chapter"))
+            for index, row in enumerate(sc.get("rows") or [], 1):
+                add_text(sid, f"row.{index}.label", row.get("label"))
+                add_text(sid, f"row.{index}.body", row.get("body"))
+        elif stype == "related_meds":
+            add_text(sid, "chapter", sc.get("chapter"))
+            add_text(sid, "note", sc.get("note"))
+            add_text(sid, "left_label", sc.get("left_label"))
+            add_text(sid, "right_label", sc.get("right_label"))
+            for index, value in enumerate(sc.get("nav") or [], 1):
+                add_text(sid, f"nav.{index}", value)
+            add_image(
+                sid,
+                "pack_left",
+                sc.get("left_pack"),
+                "slot.pack.primary",
+                "business_authorized",
+            )
+            add_image(
+                sid,
+                "pack_right",
+                sc.get("right_pack"),
+                "slot.pack.related",
+                "business_authorized",
+            )
+        elif stype in ("summary_4col", "summary_row_headers"):
+            add_text(sid, "chapter", sc.get("chapter"))
+            add_text(sid, "eyebrow", sc.get("eyebrow"))
+            add_text(sid, "footer", sc.get("footer"))
+            for index, column in enumerate(sc.get("columns") or [], 1):
+                add_text(sid, f"row.{index}.label", column.get("header"))
+                add_text(sid, f"row.{index}.body", "\n".join(column.get("items") or []))
+        elif stype == "product_overview":
+            add_text(sid, "chapter", sc.get("chapter"))
+            add_text(sid, "statement", sc.get("statement"))
+            add_image(
+                sid,
+                "product_packshot",
+                sc.get("product_packshot"),
+                "slot.pack.product",
+                "business_authorized",
+            )
+            for index, fact in enumerate(sc.get("facts") or [], 1):
+                add_text(sid, f"fact.{index}.label", fact.get("label"))
+                add_text(sid, f"fact.{index}.value", fact.get("value"))
+        elif stype == "consultation_framework":
+            add_text(sid, "chapter", sc.get("chapter"))
+            for index, step in enumerate(sc.get("steps") or [], 1):
+                add_text(sid, f"step.{index}.question", step.get("question"))
+                add_text(sid, f"step.{index}.why", step.get("why"))
+        elif stype == "evidence_ladder":
+            add_text(sid, "chapter", sc.get("chapter"))
+            for index, item in enumerate(sc.get("items") or [], 1):
+                add_text(sid, f"item.{index}.metric", item.get("metric"))
+                add_text(sid, f"item.{index}.label", item.get("label"))
+                add_text(sid, f"item.{index}.source", item.get("source"))
+        elif stype == "objection_handling":
+            add_text(sid, "chapter", sc.get("chapter"))
+            for index, row in enumerate(sc.get("rows") or [], 1):
+                add_text(sid, f"row.{index}.objection", row.get("objection"))
+                add_text(sid, f"row.{index}.response", row.get("response"))
+                add_text(sid, f"row.{index}.boundary", row.get("boundary"))
+        elif stype == "hook_pain_data":
+            add_text(sid, "chapter", sc.get("chapter") or sc.get("title"))
+            add_text(sid, "section", sc.get("section"))
+            for index, chip in enumerate(sc.get("symptoms") or sc.get("chips") or [], 1):
+                add_text(sid, f"chip.{index}", chip if isinstance(chip, str) else chip.get("text"))
+            for index, stat in enumerate(sc.get("stats") or [], 1):
+                add_text(sid, f"stat{index}.number", stat.get("number", stat.get("value")))
+                add_text(sid, f"stat{index}.unit", stat.get("unit"))
+                add_text(sid, f"stat{index}.note", stat.get("note"))
+            add_text(sid, "source", sc.get("source"))
+        elif stype == "combination_guidance":
+            add_text(sid, "chapter", sc.get("chapter"))
+            add_text(sid, "section", sc.get("section"))
+            for index, row in enumerate(sc.get("rows") or sc.get("items") or [], 1):
+                add_text(sid, f"row.{index}.scenario", row.get("problem") or row.get("scenario"))
+                add_text(sid, f"row.{index}.partner", row.get("partner") or row.get("product"))
+                add_text(sid, f"row.{index}.talk", row.get("talk_track") or row.get("body"))
+                add_image(sid, f"row.{index}.icon", row.get("icon"), f"slot.illu.combo.{index}")
+        elif stype == "precautions":
+            add_text(sid, "chapter", sc.get("chapter"))
+            add_text(sid, "section", sc.get("section"))
+            for index, item in enumerate(sc.get("items") or sc.get("list") or [], 1):
+                add_text(sid, f"item.{index}", item if isinstance(item, str) else item.get("text"))
+            for index, item in enumerate(sc.get("illustrations") or sc.get("images") or [], 1):
+                role = "illo.wide" if isinstance(item, dict) and item.get("wide") else f"illo.{index}"
+                add_image(sid, role, item, f"slot.illu.precaution.{index}")
+
+        subtitles = sc.get("subtitles") or []
+        if subtitles:
+            add_text(sid, "subtitle_sample", subtitles[-1].get("text"), "system")
+
+    return {
+        "project_id": model.get("project_id", "unknown"),
+        "template_id": model.get("template_id") or model.get("project_id"),
+        "status": "editable-delivery",
+        "engine": "courseware-pptx-v1",
+        "element_id_prefix": prefix,
+        "content_model": "content-model.json",
+        "channels": ["pptx"],
+        "layer_count": len(layers),
+        "pages": pages,
+        "layers": layers,
+        "experience": model.get("experience_settled"),
+    }
+
+
 def build(model: dict, prefix: str) -> dict:
+    if model.get("style_pack_id") != "style-pack.courseware-4-silk-yellow-red-v1":
+        return build_component(model, prefix)
+
     layers: list[dict] = []
     pages: list[dict] = []
 

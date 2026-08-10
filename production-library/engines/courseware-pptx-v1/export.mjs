@@ -8,14 +8,14 @@
  *   --recipes optional recipes dir or map json (M3; reserved)
  *   --out     output .pptx
  *   --assets  assets root (default: dirname of model)
- *   --prefix  element id prefix (default: editable:cw4)
+ *   --prefix  element id prefix (default: editable:component)
  *
  * artifact-tool is resolved from repo root absolute path (not relative to this file alone).
  *
  * Usage:
  *   node production-library/engines/courseware-pptx-v1/export.mjs \
  *     --model production-library/validation/courseware/product-courseware-4-faithful-replica-v1/content-model.json \
- *     --style production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json \
+ *     --style production-library/styles/reference-product-blue-v1/tokens.json \
  *     --out /tmp/cw-engine-gold.pptx \
  *     --assets production-library/validation/courseware/product-courseware-4-faithful-replica-v1
  */
@@ -59,7 +59,7 @@ Required:
 Optional:
   --assets <dir>     default: dirname(model)
   --recipes <path>   recipes dir (default: page-types/product-training/recipes)
-  --prefix <id>      default: editable:cw4
+  --prefix <id>      default: editable:component
   --snapshot <json>  editor patches snapshot
 `);
   process.exit(0);
@@ -69,7 +69,7 @@ const modelPath = path.resolve(argValue('--model', ''));
 const stylePath = path.resolve(
   argValue(
     '--style',
-    path.join(REPO, 'production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json'),
+    path.join(REPO, 'production-library/styles/reference-product-blue-v1/tokens.json'),
   ),
 );
 const outPath = path.resolve(argValue('--out', path.join(ENGINE_ROOT, 'out', 'export.pptx')));
@@ -77,7 +77,7 @@ const assetsRoot = path.resolve(
   argValue('--assets', modelPath ? path.dirname(modelPath) : ENGINE_ROOT),
 );
 const recipesPath = path.resolve(argValue('--recipes', DEFAULT_RECIPES));
-const eidPrefix = argValue('--prefix', 'editable:cw4');
+const eidPrefix = argValue('--prefix', 'editable:component');
 const snapshotPath = argValue('--snapshot', '');
 
 if (!modelPath) {
@@ -93,10 +93,6 @@ const ARTIFACT_CANDIDATES = [
     'production-library/engines/product-courseware-green-v1/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs',
   ),
   path.join(REPO, 'poc/courseware-export/work/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs'),
-  path.join(
-    REPO,
-    'production-library/validation/courseware/product-courseware-4-faithful-replica-v1/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs',
-  ),
 ];
 
 async function importArtifactTool() {

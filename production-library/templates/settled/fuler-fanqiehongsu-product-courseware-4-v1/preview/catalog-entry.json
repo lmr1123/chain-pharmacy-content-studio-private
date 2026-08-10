@@ -10,7 +10,7 @@
   "category": "商品培训",
   "capabilities": {
     "gold_viewable": true,
-    "content_draft": true,
+    "content_draft": false,
     "new_theme_preview": false,
     "new_theme_pptx": false,
     "new_theme_mp4": false,
@@ -25,6 +25,11 @@
   "production_ready": false,
   "status_label": "仅金样预览 · 换主题入口待接线",
   "status_note": "金样 v2 MP4/PPTX 可查看；当前换主题 CLI 未接线，不承诺生成新主题正式成品。",
+  "capabilities_note_zh": null,
+  "shelf_group": "other",
+  "preview_identity_qualified": true,
+  "preview_identity_note_zh": null,
+  "preview_suite_evidence": null,
   "key_frame_labels_zh": [
     "封面",
     "商品介绍",

@@ -33,9 +33,12 @@ def load_entries() -> list[dict[str, Any]]:
         raw_items = [
             *registry.get("items", []),
             *registry.get("components", []),
+            *registry.get("modes", []),
         ]
         for raw_item in raw_items:
             item = dict(raw_item)
+            if "id" not in item and item.get("mode_id"):
+                item["id"] = item["mode_id"]
             item["_registry_type"] = registry_type
             item["_registry_path"] = relative_path
             item["_search_text"] = json.dumps(
@@ -83,7 +86,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--type",
-        help="template/theme/component/effect/style/voice/decision/lesson/asset-series/scene-recipe",
+        help="template/theme/component/effect/style/voice/business-mode/decision/lesson/asset-series/scene-recipe",
     )
     parser.add_argument("--tag", help="标签，例如：数字人、商品培训、扫描线")
     parser.add_argument("--style-pack", help="风格包 ID")

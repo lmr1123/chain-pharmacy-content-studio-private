@@ -1,0 +1,112 @@
+{
+  "template_id": "template.kangaisen-lycopene-health-edu-v1",
+  "template_type": "pptx-courseware",
+  "status": "user-approved-gold",
+  "revision": "2026-08-09-ooxml-production-v1",
+  "name_zh": "成分健康科普 · 米白番茄红 20 页标准课型",
+  "style_pack_id": "style-pack.lycopene-health-edu-cream-red-v1",
+  "template_family": "health-ingredient-edu-courseware",
+  "structured_input": "ingredient-health-edu-theme/v1",
+  "business_route_ids": [
+    "ingredient-health-edu-pptx-v1"
+  ],
+  "canonical_artifacts": {
+    "pptx": {
+      "path": "番茄红素_健康科普金样_v1.pptx",
+      "format": "pptx",
+      "slides": 20,
+      "sha256": "b5787a64b1febca3fb32f6b6037830cb4e768a362950a96c28b76baaefd227bc",
+      "role": "100% 原 OOXML 视觉与页型金样；参考医学正文不作为新主题已审核内容"
+    }
+  },
+  "canonical_confirmed_by": "user",
+  "canonical_confirmed_at": "2026-08-09",
+  "approval_scope": {
+    "framework_and_style": "approved-for-business-entry",
+    "page_structure": "approved-for-theme-extension",
+    "source_medical_copy": "reference-only-not-approved",
+    "source_reference_assets": "reference-only-forbidden-in-new-theme"
+  },
+  "content_status": "reference-copy-unapproved-for-reuse",
+  "generators": {
+    "pptx": "production-library/engines/ingredient-health-edu-pptx-v1/export.mjs",
+    "business_job": "scripts/business_job.py new --route ingredient-health-edu-pptx-v1 --theme <成分主题> --script-json <完整theme.json> --auto-draft"
+  },
+  "business_input": {
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "blank_source": "outputs/courseware-natural-import/成分健康科普_米白番茄红_业务提交_空白模板.docx",
+    "example_source": "outputs/courseware-natural-import/成分健康科普_米白番茄红_业务提交_填写参考.docx",
+    "machine_contract": "业务提交_字段契约.json",
+    "theme_schema": "ingredient-health-edu-theme/v1",
+    "text_slots": 107,
+    "slide_image_slots": 67,
+    "template_image_slots": 2,
+    "explicit_image_bindings": 69
+  },
+  "preview": {
+    "cover": "preview/cover.png",
+    "key_frames": [
+      "preview/key-01.png",
+      "preview/key-02.png",
+      "preview/key-03.png",
+      "preview/key-04.png",
+      "preview/key-05.png"
+    ],
+    "key_frame_labels_zh": [
+      "成分定义",
+      "抗氧化能力",
+      "健康研究",
+      "吸收指南",
+      "目录结构"
+    ],
+    "gallery_title_zh": "番茄红素成分健康科普 · 20 页米白番茄红金样",
+    "one_liner": "20 页成分健康科普：定义与来源、抗氧化机制、健康研究、吸收指南与应用；独立米白番茄红课型，不是福尔课件4",
+    "name_zh": "番茄红素成分健康科普 PPT（米白番茄红）",
+    "category_zh": "成分健康科普",
+    "outputs": [
+      "可编辑 PPTX"
+    ],
+    "capabilities": {
+      "gold_viewable": true,
+      "content_draft": true,
+      "new_theme_preview": true,
+      "new_theme_pptx": true,
+      "new_theme_mp4": false,
+      "business_selfserve": true
+    },
+    "requirements": [
+      "完整 20 页成分健康科普审核稿",
+      "成分定义/来源/机制/研究/补充指南字段",
+      "药师与合规终审",
+      "全部正式图片及版权/授权",
+      "内容/素材/视觉确认",
+      "pptx_export"
+    ],
+    "blockers": [],
+    "production_ready": true,
+    "status_label": "已签样标准课型 · PPTX 可生成",
+    "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+    "capabilities_note_zh": null,
+    "shelf_group": "signed-standard",
+    "preview_identity_qualified": true,
+    "preview_identity_note_zh": null,
+    "preview_suite_evidence": null,
+    "online_url": null
+  },
+  "notes": [
+    "本模板定位为成分/健康科普，不是福尔式单品卖点课件4。",
+    "新主题必须提交完整文字和授权图片；金样医学表述、剂量、功效和参考图片均不得继承。",
+    "正式引擎直接导入 canonical PPTX 并按 OOXML shape id 原位替换，不使用低保真 framework builder。",
+    "正式发布须通过 20 页 PNG、layout、montage、原生文本和源媒体 SHA 零残留 QA。"
+  ],
+  "business_catalog": {
+    "name_zh": "番茄红素成分健康科普 PPT（米白番茄红）",
+    "one_liner": "20 页成分健康科普：定义与来源、抗氧化机制、健康研究、吸收指南与应用；独立米白番茄红课型，不是福尔课件4",
+    "blank_word": "业务提交_空白模板.docx",
+    "filled_example": "业务提交_填写参考.docx",
+    "framework_guide": "../../框架填写说明.md",
+    "shelf_group": "signed-standard",
+    "template_id": "template.kangaisen-lycopene-health-edu-v1"
+  }
+}

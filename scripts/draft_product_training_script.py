@@ -698,6 +698,7 @@ CHROME_ALLOW = {
     "【专业力】",
     "style-pack.lycopene-health-edu-cream-red-v1",
     "style-pack.courseware-4-silk-yellow-red-v1",
+    "style-pack.reference-product-blue-v1",
     "style-pack.dashenlin-courseware-green-v1",
 }
 

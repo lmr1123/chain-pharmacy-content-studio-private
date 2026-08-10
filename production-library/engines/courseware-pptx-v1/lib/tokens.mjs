@@ -22,6 +22,7 @@ export async function loadStylePack(stylePath) {
   return {
     id: raw.style_pack_id,
     name_zh: raw.name_zh,
+    visual_grammar: raw.visual_grammar || raw.layout?.composition_grammar || 'legacy-centered',
     path: abs,
     raw,
     colors,

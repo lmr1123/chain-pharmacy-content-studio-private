@@ -1,0 +1,420 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "disease-product-scenario-script/v1",
+  "title": "Disease Product Scenario PPTX input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "meta", "pages", "agenda", "disease", "product", "weighted"],
+  "properties": {
+    "schema_version": {"const": "disease-product-scenario-script/v1"},
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["theme_id", "organization", "brand_label", "internal_notice"],
+      "properties": {
+        "theme_id": {"type": "string", "minLength": 1},
+        "gold_sample": {"type": "boolean", "default": false},
+        "organization": {"type": "string", "minLength": 1},
+        "brand_label": {"type": "string", "minLength": 1},
+        "internal_notice": {"type": "string", "minLength": 1},
+        "source_notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "pages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cover",
+        "opening",
+        "agenda",
+        "disease_definition",
+        "symptoms",
+        "comparison",
+        "treatment",
+        "subtypes",
+        "product_info",
+        "advantages",
+        "product_summary",
+        "audience",
+        "consultation",
+        "daily_care",
+        "weighted_comparison"
+      ],
+      "properties": {
+        "cover": {"$ref": "#/$defs/coverPage"},
+        "opening": {"$ref": "#/$defs/openingPage"},
+        "agenda": {"$ref": "#/$defs/page"},
+        "disease_definition": {"$ref": "#/$defs/imagePage"},
+        "symptoms": {"$ref": "#/$defs/page"},
+        "comparison": {"$ref": "#/$defs/page"},
+        "treatment": {"$ref": "#/$defs/page"},
+        "subtypes": {"$ref": "#/$defs/page"},
+        "product_info": {"$ref": "#/$defs/page"},
+        "advantages": {"$ref": "#/$defs/page"},
+        "product_summary": {"$ref": "#/$defs/page"},
+        "audience": {"$ref": "#/$defs/page"},
+        "consultation": {"$ref": "#/$defs/page"},
+        "daily_care": {"$ref": "#/$defs/page"},
+        "weighted_comparison": {"$ref": "#/$defs/page"}
+      }
+    },
+    "agenda": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["number", "title", "subtitle"],
+        "properties": {
+          "number": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "subtitle": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "disease": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "definition",
+        "definition_tags",
+        "symptoms",
+        "comparison",
+        "treatment_principles",
+        "subtypes"
+      ],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "definition": {"type": "string", "minLength": 1},
+        "definition_tags": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"type": "string"}},
+        "symptoms": {"type": "array", "minItems": 3, "maxItems": 4, "items": {"$ref": "#/$defs/namedImageCard"}},
+        "comparison": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["columns", "rows"],
+          "properties": {
+            "columns": {"type": "array", "minItems": 3, "maxItems": 4, "items": {"type": "string"}},
+            "rows": {"type": "array", "minItems": 2, "maxItems": 5, "items": {"type": "array", "items": {"type": "string"}}}
+          }
+        },
+        "treatment_principles": {"type": "array", "minItems": 3, "maxItems": 6, "items": {"$ref": "#/$defs/titleBody"}},
+        "subtypes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "features_label", "features", "approach_label", "approach"],
+            "properties": {
+              "name": {"type": "string"},
+              "features_label": {"type": "string"},
+              "features": {"type": "string"},
+              "approach_label": {"type": "string"},
+              "approach": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "image",
+        "image_alt",
+        "information",
+        "advantages",
+        "summary",
+        "audience",
+        "consultation",
+        "scenarios",
+        "daily_care"
+      ],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "image": {"$ref": "#/$defs/imagePath"},
+        "image_alt": {"type": "string", "minLength": 1},
+        "badges": {"type": "array", "maxItems": 3, "items": {"type": "string"}},
+        "information": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "value"],
+            "properties": {
+              "label": {"type": "string"},
+              "value": {"type": "string"},
+              "emphasis": {"type": "boolean"}
+            }
+          }
+        },
+        "advantages": {"type": "array", "minItems": 3, "maxItems": 4, "items": {"$ref": "#/$defs/titleBody"}},
+        "summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["headline", "groups"],
+          "properties": {
+            "headline": {"type": "string"},
+            "groups": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["title", "items"],
+                "properties": {
+                  "title": {"type": "string"},
+                  "items": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"type": "string"}}
+                }
+              }
+            }
+          }
+        },
+        "audience": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/namedImageCard"}},
+        "consultation": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["step", "title", "question"],
+            "properties": {
+              "step": {"type": "string"},
+              "title": {"type": "string"},
+              "question": {"type": "string"}
+            }
+          }
+        },
+        "scenarios": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/scenario"}
+        },
+        "daily_care": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"$ref": "#/$defs/namedImageCard"}}
+      }
+    },
+    "weighted": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items", "comparison"],
+      "properties": {
+        "items": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/weightedItem"}},
+        "comparison": {"$ref": "#/$defs/weightedComparison"}
+      }
+    }
+  },
+  "$defs": {
+    "imagePath": {"type": "string", "minLength": 1},
+    "sourceRefs": {"type": "array", "items": {"type": "string"}},
+    "page": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "section": {"type": "string"},
+        "source_refs": {"$ref": "#/$defs/sourceRefs"}
+      }
+    },
+    "imagePage": {
+      "allOf": [
+        {"$ref": "#/$defs/page"},
+        {
+          "type": "object",
+          "required": ["image", "image_alt"],
+          "properties": {
+            "image": {"$ref": "#/$defs/imagePath"},
+            "image_alt": {"type": "string", "minLength": 1}
+          }
+        }
+      ]
+    },
+    "coverPage": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title", "eyebrow", "subtitle", "prepared_line", "image", "image_alt"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "eyebrow": {"type": "string", "minLength": 1},
+        "subtitle": {"type": "string", "minLength": 1},
+        "prepared_line": {"type": "string", "minLength": 1},
+        "image": {"$ref": "#/$defs/imagePath"},
+        "image_alt": {"type": "string", "minLength": 1},
+        "source_refs": {"$ref": "#/$defs/sourceRefs"}
+      }
+    },
+    "openingPage": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["title", "kicker", "headline", "pillars", "quote"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "section": {"type": "string"},
+        "kicker": {"type": "string"},
+        "headline": {"type": "string"},
+        "pillars": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/titleBody"}},
+        "quote": {"type": "string"},
+        "source_refs": {"$ref": "#/$defs/sourceRefs"}
+      }
+    },
+    "titleBody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "body"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "body": {"type": "string", "minLength": 1}
+      }
+    },
+    "namedImageCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["image", "image_alt"],
+      "properties": {
+        "name": {"type": "string"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "body": {"type": "string"},
+        "image": {"$ref": "#/$defs/imagePath"},
+        "image_alt": {"type": "string", "minLength": 1}
+      },
+      "anyOf": [
+        {"required": ["name", "description"]},
+        {"required": ["title", "body"]}
+      ]
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "page_title",
+        "title",
+        "profile_label",
+        "profile",
+        "needs_label",
+        "needs",
+        "recommendation_label",
+        "recommendation",
+        "dialogues"
+      ],
+      "properties": {
+        "section": {"type": "string"},
+        "page_title": {"type": "string"},
+        "title": {"type": "string"},
+        "profile_label": {"type": "string"},
+        "profile": {"type": "string"},
+        "needs_label": {"type": "string"},
+        "needs": {"type": "string"},
+        "recommendation_label": {"type": "string"},
+        "recommendation": {"type": "string"},
+        "dialogues": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "speaker", "text"],
+            "properties": {
+              "role": {"enum": ["staff", "customer"]},
+              "speaker": {"type": "string"},
+              "text": {"type": "string"}
+            }
+          }
+        },
+        "source_refs": {"$ref": "#/$defs/sourceRefs"}
+      }
+    },
+    "weightedItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "page_title",
+        "name",
+        "image",
+        "image_alt",
+        "fields",
+        "slogan",
+        "selling_points_label",
+        "selling_points",
+        "suitable_for_label",
+        "suitable_for"
+      ],
+      "properties": {
+        "section": {"type": "string"},
+        "page_title": {"type": "string"},
+        "name": {"type": "string"},
+        "image": {"$ref": "#/$defs/imagePath"},
+        "image_alt": {"type": "string"},
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "value"],
+            "properties": {"label": {"type": "string"}, "value": {"type": "string"}}
+          }
+        },
+        "slogan": {"type": "string"},
+        "selling_points_label": {"type": "string"},
+        "selling_points": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"type": "string"}},
+        "table": {
+          "type": "object",
+          "required": ["headers", "rows"],
+          "properties": {
+            "headers": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+            "rows": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "array", "items": {"type": "string"}}}
+          }
+        },
+        "suitable_for_label": {"type": "string"},
+        "suitable_for": {"type": "string"},
+        "source_refs": {"$ref": "#/$defs/sourceRefs"}
+      }
+    },
+    "weightedComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension_label", "products", "rows"],
+      "properties": {
+        "dimension_label": {"type": "string"},
+        "products": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name"],
+            "properties": {"name": {"type": "string"}}
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["dimension", "values"],
+            "properties": {
+              "dimension": {"type": "string"},
+              "values": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "string"}}
+            }
+          }
+        },
+        "footer": {"type": "string"}
+      }
+    }
+  }
+}

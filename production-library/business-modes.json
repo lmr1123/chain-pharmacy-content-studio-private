@@ -1,0 +1,313 @@
+{
+  "registry_type": "business-mode",
+  "version": "1.0.0",
+  "schema": "business-production-mode-catalog-v1",
+  "modes": [
+    {
+      "mode_id": "seedance-health-edu-v1",
+      "status": "production-validated",
+      "name_zh": "Seedance 元提示词五拍",
+      "category": "生活避险科普动画",
+      "cover_label": "5 拍",
+      "one_liner": "先审五拍科普脚本，再交付可复制的 Seedance 分段提示词与发布包。",
+      "portal_video_example": {
+        "source": "production-library/business-package-static/media/production-modes/seedance-meta-prompt-example.mp4",
+        "filename": "seedance-meta-prompt-example.mp4",
+        "label": "Seedance 元提示词生成效果案例"
+      },
+      "generated_prompt_example": "全局风格： 3D Pixar 电影级画质，8K 渲染。光影采用“冷调暴雨 vs 暖调台灯”的戏剧性对比。35mm 胶片质感，强调风雨中的物理碰撞感（雨伞撑开的紧绷感、风吹雨衣的猎猎声）。\n\n角色定义：\n\n大明 (Daming)： 35岁中国父亲，温和稳重。身着深蓝色棉质家居服 (Navy blue polo)。\n\n小宝 (Xiaobao)： 8岁男孩。身着蓝色校服，背着明黄色反光条书包，手拿黄色雨衣。\n\n核心资产： 广州塔模糊远景、手机实时预警界面、典型的中国家庭玄关。\n\n负面排除： 无水印、无跳切、无动漫平面感、非医疗身份。\n\n第二部分：【时间流叙事 (Time-stream Narrative)】\n0-5s | [痛点引入与口播]： 镜头从窗户的水痕推向大明的特写。他看着窗外狂风大雨，然后转头看向镜头，神情严肃但语气亲切。\n\n口播： “家人们，广州这暴雨台风说来就来，看着外面这天儿，咱当家长的这心里啊，肯定都在犯嘀咕：这学，还送不送？”\n\n动作： 大明拨开窗帘，指着窗外被风吹歪的凤凰木。\n\n5-15s | [核心科普与交互]： 大明举起手机，屏幕上跳出红、橙、黄三个盾牌图标。他一边点选图标，一边对着镜头耐心解释。\n\n口播： “别慌！咱得看‘信号’办事儿：红色预警直接停课；橙色，应延迟上学；黄色，咱家自己决定，晚点去也没关系！”\n\n动作： 手机屏幕特写，红色盾牌发光。背景中小宝正把刚穿好的鞋又脱下来，准备去读书，体现家庭生活的真实感。\n\n15-25s | [定心丸与细节]： 镜头拉远，大明给小宝递过一杯热奶。他坐下来，平视镜头。\n\n口播： “咱别担心迟到，官方说了，只要上学路有危险，咱自行把握时间，学校绝不会记迟到或旷课的！”\n\n动作： 镜头展示手机上的学校通知群，老师发出的“安全第一”文字被高亮处理。\n\n25-40s | [户外避险教学]： 场景转为户外。大明拉着小宝，风雨很大，他不得不提高嗓门对着镜头喊话。\n\n口播： “出门一定要注意！大树、电线杆、广告牌，通通绕着走！看见积水深的地方，千万别乱踩！”\n\n动作： 镜头俯拍两人绕过一个晃动的巨型广告牌，雨水在他们脚下溅起巨大水花。大明护住小宝，两人躲入一个坚固的混凝土建筑廊下。\n\n40-52s | [野外特别指引]： 场景转为清明郊野，突降暴雨。大明展示撤离路线。\n\n口播： “清明踏青要是遇上泥石流，千万别顺着往下跑，要往两侧的山坡上面撤！低洼地带雷雨天绝对不能留！”\n\n动作： 大明指着垂直于山洪流向的方向，带小宝快速向斜上方高处移动。物理模拟：雨水冲刷泥土的湿滑质感极强。\n\n52-60s | [温暖收尾与转发]： 阳光穿云而出。大明和小宝在校门前高举大拇指，笑容灿烂。\n\n口播： “平安才是回家的路。这份指引，赶紧转给咱身边的家长朋友们，大家一起平安过春天！”\n\n动作： 两人在彩虹下挥手。屏幕浮现温馨文字：“平安是福”。",
+      "prompt_only": true,
+      "workbuddy_direct_generation": true,
+      "input_expansion_required": true,
+      "input_quality_boundary": "初始资料可残缺；scaffold 会生成标明待补字段的草稿复核包。正式 release 前，WorkBuddy 必须用 meta-prompt 补齐五拍、角色、场景和发布变量，并通过字段完整性与 hash 审批双重硬门。",
+      "local_artifact_types": [
+        "review_package",
+        "prompt_package",
+        "publish_package"
+      ],
+      "workbuddy_outputs": [
+        {
+          "stage": "review",
+          "label": "《科普脚本复核包》"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "Seedance 2.0 分段提示词包"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "视频号发布包"
+        }
+      ],
+      "badges": [
+        {
+          "kind": "ready",
+          "label": "复核包 · WorkBuddy 补齐变量后可生成"
+        },
+        {
+          "kind": "gated",
+          "label": "分段提示词 · 脚本确认后可生成"
+        },
+        {
+          "kind": "external",
+          "label": "成片 · 外部 Seedance/即梦账号"
+        }
+      ],
+      "approval_gate": {
+        "required": true,
+        "enforcement": "hash_bound_release",
+        "confirmation_phrase": "脚本通过，可以出 Seedance 提示词",
+        "before_approval_zh": "确认前只生成变量草案、脚本复核包和待确认项，不发布正式提示词包。"
+      },
+      "external_render": {
+        "required": true,
+        "platform": "Seedance 2.0 / 即梦",
+        "boundary_zh": "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，未经明确要求不得调用付费视频 API。"
+      },
+      "workflow": [
+        {
+          "title": "提交主题",
+          "text": "提供生活避险主题、目标人群和已有要点。"
+        },
+        {
+          "title": "先审脚本",
+          "text": "WorkBuddy 先用 meta-prompt 补齐完整变量、列出缺口，再生成五拍《科普脚本复核包》。"
+        },
+        {
+          "title": "确认后交付",
+          "text": "生成分段提示词与发布包；成片需业务使用外部 Seedance/即梦账号。"
+        }
+      ],
+      "selection_command": "我要使用【Seedance 元提示词五拍】制作生活避险科普。\n主题：【请填写】；目标人群：【请填写】；已有要点：【可不完整】。\n请先用 meta-prompt 把现有内容整理为变量草案，并生成《科普脚本复核包》；缺失的五拍、角色、场景和发布变量必须逐项列为待补，不能用空句冒充成稿。\n在我补齐字段并明确回复“脚本通过，可以出 Seedance 提示词”前，不得生成正式提示词包。\n确认后只生成可复制的 Seedance 2.0 分段提示词和视频号发布包。默认不要调用任何付费视频 API，也不要承诺本机成片；若我另行要求外部出片，请先说明账号、额度、商用资格和费用边界并等待我确认。"
+    },
+    {
+      "mode_id": "jiugongge-health-edu-v1",
+      "status": "production-validated",
+      "name_zh": "九宫格原版 · 林医生王大爷",
+      "category": "中老年健康科普动画",
+      "cover_label": "九宫格",
+      "one_liner": "先审六段口播，再交付角色三视图提示词包与九宫格/视频提示词包。",
+      "prompt_only": true,
+      "workbuddy_direct_generation": true,
+      "input_quality_boundary": "残缺输入只生成带待补字段的草稿复核包；自动扩写的过渡、误区、应急与预防话术一律先视为草稿。正式 release 必须具备 3 条已审核医学知识、至少 3 条应急口径和至少 3 条预防口径，并通过 hash 审批。",
+      "local_artifact_types": [
+        "review_package",
+        "character_prompt_package",
+        "prompt_package",
+        "publish_package"
+      ],
+      "workbuddy_outputs": [
+        {
+          "stage": "review",
+          "label": "六段《九宫格科普脚本复核包》"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "角色三视图提示词包"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "六段九宫格与视频提示词包"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "社媒合规发布包"
+        }
+      ],
+      "badges": [
+        {
+          "kind": "ready",
+          "label": "复核包 · WorkBuddy 补齐变量后可生成"
+        },
+        {
+          "kind": "gated",
+          "label": "三视图/九宫格/视频提示词 · 脚本确认后可生成"
+        },
+        {
+          "kind": "external",
+          "label": "成片 · 外部出图/视频账号"
+        }
+      ],
+      "approval_gate": {
+        "required": true,
+        "enforcement": "hash_bound_release",
+        "confirmation_phrase": "脚本通过，可以出九宫格和视频提示词",
+        "before_approval_zh": "确认前只生成六段口播复核包，不发布角色三视图提示词包或九宫格/视频提示词包终稿。"
+      },
+      "external_render": {
+        "required": true,
+        "platform": "业务选定的出图与视频平台",
+        "boundary_zh": "WorkBuddy 默认交付可复制的角色、九宫格和视频提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认。"
+      },
+      "workflow": [
+        {
+          "title": "提交主题",
+          "text": "提供科普主题与 1–3 个已审核知识点，锁定林医生+王大爷原版。"
+        },
+        {
+          "title": "先审口播",
+          "text": "医学知识点与应急/预防口径须业务提供并复核；生成扩写一律先视为草稿。"
+        },
+        {
+          "title": "确认后交付",
+          "text": "生成角色三视图提示词包、九宫格/视频提示词包与发布包；外部账号负责出片。"
+        }
+      ],
+      "selection_command": "我要使用【九宫格原版 · 林医生王大爷】制作健康科普。\n主题：【请填写】；目标人群：【请填写】；医学知识点及应急/预防口径 1–3 条：【请填写并由业务复核】。\n请先整理完整变量草案并列出受众、场景、应急/预防和发布信息缺口；医学知识点与应急/预防口径必须由业务提供并复核。变量完整后再生成六段《九宫格科普脚本复核包》；自动扩写的过渡、误区、应急和预防话术一律先视为草稿。在我明确回复“脚本通过，可以出九宫格和视频提示词”前，不得发布角色三视图提示词包或九宫格/视频提示词包终稿。\n确认后生成可复制的角色三视图提示词包、六段九宫格/视频提示词包及社媒发布包。默认不调用付费出图或视频 API，也不承诺本机成片；外部出片前请先说明账号、额度、商用资格和费用边界并等待我确认。"
+    },
+    {
+      "mode_id": "jiugongge-health-edu-compliance-v1",
+      "status": "production-validated",
+      "name_zh": "九宫格合规版 · 无医疗",
+      "category": "视频号生活科普动画",
+      "cover_label": "零医疗",
+      "one_liner": "先做医疗红线脱敏和六段口播复核，再交付英九宫格/视频提示词。",
+      "prompt_only": true,
+      "workbuddy_direct_generation": true,
+      "input_quality_boundary": "残缺输入只生成带待补字段的合规草稿复核包；正式 release 必须补齐主题、脱敏说明、合法受众和习惯点，并通过 hash 审批；release 前后均执行医疗红线零命中硬门。",
+      "local_artifact_types": [
+        "review_package",
+        "visual_prompt_package",
+        "prompt_package",
+        "publish_package"
+      ],
+      "workbuddy_outputs": [
+        {
+          "stage": "review",
+          "label": "合规脱敏与六段《脚本复核包》"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "视觉资产提示词包"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "六段英九宫格与视频提示词包"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "视频号发布全家桶"
+        }
+      ],
+      "badges": [
+        {
+          "kind": "ready",
+          "label": "合规复核包 · WorkBuddy 补齐变量后可生成"
+        },
+        {
+          "kind": "gated",
+          "label": "英九宫格/视频提示词 · 确认且零命中后可生成"
+        },
+        {
+          "kind": "external",
+          "label": "成片 · 外部出图/视频账号"
+        }
+      ],
+      "approval_gate": {
+        "required": true,
+        "enforcement": "hash_bound_release",
+        "confirmation_phrase": "脚本通过，可以出九宫格合规版提示词",
+        "before_approval_zh": "确认前只生成脱敏说明和六段口播复核包，红线未清零不得发布提示词终稿。"
+      },
+      "external_render": {
+        "required": true,
+        "platform": "业务选定的出图与视频平台",
+        "boundary_zh": "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，提示词终稿还须通过零医疗红线检查。"
+      },
+      "workflow": [
+        {
+          "title": "提交生活主题",
+          "text": "提供受众与 1–3 个习惯点；禁止医生、医院、器材、病名及疗效话术。"
+        },
+        {
+          "title": "先脱敏复核",
+          "text": "WorkBuddy 先交合规脱敏说明和六段口播，红线未清零不放行。"
+        },
+        {
+          "title": "确认后交付",
+          "text": "生成视觉资产提示词、英九宫格/视频提示词与发布包；外部账号负责出图出片。"
+        }
+      ],
+      "selection_command": "我要使用【九宫格合规版 · 无医疗】制作视频号生活科普。\n生活主题：【请填写】；受众：【中老年/职场/宝妈等】；习惯点 1–3 条：【请填写】。\n请先整理完整变量草案并列出受众、脱敏转换、角色/场景和发布信息缺口，再完成医疗红线脱敏并生成六段《合规脚本复核包》；医生、白大褂、医院、诊室、医疗器材、病名和预防/治疗/缓解话术必须零命中。在我明确回复“脚本通过，可以出九宫格合规版提示词”前，不得发布视觉资产提示词包或九宫格/视频提示词包终稿。\n确认后生成可复制的视觉资产提示词、六段英九宫格/视频提示词和视频号发布包；release 前后都必须通过医疗红线零命中硬门。默认不调用付费出图或视频 API，也不承诺本机成片；外部出片前请先说明账号、额度、商用资格和费用边界并等待我确认。"
+    },
+    {
+      "mode_id": "digital-human-presenter-scheme-C",
+      "status": "conditional-available",
+      "name_zh": "真人数字人侧讲 · 方案 C",
+      "portal_name_zh": "真人数字人讲解模式",
+      "category": "课件数字人二次制作",
+      "cover_label": "真人数字人",
+      "one_liner": "先确认全页口播脚本与关键页清单，再按关键页穿插数字人。",
+      "portal_video_example": {
+        "source": "production-library/business-package-static/media/production-modes/digital-human-presenter-example.mp4",
+        "filename": "digital-human-presenter-example.mp4",
+        "label": "真人数字人讲解效果案例"
+      },
+      "prompt_only": false,
+      "workbuddy_direct_generation": false,
+      "input_quality_boundary": "仅有签样 SOP 与复核包模板，没有 scaffold、hash validator 或 business route；须基于已确认且可二次排版的课件人工整理。",
+      "local_artifact_types": [
+        "review_package",
+        "key_page_list"
+      ],
+      "workbuddy_outputs": [
+        {
+          "stage": "review",
+          "label": "复核包模板：全页最终口播脚本"
+        },
+        {
+          "stage": "review",
+          "label": "复核包模板：数字人关键页清单（页码/理由）"
+        }
+      ],
+      "badges": [
+        {
+          "kind": "conditional",
+          "label": "复核包模板已就绪 · 基于已确认课件整理"
+        },
+        {
+          "kind": "gated",
+          "label": "HeyGen · 脚本和关键页双确认后才可调用"
+        },
+        {
+          "kind": "external",
+          "label": "数字人成片 · 外部 HeyGen 账号"
+        }
+      ],
+      "approval_gate": {
+        "required": true,
+        "enforcement": "human_process_only",
+        "confirmation_phrase": "最终脚本和关键页清单均已确认，可以生成",
+        "before_approval_zh": "这是人工 SOP 流程闸门，不是 hash 校验器；最终脚本与关键页清单未同时明确确认前，只能基于已确认课件整理复核包模板和 PPT 静帧，禁止调用 HeyGen，也禁止克隆旁白终轨。"
+      },
+      "external_render": {
+        "required": true,
+        "platform": "HeyGen",
+        "boundary_zh": "数字人成片依赖外部 HeyGen 账号与额度，以及本机 Qwen voice/TTS、.venv-rembg、ffmpeg 和可二次排版课件；当前卡片不代表本机成片能力可用。"
+      },
+      "production_requirements": [
+        "已确认且可二次排版的课件",
+        "更换 IP 时已获授权的数字人人像",
+        "HeyGen 外部账号、API key 与额度",
+        "Qwen voice/TTS 声音包与运行环境",
+        ".venv-rembg",
+        "ffmpeg"
+      ],
+      "workflow": [
+        {
+          "title": "提交已确认课件",
+          "text": "提供课件或已锁定课型；方案 C 是课件二次制作模式，不替代课型。"
+        },
+        {
+          "title": "双项复核",
+          "text": "WorkBuddy 先交全页最终脚本与关键页清单，未双确认禁止 HeyGen。"
+        },
+        {
+          "title": "确认后制作",
+          "text": "关键页侧讲、非关键页全宽旁白；外部 HeyGen 账号和费用另行确认。"
+        }
+      ],
+      "selection_command": "我要把【已确认课件/课型名称】切换为【真人数字人侧讲 · 方案 C】。\n请先基于已确认且可二次排版的课件，按签样 SOP 整理全页最终口播脚本，以及写清“页码/是否使用数字人/理由”的关键页清单，交付《业务复核包》；当前只有复核包模板和人工 SOP，不要暗示存在自动审批生成器。\n在我明确确认“最终脚本通过”和“关键页清单通过”，并回复“可以生成”前，不得调用 HeyGen、克隆旁白终轨或生成数字人成片。\n双项确认后，仍请检查 HeyGen 外部账号/API key/额度、Qwen voice/TTS、.venv-rembg、ffmpeg 和数字人人像授权，说明费用与授权边界并等待我确认，再开始制作。全课使用同一 voice pack；只有关键页出现动态数字人，非关键页使用全宽课件加旁白，不放静态头像。"
+    }
+  ]
+}

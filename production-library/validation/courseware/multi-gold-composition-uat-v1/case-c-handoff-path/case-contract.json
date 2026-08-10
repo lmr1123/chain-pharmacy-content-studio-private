@@ -1,0 +1,69 @@
+{
+  "schema": "multi-gold-composition-uat-case/v1",
+  "case_id": "C",
+  "title_zh": "双金样来源 · 交接路径与封存凭证",
+  "business_intent_zh": "验证另一组已签样能力可以按不同页序组合成五页短课，并保持统一蓝色视觉。",
+  "route_id": "product-pptx-component-v1",
+  "scope": "uat",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "script_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/case-c-handoff-path/script.structured.json",
+  "source_tabs": [
+    {
+      "tab_id": "handoff-path",
+      "name_zh": "交接四步检查",
+      "source_ref": "disease.consultation_framework",
+      "target_page_type": "consultation_framework",
+      "page": 3
+    },
+    {
+      "tab_id": "archive-evidence",
+      "name_zh": "最终封存凭证",
+      "source_ref": "sufuda.evidence_ladder",
+      "target_page_type": "evidence_ladder",
+      "page": 5
+    }
+  ],
+  "new_tabs": [],
+  "shared_pages": [
+    {
+      "page": 1,
+      "page_type": "courseware_cover"
+    },
+    {
+      "page": 2,
+      "page_type": "hook_intro"
+    },
+    {
+      "page": 4,
+      "page_type": "summary_matrix"
+    }
+  ],
+  "expected": {
+    "page_count": 5,
+    "page_sequence": [
+      "courseware_cover",
+      "hook_intro",
+      "consultation_framework",
+      "summary_matrix",
+      "evidence_ladder"
+    ]
+  },
+  "assets": {
+    "product_image_path": "production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png",
+    "authorization_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/packshot-authorization.json",
+    "authorization_reference": "UAT-FIXTURE-NONBRAND-20260809",
+    "asset_bindings_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/case-c-handoff-path/asset-bindings.json",
+    "required_slots": {
+      "business_authorized": [
+        "meta.product_packshot"
+      ],
+      "system_generated_or_approved_library": []
+    }
+  },
+  "visual_acceptance": [
+    "五页全部使用同一蓝色 style pack。",
+    "咨询路径、判定表与证据卡不得带入来源课型的颜色或原图。",
+    "包装图使用 contain，不得裁切主体。",
+    "逐页检查溢出、遮挡、对比度与页序。"
+  ]
+}

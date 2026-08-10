@@ -13,7 +13,7 @@
     "new_theme_preview": true,
     "new_theme_pptx": false,
     "new_theme_mp4": true,
-    "business_selfserve": false
+    "business_selfserve": true
   },
   "requirements": [
     "完整 8 段审核稿",
@@ -22,20 +22,22 @@
     "video_full",
     "正式 voice_id"
   ],
-  "blockers": [
-    "内容/包装/授权凭证未完成哈希审批时只能生成草稿预览",
-    "当前机器须通过 video_full 环境检查"
-  ],
-  "production_ready": false,
-  "status_label": "可开始草稿 · 审批与环境通过后出片",
-  "status_note": "金样可查看；业务先确认完整 8 段脚本、分镜、包装图和授权凭证，哈希审批匹配且本机 video_full 通过后才生成正式 MP4。",
+  "blockers": [],
+  "production_ready": true,
+  "status_label": "正式路线 · MP4 可生成",
+  "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+  "capabilities_note_zh": null,
+  "shelf_group": "other",
+  "preview_identity_qualified": true,
+  "preview_identity_note_zh": null,
+  "preview_suite_evidence": null,
   "key_frame_labels_zh": [
-    "开场",
-    "品牌/品类",
-    "核心功效",
-    "产品特点",
-    "适宜人群",
-    "联合用药"
+    "讲师页",
+    "图文讲解",
+    "包装主视觉",
+    "概览",
+    "功效",
+    "证据"
   ],
   "voice_id": "voice.reference-pharmacist-qwen-v1",
   "blank_word": "业务提交_空白模板.docx",

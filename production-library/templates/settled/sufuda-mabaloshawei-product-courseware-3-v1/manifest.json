@@ -12,6 +12,11 @@
   "name_zh": "速福达玛巴洛沙韦 · 商品培训课件3 金样 v1",
   "style_pack_id": "style-pack.sufuda-pearl-silk-orange-v1",
   "voice_pack_id": "voice.sufuda-courseware-pharmacist-v1",
+  "structured_input": "courseware3-theme-complete-v1 theme.json",
+  "business_route_ids": [
+    "courseware3-pptx-v1",
+    "courseware3-mp4-v1"
+  ],
   "canonical_artifacts": {
     "video": {
       "path": "速福达玛巴洛沙韦_商品培训课件3_金样_v2.mp4",
@@ -40,9 +45,9 @@
   "source_project": "production-library/validation/courseware/sufuda-product-courseware-3-gold-v1",
   "generators": {
     "video": "src/render.ts (npm run render)",
-    "pptx": "scripts/export-sufuda-pptx.mjs (npm run export:pptx)",
+    "pptx": "production-library/engines/courseware3-pptx-v1/export.mjs",
     "theme_replicate": "scripts/replicate_courseware_theme.py",
-    "business_courseware_greenline": "scripts/generate_business_courseware.py --template courseware3 --theme <theme_dir>"
+    "business_courseware_greenline": "scripts/business_job.py new --route courseware3-pptx-v1 --theme <商品名> --script-json <theme.json> --auto-draft"
   },
   "content_model_snapshot": "content-model.snapshot.json",
   "layer_manifest_snapshot": "layer-manifest.snapshot.json",
@@ -82,11 +87,10 @@
       "联合用药"
     ],
     "gallery_title_zh": "商品培训课件3 · 速福达金样",
-    "one_liner": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型",
-    "name_zh": "商品培训课件3（视频+PPT，速福达壳）",
+    "one_liner": "复用速福达金样的 12 个内容单元，生成 13 页新主题可编辑 PPTX",
+    "name_zh": "商品培训课件3（可编辑 PPT，速福达标准课型）",
     "category_zh": "商品培训",
     "outputs": [
-      "MP4",
       "可编辑 PPTX"
     ],
     "capabilities": {
@@ -94,29 +98,34 @@
       "content_draft": true,
       "new_theme_preview": true,
       "new_theme_pptx": true,
-      "new_theme_mp4": true,
-      "business_selfserve": false
+      "new_theme_mp4": false,
+      "business_selfserve": true
     },
     "requirements": [
-      "内容初稿确认",
-      "授权包装/Logo",
-      "pptx_export",
-      "video_full"
+      "12 个主题内容单元（导出为 13 页 PPTX）",
+      "6 类业务授权包装/Logo",
+      "23 个主题插图显式绑定",
+      "内容/商品图/视觉确认",
+      "pptx_export"
     ],
-    "blockers": [
-      "正式 MP4 取决于克隆 TTS 与 video_full",
-      "包装/Logo 必须为业务授权原图"
-    ],
-    "production_ready": false,
-    "status_label": "可开始草稿 · PPT/视频按本机能力生成",
+    "blockers": [],
+    "production_ready": true,
+    "status_label": "已签样标准课型 · PPTX 可生成",
+    "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+    "capabilities_note_zh": null,
+    "shelf_group": "signed-standard",
+    "preview_identity_qualified": true,
+    "preview_identity_note_zh": null,
+    "preview_suite_evidence": null,
     "online_url": null
   },
   "business_catalog": {
-    "name_zh": "商品培训课件3（视频+PPT，速福达壳）",
-    "one_liner": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型",
+    "name_zh": "商品培训课件3（可编辑 PPT，速福达标准课型）",
+    "one_liner": "复用速福达金样的 12 个内容单元，生成 13 页新主题可编辑 PPTX",
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
-    "framework_guide": "../../框架填写说明.md"
+    "framework_guide": "../../框架填写说明.md",
+    "shelf_group": "signed-standard"
   },
   "voice": {
     "voice_id": "voice.sufuda-courseware-pharmacist-v1",

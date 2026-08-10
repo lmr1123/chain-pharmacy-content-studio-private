@@ -36,6 +36,51 @@ RELEASE_FILES = [
     "release-manifest.json",
 ]
 
+RELEASE_REQUIRED_FIELDS = [
+    (("theme",), "theme（主题）"),
+    (("target_audience",), "target_audience（目标人群）"),
+    (("core_pain",), "core_pain（核心痛点）"),
+    (("character_a", "age_gender"), "character_a.age_gender（角色 A 年龄/性别）"),
+    (
+        ("character_a", "outfit_color_block"),
+        "character_a.outfit_color_block（角色 A 固定服装色块）",
+    ),
+    (("character_b", "age_gender"), "character_b.age_gender（角色 B 年龄/性别）"),
+    (
+        ("character_b", "outfit_color_block"),
+        "character_b.outfit_color_block（角色 B 固定服装色块）",
+    ),
+    (("core_scene",), "core_scene（主场景）"),
+    (("hook", "core_env_element"), "hook.core_env_element（开场环境元素）"),
+    (("hook", "pain_visual"), "hook.pain_visual（痛点画面）"),
+    (("hook", "pain_physics"), "hook.pain_physics（痛点物理表现）"),
+    (("hook", "env_state_phrase"), "hook.env_state_phrase（环境状态口播）"),
+    (("solution", "medium"), "solution.medium（交互媒介）"),
+    (("solution", "level_icons"), "solution.level_icons（等级图标）"),
+    (("solution", "level_a"), "solution.level_a（等级 A 口径）"),
+    (("solution", "level_b"), "solution.level_b（等级 B 口径）"),
+    (("deep_dive", "high_risk_env"), "deep_dive.high_risk_env（高风险环境）"),
+    (("deep_dive", "key_body_focus"), "deep_dive.key_body_focus（关键动作）"),
+    (
+        ("deep_dive", "material_interaction"),
+        "deep_dive.material_interaction（材质交互）",
+    ),
+    (("deep_dive", "hazard_a"), "deep_dive.hazard_a（危险物 A）"),
+    (("deep_dive", "hazard_b"), "deep_dive.hazard_b（危险物 B）"),
+    (("deep_dive", "relief_info"), "deep_dive.relief_info（生活向免责/利好信息）"),
+    (("extreme", "special_scene"), "extreme.special_scene（扩展场景）"),
+    (("extreme", "extreme_situation"), "extreme.extreme_situation（扩展险情）"),
+    (("extreme", "escape_path"), "extreme.escape_path（正确行动路径）"),
+    (("extreme", "extreme_physics"), "extreme.extreme_physics（物理表现）"),
+    (("extreme", "danger_name"), "extreme.danger_name（险情名称）"),
+    (("extreme", "correct_direction"), "extreme.correct_direction（正确方向）"),
+    (("wrapup", "safe_env"), "wrapup.safe_env（安全收束环境）"),
+    (("publish", "emotion_word"), "publish.emotion_word（标题情绪词）"),
+    (("publish", "subject"), "publish.subject（发布主题）"),
+    (("publish", "crowd_tag"), "publish.crowd_tag（人群标签）"),
+    (("publish", "forward_text"), "publish.forward_text（定向转发语）"),
+]
+
 
 def slugify(text: str) -> str:
     s = text.strip().lower()
@@ -51,6 +96,14 @@ def g(d: dict, *keys: str, default: str = "") -> str:
             return default
         cur = cur[k]
     return str(cur) if cur is not None else default
+
+
+def missing_release_fields(v: dict) -> list[str]:
+    return [
+        label
+        for keys, label in RELEASE_REQUIRED_FIELDS
+        if not g(v, *keys).strip()
+    ]
 
 
 def input_sha256(path: Path) -> str:
@@ -124,7 +177,7 @@ def global_anchor(v: dict) -> str:
         f"表情亲切，打破第四面墙看向镜头。"
         f"角色 B：{g(cb, 'age_gender')}，身着 {g(cb, 'outfit_color_block')}。"
         f"主场景：{g(v, 'core_scene')}。"
-        f"强调物理质感：{g(v, 'physical_particles')}。"
+        f"强调物理质感：{g(v, 'physical_particles', default='环境粒子与材质交互')}。"
         "合规：严禁白大褂、医疗器材、专业病理术语；仅生活习惯、环境安全、情绪调节表达。"
         "禁止：水印、字幕、跳切、2D 动漫感、文字 logo、写实医疗器械。"
     )
@@ -140,6 +193,7 @@ def build_segments(v: dict) -> list[dict]:
         v.get("extreme") or {},
         v.get("wrapup") or {},
     )
+    core_pain = g(v, "core_pain") or g(h, "core_pain_phrase")
     return [
         {
             "id": 1,
@@ -149,7 +203,7 @@ def build_segments(v: dict) -> list[dict]:
                 f"镜头从{g(h, 'core_env_element')}特写切入，紧迫混乱感。"
                 f"角色 A 出现在画面一侧，手指向身后{g(h, 'pain_visual')}。"
                 f"物理：{g(h, 'pain_physics')}。"
-                f"口播：「家人们，{g(h, 'core_pain_phrase')}这种事儿，咱真不能硬冲！"
+                f"口播：「家人们，{core_pain}这种事儿，咱真不能硬冲！"
                 f"看着这{g(h, 'env_state_phrase')}，咱心里准在打鼓吧？」"
             ),
             "tail": "定格在角色 A 看镜头、身后痛点仍在发生的画面。",
@@ -213,39 +267,56 @@ def build_segments(v: dict) -> list[dict]:
     ]
 
 
-def render_review_md(v: dict, segments: list[dict]) -> str:
+def render_review_md(v: dict, segments: list[dict], missing_fields: list[str]) -> str:
+    is_draft = bool(missing_fields)
     lines = [
-        f"# 科普脚本复核包 · {g(v, 'theme')}",
+        f"# 科普脚本复核包 · {g(v, 'theme') or '待补主题'}",
         "",
         f"**模式：** seedance-health-edu-v1  ",
-        f"**目标人群：** {g(v, 'target_audience')}  ",
+        f"**目标人群：** {g(v, 'target_audience') or '待补'}  ",
         f"**日期：** {date.today().isoformat()}  ",
-        f"**状态：** 待业务确认",
+        f"**状态：** {'草稿·待补字段' if is_draft else '待业务确认'}",
         "",
+    ]
+    if missing_fields:
+        lines += [
+            "## 待补字段（正式发布前必须补齐）",
+            "",
+            *[f"- {field}" for field in missing_fields],
+            "",
+            "当前仅生成结构草稿，不生成含空槽的五拍伪成稿。补齐后重新运行即可复核完整脚本。",
+            "",
+        ]
+    lines += [
         "## 视觉锚定",
         "",
-        f"- 色调：{g(v, 'tone_lighting')}",
-        f"- 物理：{g(v, 'physical_particles')}",
-        f"- 角色 A：{g(v.get('character_a') or {}, 'age_gender')} / {g(v.get('character_a') or {}, 'outfit_color_block')}",
-        f"- 角色 B：{g(v.get('character_b') or {}, 'age_gender')} / {g(v.get('character_b') or {}, 'outfit_color_block')}",
-        f"- 主场景：{g(v, 'core_scene')}",
+        f"- 色调：{g(v, 'tone_lighting', default='明亮自然光影')}",
+        f"- 物理：{g(v, 'physical_particles', default='环境粒子与材质交互')}",
+        f"- 角色 A：{g(v.get('character_a') or {}, 'age_gender') or '待补'} / {g(v.get('character_a') or {}, 'outfit_color_block') or '待补'}",
+        f"- 角色 B：{g(v.get('character_b') or {}, 'age_gender') or '待补'} / {g(v.get('character_b') or {}, 'outfit_color_block') or '待补'}",
+        f"- 主场景：{g(v, 'core_scene') or '待补'}",
         "",
         "合规：无白大褂 / 无医疗器材 / 无病理术语 / 生活常识表达",
         "",
-        "## 五拍剧本",
+        "## 五拍剧本" if not is_draft else "## 五拍结构草稿",
         "",
     ]
-    for seg in segments:
-        lines += [
-            f"### 第 {seg['id']} 拍 · {seg['title']}",
-            "",
-            seg["body"],
-            "",
-            f"*建议时长：{seg['seconds']}s*",
-            "",
-        ]
+    if is_draft:
+        for seg in segments:
+            lines.append(f"- 第 {seg['id']} 拍：{seg['title']}（补齐本拍变量后生成）")
+        lines.append("")
+    else:
+        for seg in segments:
+            lines += [
+                f"### 第 {seg['id']} 拍 · {seg['title']}",
+                "",
+                seg["body"],
+                "",
+                f"*建议时长：{seg['seconds']}s*",
+                "",
+            ]
     pub = v.get("publish") or {}
-    title = (
+    title = "待补" if is_draft else (
         f"{g(pub, 'emotion_word')}{g(pub, 'subject')}｜{g(pub, 'crowd_tag')}"
         f"{g(pub, 'emoji', default='')}"
     )
@@ -254,7 +325,7 @@ def render_review_md(v: dict, segments: list[dict]) -> str:
         "",
         f"- 标题：{title}",
         f"- 免责：{DISCLAIMER}",
-        f"- 转发：{g(pub, 'forward_text')}",
+        f"- 转发：{g(pub, 'forward_text') or '待补'}",
         "",
         "## 确认区",
         "",
@@ -410,16 +481,17 @@ def main() -> int:
         raise SystemExit(f"vars not found: {vars_path}")
 
     v = json.loads(vars_path.read_text(encoding="utf-8"))
-    if not g(v, "theme"):
-        raise SystemExit("vars.theme is required")
+    if not isinstance(v, dict):
+        raise SystemExit("vars must be a JSON object")
 
     digest = input_sha256(vars_path)
     slug = args.slug or slugify(g(v, "theme"))
     out_dir = Path(args.out_root).expanduser().resolve() / slug
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    missing_fields = missing_release_fields(v)
     segments = build_segments(v)
-    review_text = render_review_md(v, segments)
+    review_text = render_review_md(v, segments, missing_fields)
     review_digest = text_sha256(review_text)
     if args.release:
         for name in RELEASE_FILES:
@@ -431,6 +503,10 @@ def main() -> int:
             raise SystemExit("--release requires --approval <approval.json>")
         approval_path = Path(args.approval).expanduser().resolve()
         approval = require_release_approval(approval_path, digest, review_digest)
+        if missing_fields:
+            raise SystemExit(
+                "release blocked：缺少正式发布必填字段：" + "；".join(missing_fields)
+            )
 
     (out_dir / "00-主题变量.json").write_text(
         json.dumps(v, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

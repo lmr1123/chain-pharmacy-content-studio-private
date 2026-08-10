@@ -2,7 +2,7 @@ import {cardGrid} from '../layout-rules.mjs';
 
 /**
  * Audience cards.
- * - Gold default: single-row N columns (cw4 geometry).
+ * - Default: single-row N columns.
  * - opts.layout = 'grid' → cardGrid 2×2 etc. for other page types.
  * items: [{label, icon|asset}]
  */
@@ -11,15 +11,9 @@ export async function audienceCards(ctx, slide, pageId, items, opts = {}) {
   const list = items || [];
   if (!list.length) return;
 
-  const iconMap = {
-    prostate: 'prostate-diagram.png',
-    couple: 'couple.png',
-    audience_beauty: 'audience-beauty.png',
-    audience_weak: 'audience-weak.png',
-    ...(opts.iconMap || {}),
-  };
+  const iconMap = opts.iconMap || {};
 
-  // Gold / default: one row of N cards (matches export-cw4 buildAudience)
+  // Default: one row of N cards.
   if (opts.layout !== 'grid') {
     const n = Math.max(list.length, 1);
     const span = opts.areaW ?? 1760;
@@ -37,7 +31,7 @@ export async function audienceCards(ctx, slide, pageId, items, opts = {}) {
         C.cardBorder,
         `aud-card-${i}`,
       );
-      const file = iconMap[it.icon || ''] || it.asset || 'prostate-diagram.png';
+      const file = it.asset || it.visual || iconMap[it.icon || ''] || '__missing__/audience-pending.png';
       await imageFit(slide, eid(pageId, `icon.${i + 1}`), file, x, -40, 260, 260, it.label);
       shape(
         slide,
@@ -55,7 +49,7 @@ export async function audienceCards(ctx, slide, pageId, items, opts = {}) {
     return {layout: 'row', n};
   }
 
-  // Optional multi-row grid for non-gold pages
+  // Optional multi-row grid.
   const grid = cardGrid(list.length, {
     areaW: opts.areaW ?? 1760,
     areaH: opts.areaH ?? 580,
@@ -79,7 +73,7 @@ export async function audienceCards(ctx, slide, pageId, items, opts = {}) {
       C.cardBorder,
       `aud-card-${i}`,
     );
-    const file = iconMap[it.icon || ''] || it.asset || 'prostate-diagram.png';
+    const file = it.asset || it.visual || iconMap[it.icon || ''] || '__missing__/audience-pending.png';
     await imageFit(
       slide,
       eid(pageId, `icon.${i + 1}`),

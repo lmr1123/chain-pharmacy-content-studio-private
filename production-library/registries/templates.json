@@ -223,16 +223,17 @@
     },
     {
       "id": "template.product-courseware-component-v1",
-      "name_zh": "构件化商品培训 PPT（默认主路径）",
+      "name_zh": "灵活构件商品培训 PPT（兜底）",
       "status": "production-default",
-      "style_pack_id": "style-pack.courseware-4-silk-yellow-red-v1",
+      "style_pack_id": "style-pack.reference-product-blue-v1",
       "tags": [
         "商品培训",
         "PPTX",
         "可编辑",
         "component",
         "recipe",
-        "default"
+        "default",
+        "fallback"
       ],
       "settled_template": true,
       "settled_template_dir": "production-library/templates/settled/product-courseware-component-v1",
@@ -240,7 +241,9 @@
         "path": "production-library/templates/settled/product-courseware-component-v1/构件化商品培训_默认主路径_签样参考.pptx",
         "format": "pptx",
         "confirmed_by": "system-smoke",
-        "confirmed_at": "2026-08-09"
+        "confirmed_at": "2026-08-09",
+        "role": "legacy-12-page-structure-smoke-only",
+        "is_gold_sample": false
       },
       "supported_scene_types": [
         "courseware_cover",
@@ -252,7 +255,17 @@
         "audience",
         "combination_guidance",
         "efficacy_recap_table",
-        "precautions"
+        "precautions",
+        "product_overview",
+        "consultation_framework",
+        "evidence_ladder",
+        "objection_handling"
+      ],
+      "production_validated_page_types": [
+        "product_overview",
+        "consultation_framework",
+        "evidence_ladder",
+        "objection_handling"
       ],
       "supported_outputs": [
         "pptx"
@@ -265,12 +278,28 @@
       "business_template": "production-library/templates/settled/product-courseware-component-v1/业务提交_空白模板.docx",
       "business_sample": "production-library/templates/settled/product-courseware-component-v1/业务提交_填写参考.docx",
       "business_input_sources": {
-        "blank_word": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
-        "filled_example": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
+        "blank_word": "outputs/courseware-natural-import/构件化商品培训_业务提交_空白模板.docx",
+        "filled_example": "outputs/courseware-natural-import/构件化商品培训_业务提交_填写参考.docx",
         "sync_script": "scripts/sync_settled_template_business_words.py"
       },
       "business_route": "product-pptx-component-v1",
-      "restriction": "默认业务主路径；文案只取自 script.structured；无授权包装用占位槽。签样参考为结构冒烟，正式医学内容须业务审核稿。"
+      "production_validation": {
+        "schema": "component-flexible-suite-production-validation-v1",
+        "status": "production-validated",
+        "qa_summary": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/qa-summary.json",
+        "qa_summary_sha256": "7ff6fbca1fe00f7968a1ddf998a1fd4f7821bcc3f7aad731cc7cccc36ec752f6",
+        "visual_review": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/visual-review.json",
+        "visual_review_sha256": "c6b54744e6521ab8b78882f1125be552c2a646ce03995622a850f76519c48272",
+        "case_ids": ["case-a", "case-b", "case-c"],
+        "page_counts": [7, 6, 5],
+        "source_job_ids": [
+          "uat-component-suite-a-20260810-r4",
+          "uat-component-suite-b-20260810-r4",
+          "uat-component-suite-c-20260810-r4"
+        ],
+        "boundary": "A/B/C 套件是多来源组合与新页型的生产验证真值；旧 12 页 canonical 仅保留为结构冒烟，不是金样或高质量多组合证据"
+      },
+      "restriction": "默认兜底路线，仅在未命中固定 5/18/13/20 页课型时使用。文案只取自 script.structured，正式稿必须绑定授权包装与已确认主题图；浅蓝视觉不授权继承辅酶 Q10 或任一来源课型的文案、包装、Logo、证据或原图。旧 12 页冒烟稿不得对外标为金样。"
     },
     {
       "id": "template.product-courseware-dashenlin-green-v1",
@@ -459,6 +488,41 @@
         "production-library/validation/courseware/disease-uri-shenke-blue-v1/content/急性上呼吸道感染.content.json"
       ],
       "restriction": "健康培训课型金样。版式锁定参课蓝 chrome；换病改 content JSON 后重建。包装与 Logo 须业务授权原图，禁止伪造品牌包装。医学表述须业务/医学复核。末页为竖版一页通构图，非整本改竖屏。"
+    },
+    {
+      "id": "template.kangaisen-lycopene-health-edu-v1",
+      "name_zh": "番茄红素成分健康科普 PPT（米白番茄红）",
+      "status": "user-approved-gold",
+      "style_pack_id": "style-pack.lycopene-health-edu-cream-red-v1",
+      "tags": [
+        "成分健康科普",
+        "番茄红素",
+        "PPTX",
+        "20页",
+        "米白番茄红",
+        "金样"
+      ],
+      "settled_template": true,
+      "settled_template_dir": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1",
+      "manifest": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1/manifest.json",
+      "canonical_artifact": {
+        "path": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1/番茄红素_健康科普金样_v1.pptx",
+        "format": "pptx",
+        "confirmed_by": "user",
+        "confirmed_at": "2026-08-09"
+      },
+      "category_zh": "成分健康科普",
+      "supported_outputs": [
+        "pptx"
+      ],
+      "business_input": "ingredient-health-edu-theme/v1",
+      "business_template": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1/业务提交_空白模板.docx",
+      "business_sample": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1/业务提交_填写参考.docx",
+      "source_projects": [
+        "production-library/engines/ingredient-health-edu-pptx-v1/export.mjs",
+        "production-library/engines/ingredient-health-edu-pptx-v1/validate_pptx.py"
+      ],
+      "restriction": "20 页成分健康科普金样；不是福尔商品培训课件4。新主题须提交完整审核稿和全部授权图片，金样医学正文、功效表述与参考图片不得直接继承。"
     },
     {
       "id": "template.sufuda-mabaloshawei-product-courseware-3-v1",

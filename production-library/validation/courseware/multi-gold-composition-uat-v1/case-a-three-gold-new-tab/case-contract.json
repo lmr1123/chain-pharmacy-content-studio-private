@@ -1,0 +1,87 @@
+{
+  "schema": "multi-gold-composition-uat-case/v1",
+  "case_id": "A",
+  "title_zh": "三金样来源 + 全新页签 · 资料核验闭环",
+  "business_intent_zh": "验证业务能够把三套已签样课型的可复用信息结构组合成一份统一蓝色课件，并加入一个全新业务页签。",
+  "route_id": "product-pptx-component-v1",
+  "scope": "uat",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
+  "script_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/case-a-three-gold-new-tab/script.structured.json",
+  "source_tabs": [
+    {
+      "tab_id": "object-overview",
+      "name_zh": "核验对象总览",
+      "source_ref": "green.product_overview",
+      "target_page_type": "product_overview",
+      "page": 3
+    },
+    {
+      "tab_id": "verification-path",
+      "name_zh": "资料核验四步",
+      "source_ref": "disease.consultation_framework",
+      "target_page_type": "consultation_framework",
+      "page": 4
+    },
+    {
+      "tab_id": "evidence-chain",
+      "name_zh": "交付证据阶梯",
+      "source_ref": "sufuda.evidence_ladder",
+      "target_page_type": "evidence_ladder",
+      "page": 5
+    }
+  ],
+  "new_tabs": [
+    {
+      "tab_id": "objection-and-escalation",
+      "name_zh": "异议与升级",
+      "source_ref": "new.objection_handling",
+      "target_page_type": "objection_handling",
+      "page": 6,
+      "requires_new_renderer": false
+    }
+  ],
+  "shared_pages": [
+    {
+      "page": 1,
+      "page_type": "courseware_cover"
+    },
+    {
+      "page": 2,
+      "page_type": "hook_intro"
+    },
+    {
+      "page": 7,
+      "page_type": "summary_matrix"
+    }
+  ],
+  "expected": {
+    "page_count": 7,
+    "page_sequence": [
+      "courseware_cover",
+      "hook_intro",
+      "product_overview",
+      "consultation_framework",
+      "evidence_ladder",
+      "objection_handling",
+      "summary_matrix"
+    ]
+  },
+  "assets": {
+    "product_image_path": "production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png",
+    "authorization_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/packshot-authorization.json",
+    "authorization_reference": "UAT-FIXTURE-NONBRAND-20260809",
+    "asset_bindings_path": "production-library/validation/courseware/multi-gold-composition-uat-v1/case-a-three-gold-new-tab/asset-bindings.json",
+    "required_slots": {
+      "business_authorized": [
+        "meta.product_packshot"
+      ],
+      "system_generated_or_approved_library": []
+    }
+  },
+  "visual_acceptance": [
+    "全部页面只使用 style-pack.reference-product-blue-v1。",
+    "来源课型的绿色、橙色母版和原图均不得出现。",
+    "包装图使用 contain，不得裁切主体。",
+    "逐页检查溢出、遮挡、对比度与页序。"
+  ]
+}

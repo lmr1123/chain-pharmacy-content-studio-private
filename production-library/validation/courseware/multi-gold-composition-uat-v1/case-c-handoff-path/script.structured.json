@@ -1,0 +1,95 @@
+{
+  "schema": "product-training-script/v1",
+  "meta": {
+    "display_name": "星河交接资料 C（内部 UAT）",
+    "organization": "连锁门店内部业务验收",
+    "tagline": "先说明 · 再执行 · 可追溯",
+    "content_lock": "uat-safe-non-medical-v1",
+    "brand_boast_disabled": true,
+    "family": "product-training",
+    "style_pack_id": "style-pack.reference-product-blue-v1",
+    "cover_stage_tag": "内部 UAT",
+    "cover_points": [
+      "咨询框架与证据阶梯组合",
+      "判定表后接封存凭证",
+      "统一浅蓝视觉"
+    ],
+    "product_packshot": {
+      "src": "production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png",
+      "source_kind": "business_authorized"
+    },
+    "page_sequence": [
+      "courseware_cover",
+      "hook_intro",
+      "consultation_framework",
+      "summary_matrix",
+      "evidence_ladder"
+    ]
+  },
+  "hook": {
+    "title": "为什么交接必须留痕",
+    "paragraphs": [
+      "多人协作时，文件名相同不代表内容相同，交接必须同时说明版本与状态。",
+      "本课件用于内部流程验收，只记录可核对的信息，不补写资料之外的结论。"
+    ]
+  },
+  "consultation": {
+    "title": "交接四步检查",
+    "steps": [
+      {
+        "question": "确认接收人",
+        "why": "明确本次交接对象"
+      },
+      {
+        "question": "确认文件名",
+        "why": "排除同名旧文件"
+      },
+      {
+        "question": "确认版本号",
+        "why": "锁定当前内容"
+      },
+      {
+        "question": "确认状态与回执",
+        "why": "区分版本并形成可追溯记录"
+      }
+    ]
+  },
+  "summary": {
+    "title": "交接判定表",
+    "rows": [
+      {
+        "label": "可接收",
+        "value": "对象、文件、版本、状态均一致"
+      },
+      {
+        "label": "需复核",
+        "value": "任一记录缺失或相互冲突"
+      },
+      {
+        "label": "需退回",
+        "value": "文件来源无法追溯"
+      }
+    ]
+  },
+  "evidence": {
+    "title": "最终封存凭证",
+    "items": [
+      {
+        "metric": "01",
+        "label": "交接清单",
+        "source": "双方确认记录"
+      },
+      {
+        "metric": "02",
+        "label": "文件哈希",
+        "source": "任务目录生成记录"
+      },
+      {
+        "metric": "03",
+        "label": "验收结果",
+        "source": "逐页检查记录"
+      }
+    ]
+  },
+  "gaps": []
+}

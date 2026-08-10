@@ -8,7 +8,8 @@ should after bootstrap soft-repair:
 1. On-demand package inventory honesty
 2. Critical production files for default PPT route
 3. Probe + doctor for pptx profile
-4. Component route draft → approve → render E2E (when pptx_export true)
+4. Component route draft → content/visual/product-image approvals → render E2E
+   (when pptx_export true)
 5. Honest skip when pptx_export false (no fake delivery)
 """
 
@@ -38,6 +39,9 @@ CRITICAL_PPTX_PATHS = [
     "production-library/runtime-profiles.json",
     "production-library/engines/courseware-pptx-v1/export.mjs",
     "production-library/engines/courseware-pptx-v1/components/index.mjs",
+    "production-library/engines/product-courseware-green-v1/build-product-courseware.mjs",
+    "production-library/engines/disease-product-scenario-pptx-v1/export.mjs",
+    "production-library/engines/courseware3-pptx-v1/export.mjs",
     "production-library/page-types/product-training/registry.json",
     "production-library/page-types/product-training/recipes/scene-type-map.json",
     "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json",
@@ -46,6 +50,7 @@ CRITICAL_PPTX_PATHS = [
     "scripts/business_job.py",
     "scripts/business_doctor.py",
     "scripts/probe_production_env.py",
+    "scripts/replicate_courseware_theme.py",
 ]
 
 
@@ -78,17 +83,23 @@ class CriticalPathInventoryTests(unittest.TestCase):
         missing = [p for p in CRITICAL_PPTX_PATHS if not (ROOT / p).exists()]
         self.assertEqual(missing, [], msg=f"clean-clone blockers: {missing}")
 
-    def test_default_route_is_component(self) -> None:
+    def test_default_route_and_fixed_standard_routes(self) -> None:
         routes = bj.load_routes_doc()
         self.assertEqual(routes.get("default_pptx_route"), "product-pptx-component-v1")
         active = {r["route_id"] for r in bj.load_routes(active_only=True)}
-        self.assertIn("product-pptx-component-v1", active)
-        self.assertNotIn("product-pptx-green-v1", active)
+        for route_id in (
+            "product-pptx-component-v1",
+            "product-pptx-green-v1",
+            "product-pptx-disease-scenario-v1",
+            "courseware3-pptx-v1",
+        ):
+            self.assertIn(route_id, active)
         component = bj.get_route("product-pptx-component-v1")
         self.assertEqual(component.get("adapter"), "product_pptx_component")
         green = bj.get_route("product-pptx-green-v1")
-        self.assertFalse(green.get("active"))
-        self.assertTrue(green.get("retired"))
+        self.assertTrue(green.get("active"))
+        self.assertFalse(green.get("retired"))
+        self.assertFalse(bj.get_route("courseware3-mp4-v1").get("active"))
 
 
 class ProbeDoctorHonestyTests(unittest.TestCase):
@@ -124,49 +135,134 @@ class ComponentRouteE2ETests(unittest.TestCase):
         bj.jobs_root = self._jobs_root  # type: ignore[assignment]
         bj.delivery_root = self._delivery_root  # type: ignore[assignment]
 
+    def _new_and_approve_complete_job(self, job_id: str, theme: str) -> None:
+        image = self.tmp / f"{job_id}.png"
+        image.write_bytes(
+            b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01"
+            b"\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00\x00\x00\x0c"
+            b"IDATx\x9cc\xf8\x0f\x00\x01\x01\x01\x00\x18\xdd\x8d\xb4\x00\x00\x00\x00IEND\xaeB`\x82"
+        )
+        script = {
+            "schema": "product-training-script/v1",
+            "meta": {
+                "display_name": theme,
+                "organization": "清洁克隆核验",
+                "page_sequence": [
+                    "courseware_cover",
+                    "hook_intro",
+                    "benefit_cards",
+                    "feature_cards",
+                    "audience_list",
+                    "combination_guidance",
+                    "summary_matrix",
+                    "precautions",
+                ],
+            },
+            "hook": {"title": "培训导语", "paragraphs": ["以下内容已完成审核。"]},
+            "benefits": {"title": "核心知识", "items": [{"title": "知识点", "body": "已审核说明。"}]},
+            "features": {"title": "产品特点", "items": [{"title": "特点", "body": "已审核特点。"}]},
+            "audience": {"title": "适宜人群", "items": ["已审核人群"]},
+            "combination": {"title": "咨询场景", "rows": [{"problem": "场景一", "partner": "搭档一", "talk_track": "已审核话术。"}]},
+            "summary": {"title": "总结", "rows": [{"label": "要点", "value": "已审核。"}]},
+            "precautions": {"title": "注意事项", "items": ["核对本品正式标签。"]},
+        }
+        script_path = self.tmp / f"{job_id}.json"
+        script_path.write_text(json.dumps(script, ensure_ascii=False), encoding="utf-8")
+        self.assertEqual(
+            bj.main(
+                [
+                    "new",
+                    "--route",
+                    "product-pptx-component-v1",
+                    "--theme",
+                    theme,
+                    "--script-json",
+                    str(script_path),
+                    "--job-id",
+                    job_id,
+                    "--auto-draft",
+                    "--json",
+                ]
+            ),
+            0,
+        )
+        job = bj.load_job(job_id)
+        plan = json.loads(Path(job["draft"]["asset_plan_json"]).read_text(encoding="utf-8"))
+        bindings = {item["script_path"]: str(image) for item in plan["system_generates"]}
+        bindings_path = self.tmp / f"{job_id}-bindings.json"
+        bindings_path.write_text(json.dumps(bindings, ensure_ascii=False), encoding="utf-8")
+        self.assertEqual(
+            bj.main(
+                [
+                    "approve",
+                    "--job",
+                    job_id,
+                    "--gate",
+                    "content",
+                    "--by",
+                    "测试员",
+                    "--json",
+                ]
+            ),
+            0,
+        )
+        self.assertEqual(
+            bj.main(
+                [
+                    "approve",
+                    "--job",
+                    job_id,
+                    "--gate",
+                    "visual",
+                    "--by",
+                    "测试员",
+                    "--asset-bindings",
+                    str(bindings_path),
+                    "--json",
+                ]
+            ),
+            0,
+        )
+        self.assertEqual(
+            bj.main(
+                [
+                    "approve",
+                    "--job",
+                    job_id,
+                    "--gate",
+                    "product_image",
+                    "--by",
+                    "测试员",
+                    "--product-image",
+                    str(image),
+                    "--authorization-reference",
+                    "TEST-AUTH-CLEAN-CLONE",
+                    "--json",
+                ]
+            ),
+            0,
+        )
+
     def test_draft_blocks_gold_residue(self) -> None:
         # Inject forbidden token via notes that would only appear if builder copied gold — 
         # build script uses theme only; force-check assert helper.
         with self.assertRaises(SystemExit):
-            script = bj._build_component_script("清白商品", "普通要点")
-            script["benefits"]["items"][0]["body"] = "含福尔麦金利金样残留"
+            script = {
+                "meta": {"display_name": "清白商品"},
+                "benefits": {
+                    "items": [{"title": "知识点", "body": "含福尔麦金利金样残留"}]
+                },
+            }
             bj._assert_no_component_gold_residue(script, "清白商品")
 
     def test_component_draft_approve_env_block_no_delivery(self) -> None:
-        rc = bj.main(
-            [
-                "new",
-                "--route",
-                "product-pptx-component-v1",
-                "--theme",
-                "清洁克隆样例片",
-                "--notes",
-                "卖点甲\n卖点乙\n卖点丙",
-                "--job-id",
-                "p29-comp-1",
-                "--auto-draft",
-                "--json",
-            ]
-        )
-        self.assertEqual(rc, 0)
+        self._new_and_approve_complete_job("p29-comp-1", "清洁克隆样例片")
         job = bj.load_job("p29-comp-1")
-        self.assertEqual(job["state"], "draft_ready")
+        self.assertEqual(job["state"], "visual_approved")
         self.assertEqual(job["draft"]["kind"], "product_pptx_component")
         self.assertTrue(Path(job["draft"]["script"]).is_file())
         self.assertTrue(Path(job["draft"]["content_model"]).is_file())
         self.assertGreaterEqual(int(job["draft"].get("page_count") or 0), 8)
-
-        bj.main(
-            [
-                "approve",
-                "--job",
-                "p29-comp-1",
-                "--gate",
-                "content",
-                "--by",
-                "测试员",
-            ]
-        )
         with mock.patch.object(bj, "probe_capabilities", return_value={"pptx_export": False}):
             code = bj.main(["render", "--job", "p29-comp-1", "--json"])
         self.assertEqual(code, 2)
@@ -179,32 +275,7 @@ class ComponentRouteE2ETests(unittest.TestCase):
         if not caps.get("pptx_export"):
             self.skipTest("pptx_export false on this machine — honest skip")
 
-        rc = bj.main(
-            [
-                "new",
-                "--route",
-                "product-pptx-component-v1",
-                "--theme",
-                "E2E构件样例",
-                "--notes",
-                "核心功效一\n核心功效二\n产品特点产地好",
-                "--job-id",
-                "p29-comp-e2e",
-                "--auto-draft",
-            ]
-        )
-        self.assertEqual(rc, 0)
-        bj.main(
-            [
-                "approve",
-                "--job",
-                "p29-comp-e2e",
-                "--gate",
-                "content",
-                "--by",
-                "测试员",
-            ]
-        )
+        self._new_and_approve_complete_job("p29-comp-e2e", "E2E构件样例")
         code = bj.main(["render", "--job", "p29-comp-e2e", "--json"])
         self.assertEqual(code, 0, msg="component render should deliver when pptx_export true")
         job = bj.load_job("p29-comp-e2e")
@@ -228,8 +299,29 @@ class GoldRegressionGeneratorTests(unittest.TestCase):
             self.skipTest("gold script missing")
         out = Path(tempfile.mkdtemp(prefix="p28-gold-"))
         self.addCleanup(shutil.rmtree, out, True)
+        # This historical fixture predates the explicit non-empty hook card slots.
+        # Normalize only the temporary test copy with values already present in
+        # its source paragraph text; do not mutate the validation gold source.
+        script_data = json.loads(script.read_text(encoding="utf-8"))
+        hook = script_data["hook"]
+        hook.setdefault(
+            "symptoms",
+            ["尿频", "尿急", "会阴坠胀", "排尿灼痛"],
+        )
+        hook.setdefault(
+            "stats",
+            [
+                {"number": "32.9%", "unit": "", "note": "32.9%"},
+                {"number": "40%", "unit": "", "note": "40%"},
+            ],
+        )
+        normalized_script = out / "script.structured.json"
+        normalized_script.write_text(
+            json.dumps(script_data, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
         report = bj._run_courseware_generator(
-            script_path=script,
+            script_path=normalized_script,
             out_dir=out,
             skip_export=True,
             skip_qa=True,

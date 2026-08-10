@@ -2,6 +2,7 @@
   "mode_id": "seedance-health-edu-v1",
   "theme": "暴雨天怎么安全出行、别硬冲",
   "target_audience": "有娃的爸妈、上班通勤族",
+  "core_pain": "暴雨天硬出门",
   "tone_lighting": "冷暖对比：窗外冷蓝暴雨与玄关暖黄灯光",
   "physical_particles": "密集雨水、水雾、湿发丝、鞋底打滑水膜",
   "character_a": {
@@ -17,7 +18,6 @@
     "core_env_element": "窗外瓢泼雨帘与积水反光",
     "pain_visual": "孩子背着书包想冲出门外，地面水花四溅",
     "pain_physics": "风掀雨披边角，脚底在瓷砖积水上微微打滑",
-    "core_pain_phrase": "暴雨天硬出门",
     "env_state_phrase": "外面又湿又滑还看不清路"
   },
   "solution": {

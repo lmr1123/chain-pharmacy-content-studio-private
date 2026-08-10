@@ -1,0 +1,53 @@
+{
+  "schema": "ingredient-health-edu-business-input-contract/v1",
+  "template_id": "template.kangaisen-lycopene-health-edu-v1",
+  "route_id": "ingredient-health-edu-pptx-v1",
+  "theme_schema": "ingredient-health-edu-theme/v1",
+  "style_pack_id": "style-pack.lycopene-health-edu-cream-red-v1",
+  "fixed_structure": {
+    "slides": 20,
+    "page_types": 15,
+    "text_slots": 107,
+    "slide_image_slots": 67,
+    "template_image_slots": 2,
+    "explicit_image_bindings": 69
+  },
+  "draft_command": "node production-library/engines/ingredient-health-edu-pptx-v1/export.mjs --emit-draft <theme.json> --theme-name <成分主题>",
+  "required_top_level": [
+    "schema",
+    "theme_id",
+    "theme_name",
+    "style_pack_id",
+    "asset_authorization",
+    "assets",
+    "template_images",
+    "pages"
+  ],
+  "page_contract": {
+    "required_pages": "1-20 each exactly once",
+    "texts": "由 emit-draft 生成的每个 OOXML shape id 均须填写，不能保留待补/占位/金样正文",
+    "images": "由 emit-draft 生成的每个 image id 均须绑定 assets 中的 key"
+  },
+  "asset_contract": {
+    "format": "PNG",
+    "minimum_pixels": "64x64",
+    "authorization_scope": "all-theme-images",
+    "authorization_required": true,
+    "source_gold_sha_reuse": "forbidden",
+    "unbound_or_unused_assets": "forbidden"
+  },
+  "approval_gates": [
+    "content",
+    "visual"
+  ],
+  "fail_closed": [
+    "缺任一文字槽",
+    "缺任一图片槽",
+    "存在待补或占位文案",
+    "继承金样医学/剂量/功效片段",
+    "继承康爱森或番茄红素参考资产 SHA-256",
+    "图片未声明全量授权",
+    "审批后内容或图片哈希变化",
+    "20 页逐页 QA 不完整"
+  ]
+}

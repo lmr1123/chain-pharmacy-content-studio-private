@@ -11,7 +11,7 @@ export function createContext({
   assetsRoot,
   repoRoot,
   patches = {},
-  eidPrefix = 'editable:cw4',
+  eidPrefix = 'editable:component',
   modelPath = '',
 }) {
   const canvas = style.canvas || {};
@@ -56,6 +56,14 @@ export function createContext({
 
   /** Convenience palette aliases used by scene builders (mapped from tokens). */
   const C = {
+    primary: c('primary', c('bg', '#43a9e4')),
+    primaryDeep: c('primary_deep', c('dark', '#0b557c')),
+    primarySoft: c('primary_soft', c('card_soft', '#ddf3fc')),
+    coral: c('coral', c('red', '#f57a52')),
+    coralDeep: c('coral_deep', c('red_deep', '#d95d3c')),
+    green: c('green', c('accent_green', '#17a673')),
+    grid: c('grid', 'rgba(255,255,255,0.12)'),
+    wave: c('wave', 'rgba(255,255,255,0.10)'),
     silk: c('silk', c('bg', '#cecbc4')),
     silkDeep: c('silk_deep', '#b8b4ab'),
     silkLight: c('silk_light', c('bg_warm', '#e4e1da')),
@@ -176,11 +184,12 @@ export function createContext({
     if (rel && typeof rel === 'object') rel = rel.src;
     if (!rel) rel = keyOrPath;
 
+    if (path.isAbsolute(rel)) return rel;
     if (rel.startsWith('/')) rel = rel.slice(1);
-    if (!rel.includes('/') && !path.isAbsolute(rel)) {
+    if (!rel.includes('/')) {
       rel = path.join('assets/generated', rel);
     }
-    return path.isAbsolute(rel) ? rel : path.join(assetsRoot, rel);
+    return path.join(assetsRoot, rel);
   }
 
   async function loadAsset(keyOrPath) {
@@ -279,7 +288,10 @@ export function createContext({
     alt = '',
     placeholderLabel = '',
   ) {
-    const key = patchedSrc(elementId, assetKey);
+    const source = typeof assetKey === 'object' && assetKey
+      ? assetKey
+      : {src: assetKey};
+    const key = patchedSrc(elementId, source.src);
     const loaded = await loadAsset(key);
     if (!loaded) {
       return drawPlaceholderCard(
@@ -292,13 +304,17 @@ export function createContext({
         placeholderLabel || alt || '图片占位\n待业务替换',
       );
     }
+    const requestedFit = source.fit === 'cover' ? 'cover' : 'contain';
     const size = readImageSize(loaded.buf);
-    const position = containBox(cx, cy, maxW, maxH, size?.w, size?.h);
+    const position = requestedFit === 'cover'
+      ? centerBox(cx, cy, maxW, maxH)
+      : containBox(cx, cy, maxW, maxH, size?.w, size?.h);
     return slide.images.add({
       blob: loaded.buf,
       contentType: contentTypeOf(loaded.full),
       alt: alt || elementId,
-      fit: 'fill',
+      fit: requestedFit === 'cover' ? 'cover' : 'fill',
+      ...(source.crop ? {crop: source.crop} : {}),
       position,
       name: elementId,
     });

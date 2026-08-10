@@ -7,7 +7,7 @@
     → content-model.json（引擎输入）
     → layer-manifest.json
     → courseware-pptx-v1 export → PPTX
-    → QA 图（soffice → pdftoppm）
+    → QA 图（项目内 artifact-tool 逐页 PNG）
 
 硬校验：
   - hidden 条目排除
@@ -17,31 +17,32 @@
 
 用法：
   python3 scripts/generate_courseware.py \\
-    --script production-library/validation/courseware/fuler-maikenli-lycopene-v1/script.structured.json \\
-    --style production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json \\
-    --out-dir production-library/validation/courseware/fuler-maikenli-lycopene-v1/m4-generator-out
+    --script /path/to/new-theme/script.structured.json \\
+    --style production-library/styles/reference-product-blue-v1/tokens.json \\
+    --out-dir /path/to/new-theme/output
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import shutil
 import subprocess
 import sys
 from pathlib import Path
 from typing import Any
 
+from product_pptx_asset_plan import asset_file_info, cw4_gold_image_hashes
+
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REGISTRY = ROOT / "production-library/page-types/product-training/registry.json"
 DEFAULT_RECIPES = ROOT / "production-library/page-types/product-training/recipes"
-DEFAULT_STYLE = ROOT / "production-library/styles/courseware-4-silk-yellow-red-v1/tokens.json"
+DEFAULT_STYLE = ROOT / "production-library/styles/reference-product-blue-v1/tokens.json"
 DEFAULT_ENGINE = ROOT / "production-library/engines/courseware-pptx-v1/export.mjs"
-DEFAULT_MANIFEST = ROOT / "production-library/engines/courseware-pptx-v1/build_layer_manifest.py"
-DEFAULT_ASSETS = (
-    ROOT
-    / "production-library/validation/courseware/product-courseware-4-faithful-replica-v1"
+DEFAULT_ARTIFACT_RENDERER = (
+    ROOT / "production-library/engines/courseware-pptx-v1/render-pptx.mjs"
 )
+DEFAULT_MANIFEST = ROOT / "production-library/engines/courseware-pptx-v1/build_layer_manifest.py"
+DEFAULT_ASSETS = ROOT / "assets"
 
 # 引擎 chrome / 占位槽允许的非 script 文案（不进「扩写」判定）
 ENGINE_CHROME_ALLOW = {
@@ -53,25 +54,8 @@ ENGINE_CHROME_ALLOW = {
     "Big",
     "Title",
     "敲重点",
-    "好物推荐",  # cover badge 槽位 alt；有图时不进文本
-    # precautions 2×2 插画 chrome 标签（与 verify_text_provenance CHROME_ALLOWLIST 对齐）
-    "不代替药物",
-    "禁忌人群",
-    "随餐服用",
-    "就医咨询",
+    "好物推荐",  # cover badge 文案仅在业务显式提供时使用
 }
-
-# 注意事项四插画（component-library 入库后文件名；引擎 resolve 为 assets/generated/<file>）
-PRECAUTION_ILLUSTRATIONS = [
-    {"file": "pre-not-medicine.png", "label": "不代替药物"},
-    {"file": "pre-special-pop.png", "label": "禁忌人群"},
-    {"file": "pre-with-meal.png", "label": "随餐服用"},
-    {"file": "pre-consult.png", "label": "就医咨询"},
-]
-
-PRECAUTIONS_LIBRARY_DIR = (
-    ROOT / "assets/component-library/product-training-precautions/transparent"
-)
 
 
 class GeneratorError(Exception):
@@ -107,9 +91,19 @@ def collect_script_text_atoms(script: dict) -> list[str]:
     """All user-facing copy atoms from script (for provenance / no-invention checks)."""
     atoms: list[str] = []
     meta = script.get("meta") or {}
-    for k in ("display_name", "organization", "tagline"):
+    for k in (
+        "display_name",
+        "organization",
+        "tagline",
+        "cover_badge",
+        "cover_stage_tag",
+    ):
         if meta.get(k):
             atoms.append(str(meta[k]))
+    for item in visible_items(meta.get("cover_points")):
+        atoms.append(
+            str(item if not isinstance(item, dict) else item.get("text") or item.get("label") or "")
+        )
 
     hook = script.get("hook") or {}
     if hook.get("title"):
@@ -142,6 +136,8 @@ def collect_script_text_atoms(script: dict) -> list[str]:
     aud = script.get("audience") or {}
     if aud.get("title"):
         atoms.append(str(aud["title"]))
+    if aud.get("body"):
+        atoms.append(str(aud["body"]))
     for it in aud.get("items") or []:
         atoms.append(str(it if not isinstance(it, dict) else it.get("label") or it.get("text") or ""))
 
@@ -168,6 +164,46 @@ def collect_script_text_atoms(script: dict) -> list[str]:
         atoms.append(str(prec["title"]))
     for it in prec.get("items") or []:
         atoms.append(str(it if not isinstance(it, dict) else it.get("text") or ""))
+    for illo in prec.get("illustrations") or []:
+        if isinstance(illo, dict) and illo.get("label"):
+            atoms.append(str(illo["label"]))
+
+    overview = script.get("product_overview") or {}
+    for key in ("title", "statement"):
+        if overview.get(key):
+            atoms.append(str(overview[key]))
+    for fact in overview.get("facts") or []:
+        if isinstance(fact, dict):
+            for key in ("label", "value"):
+                if fact.get(key):
+                    atoms.append(str(fact[key]))
+
+    consultation = script.get("consultation") or {}
+    if consultation.get("title"):
+        atoms.append(str(consultation["title"]))
+    for step in consultation.get("steps") or []:
+        if isinstance(step, dict):
+            for key in ("question", "why"):
+                if step.get(key):
+                    atoms.append(str(step[key]))
+
+    evidence = script.get("evidence") or {}
+    if evidence.get("title"):
+        atoms.append(str(evidence["title"]))
+    for item in evidence.get("items") or []:
+        if isinstance(item, dict):
+            for key in ("metric", "label", "source"):
+                if item.get(key):
+                    atoms.append(str(item[key]))
+
+    objections = script.get("objection_handling") or {}
+    if objections.get("title"):
+        atoms.append(str(objections["title"]))
+    for row in objections.get("rows") or []:
+        if isinstance(row, dict):
+            for key in ("objection", "response", "boundary"):
+                if row.get(key):
+                    atoms.append(str(row[key]))
 
     return [a.strip() for a in atoms if a and str(a).strip()]
 
@@ -205,19 +241,7 @@ def extract_hook_pain(hook: dict) -> dict | None:
     joined = "\n".join(str(p) for p in paragraphs)
 
     if not symptoms:
-        # common symptom phrases in 前列腺 / 慢病 hook copy
-        candidates = [
-            "尿频",
-            "尿急",
-            "会阴坠胀",
-            "排尿灼痛",
-            "易疲劳",
-            "记忆力下降",
-            "前列腺不适",
-            "皮肤暗沉",
-        ]
-        found = [c for c in candidates if c in joined]
-        symptoms = found[:4] if found else []
+        symptoms = []
 
     if not stats:
         stats = []
@@ -233,32 +257,10 @@ def extract_hook_pain(hook: dict) -> dict | None:
             end = min(len(joined), m.end() + 24)
             note = re.sub(r"\s+", "", joined[start:end])[:36]
             stats.append({"number": num, "unit": unit or "", "note": note, "role": f"stat{len(stats)+1}"})
-        # prefer first two meaningful percentages
+        # prefer first two meaningful percentages without topic-specific rewrites
         pct_stats = [s for s in stats if "%" in s["number"] or s.get("unit") in ("%", "％", "")]
         if len(pct_stats) >= 2:
             stats = pct_stats[:2]
-            # refine notes as exact script substrings when known patterns present
-            if "32.9" in joined:
-                note1 = "我国前列腺炎发病率最高可达"
-                if note1 not in joined:
-                    # include optional 在 prefix
-                    note1 = "在我国前列腺炎发病率最高可达" if "在我国前列腺炎发病率最高可达" in joined else "前列腺炎发病率最高可达"
-                stats[0] = {
-                    "number": "32.9%",
-                    "unit": "",
-                    "note": note1,
-                    "role": "stat1",
-                }
-            if "40%" in joined or "40％" in joined:
-                note2 = "25–34岁的群体占比高达"
-                if note2 not in joined:
-                    note2 = "25-34岁的群体占比高达" if "25-34岁的群体占比高达" in joined else "群体占比高达"
-                stats[1] = {
-                    "number": "40%",
-                    "unit": "",
-                    "note": note2,
-                    "role": "stat2",
-                }
         elif not stats:
             stats = []
 
@@ -274,10 +276,6 @@ def extract_hook_pain(hook: dict) -> dict | None:
     # need at least stats or symptoms to choose this page type
     if not stats and not symptoms:
         return None
-
-    # ensure symptoms non-empty for layout density
-    if not symptoms and stats:
-        symptoms = ["关注前列腺健康", "生活质量下降"]
 
     # symptoms must come from script — only use mined ones that appear in paragraphs
     symptoms = [s for s in symptoms if s in joined or s in (hook.get("symptoms") or [])]
@@ -295,36 +293,13 @@ def extract_hook_pain(hook: dict) -> dict | None:
 
 
 def guess_audience_icon(label: str) -> str:
-    t = label or ""
-    if "前列腺" in t:
-        return "prostate"
-    if "备孕" in t or "男士" in t or "女士" in t:
-        return "couple"
-    if "爱美" in t or "美白" in t or "皮肤" in t:
-        return "audience_beauty"
-    if "虚弱" in t or "体虚" in t or "免疫" in t:
-        return "audience_weak"
-    return "prostate"
+    """No theme illustration may be inferred from audience copy."""
+    return "audience_pending"
 
 
 def benefit_chain_assets(title: str, index: int) -> list[str]:
-    """Align with cw4 gold image chains (S04/S05/S06).
-
-    抗氧化 must be tomato → o2 → skincare_woman（美容），不可停在 O2。
-    """
-    t = title or ""
-    if "前列腺" in t or "精子" in t:
-        return ["tomato", "arrow", "prostate"]
-    if "抗氧化" in t or "衰老" in t:
-        return ["tomato", "arrow", "o2", "arrow", "skincare_woman"]
-    if "免疫" in t:
-        return ["tomato", "arrow", "nk_cell", "arrow", "flex_arm"]
-    defaults = [
-        ["tomato", "arrow", "prostate"],
-        ["tomato", "arrow", "o2", "arrow", "skincare_woman"],
-        ["tomato", "arrow", "nk_cell", "arrow", "flex_arm"],
-    ]
-    return defaults[min(index, len(defaults) - 1)]
+    """Draft-only neutral gap; formal runs require an explicit real chain visual."""
+    return ["benefit_source_pending", "arrow", "benefit_result_pending"]
 
 
 # 大纲结构标签，不宜作正式培训页标题
@@ -359,18 +334,11 @@ def combo_problem_label(row: dict) -> str:
     return scen
 
 
-def combo_icon_file(row: dict) -> str:
-    """组合图槽：按场景/搭配关键词映射主题插画（业务可替换）。"""
+def combo_icon_file(row: dict) -> Any:
+    """Use only an explicit combination visual; otherwise keep a visible gap."""
     if row.get("icon"):
-        return str(row["icon"])
-    blob = f"{row.get('problem') or ''}{row.get('scenario') or ''}{row.get('partner') or ''}"
-    if any(k in blob for k in ("美白", "胶原", "爱美", "皮肤")):
-        return "symptom-skin.png"
-    if any(k in blob for k in ("前列康", "普乐安", "中成药")):
-        return "combo-daily.png"
-    if any(k in blob for k in ("坦索", "非那", "排尿", "前列腺")):
-        return "symptom-prostate.png"
-    return "combo-daily.png"
+        return row["icon"]
+    return "__missing__/combination-pending.png"
 
 
 def feature_scene_type(title: str, index: int) -> str:
@@ -383,6 +351,147 @@ def feature_scene_type(title: str, index: int) -> str:
         return "feature_content"
     order = ["feature_origin", "feature_material", "feature_content"]
     return order[min(index, len(order) - 1)]
+
+
+FORMAL_PENDING_TOKENS = ("待确认", "待业务", "待补充", "待审核")
+FORMAL_SYSTEM_SOURCE_KINDS = {
+    "system_generated",
+    "approved_library",
+    "business_evidence",
+    "business_authorized_partner_packshot",
+}
+
+
+def _pending_paths(value: Any, path: str = "$") -> list[str]:
+    hits: list[str] = []
+    if isinstance(value, dict):
+        if value.get("hidden") is True:
+            return hits
+        for key, item in value.items():
+            hits.extend(_pending_paths(item, f"{path}.{key}"))
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            hits.extend(_pending_paths(item, f"{path}[{index}]"))
+    elif isinstance(value, str) and any(token in value for token in FORMAL_PENDING_TOKENS):
+        hits.append(path)
+    return hits
+
+
+def validate_formal_assets(script: dict, *, script_path: Path) -> dict[str, Any]:
+    """Fail closed unless every formal image slot has a safe, traceable real file."""
+    pending = _pending_paths(script)
+    if pending:
+        raise GeneratorError(
+            "formal render contains pending fields: " + ", ".join(pending[:8])
+        )
+
+    script_path = script_path.expanduser().resolve()
+    job_root = script_path.parent.parent if script_path.parent.name == "draft" else None
+    intake_root = job_root / "intake" if job_root else None
+    generated_root = intake_root / "generated-assets" if intake_root else None
+    component_root = (ROOT / "assets/component-library").resolve()
+    records: list[dict[str, Any]] = []
+    errors: list[str] = []
+
+    def under(path: Path, root: Path | None) -> bool:
+        return bool(root and (path == root or path.is_relative_to(root)))
+
+    def validate_one(
+        value: Any,
+        *,
+        slot: str,
+        product: bool = False,
+    ) -> None:
+        info = asset_file_info(value, base_dir=script_path.parent)
+        if not info.get("ok"):
+            errors.append(f"{slot}: {info.get('error')}")
+            return
+        path = Path(str(info["path"])).resolve()
+        source_kind = str(info.get("source_kind") or "")
+        if product:
+            task_bound = bool(
+                intake_root
+                and path.parent == intake_root
+                and path.name.startswith("product-packshot")
+            )
+            allowed_source = source_kind == "business_authorized"
+        else:
+            task_bound = under(path, generated_root) or under(path, component_root)
+            allowed_source = source_kind in FORMAL_SYSTEM_SOURCE_KINDS
+        if not task_bound and not allowed_source:
+            errors.append(f"{slot}: source_policy_not_satisfied")
+            return
+        records.append(
+            {
+                "slot": slot,
+                "path": str(path),
+                "sha256": info.get("sha256"),
+                "source_kind": source_kind or ("task_bound" if task_bound else ""),
+            }
+        )
+
+    validate_one(
+        (script.get("meta") or {}).get("product_packshot"),
+        slot="cover.product_packshot",
+        product=True,
+    )
+
+    for index, item in enumerate(((script.get("benefits") or {}).get("items") or [])):
+        if isinstance(item, dict) and item.get("hidden") is True:
+            continue
+        row = item if isinstance(item, dict) else {}
+        chain = row.get("chain") or []
+        if not isinstance(chain, list) or not chain:
+            errors.append(f"benefits.items[{index}].chain: missing")
+            continue
+        for chain_index, visual in enumerate(chain):
+            if not isinstance(visual, dict):
+                errors.append(
+                    f"benefits.items[{index}].chain[{chain_index}]: explicit_file_required"
+                )
+                continue
+            validate_one(
+                visual,
+                slot=f"benefits.items[{index}].chain[{chain_index}]",
+            )
+
+    for index, item in enumerate(((script.get("features") or {}).get("items") or [])):
+        if isinstance(item, dict) and item.get("hidden") is True:
+            continue
+        row = item if isinstance(item, dict) else {}
+        validate_one(row.get("visual"), slot=f"features.items[{index}].visual")
+
+    audience = script.get("audience") or {}
+    if audience.get("items"):
+        validate_one(audience.get("visual"), slot="audience.visual")
+
+    for index, item in enumerate(((script.get("combination") or {}).get("rows") or [])):
+        if isinstance(item, dict) and item.get("hidden") is True:
+            continue
+        row = item if isinstance(item, dict) else {}
+        validate_one(row.get("icon"), slot=f"combination.rows[{index}].icon")
+
+    precautions = script.get("precautions") or {}
+    if precautions.get("items"):
+        illustrations = precautions.get("illustrations") or []
+        if not illustrations:
+            errors.append("precautions.illustrations: missing")
+        elif not (
+            (len(illustrations) == 1 and isinstance(illustrations[0], dict) and illustrations[0].get("wide"))
+            or len(illustrations) == 4
+        ):
+            errors.append("precautions.illustrations: require_one_wide_or_four_explicit")
+        for index, visual in enumerate(illustrations):
+            validate_one(visual, slot=f"precautions.illustrations[{index}]")
+
+    if errors:
+        raise GeneratorError("formal asset validation failed: " + "; ".join(errors[:12]))
+    return {
+        "ok": True,
+        "validated_files": len(records),
+        "assets": records,
+        "cw4_hash_blocklist_size": len(cw4_gold_image_hashes()),
+    }
 
 
 def expand_scene_plan(script: dict, registry: dict) -> dict:
@@ -404,13 +513,31 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
         if page_type not in reg:
             raise GeneratorError(f"unregistered page_type: {page_type}")
         # empty_cards hard check on list-like slots
-        for key in ("items", "rows", "paragraphs", "symptoms", "stats"):
+        for key in ("items", "rows", "paragraphs", "symptoms", "stats", "facts", "steps"):
             if key in slots and isinstance(slots[key], list) and len(slots[key]) == 0:
                 raise GeneratorError(f"empty_cards forbidden: {page_type}.{key}")
         # copy provenance: all string leaves in slots must come from script (except chrome keys)
         def walk(obj: Any, path: str) -> None:
             if isinstance(obj, str):
-                if path.endswith(".role") or path.endswith(".icon") or path.endswith(".file"):
+                leaf = path.rsplit(".", 1)[-1]
+                if (
+                    leaf
+                    in {
+                        "role",
+                        "icon",
+                        "file",
+                        "asset",
+                        "visual",
+                        "src",
+                        "packshot",
+                        "product_packshot",
+                        "fit",
+                        "crop",
+                        "slot_ratio",
+                        "safe_area",
+                        "source_kind",
+                    }
+                ):
                     return
                 if path.endswith(".chain") or "chain[" in path:
                     return
@@ -444,6 +571,10 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
             "title_pill": meta.get("display_name") or script.get("title") or "",
             "organization": meta.get("organization") or "",
             "tagline": meta.get("tagline") or "",
+            "packshot": meta.get("product_packshot") or "",
+            "badge": meta.get("cover_badge") or "",
+            "cover_points": visible_items(meta.get("cover_points")),
+            "stage_tag": meta.get("cover_stage_tag") or "",
             "benefits": [
                 it.get("title") if isinstance(it, dict) else str(it)
                 for it in visible_items((script.get("benefits") or {}).get("items"))
@@ -453,6 +584,26 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
         reason="registry courseware_cover settled; meta fields",
         source_section="meta",
     )
+
+    # Green gold-sample contract: authorized packshot + explicit product facts.
+    overview = script.get("product_overview") or {}
+    overview_facts = visible_items(overview.get("facts"))
+    if overview_facts:
+        max_overview = reg["product_overview"].get("max_per_page", 6)
+        for group in chunk(overview_facts, max_overview):
+            add(
+                "product_overview",
+                "product_overview",
+                {
+                    "chapter": overview.get("title") or "",
+                    "facts": group,
+                    "statement": overview.get("statement") or "",
+                    "product_packshot": meta.get("product_packshot") or "",
+                },
+                mode="cross_template",
+                reason="绿色金样商品总览 → 仅复用信息层级与授权商品图槽",
+                source_section="product_overview",
+            )
 
     # 2) hook → prefer hook_pain_data (settled M3), else skip generic time_list dump
     hook = script.get("hook") or {}
@@ -480,13 +631,10 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
         paras = [str(p) for p in hook["paragraphs"] if str(p).strip()]
         if not paras:
             raise GeneratorError("hook.paragraphs empty after strip")
-        # time_list expects short list; use first lines shortened but still substrings
+        # Preserve the approved paragraph in full; the renderer owns wrapping and fit.
         list_lines = []
-        for i, p in enumerate(paras[:3], 1):
-            snippet = p if len(p) <= 28 else p[:28]
-            # ensure substring of original
-            assert snippet in p or snippet == p
-            list_lines.append(f"{i}.{snippet}")
+        for p in paras[:3]:
+            list_lines.append(p)
         add(
             "hook_intro",
             "time_list",
@@ -500,7 +648,7 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
             source_section="hook",
         )
 
-    # 3) benefits → one benefit_chain page per item (gold density)
+    # 3) benefits → one benefit_chain page per item
     benefits = script.get("benefits") or {}
     b_items = visible_items(benefits.get("items"))
     chapter_b = benefits.get("title") or "核心功效"
@@ -520,7 +668,11 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
                 "chapter": chapter_b,
                 "section": f"{group_i + 1}、{title}",
                 "items": [it],
-                "chain": benefit_chain_assets(title, group_i),
+                "chain": (
+                    it.get("chain")
+                    if isinstance(it, dict) and it.get("chain")
+                    else benefit_chain_assets(title, group_i)
+                ),
                 "body": body,
                 "subtitles": [{"text": body}] if body else [],
             },
@@ -545,6 +697,8 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
         }
         if body:
             slots["subtitles"] = [{"text": body}]
+        if isinstance(it, dict) and it.get("visual"):
+            slots["visual"] = it["visual"]
         # 产地页正文走 noteBar（subtitles/body），勿用 map_caption 硬截断造成「半截文案」
         add(
             "feature_cards",
@@ -554,6 +708,24 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
             reason=f"feature「{title}」→ {st} 变体",
             source_section="features",
         )
+
+    # Courseware-3 gold contract: evidence and its traceable source remain paired.
+    evidence = script.get("evidence") or {}
+    evidence_items = visible_items(evidence.get("items"))
+    if evidence_items:
+        max_evidence = reg["evidence_ladder"].get("max_per_page", 5)
+        for group in chunk(evidence_items, max_evidence):
+            add(
+                "evidence_ladder",
+                "evidence_ladder",
+                {
+                    "chapter": evidence.get("title") or "",
+                    "items": group,
+                },
+                mode="cross_template",
+                reason="速福达课件3 feature_3 → 仅复用证据层级合同",
+                source_section="evidence",
+            )
 
     # 5) audience
     aud = script.get("audience") or {}
@@ -566,17 +738,44 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
             items = []
             for lab in group:
                 label = lab if isinstance(lab, str) else (lab.get("label") or lab.get("text") or "")
-                items.append({"label": label, "icon": guess_audience_icon(label)})
+                row = {"label": label, "icon": guess_audience_icon(label)}
+                if isinstance(lab, dict) and lab.get("asset"):
+                    row["asset"] = lab["asset"]
+                    row["icon"] = ""
+                items.append(row)
+            audience_slots: dict[str, Any] = {
+                "chapter": aud.get("title") or "适宜人群",
+                "items": items,
+            }
+            if aud.get("body"):
+                audience_slots["body"] = aud["body"]
+            if aud.get("visual"):
+                audience_slots["visual"] = aud["visual"]
             add(
                 "audience_list",
                 "audience",
-                {
-                    "chapter": aud.get("title") or "适宜人群",
-                    "items": items,
-                },
+                audience_slots,
                 mode="reuse",
-                reason="audience_list settled; icon 按标签关键词映射金样插画",
+                reason="audience_list settled；主题插图仅接受显式绑定",
                 source_section="audience",
+            )
+
+    # Disease-product gold contract: reusable consultation questions and rationale.
+    consultation = script.get("consultation") or {}
+    consultation_steps = visible_items(consultation.get("steps"))
+    if consultation_steps:
+        max_consultation = reg["consultation_framework"].get("max_per_page", 4)
+        for group in chunk(consultation_steps, max_consultation):
+            add(
+                "consultation_framework",
+                "consultation_framework",
+                {
+                    "chapter": consultation.get("title") or "",
+                    "steps": group,
+                },
+                mode="cross_template",
+                reason="穿心莲课件2咨询框架 → 仅复用问询路径合同",
+                source_section="consultation",
             )
 
     # 6) combination_guidance
@@ -609,6 +808,24 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
                 mode="reuse",
                 reason="combination_guidance：问题场景短标 + 搭配药 + 话术 + 组合图槽",
                 source_section="combination",
+            )
+
+    # New business component: objection, approved response and escalation boundary.
+    objections = script.get("objection_handling") or {}
+    objection_rows = visible_items(objections.get("rows"))
+    if objection_rows:
+        max_objections = reg["objection_handling"].get("max_per_page", 3)
+        for group in chunk(objection_rows, max_objections):
+            add(
+                "objection_handling",
+                "objection_handling",
+                {
+                    "chapter": objections.get("title") or "",
+                    "rows": group,
+                },
+                mode="new",
+                reason="新增门店异议应答合同；文案全部来自业务审核稿",
+                source_section="objection_handling",
             )
 
     # 7) summary
@@ -645,8 +862,13 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
             if not group:
                 continue
             items = [it if isinstance(it, str) else (it.get("text") or str(it)) for it in group]
-            # M5：4 张注意事项插画已入库；缺文件时引擎仍可走 labeled 占位
-            illos = list(PRECAUTION_ILLUSTRATIONS)
+            pending_only = all("待确认" in x or "待业务" in x for x in items)
+            illos = prec.get("illustrations") or [
+                {
+                    "file": "__missing__/precautions-pending.png",
+                    "label": "注意事项素材待业务资料",
+                }
+            ]
             add(
                 "precautions",
                 "precautions",
@@ -656,12 +878,49 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
                     "illustrations": illos,
                 },
                 mode="reuse",
-                reason="precautions settled；2×2 接 component-library precautions-illo-v1",
+                reason=(
+                    "precautions 未审核 → 中性素材占位"
+                    if pending_only
+                    else "precautions 内容已填；正式插图仍需显式绑定"
+                ),
                 source_section="precautions",
             )
 
+    requested_sequence = meta.get("page_sequence")
+    if requested_sequence is not None:
+        if not isinstance(requested_sequence, list) or not requested_sequence:
+            raise GeneratorError("meta.page_sequence must be a non-empty list")
+        queues: dict[str, list[dict]] = {}
+        for page in pages:
+            queues.setdefault(page["page_type"], []).append(page)
+        ordered: list[dict] = []
+        for position, page_type in enumerate(requested_sequence, 1):
+            if not isinstance(page_type, str) or page_type not in reg:
+                raise GeneratorError(
+                    f"meta.page_sequence[{position}] is not a registered page_type: {page_type!r}"
+                )
+            candidates = queues.get(page_type) or []
+            if not candidates:
+                raise GeneratorError(
+                    f"meta.page_sequence[{position}] requests unavailable occurrence: {page_type}"
+                )
+            ordered.append(candidates.pop(0))
+        for page_type in set(requested_sequence):
+            if queues.get(page_type):
+                raise GeneratorError(
+                    f"meta.page_sequence omits generated occurrence: {page_type}; "
+                    "repeat the page_type to deliver the next content chunk"
+                )
+        pages = ordered
+
     if not pages:
         raise GeneratorError("scene plan empty — script has no usable sections")
+
+    # Page ids express the delivered order. Repeated page types consume the next
+    # chunk of that type and remain uniquely addressable.
+    for index, page in enumerate(pages, 1):
+        page["i"] = index
+        page["id"] = f"P{index:02d}_{page['page_type']}"
 
     return {
         "schema": "courseware-scene-plan/v1",
@@ -680,6 +939,7 @@ def expand_scene_plan(script: dict, registry: dict) -> dict:
         },
         "page_count": len(pages),
         "pages": pages,
+        "requested_page_sequence": requested_sequence,
         "script_text_atom_count": len(script_atoms),
     }
 
@@ -704,7 +964,11 @@ def scene_plan_to_content_model(plan: dict, script: dict, style_id: str) -> dict
         if st == "cover":
             sc["title_pill"] = slots.get("title_pill") or ""
             sc["benefits"] = slots.get("benefits") or []
+            sc["cover_points"] = slots.get("cover_points") or []
             sc["subtitle"] = slots.get("organization") or ""
+            sc["product_packshot"] = slots.get("packshot") or ""
+            sc["badge"] = slots.get("badge") or ""
+            sc["stage_tag"] = slots.get("stage_tag") or ""
         elif st == "hook_pain_data":
             sc["chapter"] = slots.get("chapter")
             sc["section"] = slots.get("section")
@@ -729,6 +993,8 @@ def scene_plan_to_content_model(plan: dict, script: dict, style_id: str) -> dict
                 sc["map_caption"] = slots["map_caption"]
             if slots.get("body"):
                 sc["body"] = slots["body"]
+            if slots.get("visual"):
+                sc["visual"] = slots["visual"]
             if slots.get("subtitles"):
                 sc["subtitles"] = slots["subtitles"]
             elif slots.get("body"):
@@ -736,6 +1002,10 @@ def scene_plan_to_content_model(plan: dict, script: dict, style_id: str) -> dict
         elif st == "audience":
             sc["chapter"] = slots.get("chapter")
             sc["items"] = slots.get("items") or []
+            if slots.get("body"):
+                sc["body"] = slots["body"]
+            if slots.get("visual"):
+                sc["visual"] = slots["visual"]
         elif st == "combination_guidance":
             sc["chapter"] = slots.get("chapter")
             sc["section"] = slots.get("section")
@@ -747,6 +1017,20 @@ def scene_plan_to_content_model(plan: dict, script: dict, style_id: str) -> dict
             sc["chapter"] = slots.get("chapter")
             sc["items"] = slots.get("items") or []
             sc["illustrations"] = slots.get("illustrations") or []
+        elif st == "product_overview":
+            sc["chapter"] = slots.get("chapter")
+            sc["facts"] = slots.get("facts") or []
+            sc["statement"] = slots.get("statement") or ""
+            sc["product_packshot"] = slots.get("product_packshot") or ""
+        elif st == "consultation_framework":
+            sc["chapter"] = slots.get("chapter")
+            sc["steps"] = slots.get("steps") or []
+        elif st == "evidence_ladder":
+            sc["chapter"] = slots.get("chapter")
+            sc["items"] = slots.get("items") or []
+        elif st == "objection_handling":
+            sc["chapter"] = slots.get("chapter")
+            sc["rows"] = slots.get("rows") or []
         else:
             # pass through remaining slots
             sc.update({k: v for k, v in slots.items() if k not in sc})
@@ -766,6 +1050,7 @@ def scene_plan_to_content_model(plan: dict, script: dict, style_id: str) -> dict
             "missing_assets": "labeled_placeholder_slot",
             "packshots": "business_authorized_or_placeholder",
         },
+        "sources": script.get("sources") or [],
         "generator": {
             "name": "scripts/generate_courseware.py",
             "version": "m4",
@@ -808,7 +1093,7 @@ def export_pptx(
         "--recipes",
         str(recipes),
         "--prefix",
-        "editable:m4",
+        "editable:component",
     ]
     proc = run_cmd(cmd)
     if proc.returncode != 0:
@@ -836,64 +1121,107 @@ def build_manifest(model: Path, out: Path) -> None:
             "--out",
             str(out),
             "--prefix",
-            "editable:m4",
+            "editable:component",
         ]
     )
     if proc.returncode != 0:
         raise GeneratorError(f"build_layer_manifest failed:\n{proc.stderr or proc.stdout}")
 
 
-def render_qa(pptx: Path, qa_dir: Path) -> list[str]:
-    """soffice → pdf → pdftoppm PNGs."""
-    qa_dir.mkdir(parents=True, exist_ok=True)
-    soffice = shutil.which("soffice") or shutil.which("libreoffice")
-    pdftoppm = shutil.which("pdftoppm")
-    if not soffice or not pdftoppm:
-        return []
+def _qa_slide_pngs(qa_dir: Path) -> list[Path]:
+    def slide_number(path: Path) -> int:
+        match = re.fullmatch(r"slide-(\d+)\.png", path.name, flags=re.IGNORECASE)
+        return int(match.group(1)) if match else 10**9
 
-    tmp = qa_dir / "_tmp_pdf"
-    if tmp.exists():
-        shutil.rmtree(tmp)
-    tmp.mkdir(parents=True, exist_ok=True)
+    return sorted(qa_dir.glob("slide-*.png"), key=slide_number)
 
-    proc = run_cmd(
-        [
-            soffice,
-            "--headless",
-            "--convert-to",
-            "pdf",
-            "--outdir",
-            str(tmp),
-            str(pptx),
-        ]
-    )
-    if proc.returncode != 0:
-        raise GeneratorError(f"soffice convert failed:\n{proc.stderr or proc.stdout}")
 
-    pdfs = list(tmp.glob("*.pdf"))
-    if not pdfs:
-        raise GeneratorError("soffice produced no pdf")
-    pdf = pdfs[0]
-    prefix = qa_dir / "slide"
-    proc2 = run_cmd([pdftoppm, "-png", "-r", "120", str(pdf), str(prefix)])
-    if proc2.returncode != 0:
-        raise GeneratorError(f"pdftoppm failed:\n{proc2.stderr or proc2.stdout}")
-
-    # normalize names slide-1.png ...
-    raw = sorted(qa_dir.glob("slide-*.png")) + sorted(qa_dir.glob("slide*.png"))
-    # pdftoppm produces slide-1.png already with - prefix path
-    produced = sorted(qa_dir.glob("slide-*.png"))
+def _validate_qa_pngs(qa_dir: Path, *, expected: int | None = None) -> list[Path]:
+    produced = _qa_slide_pngs(qa_dir)
     if not produced:
-        # slide1.png style
-        for i, p in enumerate(sorted(qa_dir.glob("slide*.png")), 1):
-            dest = qa_dir / f"slide-{i}.png"
-            if p.resolve() != dest.resolve():
-                p.rename(dest)
-            produced.append(dest)
+        raise GeneratorError("renderer produced no slide PNG")
+    if expected is not None and len(produced) != expected:
+        raise GeneratorError(
+            f"renderer slide count mismatch: expected {expected}, got {len(produced)}"
+        )
+    empty = [path.name for path in produced if path.stat().st_size < 100]
+    if empty:
+        raise GeneratorError(f"renderer produced empty PNG: {', '.join(empty)}")
+    return produced
 
-    # cleanup pdf temp
-    shutil.rmtree(tmp, ignore_errors=True)
-    return [str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p) for p in sorted(qa_dir.glob("slide-*.png"))]
+
+def render_qa(pptx: Path, qa_dir: Path) -> list[str]:
+    """Render every slide with the project artifact-tool runtime, fail closed."""
+    qa_dir.mkdir(parents=True, exist_ok=True)
+    for stale in _qa_slide_pngs(qa_dir):
+        stale.unlink()
+
+    attempts: list[dict[str, Any]] = []
+    artifact_error = ""
+    if not DEFAULT_ARTIFACT_RENDERER.is_file():
+        artifact_error = f"renderer_missing: {DEFAULT_ARTIFACT_RENDERER}"
+    else:
+        try:
+            proc = run_cmd(
+                [
+                    "node",
+                    str(DEFAULT_ARTIFACT_RENDERER),
+                    "--input",
+                    str(pptx),
+                    "--output-dir",
+                    str(qa_dir),
+                    "--scale",
+                    "1",
+                ]
+            )
+            if proc.returncode != 0:
+                artifact_error = (
+                    proc.stderr or proc.stdout or "artifact renderer failed"
+                ).strip()
+            else:
+                payload = json.loads(proc.stdout.strip().splitlines()[-1])
+                expected = int(payload.get("slideCount") or 0)
+                if expected <= 0:
+                    raise GeneratorError("artifact-tool reported zero slides")
+                produced = _validate_qa_pngs(qa_dir, expected=expected)
+                attempts.append(
+                    {"backend": "artifact-tool", "ok": True, "slides": len(produced)}
+                )
+                write_json(
+                    qa_dir / "qa-render-report.json",
+                    {
+                        "ok": True,
+                        "backend": "artifact-tool",
+                        "slide_count": len(produced),
+                        "attempts": attempts,
+                    },
+                )
+                return [
+                    str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+                    for path in produced
+                ]
+        except (
+            GeneratorError,
+            OSError,
+            TypeError,
+            ValueError,
+            json.JSONDecodeError,
+        ) as error:
+            artifact_error = str(error)
+
+    attempts.append(
+        {"backend": "artifact-tool", "ok": False, "error": artifact_error}
+    )
+    for stale in _qa_slide_pngs(qa_dir):
+        stale.unlink()
+    write_json(
+        qa_dir / "qa-render-report.json",
+        {"ok": False, "backend": None, "slide_count": 0, "attempts": attempts},
+    )
+    errors = "; ".join(
+        f"{attempt['backend']}: {attempt.get('error') or 'failed'}" for attempt in attempts
+    )
+    raise GeneratorError(f"QA render failed closed: {errors}")
 
 
 def apply_page_filter(plan: dict, filter_spec: str | None) -> dict:
@@ -956,52 +1284,13 @@ def apply_page_filter(plan: dict, filter_spec: str | None) -> dict:
 
 
 def prepare_assets(assets_root: Path, out_assets: Path, extra_dirs: list[Path] | None = None) -> Path:
-    """
-    Ensure engine can resolve gold icons + optional run assets.
-    Prefer symlink/copy of generated/ from cw4 into out_dir/assets.
+    """Create the run asset directories without bulk-importing any template media.
+
+    ``assets_root`` and ``extra_dirs`` remain accepted for CLI compatibility. Formal
+    visuals are resolved from explicit script bindings and validated before export.
     """
     out_assets.mkdir(parents=True, exist_ok=True)
-    gen = out_assets / "generated"
-    gen.mkdir(parents=True, exist_ok=True)
-
-    sources: list[Path] = []
-    if (assets_root / "assets" / "generated").is_dir():
-        sources.append(assets_root / "assets" / "generated")
-    elif (assets_root / "generated").is_dir():
-        sources.append(assets_root / "generated")
-    else:
-        sources.append(assets_root)
-
-    for d in extra_dirs or []:
-        if d.is_dir():
-            sources.append(d)
-
-    for src in sources:
-        if not src.is_dir():
-            continue
-        for f in src.iterdir():
-            if not f.is_file():
-                continue
-            if f.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp"}:
-                continue
-            dest = gen / f.name
-            if dest.exists():
-                continue
-            try:
-                dest.symlink_to(f.resolve())
-            except OSError:
-                shutil.copy2(f, dest)
-
-    # also place icons at assets root for resolve paths that don't use generated/
-    for f in gen.iterdir():
-        if f.is_file() and f.suffix.lower() == ".png":
-            dest = out_assets / f.name
-            if not dest.exists():
-                try:
-                    dest.symlink_to(f.resolve())
-                except OSError:
-                    shutil.copy2(f, dest)
-
+    (out_assets / "generated").mkdir(parents=True, exist_ok=True)
     return out_assets
 
 
@@ -1016,7 +1305,7 @@ def main() -> int:
         "--assets",
         type=Path,
         default=DEFAULT_ASSETS,
-        help="Asset root (cw4 gold assets default for density)",
+        help="Compatibility-only asset root; formal visuals must be explicitly bound",
     )
     ap.add_argument("--engine", type=Path, default=DEFAULT_ENGINE)
     ap.add_argument("--skip-export", action="store_true")
@@ -1055,6 +1344,11 @@ def main() -> int:
     registry = load_json(registry_path)
     style = load_json(style_path)
     style_id = style.get("id") or style.get("style_pack_id") or style_path.parent.name
+    formal_asset_report = (
+        None
+        if args.skip_export
+        else validate_formal_assets(script, script_path=script_path)
+    )
 
     # ── 1) scene plan ──
     plan = expand_scene_plan(script, registry)
@@ -1073,15 +1367,7 @@ def main() -> int:
     # ── 3) assets for this run ──
     # Engine resolves files as {assetsRoot}/assets/generated/<file>
     # so assetsRoot must be the run out_dir (not out_dir/assets).
-    prepare_assets(
-        args.assets.resolve(),
-        out_dir / "assets",
-        extra_dirs=[
-            PRECAUTIONS_LIBRARY_DIR,
-            ROOT
-            / "production-library/validation/courseware/m3-candidate-pages/assets/generated",
-        ],
-    )
+    prepare_assets(args.assets.resolve(), out_dir / "assets")
     assets_out = out_dir
 
     result: dict[str, Any] = {
@@ -1098,6 +1384,8 @@ def main() -> int:
         },
         "content_lock": (script.get("meta") or {}).get("content_lock"),
     }
+    if formal_asset_report is not None:
+        result["formal_asset_validation"] = formal_asset_report
 
     # ── 4) layer manifest ──
     manifest_path = out_dir / "layer-manifest.json"
@@ -1143,6 +1431,8 @@ def main() -> int:
             qa_files = render_qa(pptx_path, out_dir / "qa")
             result["qa"] = qa_files
         except GeneratorError as e:
+            result["ok"] = False
+            result["error"] = "QA slide rendering failed"
             result["qa_error"] = str(e)
 
     # ── 7) text provenance ──

@@ -2,11 +2,49 @@
 import {fitFontSize} from '../layout-rules.mjs';
 
 export function chapterTitle(ctx, slide, pageId, title) {
-  const {eid, text, centerBox, C, TS, style} = ctx;
+  const {eid, shape, text, centerBox, C, TS, style} = ctx;
   if (!title) return;
   const conf = style.components?.chapter_title || {};
   const id = eid(pageId, 'chapter');
-  const box = style.layout?.chapter_box_design || {cx: 0, cy: -460, w: 1600, h: 100};
+  const rawBox = style.layout?.chapter_box_design || {cx: 0, cy: -460, w: 1600, h: 100};
+  // Artifact export can clip CJK ascenders/descenders in a 100px-high box.
+  // Keep the same top edge and expand downward so titles remain fully visible.
+  const box = {
+    ...rawBox,
+    cy: rawBox.cy + 20,
+    h: Math.max(rawBox.h, 140),
+  };
+  if (conf.mode === 'left-lockup' || style.visual_grammar === 'product-blue-asymmetric-v1') {
+    const left = box.cx - box.w / 2;
+    const fit = fitFontSize(title, {
+      preferred: TS.chapter,
+      min: Math.max(TS.body28 || 22, 26),
+      boxW: box.w - 130,
+      maxLines: 1,
+    });
+    shape(
+      slide,
+      'roundRect',
+      centerBox(left + 16, box.cy, 28, 98),
+      C.coral,
+      C.coral,
+      `${id}__accent-rail`,
+    );
+    text(slide, id, title, centerBox(box.cx + 52, box.cy - 4, box.w - 120, box.h), {
+      fontSize: fit.fontSize,
+      color: C.white,
+      align: 'left',
+    });
+    shape(
+      slide,
+      'rect',
+      centerBox(left + 126, box.cy + 66, 220, 7),
+      C.yellow,
+      C.yellow,
+      `${id}__highlight-line`,
+    );
+    return;
+  }
   const offsets = conf.outline_offsets_design || conf.outline_offsets_px || [
     [-2.5, 0],
     [2.5, 0],

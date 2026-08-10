@@ -118,18 +118,26 @@ export function imageChainLayout(items, opts = {}) {
   const arrowSize = opts.arrowSize ?? 90;
   const totalSpan = opts.totalSpan ?? 1600;
 
-  const sizes = list.map((it) => {
+  const dimensions = list.map((it) => {
     const isArrow = /arrow|connector|plus/i.test(it.role || '') || it.kind === 'connector';
-    return it.size ?? (isArrow ? arrowSize : defaultSize);
+    const fallback = it.size ?? (isArrow ? arrowSize : defaultSize);
+    return {
+      width: it.w ?? it.width ?? fallback,
+      height: it.h ?? it.height ?? fallback,
+    };
   });
   const gap = 16;
-  const totalW = sizes.reduce((a, b) => a + b, 0) + gap * (n - 1);
+  const totalW = dimensions.reduce((sum, dim) => sum + dim.width, 0) + gap * (n - 1);
   const scale = totalW > totalSpan ? totalSpan / totalW : 1;
-  const scaled = sizes.map((s) => s * scale);
-  const used = scaled.reduce((a, b) => a + b, 0) + gap * (n - 1);
+  const scaled = dimensions.map((dim) => ({
+    width: dim.width * scale,
+    height: dim.height * scale,
+  }));
+  const used = scaled.reduce((sum, dim) => sum + dim.width, 0) + gap * (n - 1);
   let x = -used / 2;
   return list.map((it, i) => {
-    const w = scaled[i];
+    const w = scaled[i].width;
+    const h = scaled[i].height;
     const cx = x + w / 2;
     x += w + gap;
     return {
@@ -137,114 +145,40 @@ export function imageChainLayout(items, opts = {}) {
       cx,
       cy: y,
       size: w,
+      width: w,
+      height: h,
       index: i,
     };
   });
 }
 
-/** Legacy gold chain presets by semantic length (not hard scene id). */
+/** Normalize only explicit chain entries; never infer theme media from copy or scene ids. */
 export function defaultChainItems(rolesOrCount) {
   if (Array.isArray(rolesOrCount)) {
     return rolesOrCount.map((role) => ({
       role: typeof role === 'string' ? role : role.role,
-      file: typeof role === 'string' ? roleToFile(role) : role.file || roleToFile(role.role),
+      file: typeof role === 'object' ? role.file || role.asset || role.src : undefined,
       size: typeof role === 'object' ? role.size : undefined,
+      w: typeof role === 'object' ? role.w ?? role.width : undefined,
+      h: typeof role === 'object' ? role.h ?? role.height : undefined,
+      fit: typeof role === 'object' ? role.fit : undefined,
+      crop: typeof role === 'object' ? role.crop : undefined,
     }));
   }
-  const n = rolesOrCount | 0;
-  if (n <= 3) {
-    return [
-      {role: 'tomato', file: 'tomato.png', size: 320},
-      {role: 'arrow', file: 'arrow-red.png', size: 100},
-      {role: 'prostate', file: 'prostate-diagram.png', size: 360},
-    ];
-  }
-  return [
-    {role: 'tomato', file: 'tomato.png', size: 240},
-    {role: 'arrow1', file: 'arrow-red.png', size: 90},
-    {role: 'mid', file: 'o2.png', size: 240},
-    {role: 'arrow2', file: 'arrow-red.png', size: 90},
-    {role: 'end', file: 'skincare-woman.png', size: 280},
-  ];
-}
-
-function roleToFile(role) {
-  const map = {
-    tomato: 'tomato.png',
-    arrow: 'arrow-red.png',
-    arrow1: 'arrow-red.png',
-    arrow2: 'arrow-red.png',
-    prostate: 'prostate-diagram.png',
-    o2: 'o2.png',
-    woman: 'skincare-woman.png',
-    skincare_woman: 'skincare-woman.png',
-    nk: 'nk-cell.png',
-    nk_cell: 'nk-cell.png',
-    arm: 'flex-arm.png',
-    flex_arm: 'flex-arm.png',
-  };
-  return map[role] || `${role}.png`;
+  return [];
 }
 
 /**
- * Gold-compatible chain lookup (scene id → items), falling back to model.chain / length rules.
+ * Explicit chain lookup. A missing file remains a labeled draft gap.
  */
 export function resolveChainItems(scene) {
-  // Fixed design-coord x from cw4 CHAIN_LAYOUTS (gold regression)
-  const GOLD = {
-    S04_benefit_1: [
-      {role: 'tomato', file: 'tomato.png', x: -420, y: 80, size: 320},
-      {role: 'arrow', file: 'arrow-red.png', x: -80, y: 80, size: 100},
-      {role: 'prostate', file: 'prostate-diagram.png', x: 360, y: 80, size: 360},
-    ],
-    S05_benefit_2: [
-      {role: 'tomato', file: 'tomato.png', x: -620, y: 80, size: 240},
-      {role: 'arrow1', file: 'arrow-red.png', x: -360, y: 80, size: 90},
-      {role: 'o2', file: 'o2.png', x: -120, y: 80, size: 240},
-      {role: 'arrow2', file: 'arrow-red.png', x: 160, y: 80, size: 90},
-      {role: 'woman', file: 'skincare-woman.png', x: 480, y: 80, size: 280},
-    ],
-    S06_benefit_3: [
-      {role: 'tomato', file: 'tomato.png', x: -620, y: 80, size: 240},
-      {role: 'arrow1', file: 'arrow-red.png', x: -360, y: 80, size: 90},
-      {role: 'nk', file: 'nk-cell.png', x: -80, y: 80, size: 260},
-      {role: 'arrow2', file: 'arrow-red.png', x: 220, y: 80, size: 90},
-      {role: 'arm', file: 'flex-arm.png', x: 520, y: 80, size: 280},
-    ],
-  };
-  if (GOLD[scene.id]) return GOLD[scene.id];
-
-  // Semantic match for generator scene ids (P0x_benefit_cards etc.)
-  const roles = Array.isArray(scene.chain)
-    ? scene.chain.map((r) => (typeof r === 'string' ? r : r.role || '')).join('|')
-    : '';
-  const section = `${scene.section || ''} ${scene.chapter || ''}`;
-  if (
-    roles.includes('skincare_woman') ||
-    roles.includes('woman') ||
-    /抗氧化|衰老/.test(section)
-  ) {
-    // Prefer full gold 5-node layout when chain mentions beauty or antioxidant
-    if (!roles || roles.includes('o2') || roles.includes('skincare') || /抗氧化|衰老/.test(section)) {
-      return GOLD.S05_benefit_2;
-    }
-  }
-  if (roles.includes('flex_arm') || roles.includes('nk_cell') || /免疫/.test(section)) {
-    if (roles.includes('nk') || roles.includes('flex') || /免疫/.test(section)) {
-      return GOLD.S06_benefit_3;
-    }
-  }
-  if (roles.includes('prostate') || /前列腺|精子/.test(section)) {
-    return GOLD.S04_benefit_1;
-  }
-
   if (Array.isArray(scene.chain) && scene.chain.length) {
     return defaultChainItems(scene.chain);
   }
   if (Array.isArray(scene.chain_items) && scene.chain_items.length) {
-    return scene.chain_items;
+    return defaultChainItems(scene.chain_items);
   }
-  return defaultChainItems(3);
+  return [];
 }
 
 /** 有图槽 → 图文；无图 → 数据/大字（不硬塞图） */

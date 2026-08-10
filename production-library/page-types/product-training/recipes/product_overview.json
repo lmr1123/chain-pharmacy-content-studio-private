@@ -1,0 +1,20 @@
+{
+  "page_type": "product_overview",
+  "family": "product-training",
+  "status": "production-validated",
+  "production_validation_ref": "../registry.json#/production_validation/page_type_cases/product_overview",
+  "name_zh": "商品信息总览",
+  "scene_types": ["product_overview"],
+  "impl_by_scene": {"product_overview": "product_overview"},
+  "default_impl": "product_overview",
+  "max_per_page": 6,
+  "slots": ["chapter", "facts[{label,value}]", "statement", "product_packshot"],
+  "components": [
+    {"use": "chrome_bg"},
+    {"use": "chapter_title", "slot": "chapter"},
+    {"use": "pack_slot", "slot": "product_packshot"},
+    {"use": "row_card", "slot": "facts", "layout": "adaptive_grid"}
+  ],
+  "source_contract": "template.product-courseware-dashenlin-green-v1#product_overview",
+  "reuse_boundary": "information hierarchy only; no green master pixels or source product assets"
+}

@@ -65,7 +65,7 @@ export function rowCards(ctx, slide, pageId, rows, opts = {}) {
 
 /** Full-width table rows (efficacy / summary style). */
 export function rowTable(ctx, slide, pageId, rows, opts = {}) {
-  const {eid, shape, text, imageFit, centerBox, C, TS, FS} = ctx;
+  const {eid, shape, text, centerBox, C, TS, FS} = ctx;
   const list = rows || [];
   const tableW = opts.tableW ?? 1600;
   const tableH = opts.tableH ?? 720;
@@ -112,16 +112,10 @@ export function rowTable(ctx, slide, pageId, rows, opts = {}) {
     if (!withChevron) return;
     for (let i = 0; i < list.length; i++) {
       const y = topY - tableH / 2 + fh * (i + 0.5);
-      await imageFit(
-        slide,
-        eid(pageId, `row.${i + 1}.chevron`),
-        'icon-chevron-lime.png',
-        -720,
-        y,
-        44,
-        44,
-        '»',
-      );
+      text(slide, eid(pageId, `row.${i + 1}.chevron`), '»', centerBox(-720, y, 44, 44), {
+        fontSize: TS.body24,
+        color: C.lime,
+      });
     }
   };
 }

@@ -1,0 +1,124 @@
+{
+  "schema": "product-training-script/v1",
+  "meta": {
+    "display_name": "澄明陈列物料 B（内部 UAT）",
+    "organization": "连锁门店内部业务验收",
+    "tagline": "看状态 · 找来源 · 再交付",
+    "content_lock": "uat-safe-non-medical-v1",
+    "brand_boast_disabled": true,
+    "family": "product-training",
+    "style_pack_id": "style-pack.reference-product-blue-v1",
+    "cover_stage_tag": "内部 UAT",
+    "cover_points": [
+      "证据阶梯与商品总览组合",
+      "先证据再总览页序",
+      "统一浅蓝视觉"
+    ],
+    "product_packshot": {
+      "src": "production-library/validation/courseware/component-neutral-business-uat-v1/assets/uat-packshot.png",
+      "source_kind": "business_authorized"
+    },
+    "page_sequence": [
+      "courseware_cover",
+      "hook_pain_data",
+      "evidence_ladder",
+      "product_overview",
+      "objection_handling",
+      "summary_matrix"
+    ]
+  },
+  "hook": {
+    "title": "陈列物料状态检查",
+    "symptoms": [
+      "版本标签不一致",
+      "来源记录未关联",
+      "确认状态不清晰"
+    ],
+    "stats": [
+      {
+        "number": "3",
+        "unit": "项",
+        "note": "版本、来源、状态",
+        "role": "stat1"
+      },
+      {
+        "number": "1",
+        "unit": "份",
+        "note": "统一交付清单",
+        "role": "stat2"
+      }
+    ],
+    "source": "内部 UAT 场景设定；不代表真实业务数据"
+  },
+  "evidence": {
+    "title": "先看资料凭证",
+    "items": [
+      {
+        "metric": "A",
+        "label": "原始文件",
+        "source": "业务提交记录"
+      },
+      {
+        "metric": "B",
+        "label": "当前版本",
+        "source": "内容确认记录"
+      },
+      {
+        "metric": "C",
+        "label": "取件状态",
+        "source": "逐页验收记录"
+      }
+    ]
+  },
+  "product_overview": {
+    "title": "再看物料总览",
+    "statement": "凭证与物料信息一致，才能进入交付核对。",
+    "facts": [
+      {
+        "label": "物料编号",
+        "value": "UAT-B-02"
+      },
+      {
+        "label": "当前版本",
+        "value": "V2"
+      },
+      {
+        "label": "陈列范围",
+        "value": "内部验收台"
+      }
+    ]
+  },
+  "objection_handling": {
+    "title": "临时变更如何处理",
+    "rows": [
+      {
+        "objection": "能否临时替换图片？",
+        "response": "先提交新文件并记录替换原因。",
+        "boundary": "视觉确认前不得进入交付。"
+      },
+      {
+        "objection": "能否沿用旧版本？",
+        "response": "先核对当前批准记录。",
+        "boundary": "无法确认时停止使用旧文件。"
+      }
+    ]
+  },
+  "summary": {
+    "title": "陈列交付检查表",
+    "rows": [
+      {
+        "label": "凭证",
+        "value": "来源、版本与状态可追溯"
+      },
+      {
+        "label": "物料",
+        "value": "编号与当前记录一致"
+      },
+      {
+        "label": "变更",
+        "value": "重新确认后再交付"
+      }
+    ]
+  },
+  "gaps": []
+}

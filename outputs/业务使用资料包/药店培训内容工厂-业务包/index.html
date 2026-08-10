@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>内部培训 · 选模板</title>
+<title>内部培训 · 选课型或制作模式</title>
 <style>
 :root {
   --bg: #f4f6f9;
@@ -38,11 +38,12 @@ header h1 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
 header .sub { font-size: 13px; color: var(--dim); max-width: 70ch; }
 .how {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   margin-top: 12px;
 }
-@media (max-width: 720px) { .how { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .how { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .how { grid-template-columns: 1fr; } }
 .how div {
   background: var(--accent-soft);
   border-radius: 10px;
@@ -83,6 +84,91 @@ section.block h2 .n {
 }
 section.block > .hint { font-size: 12px; color: var(--dim); margin-bottom: 12px; }
 
+.route-selector {
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 16px;
+  margin: 4px 0 18px;
+}
+.selector-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.selector-eyebrow {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  margin-bottom: 2px;
+}
+.selector-head h3 { font-size: 17px; line-height: 1.3; }
+.selector-head p { color: var(--dim); font-size: 12px; margin-top: 3px; max-width: 66ch; }
+.selector-gate {
+  flex: none;
+  border: 1px solid #a7f3d0;
+  background: var(--ok-soft);
+  color: var(--ok);
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: 800;
+}
+.selector-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr);
+  gap: 14px;
+}
+.selector-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.selector-field { display: block; min-width: 0; }
+.selector-field > span { display: block; font-size: 11px; font-weight: 800; margin-bottom: 4px; }
+.selector-field select,
+.selector-field textarea {
+  width: 100%;
+  border: 1px solid #bfdbfe;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  padding: 8px 9px;
+}
+.selector-field select { min-height: 38px; }
+.selector-field textarea { min-height: 90px; resize: vertical; line-height: 1.5; }
+.selector-field select:focus-visible,
+.selector-field textarea:focus-visible { outline: 3px solid #93c5fd; outline-offset: 1px; }
+.selector-requirement { margin-top: 9px; }
+.selector-boundaries {
+  border-left: 1px solid #bfdbfe;
+  padding-left: 14px;
+}
+.selector-boundaries > b { display: block; font-size: 12px; margin-bottom: 6px; }
+.selector-boundary { display: grid; grid-template-columns: 72px 1fr; gap: 7px; padding: 5px 0; }
+.selector-boundary + .selector-boundary { border-top: 1px solid rgba(147,197,253,.45); }
+.selector-boundary b { font-size: 11px; }
+.selector-boundary span { color: var(--dim); font-size: 10px; }
+.selector-note { color: var(--dim); font-size: 11px; margin-top: 8px; }
+@media (max-width: 760px) {
+  .selector-head { display: block; }
+  .selector-gate { display: inline-block; margin-top: 8px; }
+  .selector-layout { grid-template-columns: minmax(0, 1fr); }
+  .selector-form-grid { grid-template-columns: minmax(0, 1fr); }
+  .selector-boundaries { border-left: 0; border-top: 1px solid #bfdbfe; padding: 12px 0 0; }
+}
+
+.template-group + .template-group {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.template-group-head { margin-bottom: 8px; }
+.template-group-head h3 { font-size: 14px; font-weight: 800; }
+.template-group-head p { font-size: 11px; color: var(--dim); margin-top: 2px; }
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -118,6 +204,36 @@ section.block > .hint { font-size: 12px; color: var(--dim); margin-bottom: 12px;
   display: block;
   background: #0f172a;
 }
+.mode-cover {
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255,255,255,.28), transparent 28%),
+    linear-gradient(135deg, #1e3a8a, #0f766e);
+}
+.mode-cover span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  opacity: .78;
+}
+.mode-cover strong { font-size: 20px; line-height: 1.15; margin-top: 3px; }
+.preview-pending-cover {
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+  color: #334155;
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+  border-bottom: 1px solid var(--line);
+}
+.preview-pending-cover span { font-size: 10px; font-weight: 800; color: #64748b; }
+.preview-pending-cover strong { font-size: 16px; line-height: 1.35; margin-top: 5px; }
 .tcard .body { padding: 8px 9px 10px; }
 .tcard h3 {
   font-size: 12px;
@@ -144,6 +260,10 @@ section.block > .hint { font-size: 12px; color: var(--dim); margin-bottom: 12px;
 }
 .readiness-badge.preview { color: #475569; background: #f1f5f9; }
 .readiness-badge.ready { color: var(--ok); background: var(--ok-soft); }
+.readiness-badge.building { color: #9a3412; background: #fff7ed; }
+.readiness-badge.gated { color: #92400e; background: #fffbeb; }
+.readiness-badge.external { color: #3730a3; background: #eef2ff; }
+.readiness-list { display: flex; flex-wrap: wrap; gap: 4px; }
 
 .preview-pane {
   display: none;
@@ -152,6 +272,33 @@ section.block > .hint { font-size: 12px; color: var(--dim); margin-bottom: 12px;
   border-top: 1px solid var(--line);
 }
 .preview-pane.show { display: block; }
+.selection-confirm {
+  margin-top: 12px;
+  padding: 13px 14px;
+  border: 1px solid #b7e4cf;
+  border-radius: 10px;
+  background: #f1fbf6;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+}
+.selection-confirm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.selection-confirm-copy span {
+  display: block;
+  color: var(--ok);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.selection-confirm-copy strong { display: block; font-size: 14px; margin-top: 2px; }
+.selection-confirm-copy p { color: var(--dim); font-size: 11px; margin-top: 2px; }
+@media (max-width: 620px) {
+  .selection-confirm-head { align-items: stretch; flex-direction: column; }
+  .selection-confirm-head .btn { width: 100%; }
+}
 .preview-pane .title-row {
   display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
   gap: 8px; margin-bottom: 10px;
@@ -182,6 +329,162 @@ section.block > .hint { font-size: 12px; color: var(--dim); margin-bottom: 12px;
   padding: 6px 8px;
   color: var(--dim);
   background: #fff;
+}
+.keys.component-suite { display: block; }
+.suite-evidence {
+  border: 1px solid #a7d8c2;
+  border-radius: 12px;
+  background: rgba(255,255,255,.8);
+  overflow: hidden;
+}
+.suite-summary {
+  padding: 11px 12px;
+  border-bottom: 1px solid #c7e8d7;
+  color: #315a48;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.suite-summary b { display: block; color: var(--ok); font-size: 12px; }
+.suite-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 9px 10px;
+  overflow-x: auto;
+  border-bottom: 1px solid #d7eadf;
+  background: #f8fcfa;
+}
+.suite-tab {
+  flex: 0 0 auto;
+  border: 1px solid #b7dcca;
+  border-radius: 999px;
+  background: #fff;
+  color: #315a48;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+.suite-tab[aria-selected="true"] {
+  color: #fff;
+  background: var(--ok);
+  border-color: var(--ok);
+}
+.suite-tab:focus-visible { outline: 3px solid #86efac; outline-offset: 2px; }
+.suite-panel { padding: 12px; }
+.suite-panel h4 { font-size: 13px; margin-bottom: 9px; }
+.suite-proof-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr);
+  gap: 12px;
+}
+.suite-proof-media {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0f172a;
+}
+.suite-proof-media img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+.suite-proof-media figcaption { padding: 6px 8px; background: #fff; color: var(--dim); font-size: 11px; text-align: center; }
+.suite-proof-list { display: grid; align-content: start; gap: 7px; }
+.suite-proof {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  gap: 8px;
+  padding: 7px 8px;
+  border: 1px solid #d7eadf;
+  border-radius: 8px;
+  background: #f8fcfa;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.suite-proof b { color: #315a48; }
+.suite-proof span { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .suite-proof-grid { grid-template-columns: 1fr; }
+}
+.keys.mode-steps { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 700px) { .keys.mode-steps { grid-template-columns: 1fr; } }
+.case-preview {
+  display: none;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.case-preview.show { display: grid; }
+.case-preview.video-only { grid-template-columns: minmax(0, 1fr); }
+.case-video {
+  overflow: hidden;
+  border: 1px solid #a7d8c2;
+  border-radius: 10px;
+  background: #10231b;
+}
+.case-video video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  background: #10231b;
+}
+.case-video p { padding: 8px 10px; color: #dff7e9; font-size: 11px; }
+.case-copy {
+  border: 1px solid #c7e8d7;
+  border-radius: 10px;
+  background: rgba(255,255,255,.74);
+  padding: 12px;
+}
+.case-copy h4 { font-size: 12px; margin-bottom: 5px; }
+.case-copy > p { color: var(--dim); font-size: 11px; }
+.prompt-example { margin-top: 9px; }
+.prompt-example summary {
+  color: var(--ok);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.prompt-example pre {
+  max-height: 280px;
+  overflow: auto;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid #d7eadf;
+  border-radius: 8px;
+  background: #f8fcfa;
+  color: #294337;
+  font-family: var(--font);
+  font-size: 11px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+@media (max-width: 760px) { .case-preview { grid-template-columns: 1fr; } }
+.mode-step {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  background: #f8fafc;
+}
+.mode-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+.mode-step b { display: block; font-size: 12px; margin: 8px 0 3px; }
+.mode-step p { font-size: 11px; color: var(--dim); }
+.preview-pending {
+  grid-column: 1 / -1;
+  border: 1px dashed #94a3b8;
+  border-radius: 10px;
+  padding: 18px;
+  color: #475569;
+  background: #f8fafc;
+  font-size: 12px;
 }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .btn {
@@ -275,64 +578,185 @@ footer {
 <body>
 <div class="shell">
   <header>
-    <h1>内部培训课件 · 选模板</h1>
-    <p class="sub">商品 / 疾病内部培训课件与视频。页面只做两件事：选模板、看对应内容示例。内容在 WorkBuddy 对话里说即可。</p>
+    <h1>内部培训内容工厂 · 选课型或制作模式</h1>
+    <p class="sub">五步完成一单：选课型或模式 → 交内容 → 审复核稿 → 按闸门生成 → 一个地方取件。也可以先把内容发给 WorkBuddy，由它推荐匹配入口；创建草稿前都会请你确认所选课型或模式。</p>
     <div class="how">
       <div>
-        <b>① 看模板</b>
-        按交付物查看模板，点开关键页预览与真实能力，再点「选用」
+        <b>① 选我要做什么</b>
+        课件选课型，动画或数字人选制作模式；点卡片看真实交付边界
       </div>
       <div>
-        <b>② 输入培训内容</b>
-        回 WorkBuddy 说主题+审核要点；系统先给内容初稿和素材缺口
+        <b>② 交已有内容</b>
+        回 WorkBuddy 说主题与要点；资料可残缺
       </div>
       <div>
-        <b>③ 下载与修改</b>
-        确认后才生成；质检通过的 PPTX / MP4 在同一交付位置取件
+        <b>③ 审初稿</b>
+        先审内容/变量/脚本/关键页复核包；未确认不放行下一阶段
+      </div>
+      <div>
+        <b>④ 生成与质检</b>
+        课型走生产路线，模式按各自闸门执行；外部账号出片另确认
+      </div>
+      <div>
+        <b>⑤ 一个地方取件</b>
+        WorkBuddy 返回准确本机路径；生产路线发布件进入「05_交付物放这里」
       </div>
     </div>
   </header>
 
-  <section class="block" id="sec-templates">
-    <h2><span class="n">1</span> 模板预览与选择</h2>
-    <p class="hint">点卡片看<strong>关键页面截图</strong>和真实能力。选好后下方会展示该模板的<strong>内容示例</strong>。</p>
-    <div class="grid" id="template-grid"></div>
+  <section class="block" id="sec-entry">
+    <h2><span class="n">0</span> 选择开始方式</h2>
+    <div class="how">
+      <div><b>A · 先选课型或模式（推荐）</b>看预览、复核闸门与真实交付边界，确认后再提交内容。</div>
+      <div><b>B · 先交内容</b>直接把主题、用途和已有要点发给 WorkBuddy，由它推荐匹配课型或模式，再由你确认。</div>
+    </div>
+    <p class="hint">两种方式都会先锁定一个已入库课型或制作模式；未确认复核稿时，不生成正式成品或放行正式提示词包。</p>
+  </section>
 
-    <div class="preview-pane" id="preview-pane">
+  <section class="block" id="sec-templates">
+    <h2><span class="n">1</span> 课型与制作模式</h2>
+    <p class="hint">课型卡按生产路线实时计算能力，一个课型可分别显示 PPTX、MP4 等逐交付物状态；制作模式卡显示 WorkBuddy 可交付的复核/提示词包，以及外部账号出片边界。</p>
+    <aside class="route-selector" id="route-selector" aria-labelledby="route-selector-title">
+      <div class="selector-head">
+        <div>
+          <div class="selector-eyebrow">不会选也能开始</div>
+          <h3 id="route-selector-title">我不懂模板，帮我选</h3>
+          <p>只说明想交付什么和现有资料，WorkBuddy 先解释推荐与缺口；确认课型前不创建任务。</p>
+        </div>
+        <span class="selector-gate">只推荐 · 确认模板前不建任务</span>
+      </div>
+      <div class="selector-layout">
+        <div id="route-selector-form">
+          <div class="selector-form-grid">
+            <label class="selector-field">
+              <span>我要什么交付物</span>
+              <select id="selector-deliverable"><option value="unsure">不确定，帮我判断</option>
+<option value="pptx">可编辑 PPTX</option>
+<option value="mp4">完整 MP4</option></select>
+            </label>
+            <label class="selector-field">
+              <span>内容更接近哪一类</span>
+              <select id="selector-content-type"><option value="unsure">不确定，按需求判断</option>
+<option value="product-training">单品商品培训</option>
+<option value="disease-product-scenario">疾病 + 商品 + 场景演练</option>
+<option value="ingredient-health-edu">成分健康科普</option>
+<option value="product-video">商品培训视频</option></select>
+            </label>
+            <label class="selector-field">
+              <span>结构偏好</span>
+              <select id="selector-structure"><option value="unsure">不确定，帮我推荐</option>
+<option value="dynamic">动态页数 · 灵活构件 PPT</option>
+<option value="fixed-5">固定 5 页 · 绿色紧凑课</option>
+<option value="fixed-18">固定 18 页 · 疾病商品场景课</option>
+<option value="fixed-13">固定 13 页 · 专项商品讲解</option>
+<option value="fixed-20">固定 20 页 · 成分健康科普</option></select>
+            </label>
+          </div>
+          <label class="selector-field selector-requirement">
+            <span>也可以直接粘贴需求</span>
+            <textarea id="selector-requirement" placeholder="例如：给店员做一个新品培训，有商品资料和包装图，希望能讲清卖点与注意事项；页数不确定。"></textarea>
+          </label>
+          <div class="actions">
+            <button type="button" class="btn primary" id="selector-build">生成选课口令</button>
+            <button type="button" class="btn" id="selector-copy" disabled>复制给 WorkBuddy</button>
+          </div>
+          <div class="cmdbox" id="selector-cmdbox"></div>
+          <p class="toast" id="selector-toast" aria-live="polite"></p>
+          <p class="selector-note">这一步只让 WorkBuddy 推荐并说明原因；你明确回复“确认模板【模板名】”后，才进入建任务与内容初稿流程。</p>
+        </div>
+        <div class="selector-boundaries" aria-label="课型页数与交付边界">
+          <b>先看清页数与交付边界</b>
+          <div class="selector-boundary"><b>动态页数</b><span>灵活构件兜底 · 可编辑 PPTX；未命中固定课型时按确认内容组织页数。</span></div>
+<div class="selector-boundary"><b>固定 5 页</b><span>绿色紧凑商品培训 · 可编辑 PPTX。</span></div>
+<div class="selector-boundary"><b>固定 18 页</b><span>疾病 + 商品 + 场景演练 · 可编辑 PPTX。</span></div>
+<div class="selector-boundary"><b>固定 13 页</b><span>专项商品讲解 · 当前只承诺 PPTX，MP4 尚未开放。</span></div>
+<div class="selector-boundary"><b>固定 20 页</b><span>成分健康科普 · 可编辑 PPTX。</span></div>
+<div class="selector-boundary"><b>完整 MP4</b><span>走固定 8 段商品培训视频路线（不是 PPT 页数）；固定页 PPT 课型不等于同时生成视频。</span></div>
+        </div>
+      </div>
+    </aside>
+    <div class="template-groups" id="template-grid"></div>
+    <div id="selection-cluster-home" hidden>
+      <div id="selection-cluster">
+        <div class="selection-confirm" id="selection-confirm">
+        <div class="selection-confirm-head">
+          <div class="selection-confirm-copy">
+            <span>已选择</span>
+            <strong id="confirm-name">—</strong>
+            <p>WorkBuddy 提示词与关键截图、视频或数字人效果都在本区域展示。</p>
+          </div>
+          <button type="button" class="btn ok" id="btn-use">确认选用 · 复制给 WorkBuddy</button>
+        </div>
+        <div class="cmdbox" id="cmdbox"></div>
+        <p class="toast" id="toast"></p>
+        </div>
+
+        <div class="preview-pane" id="preview-pane">
       <div class="title-row">
         <strong id="sel-name">—</strong>
         <span id="sel-meta"></span>
       </div>
+      <div class="case-preview" id="case-preview">
+        <div class="case-video">
+          <video id="case-video" controls playsinline preload="metadata"></video>
+          <p id="case-video-label"></p>
+        </div>
+        <div class="case-copy" id="case-copy">
+          <h4>对应提示词示例</h4>
+          <p>展开查看本案例的生成提示词；可单独复制给 WorkBuddy 复用结构。</p>
+          <details class="prompt-example" id="prompt-example">
+            <summary>展开完整提示词</summary>
+            <pre id="prompt-example-text"></pre>
+          </details>
+          <button type="button" class="btn" id="btn-copy-prompt">复制提示词示例</button>
+        </div>
+      </div>
       <div class="keys" id="sel-keys"></div>
       <div class="actions">
-        <button type="button" class="btn ok" id="btn-use">选用此模板 · 复制口令</button>
         <button type="button" class="btn" id="btn-copy-ex">复制内容示例</button>
       </div>
-      <div class="cmdbox" id="cmdbox"></div>
-      <p class="toast" id="toast"></p>
+      <p class="toast" id="preview-toast"></p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <section class="block" id="sec-assets">
+    <h2><span class="n">2</span> 素材怎么处理</h2>
+    <div class="how">
+      <div><b>业务提供真图</b>商品正式包装、品牌 Logo、标签/备案/批准或检测证据；系统不仿造。</div>
+      <div><b>系统自动生成</b>知识解释图、场景插图、人物咨询图；按模板真实图槽比例生成并逐页检查。</div>
+      <div><b>正式交付门闸</b>待确认内容不生图；包装真图、计划插图和逐页质检没有全部完成时，不发布占位稿。</div>
+      <div><b>模板直接复用</b>版式、字体、色板、箭头、勾选、分隔线和已批准小构件。</div>
+    </div>
+    <p class="hint">内容确认后，系统先把 1 张代表图放入真实图槽验收，再自动补齐同系列；业务不需要自己写生图提示词。</p>
+  </section>
+
   <section class="block" id="sec-examples">
-    <h2><span class="n">2</span> 填报真实示例</h2>
-    <p class="hint">随上方所选模板展示对应填写内容（结构示范）。医学与包装以贵司审核稿为准，不要照搬示例当新项目终稿。</p>
+    <h2><span class="n">3</span> 填报示例与模式说明</h2>
+    <p class="hint">课型展示对应填写内容；制作模式展示 WorkBuddy 直接交付、确认闸门和外部出片边界。医学与包装以贵司审核稿为准。</p>
     <div id="ex-panel">
-      <div class="ex-empty" id="ex-empty">请先在上方点选一个模板，这里会展示该课型的内容示例。</div>
+      <div class="ex-empty" id="ex-empty">请先在上方点选一个课型或制作模式，这里会展示对应填写示例或流程边界。</div>
       <div id="ex-content" class="hidden">
         <div class="ex-head">
           <strong id="ex-title">—</strong>
-          <span>仅示范怎么写 · 可复制</span>
+          <span id="ex-caption">仅示范怎么写 · 可复制</span>
         </div>
         <div class="ex-body" id="ex-body"></div>
       </div>
     </div>
   </section>
 
-  <footer>内部培训 · 2026-08-08 · 预览来自已签样金样 · 示例正文来自各模板填写参考</footer>
+  <footer>内部培训 · 2026-08-10 · 课型能力来自生产路线 · 制作模式按复核闸门与外部账号边界交付</footer>
 </div>
 
 <script>
-const TEMPLATES = [{"slug": "health-video-reference-tech-v1", "name_zh": "疾病科普视频（如风热证）", "one_liner": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议", "gallery_title_zh": "疾病科普视频 · 风热证金样", "outputs": ["MP4 培训视频"], "category": "疾病科普", "capabilities": {"gold_viewable": true, "content_draft": true, "new_theme_preview": true, "new_theme_pptx": false, "new_theme_mp4": true, "business_selfserve": false}, "requirements": ["药师/法务审核稿", "已批准主题包", "video_full", "正式 voice_id"], "blockers": ["正式出片前必须完成主题画面审批", "当前机器须通过 video_full 环境检查"], "production_ready": false, "status_label": "可开始草稿 · 正式出片需环境与审批", "status_note": "金样可查看；换病种先整理审核稿与主题包，内容和画面确认后，且本机 video_full 通过才生成正式 MP4。", "key_frame_labels_zh": ["开场", "典型症状", "病因机理", "治疗思路", "用药建议", "总结"], "voice_id": "voice.reference-pharmacist-qwen-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/health-video-reference-tech-v1", "example_paragraphs": ["视频培训内容与素材提交", "真实已填样本｜风热证健康知识培训", "本样本只示范如何整理自然板块、讲解正文和相关图片；新项目不要求使用相同章节，投产前仍需完成医学、药事、合规和素材授权审核。", "课件主题：中医基础知识——风热证", "培训对象（可不填）：连锁药店一线员工", "培训目标（可不填）：理解风热证的基本概念、典型表现、调理思路和日常注意事项。", "期望时长（可不填）：约 2—3 分钟", "问题引入", "喉咙又肿又痛，咳嗽时有黄痰，鼻涕又黄又稠，身体发热又口渴——这些偏“热”的表现，可能会让人想到风热证。", "基本概念与典型表现", "简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺。", "常见表现可以包括发热、口渴、咽喉肿痛、咳嗽、痰黄或黄稠鼻涕等。具体判断仍应结合完整情况，由专业人员评估。", "图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创症状插画", "调理思路", "课程中的核心调理思路是疏风清热。", "涉及草本、药品、剂量、用法或搭配建议时，应完整使用公司审核终稿，不根据样本自行补充。", "日常注意事项", "房间适当开窗通风，保持空气流通。", "少量多次饮用温水，饮食以清淡为主，并保证充足休息。", "出现持续高热、症状加重或其他异常情况时，应及时寻求专业帮助。", "课程小结", "这次培训重点理解三个方面：风热证的基本概念、偏热的典型表现，以及疏风清热和日常护理的基本思路。"], "example_html": "<p class=\"ex-note\">视频培训内容与素材提交</p>\n<p class=\"ex-note\">真实已填样本｜风热证健康知识培训</p>\n<p class=\"ex-note\">本样本只示范如何整理自然板块、讲解正文和相关图片；新项目不要求使用相同章节，投产前仍需完成医学、药事、合规和素材授权审核。</p>\n<h4>课件主题：中医基础知识——风热证</h4>\n<p>培训对象（可不填）：连锁药店一线员工</p>\n<p>培训目标（可不填）：理解风热证的基本概念、典型表现、调理思路和日常注意事项。</p>\n<p>期望时长（可不填）：约 2—3 分钟</p>\n<h4>问题引入</h4>\n<p>喉咙又肿又痛，咳嗽时有黄痰，鼻涕又黄又稠，身体发热又口渴——这些偏“热”的表现，可能会让人想到风热证。</p>\n<h4>基本概念与典型表现</h4>\n<p>简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺。</p>\n<p>常见表现可以包括发热、口渴、咽喉肿痛、咳嗽、痰黄或黄稠鼻涕等。具体判断仍应结合完整情况，由专业人员评估。</p>\n<p>图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创症状插画</p>\n<h4>调理思路</h4>\n<p>课程中的核心调理思路是疏风清热。</p>\n<p class=\"ex-note\">涉及草本、药品、剂量、用法或搭配建议时，应完整使用公司审核终稿，不根据样本自行补充。</p>\n<h4>日常注意事项</h4>\n<p>房间适当开窗通风，保持空气流通。</p>\n<p>少量多次饮用温水，饮食以清淡为主，并保证充足休息。</p>\n<p>出现持续高热、症状加重或其他异常情况时，应及时寻求专业帮助。</p>\n<h4>课程小结</h4>\n<p>这次培训重点理解三个方面：风热证的基本概念、偏热的典型表现，以及疏风清热和日常护理的基本思路。</p>", "selection_command": "我选【疾病科普视频（如风热证）】，病名或健康主题是【请填写】，并提交已审核的 7 段内容要点。\n请先整理完整脚本、分镜和主题画面复核包，缺少的医学内容只列缺口；内容与全部画面确认后，再检查本机能力并生成完整 MP4。", "readiness_badge": {"kind": "conditional", "label": "可开始草稿 · 生成前检查环境"}}, {"slug": "product-video-faithful-v1", "name_zh": "商品培训视频（如辅酶 Q10）", "one_liner": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结", "gallery_title_zh": "商品培训视频 · 辅酶 Q10 金样", "outputs": ["MP4 培训视频"], "category": "商品培训", "capabilities": {"gold_viewable": true, "content_draft": true, "new_theme_preview": true, "new_theme_pptx": false, "new_theme_mp4": true, "business_selfserve": false}, "requirements": ["完整 8 段审核稿", "公司授权包装图与凭证", "哈希绑定审批", "video_full", "正式 voice_id"], "blockers": ["内容/包装/授权凭证未完成哈希审批时只能生成草稿预览", "当前机器须通过 video_full 环境检查"], "production_ready": false, "status_label": "可开始草稿 · 审批与环境通过后出片", "status_note": "金样可查看；业务先确认完整 8 段脚本、分镜、包装图和授权凭证，哈希审批匹配且本机 video_full 通过后才生成正式 MP4。", "key_frame_labels_zh": ["开场", "品牌/品类", "核心功效", "产品特点", "适宜人群", "联合用药"], "voice_id": "voice.reference-pharmacist-qwen-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/product-video-faithful-v1", "example_paragraphs": ["视频培训内容与素材提交", "真实已填样本｜辅酶 Q10 商品培训", "本样本只示范如何整理自然板块和讲解正文；章节不是固定模板。包装图为无品牌示意，正式生产必须替换为公司授权包装及审核内容。", "课件主题：辅酶 Q10 商品培训", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：理解审核稿中的商品定位、基础信息、核心知识和适用沟通边界。", "期望时长（可不填）：系统根据审核正文估算", "为什么要了解辅酶 Q10", "心脏持续工作需要稳定的能量供应。了解辅酶 Q10 与细胞能量生成的关系，有助于进一步理解这类商品知识。", "商品基础信息", "本次培训商品为辅酶 Q10 胶囊。正式课程中的商品名称、剂型、规格、批准文号和包装文字，以公司审核资料和授权包装原图为准。", "图片说明／来源：项目内无品牌包装示意，仅展示图片粘贴位置；正式生产必须替换为公司授权包装原图", "核心知识", "辅酶 Q10 存在于细胞线粒体内，参与细胞能量生成过程。涉及功效、抗氧化或其他专业表述时，应逐句采用公司最终审核稿。", "工艺、原料、检测数据和证据内容只有在公司确认可用于内部培训后，才进入视频。", "适宜人群与联合方案", "适宜人群、咨询边界和沟通话术以公司审核稿为准，不能仅根据日常不适自行判断。", "联合方案应完整提交药品名称、搭配逻辑和获准话术；实际用药应遵医嘱或咨询专业人员。", "课程小结", "本课程从辅酶 Q10 与细胞能量生成的关系出发，介绍商品基础信息、核心知识、适用沟通边界和联合方案要求。"], "example_html": "<p class=\"ex-note\">视频培训内容与素材提交</p>\n<p class=\"ex-note\">真实已填样本｜辅酶 Q10 商品培训</p>\n<p class=\"ex-note\">本样本只示范如何整理自然板块和讲解正文；章节不是固定模板。包装图为无品牌示意，正式生产必须替换为公司授权包装及审核内容。</p>\n<h4>课件主题：辅酶 Q10 商品培训</h4>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：理解审核稿中的商品定位、基础信息、核心知识和适用沟通边界。</p>\n<p>期望时长（可不填）：系统根据审核正文估算</p>\n<h4>为什么要了解辅酶 Q10</h4>\n<p>心脏持续工作需要稳定的能量供应。了解辅酶 Q10 与细胞能量生成的关系，有助于进一步理解这类商品知识。</p>\n<h4>商品基础信息</h4>\n<p>本次培训商品为辅酶 Q10 胶囊。正式课程中的商品名称、剂型、规格、批准文号和包装文字，以公司审核资料和授权包装原图为准。</p>\n<p>图片说明／来源：项目内无品牌包装示意，仅展示图片粘贴位置；正式生产必须替换为公司授权包装原图</p>\n<h4>核心知识</h4>\n<p>辅酶 Q10 存在于细胞线粒体内，参与细胞能量生成过程。涉及功效、抗氧化或其他专业表述时，应逐句采用公司最终审核稿。</p>\n<p>工艺、原料、检测数据和证据内容只有在公司确认可用于内部培训后，才进入视频。</p>\n<h4>适宜人群与联合方案</h4>\n<p>适宜人群、咨询边界和沟通话术以公司审核稿为准，不能仅根据日常不适自行判断。</p>\n<p>联合方案应完整提交药品名称、搭配逻辑和获准话术；实际用药应遵医嘱或咨询专业人员。</p>\n<h4>课程小结</h4>\n<p>本课程从辅酶 Q10 与细胞能量生成的关系出发，介绍商品基础信息、核心知识、适用沟通边界和联合方案要求。</p>", "selection_command": "我选【商品培训视频（如辅酶 Q10）】，商品名是【请填写】，并附上已获业务授权的商品包装图。\n审核要点是【要点1、要点2、要点3】。请先整理完整脚本和分镜、列出素材与授权缺口供我确认；确认后再检查本机能力并生成完整 MP4，不要跳过确认。", "readiness_badge": {"kind": "conditional", "label": "可开始草稿 · 生成前检查环境"}}, {"slug": "product-courseware-green-v1", "name_zh": "绿色单品 PPT（如金银花露）", "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意", "gallery_title_zh": "绿色商品培训 · 5 页", "outputs": ["可编辑 PPTX"], "category": "商品培训", "capabilities": {"gold_viewable": true, "content_draft": true, "new_theme_preview": true, "new_theme_pptx": true, "new_theme_mp4": false, "business_selfserve": false}, "requirements": ["内容初稿确认", "pptx_export"], "blockers": ["正式 PPTX 必须在内容初稿确认后生成", "当前机器须通过 pptx_export 环境检查"], "production_ready": false, "status_label": "可开始草稿 · 确认后生成 PPTX", "status_note": "五页绿色金样可查看；先整理内容初稿与缺口，业务确认后且本机 pptx_export 通过再生成可编辑 PPTX。", "key_frame_labels_zh": ["封面/介绍", "卖点与人群", "联合用药", "品种对标", "注意事项"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/product-courseware-green-v1", "example_paragraphs": ["培训课件内容与素材提交", "填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。", "联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。", "课件主题：示例商品A（演示用，非正式品规）", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界", "商品介绍", "主要成分：【待替换为审核原文】", "功能主治/定位：【待替换为审核原文】", "用法用量：【待替换为审核原文】", "【在此处直接粘贴本品授权包装图；没有可删除本行】", "图片说明／来源（可不填）：公司授权包装", "核心卖点", "卖点一：【审核表述】", "卖点二：【审核表述】", "适宜人群", "人群一：【审核表述】", "人群二：【审核表述】", "联合用药话术", "方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】", "方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】", "【可粘贴搭档包装图；无图删除本行】", "注意事项", "【说明书或审核注意事项；没有整节可删】"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。</p>\n<p>联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。</p>\n<p>课件主题：示例商品A（演示用，非正式品规）</p>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界</p>\n<h4>商品介绍</h4>\n<h4>主要成分：【待替换为审核原文】</h4>\n<p>功能主治/定位：【待替换为审核原文】</p>\n<h4>用法用量：【待替换为审核原文】</h4>\n<p>【在此处直接粘贴本品授权包装图；没有可删除本行】</p>\n<p>图片说明／来源（可不填）：公司授权包装</p>\n<h4>核心卖点</h4>\n<h4>卖点一：【审核表述】</h4>\n<h4>卖点二：【审核表述】</h4>\n<h4>适宜人群</h4>\n<h4>人群一：【审核表述】</h4>\n<h4>人群二：【审核表述】</h4>\n<h4>联合用药话术</h4>\n<p>方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】</p>\n<p>方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】</p>\n<p>【可粘贴搭档包装图；无图删除本行】</p>\n<h4>注意事项</h4>\n<p>【说明书或审核注意事项；没有整节可删】</p>", "selection_command": "我选【绿色单品 PPT（如金银花露）】，商品名是【请填写】，审核要点是【要点1、要点2、要点3】。\n请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。", "readiness_badge": {"kind": "conditional", "label": "可开始草稿 · 生成前检查环境"}}, {"slug": "disease-product-scenario-v1", "name_zh": "疾病+商品场景 PPT（如穿心莲）", "one_liner": "辨证知识 + 商品知识 + 销售场景的可编辑长课件", "gallery_title_zh": "疾病辨证与商品场景 · 穿心莲金样", "outputs": ["可编辑 PPTX"], "category": "商品培训", "capabilities": {"gold_viewable": true, "content_draft": true, "new_theme_preview": false, "new_theme_pptx": false, "new_theme_mp4": false, "business_selfserve": false}, "requirements": ["内容初稿确认", "统一业务 adapter"], "blockers": ["换主题业务 adapter 尚未接入统一入口"], "production_ready": false, "status_label": "金样可查看 · 换主题入口待接线", "status_note": "可查看穿心莲金样和填写参考；当前仅开放内容草稿，不承诺业务自助生成正式 PPTX。", "key_frame_labels_zh": ["封面", "辨证/知识", "商品知识", "销售场景", "收尾页"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/disease-product-scenario-v1", "example_paragraphs": ["商品培训课件模板｜业务 Word 真实样本", "穿心莲内酯滴丸", "风热证商品培训课件｜业务已填内容范本", "填写提示｜这是一份“照着改就能用”的真实内容样本。绿色填写说明不会进入课件；正式提交时，只替换正文和图片即可。医学、功效、用法、数据和销售话术必须使用公司审核终稿。", "3 分钟完成一个商品", "复制本 Word，文件名改成“商品名称_版本日期.docx”。", "保留栏目标题，把本样本正文替换成新商品的审核内容；没有的栏目直接留空。", "真实包装、说明书和证据图直接粘贴授权原图；需要辅助插画时只填写图片主题。", "完成后把多份 Word 放进同一个文件夹，整批交给课件项目生成 PPTX/PDF。", "批量文件夹示例", "模板规则｜公司封面/封底锁定；缺失栏目留空；内容超出一页时自动复制同版式续页；业务不需要设置字体、字号、颜色或页面坐标。", "课程基本信息", "填写提示｜课程标题和章节数量可以调整。下列内容来自本次内部课件样本，用于展示真实整理方式，不代表跳过正式药学与合规审核。", "一、疾病篇", "什么是风热证？", "定义：指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。", "主要辨证要点：发热重、恶寒轻、咽痛、口渴、苔薄黄。", "治疗原则与警示", "核心原则：辛凉解表、清热解毒。", "课件原文警示：风热证为“阳热”之证，绝对禁用麻黄、桂枝等辛温发汗药。", "兼证处理：临床多见风热夹湿等兼证，需辨明主次兼证。", "来源说明｜内部课件第 1.1、1.4 页；正式课件以公司药师审核终稿为准。", "二、商品介绍", "填写提示｜这一页直接放药品基础资料。标签可以增删；没有可靠资料的字段留空，系统不会补写。", "来源说明｜商品文字与包装图来自内部课件第 2.1 页；不得据此替代说明书或正式审核。", "三、核心卖点", "填写提示｜一条卖点写一行。条数少就少展示，条数多则自动生成同版式续页；关键数据必须保留依据，并经内部复核。", "来源说明｜内部课件第 2.3 页；涉及唯一性、纯度、崩解时间和有效率的数据必须完成证据审核。", "四、适宜人群与推荐场景", "填写提示｜按“人群—典型场景—需求说明”填写，不需要控制每组字数完全相同。", "望闻问切沟通框架", "望：观察顾客神态、面色与精神状态，初步判断体质倾向。", "闻：耐心倾听身体不适与核心诉求，捕捉深层痛点。", "问：询问饮食、作息、既往病史等细节，厘清证型。", "切：结合辨证结果，匹配产品与服务并解释益处。", "来源说明｜内部课件第 3.1、3.2 页。", "五、场景方案", "填写提示｜每个场景按同样的四块填写。新增场景时复制整块；联合用药和话术必须使用审核原文。", "场景 1｜顾客主诉“喉咙痛”", "场景 2｜顾客主诉“感冒了，发烧，有黄痰”", "来源说明｜内部课件第 3.3、3.4 页；温度、证型、联合用药和话术均需正式审核。", "六、注意事项与日常关怀", "填写提示｜每条建议独立填写。药品禁忌优先来自说明书；生活建议也应经内部审核。", "饮食之宜：日常多喝水；课件样本列有菊花茶、绿豆汤及梨、西瓜、苦瓜等。", "饮食之忌：避免辛辣刺激、油腻煎炸食物，并慎食课件中列举的温补食材。", "保证充足休息：建议保证7–8小时高质量睡眠，避免熬夜。", "保持室内通风：课件样本建议每日开窗通风2–3次，每次30分钟。", "减少过度用嗓：少说话，避免大声喊叫或长时间交谈，让咽喉和声带休息。", "来源说明｜内部课件第 4.1 页；时长、频次和饮食建议需由审核人员确认。", "七、其他内容（可留空）", "填写提示｜不知道应放在哪个栏目时，把原文放在这里。系统会列入待确认，不会擅自丢弃或改写。", "本样本无其他待归类内容。", "图片准备｜两种方式都支持", "填写提示｜A. 有授权图片：直接粘贴；B. 没有插画：填写一句“图片主题”，项目自动生成候选或输出提示词。真实包装、说明书、检测报告、处方和品牌证据禁止 AI 仿造。", "插画质量要求", "• 浅色背景、品牌绿色主线、柔和扁平医药科普插画；人物与医疗物件自然。", "• 图片本身不生成文字、药名、剂量、Logo、水印或新的医学结论。", "• 建议方形高清 PNG，不低于 1536×1536；四周留安全区，便于课件裁切。", "• AI 图只作辅助候选，必须经过药师和视觉复核后再进入正式 PPTX。", "来源说明｜商品包装示例裁自用户提供的内部 PDF；清淡饮食图为候选风格示意、非医学证据图。", "提交前 1 分钟自查", "□ 一份 Word 只写一个商品；批量时复制成多份文件。", "□ 商品名称和课程主题已替换；没有资料的栏目已留空，而不是自行补写。", "□ 功效、用法用量、禁忌、数据、联合用药和销售话术均为内部审核终稿。", "□ 真实包装、说明书和证据资料均使用公司授权原图。", "□ 需要 AI 插画的位置只填写了图片主题，且没有要求生成药名、剂量、Logo 或包装。", "□ 文件名使用“商品名称_版本日期.docx”，多份 Word 已放入同一文件夹。", "填写提示｜系统会自动识别栏目、生成同品牌版式，并把缺失项保留为空；生成后的 PPTX 仍可继续补文字和粘贴最终图片。正式发布前必须完成内容与素材审核。", "这份真实样本怎么复用", "保留各级栏目标题。", "删除本商品正文，粘贴新商品的审核内容。", "按需要增删条目；不要为了凑页数编写内容。", "保存为新文件，继续复制下一商品。", "合规声明｜本样本内容来自用户提供的内部课件，仅用于展示业务资料整理和模板生成方法；它不替代药品说明书、公司药师审核、数据证据审核或合规法务确认。"], "example_html": "<p class=\"ex-note\">商品培训课件模板｜业务 Word 真实样本</p>\n<h4>穿心莲内酯滴丸</h4>\n<p>风热证商品培训课件｜业务已填内容范本</p>\n<p class=\"ex-note\">填写提示｜这是一份“照着改就能用”的真实内容样本。绿色填写说明不会进入课件；正式提交时，只替换正文和图片即可。医学、功效、用法、数据和销售话术必须使用公司审核终稿。</p>\n<h4>3 分钟完成一个商品</h4>\n<p>复制本 Word，文件名改成“商品名称_版本日期.docx”。</p>\n<p class=\"ex-note\">保留栏目标题，把本样本正文替换成新商品的审核内容；没有的栏目直接留空。</p>\n<p>真实包装、说明书和证据图直接粘贴授权原图；需要辅助插画时只填写图片主题。</p>\n<p>完成后把多份 Word 放进同一个文件夹，整批交给课件项目生成 PPTX/PDF。</p>\n<h4>批量文件夹示例</h4>\n<p>模板规则｜公司封面/封底锁定；缺失栏目留空；内容超出一页时自动复制同版式续页；业务不需要设置字体、字号、颜色或页面坐标。</p>\n<h4>课程基本信息</h4>\n<p class=\"ex-note\">填写提示｜课程标题和章节数量可以调整。下列内容来自本次内部课件样本，用于展示真实整理方式，不代表跳过正式药学与合规审核。</p>\n<h4>一、疾病篇</h4>\n<p>什么是风热证？</p>\n<p>定义：指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。</p>\n<p>主要辨证要点：发热重、恶寒轻、咽痛、口渴、苔薄黄。</p>\n<h4>治疗原则与警示</h4>\n<p>核心原则：辛凉解表、清热解毒。</p>\n<p>课件原文警示：风热证为“阳热”之证，绝对禁用麻黄、桂枝等辛温发汗药。</p>\n<p>兼证处理：临床多见风热夹湿等兼证，需辨明主次兼证。</p>\n<p class=\"ex-note\">来源说明｜内部课件第 1.1、1.4 页；正式课件以公司药师审核终稿为准。</p>\n<h4>二、商品介绍</h4>\n<p>填写提示｜这一页直接放药品基础资料。标签可以增删；没有可靠资料的字段留空，系统不会补写。</p>\n<p>来源说明｜商品文字与包装图来自内部课件第 2.1 页；不得据此替代说明书或正式审核。</p>\n<h4>三、核心卖点</h4>\n<p>填写提示｜一条卖点写一行。条数少就少展示，条数多则自动生成同版式续页；关键数据必须保留依据，并经内部复核。</p>\n<p>来源说明｜内部课件第 2.3 页；涉及唯一性、纯度、崩解时间和有效率的数据必须完成证据审核。</p>\n<h4>四、适宜人群与推荐场景</h4>\n<p>填写提示｜按“人群—典型场景—需求说明”填写，不需要控制每组字数完全相同。</p>\n<h4>望闻问切沟通框架</h4>\n<p>望：观察顾客神态、面色与精神状态，初步判断体质倾向。</p>\n<p>闻：耐心倾听身体不适与核心诉求，捕捉深层痛点。</p>\n<p>问：询问饮食、作息、既往病史等细节，厘清证型。</p>\n<p>切：结合辨证结果，匹配产品与服务并解释益处。</p>\n<p>来源说明｜内部课件第 3.1、3.2 页。</p>\n<h4>五、场景方案</h4>\n<p>填写提示｜每个场景按同样的四块填写。新增场景时复制整块；联合用药和话术必须使用审核原文。</p>\n<p>场景 1｜顾客主诉“喉咙痛”</p>\n<p>场景 2｜顾客主诉“感冒了，发烧，有黄痰”</p>\n<p>来源说明｜内部课件第 3.3、3.4 页；温度、证型、联合用药和话术均需正式审核。</p>\n<h4>六、注意事项与日常关怀</h4>\n<p>填写提示｜每条建议独立填写。药品禁忌优先来自说明书；生活建议也应经内部审核。</p>\n<p class=\"ex-note\">饮食之宜：日常多喝水；课件样本列有菊花茶、绿豆汤及梨、西瓜、苦瓜等。</p>\n<p>饮食之忌：避免辛辣刺激、油腻煎炸食物，并慎食课件中列举的温补食材。</p>\n<p>保证充足休息：建议保证7–8小时高质量睡眠，避免熬夜。</p>\n<p class=\"ex-note\">保持室内通风：课件样本建议每日开窗通风2–3次，每次30分钟。</p>\n<p>减少过度用嗓：少说话，避免大声喊叫或长时间交谈，让咽喉和声带休息。</p>\n<p>来源说明｜内部课件第 4.1 页；时长、频次和饮食建议需由审核人员确认。</p>\n<h4>七、其他内容（可留空）</h4>\n<p>填写提示｜不知道应放在哪个栏目时，把原文放在这里。系统会列入待确认，不会擅自丢弃或改写。</p>\n<p class=\"ex-note\">本样本无其他待归类内容。</p>\n<p>图片准备｜两种方式都支持</p>\n<p>填写提示｜A. 有授权图片：直接粘贴；B. 没有插画：填写一句“图片主题”，项目自动生成候选或输出提示词。真实包装、说明书、检测报告、处方和品牌证据禁止 AI 仿造。</p>\n<h4>插画质量要求</h4>\n<p>• 浅色背景、品牌绿色主线、柔和扁平医药科普插画；人物与医疗物件自然。</p>\n<p>• 图片本身不生成文字、药名、剂量、Logo、水印或新的医学结论。</p>\n<p>• 建议方形高清 PNG，不低于 1536×1536；四周留安全区，便于课件裁切。</p>\n<p>• AI 图只作辅助候选，必须经过药师和视觉复核后再进入正式 PPTX。</p>\n<p>来源说明｜商品包装示例裁自用户提供的内部 PDF；清淡饮食图为候选风格示意、非医学证据图。</p>\n<h4>提交前 1 分钟自查</h4>\n<p>□ 一份 Word 只写一个商品；批量时复制成多份文件。</p>\n<p>□ 商品名称和课程主题已替换；没有资料的栏目已留空，而不是自行补写。</p>\n<p class=\"ex-note\">□ 功效、用法用量、禁忌、数据、联合用药和销售话术均为内部审核终稿。</p>\n<p>□ 真实包装、说明书和证据资料均使用公司授权原图。</p>\n<p>□ 需要 AI 插画的位置只填写了图片主题，且没有要求生成药名、剂量、Logo 或包装。</p>\n<p>□ 文件名使用“商品名称_版本日期.docx”，多份 Word 已放入同一文件夹。</p>\n<p>填写提示｜系统会自动识别栏目、生成同品牌版式，并把缺失项保留为空；生成后的 PPTX 仍可继续补文字和粘贴最终图片。正式发布前必须完成内容与素材审核。</p>\n<p class=\"ex-note\">这份真实样本怎么复用</p>\n<p>保留各级栏目标题。</p>\n<p>删除本商品正文，粘贴新商品的审核内容。</p>\n<p>按需要增删条目；不要为了凑页数编写内容。</p>\n<p>保存为新文件，继续复制下一商品。</p>\n<p class=\"ex-note\">合规声明｜本样本内容来自用户提供的内部课件，仅用于展示业务资料整理和模板生成方法；它不替代药品说明书、公司药师审核、数据证据审核或合规法务确认。</p>", "selection_command": "我选【疾病+商品场景 PPT（如穿心莲）】，目前仅查看金样和填写参考。请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。", "readiness_badge": {"kind": "preview", "label": "仅金样预览"}}, {"slug": "sufuda-mabaloshawei-product-courseware-3-v1", "name_zh": "商品培训课件3（视频+PPT，速福达壳）", "one_liner": "抗流感培训：讲解视频 + 可编辑 PPT 同源内容模型", "gallery_title_zh": "商品培训课件3 · 速福达金样", "outputs": ["MP4", "可编辑 PPTX"], "category": "商品培训", "capabilities": {"gold_viewable": true, "content_draft": true, "new_theme_preview": true, "new_theme_pptx": true, "new_theme_mp4": true, "business_selfserve": false}, "requirements": ["内容初稿确认", "授权包装/Logo", "pptx_export", "video_full"], "blockers": ["正式 MP4 取决于克隆 TTS 与 video_full", "包装/Logo 必须为业务授权原图"], "production_ready": false, "status_label": "可开始草稿 · PPT/视频按本机能力生成", "status_note": "金样 v2 已归档；先审内容和包装，PPTX/MP4 分别要求本机通过 pptx_export/video_full。", "key_frame_labels_zh": ["封面", "流感背景", "核心利益", "产品特点", "适宜人群", "联合用药"], "voice_id": "voice.sufuda-courseware-pharmacist-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1", "example_paragraphs": ["培训课件内容与素材提交", "填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。", "联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。", "课件主题：示例商品A（演示用，非正式品规）", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界", "商品介绍", "主要成分：【待替换为审核原文】", "功能主治/定位：【待替换为审核原文】", "用法用量：【待替换为审核原文】", "【在此处直接粘贴本品授权包装图；没有可删除本行】", "图片说明／来源（可不填）：公司授权包装", "核心卖点", "卖点一：【审核表述】", "卖点二：【审核表述】", "适宜人群", "人群一：【审核表述】", "人群二：【审核表述】", "联合用药话术", "方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】", "方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】", "【可粘贴搭档包装图；无图删除本行】", "注意事项", "【说明书或审核注意事项；没有整节可删】"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。</p>\n<p>联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。</p>\n<p>课件主题：示例商品A（演示用，非正式品规）</p>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界</p>\n<h4>商品介绍</h4>\n<h4>主要成分：【待替换为审核原文】</h4>\n<p>功能主治/定位：【待替换为审核原文】</p>\n<h4>用法用量：【待替换为审核原文】</h4>\n<p>【在此处直接粘贴本品授权包装图；没有可删除本行】</p>\n<p>图片说明／来源（可不填）：公司授权包装</p>\n<h4>核心卖点</h4>\n<h4>卖点一：【审核表述】</h4>\n<h4>卖点二：【审核表述】</h4>\n<h4>适宜人群</h4>\n<h4>人群一：【审核表述】</h4>\n<h4>人群二：【审核表述】</h4>\n<h4>联合用药话术</h4>\n<p>方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】</p>\n<p>方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】</p>\n<p>【可粘贴搭档包装图；无图删除本行】</p>\n<h4>注意事项</h4>\n<p>【说明书或审核注意事项；没有整节可删】</p>", "selection_command": "我选【商品培训课件3（视频+PPT，速福达壳）】，需要【可编辑 PPTX / 完整 MP4，请保留我选择的一项】。\n商品名是【请填写】，审核要点是【要点1、要点2、要点3】。请先整理内容初稿和所需素材缺口供我确认；确认后再检查本机能力并生成正式成品。", "readiness_badge": {"kind": "conditional", "label": "可开始草稿 · 生成前检查环境"}}, {"slug": "fuler-fanqiehongsu-product-courseware-4-v1", "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）", "one_liner": "保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）", "gallery_title_zh": "商品培训课件4 · 福尔番茄红素金样", "outputs": ["MP4", "可编辑 PPTX"], "category": "商品培训", "capabilities": {"gold_viewable": true, "content_draft": true, "new_theme_preview": false, "new_theme_pptx": false, "new_theme_mp4": false, "business_selfserve": false}, "requirements": ["courseware4 换主题 adapter"], "blockers": ["课件4换主题 CLI 尚未接线；当前仅提供金样预览"], "production_ready": false, "status_label": "仅金样预览 · 换主题入口待接线", "status_note": "金样 v2 MP4/PPTX 可查看；当前换主题 CLI 未接线，不承诺生成新主题正式成品。", "key_frame_labels_zh": ["封面", "商品介绍", "利益点", "适宜人群", "关联用药", "总结"], "voice_id": "voice.sufuda-courseware-pharmacist-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1", "example_paragraphs": ["培训课件内容与素材提交", "填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。", "联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。", "课件主题：示例商品A（演示用，非正式品规）", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界", "商品介绍", "主要成分：【待替换为审核原文】", "功能主治/定位：【待替换为审核原文】", "用法用量：【待替换为审核原文】", "【在此处直接粘贴本品授权包装图；没有可删除本行】", "图片说明／来源（可不填）：公司授权包装", "核心卖点", "卖点一：【审核表述】", "卖点二：【审核表述】", "适宜人群", "人群一：【审核表述】", "人群二：【审核表述】", "联合用药话术", "方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】", "方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】", "【可粘贴搭档包装图；无图删除本行】", "注意事项", "【说明书或审核注意事项；没有整节可删】"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。</p>\n<p>联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。</p>\n<p>课件主题：示例商品A（演示用，非正式品规）</p>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界</p>\n<h4>商品介绍</h4>\n<h4>主要成分：【待替换为审核原文】</h4>\n<p>功能主治/定位：【待替换为审核原文】</p>\n<h4>用法用量：【待替换为审核原文】</h4>\n<p>【在此处直接粘贴本品授权包装图；没有可删除本行】</p>\n<p>图片说明／来源（可不填）：公司授权包装</p>\n<h4>核心卖点</h4>\n<h4>卖点一：【审核表述】</h4>\n<h4>卖点二：【审核表述】</h4>\n<h4>适宜人群</h4>\n<h4>人群一：【审核表述】</h4>\n<h4>人群二：【审核表述】</h4>\n<h4>联合用药话术</h4>\n<p>方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】</p>\n<p>方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】</p>\n<p>【可粘贴搭档包装图；无图删除本行】</p>\n<h4>注意事项</h4>\n<p>【说明书或审核注意事项；没有整节可删】</p>", "selection_command": "我选【商品培训课件4（视频+PPT，番茄红素壳）】，目前仅查看金样和填写参考。请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。", "readiness_badge": {"kind": "preview", "label": "仅金样预览"}}, {"slug": "disease-health-shenke-blue-v1", "name_zh": "疾病健康知识培训 PPT（参课蓝）", "one_liner": "门店健康顾问疾病知识培训：概览、表现、检查、用药、关怀、一页通", "gallery_title_zh": "疾病健康知识培训 · 参课蓝金样", "outputs": ["可编辑 PPTX"], "category": "健康培训", "capabilities": {"gold_viewable": true, "content_draft": true, "new_theme_preview": false, "new_theme_pptx": false, "new_theme_mp4": false, "business_selfserve": false}, "requirements": ["医学审核稿", "疾病课件统一业务 adapter"], "blockers": ["换病种生成尚未接入统一业务入口"], "production_ready": false, "status_label": "金样可查看 · 换病种入口待接线", "status_note": "参课蓝 v3 金样可查看；当前可先整理审核内容，不承诺业务自助生成新病种正式 PPTX。", "key_frame_labels_zh": ["疾病概览", "临床表现", "对症用药表", "专业关怀", "竖版一页通"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/disease-health-shenke-blue-v1", "example_paragraphs": ["培训课件内容与素材提交", "真实已填样本｜风热证门店培训", "以下内容取自项目现有内部样本，仅用于展示业务如何整理内容和粘贴素材；新项目投产前仍需完成医学、药事、合规和素材授权审核。", "课件主题：中医基础知识——风热证", "培训对象（可不填）：连锁药店一线员工", "培训目标（可不填）：理解风热证的形成与典型表现，掌握基本调理思路和日常注意事项。", "什么是风热证", "简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺，因此可能出现发热、咽痛、口渴等偏“热”的表现。", "典型表现", "发热、口渴：身体发热，嘴巴容易觉得干渴，也可能伴有烦躁。", "喉咙肿痛：咽喉红肿疼痛，还可能伴有咳嗽、痰黄或黄稠鼻涕。", "图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创素材 symptom.fever、symptom.sore-throat", "调理思路", "核心思路是疏风清热。", "日常可选用桑叶、菊花、薄荷等内容进行知识讲解；涉及用量或饮用方法时，应以公司审核终稿为准。", "如需展示药品名称或包装，应同时提交公司审核文案和授权包装原图；未提供时不展示包装。", "日常注意事项", "房间适当开窗通风，保持空气流通。", "少量多次饮用温水，注意补充水分。", "饮食以清淡为主，少吃辛辣、油炸和燥热食物。", "暂时避免烟酒，并保证充足休息。", "课程小结", "风热证的学习重点可以概括为：病因看“风邪＋热邪”，表现看“发热、口渴、咽痛等偏热症状”，调理把握“疏风清热”，生活中注意通风、补水、清淡饮食和休息。"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">真实已填样本｜风热证门店培训</p>\n<p class=\"ex-note\">以下内容取自项目现有内部样本，仅用于展示业务如何整理内容和粘贴素材；新项目投产前仍需完成医学、药事、合规和素材授权审核。</p>\n<h4>课件主题：中医基础知识——风热证</h4>\n<p>培训对象（可不填）：连锁药店一线员工</p>\n<p>培训目标（可不填）：理解风热证的形成与典型表现，掌握基本调理思路和日常注意事项。</p>\n<h4>什么是风热证</h4>\n<p>简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺，因此可能出现发热、咽痛、口渴等偏“热”的表现。</p>\n<h4>典型表现</h4>\n<p>发热、口渴：身体发热，嘴巴容易觉得干渴，也可能伴有烦躁。</p>\n<p>喉咙肿痛：咽喉红肿疼痛，还可能伴有咳嗽、痰黄或黄稠鼻涕。</p>\n<p>图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创素材 symptom.fever、symptom.sore-throat</p>\n<h4>调理思路</h4>\n<p>核心思路是疏风清热。</p>\n<p class=\"ex-note\">日常可选用桑叶、菊花、薄荷等内容进行知识讲解；涉及用量或饮用方法时，应以公司审核终稿为准。</p>\n<p>如需展示药品名称或包装，应同时提交公司审核文案和授权包装原图；未提供时不展示包装。</p>\n<h4>日常注意事项</h4>\n<p>房间适当开窗通风，保持空气流通。</p>\n<p>少量多次饮用温水，注意补充水分。</p>\n<p>饮食以清淡为主，少吃辛辣、油炸和燥热食物。</p>\n<p>暂时避免烟酒，并保证充足休息。</p>\n<h4>课程小结</h4>\n<p>风热证的学习重点可以概括为：病因看“风邪＋热邪”，表现看“发热、口渴、咽痛等偏热症状”，调理把握“疏风清热”，生活中注意通风、补水、清淡饮食和休息。</p>", "selection_command": "我选【疾病健康知识培训 PPT（参课蓝）】，目前仅查看金样和填写参考。请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。", "readiness_badge": {"kind": "preview", "label": "仅金样预览"}}];
+const TEMPLATES = [{"slug": "health-video-reference-tech-v1", "name_zh": "疾病科普视频（如风热证）", "one_liner": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议", "gallery_title_zh": "疾病科普视频 · 风热证金样", "outputs": ["MP4 培训视频"], "category": "疾病科普", "capabilities_note_zh": null, "shelf_group": "other", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["母版角色", "症状页", "机理页", "开场帧", "机理帧", "治疗帧"], "voice_id": "voice.reference-pharmacist-qwen-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/health-video-reference-tech-v1", "example_paragraphs": ["视频培训内容与素材提交", "真实已填样本｜风热证健康知识培训", "本样本只示范如何整理自然板块、讲解正文和相关图片；新项目不要求使用相同章节，投产前仍需完成医学、药事、合规和素材授权审核。", "课件主题：中医基础知识——风热证", "培训对象（可不填）：连锁药店一线员工", "培训目标（可不填）：理解风热证的基本概念、典型表现、调理思路和日常注意事项。", "期望时长（可不填）：约 2—3 分钟", "问题引入", "喉咙又肿又痛，咳嗽时有黄痰，鼻涕又黄又稠，身体发热又口渴——这些偏“热”的表现，可能会让人想到风热证。", "基本概念与典型表现", "简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺。", "常见表现可以包括发热、口渴、咽喉肿痛、咳嗽、痰黄或黄稠鼻涕等。具体判断仍应结合完整情况，由专业人员评估。", "图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创症状插画", "调理思路", "课程中的核心调理思路是疏风清热。", "涉及草本、药品、剂量、用法或搭配建议时，应完整使用公司审核终稿，不根据样本自行补充。", "日常注意事项", "房间适当开窗通风，保持空气流通。", "少量多次饮用温水，饮食以清淡为主，并保证充足休息。", "出现持续高热、症状加重或其他异常情况时，应及时寻求专业帮助。", "课程小结", "这次培训重点理解三个方面：风热证的基本概念、偏热的典型表现，以及疏风清热和日常护理的基本思路。"], "example_html": "<p class=\"ex-note\">视频培训内容与素材提交</p>\n<p class=\"ex-note\">真实已填样本｜风热证健康知识培训</p>\n<p class=\"ex-note\">本样本只示范如何整理自然板块、讲解正文和相关图片；新项目不要求使用相同章节，投产前仍需完成医学、药事、合规和素材授权审核。</p>\n<h4>课件主题：中医基础知识——风热证</h4>\n<p>培训对象（可不填）：连锁药店一线员工</p>\n<p>培训目标（可不填）：理解风热证的基本概念、典型表现、调理思路和日常注意事项。</p>\n<p>期望时长（可不填）：约 2—3 分钟</p>\n<h4>问题引入</h4>\n<p>喉咙又肿又痛，咳嗽时有黄痰，鼻涕又黄又稠，身体发热又口渴——这些偏“热”的表现，可能会让人想到风热证。</p>\n<h4>基本概念与典型表现</h4>\n<p>简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺。</p>\n<p>常见表现可以包括发热、口渴、咽喉肿痛、咳嗽、痰黄或黄稠鼻涕等。具体判断仍应结合完整情况，由专业人员评估。</p>\n<p>图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创症状插画</p>\n<h4>调理思路</h4>\n<p>课程中的核心调理思路是疏风清热。</p>\n<p class=\"ex-note\">涉及草本、药品、剂量、用法或搭配建议时，应完整使用公司审核终稿，不根据样本自行补充。</p>\n<h4>日常注意事项</h4>\n<p>房间适当开窗通风，保持空气流通。</p>\n<p>少量多次饮用温水，饮食以清淡为主，并保证充足休息。</p>\n<p>出现持续高热、症状加重或其他异常情况时，应及时寻求专业帮助。</p>\n<h4>课程小结</h4>\n<p>这次培训重点理解三个方面：风热证的基本概念、偏热的典型表现，以及疏风清热和日常护理的基本思路。</p>", "selection_command": "我选【疾病科普视频（如风热证）】，病名或健康主题是【请填写】，并提交已审核的 7 段内容要点。\n请先整理完整脚本、分镜和主题画面复核包，缺少的医学内容只列缺口；内容与全部画面确认后保留复核包。当前尚未开放，不能生成完整 MP4。", "portal_item_kind": "template", "self_serve": false, "deliverable_badges": [{"kind": "building", "label": "MP4 · 尚未开放（不可生成）"}], "readiness_badge": {"kind": "building", "label": "MP4 · 尚未开放（不可生成）"}, "portal_status_kind": "building", "portal_status_label": "尚未开放 · 当前不可生成 · 金样可查看", "portal_status_note": "金样、关键页和填写参考可以复用；正式换主题生产路线尚未激活。"}, {"slug": "product-video-faithful-v1", "name_zh": "商品培训视频（如辅酶 Q10）", "one_liner": "单品店员培训视频：介绍 · 功效 · 证据 · 人群 · 联合 · 总结", "gallery_title_zh": "商品培训视频 · 辅酶 Q10 金样", "outputs": ["MP4 培训视频"], "category": "商品培训", "capabilities_note_zh": null, "shelf_group": "other", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["讲师页", "图文讲解", "包装主视觉", "概览", "功效", "证据"], "voice_id": "voice.reference-pharmacist-qwen-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/product-video-faithful-v1", "example_paragraphs": ["视频培训内容与素材提交", "真实已填样本｜辅酶 Q10 商品培训", "本样本只示范如何整理自然板块和讲解正文；章节不是固定模板。包装图为无品牌示意，正式生产必须替换为公司授权包装及审核内容。", "课件主题：辅酶 Q10 商品培训", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：理解审核稿中的商品定位、基础信息、核心知识和适用沟通边界。", "期望时长（可不填）：系统根据审核正文估算", "为什么要了解辅酶 Q10", "心脏持续工作需要稳定的能量供应。了解辅酶 Q10 与细胞能量生成的关系，有助于进一步理解这类商品知识。", "商品基础信息", "本次培训商品为辅酶 Q10 胶囊。正式课程中的商品名称、剂型、规格、批准文号和包装文字，以公司审核资料和授权包装原图为准。", "图片说明／来源：项目内无品牌包装示意，仅展示图片粘贴位置；正式生产必须替换为公司授权包装原图", "核心知识", "辅酶 Q10 存在于细胞线粒体内，参与细胞能量生成过程。涉及功效、抗氧化或其他专业表述时，应逐句采用公司最终审核稿。", "工艺、原料、检测数据和证据内容只有在公司确认可用于内部培训后，才进入视频。", "适宜人群与联合方案", "适宜人群、咨询边界和沟通话术以公司审核稿为准，不能仅根据日常不适自行判断。", "联合方案应完整提交药品名称、搭配逻辑和获准话术；实际用药应遵医嘱或咨询专业人员。", "课程小结", "本课程从辅酶 Q10 与细胞能量生成的关系出发，介绍商品基础信息、核心知识、适用沟通边界和联合方案要求。"], "example_html": "<p class=\"ex-note\">视频培训内容与素材提交</p>\n<p class=\"ex-note\">真实已填样本｜辅酶 Q10 商品培训</p>\n<p class=\"ex-note\">本样本只示范如何整理自然板块和讲解正文；章节不是固定模板。包装图为无品牌示意，正式生产必须替换为公司授权包装及审核内容。</p>\n<h4>课件主题：辅酶 Q10 商品培训</h4>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：理解审核稿中的商品定位、基础信息、核心知识和适用沟通边界。</p>\n<p>期望时长（可不填）：系统根据审核正文估算</p>\n<h4>为什么要了解辅酶 Q10</h4>\n<p>心脏持续工作需要稳定的能量供应。了解辅酶 Q10 与细胞能量生成的关系，有助于进一步理解这类商品知识。</p>\n<h4>商品基础信息</h4>\n<p>本次培训商品为辅酶 Q10 胶囊。正式课程中的商品名称、剂型、规格、批准文号和包装文字，以公司审核资料和授权包装原图为准。</p>\n<p>图片说明／来源：项目内无品牌包装示意，仅展示图片粘贴位置；正式生产必须替换为公司授权包装原图</p>\n<h4>核心知识</h4>\n<p>辅酶 Q10 存在于细胞线粒体内，参与细胞能量生成过程。涉及功效、抗氧化或其他专业表述时，应逐句采用公司最终审核稿。</p>\n<p>工艺、原料、检测数据和证据内容只有在公司确认可用于内部培训后，才进入视频。</p>\n<h4>适宜人群与联合方案</h4>\n<p>适宜人群、咨询边界和沟通话术以公司审核稿为准，不能仅根据日常不适自行判断。</p>\n<p>联合方案应完整提交药品名称、搭配逻辑和获准话术；实际用药应遵医嘱或咨询专业人员。</p>\n<h4>课程小结</h4>\n<p>本课程从辅酶 Q10 与细胞能量生成的关系出发，介绍商品基础信息、核心知识、适用沟通边界和联合方案要求。</p>", "selection_command": "我选【商品培训视频（如辅酶 Q10）】，商品名是【请填写】，并附上已获业务授权的商品包装图。\n审核要点是【要点1、要点2、要点3】。请先整理完整脚本和分镜、列出素材与授权缺口供我确认；确认后再检查本机能力并生成完整 MP4，不要跳过确认。\n我确认先锁定模板【商品培训视频（如辅酶 Q10）】。请在创建草稿前复述模板名称、交付物和还需补充的内容。", "portal_item_kind": "template", "self_serve": true, "deliverable_badges": [{"kind": "conditional", "label": "MP4 · 生成前检查环境"}], "readiness_badge": {"kind": "conditional", "label": "MP4 · 生成前检查环境"}, "portal_status_kind": "conditional", "portal_status_label": "MP4 · 生成前检查环境", "portal_status_note": "生产路线已激活；仍需按流程确认内容、正式素材和本机环境。"}, {"slug": "product-courseware-component-v1", "name_zh": "灵活构件商品培训 PPT（兜底）", "one_liner": "未命中 5/18/13/20 页固定课型时使用；按审核大纲动态编排", "gallery_title_zh": "灵活构件商品培训 · 兜底路线", "outputs": ["可编辑 PPTX"], "category": "商品培训", "capabilities_note_zh": "gold_viewable 为旧兼容键，仅表示 A/B/C 非金样预览可查看；旧 12 页结构冒烟稿不是金样。", "shelf_group": "default-general", "preview_identity_qualified": true, "preview_identity_note_zh": "至少 3 套正式差异化非金样 UAT 已通过逐页 QA、来源、页型组合、色彩、构图与文件哈希门闸。", "preview_suite_evidence": {"case_count": 3, "style_label_zh": "统一浅蓝商品培训视觉", "settled_capability_labels_zh": ["绿色商品培训 5 页", "疾病 + 商品场景 18 页", "商品培训课件3 13 页"], "new_page_type_labels_zh": ["异议应答"], "cases": [{"suite_slot": "A", "name_zh": "三课型资料核验组合", "page_count": 7, "tab_label_zh": "案例 A · 三课型资料核验组合 · 7 页", "title_zh": "案例 A · 三课型资料核验组合 · 7 页｜页序：封面 → 培训导语 → 商品信息总览 → 咨询框架 → 证据阶梯 → 异议应答 → 总结回顾｜来源：绿色商品培训 5 页 / 疾病 + 商品场景 18 页 / 商品培训课件3 13 页｜新增页型：异议应答", "source_capability_labels_zh": ["绿色商品培训 5 页", "疾病 + 商品场景 18 页", "商品培训课件3 13 页"], "page_type_sequence_labels_zh": ["封面", "培训导语", "商品信息总览", "咨询框架", "证据阶梯", "异议应答", "总结回顾"], "new_page_type_labels_zh": ["异议应答"], "representative_page_label_zh": "第 4 页 · 咨询框架", "portal_media_index": 1}, {"suite_slot": "B", "name_zh": "双课型陈列核验组合", "page_count": 6, "tab_label_zh": "案例 B · 双课型陈列核验组合 · 6 页", "title_zh": "案例 B · 双课型陈列核验组合 · 6 页｜页序：封面 → 痛点与数据 → 证据阶梯 → 商品信息总览 → 异议应答 → 总结回顾｜来源：商品培训课件3 13 页 / 绿色商品培训 5 页｜新增页型：异议应答", "source_capability_labels_zh": ["商品培训课件3 13 页", "绿色商品培训 5 页"], "page_type_sequence_labels_zh": ["封面", "痛点与数据", "证据阶梯", "商品信息总览", "异议应答", "总结回顾"], "new_page_type_labels_zh": ["异议应答"], "representative_page_label_zh": "第 2 页 · 痛点与数据", "portal_media_index": 2}, {"suite_slot": "C", "name_zh": "双课型交接路径组合", "page_count": 5, "tab_label_zh": "案例 C · 双课型交接路径组合 · 5 页", "title_zh": "案例 C · 双课型交接路径组合 · 5 页｜页序：封面 → 培训导语 → 咨询框架 → 总结回顾 → 证据阶梯｜来源：疾病 + 商品场景 18 页 / 商品培训课件3 13 页｜新增页型：本案例无；suite 其他案例已提供新增页型证据", "source_capability_labels_zh": ["疾病 + 商品场景 18 页", "商品培训课件3 13 页"], "page_type_sequence_labels_zh": ["封面", "培训导语", "咨询框架", "总结回顾", "证据阶梯"], "new_page_type_labels_zh": [], "representative_page_label_zh": "第 4 页 · 总结回顾", "portal_media_index": 3}]}, "key_frame_labels_zh": ["三课型资料核验组合 · 差异化关键页", "双课型陈列核验组合 · 差异化关键页", "双课型交接路径组合 · 差异化关键页"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/product-courseware-component-v1", "example_paragraphs": ["BUSINESS INPUT · FLEXIBLE COURSEWARE", "灵活构件商品培训 PPT\n业务内容与素材提交", "填写参考｜中性 A / B / C 多组合示范", "业务怎么提交", "WorkBuddy 第一轮必须返回", "完整业务输入示例", "业务内容（按自然逻辑写，不限栏目）", "对象与版本", "收到资料时，先核对对象名称、文件编号、版本号和使用范围。", "核验规则", "依次确认原始文件、内容版本、视觉版本和批准记录是否一致。", "异常升级", "来源找不到或版本冲突时，记录缺口并暂停使用；确认后再恢复。", "交付留痕", "保存交接清单、批准人、确认时间、文件哈希和逐页验收结果。", "素材与授权", "复制给 WorkBuddy 的启动口令", "□ 目标、对象和使用场景已说明", "□ 所有未确认内容已标记待补", "□ 正式包装 / Logo / 人物 / 证据素材均有来源与授权", "□ 已要求先看中文页签大纲、来源解释和单一视觉方案", "CASE A · 7 页组合", "资料核验闭环", "把三类已签样能力与一个新增页签组合成 7 页内部培训课件。", "CASE B · 6 页组合", "陈列物料核验", "先看证据、再看物料，以非默认页序组成 6 页短课。", "CASE C · 5 页组合", "交接与封存", "用两类已签样能力组成 5 页交接短课，不增加新页签。"], "example_html": "<p class=\"ex-note\">BUSINESS INPUT · FLEXIBLE COURSEWARE</p>\n<p>灵活构件商品培训 PPT\n业务内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜中性 A / B / C 多组合示范</p>\n<h4>业务怎么提交</h4>\n<p>WorkBuddy 第一轮必须返回</p>\n<h4>完整业务输入示例</h4>\n<p>业务内容（按自然逻辑写，不限栏目）</p>\n<h4>对象与版本</h4>\n<p>收到资料时，先核对对象名称、文件编号、版本号和使用范围。</p>\n<h4>核验规则</h4>\n<p>依次确认原始文件、内容版本、视觉版本和批准记录是否一致。</p>\n<h4>异常升级</h4>\n<p>来源找不到或版本冲突时，记录缺口并暂停使用；确认后再恢复。</p>\n<h4>交付留痕</h4>\n<p>保存交接清单、批准人、确认时间、文件哈希和逐页验收结果。</p>\n<h4>素材与授权</h4>\n<p>复制给 WorkBuddy 的启动口令</p>\n<h4>□ 目标、对象和使用场景已说明</h4>\n<h4>□ 所有未确认内容已标记待补</h4>\n<p>□ 正式包装 / Logo / 人物 / 证据素材均有来源与授权</p>\n<p>□ 已要求先看中文页签大纲、来源解释和单一视觉方案</p>\n<h4>CASE A · 7 页组合</h4>\n<h4>资料核验闭环</h4>\n<p>把三类已签样能力与一个新增页签组合成 7 页内部培训课件。</p>\n<h4>CASE B · 6 页组合</h4>\n<h4>陈列物料核验</h4>\n<p>先看证据、再看物料，以非默认页序组成 6 页短课。</p>\n<h4>CASE C · 5 页组合</h4>\n<h4>交接与封存</h4>\n<p>用两类已签样能力组成 5 页交接短课，不增加新页签。</p>", "selection_command": "我要制作一份【可编辑商品培训 PPTX】，采用灵活构件兜底；先不要锁定正式页序。\n自然语言交付目标：【请填写培训对象、使用场景和希望解决的问题】\n商品或主题：【请填写】\n现有内容：【直接粘贴已有文案、要点或资料摘要；不完整也可以】\n现有素材：【列出包装图、Logo、证据资料、品牌素材；没有的请写暂无】\n请先不要创建正式任务，也不要生成 PPTX。请先返回：\n1. 内容缺口和待确认字段；\n2. 全中文页签大纲：逐页写明中文页名、页面目标和拟放内容；\n3. 每页能力来源解释：说明借鉴了哪类已验证课型能力，或为什么需要自定义页签；\n4. 全套只使用一种主视觉的建议；\n5. 素材分工：哪些正式图片必须由业务提供，哪些插图可由系统生成。\n业务全程只用中文自然语言，不需要填写 JSON 或任何内部页型编号。等我明确确认中文页签大纲、每页来源解释和单一视觉后，再由 WorkBuddy 内部锁定页序、创建正式任务并生成可编辑 PPTX；确认前不得继续。", "portal_item_kind": "template", "self_serve": true, "deliverable_badges": [{"kind": "conditional", "label": "PPTX · 生成前检查环境"}], "readiness_badge": {"kind": "conditional", "label": "PPTX · 生成前检查环境"}, "portal_status_kind": "conditional", "portal_status_label": "PPTX · 生成前检查环境", "portal_status_note": "生产路线已激活；仍需按流程确认内容、正式素材和本机环境。 至少 3 套正式差异化非金样 UAT 已通过逐页 QA、来源、页型组合、色彩、构图与文件哈希门闸。"}, {"slug": "product-courseware-green-v1", "name_zh": "绿色单品 PPT（如金银花露）", "one_liner": "五页绿色商品培训：介绍/卖点/人群 · 联合用药 · 对标 · 注意", "gallery_title_zh": "绿色商品培训 · 5 页", "outputs": ["可编辑 PPTX"], "category": "商品培训", "capabilities_note_zh": null, "shelf_group": "signed-standard", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["封面/介绍", "卖点与人群", "联合用药", "品种对标", "注意事项"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/product-courseware-green-v1", "example_paragraphs": ["培训课件内容与素材提交", "填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。", "联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。", "课件主题：示例商品A（演示用，非正式品规）", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界", "商品介绍", "主要成分：【待替换为审核原文】", "功能主治/定位：【待替换为审核原文】", "用法用量：【待替换为审核原文】", "【在此处直接粘贴本品授权包装图；没有可删除本行】", "图片说明／来源（可不填）：公司授权包装", "核心卖点", "卖点一：【审核表述】", "卖点二：【审核表述】", "适宜人群", "人群一：【审核表述】", "人群二：【审核表述】", "联合用药话术", "方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】", "方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】", "【可粘贴搭档包装图；无图删除本行】", "注意事项", "【说明书或审核注意事项；没有整节可删】"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。</p>\n<p>联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。</p>\n<p>课件主题：示例商品A（演示用，非正式品规）</p>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界</p>\n<h4>商品介绍</h4>\n<h4>主要成分：【待替换为审核原文】</h4>\n<p>功能主治/定位：【待替换为审核原文】</p>\n<h4>用法用量：【待替换为审核原文】</h4>\n<p>【在此处直接粘贴本品授权包装图；没有可删除本行】</p>\n<p>图片说明／来源（可不填）：公司授权包装</p>\n<h4>核心卖点</h4>\n<h4>卖点一：【审核表述】</h4>\n<h4>卖点二：【审核表述】</h4>\n<h4>适宜人群</h4>\n<h4>人群一：【审核表述】</h4>\n<h4>人群二：【审核表述】</h4>\n<h4>联合用药话术</h4>\n<p>方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】</p>\n<p>方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】</p>\n<p>【可粘贴搭档包装图；无图删除本行】</p>\n<h4>注意事项</h4>\n<p>【说明书或审核注意事项；没有整节可删】</p>", "selection_command": "我选【绿色单品 PPT（如金银花露）】，商品名是【请填写】，审核要点是【要点1、要点2、要点3】。\n请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。\n我确认先锁定模板【绿色单品 PPT（如金银花露）】。请在创建草稿前复述模板名称、交付物和还需补充的内容。", "portal_item_kind": "template", "self_serve": true, "deliverable_badges": [{"kind": "conditional", "label": "PPTX · 生成前检查环境"}], "readiness_badge": {"kind": "conditional", "label": "PPTX · 生成前检查环境"}, "portal_status_kind": "conditional", "portal_status_label": "PPTX · 生成前检查环境", "portal_status_note": "生产路线已激活；仍需按流程确认内容、正式素材和本机环境。"}, {"slug": "disease-product-scenario-v1", "name_zh": "疾病+商品场景 PPT（如穿心莲）", "one_liner": "辨证知识 + 商品知识 + 销售场景的可编辑长课件", "gallery_title_zh": "疾病辨证与商品场景 · 穿心莲金样", "outputs": ["可编辑 PPTX"], "category": "商品培训", "capabilities_note_zh": null, "shelf_group": "signed-standard", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["封面", "辨证/知识", "商品知识", "销售场景", "收尾页"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/disease-product-scenario-v1", "example_paragraphs": ["商品培训课件模板｜业务 Word 真实样本", "穿心莲内酯滴丸", "风热证商品培训课件｜业务已填内容范本", "填写提示｜这是一份“照着改就能用”的真实内容样本。绿色填写说明不会进入课件；正式提交时，只替换正文和图片即可。医学、功效、用法、数据和销售话术必须使用公司审核终稿。", "3 分钟完成一个商品", "复制本 Word，文件名改成“商品名称_版本日期.docx”。", "保留栏目标题，把本样本正文替换成新商品的审核内容；没有的栏目直接留空。", "真实包装、说明书和证据图直接粘贴授权原图；需要辅助插画时只填写图片主题。", "完成后把多份 Word 放进同一个文件夹，整批交给课件项目生成 PPTX/PDF。", "批量文件夹示例", "模板规则｜公司封面/封底锁定；缺失栏目留空；内容超出一页时自动复制同版式续页；业务不需要设置字体、字号、颜色或页面坐标。", "课程基本信息", "填写提示｜课程标题和章节数量可以调整。下列内容来自本次内部课件样本，用于展示真实整理方式，不代表跳过正式药学与合规审核。", "一、疾病篇", "什么是风热证？", "定义：指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。", "主要辨证要点：发热重、恶寒轻、咽痛、口渴、苔薄黄。", "治疗原则与警示", "核心原则：辛凉解表、清热解毒。", "课件原文警示：风热证为“阳热”之证，绝对禁用麻黄、桂枝等辛温发汗药。", "兼证处理：临床多见风热夹湿等兼证，需辨明主次兼证。", "来源说明｜内部课件第 1.1、1.4 页；正式课件以公司药师审核终稿为准。", "二、商品介绍", "填写提示｜这一页直接放药品基础资料。标签可以增删；没有可靠资料的字段留空，系统不会补写。", "来源说明｜商品文字与包装图来自内部课件第 2.1 页；不得据此替代说明书或正式审核。", "三、核心卖点", "填写提示｜一条卖点写一行。条数少就少展示，条数多则自动生成同版式续页；关键数据必须保留依据，并经内部复核。", "来源说明｜内部课件第 2.3 页；涉及唯一性、纯度、崩解时间和有效率的数据必须完成证据审核。", "四、适宜人群与推荐场景", "填写提示｜按“人群—典型场景—需求说明”填写，不需要控制每组字数完全相同。", "望闻问切沟通框架", "望：观察顾客神态、面色与精神状态，初步判断体质倾向。", "闻：耐心倾听身体不适与核心诉求，捕捉深层痛点。", "问：询问饮食、作息、既往病史等细节，厘清证型。", "切：结合辨证结果，匹配产品与服务并解释益处。", "来源说明｜内部课件第 3.1、3.2 页。", "五、场景方案", "填写提示｜每个场景按同样的四块填写。新增场景时复制整块；联合用药和话术必须使用审核原文。", "场景 1｜顾客主诉“喉咙痛”", "场景 2｜顾客主诉“感冒了，发烧，有黄痰”", "来源说明｜内部课件第 3.3、3.4 页；温度、证型、联合用药和话术均需正式审核。", "六、注意事项与日常关怀", "填写提示｜每条建议独立填写。药品禁忌优先来自说明书；生活建议也应经内部审核。", "饮食之宜：日常多喝水；课件样本列有菊花茶、绿豆汤及梨、西瓜、苦瓜等。", "饮食之忌：避免辛辣刺激、油腻煎炸食物，并慎食课件中列举的温补食材。", "保证充足休息：建议保证7–8小时高质量睡眠，避免熬夜。", "保持室内通风：课件样本建议每日开窗通风2–3次，每次30分钟。", "减少过度用嗓：少说话，避免大声喊叫或长时间交谈，让咽喉和声带休息。", "来源说明｜内部课件第 4.1 页；时长、频次和饮食建议需由审核人员确认。", "七、其他内容（可留空）", "填写提示｜不知道应放在哪个栏目时，把原文放在这里。系统会列入待确认，不会擅自丢弃或改写。", "本样本无其他待归类内容。", "图片准备｜两种方式都支持", "填写提示｜A. 有授权图片：直接粘贴；B. 没有插画：填写一句“图片主题”，项目自动生成候选或输出提示词。真实包装、说明书、检测报告、处方和品牌证据禁止 AI 仿造。", "插画质量要求", "• 浅色背景、品牌绿色主线、柔和扁平医药科普插画；人物与医疗物件自然。", "• 图片本身不生成文字、药名、剂量、Logo、水印或新的医学结论。", "• 建议方形高清 PNG，不低于 1536×1536；四周留安全区，便于课件裁切。", "• AI 图只作辅助候选，必须经过药师和视觉复核后再进入正式 PPTX。", "来源说明｜商品包装示例裁自用户提供的内部 PDF；清淡饮食图为候选风格示意、非医学证据图。", "提交前 1 分钟自查", "□ 一份 Word 只写一个商品；批量时复制成多份文件。", "□ 商品名称和课程主题已替换；没有资料的栏目已留空，而不是自行补写。", "□ 功效、用法用量、禁忌、数据、联合用药和销售话术均为内部审核终稿。", "□ 真实包装、说明书和证据资料均使用公司授权原图。", "□ 需要 AI 插画的位置只填写了图片主题，且没有要求生成药名、剂量、Logo 或包装。", "□ 文件名使用“商品名称_版本日期.docx”，多份 Word 已放入同一文件夹。", "填写提示｜系统会自动识别栏目、生成同品牌版式，并把缺失项保留为空；生成后的 PPTX 仍可继续补文字和粘贴最终图片。正式发布前必须完成内容与素材审核。", "这份真实样本怎么复用", "保留各级栏目标题。", "删除本商品正文，粘贴新商品的审核内容。", "按需要增删条目；不要为了凑页数编写内容。", "保存为新文件，继续复制下一商品。", "合规声明｜本样本内容来自用户提供的内部课件，仅用于展示业务资料整理和模板生成方法；它不替代药品说明书、公司药师审核、数据证据审核或合规法务确认。"], "example_html": "<p class=\"ex-note\">商品培训课件模板｜业务 Word 真实样本</p>\n<h4>穿心莲内酯滴丸</h4>\n<p>风热证商品培训课件｜业务已填内容范本</p>\n<p class=\"ex-note\">填写提示｜这是一份“照着改就能用”的真实内容样本。绿色填写说明不会进入课件；正式提交时，只替换正文和图片即可。医学、功效、用法、数据和销售话术必须使用公司审核终稿。</p>\n<h4>3 分钟完成一个商品</h4>\n<p>复制本 Word，文件名改成“商品名称_版本日期.docx”。</p>\n<p class=\"ex-note\">保留栏目标题，把本样本正文替换成新商品的审核内容；没有的栏目直接留空。</p>\n<p>真实包装、说明书和证据图直接粘贴授权原图；需要辅助插画时只填写图片主题。</p>\n<p>完成后把多份 Word 放进同一个文件夹，整批交给课件项目生成 PPTX/PDF。</p>\n<h4>批量文件夹示例</h4>\n<p>模板规则｜公司封面/封底锁定；缺失栏目留空；内容超出一页时自动复制同版式续页；业务不需要设置字体、字号、颜色或页面坐标。</p>\n<h4>课程基本信息</h4>\n<p class=\"ex-note\">填写提示｜课程标题和章节数量可以调整。下列内容来自本次内部课件样本，用于展示真实整理方式，不代表跳过正式药学与合规审核。</p>\n<h4>一、疾病篇</h4>\n<p>什么是风热证？</p>\n<p>定义：指风热之邪侵袭人体肌表，导致卫气被遏、肺失宣肃所表现出的证候。通俗而言，即身体受到“热风”侵袭，引发发热、咽痛、口干等一系列“热”性症状，是中医外感表证中常见的证型之一。</p>\n<p>主要辨证要点：发热重、恶寒轻、咽痛、口渴、苔薄黄。</p>\n<h4>治疗原则与警示</h4>\n<p>核心原则：辛凉解表、清热解毒。</p>\n<p>课件原文警示：风热证为“阳热”之证，绝对禁用麻黄、桂枝等辛温发汗药。</p>\n<p>兼证处理：临床多见风热夹湿等兼证，需辨明主次兼证。</p>\n<p class=\"ex-note\">来源说明｜内部课件第 1.1、1.4 页；正式课件以公司药师审核终稿为准。</p>\n<h4>二、商品介绍</h4>\n<p>填写提示｜这一页直接放药品基础资料。标签可以增删；没有可靠资料的字段留空，系统不会补写。</p>\n<p>来源说明｜商品文字与包装图来自内部课件第 2.1 页；不得据此替代说明书或正式审核。</p>\n<h4>三、核心卖点</h4>\n<p>填写提示｜一条卖点写一行。条数少就少展示，条数多则自动生成同版式续页；关键数据必须保留依据，并经内部复核。</p>\n<p>来源说明｜内部课件第 2.3 页；涉及唯一性、纯度、崩解时间和有效率的数据必须完成证据审核。</p>\n<h4>四、适宜人群与推荐场景</h4>\n<p>填写提示｜按“人群—典型场景—需求说明”填写，不需要控制每组字数完全相同。</p>\n<h4>望闻问切沟通框架</h4>\n<p>望：观察顾客神态、面色与精神状态，初步判断体质倾向。</p>\n<p>闻：耐心倾听身体不适与核心诉求，捕捉深层痛点。</p>\n<p>问：询问饮食、作息、既往病史等细节，厘清证型。</p>\n<p>切：结合辨证结果，匹配产品与服务并解释益处。</p>\n<p>来源说明｜内部课件第 3.1、3.2 页。</p>\n<h4>五、场景方案</h4>\n<p>填写提示｜每个场景按同样的四块填写。新增场景时复制整块；联合用药和话术必须使用审核原文。</p>\n<p>场景 1｜顾客主诉“喉咙痛”</p>\n<p>场景 2｜顾客主诉“感冒了，发烧，有黄痰”</p>\n<p>来源说明｜内部课件第 3.3、3.4 页；温度、证型、联合用药和话术均需正式审核。</p>\n<h4>六、注意事项与日常关怀</h4>\n<p>填写提示｜每条建议独立填写。药品禁忌优先来自说明书；生活建议也应经内部审核。</p>\n<p class=\"ex-note\">饮食之宜：日常多喝水；课件样本列有菊花茶、绿豆汤及梨、西瓜、苦瓜等。</p>\n<p>饮食之忌：避免辛辣刺激、油腻煎炸食物，并慎食课件中列举的温补食材。</p>\n<p>保证充足休息：建议保证7–8小时高质量睡眠，避免熬夜。</p>\n<p class=\"ex-note\">保持室内通风：课件样本建议每日开窗通风2–3次，每次30分钟。</p>\n<p>减少过度用嗓：少说话，避免大声喊叫或长时间交谈，让咽喉和声带休息。</p>\n<p>来源说明｜内部课件第 4.1 页；时长、频次和饮食建议需由审核人员确认。</p>\n<h4>七、其他内容（可留空）</h4>\n<p>填写提示｜不知道应放在哪个栏目时，把原文放在这里。系统会列入待确认，不会擅自丢弃或改写。</p>\n<p class=\"ex-note\">本样本无其他待归类内容。</p>\n<p>图片准备｜两种方式都支持</p>\n<p>填写提示｜A. 有授权图片：直接粘贴；B. 没有插画：填写一句“图片主题”，项目自动生成候选或输出提示词。真实包装、说明书、检测报告、处方和品牌证据禁止 AI 仿造。</p>\n<h4>插画质量要求</h4>\n<p>• 浅色背景、品牌绿色主线、柔和扁平医药科普插画；人物与医疗物件自然。</p>\n<p>• 图片本身不生成文字、药名、剂量、Logo、水印或新的医学结论。</p>\n<p>• 建议方形高清 PNG，不低于 1536×1536；四周留安全区，便于课件裁切。</p>\n<p>• AI 图只作辅助候选，必须经过药师和视觉复核后再进入正式 PPTX。</p>\n<p>来源说明｜商品包装示例裁自用户提供的内部 PDF；清淡饮食图为候选风格示意、非医学证据图。</p>\n<h4>提交前 1 分钟自查</h4>\n<p>□ 一份 Word 只写一个商品；批量时复制成多份文件。</p>\n<p>□ 商品名称和课程主题已替换；没有资料的栏目已留空，而不是自行补写。</p>\n<p class=\"ex-note\">□ 功效、用法用量、禁忌、数据、联合用药和销售话术均为内部审核终稿。</p>\n<p>□ 真实包装、说明书和证据资料均使用公司授权原图。</p>\n<p>□ 需要 AI 插画的位置只填写了图片主题，且没有要求生成药名、剂量、Logo 或包装。</p>\n<p>□ 文件名使用“商品名称_版本日期.docx”，多份 Word 已放入同一文件夹。</p>\n<p>填写提示｜系统会自动识别栏目、生成同品牌版式，并把缺失项保留为空；生成后的 PPTX 仍可继续补文字和粘贴最终图片。正式发布前必须完成内容与素材审核。</p>\n<p class=\"ex-note\">这份真实样本怎么复用</p>\n<p>保留各级栏目标题。</p>\n<p>删除本商品正文，粘贴新商品的审核内容。</p>\n<p>按需要增删条目；不要为了凑页数编写内容。</p>\n<p>保存为新文件，继续复制下一商品。</p>\n<p class=\"ex-note\">合规声明｜本样本内容来自用户提供的内部课件，仅用于展示业务资料整理和模板生成方法；它不替代药品说明书、公司药师审核、数据证据审核或合规法务确认。</p>", "selection_command": "我选【疾病+商品场景 PPT（如穿心莲）】，商品名是【请填写】，审核要点是【要点1、要点2、要点3】。\n请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。\n我确认先锁定模板【疾病+商品场景 PPT（如穿心莲）】。请在创建草稿前复述模板名称、交付物和还需补充的内容。", "portal_item_kind": "template", "self_serve": true, "deliverable_badges": [{"kind": "conditional", "label": "PPTX · 生成前检查环境"}], "readiness_badge": {"kind": "conditional", "label": "PPTX · 生成前检查环境"}, "portal_status_kind": "conditional", "portal_status_label": "PPTX · 生成前检查环境", "portal_status_note": "生产路线已激活；仍需按流程确认内容、正式素材和本机环境。"}, {"slug": "sufuda-mabaloshawei-product-courseware-3-v1", "name_zh": "商品培训课件3（可编辑 PPT，速福达标准课型）", "one_liner": "复用速福达金样的 12 个内容单元，生成 13 页新主题可编辑 PPTX", "gallery_title_zh": "商品培训课件3 · 速福达金样", "outputs": ["可编辑 PPTX"], "category": "商品培训", "capabilities_note_zh": null, "shelf_group": "signed-standard", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["封面", "流感背景", "核心利益", "产品特点", "适宜人群", "联合用药"], "voice_id": "voice.sufuda-courseware-pharmacist-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1", "example_paragraphs": ["培训课件内容与素材提交", "填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。", "联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。", "课件主题：示例商品A（演示用，非正式品规）", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界", "商品介绍", "主要成分：【待替换为审核原文】", "功能主治/定位：【待替换为审核原文】", "用法用量：【待替换为审核原文】", "【在此处直接粘贴本品授权包装图；没有可删除本行】", "图片说明／来源（可不填）：公司授权包装", "核心卖点", "卖点一：【审核表述】", "卖点二：【审核表述】", "适宜人群", "人群一：【审核表述】", "人群二：【审核表述】", "联合用药话术", "方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】", "方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】", "【可粘贴搭档包装图；无图删除本行】", "注意事项", "【说明书或审核注意事项；没有整节可删】"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。</p>\n<p>联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。</p>\n<p>课件主题：示例商品A（演示用，非正式品规）</p>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界</p>\n<h4>商品介绍</h4>\n<h4>主要成分：【待替换为审核原文】</h4>\n<p>功能主治/定位：【待替换为审核原文】</p>\n<h4>用法用量：【待替换为审核原文】</h4>\n<p>【在此处直接粘贴本品授权包装图；没有可删除本行】</p>\n<p>图片说明／来源（可不填）：公司授权包装</p>\n<h4>核心卖点</h4>\n<h4>卖点一：【审核表述】</h4>\n<h4>卖点二：【审核表述】</h4>\n<h4>适宜人群</h4>\n<h4>人群一：【审核表述】</h4>\n<h4>人群二：【审核表述】</h4>\n<h4>联合用药话术</h4>\n<p>方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】</p>\n<p>方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】</p>\n<p>【可粘贴搭档包装图；无图删除本行】</p>\n<h4>注意事项</h4>\n<p>【说明书或审核注意事项；没有整节可删】</p>", "selection_command": "我选【商品培训课件3（可编辑 PPT，速福达标准课型）】，商品名是【请填写】，审核要点是【要点1、要点2、要点3】。\n请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。\n我确认先锁定模板【商品培训课件3（可编辑 PPT，速福达标准课型）】。请在创建草稿前复述模板名称、交付物和还需补充的内容。", "portal_item_kind": "template", "self_serve": true, "deliverable_badges": [{"kind": "conditional", "label": "PPTX · 生成前检查环境"}, {"kind": "building", "label": "MP4 · 尚未开放（不可生成）"}], "readiness_badge": {"kind": "conditional", "label": "PPTX · 生成前检查环境"}, "portal_status_kind": "conditional", "portal_status_label": "PPTX · 生成前检查环境；MP4 · 尚未开放（不可生成）", "portal_status_note": "生产路线已激活；仍需按流程确认内容、正式素材和本机环境。"}, {"slug": "kangaisen-lycopene-health-edu-v1", "name_zh": "番茄红素成分健康科普 PPT（米白番茄红）", "one_liner": "20 页成分健康科普：定义与来源、抗氧化机制、健康研究、吸收指南与应用；独立米白番茄红课型，不是福尔课件4", "gallery_title_zh": "番茄红素成分健康科普 · 20 页米白番茄红金样", "outputs": ["可编辑 PPTX"], "category": "成分健康科普", "capabilities_note_zh": null, "shelf_group": "signed-standard", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["成分定义", "抗氧化能力", "健康研究", "吸收指南", "目录结构"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "template_id": "template.kangaisen-lycopene-health-edu-v1", "settled_dir": "production-library/templates/settled/kangaisen-lycopene-health-edu-v1", "example_paragraphs": ["BUSINESS INPUT · 成分健康科普", "米白番茄红 20 页课型\n业务内容与素材提交", "填写参考｜仅示范结构，不含真实医学结论", "业务怎么提交", "1. 选课型  在门户选择“番茄红素成分健康科普 PPT（米白番茄红）”。", "2. 交内容  按下面 20 页自然填写；不必数 107 个内部文字框，也不必编辑 JSON。", "3. 补素材  业务提供必须真实/授权的图；非品牌插图由 WorkBuddy 按槽生成并给代表图复核。", "4. 两道确认  先确认内容，再确认视觉。任一确认后发生改动都需重新确认。", "5. 正式生成  WorkBuddy 导出 20 页可编辑 PPTX，并完成逐页布局、残留和素材哈希 QA。", "20 页内容与素材", "每页先写审核内容，再写图片来源或生成需求。没有资料时保留“待补”并说明负责人；不要为了填满版式编写内容。", "第 01 页｜封面", "固定页型：cover", "本页需提交：课程主题、解释性副标题、培训对象、讲师/部门、1 张主题主视觉", "审核正文：主题：示例成分 A｜副标题：从定义到应用的结构示范｜对象：门店培训人员｜主视觉：抽象成分图（生成）", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 02 页｜目录", "固定页型：toc", "本页需提交：6 个章节名称；章节顺序可按审核资料调整；目录图标由 WorkBuddy 配置", "审核正文：章节：认识成分、结构与原理、审核发现、使用边界、应用场景、总结；正式稿可删改章名，但需保持 20 页课型结构。", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 03 页｜章节一扉页", "固定页型：chapter", "本页需提交：章节编号、中文章名、英文短标题、1 张章节主题图", "审核正文：01｜认识示例成分 A｜Definition & Source｜章节图：原料与结构的非品牌插画（生成）", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 04 页｜核心定义", "固定页型：two_card_media", "本页需提交：定义卡、特性卡、名词解释、证据来源、1 张结构或概念示意图", "审核正文：定义卡：示例成分 A 是虚构占位名；特性卡：本页仅示范信息层级。正式稿粘贴公司审核定义、名词解释和证据编号。", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 05 页｜来源 / 分布", "固定页型：icon_grid", "本页需提交：3–6 个来源或分类：每项含名称、简述、图片需求与来源", "审核正文：来源分类一 / 二 / 三：分别填写真实来源、1 句说明和授权图；若用生成图，写清生成主题与禁用元素。", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 06 页｜影响因素", "固定页型：two_feature", "本页需提交：因素 A、因素 B：各含标题、说明、证据出处和配图需求", "审核正文：因素 A / 因素 B：示范两类影响因素的对照写法；正式稿需给出审核结论、适用边界与证据出处。", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 07 页｜章节二扉页", "固定页型：chapter", "本页需提交：章节编号、中文章名、英文短标题、1 张章节主题图", "审核正文：02｜结构与原理｜Structure & Principles｜章节图：抽象结构线稿（生成）", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 08 页｜数据或特性比较", "固定页型：compare_chart", "本页需提交：比较结论、指标名称、全部数值与单位、基准、出处、图表配色说明", "审核正文：指标 A / B / C：填写数值、单位、基准和出处；没有正式数据时，本页标记待补，不能用示例数字进入终稿。", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 09 页｜原理 / 机制", "固定页型：mechanism_pair", "本页需提交：左侧前提、右侧过程、结果边界、证据出处、1 张机制示意图", "审核正文：前提 → 过程 → 结果：只示范逻辑链。正式稿由医学/合规审核提供完整机制表述和引用。", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 10 页｜章节三扉页", "固定页型：chapter", "本页需提交：章节编号、中文章名、英文短标题、1 张章节主题图", "审核正文：03｜审核发现｜Reviewed Findings｜章节图：资料与数据卡片场景（生成）", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 11 页｜研究或应用发现（一）", "固定页型：list_media", "本页需提交：页面结论、3 个已审核要点、证据出处、1 张场景或数据图", "审核正文：结论句 + 要点 A / B / C + 证据编号；本参考不提供任何真实功效结论，正式内容以业务审核稿为准。", "图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。", "证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。", "第 12 页｜研究或应用发现（二）", "固定页型：list_media", "本页需提交：页面结论、2–3 个已审核要点、证据出处、1 张场景或数据图"], "example_html": "<p class=\"ex-note\">BUSINESS INPUT · 成分健康科普</p>\n<p>米白番茄红 20 页课型\n业务内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜仅示范结构，不含真实医学结论</p>\n<h4>业务怎么提交</h4>\n<p>1. 选课型  在门户选择“番茄红素成分健康科普 PPT（米白番茄红）”。</p>\n<p>2. 交内容  按下面 20 页自然填写；不必数 107 个内部文字框，也不必编辑 JSON。</p>\n<p>3. 补素材  业务提供必须真实/授权的图；非品牌插图由 WorkBuddy 按槽生成并给代表图复核。</p>\n<p>4. 两道确认  先确认内容，再确认视觉。任一确认后发生改动都需重新确认。</p>\n<p>5. 正式生成  WorkBuddy 导出 20 页可编辑 PPTX，并完成逐页布局、残留和素材哈希 QA。</p>\n<h4>20 页内容与素材</h4>\n<p>每页先写审核内容，再写图片来源或生成需求。没有资料时保留“待补”并说明负责人；不要为了填满版式编写内容。</p>\n<p>第 01 页｜封面</p>\n<h4>固定页型：cover</h4>\n<p>本页需提交：课程主题、解释性副标题、培训对象、讲师/部门、1 张主题主视觉</p>\n<p>审核正文：主题：示例成分 A｜副标题：从定义到应用的结构示范｜对象：门店培训人员｜主视觉：抽象成分图（生成）</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 02 页｜目录</p>\n<h4>固定页型：toc</h4>\n<p>本页需提交：6 个章节名称；章节顺序可按审核资料调整；目录图标由 WorkBuddy 配置</p>\n<p>审核正文：章节：认识成分、结构与原理、审核发现、使用边界、应用场景、总结；正式稿可删改章名，但需保持 20 页课型结构。</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 03 页｜章节一扉页</p>\n<h4>固定页型：chapter</h4>\n<p>本页需提交：章节编号、中文章名、英文短标题、1 张章节主题图</p>\n<p>审核正文：01｜认识示例成分 A｜Definition &amp; Source｜章节图：原料与结构的非品牌插画（生成）</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 04 页｜核心定义</p>\n<p>固定页型：two_card_media</p>\n<p>本页需提交：定义卡、特性卡、名词解释、证据来源、1 张结构或概念示意图</p>\n<p>审核正文：定义卡：示例成分 A 是虚构占位名；特性卡：本页仅示范信息层级。正式稿粘贴公司审核定义、名词解释和证据编号。</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 05 页｜来源 / 分布</p>\n<h4>固定页型：icon_grid</h4>\n<p>本页需提交：3–6 个来源或分类：每项含名称、简述、图片需求与来源</p>\n<p>审核正文：来源分类一 / 二 / 三：分别填写真实来源、1 句说明和授权图；若用生成图，写清生成主题与禁用元素。</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 06 页｜影响因素</p>\n<h4>固定页型：two_feature</h4>\n<p>本页需提交：因素 A、因素 B：各含标题、说明、证据出处和配图需求</p>\n<p>审核正文：因素 A / 因素 B：示范两类影响因素的对照写法；正式稿需给出审核结论、适用边界与证据出处。</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 07 页｜章节二扉页</p>\n<h4>固定页型：chapter</h4>\n<p>本页需提交：章节编号、中文章名、英文短标题、1 张章节主题图</p>\n<p>审核正文：02｜结构与原理｜Structure &amp; Principles｜章节图：抽象结构线稿（生成）</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 08 页｜数据或特性比较</p>\n<p>固定页型：compare_chart</p>\n<p>本页需提交：比较结论、指标名称、全部数值与单位、基准、出处、图表配色说明</p>\n<p>审核正文：指标 A / B / C：填写数值、单位、基准和出处；没有正式数据时，本页标记待补，不能用示例数字进入终稿。</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 09 页｜原理 / 机制</p>\n<p>固定页型：mechanism_pair</p>\n<p>本页需提交：左侧前提、右侧过程、结果边界、证据出处、1 张机制示意图</p>\n<p>审核正文：前提 → 过程 → 结果：只示范逻辑链。正式稿由医学/合规审核提供完整机制表述和引用。</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 10 页｜章节三扉页</p>\n<h4>固定页型：chapter</h4>\n<p>本页需提交：章节编号、中文章名、英文短标题、1 张章节主题图</p>\n<p>审核正文：03｜审核发现｜Reviewed Findings｜章节图：资料与数据卡片场景（生成）</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 11 页｜研究或应用发现（一）</p>\n<h4>固定页型：list_media</h4>\n<p>本页需提交：页面结论、3 个已审核要点、证据出处、1 张场景或数据图</p>\n<p>审核正文：结论句 + 要点 A / B / C + 证据编号；本参考不提供任何真实功效结论，正式内容以业务审核稿为准。</p>\n<p>图片与来源：已标出由业务提供的授权图与可由 WorkBuddy 生成的非品牌插图；正式绑定以视觉复核清单为准。</p>\n<p>证据 / 审核：示例仅写结构；正式主题须填写公司审核稿编号、说明书/文献/内部资料路径与审核人。</p>\n<p>第 12 页｜研究或应用发现（二）</p>\n<h4>固定页型：list_media</h4>\n<p>本页需提交：页面结论、2–3 个已审核要点、证据出处、1 张场景或数据图</p>", "selection_command": "我选【番茄红素成分健康科普 PPT（米白番茄红）】，成分或健康主题是【请填写】，审核要点是【要点1、要点2、要点3】。\n请先整理内容初稿和缺口供我确认；确认后再检查本机能力并生成可编辑 PPTX。\n我确认先锁定模板【番茄红素成分健康科普 PPT（米白番茄红）】。请在创建草稿前复述模板名称、交付物和还需补充的内容。", "portal_item_kind": "template", "self_serve": true, "deliverable_badges": [{"kind": "conditional", "label": "PPTX · 生成前检查环境"}], "readiness_badge": {"kind": "conditional", "label": "PPTX · 生成前检查环境"}, "portal_status_kind": "conditional", "portal_status_label": "PPTX · 生成前检查环境", "portal_status_note": "生产路线已激活；仍需按流程确认内容、正式素材和本机环境。"}, {"slug": "fuler-fanqiehongsu-product-courseware-4-v1", "name_zh": "商品培训课件4（视频+PPT，番茄红素壳）", "one_liner": "保健品培训：全片视频 + 16 页可编辑 PPT（关联用药/总结行标题语法）", "gallery_title_zh": "商品培训课件4 · 福尔番茄红素金样", "outputs": ["MP4", "可编辑 PPTX"], "category": "商品培训", "capabilities_note_zh": null, "shelf_group": "other", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["封面", "商品介绍", "利益点", "适宜人群", "关联用药", "总结"], "voice_id": "voice.sufuda-courseware-pharmacist-v1", "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/fuler-fanqiehongsu-product-courseware-4-v1", "example_paragraphs": ["培训课件内容与素材提交", "填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。", "联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。", "课件主题：示例商品A（演示用，非正式品规）", "培训对象（可不填）：连锁药店门店员工", "培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界", "商品介绍", "主要成分：【待替换为审核原文】", "功能主治/定位：【待替换为审核原文】", "用法用量：【待替换为审核原文】", "【在此处直接粘贴本品授权包装图；没有可删除本行】", "图片说明／来源（可不填）：公司授权包装", "核心卖点", "卖点一：【审核表述】", "卖点二：【审核表述】", "适宜人群", "人群一：【审核表述】", "人群二：【审核表述】", "联合用药话术", "方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】", "方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】", "【可粘贴搭档包装图；无图删除本行】", "注意事项", "【说明书或审核注意事项；没有整节可删】"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">填写参考｜只示范格式。示例医学/价格表述为演示占位，正式主题必须替换为公司审核稿与授权包装。</p>\n<p>联合用药本参考只写 2 组 → 成片必须只出 2 行，禁止空白第三行。</p>\n<p>课件主题：示例商品A（演示用，非正式品规）</p>\n<p>培训对象（可不填）：连锁药店门店员工</p>\n<p>培训目标（可不填）：掌握审核稿中的商品信息与联合推荐话术边界</p>\n<h4>商品介绍</h4>\n<h4>主要成分：【待替换为审核原文】</h4>\n<p>功能主治/定位：【待替换为审核原文】</p>\n<h4>用法用量：【待替换为审核原文】</h4>\n<p>【在此处直接粘贴本品授权包装图；没有可删除本行】</p>\n<p>图片说明／来源（可不填）：公司授权包装</p>\n<h4>核心卖点</h4>\n<h4>卖点一：【审核表述】</h4>\n<h4>卖点二：【审核表述】</h4>\n<h4>适宜人群</h4>\n<h4>人群一：【审核表述】</h4>\n<h4>人群二：【审核表述】</h4>\n<h4>联合用药话术</h4>\n<p>方案 1｜场景：【场景甲】｜组合：示例商品A + 搭档甲｜话术：【审核话术甲】</p>\n<p>方案 2｜场景：【场景乙】｜组合：示例商品A + 搭档乙｜话术：【审核话术乙】</p>\n<p>【可粘贴搭档包装图；无图删除本行】</p>\n<h4>注意事项</h4>\n<p>【说明书或审核注意事项；没有整节可删】</p>", "selection_command": "我选【商品培训课件4（视频+PPT，番茄红素壳）】，目前仅查看金样和填写参考。请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。", "portal_item_kind": "template", "self_serve": false, "deliverable_badges": [{"kind": "preview", "label": "仅金样预览"}], "readiness_badge": {"kind": "preview", "label": "仅金样预览"}, "portal_status_kind": "preview", "portal_status_label": "仅金样预览", "portal_status_note": "当前仅用于辨认课型，不承诺生成新主题正式成品。"}, {"slug": "disease-health-shenke-blue-v1", "name_zh": "疾病健康知识培训 PPT（参课蓝）", "one_liner": "门店健康顾问疾病知识培训：概览、表现、检查、用药、关怀、一页通", "gallery_title_zh": "疾病健康知识培训 · 参课蓝金样", "outputs": ["可编辑 PPTX"], "category": "健康培训", "capabilities_note_zh": null, "shelf_group": "other", "preview_identity_qualified": true, "preview_identity_note_zh": null, "preview_suite_evidence": null, "key_frame_labels_zh": ["封面", "疾病概览", "临床表现", "对症用药表", "专业关怀", "竖版一页通"], "voice_id": null, "blank_word": "业务提交_空白模板.docx", "filled_example": "业务提交_填写参考.docx", "settled_dir": "production-library/templates/settled/disease-health-shenke-blue-v1", "example_paragraphs": ["培训课件内容与素材提交", "真实已填样本｜风热证门店培训", "以下内容取自项目现有内部样本，仅用于展示业务如何整理内容和粘贴素材；新项目投产前仍需完成医学、药事、合规和素材授权审核。", "课件主题：中医基础知识——风热证", "培训对象（可不填）：连锁药店一线员工", "培训目标（可不填）：理解风热证的形成与典型表现，掌握基本调理思路和日常注意事项。", "什么是风热证", "简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺，因此可能出现发热、咽痛、口渴等偏“热”的表现。", "典型表现", "发热、口渴：身体发热，嘴巴容易觉得干渴，也可能伴有烦躁。", "喉咙肿痛：咽喉红肿疼痛，还可能伴有咳嗽、痰黄或黄稠鼻涕。", "图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创素材 symptom.fever、symptom.sore-throat", "调理思路", "核心思路是疏风清热。", "日常可选用桑叶、菊花、薄荷等内容进行知识讲解；涉及用量或饮用方法时，应以公司审核终稿为准。", "如需展示药品名称或包装，应同时提交公司审核文案和授权包装原图；未提供时不展示包装。", "日常注意事项", "房间适当开窗通风，保持空气流通。", "少量多次饮用温水，注意补充水分。", "饮食以清淡为主，少吃辛辣、油炸和燥热食物。", "暂时避免烟酒，并保证充足休息。", "课程小结", "风热证的学习重点可以概括为：病因看“风邪＋热邪”，表现看“发热、口渴、咽痛等偏热症状”，调理把握“疏风清热”，生活中注意通风、补水、清淡饮食和休息。"], "example_html": "<p class=\"ex-note\">培训课件内容与素材提交</p>\n<p class=\"ex-note\">真实已填样本｜风热证门店培训</p>\n<p class=\"ex-note\">以下内容取自项目现有内部样本，仅用于展示业务如何整理内容和粘贴素材；新项目投产前仍需完成医学、药事、合规和素材授权审核。</p>\n<h4>课件主题：中医基础知识——风热证</h4>\n<p>培训对象（可不填）：连锁药店一线员工</p>\n<p>培训目标（可不填）：理解风热证的形成与典型表现，掌握基本调理思路和日常注意事项。</p>\n<h4>什么是风热证</h4>\n<p>简单来说，风热证就是风邪和热邪一起侵入身体，导致体表不适、肺气不顺，因此可能出现发热、咽痛、口渴等偏“热”的表现。</p>\n<h4>典型表现</h4>\n<p>发热、口渴：身体发热，嘴巴容易觉得干渴，也可能伴有烦躁。</p>\n<p>喉咙肿痛：咽喉红肿疼痛，还可能伴有咳嗽、痰黄或黄稠鼻涕。</p>\n<p>图片说明／来源：从左至右：发热、喉咙肿痛；项目内原创素材 symptom.fever、symptom.sore-throat</p>\n<h4>调理思路</h4>\n<p>核心思路是疏风清热。</p>\n<p class=\"ex-note\">日常可选用桑叶、菊花、薄荷等内容进行知识讲解；涉及用量或饮用方法时，应以公司审核终稿为准。</p>\n<p>如需展示药品名称或包装，应同时提交公司审核文案和授权包装原图；未提供时不展示包装。</p>\n<h4>日常注意事项</h4>\n<p>房间适当开窗通风，保持空气流通。</p>\n<p>少量多次饮用温水，注意补充水分。</p>\n<p>饮食以清淡为主，少吃辛辣、油炸和燥热食物。</p>\n<p>暂时避免烟酒，并保证充足休息。</p>\n<h4>课程小结</h4>\n<p>风热证的学习重点可以概括为：病因看“风邪＋热邪”，表现看“发热、口渴、咽痛等偏热症状”，调理把握“疏风清热”，生活中注意通风、补水、清淡饮食和休息。</p>", "selection_command": "我选【疾病健康知识培训 PPT（参课蓝）】，目前仅查看金样和填写参考。请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。", "portal_item_kind": "template", "self_serve": false, "deliverable_badges": [{"kind": "preview", "label": "仅金样预览"}], "readiness_badge": {"kind": "preview", "label": "仅金样预览"}, "portal_status_kind": "preview", "portal_status_label": "仅金样预览", "portal_status_note": "当前仅用于辨认课型，不承诺生成新主题正式成品。"}];
+const PRODUCTION_MODES = [{"mode_id": "seedance-health-edu-v1", "status": "production-validated", "name_zh": "Seedance 元提示词五拍", "category": "生活避险科普动画", "cover_label": "5 拍", "one_liner": "先审五拍科普脚本，再交付可复制的 Seedance 分段提示词与发布包。", "portal_video_example": {"filename": "seedance-meta-prompt-example.mp4", "label": "Seedance 元提示词生成效果案例"}, "generated_prompt_example": "全局风格： 3D Pixar 电影级画质，8K 渲染。光影采用“冷调暴雨 vs 暖调台灯”的戏剧性对比。35mm 胶片质感，强调风雨中的物理碰撞感（雨伞撑开的紧绷感、风吹雨衣的猎猎声）。\n\n角色定义：\n\n大明 (Daming)： 35岁中国父亲，温和稳重。身着深蓝色棉质家居服 (Navy blue polo)。\n\n小宝 (Xiaobao)： 8岁男孩。身着蓝色校服，背着明黄色反光条书包，手拿黄色雨衣。\n\n核心资产： 广州塔模糊远景、手机实时预警界面、典型的中国家庭玄关。\n\n负面排除： 无水印、无跳切、无动漫平面感、非医疗身份。\n\n第二部分：【时间流叙事 (Time-stream Narrative)】\n0-5s | [痛点引入与口播]： 镜头从窗户的水痕推向大明的特写。他看着窗外狂风大雨，然后转头看向镜头，神情严肃但语气亲切。\n\n口播： “家人们，广州这暴雨台风说来就来，看着外面这天儿，咱当家长的这心里啊，肯定都在犯嘀咕：这学，还送不送？”\n\n动作： 大明拨开窗帘，指着窗外被风吹歪的凤凰木。\n\n5-15s | [核心科普与交互]： 大明举起手机，屏幕上跳出红、橙、黄三个盾牌图标。他一边点选图标，一边对着镜头耐心解释。\n\n口播： “别慌！咱得看‘信号’办事儿：红色预警直接停课；橙色，应延迟上学；黄色，咱家自己决定，晚点去也没关系！”\n\n动作： 手机屏幕特写，红色盾牌发光。背景中小宝正把刚穿好的鞋又脱下来，准备去读书，体现家庭生活的真实感。\n\n15-25s | [定心丸与细节]： 镜头拉远，大明给小宝递过一杯热奶。他坐下来，平视镜头。\n\n口播： “咱别担心迟到，官方说了，只要上学路有危险，咱自行把握时间，学校绝不会记迟到或旷课的！”\n\n动作： 镜头展示手机上的学校通知群，老师发出的“安全第一”文字被高亮处理。\n\n25-40s | [户外避险教学]： 场景转为户外。大明拉着小宝，风雨很大，他不得不提高嗓门对着镜头喊话。\n\n口播： “出门一定要注意！大树、电线杆、广告牌，通通绕着走！看见积水深的地方，千万别乱踩！”\n\n动作： 镜头俯拍两人绕过一个晃动的巨型广告牌，雨水在他们脚下溅起巨大水花。大明护住小宝，两人躲入一个坚固的混凝土建筑廊下。\n\n40-52s | [野外特别指引]： 场景转为清明郊野，突降暴雨。大明展示撤离路线。\n\n口播： “清明踏青要是遇上泥石流，千万别顺着往下跑，要往两侧的山坡上面撤！低洼地带雷雨天绝对不能留！”\n\n动作： 大明指着垂直于山洪流向的方向，带小宝快速向斜上方高处移动。物理模拟：雨水冲刷泥土的湿滑质感极强。\n\n52-60s | [温暖收尾与转发]： 阳光穿云而出。大明和小宝在校门前高举大拇指，笑容灿烂。\n\n口播： “平安才是回家的路。这份指引，赶紧转给咱身边的家长朋友们，大家一起平安过春天！”\n\n动作： 两人在彩虹下挥手。屏幕浮现温馨文字：“平安是福”。", "prompt_only": true, "workbuddy_direct_generation": true, "input_expansion_required": true, "input_quality_boundary": "初始资料可残缺；scaffold 会生成标明待补字段的草稿复核包。正式 release 前，WorkBuddy 必须用 meta-prompt 补齐五拍、角色、场景和发布变量，并通过字段完整性与 hash 审批双重硬门。", "local_artifact_types": ["review_package", "prompt_package", "publish_package"], "workbuddy_outputs": [{"stage": "review", "label": "《科普脚本复核包》"}, {"stage": "after_script_approval", "label": "Seedance 2.0 分段提示词包"}, {"stage": "after_script_approval", "label": "视频号发布包"}], "badges": [{"kind": "ready", "label": "复核包 · WorkBuddy 补齐变量后可生成"}, {"kind": "gated", "label": "分段提示词 · 脚本确认后可生成"}, {"kind": "external", "label": "成片 · 外部 Seedance/即梦账号"}], "approval_gate": {"required": true, "enforcement": "hash_bound_release", "confirmation_phrase": "脚本通过，可以出 Seedance 提示词", "before_approval_zh": "确认前只生成变量草案、脚本复核包和待确认项，不发布正式提示词包。"}, "external_render": {"required": true, "platform": "Seedance 2.0 / 即梦", "boundary_zh": "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，未经明确要求不得调用付费视频 API。"}, "workflow": [{"title": "提交主题", "text": "提供生活避险主题、目标人群和已有要点。"}, {"title": "先审脚本", "text": "WorkBuddy 先用 meta-prompt 补齐完整变量、列出缺口，再生成五拍《科普脚本复核包》。"}, {"title": "确认后交付", "text": "生成分段提示词与发布包；成片需业务使用外部 Seedance/即梦账号。"}], "selection_command": "我要使用【Seedance 元提示词五拍】制作生活避险科普。\n主题：【请填写】；目标人群：【请填写】；已有要点：【可不完整】。\n请先用 meta-prompt 把现有内容整理为变量草案，并生成《科普脚本复核包》；缺失的五拍、角色、场景和发布变量必须逐项列为待补，不能用空句冒充成稿。\n在我补齐字段并明确回复“脚本通过，可以出 Seedance 提示词”前，不得生成正式提示词包。\n确认后只生成可复制的 Seedance 2.0 分段提示词和视频号发布包。默认不要调用任何付费视频 API，也不要承诺本机成片；若我另行要求外部出片，请先说明账号、额度、商用资格和费用边界并等待我确认。", "slug": "seedance-health-edu-v1", "portal_item_kind": "production_mode", "shelf_group": "production-modes", "outputs": ["《科普脚本复核包》", "Seedance 2.0 分段提示词包", "视频号发布包"], "deliverable_badges": [{"kind": "ready", "label": "复核包 · WorkBuddy 补齐变量后可生成"}, {"kind": "gated", "label": "分段提示词 · 脚本确认后可生成"}, {"kind": "external", "label": "成片 · 外部 Seedance/即梦账号"}], "readiness_badge": {"kind": "ready", "label": "复核包 · WorkBuddy 补齐变量后可生成"}, "portal_status_kind": "ready", "portal_status_label": "复核包 · WorkBuddy 补齐变量后可生成；分段提示词 · 脚本确认后可生成；成片 · 外部 Seedance/即梦账号", "portal_status_note": "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，未经明确要求不得调用付费视频 API。", "self_serve": true, "preview_steps": [{"title": "提交主题", "text": "提供生活避险主题、目标人群和已有要点。"}, {"title": "先审脚本", "text": "WorkBuddy 先用 meta-prompt 补齐完整变量、列出缺口，再生成五拍《科普脚本复核包》。"}, {"title": "确认后交付", "text": "生成分段提示词与发布包；成片需业务使用外部 Seedance/即梦账号。"}], "key_frame_labels_zh": [], "example_paragraphs": ["WorkBuddy 可直接交付：", "• 《科普脚本复核包》（确认前）。", "• Seedance 2.0 分段提示词包（脚本确认后）。", "• 视频号发布包（脚本确认后）。", "输入完整性边界：", "初始资料可残缺；scaffold 会生成标明待补字段的草稿复核包。正式 release 前，WorkBuddy 必须用 meta-prompt 补齐五拍、角色、场景和发布变量，并通过字段完整性与 hash 审批双重硬门。", "确认闸门：", "确认前只生成变量草案、脚本复核包和待确认项，不发布正式提示词包。", "确认口令：脚本通过，可以出 Seedance 提示词。", "外部出片边界：", "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，未经明确要求不得调用付费视频 API。"], "example_html": "<p class=\"ex-note\">WorkBuddy 可直接交付：</p>\n<p>• 《科普脚本复核包》（确认前）。</p>\n<p>• Seedance 2.0 分段提示词包（脚本确认后）。</p>\n<p>• 视频号发布包（脚本确认后）。</p>\n<h4>输入完整性边界：</h4>\n<p>初始资料可残缺；scaffold 会生成标明待补字段的草稿复核包。正式 release 前，WorkBuddy 必须用 meta-prompt 补齐五拍、角色、场景和发布变量，并通过字段完整性与 hash 审批双重硬门。</p>\n<h4>确认闸门：</h4>\n<p>确认前只生成变量草案、脚本复核包和待确认项，不发布正式提示词包。</p>\n<p>确认口令：脚本通过，可以出 Seedance 提示词。</p>\n<h4>外部出片边界：</h4>\n<p>WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，未经明确要求不得调用付费视频 API。</p>"}, {"mode_id": "jiugongge-health-edu-v1", "status": "production-validated", "name_zh": "九宫格原版 · 林医生王大爷", "category": "中老年健康科普动画", "cover_label": "九宫格", "one_liner": "先审六段口播，再交付角色三视图提示词包与九宫格/视频提示词包。", "prompt_only": true, "workbuddy_direct_generation": true, "input_quality_boundary": "残缺输入只生成带待补字段的草稿复核包；自动扩写的过渡、误区、应急与预防话术一律先视为草稿。正式 release 必须具备 3 条已审核医学知识、至少 3 条应急口径和至少 3 条预防口径，并通过 hash 审批。", "local_artifact_types": ["review_package", "character_prompt_package", "prompt_package", "publish_package"], "workbuddy_outputs": [{"stage": "review", "label": "六段《九宫格科普脚本复核包》"}, {"stage": "after_script_approval", "label": "角色三视图提示词包"}, {"stage": "after_script_approval", "label": "六段九宫格与视频提示词包"}, {"stage": "after_script_approval", "label": "社媒合规发布包"}], "badges": [{"kind": "ready", "label": "复核包 · WorkBuddy 补齐变量后可生成"}, {"kind": "gated", "label": "三视图/九宫格/视频提示词 · 脚本确认后可生成"}, {"kind": "external", "label": "成片 · 外部出图/视频账号"}], "approval_gate": {"required": true, "enforcement": "hash_bound_release", "confirmation_phrase": "脚本通过，可以出九宫格和视频提示词", "before_approval_zh": "确认前只生成六段口播复核包，不发布角色三视图提示词包或九宫格/视频提示词包终稿。"}, "external_render": {"required": true, "platform": "业务选定的出图与视频平台", "boundary_zh": "WorkBuddy 默认交付可复制的角色、九宫格和视频提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认。"}, "workflow": [{"title": "提交主题", "text": "提供科普主题与 1–3 个已审核知识点，锁定林医生+王大爷原版。"}, {"title": "先审口播", "text": "医学知识点与应急/预防口径须业务提供并复核；生成扩写一律先视为草稿。"}, {"title": "确认后交付", "text": "生成角色三视图提示词包、九宫格/视频提示词包与发布包；外部账号负责出片。"}], "selection_command": "我要使用【九宫格原版 · 林医生王大爷】制作健康科普。\n主题：【请填写】；目标人群：【请填写】；医学知识点及应急/预防口径 1–3 条：【请填写并由业务复核】。\n请先整理完整变量草案并列出受众、场景、应急/预防和发布信息缺口；医学知识点与应急/预防口径必须由业务提供并复核。变量完整后再生成六段《九宫格科普脚本复核包》；自动扩写的过渡、误区、应急和预防话术一律先视为草稿。在我明确回复“脚本通过，可以出九宫格和视频提示词”前，不得发布角色三视图提示词包或九宫格/视频提示词包终稿。\n确认后生成可复制的角色三视图提示词包、六段九宫格/视频提示词包及社媒发布包。默认不调用付费出图或视频 API，也不承诺本机成片；外部出片前请先说明账号、额度、商用资格和费用边界并等待我确认。", "slug": "jiugongge-health-edu-v1", "portal_item_kind": "production_mode", "shelf_group": "production-modes", "outputs": ["六段《九宫格科普脚本复核包》", "角色三视图提示词包", "六段九宫格与视频提示词包", "社媒合规发布包"], "deliverable_badges": [{"kind": "ready", "label": "复核包 · WorkBuddy 补齐变量后可生成"}, {"kind": "gated", "label": "三视图/九宫格/视频提示词 · 脚本确认后可生成"}, {"kind": "external", "label": "成片 · 外部出图/视频账号"}], "readiness_badge": {"kind": "ready", "label": "复核包 · WorkBuddy 补齐变量后可生成"}, "portal_status_kind": "ready", "portal_status_label": "复核包 · WorkBuddy 补齐变量后可生成；三视图/九宫格/视频提示词 · 脚本确认后可生成；成片 · 外部出图/视频账号", "portal_status_note": "WorkBuddy 默认交付可复制的角色、九宫格和视频提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认。", "self_serve": true, "preview_steps": [{"title": "提交主题", "text": "提供科普主题与 1–3 个已审核知识点，锁定林医生+王大爷原版。"}, {"title": "先审口播", "text": "医学知识点与应急/预防口径须业务提供并复核；生成扩写一律先视为草稿。"}, {"title": "确认后交付", "text": "生成角色三视图提示词包、九宫格/视频提示词包与发布包；外部账号负责出片。"}], "key_frame_labels_zh": [], "example_paragraphs": ["WorkBuddy 可直接交付：", "• 六段《九宫格科普脚本复核包》（确认前）。", "• 角色三视图提示词包（脚本确认后）。", "• 六段九宫格与视频提示词包（脚本确认后）。", "• 社媒合规发布包（脚本确认后）。", "输入完整性边界：", "残缺输入只生成带待补字段的草稿复核包；自动扩写的过渡、误区、应急与预防话术一律先视为草稿。正式 release 必须具备 3 条已审核医学知识、至少 3 条应急口径和至少 3 条预防口径，并通过 hash 审批。", "确认闸门：", "确认前只生成六段口播复核包，不发布角色三视图提示词包或九宫格/视频提示词包终稿。", "确认口令：脚本通过，可以出九宫格和视频提示词。", "外部出片边界：", "WorkBuddy 默认交付可复制的角色、九宫格和视频提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认。"], "example_html": "<p class=\"ex-note\">WorkBuddy 可直接交付：</p>\n<p>• 六段《九宫格科普脚本复核包》（确认前）。</p>\n<p>• 角色三视图提示词包（脚本确认后）。</p>\n<p>• 六段九宫格与视频提示词包（脚本确认后）。</p>\n<p>• 社媒合规发布包（脚本确认后）。</p>\n<h4>输入完整性边界：</h4>\n<p>残缺输入只生成带待补字段的草稿复核包；自动扩写的过渡、误区、应急与预防话术一律先视为草稿。正式 release 必须具备 3 条已审核医学知识、至少 3 条应急口径和至少 3 条预防口径，并通过 hash 审批。</p>\n<h4>确认闸门：</h4>\n<p>确认前只生成六段口播复核包，不发布角色三视图提示词包或九宫格/视频提示词包终稿。</p>\n<p>确认口令：脚本通过，可以出九宫格和视频提示词。</p>\n<h4>外部出片边界：</h4>\n<p>WorkBuddy 默认交付可复制的角色、九宫格和视频提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认。</p>", "portal_video_example": null, "generated_prompt_example": ""}, {"mode_id": "jiugongge-health-edu-compliance-v1", "status": "production-validated", "name_zh": "九宫格合规版 · 无医疗", "category": "视频号生活科普动画", "cover_label": "零医疗", "one_liner": "先做医疗红线脱敏和六段口播复核，再交付英九宫格/视频提示词。", "prompt_only": true, "workbuddy_direct_generation": true, "input_quality_boundary": "残缺输入只生成带待补字段的合规草稿复核包；正式 release 必须补齐主题、脱敏说明、合法受众和习惯点，并通过 hash 审批；release 前后均执行医疗红线零命中硬门。", "local_artifact_types": ["review_package", "visual_prompt_package", "prompt_package", "publish_package"], "workbuddy_outputs": [{"stage": "review", "label": "合规脱敏与六段《脚本复核包》"}, {"stage": "after_script_approval", "label": "视觉资产提示词包"}, {"stage": "after_script_approval", "label": "六段英九宫格与视频提示词包"}, {"stage": "after_script_approval", "label": "视频号发布全家桶"}], "badges": [{"kind": "ready", "label": "合规复核包 · WorkBuddy 补齐变量后可生成"}, {"kind": "gated", "label": "英九宫格/视频提示词 · 确认且零命中后可生成"}, {"kind": "external", "label": "成片 · 外部出图/视频账号"}], "approval_gate": {"required": true, "enforcement": "hash_bound_release", "confirmation_phrase": "脚本通过，可以出九宫格合规版提示词", "before_approval_zh": "确认前只生成脱敏说明和六段口播复核包，红线未清零不得发布提示词终稿。"}, "external_render": {"required": true, "platform": "业务选定的出图与视频平台", "boundary_zh": "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，提示词终稿还须通过零医疗红线检查。"}, "workflow": [{"title": "提交生活主题", "text": "提供受众与 1–3 个习惯点；禁止医生、医院、器材、病名及疗效话术。"}, {"title": "先脱敏复核", "text": "WorkBuddy 先交合规脱敏说明和六段口播，红线未清零不放行。"}, {"title": "确认后交付", "text": "生成视觉资产提示词、英九宫格/视频提示词与发布包；外部账号负责出图出片。"}], "selection_command": "我要使用【九宫格合规版 · 无医疗】制作视频号生活科普。\n生活主题：【请填写】；受众：【中老年/职场/宝妈等】；习惯点 1–3 条：【请填写】。\n请先整理完整变量草案并列出受众、脱敏转换、角色/场景和发布信息缺口，再完成医疗红线脱敏并生成六段《合规脚本复核包》；医生、白大褂、医院、诊室、医疗器材、病名和预防/治疗/缓解话术必须零命中。在我明确回复“脚本通过，可以出九宫格合规版提示词”前，不得发布视觉资产提示词包或九宫格/视频提示词包终稿。\n确认后生成可复制的视觉资产提示词、六段英九宫格/视频提示词和视频号发布包；release 前后都必须通过医疗红线零命中硬门。默认不调用付费出图或视频 API，也不承诺本机成片；外部出片前请先说明账号、额度、商用资格和费用边界并等待我确认。", "slug": "jiugongge-health-edu-compliance-v1", "portal_item_kind": "production_mode", "shelf_group": "production-modes", "outputs": ["合规脱敏与六段《脚本复核包》", "视觉资产提示词包", "六段英九宫格与视频提示词包", "视频号发布全家桶"], "deliverable_badges": [{"kind": "ready", "label": "合规复核包 · WorkBuddy 补齐变量后可生成"}, {"kind": "gated", "label": "英九宫格/视频提示词 · 确认且零命中后可生成"}, {"kind": "external", "label": "成片 · 外部出图/视频账号"}], "readiness_badge": {"kind": "ready", "label": "合规复核包 · WorkBuddy 补齐变量后可生成"}, "portal_status_kind": "ready", "portal_status_label": "合规复核包 · WorkBuddy 补齐变量后可生成；英九宫格/视频提示词 · 确认且零命中后可生成；成片 · 外部出图/视频账号", "portal_status_note": "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，提示词终稿还须通过零医疗红线检查。", "self_serve": true, "preview_steps": [{"title": "提交生活主题", "text": "提供受众与 1–3 个习惯点；禁止医生、医院、器材、病名及疗效话术。"}, {"title": "先脱敏复核", "text": "WorkBuddy 先交合规脱敏说明和六段口播，红线未清零不放行。"}, {"title": "确认后交付", "text": "生成视觉资产提示词、英九宫格/视频提示词与发布包；外部账号负责出图出片。"}], "key_frame_labels_zh": [], "example_paragraphs": ["WorkBuddy 可直接交付：", "• 合规脱敏与六段《脚本复核包》（确认前）。", "• 视觉资产提示词包（脚本确认后）。", "• 六段英九宫格与视频提示词包（脚本确认后）。", "• 视频号发布全家桶（脚本确认后）。", "输入完整性边界：", "残缺输入只生成带待补字段的合规草稿复核包；正式 release 必须补齐主题、脱敏说明、合法受众和习惯点，并通过 hash 审批；release 前后均执行医疗红线零命中硬门。", "确认闸门：", "确认前只生成脱敏说明和六段口播复核包，红线未清零不得发布提示词终稿。", "确认口令：脚本通过，可以出九宫格合规版提示词。", "外部出片边界：", "WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，提示词终稿还须通过零医疗红线检查。"], "example_html": "<p class=\"ex-note\">WorkBuddy 可直接交付：</p>\n<p>• 合规脱敏与六段《脚本复核包》（确认前）。</p>\n<p>• 视觉资产提示词包（脚本确认后）。</p>\n<p>• 六段英九宫格与视频提示词包（脚本确认后）。</p>\n<p>• 视频号发布全家桶（脚本确认后）。</p>\n<h4>输入完整性边界：</h4>\n<p>残缺输入只生成带待补字段的合规草稿复核包；正式 release 必须补齐主题、脱敏说明、合法受众和习惯点，并通过 hash 审批；release 前后均执行医疗红线零命中硬门。</p>\n<h4>确认闸门：</h4>\n<p>确认前只生成脱敏说明和六段口播复核包，红线未清零不得发布提示词终稿。</p>\n<p>确认口令：脚本通过，可以出九宫格合规版提示词。</p>\n<h4>外部出片边界：</h4>\n<p>WorkBuddy 默认交付可复制提示词，不在本机生成成片；外部账号、额度、商用资格与费用由业务确认，提示词终稿还须通过零医疗红线检查。</p>", "portal_video_example": null, "generated_prompt_example": ""}, {"mode_id": "digital-human-presenter-scheme-C", "status": "conditional-available", "name_zh": "真人数字人讲解模式", "category": "课件数字人二次制作", "cover_label": "真人数字人", "one_liner": "先确认全页口播脚本与关键页清单，再按关键页穿插数字人。", "portal_video_example": {"filename": "digital-human-presenter-example.mp4", "label": "真人数字人讲解效果案例"}, "prompt_only": false, "workbuddy_direct_generation": false, "input_quality_boundary": "仅有签样 SOP 与复核包模板，没有 scaffold、hash validator 或 business route；须基于已确认且可二次排版的课件人工整理。", "local_artifact_types": ["review_package", "key_page_list"], "workbuddy_outputs": [{"stage": "review", "label": "复核包模板：全页最终口播脚本"}, {"stage": "review", "label": "复核包模板：数字人关键页清单（页码/理由）"}], "badges": [{"kind": "conditional", "label": "复核包模板已就绪 · 基于已确认课件整理"}, {"kind": "gated", "label": "HeyGen · 脚本和关键页双确认后才可调用"}, {"kind": "external", "label": "数字人成片 · 外部 HeyGen 账号"}], "approval_gate": {"required": true, "enforcement": "human_process_only", "confirmation_phrase": "最终脚本和关键页清单均已确认，可以生成", "before_approval_zh": "这是人工 SOP 流程闸门，不是 hash 校验器；最终脚本与关键页清单未同时明确确认前，只能基于已确认课件整理复核包模板和 PPT 静帧，禁止调用 HeyGen，也禁止克隆旁白终轨。"}, "external_render": {"required": true, "platform": "HeyGen", "boundary_zh": "数字人成片依赖外部 HeyGen 账号与额度，以及本机 Qwen voice/TTS、.venv-rembg、ffmpeg 和可二次排版课件；当前卡片不代表本机成片能力可用。"}, "production_requirements": ["已确认且可二次排版的课件", "更换 IP 时已获授权的数字人人像", "HeyGen 外部账号、API key 与额度", "Qwen voice/TTS 声音包与运行环境", ".venv-rembg", "ffmpeg"], "workflow": [{"title": "提交已确认课件", "text": "提供课件或已锁定课型；方案 C 是课件二次制作模式，不替代课型。"}, {"title": "双项复核", "text": "WorkBuddy 先交全页最终脚本与关键页清单，未双确认禁止 HeyGen。"}, {"title": "确认后制作", "text": "关键页侧讲、非关键页全宽旁白；外部 HeyGen 账号和费用另行确认。"}], "selection_command": "我要把【已确认课件/课型名称】切换为【真人数字人侧讲 · 方案 C】。\n请先基于已确认且可二次排版的课件，按签样 SOP 整理全页最终口播脚本，以及写清“页码/是否使用数字人/理由”的关键页清单，交付《业务复核包》；当前只有复核包模板和人工 SOP，不要暗示存在自动审批生成器。\n在我明确确认“最终脚本通过”和“关键页清单通过”，并回复“可以生成”前，不得调用 HeyGen、克隆旁白终轨或生成数字人成片。\n双项确认后，仍请检查 HeyGen 外部账号/API key/额度、Qwen voice/TTS、.venv-rembg、ffmpeg 和数字人人像授权，说明费用与授权边界并等待我确认，再开始制作。全课使用同一 voice pack；只有关键页出现动态数字人，非关键页使用全宽课件加旁白，不放静态头像。", "slug": "digital-human-presenter-scheme-C", "portal_item_kind": "production_mode", "shelf_group": "production-modes", "outputs": ["复核包模板：全页最终口播脚本", "复核包模板：数字人关键页清单（页码/理由）"], "deliverable_badges": [{"kind": "conditional", "label": "复核包模板已就绪 · 基于已确认课件整理"}, {"kind": "gated", "label": "HeyGen · 脚本和关键页双确认后才可调用"}, {"kind": "external", "label": "数字人成片 · 外部 HeyGen 账号"}], "readiness_badge": {"kind": "conditional", "label": "复核包模板已就绪 · 基于已确认课件整理"}, "portal_status_kind": "conditional", "portal_status_label": "复核包模板已就绪 · 基于已确认课件整理；HeyGen · 脚本和关键页双确认后才可调用；数字人成片 · 外部 HeyGen 账号", "portal_status_note": "数字人成片依赖外部 HeyGen 账号与额度，以及本机 Qwen voice/TTS、.venv-rembg、ffmpeg 和可二次排版课件；当前卡片不代表本机成片能力可用。", "self_serve": false, "preview_steps": [{"title": "提交已确认课件", "text": "提供课件或已锁定课型；方案 C 是课件二次制作模式，不替代课型。"}, {"title": "双项复核", "text": "WorkBuddy 先交全页最终脚本与关键页清单，未双确认禁止 HeyGen。"}, {"title": "确认后制作", "text": "关键页侧讲、非关键页全宽旁白；外部 HeyGen 账号和费用另行确认。"}], "key_frame_labels_zh": [], "example_paragraphs": ["可用复核材料：", "• 复核包模板：全页最终口播脚本（确认前）。", "• 复核包模板：数字人关键页清单（页码/理由）（确认前）。", "输入完整性边界：", "仅有签样 SOP 与复核包模板，没有 scaffold、hash validator 或 business route；须基于已确认且可二次排版的课件人工整理。", "确认闸门：", "这是人工 SOP 流程闸门，不是 hash 校验器；最终脚本与关键页清单未同时明确确认前，只能基于已确认课件整理复核包模板和 PPT 静帧，禁止调用 HeyGen，也禁止克隆旁白终轨。", "确认口令：最终脚本和关键页清单均已确认，可以生成。", "外部出片边界：", "数字人成片依赖外部 HeyGen 账号与额度，以及本机 Qwen voice/TTS、.venv-rembg、ffmpeg 和可二次排版课件；当前卡片不代表本机成片能力可用。", "条件式制作依赖：", "• 已确认且可二次排版的课件。", "• 更换 IP 时已获授权的数字人人像。", "• HeyGen 外部账号、API key 与额度。", "• Qwen voice/TTS 声音包与运行环境。", "• .venv-rembg。", "• ffmpeg。"], "example_html": "<p class=\"ex-note\">可用复核材料：</p>\n<p>• 复核包模板：全页最终口播脚本（确认前）。</p>\n<p>• 复核包模板：数字人关键页清单（页码/理由）（确认前）。</p>\n<h4>输入完整性边界：</h4>\n<p>仅有签样 SOP 与复核包模板，没有 scaffold、hash validator 或 business route；须基于已确认且可二次排版的课件人工整理。</p>\n<h4>确认闸门：</h4>\n<p>这是人工 SOP 流程闸门，不是 hash 校验器；最终脚本与关键页清单未同时明确确认前，只能基于已确认课件整理复核包模板和 PPT 静帧，禁止调用 HeyGen，也禁止克隆旁白终轨。</p>\n<p>确认口令：最终脚本和关键页清单均已确认，可以生成。</p>\n<h4>外部出片边界：</h4>\n<p class=\"ex-note\">数字人成片依赖外部 HeyGen 账号与额度，以及本机 Qwen voice/TTS、.venv-rembg、ffmpeg 和可二次排版课件；当前卡片不代表本机成片能力可用。</p>\n<h4>条件式制作依赖：</h4>\n<p>• 已确认且可二次排版的课件。</p>\n<p>• 更换 IP 时已获授权的数字人人像。</p>\n<p>• HeyGen 外部账号、API key 与额度。</p>\n<p>• Qwen voice/TTS 声音包与运行环境。</p>\n<p>• .venv-rembg。</p>\n<p>• ffmpeg。</p>", "generated_prompt_example": ""}];
+const PORTAL_ITEMS = TEMPLATES.concat(PRODUCTION_MODES);
+const SHELF_GROUPS = [{"id": "default-general", "title": "灵活构件兜底", "hint": "未命中已签样固定课型时使用；按已确认内容动态编排可编辑课件。"}, {"id": "signed-standard", "title": "已签样标准课型", "hint": "金样、结构与填写参考可复用；每种交付物是否可生成，以卡片上的实时状态为准。"}, {"id": "production-modes", "title": "动画与数字人制作模式", "hint": "这里选择制作流程，不替代课型；WorkBuddy 先交复核包，确认后才放行提示词或外部制作。"}, {"id": "other", "title": "其他课型", "hint": "按培训目的选择；没有激活生产路线的课型只开放金样参考。"}];
+const ROUTE_SELECTOR_PROMPT = "我不懂模板，请先让 WorkBuddy 调用已安装项目的 business_job recommend 只读推荐能力，不要直接创建任务。工具结果只用于判断，不要原样回显内部路线标识、脚本命令或建草稿命令：\n- 交付物：[[DELIVERABLE]]\n- 内容类型：[[CONTENT_TYPE]]\n- 结构偏好：[[STRUCTURE]]\n- 补充需求：[[REQUIREMENT]]\n\n请先只输出：\n1. 推荐模板（最多 2 个候选）；\n2. 每个候选的推荐理由；\n3. 各候选实际可生成的交付物（PPTX / MP4）与页数规则（动态页数或固定页数）；\n4. 仍需补充或确认的内容。\n\n如我的偏好与当前生产能力冲突，请明确说明，不要承诺不存在的 PPTX 或 MP4；如有两个候选，只追问一个最关键的问题。\n在我明确回复“确认模板【模板名】”之前，不得创建任务、不得生成正式成品。";
+const COMPONENT_TEMPLATE_SLUG = "product-courseware-component-v1";
 let selected = null;
 
 function mediaCover(slug) {
@@ -341,29 +765,98 @@ function mediaCover(slug) {
 function mediaKey(slug, i) {
   return "01_模板货架/media/" + slug + "/key-" + String(i).padStart(2, "0") + ".png";
 }
+function mediaModeVideo(filename) {
+  return "01_模板货架/media/production-modes/" + filename;
+}
 
 function buildCmd(t) {
   return t.selection_command || "";
 }
 
+function selectedOptionLabel(id) {
+  const select = document.getElementById(id);
+  return select.options[select.selectedIndex].textContent.trim();
+}
+
+function buildRouteSelectorPrompt() {
+  const values = {
+    "[[DELIVERABLE]]": selectedOptionLabel("selector-deliverable"),
+    "[[CONTENT_TYPE]]": selectedOptionLabel("selector-content-type"),
+    "[[STRUCTURE]]": selectedOptionLabel("selector-structure"),
+    "[[REQUIREMENT]]": document.getElementById("selector-requirement").value.trim() ||
+      "暂无；请根据以上选择先推荐",
+  };
+  let prompt = ROUTE_SELECTOR_PROMPT;
+  Object.entries(values).forEach(([marker, value]) => {
+    prompt = prompt.split(marker).join(value);
+  });
+  return prompt;
+}
+
+function showRouteSelectorPrompt() {
+  const prompt = buildRouteSelectorPrompt();
+  const box = document.getElementById("selector-cmdbox");
+  box.textContent = prompt;
+  box.classList.add("show");
+  document.getElementById("selector-copy").disabled = false;
+  return prompt;
+}
+
 function renderGrid() {
-  const grid = document.getElementById("template-grid");
-  grid.innerHTML = "";
-  TEMPLATES.forEach(t => {
-    const card = document.createElement("button");
-    card.type = "button";
-    card.className = "tcard" + (selected && selected.slug === t.slug ? " selected" : "");
-    card.setAttribute("aria-pressed", selected && selected.slug === t.slug ? "true" : "false");
-    card.innerHTML =
-      '<img class="cover" src="' + mediaCover(t.slug) + '" alt="' + t.name_zh + '" loading="lazy" />' +
-      '<div class="body">' +
-      "<h3>" + t.name_zh + "</h3>" +
-      '<div class="meta">' + (t.outputs || []).join(" · ") + "</div>" +
-      '<span class="readiness-badge ' + (t.readiness_badge.kind || "preview") + '">' +
-      (t.readiness_badge.label || "能力待确认") + "</span>" +
-      "</div>";
-    card.addEventListener("click", () => selectTemplate(t));
-    grid.appendChild(card);
+  const host = document.getElementById("template-grid");
+  const selectionCluster = document.getElementById("selection-cluster");
+  const selectionClusterHome = document.getElementById("selection-cluster-home");
+  if (selectionCluster && host.contains(selectionCluster)) {
+    selectionClusterHome.appendChild(selectionCluster);
+  }
+  host.innerHTML = "";
+  SHELF_GROUPS.forEach(group => {
+    const items = PORTAL_ITEMS.filter(t => t.shelf_group === group.id);
+    if (!items.length) return;
+    const section = document.createElement("section");
+    section.className = "template-group";
+    section.innerHTML =
+      '<div class="template-group-head"><h3>' + group.title + "</h3><p>" + group.hint + "</p></div>";
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    items.forEach(t => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.dataset.slug = t.slug;
+      card.className = "tcard" +
+        (t.portal_item_kind === "production_mode" ? " mode-card" : "") +
+        (selected && selected.slug === t.slug ? " selected" : "");
+      card.setAttribute("aria-pressed", selected && selected.slug === t.slug ? "true" : "false");
+      const badges = (t.deliverable_badges || [t.readiness_badge]).map(badge =>
+        '<span class="readiness-badge ' + (badge.kind || "preview") + '">' +
+        (badge.label || "能力待确认") + "</span>"
+      ).join("");
+      const hasQualifiedPreview =
+        t.slug !== COMPONENT_TEMPLATE_SLUG ||
+        (t.preview_identity_qualified === true && t.preview_suite_evidence &&
+          t.preview_suite_evidence.case_count >= 3 &&
+          Array.isArray(t.preview_suite_evidence.cases) &&
+          t.preview_suite_evidence.cases.length >= 3);
+      const cover = t.portal_item_kind === "production_mode"
+        ? '<div class="mode-cover"><span>制作模式</span><strong>' +
+          (t.cover_label || "MODE") + "</strong></div>"
+        : !hasQualifiedPreview
+        ? '<div class="preview-pending-cover"><span>灵活构件兜底</span>' +
+          '<strong>差异化预览待 QA</strong></div>'
+        : '<img class="cover" src="' + mediaCover(t.slug) + '" alt="' +
+          t.name_zh + '" loading="lazy" />';
+      card.innerHTML =
+        cover +
+        '<div class="body">' +
+        "<h3>" + t.name_zh + "</h3>" +
+        '<div class="meta">' + (t.outputs || []).join(" · ") + "</div>" +
+        '<div class="readiness-list">' + badges + "</div>" +
+        "</div>";
+      card.addEventListener("click", () => selectTemplate(t));
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    host.appendChild(section);
   });
 }
 
@@ -379,8 +872,117 @@ function showExample(t) {
   empty.style.display = "none";
   content.classList.remove("hidden");
   content.style.display = "block";
-  document.getElementById("ex-title").textContent = t.name_zh + " · 内容示例";
+  const isMode = t.portal_item_kind === "production_mode";
+  document.getElementById("ex-title").textContent =
+    t.name_zh + (isMode ? " · 制作边界" : " · 内容示例");
+  document.getElementById("ex-caption").textContent =
+    isMode ? "复核闸门与外部账号边界 · 可复制" : "仅示范怎么写 · 可复制";
   document.getElementById("ex-body").innerHTML = t.example_html || "<p class=\"ex-note\">暂无示例</p>";
+}
+
+function renderComponentSuiteEvidence(t, host) {
+  const evidence = t.preview_suite_evidence;
+  const cases = evidence && Array.isArray(evidence.cases) ? evidence.cases : [];
+  const wrap = document.createElement("section");
+  wrap.className = "suite-evidence";
+
+  const summary = document.createElement("div");
+  summary.className = "suite-summary";
+  const summaryTitle = document.createElement("b");
+  summaryTitle.textContent =
+    evidence.case_count + " 套正式非金样 UAT · 同一非课件4风格 · 每套独立逐页 QA/哈希绑定";
+  const summaryLine = document.createElement("span");
+  summaryLine.textContent =
+    "组合来源：" + (evidence.settled_capability_labels_zh || []).join(" / ") +
+    "；suite 新增页型：" + (evidence.new_page_type_labels_zh || []).join(" / ") +
+    "；统一视觉：" + evidence.style_label_zh;
+  summary.appendChild(summaryTitle);
+  summary.appendChild(summaryLine);
+
+  const tabs = document.createElement("div");
+  tabs.className = "suite-tabs";
+  tabs.setAttribute("role", "tablist");
+  tabs.setAttribute("aria-label", "构件 UAT 案例证据");
+  const panel = document.createElement("div");
+  panel.className = "suite-panel";
+  panel.setAttribute("role", "tabpanel");
+
+  function addProof(list, label, value) {
+    const row = document.createElement("div");
+    row.className = "suite-proof";
+    const title = document.createElement("b");
+    title.textContent = label;
+    const text = document.createElement("span");
+    text.textContent = value;
+    row.appendChild(title);
+    row.appendChild(text);
+    list.appendChild(row);
+  }
+
+  function activateCase(activeIndex) {
+    Array.from(tabs.children).forEach((button, index) => {
+      button.setAttribute("aria-selected", index === activeIndex ? "true" : "false");
+      button.tabIndex = index === activeIndex ? 0 : -1;
+    });
+    const item = cases[activeIndex];
+    panel.innerHTML = "";
+    const sourceText = (item.source_capability_labels_zh || []).join(" / ");
+    const sequenceText = (item.page_type_sequence_labels_zh || []).join(" → ");
+    const newText = (item.new_page_type_labels_zh || []).length
+      ? item.new_page_type_labels_zh.join(" / ")
+      : "本案例无；suite 其他案例已提供新增页型证据";
+    const heading = document.createElement("h4");
+    heading.textContent = item.title_zh;
+    panel.appendChild(heading);
+
+    const grid = document.createElement("div");
+    grid.className = "suite-proof-grid";
+    const figure = document.createElement("figure");
+    figure.className = "suite-proof-media";
+    const image = document.createElement("img");
+    image.src = mediaKey(t.slug, item.portal_media_index);
+    image.alt = "案例 " + item.suite_slot + " 差异化关键页";
+    image.loading = "lazy";
+    const caption = document.createElement("figcaption");
+    caption.textContent =
+      "案例 " + item.suite_slot + " · " + item.representative_page_label_zh;
+    figure.appendChild(image);
+    figure.appendChild(caption);
+
+    const proofList = document.createElement("div");
+    proofList.className = "suite-proof-list";
+    addProof(proofList, "验收来源", "独立业务验收任务已通过");
+    addProof(proofList, "代表预览", item.representative_page_label_zh);
+    addProof(proofList, "课型能力", sourceText);
+    addProof(proofList, "页序组合", sequenceText);
+    addProof(proofList, "新增页型", newText);
+    grid.appendChild(figure);
+    grid.appendChild(proofList);
+    panel.appendChild(grid);
+  }
+
+  cases.forEach((item, index) => {
+    const tab = document.createElement("button");
+    tab.type = "button";
+    tab.className = "suite-tab";
+    tab.setAttribute("role", "tab");
+    tab.textContent = item.tab_label_zh;
+    tab.addEventListener("click", () => activateCase(index));
+    tab.addEventListener("keydown", event => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      const offset = event.key === "ArrowRight" ? 1 : -1;
+      const nextIndex = (index + offset + cases.length) % cases.length;
+      activateCase(nextIndex);
+      tabs.children[nextIndex].focus();
+    });
+    tabs.appendChild(tab);
+  });
+  wrap.appendChild(summary);
+  wrap.appendChild(tabs);
+  wrap.appendChild(panel);
+  host.appendChild(wrap);
+  activateCase(0);
 }
 
 function selectTemplate(t) {
@@ -391,29 +993,111 @@ function selectTemplate(t) {
   renderGrid();
 
   const pane = document.getElementById("preview-pane");
+  const selectedCard = Array.from(document.querySelectorAll(".tcard"))
+    .find(card => card.dataset.slug === t.slug);
+  const selectedGroup = selectedCard && selectedCard.closest(".template-group");
+  const selectionCluster = document.getElementById("selection-cluster");
+  if (selectedGroup) selectedGroup.appendChild(selectionCluster);
   pane.classList.add("show");
+  document.getElementById("confirm-name").textContent = t.name_zh;
   document.getElementById("sel-name").textContent = t.name_zh;
   document.getElementById("sel-meta").textContent =
-    (t.one_liner || "") + " · " + (t.status_label || "能力待确认") +
-    ((t.blockers || []).length ? " · 当前缺口：" + t.blockers.join("；") : "");
+    (t.one_liner || "") + " · " + (t.portal_status_label || "能力待确认") +
+    " · " + (t.portal_status_note || "");
 
   const keys = document.getElementById("sel-keys");
   keys.innerHTML = "";
-  (t.key_frame_labels_zh || []).forEach((lab, idx) => {
-    const i = idx + 1;
-    const fig = document.createElement("figure");
-    fig.innerHTML =
-      '<img src="' + mediaKey(t.slug, i) + '" alt="' + lab + '" loading="lazy" />' +
-      "<figcaption>" + lab + "</figcaption>";
-    keys.appendChild(fig);
-  });
+  const isMode = t.portal_item_kind === "production_mode";
+  const casePreview = document.getElementById("case-preview");
+  const caseVideo = document.getElementById("case-video");
+  const caseCopy = document.getElementById("case-copy");
+  const videoExample = t.portal_video_example;
+  if (videoExample && videoExample.filename) {
+    caseVideo.src = mediaModeVideo(videoExample.filename);
+    document.getElementById("case-video-label").textContent = videoExample.label;
+    document.getElementById("prompt-example-text").textContent =
+      t.generated_prompt_example || "";
+    document.getElementById("prompt-example").open = false;
+    caseCopy.style.display = t.generated_prompt_example ? "block" : "none";
+    casePreview.classList.toggle("video-only", !t.generated_prompt_example);
+    casePreview.classList.add("show");
+  } else {
+    caseVideo.pause();
+    caseVideo.removeAttribute("src");
+    caseVideo.load();
+    casePreview.classList.remove("show");
+  }
+  const hasQualifiedPreview =
+    t.slug !== COMPONENT_TEMPLATE_SLUG ||
+    (t.preview_identity_qualified === true && t.preview_suite_evidence &&
+      t.preview_suite_evidence.case_count >= 3 &&
+      Array.isArray(t.preview_suite_evidence.cases) &&
+      t.preview_suite_evidence.cases.length >= 3);
+  const hasComponentSuite =
+    t.slug === COMPONENT_TEMPLATE_SLUG && hasQualifiedPreview &&
+    t.preview_suite_evidence && t.preview_suite_evidence.case_count >= 3;
+  keys.classList.toggle("mode-steps", isMode);
+  keys.classList.toggle("component-suite", Boolean(hasComponentSuite));
+  if (isMode) {
+    (t.preview_steps || []).forEach((step, idx) => {
+      const block = document.createElement("div");
+      block.className = "mode-step";
+      block.innerHTML = "<span>" + String(idx + 1).padStart(2, "0") + "</span>" +
+        "<b>" + step.title + "</b><p>" + step.text + "</p>";
+      keys.appendChild(block);
+    });
+  } else if (!hasQualifiedPreview) {
+    const block = document.createElement("div");
+    block.className = "preview-pending";
+    block.textContent = t.preview_identity_note_zh ||
+      "至少 3 套正式差异化非金样 UAT suite 尚未通过 QA；为避免误认成课件4，门户暂不展示旧图。";
+    keys.appendChild(block);
+  } else if (hasComponentSuite) {
+    renderComponentSuiteEvidence(t, keys);
+  } else {
+    (t.key_frame_labels_zh || []).forEach((lab, idx) => {
+      const i = idx + 1;
+      const fig = document.createElement("figure");
+      fig.innerHTML =
+        '<img src="' + mediaKey(t.slug, i) + '" alt="' + lab + '" loading="lazy" />' +
+        "<figcaption>" + lab + "</figcaption>";
+      keys.appendChild(fig);
+    });
+  }
 
   const box = document.getElementById("cmdbox");
   box.textContent = buildCmd(t);
   box.classList.add("show");
+  document.getElementById("btn-copy-ex").textContent =
+    isMode ? "复制模式说明" : "复制内容示例";
   document.getElementById("toast").textContent = "";
+  document.getElementById("preview-toast").textContent = "";
   showExample(t);
 }
+
+document.getElementById("selector-build").addEventListener("click", () => {
+  showRouteSelectorPrompt();
+  document.getElementById("selector-toast").textContent =
+    "选课口令已生成。它只要求推荐与说明原因，不会在你确认模板前创建任务。";
+});
+
+document.getElementById("selector-copy").addEventListener("click", async () => {
+  const text = showRouteSelectorPrompt();
+  try {
+    await navigator.clipboard.writeText(text);
+    document.getElementById("selector-toast").textContent =
+      "选课口令已复制。回到 WorkBuddy 粘贴；先看推荐与原因，再决定是否确认模板。";
+  } catch (e) {
+    document.getElementById("selector-toast").textContent =
+      "请手动选中上方选课口令复制。";
+  }
+});
+
+document.getElementById("route-selector-form").addEventListener("input", () => {
+  document.getElementById("selector-cmdbox").classList.remove("show");
+  document.getElementById("selector-copy").disabled = true;
+  document.getElementById("selector-toast").textContent = "";
+});
 
 document.getElementById("btn-use").addEventListener("click", async () => {
   if (!selected) return;
@@ -423,7 +1107,15 @@ document.getElementById("btn-use").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(text);
     document.getElementById("toast").textContent =
-      "已复制口令。回到 WorkBuddy 粘贴，把【商品名或病名】和要点改成你的内容即可。";
+      selected.portal_item_kind === "production_mode"
+        ? "已复制制作模式口令。回到 WorkBuddy 粘贴；它会先整理变量或复核包，收到明确确认后才放行提示词或条件式外部制作。"
+        : selected.slug === "product-courseware-component-v1" && selected.self_serve
+        ? "已复制灵活构件口令。WorkBuddy 会先返回内容缺口、中文页签大纲、每页来源解释、单一视觉与素材分工；你确认后才会建任务并生成 PPTX。"
+        : selected.self_serve
+        ? "已复制业务口令。回到 WorkBuddy 粘贴；它会先复述已锁定模板，再收集内容、出初稿，确认后才生成。"
+        : selected.portal_status_kind === "building"
+          ? "已复制接入中课型口令。可先整理初稿和素材清单；当前不会承诺或生成正式成品。"
+          : "已复制金样参考口令。回到 WorkBuddy 粘贴后可查看课型缺口。";
   } catch (e) {
     document.getElementById("toast").textContent = "请手动选中下方口令复制。";
   }
@@ -435,9 +1127,26 @@ document.getElementById("btn-copy-ex").addEventListener("click", async () => {
   const text = paras.join("\n");
   try {
     await navigator.clipboard.writeText(text);
-    document.getElementById("toast").textContent = "内容示例已复制到剪贴板。";
+    document.getElementById("preview-toast").textContent =
+      selected.portal_item_kind === "production_mode"
+        ? "模式说明已复制到剪贴板。"
+        : "内容示例已复制到剪贴板。";
   } catch (e) {
-    document.getElementById("toast").textContent = "复制失败，请在下方示例区手动选择复制。";
+    document.getElementById("preview-toast").textContent =
+      "复制失败，请在下方示例区手动选择复制。";
+  }
+});
+
+document.getElementById("btn-copy-prompt").addEventListener("click", async () => {
+  if (!selected || !selected.generated_prompt_example) return;
+  try {
+    await navigator.clipboard.writeText(selected.generated_prompt_example);
+    document.getElementById("preview-toast").textContent =
+      "提示词示例已复制到剪贴板。";
+  } catch (e) {
+    document.getElementById("prompt-example").open = true;
+    document.getElementById("preview-toast").textContent =
+      "复制失败，请在展开区域手动选择复制。";
   }
 });
 
@@ -445,7 +1154,7 @@ try {
   const raw = localStorage.getItem("cpc_selected_template");
   if (raw) {
     const saved = JSON.parse(raw);
-    const t = TEMPLATES.find(x => x.slug === saved.slug);
+    const t = PORTAL_ITEMS.find(x => x.slug === saved.slug);
     if (t) selected = t;
   }
 } catch (e) {}

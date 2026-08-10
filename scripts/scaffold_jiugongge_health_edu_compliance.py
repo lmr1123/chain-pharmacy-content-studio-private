@@ -74,6 +74,26 @@ def g(d: dict, *keys: str, default: str = "") -> str:
     return str(cur) if cur is not None else default
 
 
+def _filled_list(value: object) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return [str(item).strip() for item in value if str(item).strip()]
+
+
+def missing_release_fields(v: dict) -> list[str]:
+    missing: list[str] = []
+    if not g(v, "theme").strip():
+        missing.append("theme（已脱敏生活主题）")
+    if not g(v, "compliance_transform").strip():
+        missing.append("compliance_transform（合规脱敏说明）")
+    audience = g(v, "audience").strip()
+    if audience not in {"中老年", "职场人", "宝妈"}:
+        missing.append("audience（中老年 / 职场人 / 宝妈）")
+    if not _filled_list(v.get("habit_points")):
+        missing.append("habit_points（至少 1 条已脱敏生活习惯）")
+    return missing
+
+
 def input_sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -267,7 +287,7 @@ def build_segments(v: dict) -> list[dict]:
     aud_outfit = g(aud, "outfit_en", default="comfortable casual clothes")
     end_text = g(v, "ending_chinese_text", default="咱公园见！")
     ar = g(v, "aspect_ratio", default="9:16")
-    intro_habit, dry = expand_habits(list(v.get("habit_points") or []))
+    intro_habit, dry = expand_habits(_filled_list(v.get("habit_points")))
     h1, h2, h3 = dry[0], dry[1], dry[2]
 
     consist = (
@@ -451,15 +471,30 @@ def render_assets_md(v: dict) -> str:
     )
 
 
-def render_review_md(v: dict, segs: list[dict]) -> str:
+def render_review_md(v: dict, segs: list[dict], missing_fields: list[str]) -> str:
+    is_draft = bool(missing_fields)
+    can_render_draft = bool(
+        g(v, "theme").strip() and _filled_list(v.get("habit_points"))
+    )
     lines = [
-        f"# 合规版脚本复核包 · {g(v, 'theme')}",
+        f"# 合规版脚本复核包 · {g(v, 'theme') or '待补主题'}",
         "",
         f"**模式：** jiugongge-health-edu-compliance-v1（无医疗内容）  ",
-        f"**受众：** {g(v, 'audience')}  ",
+        f"**受众：** {g(v, 'audience') or '待补'}  ",
         f"**日期：** {date.today().isoformat()}  ",
-        f"**状态：** 待业务确认",
+        f"**状态：** {'草稿·待补字段' if is_draft else '待业务确认'}",
         "",
+    ]
+    if missing_fields:
+        lines += [
+            "## 待补字段（正式发布前必须补齐）",
+            "",
+            *[f"- {field}" for field in missing_fields],
+            "",
+            "当前复核包仅为草稿；补齐后仍须通过零医疗红线扫描并重新审批。",
+            "",
+        ]
+    lines += [
         "## 合规脱敏说明",
         "",
         g(v, "compliance_transform") or "（请确认主题已转为生活习惯/情绪调节/环境安全）",
@@ -469,14 +504,20 @@ def render_review_md(v: dict, segs: list[dict]) -> str:
         "## 习惯点",
         "",
     ]
-    for i, p in enumerate(list(v.get("habit_points") or []), 1):
+    for i, p in enumerate(_filled_list(v.get("habit_points")), 1):
         lines.append(f"{i}. {p}")
     lines += ["", "## 六段口播", ""]
-    for s in segs:
+    if can_render_draft:
+        for s in segs:
+            lines += [
+                f"### 片段 {s['id']}（{s['range']}）· {s['module']}",
+                "",
+                s["narration"],
+                "",
+            ]
+    else:
         lines += [
-            f"### 片段 {s['id']}（{s['range']}）· {s['module']}",
-            "",
-            s["narration"],
+            "主题和至少 1 条已脱敏习惯点补齐后，才生成六段口播草稿；当前不输出空槽伪成稿。",
             "",
         ]
     lines += [
@@ -613,18 +654,17 @@ def main() -> int:
 
     path = Path(args.vars).expanduser().resolve()
     v = json.loads(path.read_text(encoding="utf-8"))
-    if not g(v, "theme"):
-        raise SystemExit("theme required")
-    if not v.get("habit_points"):
-        raise SystemExit("habit_points (1-3) required")
+    if not isinstance(v, dict):
+        raise SystemExit("vars must be a JSON object")
 
     digest = input_sha256(path)
     slug = args.slug or slugify(g(v, "theme"))
     out = Path(args.out_root).expanduser().resolve() / slug
     out.mkdir(parents=True, exist_ok=True)
 
+    missing_fields = missing_release_fields(v)
     segs = build_segments(v)
-    review_text = render_review_md(v, segs)
+    review_text = render_review_md(v, segs, missing_fields)
     review_digest = text_sha256(review_text)
     if args.release:
         for name in RELEASE_FILES:
@@ -644,6 +684,10 @@ def main() -> int:
                 f"{item['field']}={item['term']}" for item in banned_hits[:12]
             )
             raise SystemExit(f"合规版 release 禁词扫描失败：{detail}")
+        if missing_fields:
+            raise SystemExit(
+                "release blocked：缺少正式发布必填字段：" + "；".join(missing_fields)
+            )
 
     (out / "00-主题变量.json").write_text(
         json.dumps(v, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

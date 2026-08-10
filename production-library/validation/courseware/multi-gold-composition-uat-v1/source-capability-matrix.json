@@ -1,0 +1,81 @@
+{
+  "schema": "multi-gold-source-capability-matrix/v1",
+  "scope": "uat-only",
+  "route_id": "product-pptx-component-v1",
+  "target_engine": "courseware-pptx-v1",
+  "visual_target": {
+    "style_pack_id": "style-pack.reference-product-blue-v1",
+    "tokens_path": "production-library/styles/reference-product-blue-v1/tokens.json",
+    "lineage_template_id": "template.product-training-faithful-v1",
+    "lineage_artifact": "production-library/templates/settled/product-video-faithful-v1/辅酶Q10_商品培训视频_金样_v1.mp4",
+    "reuse_boundary": "只复用已接入构件引擎的蓝色视觉语法与 style tokens；不复制视频帧、商品图、品牌文案或旁白。"
+  },
+  "composition_rules": [
+    "每个来源课型只贡献已声明的信息层级或页型能力。",
+    "所有页面统一由 courseware-pptx-v1 和 style-pack.reference-product-blue-v1 渲染。",
+    "禁止混用来源课型的绿色、橙色、米白番茄红母版或任何原图。",
+    "脚本文案只来自当前 UAT fixture，不继承来源课件的商品、健康或医学内容。",
+    "全新业务页签必须使用已声明的新页型合同，不得伪装成已签样来源能力。"
+  ],
+  "sources": {
+    "green.product_overview": {
+      "template_id": "template.product-courseware-dashenlin-green-v1",
+      "template_slug": "product-courseware-green-v1",
+      "manifest_path": "production-library/templates/settled/product-courseware-green-v1/manifest.json",
+      "canonical_artifact": "production-library/templates/settled/product-courseware-green-v1/金银花露_商品培训课件_复刻验证.pptx",
+      "source_capability": "product_overview",
+      "target_page_type": "product_overview",
+      "contract_path": "production-library/page-types/product-training/recipes/product_overview.json",
+      "capability_state": "callable_candidate_contract",
+      "reuse_boundary": "只复用商品信息层级；不复用绿色母版、来源商品文案、包装或插图。"
+    },
+    "disease.consultation_framework": {
+      "template_id": "template.dashenlin-disease-product-scenario-v1",
+      "template_slug": "disease-product-scenario-v1",
+      "manifest_path": "production-library/templates/settled/disease-product-scenario-v1/manifest.json",
+      "canonical_artifact": "production-library/templates/settled/disease-product-scenario-v1/穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
+      "source_capability": "consultation_framework",
+      "target_page_type": "consultation_framework",
+      "contract_path": "production-library/page-types/product-training/recipes/consultation_framework.json",
+      "capability_state": "callable_candidate_contract",
+      "reuse_boundary": "只复用提问路径结构；不复用疾病内容、绿色母版、来源包装或场景插图。"
+    },
+    "sufuda.evidence_ladder": {
+      "template_id": "template.sufuda-mabaloshawei-product-courseware-3-v1",
+      "template_slug": "sufuda-mabaloshawei-product-courseware-3-v1",
+      "manifest_path": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/manifest.json",
+      "canonical_artifact": "production-library/templates/settled/sufuda-mabaloshawei-product-courseware-3-v1/速福达玛巴洛沙韦_商品培训课件3_金样_可编辑课件_v2.pptx",
+      "source_capability": "feature_3_evidence_hierarchy",
+      "target_page_type": "evidence_ladder",
+      "contract_path": "production-library/page-types/product-training/recipes/evidence_ladder.json",
+      "capability_state": "callable_candidate_contract",
+      "reuse_boundary": "只复用证据层级；不复用橙色丝绸母版、来源结论、Logo、包装或媒体。"
+    },
+    "new.objection_handling": {
+      "template_id": null,
+      "template_slug": null,
+      "manifest_path": null,
+      "canonical_artifact": null,
+      "source_capability": "new_business_contract",
+      "target_page_type": "objection_handling",
+      "contract_path": "production-library/page-types/product-training/recipes/objection_handling.json",
+      "capability_state": "callable_candidate_contract",
+      "reuse_boundary": "全新业务页签；全部文案必须由当前任务显式提供并完成内容确认。"
+    },
+    "shared.component_pool": {
+      "template_id": "template.product-courseware-component-v1",
+      "template_slug": "product-courseware-component-v1",
+      "manifest_path": "production-library/templates/settled/product-courseware-component-v1/manifest.json",
+      "canonical_artifact": null,
+      "source_capability": "shared_shell_and_settled_pages",
+      "target_page_types": [
+        "courseware_cover",
+        "hook_intro",
+        "hook_pain_data",
+        "summary_matrix"
+      ],
+      "capability_state": "callable_settled_pool",
+      "reuse_boundary": "共享封面、导语、数据钩子与总结骨架；文案仍只取当前脚本。"
+    }
+  }
+}

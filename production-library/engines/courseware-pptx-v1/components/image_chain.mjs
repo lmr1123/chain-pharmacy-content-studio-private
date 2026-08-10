@@ -2,7 +2,7 @@ import {imageChainLayout, resolveChainItems} from '../layout-rules.mjs';
 
 /**
  * Image chain.
- * Prefer fixed design coords (x/y on items) for gold regression;
+ * Prefer explicit fixed design coords (x/y on items);
  * otherwise auto-center via layout-rules.
  */
 export async function imageChain(ctx, slide, pageId, sceneOrItems, opts = {}) {
@@ -18,6 +18,8 @@ export async function imageChain(ctx, slide, pageId, sceneOrItems, opts = {}) {
         cx: it.x,
         cy: it.y ?? opts.y ?? 80,
         size: it.size ?? opts.defaultSize ?? 280,
+        width: it.w ?? it.width ?? it.size ?? opts.defaultSize ?? 280,
+        height: it.h ?? it.height ?? it.size ?? opts.defaultSize ?? 280,
         index: i,
       }))
     : imageChainLayout(items, opts);
@@ -26,11 +28,15 @@ export async function imageChain(ctx, slide, pageId, sceneOrItems, opts = {}) {
     await imageFit(
       slide,
       eid(pageId, it.role),
-      it.file || it.asset,
+      {
+        src: it.file || it.asset,
+        fit: it.fit,
+        crop: it.crop,
+      },
       it.cx,
       it.cy,
-      it.size,
-      it.size,
+      it.width ?? it.size,
+      it.height ?? it.size,
       it.role,
     );
   }

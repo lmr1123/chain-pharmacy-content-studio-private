@@ -2,21 +2,103 @@
   "template_id": "template.product-courseware-component-v1",
   "template_type": "pptx-courseware-component",
   "status": "production-default",
-  "style_pack_id": "style-pack.courseware-4-silk-yellow-red-v1",
+  "style_pack_id": "style-pack.reference-product-blue-v1",
   "canonical_artifact": "构件化商品培训_默认主路径_签样参考.pptx",
   "canonical_confirmed_by": "system-smoke",
   "canonical_confirmed_at": "2026-08-09",
+  "canonical_role": "legacy-12-page-structure-smoke-only",
+  "canonical_is_gold_sample": false,
   "engine": "production-library/engines/courseware-pptx-v1/export.mjs",
   "generator": "scripts/generate_courseware.py",
   "script_schema": "production-library/schemas/product-training-script.schema.json",
   "page_types": "production-library/page-types/product-training/registry.json",
   "recipes": "production-library/page-types/product-training/recipes",
+  "image_slot_contracts": "production-library/page-types/product-training/image-slot-contracts.json",
+  "asset_planner": "scripts/product_pptx_asset_plan.py",
   "business_route": "product-pptx-component-v1",
+  "production_validated_page_types": [
+    "product_overview",
+    "consultation_framework",
+    "evidence_ladder",
+    "objection_handling"
+  ],
+  "production_validation": {
+    "schema": "component-flexible-suite-production-validation-v1",
+    "status": "production-validated",
+    "qa_summary": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/qa-summary.json",
+    "qa_summary_sha256": "7ff6fbca1fe00f7968a1ddf998a1fd4f7821bcc3f7aad731cc7cccc36ec752f6",
+    "visual_review": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/visual-review.json",
+    "visual_review_sha256": "c6b54744e6521ab8b78882f1125be552c2a646ce03995622a850f76519c48272",
+    "cases": [
+      {
+        "case_id": "case-a",
+        "source_job_id": "uat-component-suite-a-20260810-r4",
+        "page_count": 7,
+        "deck_sha256": "80421f5fd901af23c4456c9097518bd1786867c90985490f65be6d30dfaff792",
+        "capability_lineage": [
+          "green",
+          "disease",
+          "sufuda"
+        ],
+        "new_page_types": [
+          "objection_handling"
+        ]
+      },
+      {
+        "case_id": "case-b",
+        "source_job_id": "uat-component-suite-b-20260810-r4",
+        "page_count": 6,
+        "deck_sha256": "56e6d44c4e10ef20b6e5f8d97f9fd3ed2d38bd6a510dc682583c0f61de5b3c40",
+        "capability_lineage": [
+          "green",
+          "sufuda"
+        ],
+        "new_page_types": [
+          "objection_handling"
+        ]
+      },
+      {
+        "case_id": "case-c",
+        "source_job_id": "uat-component-suite-c-20260810-r4",
+        "page_count": 5,
+        "deck_sha256": "c4b71b4d75a69e2a7f5dccfa564e043c9a3dc0d8ba5c4786cf6fd6098434e4cb",
+        "capability_lineage": [
+          "disease",
+          "sufuda"
+        ],
+        "new_page_types": []
+      }
+    ],
+    "boundary": [
+      "生产验证只覆盖灵活页序、四个新页型、浅蓝 PPT 适配、可编辑结构与逐页 QA",
+      "UAT 使用非医学中性文案和无品牌授权示意图，不代表任一真实商品医学内容已获批",
+      "正式主题仍须内容、视觉、商品图三闸门及业务授权原图",
+      "旧 12 页 canonical 仅是 system-smoke，不是多来源组合金样；A/B/C suite 才是本次能力晋升证据"
+    ]
+  },
   "business_input": {
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
-    "blank_source": "outputs/courseware-natural-import/培训课件内容与素材提交_通用模板.docx",
-    "example_source": "outputs/courseware-natural-import/商品培训_绿色单品_记事本式填写参考_两行联合用药.docx",
+    "blank_source": "outputs/courseware-natural-import/构件化商品培训_业务提交_空白模板.docx",
+    "example_source": "outputs/courseware-natural-import/构件化商品培训_业务提交_填写参考.docx",
+    "business_provides": [
+      "交付目标",
+      "业务内容",
+      "授权素材"
+    ],
+    "workbuddy_first_review": [
+      "内容初稿与待补字段",
+      "中文页签大纲与页序",
+      "页签能力来源解释",
+      "单一视觉方案",
+      "业务素材与生成素材分工"
+    ],
+    "business_does_not_fill": [
+      "内部 JSON",
+      "页型 ID",
+      "默认路线选择"
+    ],
+    "style_rule": "one-style-pack-per-courseware",
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "usage_workflow": "业务使用流程.md",
@@ -24,29 +106,28 @@
     "1-select-component-route",
     "2-provide-script-or-notes",
     "3-review-content-draft",
-    "4-approve-content",
-    "5-render-pptx"
+    "3b-review-business-vs-system-asset-plan",
+    "4-business-confirms-content",
+    "5-generate-bind-assets-and-real-slot-qa",
+    "6-record-final-content-and-asset-snapshot",
+    "7-render-pptx-and-page-qa"
   ],
-  "notes": "P2.8 默认 PPT 主路径。金样构件 recipe 组合；绿色五页壳降为兼容。签样参考为新主题冒烟交付，非医学审核金样。",
+  "notes": "灵活构件兜底 PPT 主路径。商品培训页型按审核大纲动态组合；默认视觉采用辅酶 Q10 商品培训金样沉淀的浅蓝商品培训 style pack，不继承 Q10 或课件4的商品文案、包装、证据与原图。目录内旧 12 页签样参考仅为 system-smoke 结构冒烟，不是多组合高质量金样；能力晋升以 A/B/C r4 suite 为真值。",
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [
       "preview/key-01.png",
       "preview/key-02.png",
-      "preview/key-03.png",
-      "preview/key-04.png",
-      "preview/key-05.png"
+      "preview/key-03.png"
     ],
     "key_frame_labels_zh": [
-      "封面",
-      "痛点与数据",
-      "核心功效",
-      "产品特点",
-      "适宜人群"
+      "三课型资料核验组合 · 差异化关键页",
+      "双课型陈列核验组合 · 差异化关键页",
+      "双课型交接路径组合 · 差异化关键页"
     ],
-    "gallery_title_zh": "构件化商品培训 · recipe 主路径",
-    "one_liner": "金样构件 recipe：封面/痛点/功效/特点/人群/联合/总结/注意 · 任意大纲进",
-    "name_zh": "构件化商品培训 PPT（默认主路径）",
+    "gallery_title_zh": "灵活构件商品培训 · 兜底路线",
+    "one_liner": "未命中 5/18/13/20 页固定课型时使用；按审核大纲动态编排",
+    "name_zh": "灵活构件商品培训 PPT（兜底）",
     "category_zh": "商品培训",
     "outputs": [
       "可编辑 PPTX"
@@ -61,17 +142,117 @@
     },
     "requirements": [
       "内容初稿确认",
+      "业务授权正式包装图",
+      "素材计划全部就绪",
+      "完整逐页视觉 QA",
       "pptx_export"
     ],
     "blockers": [],
     "production_ready": true,
-    "status_label": "默认主路径 · 确认后生成可编辑 PPTX",
+    "status_label": "灵活构件兜底 · PPTX 可生成",
+    "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。 旧 12 页仅为结构冒烟，不是金样；业务预览与能力验收以 A/B/C 非金样套件为准。",
+    "capabilities_note_zh": "gold_viewable 为旧兼容键，仅表示 A/B/C 非金样预览可查看；旧 12 页结构冒烟稿不是金样。",
+    "shelf_group": "default-general",
+    "preview_identity_qualified": true,
+    "preview_identity_note_zh": "至少 3 套正式差异化非金样 UAT 已通过逐页 QA、来源、页型组合、色彩、构图与文件哈希门闸。",
+    "preview_suite_evidence": {
+      "schema": "component-portal-preview-suite-qa-v3",
+      "case_count": 3,
+      "style_pack_id": "style-pack.reference-product-blue-v1",
+      "style_label_zh": "统一浅蓝商品培训视觉",
+      "settled_capability_labels_zh": [
+        "绿色商品培训 5 页",
+        "疾病 + 商品场景 18 页",
+        "商品培训课件3 13 页"
+      ],
+      "new_page_types": [
+        "objection_handling"
+      ],
+      "cases": [
+        {
+          "case_id": "case-a",
+          "suite_slot": "A",
+          "name_zh": "三课型资料核验组合",
+          "source_job_id": "uat-component-suite-a-20260810-r4",
+          "page_count": 7,
+          "source_capability_labels_zh": [
+            "绿色商品培训 5 页",
+            "疾病 + 商品场景 18 页",
+            "商品培训课件3 13 页"
+          ],
+          "page_type_sequence": [
+            "courseware_cover",
+            "hook_intro",
+            "product_overview",
+            "consultation_framework",
+            "evidence_ladder",
+            "objection_handling",
+            "summary_matrix"
+          ],
+          "new_page_types": [
+            "objection_handling"
+          ],
+          "representative_page_number": 4,
+          "representative_page_type": "consultation_framework",
+          "portal_media_index": 1
+        },
+        {
+          "case_id": "case-b",
+          "suite_slot": "B",
+          "name_zh": "双课型陈列核验组合",
+          "source_job_id": "uat-component-suite-b-20260810-r4",
+          "page_count": 6,
+          "source_capability_labels_zh": [
+            "商品培训课件3 13 页",
+            "绿色商品培训 5 页"
+          ],
+          "page_type_sequence": [
+            "courseware_cover",
+            "hook_pain_data",
+            "evidence_ladder",
+            "product_overview",
+            "objection_handling",
+            "summary_matrix"
+          ],
+          "new_page_types": [
+            "objection_handling"
+          ],
+          "representative_page_number": 2,
+          "representative_page_type": "hook_pain_data",
+          "portal_media_index": 2
+        },
+        {
+          "case_id": "case-c",
+          "suite_slot": "C",
+          "name_zh": "双课型交接路径组合",
+          "source_job_id": "uat-component-suite-c-20260810-r4",
+          "page_count": 5,
+          "source_capability_labels_zh": [
+            "疾病 + 商品场景 18 页",
+            "商品培训课件3 13 页"
+          ],
+          "page_type_sequence": [
+            "courseware_cover",
+            "hook_intro",
+            "consultation_framework",
+            "summary_matrix",
+            "evidence_ladder"
+          ],
+          "new_page_types": [],
+          "representative_page_number": 4,
+          "representative_page_type": "summary_matrix",
+          "portal_media_index": 3
+        }
+      ]
+    },
     "online_url": null
   },
   "business_catalog": {
-    "name_zh": "构件化商品培训 PPT（默认主路径）",
-    "one_liner": "金样构件 recipe：封面/痛点/功效/特点/人群/联合/总结/注意 · 任意大纲进",
+    "name_zh": "灵活构件商品培训 PPT（兜底）",
+    "one_liner": "未命中 5/18/13/20 页固定课型时使用；按审核大纲动态编排",
     "blank_word": "业务提交_空白模板.docx",
-    "filled_example": "业务提交_填写参考.docx"
+    "filled_example": "业务提交_填写参考.docx",
+    "framework_guide": "../../框架填写说明.md",
+    "shelf_group": "default-general"
   }
 }

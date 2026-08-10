@@ -6,8 +6,12 @@
   "canonical_artifact": "穿心莲内酯滴丸_商品培训课件2_可编辑重建版.pptx",
   "canonical_confirmed_by": "user",
   "canonical_confirmed_at": "2026-08-04",
-  "generator": "poc/courseware-export/courseware2-work/build-courseware2-editable.mjs",
-  "structured_input": "poc/courseware-export/courseware2-work/courseware2-template.json",
+  "generator": "production-library/engines/disease-product-scenario-pptx-v1/export.mjs",
+  "structured_input": "production-library/engines/disease-product-scenario-pptx-v1/input-schema.json",
+  "structured_sample": "production-library/engines/disease-product-scenario-pptx-v1/samples/neutral-theme.json",
+  "business_route_ids": [
+    "product-pptx-disease-scenario-v1"
+  ],
   "business_input": {
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
@@ -16,7 +20,7 @@
     "sync_script": "scripts/sync_settled_template_business_words.py"
   },
   "validation_root": "production-library/validation/courseware/disease-product-scenario-v1",
-  "notes": "十八页疾病辨证、商品知识与销售场景可编辑模板（2026-08-04 视觉升级 v2：token GREEN_DEEP/MINT/PALE/INK/MUTED/LINE、圆角 chrome/card/callout、微软雅黑字体补丁 patch-pptx-font.py）。PDF 高保真基线与 upgrade-v2 前后对比见 validation。",
+  "notes": "十八页疾病辨证、商品知识与销售场景已签样标准课型。正式数据驱动引擎只从 disease-product-scenario-script/v1 读取疾病、商品、两组场景、权重商品及全部图片；非穿心莲主题硬阻断穿心莲文案与源图残留，并输出原生可编辑 PPTX 与逐页 QA。",
   "preview": {
     "cover": "preview/cover.png",
     "key_frames": [
@@ -43,20 +47,27 @@
     "capabilities": {
       "gold_viewable": true,
       "content_draft": true,
-      "new_theme_preview": false,
-      "new_theme_pptx": false,
+      "new_theme_preview": true,
+      "new_theme_pptx": true,
       "new_theme_mp4": false,
-      "business_selfserve": false
+      "business_selfserve": true
     },
     "requirements": [
-      "内容初稿确认",
-      "统一业务 adapter"
+      "完整 18 页审核稿",
+      "疾病/商品/两组场景/权重商品字段",
+      "全部正式图片",
+      "内容/商品图/视觉确认",
+      "pptx_export"
     ],
-    "blockers": [
-      "换主题业务 adapter 尚未接入统一入口"
-    ],
-    "production_ready": false,
-    "status_label": "金样可查看 · 换主题入口待接线",
+    "blockers": [],
+    "production_ready": true,
+    "status_label": "已签样标准课型 · PPTX 可生成",
+    "status_note": "先整理内容初稿与素材清单；内容、所需授权素材和视觉确认全部通过后，由 WorkBuddy 生成正式成品并完成逐页质量检查。",
+    "capabilities_note_zh": null,
+    "shelf_group": "signed-standard",
+    "preview_identity_qualified": true,
+    "preview_identity_note_zh": null,
+    "preview_suite_evidence": null,
     "online_url": null
   },
   "business_catalog": {
@@ -64,6 +75,7 @@
     "one_liner": "辨证知识 + 商品知识 + 销售场景的可编辑长课件",
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
-    "framework_guide": "../../框架填写说明.md"
+    "framework_guide": "../../框架填写说明.md",
+    "shelf_group": "signed-standard"
   }
 }

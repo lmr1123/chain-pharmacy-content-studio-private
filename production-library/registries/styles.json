@@ -52,8 +52,26 @@
       "id": "style-pack.reference-product-blue-v1",
       "name_zh": "参考片浅蓝商品培训风 v1",
       "kind": "style-pack",
-      "status": "selected",
+      "status": "production-validated",
       "tags": ["商品培训", "浅蓝方格", "二维讲师", "黄色字幕", "16:9"],
+      "tokens_path": "production-library/styles/reference-product-blue-v1/tokens.json",
+      "ppt_adapter": {
+        "engine_id": "courseware-pptx-v1",
+        "visual_grammar": "product-blue-asymmetric-v1",
+        "source": "production-library/engines/courseware-pptx-v1/lib/tokens.mjs",
+        "status": "production-validated",
+        "validation_ref": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/qa-summary.json"
+      },
+      "production_validation": {
+        "schema": "component-style-ppt-production-validation-v1",
+        "status": "production-validated",
+        "qa_summary": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/qa-summary.json",
+        "qa_summary_sha256": "7ff6fbca1fe00f7968a1ddf998a1fd4f7821bcc3f7aad731cc7cccc36ec752f6",
+        "visual_review": "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/visual-review.json",
+        "visual_review_sha256": "c6b54744e6521ab8b78882f1125be552c2a646ce03995622a850f76519c48272",
+        "cases": ["case-a", "case-b", "case-c"],
+        "boundary": "只验证 courseware-pptx-v1 的浅蓝可编辑 PPT 构件适配；不授权继承辅酶 Q10 或来源课型的业务内容和媒体"
+      },
       "rules": {
         "master_ui_style": "reference-product-courseware-blue-v1",
         "allowed_asset_styles": [
@@ -72,8 +90,12 @@
       },
       "sources": [
         "docs/product-training-faithful-rework.md",
-        "poc/gold-sample/src/product-training-faithful-project.tsx"
-      ]
+        "poc/gold-sample/src/product-training-faithful-project.tsx",
+        "production-library/styles/reference-product-blue-v1/tokens.json",
+        "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/qa-summary.json",
+        "production-library/validation/courseware/product-courseware-component-flexible-uat-v1/portal-preview/visual-review.json"
+      ],
+      "restriction": "production-validated 仅覆盖 courseware-pptx-v1 的浅蓝 PPT 构件适配：A/B/C r4 三套独立页序已通过逐页 QA。不授权复用辅酶 Q10 文案、包装、证据、角色像素或原图。"
     },
     {
       "id": "style-pack.dashenlin-courseware-green-v1",
@@ -103,7 +125,7 @@
       "id": "style-pack.lycopene-health-edu-cream-red-v1",
       "name_zh": "番茄红素健康科普 · 米白番茄红 v1",
       "kind": "style-pack",
-      "status": "candidate",
+      "status": "production-validated",
       "tags": ["健康科普", "商品培训", "米白", "番茄红", "可编辑PPTX", "16:9", "component-recipe"],
       "tokens_path": "production-library/styles/lycopene-health-edu-cream-red-v1/tokens.json",
       "design_path": "production-library/styles/lycopene-health-edu-cream-red-v1/design.md",
@@ -126,7 +148,7 @@
         "production-library/styles/lycopene-health-edu-cream-red-v1/tokens.json",
         "docs/component-recipe-pipeline-architecture.md"
       ],
-      "restriction": "candidate：待构件引擎金样回归与用户签样后可升 production-validated。包装/Logo 须业务授权原图。"
+      "restriction": "已通过 20 页原 OOXML 换主题、107 个文字槽、69 个显式新图绑定、源媒体 SHA 零残留与逐页 QA；正式内容和全部图片仍须业务审核与授权。"
     },
     {
       "id": "style-pack.sufuda-pearl-silk-orange-v1",

@@ -63,12 +63,12 @@
       "preview/key-06.png"
     ],
     "key_frame_labels_zh": [
-      "开场",
-      "典型症状",
-      "病因机理",
-      "治疗思路",
-      "用药建议",
-      "总结"
+      "母版角色",
+      "症状页",
+      "机理页",
+      "开场帧",
+      "机理帧",
+      "治疗帧"
     ],
     "gallery_title_zh": "疾病科普视频 · 风热证金样",
     "one_liner": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议",
@@ -79,10 +79,10 @@
     ],
     "capabilities": {
       "gold_viewable": true,
-      "content_draft": true,
-      "new_theme_preview": true,
+      "content_draft": false,
+      "new_theme_preview": false,
       "new_theme_pptx": false,
-      "new_theme_mp4": true,
+      "new_theme_mp4": false,
       "business_selfserve": false
     },
     "requirements": [
@@ -92,11 +92,16 @@
       "正式 voice_id"
     ],
     "blockers": [
-      "正式出片前必须完成主题画面审批",
-      "当前机器须通过 video_full 环境检查"
+      "正式换主题生产路线尚未激活"
     ],
     "production_ready": false,
-    "status_label": "可开始草稿 · 正式出片需环境与审批",
+    "status_label": "尚未开放 · 当前不可生成 · 金样可查看",
+    "status_note": "金样、结构和填写参考可以复用；正式换主题生产路线尚未激活，不承诺生成正式成品。",
+    "capabilities_note_zh": null,
+    "shelf_group": "other",
+    "preview_identity_qualified": true,
+    "preview_identity_note_zh": null,
+    "preview_suite_evidence": null,
     "online_url": null
   },
   "business_catalog": {
@@ -104,7 +109,8 @@
     "one_liner": "健康知识讲解视频：症状 · 机理 · 治疗与用药建议",
     "blank_word": "业务提交_空白模板.docx",
     "filled_example": "业务提交_填写参考.docx",
-    "framework_guide": "../../框架填写说明.md"
+    "framework_guide": "../../框架填写说明.md",
+    "shelf_group": "other"
   },
   "voice": {
     "voice_id": "voice.reference-pharmacist-qwen-v1",

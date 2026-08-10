@@ -1,8 +1,21 @@
 {
   "mode_id": "seedance-health-edu-v1",
   "title": "健康科普 Seedance 元提示词变量",
-  "description": "填满后写入 00-主题变量.json，再展开 meta-prompt 与 Seedance 分段提示词",
-  "required": ["theme", "target_audience", "core_pain"],
+  "description": "正式 release 所需变量；scaffold 复核阶段可接受残缺输入并列出待补字段",
+  "required": [
+    "theme",
+    "target_audience",
+    "core_pain",
+    "character_a",
+    "character_b",
+    "core_scene",
+    "hook",
+    "solution",
+    "deep_dive",
+    "extreme",
+    "wrapup",
+    "publish"
+  ],
   "properties": {
     "theme": {
       "type": "string",
@@ -11,6 +24,10 @@
     "target_audience": {
       "type": "string",
       "description": "目标人群，如：家里有娃的爸妈 / 上班通勤族"
+    },
+    "core_pain": {
+      "type": "string",
+      "description": "核心痛点口播短语，如：暴雨天硬出门"
     },
     "tone_lighting": {
       "type": "string",
@@ -24,6 +41,7 @@
     },
     "character_a": {
       "type": "object",
+      "required": ["age_gender", "outfit_color_block"],
       "properties": {
         "age_gender": { "type": "string", "description": "如：三十出头女性" },
         "outfit_color_block": { "type": "string", "description": "固定服装色块，如：明黄色雨衣+藏青围巾" }
@@ -31,6 +49,7 @@
     },
     "character_b": {
       "type": "object",
+      "required": ["age_gender", "outfit_color_block"],
       "properties": {
         "age_gender": { "type": "string" },
         "outfit_color_block": { "type": "string", "description": "对比色服装" }
@@ -42,16 +61,18 @@
     },
     "hook": {
       "type": "object",
+      "required": ["core_env_element", "pain_visual", "pain_physics", "env_state_phrase"],
       "properties": {
         "core_env_element": { "type": "string" },
         "pain_visual": { "type": "string" },
         "pain_physics": { "type": "string" },
-        "core_pain_phrase": { "type": "string" },
+        "core_pain_phrase": { "type": "string", "description": "兼容旧输入；正式输入使用顶层 core_pain" },
         "env_state_phrase": { "type": "string" }
       }
     },
     "solution": {
       "type": "object",
+      "required": ["medium", "level_icons", "level_a", "level_b"],
       "properties": {
         "medium": { "type": "string", "description": "手机/指引卡片等" },
         "level_icons": { "type": "string" },
@@ -61,6 +82,7 @@
     },
     "deep_dive": {
       "type": "object",
+      "required": ["high_risk_env", "key_body_focus", "material_interaction", "hazard_a", "hazard_b", "relief_info"],
       "properties": {
         "high_risk_env": { "type": "string" },
         "key_body_focus": { "type": "string" },
@@ -72,6 +94,7 @@
     },
     "extreme": {
       "type": "object",
+      "required": ["special_scene", "extreme_situation", "escape_path", "extreme_physics", "danger_name", "correct_direction"],
       "properties": {
         "special_scene": { "type": "string" },
         "extreme_situation": { "type": "string" },
@@ -83,6 +106,7 @@
     },
     "wrapup": {
       "type": "object",
+      "required": ["safe_env"],
       "properties": {
         "safe_env": { "type": "string" },
         "art_text": { "type": "string", "default": "平安是福" },
@@ -91,6 +115,7 @@
     },
     "publish": {
       "type": "object",
+      "required": ["emotion_word", "subject", "crowd_tag", "forward_text"],
       "properties": {
         "emotion_word": { "type": "string" },
         "subject": { "type": "string" },
