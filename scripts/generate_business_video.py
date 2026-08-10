@@ -813,6 +813,22 @@ def _import_parse_video_docx():
     return parse_video_docx
 
 
+def _ensure_video_gold(path: Path) -> Path:
+    """Materialize sparse-excluded gold MP4 at full quality before use."""
+    if path.is_file() and path.stat().st_size > 1024:
+        return path
+    try:
+        from ensure_gold_assets import ensure_path
+
+        rel = path.resolve().relative_to(ROOT.resolve()).as_posix()
+        return ensure_path(rel, root=ROOT)
+    except Exception as exc:  # noqa: BLE001
+        raise FileNotFoundError(
+            f"缺少视频金样且按需拉取失败: {path}\n{exc}\n"
+            f"可手动执行: python3 scripts/ensure_gold_assets.py --path {path}"
+        ) from exc
+
+
 TEMPLATES: dict[str, dict[str, Any]] = {
     "product-video-faithful-v1": {
         "aliases": ["product", "q10", "商品培训视频"],
@@ -1732,7 +1748,7 @@ def main() -> int:
                 }
             else:
                 try:
-                    gold = meta["gold_mp4"]
+                    gold = _ensure_video_gold(Path(meta["gold_mp4"]))
                     if not gold.exists():
                         alts = list(meta["settled"].glob("*.mp4"))
                         gold = next(

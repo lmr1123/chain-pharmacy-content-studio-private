@@ -1,8 +1,11 @@
 # Business install sparse-checkout (non-cone patterns for Git sparse-checkout set).
 # One pattern per line. Comments and blank lines ignored.
 #
-# Goal: smaller business clone WITHOUT dropping production quality assets:
-#   KEEP settled gold PPTX/MP4, engines, assets/component-library, video kit
+# Goal: smaller business clone WITHOUT dropping production quality:
+#   KEEP engines, component-library, video kit, small settled metadata
+#   Large gold MP4/PPTX are negated at apply-time from
+#   production-library/on-demand-gold-assets.json and fetched full-quality
+#   on first route use (scripts/ensure_gold_assets.py).
 #   DROP research trees (poc/reference-replica, validation evidence, etc.)
 #
 # Root files (README, AGENTS.md, …) stay via /* with !/*/ then re-add dirs.
