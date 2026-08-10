@@ -308,6 +308,135 @@
         }
       ],
       "selection_command": "我要把【已确认课件/课型名称】切换为【真人数字人侧讲 · 方案 C】。\n请先基于已确认且可二次排版的课件，按签样 SOP 整理全页最终口播脚本，以及写清“页码/是否使用数字人/理由”的关键页清单，交付《业务复核包》；当前只有复核包模板和人工 SOP，不要暗示存在自动审批生成器。\n在我明确确认“最终脚本通过”和“关键页清单通过”，并回复“可以生成”前，不得调用 HeyGen、克隆旁白终轨或生成数字人成片。\n双项确认后，仍请检查 HeyGen 外部账号/API key/额度、Qwen voice/TTS、.venv-rembg、ffmpeg 和数字人人像授权，说明费用与授权边界并等待我确认，再开始制作。全课使用同一 voice pack；只有关键页出现动态数字人，非关键页使用全宽课件加旁白，不放静态头像。"
+    },
+    {
+      "mode_id": "domestic-flat-cartoon-health-mg-v1",
+      "status": "demo-available",
+      "name_zh": "国内扁平卡通健康 MG",
+      "portal_name_zh": "国内扁平卡通健康 MG 动画",
+      "category": "健康科普 MG 动画",
+      "cover_label": "扁平 MG",
+      "one_liner": "按镜头配方复用：模块分层 + 对象级动效；先看演示样片与关键帧，再换主题内容。",
+      "portal_video_example": {
+        "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-mg-example.mp4",
+        "filename": "domestic-flat-cartoon-mg-example.mp4",
+        "label": "国内扁平卡通 MG 演示样片（关键镜头精选）"
+      },
+      "portal_cover": {
+        "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/cover.png",
+        "filename": "domestic-flat-cartoon-health-mg-v1/cover.png"
+      },
+      "portal_key_frames": [
+        {
+          "label_zh": "口号钩子",
+          "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/key-01.png",
+          "filename": "domestic-flat-cartoon-health-mg-v1/key-01.png"
+        },
+        {
+          "label_zh": "医生讲解",
+          "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/key-02.png",
+          "filename": "domestic-flat-cartoon-health-mg-v1/key-02.png"
+        },
+        {
+          "label_zh": "政策城市分层",
+          "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/key-03.png",
+          "filename": "domestic-flat-cartoon-health-mg-v1/key-03.png"
+        },
+        {
+          "label_zh": "标准浏览器讲解",
+          "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/key-04.png",
+          "filename": "domestic-flat-cartoon-health-mg-v1/key-04.png"
+        },
+        {
+          "label_zh": "地区食谱轮播",
+          "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/key-05.png",
+          "filename": "domestic-flat-cartoon-health-mg-v1/key-05.png"
+        },
+        {
+          "label_zh": "黄板个性化管理",
+          "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/key-06.png",
+          "filename": "domestic-flat-cartoon-health-mg-v1/key-06.png"
+        },
+        {
+          "label_zh": "行动号召",
+          "source": "production-library/business-package-static/media/production-modes/domestic-flat-cartoon-health-mg-v1/key-07.png",
+          "filename": "domestic-flat-cartoon-health-mg-v1/key-07.png"
+        }
+      ],
+      "prompt_only": false,
+      "workbuddy_direct_generation": true,
+      "input_quality_boundary": "演示样片与镜头配方已可门户预览；全片视觉金样仍待业务签样，正式旁白/字幕与未见主题盲测未完成。换主题时只替换审核后的旁白、数据、标题和主题专属插画槽，不得继承参考片机构名单或参考视频像素。",
+      "local_artifact_types": [
+        "review_package",
+        "scene_recipe_map",
+        "layered_motion_preview",
+        "mp4"
+      ],
+      "workbuddy_outputs": [
+        {
+          "stage": "review",
+          "label": "镜头配方与模块槽清单（可复用 recipe）"
+        },
+        {
+          "stage": "review",
+          "label": "左参考/右生产对照验收页"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "分层动画预览 MP4（本机 ReVideo）"
+        },
+        {
+          "stage": "after_script_approval",
+          "label": "可替换主题槽：文案/数据/地区食谱/机构目录"
+        }
+      ],
+      "badges": [
+        {
+          "kind": "conditional",
+          "label": "演示样片 · 门户可预览关键帧与精选成片"
+        },
+        {
+          "kind": "gated",
+          "label": "换主题成片 · 脚本与视觉签样确认后"
+        },
+        {
+          "kind": "ready",
+          "label": "本机 MG · ReVideo 分层装配（非正式 settled 模板）"
+        }
+      ],
+      "approval_gate": {
+        "required": true,
+        "enforcement": "human_process_only",
+        "confirmation_phrase": "镜头配方与演示样片确认，可以按该 MG 模式换主题制作",
+        "before_approval_zh": "确认前只展示演示样片、关键帧和配方边界；不得登记 settled 模板，不得把未签样批次称为正式金样交付。"
+      },
+      "external_render": {
+        "required": false,
+        "platform": "本机 ReVideo（可选：主题插画生成走模型订阅或已确认的外部出图）",
+        "boundary_zh": "成片默认本机 ReVideo 分层渲染，不依赖 Seedance/即梦账号。若需批量生成主题插画，请先说明是否使用当前模型订阅或业务自备出图账号及费用边界，未经确认不得调用会额外扣费的 API。"
+      },
+      "production_requirements": [
+        "已审核的健康科普主题与口播/数据",
+        "参考镜头合同中的 scene_recipe 绑定",
+        "本机 Node + @revideo 渲染环境",
+        "ffmpeg",
+        "主题专属插画槽（禁止参考片像素作生产背景）"
+      ],
+      "workflow": [
+        {
+          "title": "看演示与关键帧",
+          "text": "在门户播放精选样片，核对七张关键画面是否符合业务预期画风。"
+        },
+        {
+          "title": "确认配方可复用",
+          "text": "WorkBuddy 说明固定配方（黄板/城市分层/食谱轮播等）与可替换槽；不另起一条镜头线。"
+        },
+        {
+          "title": "换主题制作",
+          "text": "你明确确认后，只替换审核内容与主题素材，输出对照页与分层预览 MP4。"
+        }
+      ],
+      "selection_command": "我要使用【国内扁平卡通健康 MG 动画】做健康科普 MG。\n主题：【请填写】；目标人群：【请填写】；已审核要点/数据：【请填写】。\n请先对照门户演示样片与关键帧，说明将复用哪些 scene_recipe（如政策城市分层、黄板讲解、地区食谱轮播、行动号召）以及文案/数据/机构目录等可替换槽；不要把参考视频像素当生产背景，不要自造屏显口号。\n在我明确回复“镜头配方与演示样片确认，可以按该 MG 模式换主题制作”前，只交付配方说明与对照验收材料，不得登记 settled 模板，也不得宣称全片金样已签样。\n确认后按模块分层在本机 ReVideo 出预览 MP4。若需新插画且可能产生额外出图费用/额度，请先说明账号与费用边界并等待我确认；默认不要调用付费视频 API。"
     }
   ]
 }

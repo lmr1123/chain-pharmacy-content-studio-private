@@ -34,13 +34,202 @@ def extract_docx_paragraphs(path: Path, *, max_paras: int = 80) -> list[str]:
     return out
 
 
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+GREEN_GOLD_CONTENT_MODEL_PATH = (
+    _REPO_ROOT
+    / "production-library"
+    / "engines"
+    / "product-courseware-green-v1"
+    / "gold-content-model.json"
+)
+# Portal examples prefer real gold composition over blank fill-in templates.
+PORTAL_GOLD_EXAMPLE_SOURCES: dict[str, Path] = {
+    "product-courseware-green-v1": GREEN_GOLD_CONTENT_MODEL_PATH,
+}
+
+
+def _humanize_asset_ref(value: object) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    if text.startswith("asset://"):
+        return "（图槽 · 正式包装/插图）"
+    return text.replace("\n", " / ")
+
+
+def green_gold_portal_example_paragraphs(
+    path: Path | None = None,
+    *,
+    max_paras: int = 120,
+) -> list[str]:
+    """Page-by-page composition from the signed green gold content model."""
+    model_path = path or GREEN_GOLD_CONTENT_MODEL_PATH
+    if not model_path.is_file():
+        return []
+    try:
+        model = json.loads(model_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    pages = model.get("pages") or []
+    if not isinstance(pages, list) or not pages:
+        return []
+
+    out: list[str] = [
+        "金样内容组成｜金银花露绿色单品 PPT · 共 5 页",
+        (
+            "以下为已签样金样真实结构与文案，方便对照每一页写什么。"
+            "换主题只继承页签结构与绿色视觉；文案、包装图与插图须换成贵司审核稿与授权图。"
+            "医学表述以审核终稿为准。"
+        ),
+    ]
+
+    for index, page in enumerate(pages):
+        if not isinstance(page, dict):
+            continue
+        page_no = str(page.get("page_number") or "").strip()
+        title = str(page.get("title") or page.get("id") or f"第{index + 1}页").strip()
+        if page_no:
+            out.append(f"【{page_no} {title}】")
+        elif str(page.get("id") or "") == "cover" or str(page.get("scene_type") or "") in {
+            "courseware_cover",
+            "cover",
+        }:
+            out.append(f"【封面 · {title}】")
+        else:
+            out.append(f"【第{index + 1}页 · {title}】")
+
+        scene = str(page.get("scene_type") or "")
+        if scene in {"courseware_cover", "cover"} or str(page.get("id") or "") == "cover":
+            org = str(page.get("organization") or "").strip()
+            tagline = str(page.get("tagline") or "").strip()
+            if title:
+                out.append(f"标题：{title}")
+            if org:
+                out.append(f"单位：{org}")
+            if tagline:
+                out.append(f"角标：{tagline}")
+        elif scene == "product_overview" or "product" in page:
+            product = page.get("product") if isinstance(page.get("product"), dict) else {}
+            name = str(product.get("display_name") or "").strip()
+            if name:
+                out.append(f"商品：{name}")
+            bits = []
+            for key, label in (
+                ("specification", "规格"),
+                ("retail_price", "零售价"),
+                ("code", "编码"),
+            ):
+                val = str(product.get(key) or "").strip()
+                if val:
+                    bits.append(f"{label}{val}")
+            if bits:
+                out.append(" · ".join(bits))
+            selling = str(product.get("one_line_selling_point") or "").strip()
+            if selling:
+                out.append(f"一句话卖点：{selling}")
+            for section in page.get("sections") or []:
+                if not isinstance(section, dict):
+                    continue
+                sec_title = str(section.get("title") or "").strip()
+                if sec_title:
+                    out.append(sec_title.rstrip("：:"))
+                for item in section.get("items") or []:
+                    text = str(item).strip()
+                    if text:
+                        out.append(f"· {text}")
+        elif scene == "combination_guidance" or str(page.get("id") or "") == "combination-guidance":
+            for row_i, row in enumerate(page.get("rows") or [], start=1):
+                if not isinstance(row, dict):
+                    continue
+                scenario = str(row.get("scenario") or "").strip()
+                combination = str(row.get("combination") or "").strip()
+                partner = str(row.get("partner") or "").strip()
+                talk = str(row.get("talk_track") or "").strip()
+                out.append(f"方案 {row_i}")
+                if scenario:
+                    out.append(f"· 场景：{scenario}")
+                if combination:
+                    out.append(f"· 组合：{combination}")
+                elif partner:
+                    out.append(f"· 搭档：{partner}")
+                if talk:
+                    out.append(f"· 话术：{talk}")
+        elif scene == "product_benchmark" or str(page.get("id") or "") == "product-benchmark":
+            columns = [str(c).strip() for c in (page.get("columns") or []) if str(c).strip()]
+            if len(columns) >= 3:
+                out.append(f"对比：{columns[1]}  vs  {columns[2]}")
+            for row in page.get("rows") or []:
+                if not isinstance(row, dict):
+                    continue
+                label = str(row.get("label") or "").strip()
+                if not label:
+                    continue
+                if row.get("merge") and row.get("value") is not None:
+                    val = _humanize_asset_ref(row.get("value"))
+                    if val and not val.startswith("（图槽"):
+                        out.append(f"· {label}：{val}")
+                    continue
+                values = row.get("values") or []
+                rendered = [_humanize_asset_ref(v) for v in values]
+                rendered = [v for v in rendered if v]
+                if not rendered:
+                    continue
+                if all(v.startswith("（图槽") for v in rendered):
+                    out.append(f"· {label}：本品包装图 / 竞品包装图")
+                else:
+                    out.append(f"· {label}：{' ｜ '.join(rendered)}")
+        elif scene == "precautions" or page.get("items"):
+            for item in page.get("items") or []:
+                text = str(item).strip()
+                if text:
+                    out.append(f"· {text}")
+            slots = page.get("illustration_slots") or []
+            if slots:
+                names = [
+                    str(slot.get("title") or "").strip()
+                    for slot in slots
+                    if isinstance(slot, dict) and str(slot.get("title") or "").strip()
+                ]
+                if names:
+                    out.append("配图槽：" + "、".join(names))
+        if len(out) >= max_paras:
+            return out[:max_paras]
+
+    return out[:max_paras]
+
+
+def portal_example_paragraphs_for_slug(
+    slug: str,
+    *,
+    docx_fallback: Path | None = None,
+    max_paras: int = 120,
+) -> list[str]:
+    """Prefer gold composition examples; fall back to settled docx extract."""
+    gold_path = PORTAL_GOLD_EXAMPLE_SOURCES.get(slug)
+    if gold_path is not None:
+        if slug == "product-courseware-green-v1":
+            paras = green_gold_portal_example_paragraphs(gold_path, max_paras=max_paras)
+            if paras:
+                return paras
+        # Future gold models: extend PORTAL_GOLD_EXAMPLE_SOURCES handlers here.
+    if docx_fallback is not None:
+        return extract_docx_paragraphs(docx_fallback, max_paras=max_paras)
+    return []
+
+
 def _is_heading_line(text: str) -> bool:
+    if text.startswith("【") and "】" in text:
+        return True
+    if text.startswith(("·", "•", "-", "规格", "商品：", "标题：", "单位：", "角标：", "对比：", "一句话", "配图槽")):
+        return False
     if len(text) > 28:
         return False
     if text.endswith(("。", "；", "!", "？", "?", "…")):
         return False
     # section-like titles
     if text.endswith(("：", ":")) and len(text) <= 20:
+        return True
+    if text.startswith(("一、", "二、", "三、", "四、", "五、", "方案 ")):
         return True
     if text in {
         "商品介绍",
@@ -65,8 +254,7 @@ def _is_heading_line(text: str) -> bool:
     }:
         return True
     # short title without period
-    return len(text) <= 16 and "｜" not in text and "。" not in text
-
+    return len(text) <= 16 and "｜" not in text and "。" not in text and "：" not in text
 
 def paragraphs_to_html_blocks(paragraphs: list[str]) -> str:
     """Render example paras as safe HTML (headings + body)."""
@@ -83,6 +271,8 @@ def paragraphs_to_html_blocks(paragraphs: list[str]) -> str:
                 "不代表",
                 "审核终稿",
                 "演示占位",
+                "金样内容组成",
+                "换主题只继承",
             )
         )
         if i == 0 or is_disclaimer:
@@ -95,10 +285,12 @@ def paragraphs_to_html_blocks(paragraphs: list[str]) -> str:
 
 
 DEFAULT_GENERAL_TEMPLATE = "product-courseware-component-v1"
+# Component route is internal gap-fill only; never a business-facing shelf card.
+PORTAL_HIDDEN_TEMPLATE_SLUGS = frozenset({DEFAULT_GENERAL_TEMPLATE})
 COMPONENT_PORTAL_COPY = {
-    "name_zh": "灵活构件商品培训 PPT（兜底）",
-    "one_liner": "未命中 5/18/13/20 页固定课型时使用；按审核大纲动态编排",
-    "gallery_title_zh": "灵活构件商品培训 · 兜底路线",
+    "name_zh": "构件补缺页签（内部）",
+    "one_liner": "仅在已选金样模板缺少页签时由系统内部补页；不作为业务可选课型",
+    "gallery_title_zh": "内部 · 金样缺页补漏",
 }
 COMPONENT_PAGE_TYPE_LABELS_ZH = {
     "cover": "商品封面",
@@ -256,14 +448,9 @@ SIGNED_STANDARD_TEMPLATES = frozenset(
 )
 SHELF_GROUPS = (
     {
-        "id": "default-general",
-        "title": "灵活构件兜底",
-        "hint": "未命中已签样固定课型时使用；按已确认内容动态编排可编辑课件。",
-    },
-    {
         "id": "signed-standard",
         "title": "已签样标准课型",
-        "hint": "金样、结构与填写参考可复用；每种交付物是否可生成，以卡片上的实时状态为准。",
+        "hint": "先选金样模板看预览与内容示例；在页面复制粘贴给 WorkBuddy，再按该模板结构生成。每种交付物是否可生成，以卡片状态为准。",
     },
     {
         "id": "production-modes",
@@ -273,7 +460,7 @@ SHELF_GROUPS = (
     {
         "id": "other",
         "title": "其他课型",
-        "hint": "按培训目的选择；没有激活生产路线的课型只开放金样参考。",
+        "hint": "按培训目的选择金样；没有激活生产路线的课型只开放金样参考。缺页签补漏由系统内部处理，不在此选自由组合。",
     },
 )
 
@@ -303,8 +490,9 @@ BUSINESS_ROUTE_SELECTOR_PATH = (
 _DEFAULT_ROUTE_SELECTOR = {
     "title_zh": "我不懂模板，帮我选",
     "description_zh": (
-        "只选交付物、内容类型和结构偏好，或直接粘贴业务需求。"
-        "WorkBuddy 会先解释推荐与原因；你确认模板前不会创建任务。"
+        "只说明交付物、内容类型和更接近哪套金样页数结构，或直接粘贴业务需求。"
+        "WorkBuddy 会先推荐已签样金样模板；确认模板前不会创建任务。"
+        "不要选择自由组合页签；金样没有的页签由系统在确认后内部补漏。"
     ),
     "deliverables": [
         {"value": "unsure", "label_zh": "不确定，帮我判断"},
@@ -319,8 +507,7 @@ _DEFAULT_ROUTE_SELECTOR = {
         {"value": "product-video", "label_zh": "商品培训视频"},
     ],
     "structures": [
-        {"value": "unsure", "label_zh": "不确定，帮我推荐"},
-        {"value": "dynamic", "label_zh": "动态页数 · 灵活构件兜底 PPT"},
+        {"value": "unsure", "label_zh": "不确定，帮我推荐金样结构"},
         {"value": "fixed-5", "label_zh": "固定 5 页 · 绿色紧凑课"},
         {"value": "fixed-18", "label_zh": "固定 18 页 · 疾病商品场景课"},
         {"value": "fixed-13", "label_zh": "固定 13 页 · 专项商品讲解"},
@@ -328,8 +515,8 @@ _DEFAULT_ROUTE_SELECTOR = {
     ],
     "boundaries": [
         {
-            "title_zh": "动态页数",
-            "detail_zh": "灵活构件兜底 · 可编辑 PPTX；未命中固定课型时按确认内容组织页数。",
+            "title_zh": "先选金样",
+            "detail_zh": "业务只选已签样金样模板；按该模板页签提供内容，不自由拼页。",
         },
         {
             "title_zh": "固定 5 页",
@@ -348,6 +535,13 @@ _DEFAULT_ROUTE_SELECTOR = {
             "detail_zh": "成分健康科普 · 可编辑 PPTX。",
         },
         {
+            "title_zh": "缺页内部补",
+            "detail_zh": (
+                "金样没有的页签由 WorkBuddy 内部补漏，不单独作为业务课型展示；"
+                "自由构件化当前达不到交付标准。"
+            ),
+        },
+        {
             "title_zh": "完整 MP4",
             "detail_zh": (
                 "走固定 8 段商品培训视频路线（不是 PPT 页数）；"
@@ -360,14 +554,15 @@ _DEFAULT_ROUTE_SELECTOR = {
 _ROUTE_SELECTOR_PROMPT_TEMPLATE = """我不懂模板，请先让 WorkBuddy 调用已安装项目的 business_job recommend 只读推荐能力，不要直接创建任务。工具结果只用于判断，不要原样回显内部路线标识、脚本命令或建草稿命令：
 - 交付物：[[DELIVERABLE]]
 - 内容类型：[[CONTENT_TYPE]]
-- 结构偏好：[[STRUCTURE]]
+- 结构偏好（金样页数结构，非自由组合）：[[STRUCTURE]]
 - 补充需求：[[REQUIREMENT]]
 
 请先只输出：
-1. 推荐模板（最多 2 个候选）；
+1. 推荐的已签样金样模板（最多 2 个候选；优先固定页数金样，不要推荐「自由组合/灵活构件」作为主课型）；
 2. 每个候选的推荐理由；
-3. 各候选实际可生成的交付物（PPTX / MP4）与页数规则（动态页数或固定页数）；
+3. 各候选实际可生成的交付物（PPTX / MP4）与固定页数规则；
 4. 仍需补充或确认的内容。
+5. 若业务内容可能超出该金样页签，只说明确认模板后由系统内部补缺页签，不要让业务先选自由组合。
 
 如我的偏好与当前生产能力冲突，请明确说明，不要承诺不存在的 PPTX 或 MP4；如有两个候选，只追问一个最关键的问题。
 在我明确回复“确认模板【模板名】”之前，不得创建任务、不得生成正式成品。"""
@@ -409,7 +604,11 @@ def _selector_option_list(value: object) -> list[dict[str, str]]:
 def _merge_selector_options(
     defaults: list[dict[str, str]], configured: object
 ) -> list[dict[str, str]]:
-    """Allow display-label overrides, but never expose selector route profiles."""
+    """Allow display-label overrides, but never expose selector route profiles.
+
+    Only values present in defaults are kept — this prevents reintroducing
+    retired portal options such as free-form ``dynamic`` component structure.
+    """
     configured_by_value = {
         option["value"]: option for option in _selector_option_list(configured)
     }
@@ -417,6 +616,15 @@ def _merge_selector_options(
         configured_by_value.get(option["value"], dict(option))
         for option in defaults
     ]
+
+
+def is_portal_visible_template(template: dict | str) -> bool:
+    """Business portal hides internal gap-fill routes (component free-compose)."""
+    if isinstance(template, str):
+        slug = template
+    else:
+        slug = str(template.get("slug") or "")
+    return slug not in PORTAL_HIDDEN_TEMPLATE_SLUGS
 
 
 def load_business_route_selector(path: Path | None = None) -> dict:
@@ -571,6 +779,23 @@ def _enrich_business_mode(mode: dict) -> dict:
     badges = [dict(item) for item in mode["badges"]]
     item = dict(mode)
     video_example = mode.get("portal_video_example") or {}
+    cover = mode.get("portal_cover") or {}
+    key_frames_raw = mode.get("portal_key_frames") or []
+    key_frames: list[dict] = []
+    key_labels: list[str] = []
+    if isinstance(key_frames_raw, list):
+        for frame in key_frames_raw:
+            if not isinstance(frame, dict):
+                continue
+            filename = str(frame.get("filename") or "").strip()
+            label = str(frame.get("label_zh") or frame.get("label") or "").strip()
+            if not filename or any(part == ".." for part in Path(filename).parts):
+                continue
+            key_frames.append({"filename": filename, "label_zh": label or "关键画面"})
+            key_labels.append(label or "关键画面")
+    cover_filename = str(cover.get("filename") or "").strip()
+    if cover_filename and any(part == ".." for part in Path(cover_filename).parts):
+        cover_filename = ""
     item.update(
         {
             "name_zh": str(mode.get("portal_name_zh") or mode["name_zh"]),
@@ -586,7 +811,9 @@ def _enrich_business_mode(mode: dict) -> dict:
             "selection_command": str(mode["selection_command"]),
             "self_serve": bool(mode["workbuddy_direct_generation"]),
             "preview_steps": [dict(step) for step in mode["workflow"]],
-            "key_frame_labels_zh": [],
+            "key_frame_labels_zh": key_labels,
+            "portal_key_frames": key_frames,
+            "portal_cover_filename": cover_filename or None,
             "example_paragraphs": paragraphs,
             "example_html": paragraphs_to_html_blocks(paragraphs),
             "portal_video_example": {
@@ -601,6 +828,7 @@ def _enrich_business_mode(mode: dict) -> dict:
         }
     )
     item.pop("portal_name_zh", None)
+    item.pop("portal_cover", None)
     return item
 
 
@@ -753,25 +981,23 @@ def build_business_command(
                 "不要承诺或生成正式成品，等卡片显示对应交付物可生成后再继续。"
             )
         return (
-            f"我选【{name}】，目前仅查看金样和填写参考。"
+            f"我选【{name}】，目前仅查看金样和门户内容示例。"
             "请先告诉我这套模板还缺哪些换主题能力，不要生成正式成品。"
         )
     if slug == DEFAULT_GENERAL_TEMPLATE and can_pptx and not can_mp4:
+        # Internal-only: should not appear on the business shelf. If an agent
+        # still builds this command, force gold-first + gap-fill semantics.
         return (
-            "我要制作一份【可编辑商品培训 PPTX】，采用灵活构件兜底；先不要锁定正式页序。\n"
-            "自然语言交付目标：【请填写培训对象、使用场景和希望解决的问题】\n"
+            "【内部补缺 · 业务勿直接选用自由构件课型】\n"
+            "主课型请先锁定一个已签样金样模板（绿 5 页 / 疾病商品场景 18 页 / 课件3 13 页 / 成分科普 20 页）。\n"
+            "主模板：【请填写已选金样模板中文名】\n"
             "商品或主题：【请填写】\n"
-            "现有内容：【直接粘贴已有文案、要点或资料摘要；不完整也可以】\n"
-            "现有素材：【列出包装图、Logo、证据资料、品牌素材；没有的请写暂无】\n"
-            "请先不要创建正式任务，也不要生成 PPTX。请先返回：\n"
-            "1. 内容缺口和待确认字段；\n"
-            "2. 全中文页签大纲：逐页写明中文页名、页面目标和拟放内容；\n"
-            "3. 每页能力来源解释：说明借鉴了哪类已验证课型能力，或为什么需要自定义页签；\n"
-            "4. 全套只使用一种主视觉的建议；\n"
-            "5. 素材分工：哪些正式图片必须由业务提供，哪些插图可由系统生成。\n"
-            "业务全程只用中文自然语言，不需要填写 JSON 或任何内部页型编号。"
-            "等我明确确认中文页签大纲、每页来源解释和单一视觉后，"
-            "再由 WorkBuddy 内部锁定页序、创建正式任务并生成可编辑 PPTX；确认前不得继续。"
+            "金样已覆盖页签的内容：【按金样结构填写】\n"
+            "金样没有、需要补漏的页签：【仅列缺失模块；无则写无】\n"
+            "现有素材：【包装图、Logo、证据；没有的写暂无】\n"
+            "请先按主金样整理内容初稿；仅对缺失页签做内部补漏草案。"
+            "禁止整课自由组合页序。自由构件化当前达不到交付标准。"
+            "确认主金样结构与补漏清单前，不得创建任务、不得生成 PPTX。"
         )
     if can_pptx and can_mp4:
         base = (
@@ -903,7 +1129,6 @@ def build_guided_portal_html(
     examples = examples or {}
     if production_modes is None:
         production_modes = load_business_modes()
-    route_selector = load_business_route_selector()
 
     # Enrich catalog for JS: paragraphs + pre-rendered HTML
     routes_by_template = _load_routes_by_template()
@@ -911,24 +1136,11 @@ def build_guided_portal_html(
     enriched: list[dict] = []
     for t in templates:
         slug = t["slug"]
+        # Hide free-form component route from the business shelf entirely.
+        if not is_portal_visible_template(slug):
+            continue
         paras = examples.get(slug) or []
         item = dict(t)
-        if slug == DEFAULT_GENERAL_TEMPLATE:
-            item.update(COMPONENT_PORTAL_COPY)
-            item["preview_identity_qualified"] = (
-                t.get("preview_identity_qualified") is True
-            )
-            item["preview_identity_note_zh"] = str(
-                t.get("preview_identity_note_zh")
-                or "至少 3 套正式差异化非金样 UAT suite 尚未通过 QA；为避免误认成课件4，门户暂不展示旧图。"
-            )
-            suite_evidence = t.get("preview_suite_evidence")
-            item["preview_suite_evidence"] = (
-                _component_preview_suite_for_portal(suite_evidence)
-                if item["preview_identity_qualified"]
-                and isinstance(suite_evidence, dict)
-                else None
-            )
         for stale_key in (
             "capabilities",
             "production_ready",
@@ -936,6 +1148,9 @@ def build_guided_portal_html(
             "blockers",
             "status_label",
             "status_note",
+            "preview_suite_evidence",
+            "preview_identity_note_zh",
+            "capabilities_note_zh",
         ):
             item.pop(stale_key, None)
         item["example_paragraphs"] = paras
@@ -957,7 +1172,7 @@ def build_guided_portal_html(
         if badges[0]["kind"] == "building":
             item["portal_status_label"] = "尚未开放 · 当前不可生成 · 金样可查看"
             item["portal_status_note"] = (
-                "金样、关键页和填写参考可以复用；正式换主题生产路线尚未激活。"
+                "金样、关键页和门户内容示例可以查看；正式换主题生产路线尚未激活。"
             )
         elif badges[0]["kind"] == "preview":
             item["portal_status_label"] = "仅金样预览"
@@ -968,9 +1183,8 @@ def build_guided_portal_html(
             )
             item["portal_status_note"] = (
                 "生产路线已激活；仍需按流程确认内容、正式素材和本机环境。"
+                "请先按本金样页签填内容；金样没有的页签确认后由系统内部补漏，不要自由拼页。"
             )
-        if slug == DEFAULT_GENERAL_TEMPLATE:
-            item["portal_status_note"] += " " + item["preview_identity_note_zh"]
         enriched.append(item)
 
     enriched_modes = [_enrich_business_mode(mode) for mode in production_modes]
@@ -982,33 +1196,12 @@ def build_guided_portal_html(
     catalog_js = json.dumps(enriched, ensure_ascii=False)
     modes_js = json.dumps(enriched_modes, ensure_ascii=False)
     groups_js = json.dumps(SHELF_GROUPS, ensure_ascii=False)
-    selector_prompt_js = json.dumps(
-        _ROUTE_SELECTOR_PROMPT_TEMPLATE, ensure_ascii=False
-    )
-    component_slug_js = json.dumps(DEFAULT_GENERAL_TEMPLATE, ensure_ascii=False)
-
-    def selector_options_html(key: str) -> str:
-        return "\n".join(
-            '<option value="{}">{}</option>'.format(
-                html.escape(str(option["value"]), quote=True),
-                html.escape(str(option["label_zh"])),
-            )
-            for option in route_selector[key]
-        )
-
-    selector_boundaries_html = "\n".join(
-        '<div class="selector-boundary"><b>{}</b><span>{}</span></div>'.format(
-            html.escape(str(boundary["title_zh"])),
-            html.escape(str(boundary["detail_zh"])),
-        )
-        for boundary in route_selector["boundaries"]
-    )
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>内部培训 · 选课型或制作模式</title>
+<title>内部培训 · 选金样</title>
 <style>
 :root {{
   --bg: #f4f6f9;
@@ -1043,7 +1236,7 @@ header h1 {{ font-size: 20px; font-weight: 800; margin-bottom: 6px; }}
 header .sub {{ font-size: 13px; color: var(--dim); max-width: 70ch; }}
 .how {{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   margin-top: 12px;
 }}
@@ -1088,83 +1281,6 @@ section.block h2 .n {{
   font-size: 12px; display: inline-flex; align-items: center; justify-content: center;
 }}
 section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px; }}
-
-.route-selector {{
-  border: 1px solid #bfdbfe;
-  border-left: 4px solid var(--accent);
-  background: var(--accent-soft);
-  padding: 16px;
-  margin: 4px 0 18px;
-}}
-.selector-head {{
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 14px;
-}}
-.selector-eyebrow {{
-  color: var(--accent);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  margin-bottom: 2px;
-}}
-.selector-head h3 {{ font-size: 17px; line-height: 1.3; }}
-.selector-head p {{ color: var(--dim); font-size: 12px; margin-top: 3px; max-width: 66ch; }}
-.selector-gate {{
-  flex: none;
-  border: 1px solid #a7f3d0;
-  background: var(--ok-soft);
-  color: var(--ok);
-  padding: 5px 8px;
-  font-size: 10px;
-  font-weight: 800;
-}}
-.selector-layout {{
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr);
-  gap: 14px;
-}}
-.selector-form-grid {{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 9px;
-}}
-.selector-field {{ display: block; min-width: 0; }}
-.selector-field > span {{ display: block; font-size: 11px; font-weight: 800; margin-bottom: 4px; }}
-.selector-field select,
-.selector-field textarea {{
-  width: 100%;
-  border: 1px solid #bfdbfe;
-  background: #fff;
-  color: var(--text);
-  font: inherit;
-  font-size: 12px;
-  padding: 8px 9px;
-}}
-.selector-field select {{ min-height: 38px; }}
-.selector-field textarea {{ min-height: 90px; resize: vertical; line-height: 1.5; }}
-.selector-field select:focus-visible,
-.selector-field textarea:focus-visible {{ outline: 3px solid #93c5fd; outline-offset: 1px; }}
-.selector-requirement {{ margin-top: 9px; }}
-.selector-boundaries {{
-  border-left: 1px solid #bfdbfe;
-  padding-left: 14px;
-}}
-.selector-boundaries > b {{ display: block; font-size: 12px; margin-bottom: 6px; }}
-.selector-boundary {{ display: grid; grid-template-columns: 72px 1fr; gap: 7px; padding: 5px 0; }}
-.selector-boundary + .selector-boundary {{ border-top: 1px solid rgba(147,197,253,.45); }}
-.selector-boundary b {{ font-size: 11px; }}
-.selector-boundary span {{ color: var(--dim); font-size: 10px; }}
-.selector-note {{ color: var(--dim); font-size: 11px; margin-top: 8px; }}
-@media (max-width: 760px) {{
-  .selector-head {{ display: block; }}
-  .selector-gate {{ display: inline-block; margin-top: 8px; }}
-  .selector-layout {{ grid-template-columns: minmax(0, 1fr); }}
-  .selector-form-grid {{ grid-template-columns: minmax(0, 1fr); }}
-  .selector-boundaries {{ border-left: 0; border-top: 1px solid #bfdbfe; padding: 12px 0 0; }}
-}}
 
 .template-group + .template-group {{
   margin-top: 16px;
@@ -1523,9 +1639,12 @@ section.block > .hint {{ font-size: 12px; color: var(--dim); margin-bottom: 12px
 .cmdbox.show {{ display: block; }}
 .toast {{ font-size: 12px; color: var(--ok); margin-top: 6px; min-height: 1.2em; }}
 
-/* inline example body */
+/* content example lives inside selected gold preview */
+.inline-ex-panel {{
+  margin-top: 14px;
+}}
 .ex-empty {{
-  padding: 28px 16px;
+  padding: 20px 14px;
   text-align: center;
   color: var(--dim);
   font-size: 13px;
@@ -1583,87 +1702,31 @@ footer {{
 <body>
 <div class="shell">
   <header>
-    <h1>内部培训内容工厂 · 选课型或制作模式</h1>
-    <p class="sub">五步完成一单：选课型或模式 → 交内容 → 审复核稿 → 按闸门生成 → 一个地方取件。也可以先把内容发给 WorkBuddy，由它推荐匹配入口；创建草稿前都会请你确认所选课型或模式。</p>
+    <h1>内部培训内容工厂 · 选金样</h1>
+    <p class="sub">点开金样卡片看预览与内容示例，在本页复制粘贴给 WorkBuddy；确认内容后再生成。不确定选哪个时，直接在 WorkBuddy 用自然语言说用途和主题，由它帮你对照金样推荐。</p>
     <div class="how">
       <div>
-        <b>① 选我要做什么</b>
-        课件选课型，动画或数字人选制作模式；点卡片看真实交付边界
+        <b>① 点金样</b>
+        看关键页 / 成片与内容示例；按卡片状态判断 PPTX、MP4 等是否可生成
       </div>
       <div>
-        <b>② 交已有内容</b>
-        回 WorkBuddy 说主题与要点；资料可残缺
+        <b>② 复制内容</b>
+        在本页复制示例与选用口令，粘贴给 WorkBuddy；不需要 Word
       </div>
       <div>
         <b>③ 审初稿</b>
-        先审内容/变量/脚本/关键页复核包；未确认不放行下一阶段
+        先审内容/变量/脚本/关键页；未确认不放行下一阶段
       </div>
       <div>
-        <b>④ 生成与质检</b>
-        课型走生产路线，模式按各自闸门执行；外部账号出片另确认
-      </div>
-      <div>
-        <b>⑤ 一个地方取件</b>
-        WorkBuddy 返回准确本机路径；生产路线发布件进入「05_交付物放这里」
+        <b>④ 生成与取件</b>
+        按闸门生成；WorkBuddy 返回本机路径，发布件进「05_交付物放这里」
       </div>
     </div>
   </header>
 
-  <section class="block" id="sec-entry">
-    <h2><span class="n">0</span> 选择开始方式</h2>
-    <div class="how">
-      <div><b>A · 先选课型或模式（推荐）</b>看预览、复核闸门与真实交付边界，确认后再提交内容。</div>
-      <div><b>B · 先交内容</b>直接把主题、用途和已有要点发给 WorkBuddy，由它推荐匹配课型或模式，再由你确认。</div>
-    </div>
-    <p class="hint">两种方式都会先锁定一个已入库课型或制作模式；未确认复核稿时，不生成正式成品或放行正式提示词包。</p>
-  </section>
-
   <section class="block" id="sec-templates">
-    <h2><span class="n">1</span> 课型与制作模式</h2>
-    <p class="hint">课型卡按生产路线实时计算能力，一个课型可分别显示 PPTX、MP4 等逐交付物状态；制作模式卡显示 WorkBuddy 可交付的复核/提示词包，以及外部账号出片边界。</p>
-    <aside class="route-selector" id="route-selector" aria-labelledby="route-selector-title">
-      <div class="selector-head">
-        <div>
-          <div class="selector-eyebrow">不会选也能开始</div>
-          <h3 id="route-selector-title">{html.escape(str(route_selector["title_zh"]))}</h3>
-          <p>{html.escape(str(route_selector["description_zh"]))}</p>
-        </div>
-        <span class="selector-gate">只推荐 · 确认模板前不建任务</span>
-      </div>
-      <div class="selector-layout">
-        <div id="route-selector-form">
-          <div class="selector-form-grid">
-            <label class="selector-field">
-              <span>我要什么交付物</span>
-              <select id="selector-deliverable">{selector_options_html("deliverables")}</select>
-            </label>
-            <label class="selector-field">
-              <span>内容更接近哪一类</span>
-              <select id="selector-content-type">{selector_options_html("content_types")}</select>
-            </label>
-            <label class="selector-field">
-              <span>结构偏好</span>
-              <select id="selector-structure">{selector_options_html("structures")}</select>
-            </label>
-          </div>
-          <label class="selector-field selector-requirement">
-            <span>也可以直接粘贴需求</span>
-            <textarea id="selector-requirement" placeholder="例如：给店员做一个新品培训，有商品资料和包装图，希望能讲清卖点与注意事项；页数不确定。"></textarea>
-          </label>
-          <div class="actions">
-            <button type="button" class="btn primary" id="selector-build">生成选课口令</button>
-            <button type="button" class="btn" id="selector-copy" disabled>复制给 WorkBuddy</button>
-          </div>
-          <div class="cmdbox" id="selector-cmdbox"></div>
-          <p class="toast" id="selector-toast" aria-live="polite"></p>
-          <p class="selector-note">这一步只让 WorkBuddy 推荐并说明原因；你明确回复“确认模板【模板名】”后，才进入建任务与内容初稿流程。</p>
-        </div>
-        <div class="selector-boundaries" aria-label="课型页数与交付边界">
-          <b>先看清页数与交付边界</b>
-          {selector_boundaries_html}
-        </div>
-      </div>
-    </aside>
+    <h2>选金样</h2>
+    <p class="hint">点卡片即展开预览与内容；复制后粘贴给 WorkBuddy。金样没有的页签由系统内部补漏。自由构件化不在货架展示，仅作缺页内部补漏。动画/数字人卡片同样点开看边界与说明。</p>
     <div class="template-groups" id="template-grid"></div>
     <div id="selection-cluster-home" hidden>
       <div id="selection-cluster">
@@ -1672,7 +1735,7 @@ footer {{
           <div class="selection-confirm-copy">
             <span>已选择</span>
             <strong id="confirm-name">—</strong>
-            <p>WorkBuddy 提示词与关键截图、视频或数字人效果都在本区域展示。</p>
+            <p>预览、内容示例与选用口令都在本区域；复制后粘贴给 WorkBuddy。</p>
           </div>
           <button type="button" class="btn ok" id="btn-use">确认选用 · 复制给 WorkBuddy</button>
         </div>
@@ -1701,8 +1764,18 @@ footer {{
         </div>
       </div>
       <div class="keys" id="sel-keys"></div>
+      <div id="ex-panel" class="inline-ex-panel">
+        <div class="ex-empty" id="ex-empty">点上方金样卡片后，这里显示对应内容示例或流程边界。</div>
+        <div id="ex-content" class="hidden">
+          <div class="ex-head">
+            <strong id="ex-title">—</strong>
+            <span id="ex-caption">仅示范怎么写 · 可复制</span>
+          </div>
+          <div class="ex-body" id="ex-body"></div>
+        </div>
+      </div>
       <div class="actions">
-        <button type="button" class="btn" id="btn-copy-ex">复制内容示例</button>
+        <button type="button" class="btn" id="btn-copy-ex">复制金样内容组成</button>
       </div>
       <p class="toast" id="preview-toast"></p>
         </div>
@@ -1711,7 +1784,7 @@ footer {{
   </section>
 
   <section class="block" id="sec-assets">
-    <h2><span class="n">2</span> 素材怎么处理</h2>
+    <h2>素材怎么处理</h2>
     <div class="how">
       <div><b>业务提供真图</b>商品正式包装、品牌 Logo、标签/备案/批准或检测证据；系统不仿造。</div>
       <div><b>系统自动生成</b>知识解释图、场景插图、人物咨询图；按模板真实图槽比例生成并逐页检查。</div>
@@ -1721,22 +1794,7 @@ footer {{
     <p class="hint">内容确认后，系统先把 1 张代表图放入真实图槽验收，再自动补齐同系列；业务不需要自己写生图提示词。</p>
   </section>
 
-  <section class="block" id="sec-examples">
-    <h2><span class="n">3</span> 填报示例与模式说明</h2>
-    <p class="hint">课型展示对应填写内容；制作模式展示 WorkBuddy 直接交付、确认闸门和外部出片边界。医学与包装以贵司审核稿为准。</p>
-    <div id="ex-panel">
-      <div class="ex-empty" id="ex-empty">请先在上方点选一个课型或制作模式，这里会展示对应填写示例或流程边界。</div>
-      <div id="ex-content" class="hidden">
-        <div class="ex-head">
-          <strong id="ex-title">—</strong>
-          <span id="ex-caption">仅示范怎么写 · 可复制</span>
-        </div>
-        <div class="ex-body" id="ex-body"></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>内部培训 · {pack_date} · 课型能力来自生产路线 · 制作模式按复核闸门与外部账号边界交付</footer>
+  <footer>内部培训 · {pack_date} · 点金样看内容 · 复制粘贴给 WorkBuddy · 确认后按闸门生成</footer>
 </div>
 
 <script>
@@ -1744,8 +1802,6 @@ const TEMPLATES = {catalog_js};
 const PRODUCTION_MODES = {modes_js};
 const PORTAL_ITEMS = TEMPLATES.concat(PRODUCTION_MODES);
 const SHELF_GROUPS = {groups_js};
-const ROUTE_SELECTOR_PROMPT = {selector_prompt_js};
-const COMPONENT_TEMPLATE_SLUG = {component_slug_js};
 let selected = null;
 
 function mediaCover(slug) {{
@@ -1757,38 +1813,20 @@ function mediaKey(slug, i) {{
 function mediaModeVideo(filename) {{
   return "01_模板货架/media/production-modes/" + filename;
 }}
+function mediaModeAsset(filename) {{
+  return "01_模板货架/media/production-modes/" + filename;
+}}
+function mediaCaseVideo(t) {{
+  const videoExample = t.portal_video_example;
+  if (!videoExample || !videoExample.filename) return "";
+  if (t.portal_item_kind === "production_mode") {{
+    return mediaModeVideo(videoExample.filename);
+  }}
+  return "01_模板货架/media/" + t.slug + "/" + videoExample.filename;
+}}
 
 function buildCmd(t) {{
   return t.selection_command || "";
-}}
-
-function selectedOptionLabel(id) {{
-  const select = document.getElementById(id);
-  return select.options[select.selectedIndex].textContent.trim();
-}}
-
-function buildRouteSelectorPrompt() {{
-  const values = {{
-    "[[DELIVERABLE]]": selectedOptionLabel("selector-deliverable"),
-    "[[CONTENT_TYPE]]": selectedOptionLabel("selector-content-type"),
-    "[[STRUCTURE]]": selectedOptionLabel("selector-structure"),
-    "[[REQUIREMENT]]": document.getElementById("selector-requirement").value.trim() ||
-      "暂无；请根据以上选择先推荐",
-  }};
-  let prompt = ROUTE_SELECTOR_PROMPT;
-  Object.entries(values).forEach(([marker, value]) => {{
-    prompt = prompt.split(marker).join(value);
-  }});
-  return prompt;
-}}
-
-function showRouteSelectorPrompt() {{
-  const prompt = buildRouteSelectorPrompt();
-  const box = document.getElementById("selector-cmdbox");
-  box.textContent = prompt;
-  box.classList.add("show");
-  document.getElementById("selector-copy").disabled = false;
-  return prompt;
 }}
 
 function renderGrid() {{
@@ -1820,20 +1858,19 @@ function renderGrid() {{
         '<span class="readiness-badge ' + (badge.kind || "preview") + '">' +
         (badge.label || "能力待确认") + "</span>"
       ).join("");
-      const hasQualifiedPreview =
-        t.slug !== COMPONENT_TEMPLATE_SLUG ||
-        (t.preview_identity_qualified === true && t.preview_suite_evidence &&
-          t.preview_suite_evidence.case_count >= 3 &&
-          Array.isArray(t.preview_suite_evidence.cases) &&
-          t.preview_suite_evidence.cases.length >= 3);
-      const cover = t.portal_item_kind === "production_mode"
-        ? '<div class="mode-cover"><span>制作模式</span><strong>' +
-          (t.cover_label || "MODE") + "</strong></div>"
-        : !hasQualifiedPreview
-        ? '<div class="preview-pending-cover"><span>灵活构件兜底</span>' +
-          '<strong>差异化预览待 QA</strong></div>'
-        : '<img class="cover" src="' + mediaCover(t.slug) + '" alt="' +
+      let cover;
+      if (t.portal_item_kind === "production_mode") {{
+        if (t.portal_cover_filename) {{
+          cover = '<img class="cover" src="' + mediaModeAsset(t.portal_cover_filename) +
+            '" alt="' + t.name_zh + '" loading="lazy" />';
+        }} else {{
+          cover = '<div class="mode-cover"><span>制作模式</span><strong>' +
+            (t.cover_label || "MODE") + "</strong></div>";
+        }}
+      }} else {{
+        cover = '<img class="cover" src="' + mediaCover(t.slug) + '" alt="' +
           t.name_zh + '" loading="lazy" />';
+      }}
       card.innerHTML =
         cover +
         '<div class="body">' +
@@ -1863,115 +1900,10 @@ function showExample(t) {{
   content.style.display = "block";
   const isMode = t.portal_item_kind === "production_mode";
   document.getElementById("ex-title").textContent =
-    t.name_zh + (isMode ? " · 制作边界" : " · 内容示例");
+    t.name_zh + (isMode ? " · 制作边界" : " · 金样内容组成");
   document.getElementById("ex-caption").textContent =
-    isMode ? "复核闸门与外部账号边界 · 可复制" : "仅示范怎么写 · 可复制";
+    isMode ? "复核闸门与外部账号边界 · 可复制" : "已签样真实结构示范 · 可复制";
   document.getElementById("ex-body").innerHTML = t.example_html || "<p class=\\"ex-note\\">暂无示例</p>";
-}}
-
-function renderComponentSuiteEvidence(t, host) {{
-  const evidence = t.preview_suite_evidence;
-  const cases = evidence && Array.isArray(evidence.cases) ? evidence.cases : [];
-  const wrap = document.createElement("section");
-  wrap.className = "suite-evidence";
-
-  const summary = document.createElement("div");
-  summary.className = "suite-summary";
-  const summaryTitle = document.createElement("b");
-  summaryTitle.textContent =
-    evidence.case_count + " 套正式非金样 UAT · 同一非课件4风格 · 每套独立逐页 QA/哈希绑定";
-  const summaryLine = document.createElement("span");
-  summaryLine.textContent =
-    "组合来源：" + (evidence.settled_capability_labels_zh || []).join(" / ") +
-    "；suite 新增页型：" + (evidence.new_page_type_labels_zh || []).join(" / ") +
-    "；统一视觉：" + evidence.style_label_zh;
-  summary.appendChild(summaryTitle);
-  summary.appendChild(summaryLine);
-
-  const tabs = document.createElement("div");
-  tabs.className = "suite-tabs";
-  tabs.setAttribute("role", "tablist");
-  tabs.setAttribute("aria-label", "构件 UAT 案例证据");
-  const panel = document.createElement("div");
-  panel.className = "suite-panel";
-  panel.setAttribute("role", "tabpanel");
-
-  function addProof(list, label, value) {{
-    const row = document.createElement("div");
-    row.className = "suite-proof";
-    const title = document.createElement("b");
-    title.textContent = label;
-    const text = document.createElement("span");
-    text.textContent = value;
-    row.appendChild(title);
-    row.appendChild(text);
-    list.appendChild(row);
-  }}
-
-  function activateCase(activeIndex) {{
-    Array.from(tabs.children).forEach((button, index) => {{
-      button.setAttribute("aria-selected", index === activeIndex ? "true" : "false");
-      button.tabIndex = index === activeIndex ? 0 : -1;
-    }});
-    const item = cases[activeIndex];
-    panel.innerHTML = "";
-    const sourceText = (item.source_capability_labels_zh || []).join(" / ");
-    const sequenceText = (item.page_type_sequence_labels_zh || []).join(" → ");
-    const newText = (item.new_page_type_labels_zh || []).length
-      ? item.new_page_type_labels_zh.join(" / ")
-      : "本案例无；suite 其他案例已提供新增页型证据";
-    const heading = document.createElement("h4");
-    heading.textContent = item.title_zh;
-    panel.appendChild(heading);
-
-    const grid = document.createElement("div");
-    grid.className = "suite-proof-grid";
-    const figure = document.createElement("figure");
-    figure.className = "suite-proof-media";
-    const image = document.createElement("img");
-    image.src = mediaKey(t.slug, item.portal_media_index);
-    image.alt = "案例 " + item.suite_slot + " 差异化关键页";
-    image.loading = "lazy";
-    const caption = document.createElement("figcaption");
-    caption.textContent =
-      "案例 " + item.suite_slot + " · " + item.representative_page_label_zh;
-    figure.appendChild(image);
-    figure.appendChild(caption);
-
-    const proofList = document.createElement("div");
-    proofList.className = "suite-proof-list";
-    addProof(proofList, "验收来源", "独立业务验收任务已通过");
-    addProof(proofList, "代表预览", item.representative_page_label_zh);
-    addProof(proofList, "课型能力", sourceText);
-    addProof(proofList, "页序组合", sequenceText);
-    addProof(proofList, "新增页型", newText);
-    grid.appendChild(figure);
-    grid.appendChild(proofList);
-    panel.appendChild(grid);
-  }}
-
-  cases.forEach((item, index) => {{
-    const tab = document.createElement("button");
-    tab.type = "button";
-    tab.className = "suite-tab";
-    tab.setAttribute("role", "tab");
-    tab.textContent = item.tab_label_zh;
-    tab.addEventListener("click", () => activateCase(index));
-    tab.addEventListener("keydown", event => {{
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      event.preventDefault();
-      const offset = event.key === "ArrowRight" ? 1 : -1;
-      const nextIndex = (index + offset + cases.length) % cases.length;
-      activateCase(nextIndex);
-      tabs.children[nextIndex].focus();
-    }});
-    tabs.appendChild(tab);
-  }});
-  wrap.appendChild(summary);
-  wrap.appendChild(tabs);
-  wrap.appendChild(panel);
-  host.appendChild(wrap);
-  activateCase(0);
 }}
 
 function selectTemplate(t) {{
@@ -2001,9 +1933,10 @@ function selectTemplate(t) {{
   const caseVideo = document.getElementById("case-video");
   const caseCopy = document.getElementById("case-copy");
   const videoExample = t.portal_video_example;
-  if (videoExample && videoExample.filename) {{
-    caseVideo.src = mediaModeVideo(videoExample.filename);
-    document.getElementById("case-video-label").textContent = videoExample.label;
+  const videoSrc = mediaCaseVideo(t);
+  if (videoExample && videoExample.filename && videoSrc) {{
+    caseVideo.src = videoSrc;
+    document.getElementById("case-video-label").textContent = videoExample.label || "金样成片";
     document.getElementById("prompt-example-text").textContent =
       t.generated_prompt_example || "";
     document.getElementById("prompt-example").open = false;
@@ -2016,17 +1949,8 @@ function selectTemplate(t) {{
     caseVideo.load();
     casePreview.classList.remove("show");
   }}
-  const hasQualifiedPreview =
-    t.slug !== COMPONENT_TEMPLATE_SLUG ||
-    (t.preview_identity_qualified === true && t.preview_suite_evidence &&
-      t.preview_suite_evidence.case_count >= 3 &&
-      Array.isArray(t.preview_suite_evidence.cases) &&
-      t.preview_suite_evidence.cases.length >= 3);
-  const hasComponentSuite =
-    t.slug === COMPONENT_TEMPLATE_SLUG && hasQualifiedPreview &&
-    t.preview_suite_evidence && t.preview_suite_evidence.case_count >= 3;
   keys.classList.toggle("mode-steps", isMode);
-  keys.classList.toggle("component-suite", Boolean(hasComponentSuite));
+  keys.classList.remove("component-suite");
   if (isMode) {{
     (t.preview_steps || []).forEach((step, idx) => {{
       const block = document.createElement("div");
@@ -2035,14 +1959,18 @@ function selectTemplate(t) {{
         "<b>" + step.title + "</b><p>" + step.text + "</p>";
       keys.appendChild(block);
     }});
-  }} else if (!hasQualifiedPreview) {{
-    const block = document.createElement("div");
-    block.className = "preview-pending";
-    block.textContent = t.preview_identity_note_zh ||
-      "至少 3 套正式差异化非金样 UAT suite 尚未通过 QA；为避免误认成课件4，门户暂不展示旧图。";
-    keys.appendChild(block);
-  }} else if (hasComponentSuite) {{
-    renderComponentSuiteEvidence(t, keys);
+    const modeFrames = t.portal_key_frames || [];
+    if (modeFrames.length) {{
+      modeFrames.forEach((frame) => {{
+        const fig = document.createElement("figure");
+        const lab = frame.label_zh || "关键画面";
+        fig.innerHTML =
+          '<img src="' + mediaModeAsset(frame.filename) + '" alt="' + lab +
+          '" loading="lazy" />' +
+          "<figcaption>" + lab + "</figcaption>";
+        keys.appendChild(fig);
+      }});
+    }}
   }} else {{
     (t.key_frame_labels_zh || []).forEach((lab, idx) => {{
       const i = idx + 1;
@@ -2058,35 +1986,11 @@ function selectTemplate(t) {{
   box.textContent = buildCmd(t);
   box.classList.add("show");
   document.getElementById("btn-copy-ex").textContent =
-    isMode ? "复制模式说明" : "复制内容示例";
+    isMode ? "复制模式说明" : "复制金样内容组成";
   document.getElementById("toast").textContent = "";
   document.getElementById("preview-toast").textContent = "";
   showExample(t);
 }}
-
-document.getElementById("selector-build").addEventListener("click", () => {{
-  showRouteSelectorPrompt();
-  document.getElementById("selector-toast").textContent =
-    "选课口令已生成。它只要求推荐与说明原因，不会在你确认模板前创建任务。";
-}});
-
-document.getElementById("selector-copy").addEventListener("click", async () => {{
-  const text = showRouteSelectorPrompt();
-  try {{
-    await navigator.clipboard.writeText(text);
-    document.getElementById("selector-toast").textContent =
-      "选课口令已复制。回到 WorkBuddy 粘贴；先看推荐与原因，再决定是否确认模板。";
-  }} catch (e) {{
-    document.getElementById("selector-toast").textContent =
-      "请手动选中上方选课口令复制。";
-  }}
-}});
-
-document.getElementById("route-selector-form").addEventListener("input", () => {{
-  document.getElementById("selector-cmdbox").classList.remove("show");
-  document.getElementById("selector-copy").disabled = true;
-  document.getElementById("selector-toast").textContent = "";
-}});
 
 document.getElementById("btn-use").addEventListener("click", async () => {{
   if (!selected) return;
@@ -2098,10 +2002,8 @@ document.getElementById("btn-use").addEventListener("click", async () => {{
     document.getElementById("toast").textContent =
       selected.portal_item_kind === "production_mode"
         ? "已复制制作模式口令。回到 WorkBuddy 粘贴；它会先整理变量或复核包，收到明确确认后才放行提示词或条件式外部制作。"
-        : selected.slug === "product-courseware-component-v1" && selected.self_serve
-        ? "已复制灵活构件口令。WorkBuddy 会先返回内容缺口、中文页签大纲、每页来源解释、单一视觉与素材分工；你确认后才会建任务并生成 PPTX。"
         : selected.self_serve
-        ? "已复制业务口令。回到 WorkBuddy 粘贴；它会先复述已锁定模板，再收集内容、出初稿，确认后才生成。"
+        ? "已复制业务口令。回到 WorkBuddy 粘贴；先按该金样模板结构确认内容，金样没有的页签由系统内部补漏后再生成。"
         : selected.portal_status_kind === "building"
           ? "已复制接入中课型口令。可先整理初稿和素材清单；当前不会承诺或生成正式成品。"
           : "已复制金样参考口令。回到 WorkBuddy 粘贴后可查看课型缺口。";
@@ -2119,7 +2021,7 @@ document.getElementById("btn-copy-ex").addEventListener("click", async () => {{
     document.getElementById("preview-toast").textContent =
       selected.portal_item_kind === "production_mode"
         ? "模式说明已复制到剪贴板。"
-        : "内容示例已复制到剪贴板。";
+        : "金样内容组成已复制到剪贴板。";
   }} catch (e) {{
     document.getElementById("preview-toast").textContent =
       "复制失败，请在下方示例区手动选择复制。";

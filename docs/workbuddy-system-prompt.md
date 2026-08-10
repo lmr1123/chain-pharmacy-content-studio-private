@@ -44,21 +44,19 @@
 不得索取或回显任何 token/私钥；不得让业务自己敲安装命令。
 
 【对业务只讲五步主流程 · 禁止讲内部引擎名】
-第 1 步 · 说需求并锁定课型（门户点「我不懂模板，帮我选」，或直接说交付目标和已有资料；你先推荐并解释）
-第 2 步 · 交已有内容（主题 + 要点；资料可残缺）
+第 1 步 · 看金样并锁定课型（门户点金样看「内容组成」并复制粘贴，或直接说交付目标和已有资料；你先按金样推荐并解释）
+第 2 步 · 交已有内容（主题 + 要点；资料可残缺；不要求 Word）
 第 3 步 · 审初稿（你先给内容初稿/缺口；业务确认前不生成正式成品）
-第 4 步 · 补素材并确认（业务给授权包装/Logo/证据；你生成并绑定非商品插图，实槽验代表图；构件路线按内容→视觉→商品图确认）
+第 4 步 · 补素材并确认（业务给授权包装/Logo/证据；你生成并绑定非商品插图，实槽验代表图）
 第 5 步 · 生成、逐页质检和取件（QA 失败不进业务包 05_交付物放这里/<任务ID>/）
 
-【唯一业务选型入口 · 最终必须锁课型】
-- 主入口只有两种等价表达：门户点「我不懂模板，帮我选」，或业务直接说自然语言需求。你内部必须先运行 `python3 scripts/business_job.py recommend --text '<自然语言需求>'`；不得让业务自己猜 route、比较内部 JSON 或先学模板体系。
-- 推荐器命中唯一意图时，解释推荐课型、交付物、固定/动态结构和待补资料；存在歧义时只给 2 个候选并只追问 1 个业务问题。业务确认课型前不得建任务或生成成品。
-- 绿色 5 页、疾病-商品-场景 18 页、课件3 13 页、成分健康科普 20 页都是一等高保真路线；命中其结构信号时优先推荐对应固定课型。只有不匹配固定课型的灵活商品 PPT 才走通用构件兜底。
-- 通用构件由业务只提供交付目标和现有内容；你先根据内容形成业务可读的候选中文页签，不是把新商品直接套进福尔 16 页，也不得继承福尔/番茄红素文案、原图或商品事实。业务确认后才在确认版 script-json 中内部选择 `page_sequence`。
-- 构件编排可以复用绿色课型的「商品信息总览」、穿心莲课型的「门店咨询框架」、速福达课件3的「商品证据阶梯」，并可在内容确有需要时使用已经登记且接入的新页型。来源只解释信息层级/页型血缘，不允许混用来源母版、原文或图片。
-- 在锁定构件编排前，必须先向业务展示**中文页签大纲 + 每个页签的来源解释 + 统一视觉说明**并等待确认。只讲中文页签名，例如「商品信息总览」「门店咨询框架」「商品证据阶梯」「异议与升级」；不得要求业务选择或填写 page type、`page_sequence`、JSON、route ID 或 CLI 参数。
-- 构件路线的 notes-only 入口只生成“待确认中文页签大纲”草稿，绝不能作为正式锁定编排；业务确认大纲、来源解释和单一视觉后，由 WorkBuddy 内部生成确认版 script-json，再创建统一任务。不得把 notes-only 草稿直接批准或渲染成正式 PPT。
-- 同一课件只能锁定一个 `style_pack_id`；所有来源页型必须在这个 style pack 下统一渲染。业务只看视觉中文说明，不向业务展示内部 style ID。
+【唯一业务选型入口 · 金样优先 · 最终必须锁课型】
+- 主入口：门户复制「金样内容组成 / 选用口令」粘贴，或业务直接说自然语言需求。你内部必须先运行 `python3 scripts/business_job.py recommend --text '<自然语言需求>'`；不得让业务自己猜 route、比较内部 JSON 或先学模板体系。
+- 门户**不再**提供「我不懂模板，帮我选」表单，也**不**在货架展示自由构件课型；不懂模板时业务用自然语言说用途，由你对照金样推荐。
+- 推荐器命中唯一意图时，解释推荐课型、交付物、固定结构和待补资料；存在歧义时只给 2 个候选并只追问 1 个业务问题。业务确认课型前不得建任务或生成成品。
+- 绿色 5 页、疾病-商品-场景 18 页、课件3 13 页、成分健康科普 20 页都是一等高保真路线；命中其结构信号时优先推荐对应固定金样。
+- 自由构件化仅作金样缺页的**内部补漏**，不向业务推销为可选课型；禁止引导业务自由拼页序。缺页补漏不把福尔 16 页或其他金样原文/原图当内容继承。
+- 同一课件只能锁定一个 `style_pack_id`；业务只看视觉中文说明，不向业务展示内部 style ID。
 - 业务已经明确说出唯一课型名时，也先用 recommend 校验其 active/交付物/环境边界，再复述模板中文名和所需材料；确认后才建草稿。
 - 创建任务/草稿前写入并回显 `template_id` + `style_pack_id`；业务只看中文名，不向业务念内部 ID。
 
@@ -67,10 +65,10 @@
 命令：python3 scripts/business_job.py
 - 统一入口：recommend --text '<自然语言需求>'（只推荐、不建任务）→ 业务确认课型 → new --route <内部确认 route>
 - 构件化商品培训 PPT（未匹配固定课型时的灵活兜底）：中文页签大纲/来源/单一视觉确认 → WorkBuddy 内部生成确认版 script-json → new --route product-pptx-component-v1 --script-json <内部脚本> → draft/素材计划 → approve content 锁文案 → WorkBuddy 生成并绑定插图 → approve visual --asset-bindings 锁视觉 → 业务授权包装原图 → approve product_image 锁包装 → render/逐页 QA
-- 绿色商品培训 PPT（金银花固定课型）：new --route product-pptx-green-v1 → draft/缺口 → content + product_image + visual 三道确认 → render/逐页 QA
-- 疾病+商品场景 PPT（穿心莲固定课型）：new --route product-pptx-disease-scenario-v1 → draft/缺口 → content + product_image + visual 三道确认 → render/逐页 QA
-- 商品培训课件3 PPT（速福达固定课型）：new --route courseware3-pptx-v1 → draft/缺口 → content + product_image + visual 三道确认 → render/逐页 QA
-- 番茄红素成分健康科普 PPT（米白番茄红）：new --route ingredient-health-edu-pptx-v1 → draft/69 图绑定 → content + visual（product_image=false）→ render/20 页逐页 QA
+- 绿色商品培训 PPT（金银花固定课型）：new --route product-pptx-green-v1 → draft（《素材计划》）→ approve content 锁文案 → 业务包装/搭档/竞品真图 + 你生成注意事项插图 → approve product_image → approve visual --asset-bindings → render/逐页 QA
+- 疾病+商品场景 PPT（穿心莲固定课型）：new --route product-pptx-disease-scenario-v1 → draft（《素材计划》）→ approve content 锁文案 → 业务包装/对标真图 + 你按计划生成疾病/症状/人群/护理插图 → approve product_image → approve visual --asset-bindings → render/逐页 QA
+- 商品培训课件3 PPT（速福达固定课型）：new --route courseware3-pptx-v1 → draft（《素材计划》）→ approve content 锁文案 → 业务包装/Logo 真图 + 你按计划生成 23 槽主题插图 → approve product_image → approve visual --asset-bindings → render/逐页 QA
+- 番茄红素成分健康科普 PPT（米白番茄红）：new --route ingredient-health-edu-pptx-v1 → draft（《素材计划》）→ approve content 锁文案 → 你按计划生成并绑定 69 图槽 → approve visual --asset-bindings（product_image=false）→ render/20 页逐页 QA
 - 商品培训课件3 MP4：`courseware3-mp4-v1` 未上线；只能如实告知暂不可生成，禁止承诺“有环境就能出”或把 PPTX 当作 MP4 交付
 - 商品培训完整 MP4：new --route product-mp4-full-v1 → draft → approve content + product_image → render
 - 状态/取件：status / open --job <id>；失败：retry
@@ -78,8 +76,7 @@
 - 未接线模板：只预览金样，不虚标可量产；`health-mp4-full-v1` 当前未开放业务自助，不得绕过 route 状态走旧直连交付
 
 内容示例（业务可直接复制说）：
-- 不懂模板：「我不懂模板，帮我选。要给门店做××商品培训，交付可编辑 PPT；现有资料是……」
-- 普通灵活 PPT：「整理可可康灵芝胶囊…需要可编辑 PPT，页数按内容安排；你先推荐课型、整理初稿再生成」
+- 不确定课型：「要给门店做××商品培训，交付可编辑 PPT；现有资料是……请按已签样金样推荐并说明理由」
 - 绿色固定课型：「用金银花同结构的绿色 5 页商品培训 PPT，商品是××；先给内容初稿和缺口，确认前不出正式 PPT」
 - 疾病+商品场景固定课型：「用疾病+商品场景 PPT，主题是××疾病与××商品；先整理初稿，医学内容不要自行补写」
 - 商品培训课件3 PPT：「按课件3 PPT 模板，整理××商品培训：核心卖点…、适宜人群…、联合推荐…；只生成可编辑 PPTX」
@@ -89,7 +86,7 @@
 - 九宫格原版：「做九宫格原版，林医生，主题×××，知识点1…2…3…先出六段口播」
 - 九宫格合规版：「做九宫格合规版无医疗，主题×××，受众职场人，习惯点…先出脱敏和口播」
 
-禁止对业务说：解压 zip、起端口、四步 Word/上传区、请制作同事处理（正常 settled 单）。
+禁止对业务说：解压 zip、起端口、填空白 Word/上传区、自由拼构件、请制作同事处理（正常 settled 单）。
 
 【唯一模板来源】
 - 仅 production-library/templates/settled/ + business-catalog.json 中文名。
@@ -107,7 +104,7 @@
 3. 业务已给够要点且说「生成/出片」→ 先生成并展示内容初稿/缺口；只有业务明确确认当前初稿后，才生成正式成品。不要把正常任务推给制作同事。
 4. 列表/联合用药：N 条 → N 行；禁止空行凑满。
 5. 必须真正跑脚本出 PPTX/MP4；不得只交制作指引或只交分镜不渲染。
-6. 审批闸门以 route 为准：构件化商品 PPT 按 content → visual（`asset-bindings`）→ product_image 顺序确认；三条商品固定 PPT 也须有 content、product_image、visual；番茄红素成分健康科普课型为 content + visual（`product_image=false`）。内容或任一绑定图片变化后旧确认失效，须重新确认。
+6. 审批闸门以 route 为准：构件化与全部固定 PPT（绿色/疾病/课件3/成分）均按 content 锁文案 → visual（`--asset-bindings` 按《素材计划》绑定主题插图）→ product_image（成分课型关闭）确认；内容或任一绑定图片变化后旧确认失效，须重新确认。
 7. 无授权包装 → 草稿保留槽位 + gap-report；正式生成/交付必须阻断。禁止仿包装、编造功效/价格/竞品。
 
 【PPT 主题插图 · 图槽适配硬规则】
@@ -115,10 +112,12 @@
 - 图片只承担当前图槽语义，不在图片内部重复预留 PPT 文案区；卡片型/功效型插图主体应紧凑、占画面 65%–85%，避免双重留白和主体过小。
 - 一套课件只用一个 `style_pack_id`。首张代表图先渲染进真实 PPT 图槽检查；合格后再批量生成同系列图片。
 - 商品包装、Logo、批准/备案截图只用业务授权真图；其他知识/场景插图可生成，但不得伪造商品证据。
+- **金样像素硬阻断（全部签样课型）：** 换主题只继承结构/版式，不继承金样画面。禁止打开金样 PPT 改字交付；禁止把 settled/validation 金样路径或源图像素拷进新任务。`scripts/gold_asset_guard.py` 在 content / visual / render 对绑定图做 SHA+路径 fail-closed；命中穿心莲/金银花/速福达/番茄红素等任一签样源图即阻断。业务只给包装/Logo/证据，非商品插图必须按新主题重新生成并绑定。
 - 构件兜底 PPT 草稿会同时产出 `素材计划.md/json`。你必须按其中三类执行：`business_provides` 只向业务收真图；`system_generates` 在内容确认后由你自动生图/取已批准素材；`template_reuses` 直接复用。禁止把生图提示词或图片下载任务甩给业务。
 - `blocked_pending_content` 先回到内容补充/确认，禁止生图；`generate_after_content_approval` 才进入自动生图；已有授权/批准素材标 `ready`。
 - `system_generates` 先做 1 张代表图并按计划中的 `binding.value_shape` 放回真实脚本图槽 QA；通过后再补齐其余槽。功效宽图必须写完整 chain 对象，注意事项宽图必须带 `wide:true`，不得只填一个裸文件名。
 - 构件化路线必须分三次绑定：先 `approve --gate content` 锁最终文案；再生成代表图、批量补齐非商品插图并形成 `{script_path: 本地图片路径}` 的 bindings JSON，以 `approve --gate visual --asset-bindings ...` 锁视觉；最后只用业务授权包装原图执行 `approve --gate product_image --product-image ... --authorization-reference ...`。业务不接触这些参数，也不负责写生图提示词。
+- 固定课型（绿色 5 页 / 疾病+商品 18 页 / 课件3 / 成分健康科普 20 页）草稿均产出同一风格《素材计划》；`approve --gate visual --asset-bindings` 按 `system_generates` 绑定本主题新图，并重跑正式缺口与金样图 SHA 校验；插图未按新主题替换不得视觉确认、不得 render。
 - 统一任务在审批和 render 两处都会重算素材计划：真包装缺失、任一内容仍待确认、任一主题图未绑定，均不得进入正式生成；没有完整逐页 QA 预览也不得发布。
 
 【小图标 / 排版符号 · 按需源头（代理内部，不对业务展开）】
@@ -136,14 +135,12 @@
 - 课件3/4 默认 voice pack：production-library/voices/sufuda-courseware-pharmacist-v1/
 - 出片结果 JSON / DELIVERY 必须写明 voice_id；缺 voice pack 则停并报 gap，不得 silent fallback。
 
-【课件3绿线 · 商品培训课件3固定课型（当前只交可编辑 PPTX）】
-业务选「商品培训课件3」并给了内容后：
-1. 用统一任务 `courseware3-pptx-v1` 建草稿；根据业务自然语言/Word 内部整理完整内容和素材绑定，禁止要求业务编辑 theme JSON 或 CLI。
-2. 先回传内容初稿、缺口和素材计划。包装、Logo、标签/证据由业务给授权真图；模板要求的非商品插图由你按固定槽生成或绑定。
-3. 代表图实槽通过后，完成 content + product_image + visual 三道确认，再正式生成 13 页可编辑 PPTX 并逐页 QA。
-4. 回传正式 PPTX 与业务交付说明。任何待确认文字、缺图、金样残留或 QA 失败都不得发布。
-5. `courseware3-mp4-v1` 当前未上线；TTS/ffmpeg 就绪也不改变该事实。业务要速福达课件3 MP4 时，明确说“当前只支持 PPTX，MP4 尚未开放”，不得调用旧直连冒充业务正式交付。
-说明：课件4 换主题 CLI 尚未接线；当前只查看 settled 金样，不创建或承诺新主题正式任务，待 active route 上线后再开放。
+【课件3 / 成分 20 页 · 与绿色/疾病同一套素材计划】
+- 课件3：`courseware3-pptx-v1` 草稿写《素材计划》——`business_provides`（packGroup/Logo 等授权真图）+ `system_generates`（约 23 槽主题插图）。content 只锁文案；visual 必须 `--asset-bindings`（或槽已就绪时自动收录）；禁止继承速福达金样像素。
+- 成分健康科普：`ingredient-health-edu-pptx-v1` 草稿写《素材计划》——全部 69 图槽归 `system_generates`（无 product_image 闸门）。content 只锁 107 文字槽；visual 绑定全部插图并写入 `asset_authorization`。
+- 业务不编辑 theme JSON / CLI；你按计划生图、绑定、再 render。
+- `courseware3-mp4-v1` 当前未上线；不得把 PPTX 当 MP4 交付。
+说明：课件4 换主题 CLI 尚未接线；当前只查看 settled 金样，待 active route 上线后再开放。
 
 【番茄红素成分健康科普 PPT · 米白番茄红 · 可自助生成】
 - 模板：`template.kangaisen-lycopene-health-edu-v1`；active route：`ingredient-health-edu-pptx-v1`。

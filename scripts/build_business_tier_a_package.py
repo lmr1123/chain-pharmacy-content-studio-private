@@ -53,10 +53,17 @@ MODE_REQUIRED_FILES = {
         "代理执行清单.md",
         "口令卡.md",
     ),
+    "12_国内扁平卡通MG模式": (
+        "README.md",
+        "业务复核包-模板.md",
+        "代理执行清单.md",
+        "口令卡.md",
+    ),
 }
 GENERATED_PATH_NAMES = (
     "00_一页怎么用.md",
     "01_模板货架",
+    # Legacy business Word folders — removed from business package; clean on rebuild.
     "02_空白Word",
     "03_填写参考",
     "04_WorkBuddy口令卡.md",
@@ -73,8 +80,9 @@ GENERATED_PATH_NAMES = (
 sys.path.insert(0, str(REPO / "scripts"))
 from business_guided_portal import (  # noqa: E402
     build_guided_portal_html,
-    extract_docx_paragraphs,
+    is_portal_visible_template,
     load_business_modes,
+    portal_example_paragraphs_for_slug,
     write_upload_folder_readme,
 )
 
@@ -95,11 +103,16 @@ ONE_PAGE = """# 一页怎么用（内部培训课件 / 视频）
 
 ### 2. 输入培训内容
 
-在 WorkBuddy 直接说主题和要点，例如：
+打开 `index.html` → 点金样模板 → 在页面看**内容示例** →  
+用「复制金样内容组成 / 复制给 WorkBuddy」粘贴到对话，并补上你的主题与要点。
+
+也可直接说，例如：
 
 ```text
 整理可可康灵芝胶囊商品，主要是围绕宁心安神助睡眠、提升免疫力、保肝护肝抗衰老3个方面来完善，你先整理符合内容再生成ppt
 ```
+
+**不需要**下载或填写 Word。
 
 ### 3. 下载与修改
 
@@ -112,12 +125,12 @@ ONE_PAGE = """# 一页怎么用（内部培训课件 / 视频）
 
 ---
 
-网页：模板预览选择 + 对应内容示例（页面内直接展示）。
+业务入口只有网页：`index.html`（模板预览 + 内容示例 + 复制粘贴）。
 
 ## 你要交 / 不用交
 
-- **要交**：审核文案；商品视频正式成片还须交业务确认授权的包装图；其他包装/Logo/证据按课型提供。
-- **不用交**：箭头、序号圆点、勾叉等小图标——代理按模板匹配。  
+- **要交**：审核文案（对话粘贴）；商品视频正式成片还须交业务确认授权的包装图；其他包装/Logo/证据按课型提供。
+- **不用交**：Word 空白表、箭头/序号/勾叉等小图标——代理按模板匹配。  
 - **禁止**：用未授权网图冒充正式包装或证据。
 """
 
@@ -128,13 +141,13 @@ ACCEPTANCE = """# 业务验收清单（你点头后再成片）
 ## 必过
 
 - [ ] 课型中文名与货架一致  
-- [ ] 章节/模块与你 Word 一致；**没有的节没有被硬凑出来**  
+- [ ] 章节/模块与你在对话（或门户复制示例改写后）提交的内容一致；**没有的节没有被硬凑出来**  
 - [ ] 联合用药/列表：**条数 = 你写的条数**（例如 2 组只有 2 行，没有空白第三行）  
 - [ ] 医学/功效/价格/竞品：要么是你的审核稿，要么明确标「待确认」——没有瞎编  
 - [ ] 包装/Logo：初稿可标「待补」；商品视频正式成片必须使用业务确认授权图——**没有假包装**
 - [ ] 视频：说明使用的克隆语音包/voice_id；**不是系统机器人音色**  
 - [ ] 你已书面确认「可以出成片」之后，才出现终稿 PPTX/MP4  
-- [ ] 未要求你自备小图标；排版符号由代理按模板处理  
+- [ ] 未要求你自备小图标或填写 Word；排版符号由代理按模板处理  
 
 ## 可选
 
@@ -216,9 +229,10 @@ WorkBuddy 先交脚本/画面复核包；内容缺口与主题画面补齐、业
 
 ## 3. 怎么交给 WorkBuddy
 
-1. **推荐：** 直接在对话写主题 + 要点 +「请生成 ppt/培训视频」（不必先填 Word）  
-2. 有 Word/包装图可附件；商品视频无授权包装图或未完成内容/素材哈希审批时，只能先出初稿
-3. 口令示例：`我要用【疾病科普视频】，主题是感冒。…请生成培训视频`
+1. **唯一推荐：** 打开门户 `index.html` → 选金样 → **复制金样内容组成 / 选用口令** 粘贴到 WorkBuddy，再补主题与要点  
+2. 不要下载空白 Word 或填写参考 docx；业务包不提供这些给业务  
+3. 有包装图可对话附件；商品视频无授权包装图或未完成内容/素材哈希审批时，只能先出初稿  
+4. 口令示例：`我要用【疾病科普视频】，主题是感冒。…请生成培训视频`
 
 ## 4. 成片与修改
 
@@ -232,8 +246,8 @@ WorkBuddy 先交脚本/画面复核包；内容缺口与主题画面补齐、业
 
 QUALITY_NOTICE = """# 交付质量说明（内部培训 · 上市公司标准）
 
-本业务包仅含**已签样课型**的预览帧、空白 Word 与填写指引。  
-**默认：业务在 WorkBuddy 本机自助出片**；制作只处理异常/新页型。
+本业务包以 **`index.html` 门户** 为业务入口：金样预览 + 内容示例（页面内复制粘贴）。  
+**默认：业务在 WorkBuddy 本机自助出片**；制作只处理异常/新页型。不向业务分发 Word 空白/填写表。
 
 ## 硬标准
 
@@ -275,14 +289,17 @@ UPLOAD_PRIVACY_NOTICE = """
 
 
 def load_fill_examples(templates: list[dict]) -> dict[str, list[str]]:
-    """Extract inline example text from each settled 填写参考 docx."""
+    """Portal copy-paste examples: prefer gold composition; else settled docx (not shipped)."""
     examples: dict[str, list[str]] = {}
     for t in templates:
         slug = t["slug"]
         path = SETTLED / slug / "业务提交_填写参考.docx"
-        paras = extract_docx_paragraphs(path)
+        paras = portal_example_paragraphs_for_slug(slug, docx_fallback=path)
         if not paras:
-            raise SystemExit(f"missing or empty fill example for {slug}: {path}")
+            raise SystemExit(
+                f"missing or empty portal example source for {slug} "
+                f"(gold composition or {path})"
+            )
         examples[slug] = paras
     return examples
 
@@ -301,8 +318,6 @@ def shelf_html(
     )
     # JS builds paths as "01_模板货架/media/..." — rewrite for this subfolder.
     html = html.replace("01_模板货架/media/", "media/")
-    html = html.replace("02_空白Word/", "../02_空白Word/")
-    html = html.replace("03_填写参考/", "../03_填写参考/")
     return html
 
 
@@ -339,23 +354,71 @@ def copy_static_modes() -> None:
     for mode, filenames in MODE_REQUIRED_FILES.items():
         for filename in filenames:
             copy_file(STATIC_PACKAGE / mode / filename, PKG / mode / filename)
+    # Optional root static guides (e.g. zero-start training doc)
+    for guide_name in ("业务从零上手-WorkBuddy.md",):
+        src = STATIC_PACKAGE / guide_name
+        if src.is_file():
+            copy_file(src, PKG / guide_name)
+
+
+def _copy_mode_media_file(
+    *,
+    mode_id: str,
+    source_value: str,
+    filename: str,
+    destination_root: Path,
+    kind: str,
+) -> None:
+    if not source_value or not filename:
+        raise SystemExit(f"invalid portal {kind} for {mode_id}")
+    if any(part == ".." for part in Path(filename).parts):
+        raise SystemExit(f"invalid portal {kind} path for {mode_id}: {filename}")
+    source = (REPO / source_value).resolve()
+    if REPO.resolve() not in source.parents or not source.is_file():
+        raise SystemExit(f"missing portal {kind} for {mode_id}: {source}")
+    copy_file(source, destination_root / filename)
 
 
 def copy_portal_mode_media() -> None:
     """Copy reviewed mode examples into the self-contained business portal."""
     destination = PKG / "01_模板货架" / "media" / "production-modes"
     for mode in load_business_modes():
+        mode_id = str(mode["mode_id"])
         example = mode.get("portal_video_example") or {}
         source_value = str(example.get("source") or "")
         filename = str(example.get("filename") or "")
-        if not source_value and not filename:
-            continue
-        if not source_value or not filename or Path(filename).name != filename:
-            raise SystemExit(f"invalid portal video example for {mode['mode_id']}")
-        source = (REPO / source_value).resolve()
-        if REPO.resolve() not in source.parents or not source.is_file():
-            raise SystemExit(f"missing portal video example for {mode['mode_id']}: {source}")
-        copy_file(source, destination / filename)
+        if source_value or filename:
+            # Video examples stay flat under production-modes/ for existing modes.
+            if not source_value or not filename or Path(filename).name != filename:
+                raise SystemExit(f"invalid portal video example for {mode_id}")
+            _copy_mode_media_file(
+                mode_id=mode_id,
+                source_value=source_value,
+                filename=filename,
+                destination_root=destination,
+                kind="video example",
+            )
+        cover = mode.get("portal_cover") or {}
+        cover_source = str(cover.get("source") or "")
+        cover_filename = str(cover.get("filename") or "")
+        if cover_source or cover_filename:
+            _copy_mode_media_file(
+                mode_id=mode_id,
+                source_value=cover_source,
+                filename=cover_filename,
+                destination_root=destination,
+                kind="cover",
+            )
+        for frame in mode.get("portal_key_frames") or []:
+            if not isinstance(frame, dict):
+                raise SystemExit(f"invalid portal key frame for {mode_id}")
+            _copy_mode_media_file(
+                mode_id=mode_id,
+                source_value=str(frame.get("source") or ""),
+                filename=str(frame.get("filename") or ""),
+                destination_root=destination,
+                kind="key frame",
+            )
 
 
 def include_in_business_zip(path: Path) -> bool:
@@ -537,14 +600,11 @@ def _build_full_package(
     )
 
     shelf = PKG / "01_模板货架"
-    words = PKG / "02_空白Word"
-    refs = PKG / "03_填写参考"
     shelf.mkdir()
-    words.mkdir()
-    refs.mkdir()
     copy_portal_mode_media()
 
-    for t in templates:
+    portal_templates = [t for t in templates if is_portal_visible_template(t)]
+    for t in portal_templates:
         slug = t["slug"]
         src_preview = SETTLED / slug / "preview"
         if not (src_preview / "cover.png").is_file():
@@ -577,35 +637,21 @@ def _build_full_package(
                 )
             copy_file(source, dest_media / video_filename)
 
-        blank = SETTLED / slug / "业务提交_空白模板.docx"
+        # Business does not receive Word blanks/refs. Settled docx is only the
+        # source for portal-embedded copy-paste examples (see load_fill_examples).
         filled = SETTLED / slug / "业务提交_填写参考.docx"
-        if not blank.is_file() or not filled.is_file():
-            raise SystemExit(f"missing Word for {slug}")
-        copy_file(blank, words / slug / "业务提交_空白模板.docx")
-        copy_file(filled, refs / slug / "业务提交_填写参考.docx")
+        if not filled.is_file():
+            raise SystemExit(
+                f"missing portal example source (internal) for {slug}: {filled}"
+            )
 
-        guide = SETTLED / slug / "本课型怎么填.md"
-        if guide.is_file():
-            copy_file(guide, words / slug / "本课型怎么填.md")
-            copy_file(guide, refs / slug / "本课型怎么填.md")
-
-        # Per-template short readme next to Word
-        (words / slug / "README.txt").write_text(
-            f"课型：{t['name_zh']}\n"
-            f"说明：{t.get('one_liner', '')}\n"
-            f"状态：{t.get('status_label', '')}\n"
-            f"先读：本课型怎么填.md\n"
-            f"规则：没有的章节整段删除；列表有几条写几条；不要空行凑满。\n"
-            f"提交后请使用口令卡交给 WorkBuddy，先出初稿再成片。\n",
-            encoding="utf-8",
-        )
-
-    examples = load_fill_examples(templates)
+    examples = load_fill_examples(portal_templates)
+    write_portal_templates = portal_templates
 
     # Tracked portals are machine-neutral. Runtime state only belongs in ignored local HTML.
-    write_portal_files(catalog, templates, examples, None)
+    write_portal_files(catalog, write_portal_templates, examples, None)
     if runtime_capabilities is not None:
-        write_runtime_portal(templates, examples, runtime_capabilities)
+        write_runtime_portal(write_portal_templates, examples, runtime_capabilities)
 
     # README for whole package — keep short; UI is index.html
     (PKG / "README.md").write_text(
@@ -615,17 +661,19 @@ def _build_full_package(
         "```text\n"
         "请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用\n"
         "```\n\n"
-        "2. 打开 `index.html`：**看模板**（一行四个小卡片 + 关键页预览）  \n"
-        "3. WorkBuddy **输入培训内容** → **下载 PPT 修改，或输入指令批量修改**  \n\n"
-        "示例口令见 `04_WorkBuddy口令卡.md`。\n\n"
+        "2. 打开 **`index.html`**（唯一业务入口）：\n"
+        "   - 选金样模板，看关键页预览\n"
+        "   - 在页面内查看**金样内容组成**，用「复制金样内容组成 / 复制给 WorkBuddy」粘贴对话\n"
+        "3. 在 WorkBuddy 说主题与要点 → 确认初稿 → 下载或改 PPT/视频\n\n"
+        "**不需要**下载或填写 Word。口令卡见 `04_WorkBuddy口令卡.md`。\n\n"
         "| 业务会点开的 | 说明 |\n"
         "|--------------|------|\n"
-        "| **`index.html`** | 仅两块：模板预览选择 · **内容示例直接展示** |\n"
-        "| `03_填写参考/` | 源 docx（页面已内嵌正文，无需下载） |\n"
-        "| `02_空白Word/` | 代理侧可选 |\n\n"
+        "| **`业务从零上手-WorkBuddy.md`** | 第一次怎么用（从零教学） |\n"
+        "| **`index.html`** | 模板预览 + 内容示例 + 复制粘贴口令 |\n"
+        "| `05_交付物放这里/` | 正式成品落点 |\n\n"
         "## 素材边界（业务）\n\n"
-        "- **要交的**：审核文案、授权包装/Logo/证据（如有）；商品视频成片前还要确认绑定内容和包装图哈希的审批记录。<br>\n"
-        "- **不用交的**：箭头/序号/分行点等排版小图标、通用物件符号——由代理按模板与按需源头匹配。  \n"
+        "- **要交的**：审核文案（对话粘贴即可）、授权包装/Logo/证据（如有）；商品视频成片前还要确认绑定内容和包装图哈希的审批记录。<br>\n"
+        "- **不用交的**：箭头/序号/分行点等排版小图标、Word 空白表、通用物件符号——由代理按模板匹配。  \n"
         "- **禁止**：用未授权网图冒充正式包装或证据。\n\n"
         f"生成日期：{date.today().isoformat()}\n",
         encoding="utf-8",
@@ -644,7 +692,7 @@ def _build_full_package(
         "zip_bytes": zip_path.stat().st_size,
         "file_count": sum(1 for path in PKG.rglob("*") if path.is_file()),
         "unpacked_bytes": total,
-        "template_count": len(templates),
+        "template_count": len(portal_templates),
     }
 
 
