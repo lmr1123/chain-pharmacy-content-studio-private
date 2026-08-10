@@ -11,7 +11,7 @@
 ## 0. 业务首句
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 ---
@@ -21,21 +21,22 @@
 下面所有命令都由 WorkBuddy 执行，不得让业务登录 GitHub、配置 SSH、提供 token 或自己敲命令。
 
 ```bash
-# 首次：安装入口 → 匿名拉生产仓 → bootstrap
-git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git \
-  ~/Documents/chain-pharmacy-content-studio-installer
-cd ~/Documents/chain-pharmacy-content-studio-installer
-python3 scripts/install_private_studio.py
+# 首次：单仓直接安装
+git clone --depth 1 --single-branch --no-tags \
+  https://github.com/lmr1123/chain-pharmacy-content-studio-private.git \
+  ~/Documents/chain-pharmacy-content-studio-private
+cd ~/Documents/chain-pharmacy-content-studio-private
+python3 scripts/workbuddy_bootstrap_for_business.py
 
-# 已安装生产仓
+# 已安装
 cd ~/Documents/chain-pharmacy-content-studio-private
 git pull --ff-only
 python3 scripts/workbuddy_bootstrap_for_business.py
 ```
 
-**默认路径：无账号、无设备申请。** 生产仓当前为 Public，安装器官方 HTTPS 匿名克隆后自动 bootstrap。业务不需要转发任何 JSON、等管理员批准或说「继续安装」。
+**单仓路径：** 只维护 `chain-pharmacy-content-studio-private`。业务不需要 GitHub 账号。
 
-网络失败时如实说明并停止；禁止公共镜像。仅当 HTTPS 与已登录 `gh` 都不可用时，才回退历史设备 Deploy-key 路径。
+若业务仍粘贴旧 URL（无 `-private` 的安装入口），可运行其转发安装器一次，或改用上面生产仓 URL 重装。网络失败如实说明；禁止公共镜像。
 
 Bootstrap 优先打开本机 `index.local.html`；失败再回退固定 `index.html`。  
 系统提示（须全文重贴到 WorkBuddy）：`docs/workbuddy-system-prompt.md`

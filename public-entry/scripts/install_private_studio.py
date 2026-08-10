@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Install the production studio repository for WorkBuddy business use.
+"""Compatibility forwarder: install the single production studio repository.
 
-Default path is anonymous HTTPS clone of the official production repository.
-No GitHub account, token, or device approval is required when the production
-repository is public. Device-key and authenticated gh paths remain only as
-fallbacks for restricted networks or a re-privatized repository.
+This script lives in the deprecated installer entry repository. Prefer cloning
+the production repository directly:
+
+  https://github.com/lmr1123/chain-pharmacy-content-studio-private.git
+
+Default path is anonymous HTTPS clone. No GitHub account is required while
+production is public. Device-key / gh paths remain only as fallbacks.
 """
 
 from __future__ import annotations
@@ -641,6 +644,12 @@ def install(
             no_open=no_open,
             requirements=requirements,
         )
+
+    print(
+        "提示：本安装入口已废弃。今后请直接安装 "
+        "https://github.com/lmr1123/chain-pharmacy-content-studio-private.git",
+        file=sys.stderr,
+    )
 
     # 1) Default simple path: anonymous official HTTPS (no account / no device key).
     https_status = _atomic_clone_to_target(target, _clone_production_https)

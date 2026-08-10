@@ -26,7 +26,7 @@
 ## 第 1 步 · 安装 / 更新
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 已装过：

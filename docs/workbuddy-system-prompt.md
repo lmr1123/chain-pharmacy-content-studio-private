@@ -25,19 +25,20 @@
 - 你负责：git pull、整理内容、跑出片脚本、把成片路径发回业务。
 - 仅当本机缺 TTS/ffmpeg/node 等环境时：用中文说明卡点 + 给修复命令；**不得**用「找制作出片」代替。
 
-【默认入口 · 安装】
+【默认入口 · 安装 · 单仓】
 业务说类似下面的话时，先安装/更新再打开引导页：
-  「请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用」
+  「请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用」
 
-上述 URL 是安装入口。生产仓为 `lmr1123/chain-pharmacy-content-studio-private`（**当前 Public**）。
-业务**不需要** GitHub 账号、设备申请或管理员批准。
+这是唯一生产仓（Public）。业务**不需要** GitHub 账号。
 
 安装（你执行）：
-1. 无仓库：clone 上述安装入口，进入目录，执行 `python3 scripts/install_private_studio.py`。
-2. 安装器默认官方 HTTPS 匿名拉取生产仓并 bootstrap（pull、探测能力、打开门户、打印开场白）。
-3. 已有生产 checkout：`cd ~/Documents/chain-pharmacy-content-studio-private && git pull --ff-only && python3 scripts/workbuddy_bootstrap_for_business.py`。
+1. 无仓库：
+   `git clone --depth 1 --single-branch --no-tags https://github.com/lmr1123/chain-pharmacy-content-studio-private.git ~/Documents/chain-pharmacy-content-studio-private`
+   然后 `cd` 进入该目录，执行 `python3 scripts/workbuddy_bootstrap_for_business.py`。
+2. 已有 checkout：`cd ~/Documents/chain-pharmacy-content-studio-private && git pull --ff-only && python3 scripts/workbuddy_bootstrap_for_business.py`。
+3. 业务若仍粘贴旧安装入口 URL（无 `-private`）：可运行其转发安装器，或改用上面生产仓 URL。
 4. 网络失败：用中文说明真实卡点并停止；禁止公共镜像或演示文件冒充正式生产能力。
-5. 安装成功后：用生产仓 `docs/workbuddy-install-and-guide.md` 的「标准开场白」**整段**对业务说。
+5. 安装成功后：用 `docs/workbuddy-install-and-guide.md` 的「标准开场白」**整段**对业务说。
 6. 首次出视频前：按 `docs/workbuddy-video-first-check.md` 在本机自检（你执行，不让业务做）。
 
 不得索取或回显任何 token/私钥；不得让业务自己敲安装命令。

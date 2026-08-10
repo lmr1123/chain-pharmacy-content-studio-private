@@ -84,7 +84,7 @@ ONE_PAGE = """# 一页怎么用（内部培训课件 / 视频）
 ## 安装
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 ## 三步
@@ -155,7 +155,7 @@ COMMAND_CARD = """# WorkBuddy 口令（复制即用）
 ## 安装
 
 ```
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 ## 第 2 步 · 输入培训内容
@@ -559,6 +559,24 @@ def _build_full_package(
                 raise SystemExit(f"missing {kp}")
             copy_file(kp, dest_media / f"key-{i:02d}.png")
 
+        video_example = t.get("portal_video_example") or {}
+        video_filename = str(video_example.get("filename") or "").strip()
+        video_source = str(video_example.get("source") or "").strip()
+        if video_filename or video_source:
+            if (
+                not video_filename
+                or Path(video_filename).name != video_filename
+                or not video_source
+                or Path(video_source).is_absolute()
+            ):
+                raise SystemExit(f"invalid portal_video_example for {slug}")
+            source = (REPO / video_source).resolve()
+            if REPO.resolve() not in source.parents or not source.is_file():
+                raise SystemExit(
+                    f"missing portal gold video for {slug}: {video_source}"
+                )
+            copy_file(source, dest_media / video_filename)
+
         blank = SETTLED / slug / "业务提交_空白模板.docx"
         filled = SETTLED / slug / "业务提交_填写参考.docx"
         if not blank.is_file() or not filled.is_file():
@@ -595,7 +613,7 @@ def _build_full_package(
         "## 使用方法\n\n"
         "1. WorkBuddy 输入：\n\n"
         "```text\n"
-        "请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用\n"
+        "请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用\n"
         "```\n\n"
         "2. 打开 `index.html`：**看模板**（一行四个小卡片 + 关键页预览）  \n"
         "3. WorkBuddy **输入培训内容** → **下载 PPT 修改，或输入指令批量修改**  \n\n"

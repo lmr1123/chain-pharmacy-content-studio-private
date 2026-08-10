@@ -7,7 +7,7 @@
 在 **WorkBuddy** 里直接输入：
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 三步：
@@ -23,19 +23,26 @@
 - 系统提示词（粘贴到代理）：`docs/workbuddy-system-prompt.md`  
 - 总案：`docs/business-workbuddy-foolproof-delivery.md`
 
-安装脚本（代理执行）：
+安装脚本（代理执行，业务不用敲）：
 
 ```bash
-# 安装入口仓 → 自动拉取生产仓并打开引导页
-git clone https://github.com/lmr1123/chain-pharmacy-content-studio.git \
-  ~/Documents/chain-pharmacy-content-studio-installer
-cd ~/Documents/chain-pharmacy-content-studio-installer
-python3 scripts/install_private_studio.py
+# 单仓：直接 clone 本生产仓并打开引导页
+git clone --depth 1 --single-branch --no-tags \
+  https://github.com/lmr1123/chain-pharmacy-content-studio-private.git \
+  ~/Documents/chain-pharmacy-content-studio-private
+cd ~/Documents/chain-pharmacy-content-studio-private
+python3 scripts/workbuddy_bootstrap_for_business.py
 ```
 
-业务**不需要** GitHub 账号、设备申请或管理员批准。安装器默认用官方 HTTPS 匿名拉取生产仓
-`chain-pharmacy-content-studio-private`（当前为 Public），再 bootstrap 打开引导页。
-安装与出片命令都由 WorkBuddy 执行。禁止公共镜像。
+已安装时只需：
+
+```bash
+cd ~/Documents/chain-pharmacy-content-studio-private
+git pull --ff-only
+python3 scripts/workbuddy_bootstrap_for_business.py
+```
+
+业务**不需要** GitHub 账号。命令由 WorkBuddy 执行；禁止公共镜像。
 
 ## 制作侧
 
@@ -62,11 +69,11 @@ python3 scripts/refresh_business_delivery.py
 
 ## 仓库边界
 
-- **安装入口**（`chain-pharmacy-content-studio`）：只含安装脚本与说明。
-- **生产仓**（`chain-pharmacy-content-studio-private`，**当前 Public**）：settled 金样、资产、声纹、生成器与业务门户。业务经安装器自动拉取，无需账号。
+- **唯一生产仓**：`lmr1123/chain-pharmacy-content-studio-private`（Public）— 金样、资产、声纹、生成器与业务门户。业务直接 clone 本仓。
+- **旧安装入口** `chain-pharmacy-content-studio` 已废弃，仅保留转发兼容；新业务不要再用。
 - **本机不入仓**：`third_party/`、`node_modules`、`.venv*`、运行 workspace、业务上传、日志和正式交付物。
 
-安装后，出片与克隆 TTS 由 WorkBuddy 在生产 checkout 内按 `AGENTS.md` 执行。公开可读仅便于内部业务安装，不等于对外再分发授权。
+出片与克隆 TTS 由 WorkBuddy 在本仓 checkout 内按 `AGENTS.md` 执行。公开可读仅便于内部安装，不等于对外再分发授权。
 
 ## 硬原则（摘要）
 

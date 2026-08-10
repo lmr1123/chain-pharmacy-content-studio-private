@@ -25,7 +25,7 @@
 ## 第 1 步 · 安装 / 更新（复制到 WorkBuddy）
 
 ```text
-请安装 https://github.com/lmr1123/chain-pharmacy-content-studio.git，然后指引我使用
+请安装 https://github.com/lmr1123/chain-pharmacy-content-studio-private.git，然后指引我使用
 ```
 
 若已装过，直接说：
